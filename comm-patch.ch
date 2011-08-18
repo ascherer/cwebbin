@@ -183,3 +183,9 @@ x l.43
 y
 \let\maybe=\iffalse
 z
+
+@x l.1183
+  if (*s) printf(s);
+@y
+  if (*s) fputs(s,stdout);
+@z
