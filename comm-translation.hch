@@ -55,7 +55,7 @@ taken with what follows.
 @#
 #ifndef _AMIGA /* non-{\mc AMIGA} systems don't know about \.{<exec/types.h>} */
 typedef long int LONG; /* excerpt from \.{<exec/types.h>} */
-typedef char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
+typedef const char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
 #define EXEC_TYPES_H 1 /* don't include \.{<exec/types.h>} in \.{"cweb.h"} */
 #endif
 @#

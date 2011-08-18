@@ -189,7 +189,7 @@ for future extensions.
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
-char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
+const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
 @x l.1220
@@ -253,7 +253,7 @@ used, when no changes are desired.
        break;
        }
     else
-      flags[*dot_pos]=flag_change;
+      flags[0+*dot_pos]=flag_change;
 @z
 
 @x l.1415

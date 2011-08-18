@@ -310,7 +310,7 @@ void *equiv_or_xref; /* info corresponding to names */
 @x l.1086
 void  err_print();
 @y
-extern void err_print(char *);@/
+extern void err_print(const char *);@/
 @z
 
 @x l.1089
@@ -318,7 +318,7 @@ void
 err_print(s) /* prints `\..' and location of error message */
 char *s;
 @y
-void err_print(char *s) /* prints `\..' and location of error message */
+void err_print(const char *s) /* prints `\..' and location of error message */
 @z
 
 @x l.1134
@@ -338,8 +338,8 @@ int wrap_up(void) {
 @x l.1167
 void fatal(), overflow();
 @y
-extern void fatal(char *,char *);
-extern void overflow(char *);
+extern void fatal(const char *,const char *);
+extern void overflow(const char *);
 @z
 
 @x l.1172
@@ -347,7 +347,7 @@ extern void overflow(char *);
 fatal(s,t)
   char *s,*t;
 @y
-@c void fatal(char *s,char *t)
+@c void fatal(const char *s,const char *t)
 @z
 
 @x l.1183
@@ -355,7 +355,7 @@ fatal(s,t)
 overflow(t)
   char *t;
 @y
-@c void overflow(char *t)
+@c void overflow(const char *t)
 @z
 
 @x l.1245

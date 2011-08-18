@@ -170,22 +170,22 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
       print_prefix_name(p);
       printf(">\n and <");
 @y
-      printf(get_string(MSG_ERROR_CO50_1));
+      fputs(get_string(MSG_ERROR_CO50_1),stdout);
 @.Ambiguous prefix ... @>
       print_prefix_name(p);
-      printf(get_string(MSG_ERROR_CO50_2));
+      fputs(get_string(MSG_ERROR_CO50_2),stdout);
 @z
 
 @x l.967
       printf("\n! New name is a prefix of <");
 @y
-      printf(get_string(MSG_ERROR_CO52_1));
+      fputs(get_string(MSG_ERROR_CO52_1),stdout);
 @z
 
 @x l.979
       printf("\n! New name extends <");
 @y
-      printf(get_string(MSG_ERROR_CO52_2));
+      fputs(get_string(MSG_ERROR_CO52_2),stdout);
 @z
 
 @x l.985
@@ -194,10 +194,10 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
     print_prefix_name(r);
     printf(">,\n which abbreviates <");
 @y
-    printf(get_string(MSG_ERROR_CO52_3));
+    fputs(get_string(MSG_ERROR_CO52_3),stdout);
 @.Section name incompatible...@>
     print_prefix_name(r);
-    printf(get_string(MSG_ERROR_CO52_4));
+    fputs(get_string(MSG_ERROR_CO52_4),stdout);
 @z
 
 @x l.1148
@@ -218,13 +218,13 @@ case error_message:
 case fatal_message: printf("(That was a fatal error, my friend.)\n");
 @y
 case spotless:
-  if (show_happiness) printf(get_string(MSG_HAPPINESS_CO62)); break;
+  if (show_happiness) fputs(get_string(MSG_HAPPINESS_CO62),stdout); break;
 case harmless_message:
-  printf(get_string(MSG_WARNING_CO62)); break;
+  fputs(get_string(MSG_WARNING_CO62),stdout); break;
 case error_message:
-  printf(get_string(MSG_ERROR_CO62)); break;
+  fputs(get_string(MSG_ERROR_CO62),stdout); break;
 case fatal_message:
-  printf(get_string(MSG_FATAL_CO62));
+  fputs(get_string(MSG_FATAL_CO62),stdout);
 @z
 
 @x l.1187
@@ -317,7 +317,7 @@ struct Catalog *catalog=NULL; /* pointer to the external catalog */
 int i; /* global counter for list of strings */
 #else /* non-{\mc AMIGA} systems don't know about \.{<exec/types.h>} */
 typedef long int LONG; /* excerpt from \.{<exec/types.h>} */
-typedef char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
+typedef const char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
 #define EXEC_TYPES_H 1 /* don't include \.{<exec/types.h>} in \.{"cweb.h"} */
 #endif
 @#

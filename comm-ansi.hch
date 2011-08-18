@@ -53,9 +53,9 @@ extern void overflow(); /* succumb because a table has overflowed */
 @y
 extern int history; /* indicates how bad this run was */
 extern int wrap_up(void); /* indicate |history| and exit */
-extern void err_print(char *); /* prints error message and context */
-extern void fatal(char *,char *); /* issue error message and die */
-extern void overflow(char *); /* succumb because a table has overflowed */
+extern void err_print(const char *); /* prints error message and context */
+extern void fatal(const char *,const char *); /* issue error message and die */
+extern void overflow(const char *); /* succumb because a table has overflowed */
 @z
 
 @x l.138

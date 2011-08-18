@@ -31,7 +31,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.425
     printf("\n! Not present: <");
 @y
-    printf(get_string(MSG_ERROR_CT34));
+    fputs(get_string(MSG_ERROR_CT34),stdout);
 @z
 
 @x l.522
@@ -43,7 +43,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.541
     printf("\n! No program text was specified."); mark_harmless;
 @y
-    printf(get_string(MSG_WARNING_CT42)); mark_harmless;
+    fputs(get_string(MSG_WARNING_CT42),stdout); mark_harmless;
 @z
 
 @x l.547
@@ -55,13 +55,13 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.551
         printf("\nWriting the output files:");
 @y
-        printf(get_string(MSG_PROGRESS_CT42_2));
+        fputs(get_string(MSG_PROGRESS_CT42_2),stdout);
 @z
 
 @x l.561
     if(show_happiness) printf("\nDone.");
 @y
-    if(show_happiness) printf(get_string(MSG_PROGRESS_CT42_3));
+    if(show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 @z
 
 @x l.575
@@ -103,7 +103,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.1033
     printf("\n! String too long: ");
 @y
-    printf(get_string(MSG_ERROR_CT67_3));
+    fputs(get_string(MSG_ERROR_CT67_3),stdout);
 @z
 
 @x l.1050
@@ -139,7 +139,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.1131
   printf("\n! Section name too long: ");
 @y
-  printf(get_string(MSG_ERROR_CT72_2));
+  fputs(get_string(MSG_ERROR_CT72_2),stdout);
 @z
 
 @x l.1145
@@ -239,7 +239,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   printf("%ld tokens (out of %ld)\n",
           (long)(tok_ptr-tok_mem),(long)max_toks);
 @y
-  printf(get_string(MSG_STATS_CT95_1));
+  fputs(get_string(MSG_STATS_CT95_1),stdout);
   printf(get_string(MSG_STATS_CT95_2),
           (long)(name_ptr-name_dir),(long)max_names);
   printf(get_string(MSG_STATS_CT95_3),

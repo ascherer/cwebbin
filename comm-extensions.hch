@@ -18,7 +18,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 extern line[]; /* number of current line in the stacked files */
 @y
 extern line[]; /* number of current line in the stacked files */
-extern char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @z
 
 @x l.168

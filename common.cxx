@@ -1385,7 +1385,7 @@ default:return(RETURN_OK);
 void fatal(const char*s,const char*t)
 #line 1182 "common.w"
 {
-if(*s)fputs(s,stdout);
+if(*s)printf(s);
 err_print(t);
 history= fatal_message;exit(wrap_up());
 }
