@@ -47,7 +47,7 @@ struct Catalog*catalog= NULL;
 int i;
 #else 
 typedef long int LONG;
-typedef char*STRPTR;
+typedef const char*STRPTR;
 #define EXEC_TYPES_H 1 
 #endif
 
@@ -297,7 +297,7 @@ char*tex_file_name;
 char*idx_file_name;
 char*scn_file_name;
 char*check_file_name;
-char*use_language;
+const char*use_language;
 #line 859 "comm-p21.ch"
 boolean flags[256];
 #line 1228 "common.w"
@@ -371,7 +371,7 @@ static int section_name_cmp(char**,int,name_pointer);
 #line 1092 "common.w"
 
 #line 700 "comm-p21.ch"
-extern void err_print(char*);
+extern void err_print(const char*);
 #line 1094 "common.w"
 
 /*:57*//*60:*/
@@ -387,8 +387,8 @@ extern void print_stats(void);
 #line 1173 "common.w"
 
 #line 790 "comm-p21.ch"
-extern void fatal(char*,char*);
-extern void overflow(char*);
+extern void fatal(const char*,const char*);
+extern void overflow(const char*);
 #line 1175 "common.w"
 
 /*:63*//*69:*/
@@ -1167,10 +1167,10 @@ p= (c==less?p->llink:p->rlink);
 }else{
 if(r!=NULL){
 #line 625 "comm-p21.ch"
-printf(get_string(MSG_ERROR_CO50_1));
+fputs(get_string(MSG_ERROR_CO50_1),stdout);
 
 print_prefix_name(p);
-printf(get_string(MSG_ERROR_CO50_2));
+fputs(get_string(MSG_ERROR_CO50_2),stdout);
 #line 949 "common.w"
 print_prefix_name(r);
 err_print(">");
@@ -1204,7 +1204,7 @@ switch(section_name_cmp(&first,name_len,r)){
 case prefix:
 if(!ispref){
 #line 634 "comm-p21.ch"
-printf(get_string(MSG_ERROR_CO52_1));
+fputs(get_string(MSG_ERROR_CO52_1),stdout);
 #line 975 "common.w"
 
 print_section_name(r);
@@ -1218,7 +1218,7 @@ extend_section_name(r,first,last+1,ispref);
 return r;
 case bad_extension:
 #line 640 "comm-p21.ch"
-printf(get_string(MSG_ERROR_CO52_2));
+fputs(get_string(MSG_ERROR_CO52_2),stdout);
 #line 987 "common.w"
 
 print_section_name(r);
@@ -1226,10 +1226,10 @@ err_print(">");
 return r;
 default:
 #line 649 "comm-p21.ch"
-printf(get_string(MSG_ERROR_CO52_3));
+fputs(get_string(MSG_ERROR_CO52_3),stdout);
 
 print_prefix_name(r);
-printf(get_string(MSG_ERROR_CO52_4));
+fputs(get_string(MSG_ERROR_CO52_4),stdout);
 #line 996 "common.w"
 print_section_name(r);
 err_print(">");
@@ -1285,7 +1285,7 @@ default:return c;
 #line 1095 "common.w"
 
 #line 708 "comm-p21.ch"
-void err_print(char*s)
+void err_print(const char*s)
 #line 1099 "common.w"
 {
 char*k,*l;
@@ -1332,13 +1332,13 @@ print_stats();
 switch(history){
 #line 777 "comm-p21.ch"
 case spotless:
-if(show_happiness)printf(get_string(MSG_HAPPINESS_CO62));break;
+if(show_happiness)fputs(get_string(MSG_HAPPINESS_CO62),stdout);break;
 case harmless_message:
-printf(get_string(MSG_WARNING_CO62));break;
+fputs(get_string(MSG_WARNING_CO62),stdout);break;
 case error_message:
-printf(get_string(MSG_ERROR_CO62));break;
+fputs(get_string(MSG_ERROR_CO62),stdout);break;
 case fatal_message:
-printf(get_string(MSG_FATAL_CO62));
+fputs(get_string(MSG_FATAL_CO62),stdout);
 #line 1168 "common.w"
 }
 
@@ -1382,17 +1382,17 @@ default:return(RETURN_OK);
 
 /*:61*//*64:*/
 #line 799 "comm-p21.ch"
-void fatal(char*s,char*t)
+void fatal(const char*s,const char*t)
 #line 1182 "common.w"
 {
-if(*s)printf(s);
+if(*s)fputs(s,stdout);
 err_print(t);
 history= fatal_message;exit(wrap_up());
 }
 
 /*:64*//*65:*/
 #line 807 "comm-p21.ch"
-void overflow(char*t)
+void overflow(const char*t)
 #line 1193 "common.w"
 {
 #line 813 "comm-p21.ch"
@@ -1429,7 +1429,7 @@ use_language= ++dot_pos;
 break;
 }
 else
-flags[*dot_pos]= flag_change;
+flags[0+*dot_pos]= flag_change;
 #line 1350 "common.w"
 }
 

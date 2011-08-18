@@ -14,7 +14,7 @@
 
 #ifndef _AMIGA 
 typedef long int LONG;
-typedef char*STRPTR;
+typedef const char*STRPTR;
 #define EXEC_TYPES_H 1 
 #endif
 
@@ -245,9 +245,9 @@ extern void sprint_section_name(char*,name_pointer);
 
 extern int history;
 extern int wrap_up(void);
-extern void err_print(char*);
-extern void fatal(char*,char*);
-extern void overflow(char*);
+extern void err_print(const char*);
+extern void fatal(const char*,const char*);
+extern void overflow(const char*);
 
 /*:10*//*11:*/
 #line 65 "ctang-p21.ch"
@@ -263,7 +263,7 @@ extern char*scn_file_name;
 extern char**file_name;
 extern char*change_file_name;
 extern int*line;
-extern char*use_language;
+extern const char*use_language;
 extern int change_line;
 extern boolean input_has_ended;
 extern boolean changing;
@@ -573,7 +573,7 @@ section_text[0]= ' ';
 #line 59 "ctang-p21.ch"
 ;
 #line 100 "ctangle.w"
-if(show_banner)printf(banner);
+if(show_banner)fputs(banner,stdout);
 phase_one();
 phase_two();
 return wrap_up();
@@ -693,7 +693,7 @@ if((a+name_dir)->equiv!=(void*)text_info)push_level(a+name_dir);
 #line 427 "ctangle.w"
 else if(a!=0){
 #line 201 "ctang-p21.ch"
-printf(get_string(MSG_ERROR_CT34));
+fputs(get_string(MSG_ERROR_CT34),stdout);
 #line 429 "ctangle.w"
 print_section_name(a+name_dir);err_print(">");
 
@@ -755,7 +755,7 @@ output_defs();
 ;
 if(text_info->text_link==0&&cur_out_file==end_output_files){
 #line 262 "ctang-p21.ch"
-printf(get_string(MSG_WARNING_CT42));mark_harmless;
+fputs(get_string(MSG_WARNING_CT42),stdout);mark_harmless;
 #line 545 "ctangle.w"
 
 }
@@ -769,7 +769,7 @@ printf(get_string(MSG_PROGRESS_CT42_1),C_file_name);
 else{
 if(show_progress){
 #line 274 "ctang-p21.ch"
-printf(get_string(MSG_PROGRESS_CT42_2));
+fputs(get_string(MSG_PROGRESS_CT42_2),stdout);
 #line 555 "ctangle.w"
 
 printf(" (%s)",C_file_name);
@@ -912,7 +912,7 @@ check_file_name= NULL;
 #line 563 "ctangle.w"
 ;
 #line 280 "ctang-p21.ch"
-if(show_happiness)printf(get_string(MSG_PROGRESS_CT42_3));
+if(show_happiness)fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 #line 565 "ctangle.w"
 }
 }
@@ -1230,7 +1230,7 @@ if(++id_loc<=section_text_end)*id_loc= c;
 }
 if(id_loc>=section_text_end){
 #line 454 "ctang-p21.ch"
-printf(get_string(MSG_ERROR_CT67_3));
+fputs(get_string(MSG_ERROR_CT67_3),stdout);
 #line 1039 "ctangle.w"
 
 term_write(section_text+1,25);
@@ -1326,7 +1326,7 @@ c= ' ';if(*(k-1)==' ')k--;
 }
 if(k>=section_text_end){
 #line 490 "ctang-p21.ch"
-printf(get_string(MSG_ERROR_CT72_2));
+fputs(get_string(MSG_ERROR_CT72_2),stdout);
 #line 1136 "ctangle.w"
 
 term_write(section_text+1,25);
@@ -1433,8 +1433,8 @@ mistake:/*64:*/
 switch(c){
 case'+':if(*loc=='+')compress(plus_plus);break;
 case'-':if(*loc=='-'){compress(minus_minus);}
-else if(*loc=='>')if(*(loc+1)=='*'){loc++;compress(minus_gt_ast);}
-else compress(minus_gt);break;
+else {if(*loc=='>'){if(*(loc+1)=='*'){loc++;compress(minus_gt_ast);}
+else compress(minus_gt);}}break;
 case'.':if(*loc=='*'){compress(period_ast);}
 else if(*loc=='.'&&*(loc+1)=='.'){
 loc++;compress(dot_dot_dot);
@@ -1860,7 +1860,7 @@ default:err_print(get_string(MSG_ERROR_CT93));
 
 void print_stats(void){
 #line 660 "ctang-p21.ch"
-printf(get_string(MSG_STATS_CT95_1));
+fputs(get_string(MSG_STATS_CT95_1),stdout);
 printf(get_string(MSG_STATS_CT95_2),
 (long)(name_ptr-name_dir),(long)max_names);
 printf(get_string(MSG_STATS_CT95_3),
