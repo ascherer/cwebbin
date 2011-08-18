@@ -117,7 +117,7 @@ void check_complete(void) {
 @x l.644
 extern int names_match();
 @y
-extern int names_match(name_pointer,char *,size_t,eight_bits);@/
+extern int names_match(name_pointer,const char *,size_t,eight_bits);@/
 @z
 
 @x l.654
@@ -126,11 +126,15 @@ id_lookup(first,last,t) /* looks up a string in the identifier table */
 char *first; /* first character of string */
 char *last; /* last character of string plus one */
 char t; /* the |ilk|; used by \.{CWEAVE} only */
+{
+  char *i=first; /* position in |buffer| */
 @y
 name_pointer id_lookup(@t\1\1@> /* looks up a string in the identifier table */
-  char *first, /* first character of string */
-  char *last, /* last character of string plus one */
+  const char *first, /* first character of string */
+  const char *last, /* last character of string plus one */
   char t@t\2\2@>) /* the |ilk|; used by \.{CWEAVE} only */
+{
+  const char *i=first; /* position in |buffer| */
 @z
 
 @x l.665
@@ -399,7 +403,7 @@ thus should agree with \.{CTANGLE} and \.{CWEAVE}.
 @<Predecl...@>=
 boolean get_line(void);@/
 name_pointer add_section_name(name_pointer,int,char *,char *,int);@/
-name_pointer id_lookup(char *,char *,char);@/
+name_pointer id_lookup(const char *,const char *,char);@/
 name_pointer section_lookup(char *,char *,int);
 void check_complete(void);@/
 void common_init(void);@/

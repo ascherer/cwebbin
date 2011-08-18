@@ -229,8 +229,8 @@ extern char*byte_ptr;
 extern name_pointer*hash;
 extern hash_pointer hash_end;
 extern hash_pointer h;
-extern int names_match(name_pointer,char*,size_t,eight_bits);
-extern name_pointer id_lookup(char*,char*,char);
+extern int names_match(name_pointer,const char*,size_t,eight_bits);
+extern name_pointer id_lookup(const char*,const char*,char);
 
 extern name_pointer prefix_lookup(char*,char*);
 extern name_pointer section_lookup(char*,char*,int);
@@ -586,7 +586,7 @@ return wrap_up();
 #line 116 "ctang-p21.ch"
 int names_match(
 name_pointer p,
-char*first,
+const char*first,
 size_t l,
 eight_bits)
 #line 188 "ctangle.w"

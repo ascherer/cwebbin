@@ -193,6 +193,12 @@ z
 @d banner "This is CWEAVE (Version 3.64 [p21])\n"
 @z
 
+@x l.107
+  if (show_banner) printf(banner); /* print a ``banner line'' */
+@y
+  if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
+@z
+
 @x l.139
 @i common.h
 @y
@@ -215,6 +221,70 @@ typedef struct xref_info {
 @x l.336
 typedef sixteen_bits token;
 @y
+@z
+
+@x l.780
+    else if (*loc=='>') if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
+                        else compress(minus_gt); break;
+@y
+    else { if (*loc=='>') { if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
+                        else compress(minus_gt); } } break;
+@z
+
+@x l.870
+    if (c=='\\') if (loc>=limit) continue;
+      else if (++id_loc<=section_text_end) {
+        *id_loc = '\\'; c=*loc++;
+      }
+@y
+    if (c=='\\') { if (loc>=limit) continue;
+      else { if (++id_loc<=section_text_end) {
+        *id_loc = '\\'; c=*loc++;
+      } } }
+@z
+
+@x l.1607
+else if (c=='\\' && *loc!='@@')
+  if (phase==2) app_tok(*(loc++)) else loc++;
+@y
+else { if (c=='\\' && *loc!='@@') {
+  if (phase==2) app_tok(*(loc++)) else loc++; } }
+@z
+
+@x l.1787
+  printf(cat_name[c]);
+@y
+  fputs(cat_name[c],stdout);
+@z
+
+@x l.3927
+    if (b=='\'' || b=='"')
+      if (delim==0) delim=b;
+      else if (delim==b) delim=0;
+@y
+    if (b=='\'' || b=='"') {
+      if (delim==0) delim=b;
+      else if (delim==b) delim=0; }
+@z
+
+@x l.4088
+    if (out_ptr>out_buf+1)
+      if (*(out_ptr-1)=='\\')
+@.\\6@>
+@.\\7@>
+@.\\Y@>
+        if (*out_ptr=='6') out_ptr-=2;
+        else if (*out_ptr=='7') *out_ptr='Y';
+@y
+    if (out_ptr>out_buf+1) {
+      if (*(out_ptr-1)=='\\') {
+@.\\6@>
+@.\\7@>
+@.\\Y@>
+        if (*out_ptr=='6') out_ptr-=2;
+        else if (*out_ptr=='7') *out_ptr='Y';
+      }
+    }
 @z
 
 @x l.4496

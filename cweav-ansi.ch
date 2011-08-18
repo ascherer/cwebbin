@@ -105,7 +105,7 @@ eight_bits t; /* desired ilk */
 @y
 int names_match(@t\1\1@>
   name_pointer p, /* points to the proposed match */
-  char *first, /* position of first character of string */
+  const char *first, /* position of first character of string */
   size_t l, /* length of identifier */
   eight_bits t@t\2\2@>) /* desired |ilk| */
 @z
@@ -291,7 +291,7 @@ void
 out_str(s) /* output characters from |s| to end of string */
 char *s;
 @y
-static void out_str(char*s) /* output characters from |s| to end of string */
+static void out_str(const char*s) /* output characters from |s| to end of string */
 @z
 
 @x l.1363
@@ -394,7 +394,7 @@ void
 app_str(s)
 char *s;
 @y
-static void app_str(char *s)
+static void app_str(const char *s)
 @z
 
 @x l.2194
@@ -774,7 +774,7 @@ static text_pointer C_translate(void);@/
 static text_pointer translate(void);@/
 static token_pointer find_first_ident(text_pointer);@/
 static unsigned skip_TeX(void);@/
-static void app_str(char *);@/
+static void app_str(const char *);@/
 static void big_app(token);@/
 static void big_app1(scrap_pointer);@/
 static void copy_limbo(void);@/
@@ -789,7 +789,7 @@ static void outer_parse(void);@/
 static void output_C(void);@/
 static void out_name(name_pointer,boolean);@/
 static void out_section(sixteen_bits);@/
-static void out_str(char *);@/
+static void out_str(const char *);@/
 static void pop_level(void);@/
 static void print_cat(eight_bits);@/
 #ifdef DEAD_CODE

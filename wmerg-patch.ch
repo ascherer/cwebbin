@@ -122,6 +122,12 @@ p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 @:caddr_t}{\bf caddr\_t@>
 @z
 
+@x l.687
+    flags[*dot_pos]=flag_change;
+@y
+    flags[0+*dot_pos]=flag_change;
+@z
+
 @x l.709
 @* Index.
 @y

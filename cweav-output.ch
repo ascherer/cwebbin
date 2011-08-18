@@ -62,7 +62,7 @@ if (no_xref) {
 else {
   phase=3;
   if (show_progress) {
-    printf(get_string(MSG_PROGRESS_CW225)); fflush(stdout);
+    fputs(get_string(MSG_PROGRESS_CW225),stdout); fflush(stdout);
   }
 @.Writing the index...@>
   finish_line();
@@ -94,7 +94,7 @@ else {
 }
 finish_line(); fclose(active_file); active_file=NULL;
 @<Update the result when it has changed@>@;
-if (show_happiness) printf(get_string(MSG_PROGRESS_CT42_3));
+if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 @z
 
 @x l.4496

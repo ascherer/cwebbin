@@ -112,7 +112,7 @@ void check_complete(void) {
 @x l.491
 void  err_print();
 @y
-void  err_print(char *);
+void  err_print(const char *);
 @z
 
 @x l.495
@@ -120,7 +120,7 @@ void
 err_print(s) /* prints `\..' and location of error message */
 char *s;
 @y
-void err_print(char *s) /* prints `\..' and location of error message */
+void err_print(const char *s) /* prints `\..' and location of error message */
 @z
 
 @x l.547

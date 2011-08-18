@@ -37,7 +37,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.840
     printf("\n! String too long: ");
 @y
-    printf(get_string(MSG_ERROR_CT67_3));
+    fputs(get_string(MSG_ERROR_CT67_3),stdout);
 @z
 
 @x l.855
@@ -55,7 +55,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.907
   printf("\n! Section name too long: ");
 @y
-  printf(get_string(MSG_ERROR_CT72_2));
+  fputs(get_string(MSG_ERROR_CT72_2),stdout);
 @z
 
 @x l.921
@@ -115,14 +115,14 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.1240
       printf("\n! Never defined: <"); print_section_name(p); putchar('>'); mark_harmless;
 @y
-      printf(get_string(MSG_WARNING_CW75_1));
+      fputs(get_string(MSG_WARNING_CW75_1),stdout);
       print_section_name(p); putchar('>'); mark_harmless;
 @z
 
 @x l.1245
       printf("\n! Never used: <"); print_section_name(p); putchar('>'); mark_harmless;
 @y
-      printf(get_string(MSG_WARNING_CW75_2));
+      fputs(get_string(MSG_WARNING_CW75_2),stdout);
       print_section_name(p); putchar('>'); mark_harmless;
 @z
 
@@ -233,13 +233,13 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.3757
   printf("\n! Illegal control code in section name: <");
 @y
-  printf(get_string(MSG_ERROR_CW201));
+  fputs(get_string(MSG_ERROR_CW201),stdout);
 @z
 
 @x l.3772
     printf("\n! C text in section name didn't end: <");
 @y
-    printf(get_string(MSG_ERROR_CW202));
+    fputs(get_string(MSG_ERROR_CW202),stdout);
 @z
 
 @x l.3784
@@ -257,7 +257,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.3809
 reset_input(); if (show_progress) printf("\nWriting the output file...");
 @y
-reset_input(); if (show_progress) printf(get_string(MSG_PROGRESS_CW204));
+reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
 @z
 
 @x l.3892
@@ -331,7 +331,7 @@ reset_input(); if (show_progress) printf(get_string(MSG_PROGRESS_CW204));
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
 }
 @y
-  printf(get_string(MSG_STATS_CT95_1));
+  fputs(get_string(MSG_STATS_CT95_1),stdout);
 @.Memory usage statistics:@>
   printf(get_string(MSG_STATS_CT95_2),
             (long)(name_ptr-name_dir),(long)max_names);
@@ -339,7 +339,7 @@ reset_input(); if (show_progress) printf(get_string(MSG_PROGRESS_CW204));
             (long)(xref_ptr-xmem),(long)max_refs);
   printf(get_string(MSG_STATS_CT95_4),
             (long)(byte_ptr-byte_mem),(long)max_bytes);
-  printf(get_string(MSG_STATS_CW248_2));
+  fputs(get_string(MSG_STATS_CW248_2),stdout);
   printf(get_string(MSG_STATS_CW248_3),
             (long)(max_scr_ptr-scrap_info),(long)max_scraps);
   printf(get_string(MSG_STATS_CW248_4),
@@ -348,7 +348,7 @@ reset_input(); if (show_progress) printf(get_string(MSG_PROGRESS_CW204));
             (long)(max_tok_ptr-tok_mem),(long)max_toks);
   printf(get_string(MSG_STATS_CW248_5),
             (long)(max_stack_ptr-stack),(long)stack_size);
-  printf(get_string(MSG_STATS_CW248_6));
+  fputs(get_string(MSG_STATS_CW248_6),stdout);
   printf(get_string(MSG_STATS_CW248_5),
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
 }
