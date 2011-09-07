@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [p21]).  It is a
+This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [22p]).  It is a
 changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
-Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
+Scherer (deutsch), Giuseppe GhibÃ² (italiano), and Denis Roegel (franÃ§ais).
 
 Run WMERGE with masterfile CWEBMAN.TEX and changefile CWEBMAN.CH
 to produce CWEBMANA.TEX.
@@ -12,7 +12,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000,2005 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005,2011 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -48,6 +48,7 @@ a18	31 Dec 1999 AS Updated for CWEB 3.5.
 a19	25 Jul 2000 AS Updated for CWEB 3.61.
 a20	02 Jan 2001 AS Updated for CWEB 3.63.
 a21	09 Mar 2002 AS Updated for CWEB 3.64.
+a22	18 Aug 2011 AS Updated for CWEB 3.64ad.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -60,17 +61,17 @@ Use the already changed macro file.  Also we will need special characters.
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [p21])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [22p])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(Version 3.64 [p21] --- March 2002)}
+\vskip 18pt\centerline{(Version 3.64 [22p] --- August 2011)}
 @z
 ------------------------------------------------------------------------------
-@x l.873
-\more On UNIX systems (and others that support environment variables),
+@x l.913
+\more On \UNIX/ systems (and others that support environment variables),
 if the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
 of the same name was defined at compile time,
 \.{CWEB} will look for include files in the directory thus named, if
@@ -240,7 +241,7 @@ caratteristiche richieste dall'output generato da \.{CWEAVE}.
 \vfill\eject
 \def\runninghead{APPENDICE B --- MACROS POUR LE FORMATTING}
 \section Appendice B: Le text \.{fcwebmac.tex}.
-Voici le text qui élargit le format ``plain \TEX/''
+Voici le text qui Ã©largit le format ``plain \TEX/''
 et soutient l'output de \.{CWEAVE}.
 
 \vskip6pt
@@ -258,6 +259,6 @@ et soutient l'output de \.{CWEAVE}.
 @x l.1505
   \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [p21])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [22p])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

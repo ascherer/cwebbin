@@ -287,9 +287,9 @@ boot:
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o
 
 # Take a good lecture for bedtime reading
-doc: $(SOURCES:.w=.dvi)
+doc: $(SOURCES:.w=.pdf)
 
-docs: cwebman.dvi cwebmana.dvi common.dvi ctangle.dvi cweave.dvi wmerge.dvi
+docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf wmerge.pdf
 
 cwebman.dvi: cwebman.tex
 cwebmana.dvi: cwebmana.tex
@@ -298,18 +298,18 @@ ctangle.dvi: ctangle.tex
 cweave.dvi: cweave.tex
 wmerge.dvi: wmerge.tex
 
-usermanual: cwebmana.dvi
+usermanual: cwebmana.pdf
 
 fullmanual: usermanual $(SOURCES) \
 	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HPATCH) $(MCHANGES)
 	$(CWEAVE) $(WFLAGS) common.w comm-doc.ch
-	$(MAKE) common.dvi
+	$(MAKE) common.pdf
 	$(CWEAVE) $(WFLAGS) ctangle.w ctang-doc.ch
-	$(MAKE) ctangle.dvi
+	$(MAKE) ctangle.pdf
 	$(CWEAVE) $(WFLAGS) cweave.w cweav-doc.ch
-	$(MAKE) cweave.dvi
+	$(MAKE) cweave.pdf
 	$(CWEAVE) $(WFLAGS) examples/wmerge.w $(MCHANGES)
-	$(MAKE) wmerge.dvi
+	$(MAKE) wmerge.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m cwebmana.tex cwebman.tex cwebman.ch
