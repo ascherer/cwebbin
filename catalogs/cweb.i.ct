@@ -1,5 +1,5 @@
 ;
-## version $VER: CWEB.catalog 1.16 (09.03.2002)
+## version $VER: CWEB.catalog 1.17 (29.10.2005)
 ## codeset 0
 ## language italiano
 ;
@@ -19,10 +19,9 @@
 ; Data: 6 Dicembre 1993 (Setup della versione 1.0)
 ;
 ; Autore: Andreas Scherer
-;         Rochusstraﬂe 22-24
-;         52062 Aachen, Germany
-;         <andreas.scherer@pobox.com>
-e>
+;         Eichendorffstraﬂe 2
+;         10115 Berlin, Germany
+;         <andreas_tug@freenet.de>
 ;
 ; Modifiche: 18 gennaio 1994: Version information included. (V1.1)
 ;            13 maggio 1994:  Nuovo patch con allocazione dinamica della
@@ -39,6 +38,7 @@ e>
 ;            25 luglio 2000: Updated for patch level [p18].  (V1.14)
 ;            02 gennaio 2001: Updated for patch level [p19].  (V1.15)
 ;            09 march 2002: Updated for patch level [p20].  (V1.16)
+;            29 ottobre 2005: Updated for patch level [p21].  (V1.17)
 ;
 ; Copyright (c) 1993 Andreas Scherer
 ;
@@ -233,8 +233,8 @@ MSG_FATAL_CO85
 ; ! Memory allocation failure
 ;
 MSG_BANNER_CT1
-Questo Ë CTANGLE (Versione 3.64 [p20])\n
-; This is CTANGLE (Version 3.64 [p20])\n
+Questo Ë CTANGLE (Versione 3.64 [p21])\n
+; This is CTANGLE (Version 3.64 [p21])\n
 ;
 MSG_OVERFLOW_CT26
 token
@@ -381,8 +381,8 @@ MSG_STATS_CT95_5
 ; %ld tokens (out of %ld)\n
 ;
 MSG_BANNER_CW1
-Questo Ë CWEAVE (Versione 3.64 [p20])\n
-; This is CWEAVE (Version 3.64 [p20])\n
+Questo Ë CWEAVE (Versione 3.64 [p21])\n
+; This is CWEAVE (Version 3.64 [p21])\n
 ;
 MSG_OVERFLOW_CW21
 referimento incrociato

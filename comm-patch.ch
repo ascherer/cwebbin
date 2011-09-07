@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, COMM-P20.CH, is part of CWEBBIN (Version 3.64 [p20]).
+This file, COMM-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
 It is a changefile for COMMON.W, Version 3.64.
 
-Technically, COMM-P20.CH is constructed from a multitude of separate change
+Technically, COMM-P21.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like
 this introduction) are removed from the final output, so COMM-PATCH.CH is
 the place to look up the development history.
@@ -34,7 +34,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile COMMON.W.
 
-Copyright (C) 1993-1995,1998,2000 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -163,17 +163,18 @@ p19 2 Januar 2001 AS Updated for patch level [p19].
 Version 3.64 --- Don Knuth, Silvio Ley, February 2002
 
 p20 9 March 2002 AS Update for patch level [p20].
+p21 29 October 2005 AS ANSI C++ patches to patch level [p21].
 ------------------------------------------------------------------------------
 @x l.20
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
 @y
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [p20])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [p21])}
 @z
 
 @x l.25
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [p20])}
+  \centerline{(Version 3.64 [p21])}
 @z
 
 Activate this, if only the changed modules should be printed.

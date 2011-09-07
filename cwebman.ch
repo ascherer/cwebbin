@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [p20]).  It is a
+This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [p21]).  It is a
 changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
@@ -12,7 +12,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -60,13 +60,13 @@ Use the already changed macro file.  Also we will need special characters.
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [p20])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [p21])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(Version 3.64 [p20] --- March 2002)}
+\vskip 18pt\centerline{(Version 3.64 [p21] --- March 2002)}
 @z
 ------------------------------------------------------------------------------
 @x l.873
@@ -258,6 +258,6 @@ et soutient l'output de \.{CWEAVE}.
 @x l.1505
   \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [p20])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [p21])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

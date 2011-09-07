@@ -1,9 +1,9 @@
-# This file, makefile.sas, is part of CWEBBIN (Version 3.64 [p20]).
+# This file, makefile.sas, is part of CWEBBIN (Version 3.64 [p21]).
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
 #
 # Modified for SAS/C++ 6.57 under AmigaOS 2.1 on an AMIGA 2000 by
 # Andreas Scherer <andreas.scherer@pobox.com>, March 1993
-# Last updated by Andreas Scherer, March 9, 2002.
+# Last updated by Andreas Scherer, October 29, 2005.
 # IMPORTANT NOTE: This installation was not tested.
 
 # Copyright (C) 1987,1990,1993,1998 Silvio Levy and Donald E. Knuth
@@ -11,7 +11,7 @@
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1993-1999 Andreas Scherer
+# Copyright (C) 1993-1999, 2005 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -57,23 +57,23 @@ CATINCLUDE = catalogs/
 DESTPREF = c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
-CCHANGES = comm-p20.ch
+CCHANGES = comm-p21.ch
 
 # Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES = comm-p20.hch
+HCHANGES = comm-p21.hch
 
 # Set HPATCH to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH = comm-p20.h
+HPATCH = comm-p21.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
-TCHANGES = ctang-p20.ch
+TCHANGES = ctang-p21.ch
 
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
-WCHANGES = cweav-p20.ch
+WCHANGES = cweav-p21.ch
 
 # Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
-MCHANGES = wmerg-p20.ch
+MCHANGES = wmerg-p21.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
@@ -156,7 +156,7 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
-	cwebman.ch README.p20 Makefile.bcc Makefile.sas Makefile.unix \
+	cwebman.ch README.p21 Makefile.bcc Makefile.sas Makefile.unix \
 	comm-newpage.ch ctang-newpage.ch cweav-newpage.ch
 
 AREXX = arexx
@@ -371,7 +371,7 @@ clean:
 	$(RM) \#?.(o|lnk|bak|log|dvi|pdf|toc|idx|scn)
 	$(RM) common.tex cweave.tex cweave.$(EXTENSION) wmerge.$(EXTENSION)
 	$(RM) ctangle.tex cweave ctangle cwebmana.tex wmerge.tex wmerge
-	$(RM) \#?-p20.\#? \#?-doc.ch
+	$(RM) \#?-p21.\#? \#?-doc.ch
 
 # Install the new program versions where they can be found
 install: progs

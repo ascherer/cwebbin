@@ -1,5 +1,5 @@
 ;
-; LOCALE $VER: CWEB.CD 1.16 (09.03.2002)
+; LOCALE $VER: CWEB.CD 1.17 (29.10.2005)
 ;
 ; This is the description of all English strings used in the three
 ; modules COMMON.W, CTANGLE.W, CWEAVE.W and their related change files.
@@ -21,9 +21,9 @@
 ; Date: December 6, 1993 (Setup of version 1.0)
 ;
 ; Autor: Andreas Scherer
-;        Rochusstraﬂe 22-24
-;        52062 Aachen, Germany
-;        <andreas.scherer@pobox.com>
+;        Eichendorffstraﬂe 2
+;        10115 Berlin, Germany
+;        <andreas_tug@freenet.de>
 ;
 ; Changes: January 18, 1994: Version information included. (V1.1)
 ;          May 13, 1994:     New patch level with dynamic memory
@@ -41,6 +41,7 @@
 ;          July 25, 2000:  Updated for patch level [p18].  (V1.14)
 ;          January 2, 2001:  Updated for patch level [p19].  (V1.15)
 ;          March 9, 2002:  Updated for patch level [p20].  (V1.16)
+;          October 29, 2002:  Updated for patch level [p21].  (V1.17)
 ;                       
 ; Copyright (c) 1993 Andreas Scherer
 ;
@@ -184,7 +185,7 @@ MSG_FATAL_CO85 (/0/)
 ; Messages displayed in CTANGLE.W and CTANGLE.CH:
 ;
 MSG_BANNER_CT1 (/0/)
-This is CTANGLE (Version 3.64 [p20])\n
+This is CTANGLE (Version 3.64 [p21])\n
 ;
 MSG_OVERFLOW_CT26 (/0/)
 token
@@ -297,7 +298,7 @@ MSG_STATS_CT95_5 (/0/)
 ; Messages displayed in CWEAVE.W and CWEAVE.CH
 ;
 MSG_BANNER_CW1 (/0/)
-This is CWEAVE (Version 3.64 [p20])\n
+This is CWEAVE (Version 3.64 [p21])\n
 ;
 MSG_OVERFLOW_CW21 (/0/)
 cross-reference

@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64 [p20]).
+% This file is part of CWEBbin (Version 3.64 [p21]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated March 9, 2002 by Andreas Scherer.
+% This README file was last updated October 29, 2005 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000 Andreas Scherer
+% Copyright (C) 1993-2000,2005 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -33,7 +33,7 @@
 % Please send comments, suggestions, etc., related to changes specific
 % for this modified distribution CWEBbin, especially language catalog
 % translations to andreas.scherer@pobox.com.
-% Postal address: Andreas Scherer, Rochusstraﬂe 22-24, 52062 Aachen, Germany.
+% Postal address: Andreas Scherer, Eichendorffstraﬂe 2, 10115 Berlin, Germany.
 
 %%% WHAT IS THIS STUFF? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -107,7 +107,7 @@ GENERAL CONTRIBUTION:
 ./cweav-patch.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w
 ./cwebman.ch			change file for cwebman.tex
-./README.p20			the current file
+./README.p21			the current file
 ./wmerg-ansi.ch			change file for wmerge.w
 ./wmerg-extensions.ch		change file for wmerge.w
 ./wmerg-memory.ch		change file for wmerge.w
@@ -429,11 +429,11 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-March 9, 2002.
+Octobre 29, 2005.
 
 Andreas Scherer
-Rochusstraﬂe 22-24
-52062 Aachen, Germany
-<andreas.scherer@pobox.com>
+Eichendorffstraﬂe 2
+10115 Berlin, Germany
+<andreas_tug@freenet.de>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

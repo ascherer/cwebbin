@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, May 25, 2000.
+Changes for COMMON.H by Andreas Scherer, October 29, 2005.
 
 This set of changes converts the COMMON.H module into ANSI-C and C++ code.
 All functions are declared in prototypical form.  At several places
@@ -8,6 +8,12 @@ default pointer type in ANSI-C.
 This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.47
+@d not_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
+@y
+@d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
+@z
 
 @x l.79
 @d length(c) (c+1)->byte_start-(c)->byte_start /* the length of a name */

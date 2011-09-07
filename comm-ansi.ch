@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, May 13, 1995.
+Changes for COMMON.W by Andreas Scherer, October 29, 2005.
 
 This set of changes converts the COMMON.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -11,11 +11,22 @@ as well to bump the revision information.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
+@x l.44
+@s not_eq normal @q unreserve a C++ keyword @>
+@y
+@z
+
 @x l.89
 void
 common_init()
 @y
 void common_init(void)
+@z
+
+@x l.129
+@d not_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
+@y
+@d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @z
 
 @x l.172

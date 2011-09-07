@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, May 13, 1995.
+Changes for CWEAVE.W by Andreas Scherer, October 29, 2005.
 
 This set of changes converts the CWEAVE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -10,6 +10,11 @@ This is a standalone change file, although CWEAV-PATCH.CH should be applied
 as well to bump the revision information.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
+
+@x l.54
+@s not_eq normal @q unreserve a C++ keyword @>
+@y
+@z
 
 @x l.73
 @ We predeclare several standard system functions here instead of including
@@ -175,6 +180,12 @@ get_next() /* produces the next input token */
 static eight_bits get_next(void) /* produces the next input token */
 {
   eight_bits c; /* the current character */
+@z
+
+@x l.795
+  case '!': if (*loc=='=') compress(not_eq); break;
+@y
+  case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
 @x l.934
@@ -491,13 +502,19 @@ static void C_parse(eight_bits spec_ctrl)
   /* creates scraps from \CEE/ tokens */
 @z
 
-@x l.3289
+@x l.3301
+case not_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
+@y
+case non_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
+@z
+
+@x l.3421
 void app_cur_id();
 @y
 void app_cur_id(boolean);
 @z
 
-@x l.3292
+@x l.3424
 void
 app_cur_id(scrapping)
 boolean scrapping; /* are we making this into a scrap? */

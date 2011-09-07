@@ -137,10 +137,10 @@ SOURCE=cweave.w
 InputPath=cweave.w
 
 "cweave.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-	tie -c comm-p20.hch common.h comm-ansi.hch comm-extensions.hch comm-memory.hch comm-translation.hch comm-output.hch 
-	tie -m comm-p20.h common.h comm-p20.hch 
-	tie -c cweav-p20.ch cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-memory.ch cweav-translation.ch cweav-output.ch 
-	ctangle cweave.w cweav-p20.ch cweave.cxx 
+	tie -c comm-p21.hch common.h comm-ansi.hch comm-extensions.hch comm-memory.hch comm-translation.hch comm-output.hch 
+	tie -m comm-p21.h common.h comm-p21.hch 
+	tie -c cweav-p21.ch cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-memory.ch cweav-translation.ch cweav-output.ch 
+	ctangle cweave.w cweav-p21.ch cweave.cxx 
 	
 # End Custom Build
 
@@ -150,10 +150,10 @@ InputPath=cweave.w
 InputPath=cweave.w
 
 "cweave.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-	tie -c comm-p20.hch common.h comm-ansi.hch comm-extensions.hch comm-memory.hch comm-translation.hch comm-output.hch 
-	tie -m comm-p20.h common.h comm-p20.hch 
-	tie -c cweav-p20.ch cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-memory.ch cweav-translation.ch cweav-output.ch 
-	ctangle cweave.w cweav-p20.ch cweave.cxx 
+	tie -c comm-p21.hch common.h comm-ansi.hch comm-extensions.hch comm-memory.hch comm-translation.hch comm-output.hch 
+	tie -m comm-p21.h common.h comm-p21.hch 
+	tie -c cweav-p21.ch cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-memory.ch cweav-translation.ch cweav-output.ch 
+	ctangle cweave.w cweav-p21.ch cweave.cxx 
 	
 # End Custom Build
 

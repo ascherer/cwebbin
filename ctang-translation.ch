@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, May 9, 1995.
+Changes for CTANGLE.W by Andreas Scherer, October 29, 2005.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests.  By editing the
@@ -11,7 +11,7 @@ CTANG-EXTENSIONS.CH, CTANG-MEMORY.CH to be applied as well.
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 @x l.186 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [p20])\n"
+@d banner "This is CTANGLE (Version 3.64 [p21])\n"
 @y
 @d banner get_string(MSG_BANNER_CT1)
 @z

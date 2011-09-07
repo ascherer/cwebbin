@@ -129,8 +129,8 @@ SOURCE=.\examples\wmerge.w
 InputPath=.\examples\wmerge.w
 
 "wmerge.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-	tie -c wmerg-p20.ch examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch 
-	ctangle examples/wmerge.w wmerg-p20.ch wmerge.cxx 
+	tie -c wmerg-p21.ch examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch 
+	ctangle examples/wmerge.w wmerg-p21.ch wmerge.cxx 
 	
 # End Custom Build
 
@@ -140,8 +140,8 @@ InputPath=.\examples\wmerge.w
 InputPath=.\examples\wmerge.w
 
 "wmerge.cxx" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
-	tie -c wmerg-p20.ch examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch 
-	ctangle examples/wmerge.w wmerg-p20.ch wmerge.cxx 
+	tie -c wmerg-p21.ch examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch 
+	ctangle examples/wmerge.w wmerg-p21.ch wmerge.cxx 
 	
 # End Custom Build
 

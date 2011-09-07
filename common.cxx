@@ -14,7 +14,7 @@
 /*:8*//*22:*/
 #line 471 "common.w"
 
-#line 257 "comm-p20.ch"
+#line 268 "comm-p21.ch"
 #include <stddef.h>  
 #include <signal.h>  
 #include <stdlib.h>  
@@ -31,12 +31,12 @@ char separators[]= "://";
 #line 473 "common.w"
 
 /*:22*//*81:*/
-#line 1013 "comm-p20.ch"
+#line 1024 "comm-p21.ch"
 
 #include <string.h> 
 
 /*:81*//*90:*/
-#line 1135 "comm-p20.ch"
+#line 1146 "comm-p21.ch"
 
 #ifdef _AMIGA
 #include <proto/exec.h> 
@@ -68,7 +68,7 @@ typedef char*STRPTR;
 #define plus_plus 013
 #define minus_minus 01
 #define minus_gt 031
-#define not_eq 032
+#define non_eq 032
 #define lt_eq 034
 #define gt_eq 035
 #define eq_eq 036
@@ -187,7 +187,7 @@ boolean program;
 /*:2*//*7:*/
 #line 159 "common.w"
 
-#line 44 "comm-p20.ch"
+#line 55 "comm-p21.ch"
 char*buffer;
 char*buffer_end;
 char*limit;
@@ -198,7 +198,7 @@ char*loc;
 #line 214 "common.w"
 
 int include_depth;
-#line 79 "comm-p20.ch"
+#line 90 "comm-p21.ch"
 FILE**file;
 FILE*change_file;
 char**file_name;
@@ -215,12 +215,12 @@ boolean web_file_open= 0;
 /*:10*//*20:*/
 #line 418 "common.w"
 
-#line 192 "comm-p20.ch"
+#line 203 "comm-p21.ch"
 typedef unsigned char eight_bits;
 typedef unsigned short sixteen_bits;
 #line 420 "common.w"
 sixteen_bits section_count;
-#line 199 "comm-p20.ch"
+#line 210 "comm-p21.ch"
 boolean*changed_section;
 #line 422 "common.w"
 boolean change_pending;
@@ -247,7 +247,7 @@ char Ilk;
 }dummy;
 
 /*:40*//*55:*/
-#line 682 "comm-p20.ch"
+#line 693 "comm-p21.ch"
 
 void*equiv_or_xref;
 #line 1064 "common.w"
@@ -257,7 +257,7 @@ void*equiv_or_xref;
 
 }name_info;
 typedef name_info*name_pointer;
-#line 364 "comm-p20.ch"
+#line 375 "comm-p21.ch"
 char*byte_mem;
 char*byte_mem_end;
 name_pointer name_dir;
@@ -270,12 +270,12 @@ name_pointer name_dir_end;
 name_pointer name_ptr;
 char*byte_ptr;
 
-#line 380 "comm-p20.ch"
+#line 391 "comm-p21.ch"
 /*:29*//*32:*/
 #line 644 "common.w"
 
 typedef name_pointer*hash_pointer;
-#line 412 "comm-p20.ch"
+#line 423 "comm-p21.ch"
 hash_pointer hash;
 hash_pointer hash_end;
 #line 648 "common.w"
@@ -291,14 +291,14 @@ int history= spotless;
 
 int argc;
 char**argv;
-#line 837 "comm-p20.ch"
+#line 848 "comm-p21.ch"
 char*C_file_name;
 char*tex_file_name;
 char*idx_file_name;
 char*scn_file_name;
 char*check_file_name;
 char*use_language;
-#line 848 "comm-p20.ch"
+#line 859 "comm-p21.ch"
 boolean flags[256];
 #line 1228 "common.w"
 
@@ -308,13 +308,13 @@ boolean flags[256];
 FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
-#line 953 "comm-p20.ch"
+#line 964 "comm-p21.ch"
 FILE*scn_file;
 FILE*check_file;
 #line 1375 "common.w"
 FILE*active_file;
 
-#line 970 "comm-p20.ch"
+#line 981 "comm-p21.ch"
 /*:77*/
 #line 61 "common.w"
 
@@ -325,13 +325,13 @@ int phase;
 /*:3*//*11:*/
 #line 240 "common.w"
 
-#line 98 "comm-p20.ch"
+#line 109 "comm-p21.ch"
 char*change_buffer;
 #line 242 "common.w"
 char*change_limit;
 
 /*:11*//*85:*/
-#line 1085 "comm-p20.ch"
+#line 1096 "comm-p21.ch"
 
 char*include_path;
 char*p,*path_prefix,*next_path_prefix;
@@ -342,51 +342,51 @@ char*p,*path_prefix,*next_path_prefix;
 /*33:*/
 #line 650 "common.w"
 
-#line 419 "comm-p20.ch"
+#line 430 "comm-p21.ch"
 extern int names_match(name_pointer,char*,size_t,eight_bits);
 #line 652 "common.w"
 
 /*:33*//*38:*/
 #line 703 "common.w"
 
-#line 457 "comm-p20.ch"
+#line 468 "comm-p21.ch"
 extern void init_p(name_pointer,eight_bits);
 #line 705 "common.w"
 
 /*:38*//*46:*/
 #line 852 "common.w"
 
-#line 524 "comm-p20.ch"
+#line 535 "comm-p21.ch"
 extern void init_node(name_pointer);
 #line 854 "common.w"
 
 /*:46*//*53:*/
 #line 1017 "common.w"
 
-#line 647 "comm-p20.ch"
+#line 658 "comm-p21.ch"
 static int section_name_cmp(char**,int,name_pointer);
 #line 1019 "common.w"
 
 /*:53*//*57:*/
 #line 1092 "common.w"
 
-#line 689 "comm-p20.ch"
+#line 700 "comm-p21.ch"
 extern void err_print(char*);
 #line 1094 "common.w"
 
 /*:57*//*60:*/
 #line 1140 "common.w"
 
-#line 704 "comm-p20.ch"
+#line 715 "comm-p21.ch"
 extern int wrap_up(void);
 extern void print_stats(void);
 #line 1143 "common.w"
 
-#line 715 "comm-p20.ch"
+#line 726 "comm-p21.ch"
 /*:60*//*63:*/
 #line 1173 "common.w"
 
-#line 779 "comm-p20.ch"
+#line 790 "comm-p21.ch"
 extern void fatal(char*,char*);
 extern void overflow(char*);
 #line 1175 "common.w"
@@ -394,12 +394,12 @@ extern void overflow(char*);
 /*:63*//*69:*/
 #line 1251 "common.w"
 
-#line 872 "comm-p20.ch"
+#line 883 "comm-p21.ch"
 static void scan_args(void);
 #line 1253 "common.w"
 
 /*:69*//*82:*/
-#line 1020 "comm-p20.ch"
+#line 1031 "comm-p21.ch"
 
 boolean get_line(void);
 name_pointer add_section_name(name_pointer,int,char*,char*,int);
@@ -414,7 +414,7 @@ void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
 /*:82*//*83:*/
-#line 1035 "comm-p20.ch"
+#line 1046 "comm-p21.ch"
 
 static boolean set_path(char*,char*);
 static int input_ln(FILE*);
@@ -423,9 +423,9 @@ static void check_change(void);
 static void prime_the_change_buffer(void);
 #line 1417 "common.w"
 
-#line 1046 "comm-p20.ch"
+#line 1057 "comm-p21.ch"
 /*:83*//*89:*/
-#line 1121 "comm-p20.ch"
+#line 1132 "comm-p21.ch"
 
 void catch_break(int);
 
@@ -436,22 +436,22 @@ void catch_break(int);
 /*:1*//*4:*/
 #line 89 "common.w"
 
-#line 25 "comm-p20.ch"
+#line 30 "comm-p21.ch"
 void common_init(void)
 #line 92 "common.w"
 {
-#line 31 "comm-p20.ch"
+#line 36 "comm-p21.ch"
 /*87:*/
-#line 1106 "comm-p20.ch"
+#line 1117 "comm-p21.ch"
 
 if(signal(SIGINT,&catch_break)==SIG_ERR)
 exit(EXIT_FAILURE);
 
 /*:87*/
-#line 31 "comm-p20.ch"
+#line 36 "comm-p21.ch"
 ;
 /*30:*/
-#line 388 "comm-p20.ch"
+#line 399 "comm-p21.ch"
 
 alloc_object(buffer,long_buf_size,char);
 buffer_end= buffer+buf_size-2;
@@ -477,7 +477,7 @@ name_ptr->byte_start= byte_mem;
 /*:30*//*34:*/
 #line 655 "common.w"
 
-#line 425 "comm-p20.ch"
+#line 436 "comm-p21.ch"
 alloc_object(hash,hash_size,name_pointer);
 hash_end= hash+hash_size-1;
 for(h= hash;h<=hash_end;*h++= NULL);
@@ -494,17 +494,17 @@ alloc_object(scn_file_name,max_file_name_length,char);
 root= NULL;
 
 /*:41*//*86:*/
-#line 1089 "comm-p20.ch"
+#line 1100 "comm-p21.ch"
 
 alloc_object(include_path,max_path_length+2,char);
 strcpy(include_path,"");
 
 /*:86*/
-#line 32 "comm-p20.ch"
+#line 37 "comm-p21.ch"
 ;
 #ifdef _AMIGA
 /*91:*/
-#line 1158 "comm-p20.ch"
+#line 1169 "comm-p21.ch"
 
 if(LocaleBase= (struct Library*)OpenLibrary(
 (unsigned char*)"locale.library",38L)){
@@ -516,12 +516,12 @@ AppStrings[i].as_Str= GetCatalogStr(catalog,i,AppStrings[i].as_Str);
 }
 
 /*:91*/
-#line 34 "comm-p20.ch"
+#line 39 "comm-p21.ch"
 ;
 #endif
 #line 94 "common.w"
 /*68:*/
-#line 855 "comm-p20.ch"
+#line 866 "comm-p21.ch"
 
 show_banner= show_happiness= show_progress= indent_param_decl= order_decl_stmt= 1;
 use_language= "";
@@ -531,7 +531,7 @@ use_language= "";
 #line 94 "common.w"
 ;
 /*78:*/
-#line 970 "comm-p20.ch"
+#line 981 "comm-p21.ch"
 
 scan_args();
 if(program==ctangle){
@@ -565,7 +565,7 @@ fatal(get_string(MSG_FATAL_CO78),check_file_name);
 /*:4*//*9:*/
 #line 172 "common.w"
 
-#line 54 "comm-p20.ch"
+#line 65 "comm-p21.ch"
 static int input_ln(
 FILE*fp)
 #line 175 "common.w"
@@ -578,7 +578,7 @@ while(k<=buffer_end&&(c= getc(fp))!=EOF&&c!='\n')
 if((*(k++)= c)!=' ')limit= k;
 if(k> buffer_end)
 if((c= getc(fp))!=EOF&&c!='\n'){
-#line 61 "comm-p20.ch"
+#line 72 "comm-p21.ch"
 ungetc(c,fp);loc= buffer;err_print(get_string(MSG_ERROR_CO9));
 #line 185 "common.w"
 
@@ -591,7 +591,7 @@ return(1);
 /*:9*//*12:*/
 #line 251 "common.w"
 
-#line 105 "comm-p20.ch"
+#line 116 "comm-p21.ch"
 static void prime_the_change_buffer(void)
 #line 254 "common.w"
 {
@@ -608,7 +608,7 @@ if(xisupper(buffer[1]))buffer[1]= tolower(buffer[1]);
 if(buffer[1]=='x')break;
 if(buffer[1]=='y'||buffer[1]=='z'||buffer[1]=='i'){
 loc= buffer+2;
-#line 111 "comm-p20.ch"
+#line 122 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO13));
 #line 276 "common.w"
 
@@ -624,7 +624,7 @@ err_print(get_string(MSG_ERROR_CO13));
 do{
 change_line++;
 if(!input_ln(change_file)){
-#line 117 "comm-p20.ch"
+#line 128 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO14));
 #line 287 "common.w"
 
@@ -639,7 +639,7 @@ return;
 #line 292 "common.w"
 
 {
-#line 124 "comm-p20.ch"
+#line 135 "comm-p21.ch"
 change_limit= change_buffer+(ptrdiff_t)(limit-buffer);
 strncpy(change_buffer,buffer,(size_t)(limit-buffer+1));
 #line 296 "common.w"
@@ -653,7 +653,7 @@ strncpy(change_buffer,buffer,(size_t)(limit-buffer+1));
 /*:12*//*16:*/
 #line 320 "common.w"
 
-#line 132 "comm-p20.ch"
+#line 143 "comm-p21.ch"
 static void check_change(void)
 
 #line 323 "common.w"
@@ -668,7 +668,7 @@ if(!change_pending)changed_section[section_count]= 1;
 while(1){
 changing= 1;print_where= 1;change_line++;
 if(!input_ln(change_file)){
-#line 139 "comm-p20.ch"
+#line 150 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO16_1));
 #line 335 "common.w"
 
@@ -681,7 +681,7 @@ char xyz_code= xisupper(buffer[1])?tolower(buffer[1]):buffer[1];
 #line 358 "common.w"
 
 if(xyz_code=='x'||xyz_code=='z'){
-#line 151 "comm-p20.ch"
+#line 162 "comm-p21.ch"
 loc= buffer+2;err_print(get_string(MSG_ERROR_CO17_1));
 #line 361 "common.w"
 
@@ -690,7 +690,7 @@ else if(xyz_code=='y'){
 if(n> 0){
 loc= buffer+2;
 printf("\n! Hmm... %d ",n);
-#line 157 "comm-p20.ch"
+#line 168 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO17_2));
 #line 368 "common.w"
 
@@ -707,7 +707,7 @@ return;
 #line 292 "common.w"
 
 {
-#line 124 "comm-p20.ch"
+#line 135 "comm-p21.ch"
 change_limit= change_buffer+(ptrdiff_t)(limit-buffer);
 strncpy(change_buffer,buffer,(size_t)(limit-buffer+1));
 #line 296 "common.w"
@@ -719,7 +719,7 @@ strncpy(change_buffer,buffer,(size_t)(limit-buffer+1));
 changing= 0;cur_line++;
 while(!input_ln(cur_file)){
 if(include_depth==0){
-#line 145 "comm-p20.ch"
+#line 156 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO16_2));
 #line 349 "common.w"
 
@@ -734,12 +734,12 @@ if(lines_dont_match)n++;
 /*:16*//*18:*/
 #line 378 "common.w"
 
-#line 164 "comm-p20.ch"
+#line 175 "comm-p21.ch"
 void reset_input(void)
 #line 381 "common.w"
 {
 limit= buffer;loc= buffer+1;buffer[0]= ' ';
-#line 171 "comm-p20.ch"
+#line 182 "comm-p21.ch"
 include_depth= 0;cur_line= 0;change_line= 0;
 /*19:*/
 #line 393 "common.w"
@@ -747,20 +747,20 @@ include_depth= 0;cur_line= 0;change_line= 0;
 if((web_file= fopen(web_file_name,"r"))==NULL){
 strcpy(web_file_name,alt_web_file_name);
 if((web_file= fopen(web_file_name,"r"))==NULL)
-#line 178 "comm-p20.ch"
+#line 189 "comm-p21.ch"
 fatal(get_string(MSG_FATAL_CO19_1),web_file_name);
 #line 398 "common.w"
 }
 
 
 web_file_open= 1;
-#line 185 "comm-p20.ch"
+#line 196 "comm-p21.ch"
 if((change_file= fopen(change_file_name,"r"))==NULL)
 fatal(get_string(MSG_FATAL_CO19_2),change_file_name);
 #line 404 "common.w"
 
 /*:19*/
-#line 172 "comm-p20.ch"
+#line 183 "comm-p21.ch"
 ;
 #line 385 "common.w"
 change_depth= include_depth;
@@ -771,7 +771,7 @@ limit= buffer;loc= buffer+1;buffer[0]= ' ';input_has_ended= 0;
 /*:18*//*21:*/
 #line 426 "common.w"
 
-#line 205 "comm-p20.ch"
+#line 216 "comm-p21.ch"
 boolean get_line(void)
 #line 428 "common.w"
 {
@@ -782,7 +782,7 @@ if(changing&&include_depth==change_depth)
 {
 change_line++;
 if(!input_ln(change_file)){
-#line 330 "comm-p20.ch"
+#line 341 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO25_1));
 #line 541 "common.w"
 
@@ -800,7 +800,7 @@ if(buffer[0]=='@'){
 if(xisupper(buffer[1]))buffer[1]= tolower(buffer[1]);
 if(buffer[1]=='x'||buffer[1]=='y'){
 loc= buffer+2;
-#line 336 "comm-p20.ch"
+#line 347 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO25_2));
 #line 557 "common.w"
 
@@ -846,14 +846,14 @@ if(buffer[0]=='@'&&(buffer[1]=='i'||buffer[1]=='I')){
 loc= buffer+2;*limit= '"';
 while(*loc==' '||*loc=='\t')loc++;
 if(loc>=limit){
-#line 211 "comm-p20.ch"
+#line 222 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO21_1));
 #line 443 "common.w"
 
 goto restart;
 }
 if(include_depth>=max_include_depth-1){
-#line 217 "comm-p20.ch"
+#line 228 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO21_2));
 #line 448 "common.w"
 
@@ -881,7 +881,7 @@ if((cur_file= fopen(cur_file_name,"r"))!=NULL){
 cur_line= 0;print_where= 1;
 goto restart;
 }
-#line 298 "comm-p20.ch"
+#line 309 "comm-p21.ch"
 if(0==set_path(include_path,getenv("CWEBINPUTS"))){
 include_depth--;goto restart;
 }
@@ -903,7 +903,7 @@ if((next_path_prefix= strchr(path_prefix,PATH_SEPARATOR))!=NULL)
 path_prefix= next_path_prefix+1;
 else break;
 }
-#line 324 "comm-p20.ch"
+#line 335 "comm-p21.ch"
 include_depth--;err_print(get_string(MSG_ERROR_CO23));goto restart;
 #line 518 "common.w"
 }
@@ -915,18 +915,18 @@ include_depth--;err_print(get_string(MSG_ERROR_CO23));goto restart;
 return 1;
 }
 
-#line 232 "comm-p20.ch"
+#line 243 "comm-p21.ch"
 /*:21*//*26:*/
 #line 569 "common.w"
 
-#line 346 "comm-p20.ch"
+#line 357 "comm-p21.ch"
 void check_complete(void){
 if(change_limit!=change_buffer){
 strncpy(buffer,change_buffer,(size_t)(change_limit-change_buffer+1));
 limit= buffer+(ptrdiff_t)(change_limit-change_buffer);
 #line 575 "common.w"
 changing= 1;change_depth= include_depth;loc= buffer;
-#line 355 "comm-p20.ch"
+#line 366 "comm-p21.ch"
 err_print(get_string(MSG_ERROR_CO26));
 #line 577 "common.w"
 
@@ -936,7 +936,7 @@ err_print(get_string(MSG_ERROR_CO26));
 /*:26*//*35:*/
 #line 660 "common.w"
 
-#line 442 "comm-p20.ch"
+#line 453 "comm-p21.ch"
 name_pointer id_lookup(
 char*first,
 char*last,
@@ -948,7 +948,7 @@ int h;
 int l;
 name_pointer p;
 if(last==NULL)for(last= first;*last!='\0';last++);
-#line 451 "comm-p20.ch"
+#line 462 "comm-p21.ch"
 l= (int)(last-first);
 #line 673 "common.w"
 /*36:*/
@@ -977,7 +977,7 @@ p->link= hash[h];hash[h]= p;
 if(p==name_ptr)/*39:*/
 #line 706 "common.w"
 {
-#line 464 "comm-p20.ch"
+#line 475 "comm-p21.ch"
 if(byte_ptr+l> byte_mem_end)overflow(get_string(MSG_OVERFLOW_CO39_1));
 if(name_ptr>=name_dir_end)overflow(get_string(MSG_OVERFLOW_CO39_2));
 #line 709 "common.w"
@@ -995,7 +995,7 @@ return(p);
 /*:35*//*42:*/
 #line 764 "common.w"
 
-#line 473 "comm-p20.ch"
+#line 484 "comm-p21.ch"
 void print_section_name(name_pointer p)
 #line 768 "common.w"
 {
@@ -1004,7 +1004,7 @@ name_pointer q= p+1;
 while(p!=name_dir){
 ss= (p+1)->byte_start-1;
 if(*ss==' '&&ss>=s){
-#line 481 "comm-p20.ch"
+#line 492 "comm-p21.ch"
 term_write(s,(size_t)(ss-s));p= q->link;q= p;
 }else{
 term_write(s,(size_t)(ss+1-s));p= name_dir;q= NULL;
@@ -1018,7 +1018,7 @@ if(q)term_write("...",3);
 /*:42*//*43:*/
 #line 783 "common.w"
 
-#line 492 "comm-p20.ch"
+#line 503 "comm-p21.ch"
 void sprint_section_name(char*dest,name_pointer p)
 #line 788 "common.w"
 {
@@ -1031,7 +1031,7 @@ p= q->link;q= p;
 }else{
 ss++;p= name_dir;
 }
-#line 498 "comm-p20.ch"
+#line 509 "comm-p21.ch"
 strncpy(dest,s,(size_t)(ss-s)),dest+= ss-s;
 #line 799 "common.w"
 s= p->byte_start;
@@ -1042,7 +1042,7 @@ s= p->byte_start;
 /*:43*//*44:*/
 #line 804 "common.w"
 
-#line 506 "comm-p20.ch"
+#line 517 "comm-p21.ch"
 void print_prefix_name(name_pointer p)
 #line 808 "common.w"
 {
@@ -1055,7 +1055,7 @@ if(s+l<(p+1)->byte_start)term_write("...",3);
 /*:44*//*45:*/
 #line 825 "common.w"
 
-#line 514 "comm-p20.ch"
+#line 525 "comm-p21.ch"
 static int web_strcmp(
 char*j,
 int j_len,
@@ -1075,7 +1075,7 @@ else return greater;
 /*:45*//*47:*/
 #line 855 "common.w"
 
-#line 536 "comm-p20.ch"
+#line 547 "comm-p21.ch"
 name_pointer add_section_name(
 name_pointer par,
 int c,
@@ -1086,9 +1086,9 @@ int ispref)
 {
 name_pointer p= name_ptr;
 char*s= first_chunk(p);
-#line 547 "comm-p20.ch"
+#line 558 "comm-p21.ch"
 int name_len= (int)(last-first)+ispref;
-#line 554 "comm-p20.ch"
+#line 565 "comm-p21.ch"
 if(s+name_len> byte_mem_end)overflow(get_string(MSG_OVERFLOW_CO39_1));
 if(name_ptr+1>=name_dir_end)overflow(get_string(MSG_OVERFLOW_CO39_2));
 #line 869 "common.w"
@@ -1110,7 +1110,7 @@ return par==NULL?(root= p):c==less?(par->llink= p):(par->rlink= p);
 /*:47*//*48:*/
 #line 884 "common.w"
 
-#line 566 "comm-p20.ch"
+#line 577 "comm-p21.ch"
 void extend_section_name(
 name_pointer p,
 char*first,
@@ -1120,16 +1120,16 @@ int ispref)
 {
 char*s;
 name_pointer q= p+1;
-#line 576 "comm-p20.ch"
+#line 587 "comm-p21.ch"
 int name_len= (int)(last-first)+ispref;
-#line 582 "comm-p20.ch"
+#line 593 "comm-p21.ch"
 if(name_ptr>=name_dir_end)overflow(get_string(MSG_OVERFLOW_CO39_2));
 #line 896 "common.w"
 while(q->link!=name_dir)q= q->link;
 q->link= name_ptr;
 s= name_ptr->byte_start;
 name_ptr->link= name_dir;
-#line 588 "comm-p20.ch"
+#line 599 "comm-p21.ch"
 if(s+name_len> byte_mem_end)overflow(get_string(MSG_OVERFLOW_CO39_1));
 #line 901 "common.w"
 (++name_ptr)->byte_start= byte_ptr= s+name_len;
@@ -1140,7 +1140,7 @@ if(ispref)*(byte_ptr-1)= ' ';
 /*:48*//*49:*/
 #line 912 "common.w"
 
-#line 597 "comm-p20.ch"
+#line 608 "comm-p21.ch"
 name_pointer section_lookup(
 char*first,char*last,
 int ispref)
@@ -1152,7 +1152,7 @@ name_pointer q= NULL;
 name_pointer r= NULL;
 name_pointer par= NULL;
 
-#line 605 "comm-p20.ch"
+#line 616 "comm-p21.ch"
 int name_len= (int)(last-first)+1;
 #line 925 "common.w"
 /*50:*/
@@ -1166,7 +1166,7 @@ par= p;
 p= (c==less?p->llink:p->rlink);
 }else{
 if(r!=NULL){
-#line 614 "comm-p20.ch"
+#line 625 "comm-p21.ch"
 printf(get_string(MSG_ERROR_CO50_1));
 
 print_prefix_name(p);
@@ -1203,7 +1203,7 @@ switch(section_name_cmp(&first,name_len,r)){
 
 case prefix:
 if(!ispref){
-#line 623 "comm-p20.ch"
+#line 634 "comm-p21.ch"
 printf(get_string(MSG_ERROR_CO52_1));
 #line 975 "common.w"
 
@@ -1217,7 +1217,7 @@ case extension:if(!ispref||first<=last)
 extend_section_name(r,first,last+1,ispref);
 return r;
 case bad_extension:
-#line 629 "comm-p20.ch"
+#line 640 "comm-p21.ch"
 printf(get_string(MSG_ERROR_CO52_2));
 #line 987 "common.w"
 
@@ -1225,7 +1225,7 @@ print_section_name(r);
 err_print(">");
 return r;
 default:
-#line 638 "comm-p20.ch"
+#line 649 "comm-p21.ch"
 printf(get_string(MSG_ERROR_CO52_3));
 
 print_prefix_name(r);
@@ -1244,7 +1244,7 @@ return r;
 /*:49*//*54:*/
 #line 1020 "common.w"
 
-#line 656 "comm-p20.ch"
+#line 667 "comm-p21.ch"
 static int section_name_cmp(
 char**pfirst,
 int len,
@@ -1263,7 +1263,7 @@ else ispref= 0,ss++,q= name_dir;
 switch(c= web_strcmp(first,len,s,ss-s)){
 case equal:if(q==name_dir)
 if(ispref){
-#line 665 "comm-p20.ch"
+#line 676 "comm-p21.ch"
 *pfirst= first+(ptrdiff_t)(ss-s);
 #line 1039 "common.w"
 return extension;
@@ -1272,7 +1272,7 @@ else return(q->byte_start==(q+1)->byte_start)?equal:prefix;
 case extension:
 if(!ispref)return bad_extension;
 first+= ss-s;
-#line 671 "comm-p20.ch"
+#line 682 "comm-p21.ch"
 if(q!=name_dir){len-= (int)(ss-s);s= q->byte_start;r= q;continue;}
 #line 1046 "common.w"
 *pfirst= first;return extension;
@@ -1284,7 +1284,7 @@ default:return c;
 /*:54*//*58:*/
 #line 1095 "common.w"
 
-#line 697 "comm-p20.ch"
+#line 708 "comm-p21.ch"
 void err_print(char*s)
 #line 1099 "common.w"
 {
@@ -1319,18 +1319,18 @@ update_terminal;mark_error;
 /*:58*//*61:*/
 #line 1150 "common.w"
 
-#line 733 "comm-p20.ch"
+#line 744 "comm-p21.ch"
 int wrap_up(void){
 #line 1152 "common.w"
 putchar('\n');
 if(show_stats)
 print_stats();
-#line 739 "comm-p20.ch"
+#line 750 "comm-p21.ch"
 /*62:*/
 #line 1160 "common.w"
 
 switch(history){
-#line 766 "comm-p20.ch"
+#line 777 "comm-p21.ch"
 case spotless:
 if(show_happiness)printf(get_string(MSG_HAPPINESS_CO62));break;
 case harmless_message:
@@ -1343,11 +1343,11 @@ printf(get_string(MSG_FATAL_CO62));
 }
 
 /*:62*/
-#line 739 "comm-p20.ch"
+#line 750 "comm-p21.ch"
 ;
 #ifdef _AMIGA
 /*92:*/
-#line 1172 "comm-p20.ch"
+#line 1183 "comm-p21.ch"
 
 if(LocaleBase){
 CloseCatalog(catalog);
@@ -1355,12 +1355,12 @@ CloseLibrary(LocaleBase);
 }
 
 /*:92*/
-#line 741 "comm-p20.ch"
+#line 752 "comm-p21.ch"
 ;
 #endif
-#line 749 "comm-p20.ch"
+#line 760 "comm-p21.ch"
 /*93:*/
-#line 1181 "comm-p20.ch"
+#line 1192 "comm-p21.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1369,7 +1369,7 @@ if(check_file_name)
 remove(check_file_name);
 
 /*:93*/
-#line 749 "comm-p20.ch"
+#line 760 "comm-p21.ch"
 
 switch(history){
 case harmless_message:return(RETURN_WARN);break;
@@ -1381,7 +1381,7 @@ default:return(RETURN_OK);
 }
 
 /*:61*//*64:*/
-#line 788 "comm-p20.ch"
+#line 799 "comm-p21.ch"
 void fatal(char*s,char*t)
 #line 1182 "common.w"
 {
@@ -1391,11 +1391,11 @@ history= fatal_message;exit(wrap_up());
 }
 
 /*:64*//*65:*/
-#line 796 "comm-p20.ch"
+#line 807 "comm-p21.ch"
 void overflow(char*t)
 #line 1193 "common.w"
 {
-#line 802 "comm-p20.ch"
+#line 813 "comm-p21.ch"
 printf(get_string(MSG_FATAL_CO65),t);fatal("","");
 #line 1195 "common.w"
 }
@@ -1404,7 +1404,7 @@ printf(get_string(MSG_FATAL_CO65),t);fatal("","");
 /*:65*//*70:*/
 #line 1254 "common.w"
 
-#line 879 "comm-p20.ch"
+#line 890 "comm-p21.ch"
 static void scan_args(void)
 #line 1257 "common.w"
 {
@@ -1422,7 +1422,7 @@ if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*74:*/
 {
 if(**argv=='-')flag_change= 0;
 else flag_change= 1;
-#line 913 "comm-p20.ch"
+#line 924 "comm-p21.ch"
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
 if(*dot_pos=='l'){
 use_language= ++dot_pos;
@@ -1433,13 +1433,13 @@ flags[*dot_pos]= flag_change;
 #line 1350 "common.w"
 }
 
-#line 935 "comm-p20.ch"
+#line 946 "comm-p21.ch"
 /*:74*/
 #line 1266 "common.w"
 
 else{
 s= name_pos= *argv;dot_pos= NULL;
-#line 889 "comm-p20.ch"
+#line 900 "comm-p21.ch"
 while(*s){
 if(*s=='.')dot_pos= s++;
 else if(*s==DIR_SEPARATOR||*s==DEVICE_SEPARATOR||*s=='/')
@@ -1454,7 +1454,7 @@ if(!found_web)/*71:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*76:*/
-#line 947 "comm-p20.ch"
+#line 958 "comm-p21.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1487,7 +1487,7 @@ if(strcmp(*argv,"-")==0)found_change= -1;
 else{
 if(s-*argv> max_file_name_length-4)
 /*76:*/
-#line 947 "comm-p20.ch"
+#line 958 "comm-p21.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1511,7 +1511,7 @@ else if(!found_out)/*73:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*76:*/
-#line 947 "comm-p20.ch"
+#line 958 "comm-p21.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1540,7 +1540,7 @@ found_out= 1;
 #line 1277 "common.w"
 
 else/*75:*/
-#line 935 "comm-p20.ch"
+#line 946 "comm-p21.ch"
 
 {
 if(program==ctangle)
@@ -1550,14 +1550,14 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 
 #line 1363 "common.w"
 
-#line 947 "comm-p20.ch"
+#line 958 "comm-p21.ch"
 /*:75*/
 #line 1278 "common.w"
 ;
 }
 }
 if(!found_web)/*75:*/
-#line 935 "comm-p20.ch"
+#line 946 "comm-p21.ch"
 
 {
 if(program==ctangle)
@@ -1567,11 +1567,11 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 
 #line 1363 "common.w"
 
-#line 947 "comm-p20.ch"
+#line 958 "comm-p21.ch"
 /*:75*/
 #line 1281 "common.w"
 ;
-#line 901 "comm-p20.ch"
+#line 912 "comm-p21.ch"
 #ifdef _DEV_NULL
 if(found_change<=0)strcpy(change_file_name,_DEV_NULL);
 #else
@@ -1582,7 +1582,7 @@ if(found_change<=0)strcpy(change_file_name,"/dev/null");
 }
 
 /*:70*//*84:*/
-#line 1055 "comm-p20.ch"
+#line 1066 "comm-p21.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
@@ -1609,7 +1609,7 @@ free_object(string);return(1);
 }
 
 /*:84*//*88:*/
-#line 1114 "comm-p20.ch"
+#line 1125 "comm-p21.ch"
 
 void catch_break(int)
 {

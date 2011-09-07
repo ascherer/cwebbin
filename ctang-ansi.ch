@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, May 9, 1995.
+Changes for CTANGLE.W by Andreas Scherer, October 29, 2005.
 
 This set of changes converts the CTANGLE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -10,6 +10,11 @@ This is a standalone change file, although CTANG-PATCH.CH should be applied
 as well to bump the revision information.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
+
+@x l.49
+@s not_eq normal @q unreserve a C++ keyword @>
+@y
+@z
 
 @x l.69
 @ We predeclare several standard system functions here instead of including
@@ -166,6 +171,12 @@ eight_bits cur_char;
 static void out_char(eight_bits cur_char)
 @z
 
+@x l.690
+case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
+@y
+case non_eq: C_putc('!'); C_putc('='); out_state=normal; break;
+@z
+
 @x l.807
 eight_bits
 skip_ahead() /* skip to next control code */
@@ -185,6 +196,12 @@ eight_bits
 get_next() /* produces the next input token */
 @y
 static eight_bits get_next(void) /* produces the next input token */
+@z
+
+@x l.969
+  case '!': if (*loc=='=') compress(not_eq); break;
+@y
+  case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
 @x l.1196

@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, WMERG-P20.CH, is part of CWEBBIN (Version 3.64 [p20]).
+This file, WMERG-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
 It is a changefile for WMERGE.W, Version 3.64.
 
-Technically, WMERG-P20.CH is constructed from a multitude of separate
+Technically, WMERG-P21.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
 (like this introduction) are removed from the final output, so
 WMERG-PATCH.CH is the place to look up the development history.
@@ -29,7 +29,7 @@ The following copyright notice extends to this changefile only, not to
 the masterfile WMERGE.W.
 
 Copyright (C) 1991-1993 Hans-Hermann Bode
-Copyright (C) 1993-1999 Andreas Scherer
+Copyright (C) 1993-1999,2005 Andreas Scherer
 Copyright (C) 1994 Barry Schwartz
 
 Permission is granted to make and distribute verbatim copies of this
@@ -114,6 +114,7 @@ p19 2 January 2001 AS Updated for patch level [p19].
 Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
 p20 9 March 2002 AS Update for patch level [p20].
+p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 ------------------------------------------------------------------------------
 @x l.86
 @:caddr_t}{\bf caddr_t@>
@@ -130,7 +131,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Defi...@>=
-const char Version[] = "$VER: WMerge 3.64 [p20] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: WMerge 3.64 [p21] ("__DATE__", "__TIME__")\n";
 
 @* Index.
 @z

@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, May 12, 1995.
+Changes for CWEAVE.W by Andreas Scherer, October 29, 2005.
 
 This set of changes translates all string values written by the CWEB module
 CWEAVE.W in case of errors or information requests.  By editing the
@@ -11,7 +11,7 @@ CWEAV-EXTENSIONS.CH, CWEAV-MEMORY.CH to be applied as well.
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 @x l.64
-@d banner "This is CWEAVE (Version 3.64 [p20])\n"
+@d banner "This is CWEAVE (Version 3.64 [p21])\n"
 @y
 @d banner get_string(MSG_BANNER_CW1)
 @z
