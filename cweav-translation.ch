@@ -11,7 +11,7 @@ CWEAV-EXTENSIONS.CH, CWEAV-MEMORY.CH to be applied as well.
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 @x l.64
-@d banner "This is CWEAVE (Version 3.61 [p19])\n"
+@d banner "This is CWEAVE (Version 3.64 [p20])\n"
 @y
 @d banner get_string(MSG_BANNER_CW1)
 @z

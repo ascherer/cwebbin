@@ -1,5 +1,5 @@
 ;
-## version $VER: CWEB.catalog 1.16 (02.01.2001)
+## version $VER: CWEB.catalog 1.17 (09.03.2002)
 ## codeset 0
 ## language deutsch
 ;
@@ -38,6 +38,7 @@
 ;             22. Januar 2000: Neuer Patchlevel [p17] (V1.14)
 ;             25. Juli 2000: Neuer Patchlevel [p18] (V1.15)
 ;             2. Januar 2001: Neuer Patchlevel [p19] (V1.16)
+;             9. März 2002: Neuer Patchlevel [p20] (V1.17)
 ;
 ; Copyright (c) 1993 Andreas Scherer
 ;
@@ -229,8 +230,8 @@ MSG_FATAL_CO85
 ; ! Memory allocation failure
 ;
 MSG_BANNER_CT1
-Dies ist CTANGLE (Version 3.62 [p19])\n
-; This is CTANGLE (Version 3.62 [p19])\n
+Dies ist CTANGLE (Version 3.64 [p20])\n
+; This is CTANGLE (Version 3.64 [p20])\n
 ;
 MSG_OVERFLOW_CT26
 Token
@@ -377,8 +378,8 @@ MSG_STATS_CT95_5
 ; %ld tokens (out of %ld)\n
 ;
 MSG_BANNER_CW1
-Dies ist CWEAVE (Version 3.61 [p19])\n
-; This is CWEAVE (Version 3.61 [p19])\n
+Dies ist CWEAVE (Version 3.64 [p20])\n
+; This is CWEAVE (Version 3.64 [p20])\n
 ;
 MSG_OVERFLOW_CW21
 Querverweise

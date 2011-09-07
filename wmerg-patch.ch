@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, WMERG-P19.CH, is part of CWEBBIN (Version 3.63 [p19]).
-It is a changefile for WMERGE.W, Version 3.63.
+This file, WMERG-P20.CH, is part of CWEBBIN (Version 3.64 [p20]).
+It is a changefile for WMERGE.W, Version 3.64.
 
-Technically, WMERG-P19.CH is constructed from a multitude of separate
+Technically, WMERG-P20.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
 (like this introduction) are removed from the final output, so
 WMERG-PATCH.CH is the place to look up the development history.
@@ -110,6 +110,10 @@ Version 3.61 --- Don Knuth, Silvio Levy, July 2000
 
 p18 25 July 2000 AS Updated for patch level [p18].
 p19 2 January 2001 AS Updated for patch level [p19].
+
+Version 3.64 --- Don Knuth, Silvio Levy, February 2002
+
+p20 9 March 2002 AS Update for patch level [p20].
 ------------------------------------------------------------------------------
 @x l.86
 @:caddr_t}{\bf caddr_t@>
@@ -126,7 +130,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Defi...@>=
-const char Version[] = "$VER: WMerge 3.61 [p19] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: WMerge 3.64 [p20] ("__DATE__", "__TIME__")\n";
 
 @* Index.
 @z

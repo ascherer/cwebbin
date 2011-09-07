@@ -24,6 +24,7 @@
 % Version 3.5 [p17] --- Andreas Scherer, December 1999
 % Version 3.61 [p18] --- Andreas Scherer, July 2000
 % Version 3.63 [p19] --- Andreas Scherer, January 2001
+% Version 3.64 [p20] --- Andreas Scherer, March 2002
 
 % french translations --- Denis Roegel, 18 September 1994
 
@@ -75,18 +76,6 @@
   \if L\lr\else\null\vfill\eject\fi % finish the current page
   \parfillskip 0pt plus 1fil
   \def\grouptitle{NOMS DES SECTIONS}
-  \ifacro \def\outsecname{Noms des sections} \let\Xpdf\X \fi
-  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb
-    \pdfoutline goto name {NOS} count -\secno {\outsecname}
-    \def\X##1:##2\X{\Xpdf##1:##2\X
-      \firstsecno##1.\toks0{##2}\pdfoutline goto num \the\toksA {\the\toks0}}
-  \else\ifpdf
-    \special{pdf: outline -1 << /Title (\outsecname)
-      /Dest [ @thispage /FitH @ypos ] >>}
-    \def\X##1:##2\X{\Xpdf##1:##2\X
-      \firstsecno##1.\toks0{##2} \special{pdf: outline 0 << /Title
-        (\the\toks0) /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
-  \fi\fi
   \let\topsecno=\nullsec
   \message{Noms des sections:}
   \output={\normaloutput\page\lheader\rheader}
@@ -97,6 +86,20 @@
   \def\U{\note{Utilis\'e dans la section}} % crossref for use of a section
   \def\Us{\note{Utilis\'e dans les sections}} % crossref for uses of a section
   \def\I{\par\hangindent 2em}\let\*=*
+  \ifacro \def\outsecname{Noms des sections} \let\Xpdf\X
+  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb
+    \pdfoutline goto name {NOS} count -\secno {\outsecname}
+    \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      \pdfoutline goto num \the\toksA \expandafter{\the\toksE}}
+  \else\ifpdf
+    \special{pdf: outline -1 << /Title (\outsecname)
+      /Dest [ @thispage /FitH @ypos ] >>}
+    \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      \special{pdf: outline 0 << /Title (\the\toksE)
+        /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
+  \fi\fi\fi
   \readsections}
 \def\con{\par\vfill\eject % finish the section names
 % \ifodd\pageno\else\titletrue\null\vfill\eject\fi % for duplex printers

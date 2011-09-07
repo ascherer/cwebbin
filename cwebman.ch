@@ -1,6 +1,6 @@
 								-*-Web-*-
-This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.63 [p19]).  It is a
-changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.61, that
+This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [p20]).  It is a
+changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
@@ -47,6 +47,7 @@ a17	13 Aug 1998 AS Updated for CWEB 3.42.
 a18	31 Dec 1999 AS Updated for CWEB 3.5.
 a19	25 Jul 2000 AS Updated for CWEB 3.61.
 a20	02 Jan 2001 AS Updated for CWEB 3.63.
+a21	09 Mar 2002 AS Updated for CWEB 3.64.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -57,15 +58,15 @@ Use the already changed macro file.  Also we will need special characters.
 @z
 ------------------------------------------------------------------------------
 @x l.37
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.63)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.63 [p19])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [p20])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
-\vskip 18pt\centerline{(Version 3.63 --- January 2001)}
+\vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(Version 3.63 [p19] --- January 2001)}
+\vskip 18pt\centerline{(Version 3.64 [p20] --- March 2002)}
 @z
 ------------------------------------------------------------------------------
 @x l.873
@@ -161,7 +162,7 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @z
 ------------------------------------------------------------------------------
 Also relate to this changed macro file and to the German version.
-@x l.1417
+@x l.1491
 \def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
 \section Appendix B: The \.{cwebmac.tex} file.
 This is the file that extends ``plain \TEX/'' format in order to support the
@@ -169,10 +170,12 @@ features needed by the output of \.{CWEAVE}.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input cwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input cwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 @y
@@ -183,10 +186,12 @@ features needed by the output of \.{CWEAVE}.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input cwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input cwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 \def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
@@ -195,10 +200,12 @@ Some of the macros in \.{cwebmac.tex} are changed to give better results.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input Xcwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input Xcwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 \def\runninghead{ANHANG B --- MACROS F\"UR DIE FORMATIERUNG}
@@ -208,10 +215,12 @@ zur Unterst\"utzung der Ausgabe von \.{CWEAVE}.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input dcwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input dcwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 \def\runninghead{APPENDICE B --- MACRO PER IL FORMATTING}
@@ -221,10 +230,12 @@ caratteristiche richieste dall'output generato da \.{CWEAVE}.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input icwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input icwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 \def\runninghead{APPENDICE B --- MACROS POUR LE FORMATTING}
@@ -234,17 +245,19 @@ et soutient l'output de \.{CWEAVE}.
 
 \vskip6pt
 \begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\input fcwebmac}
-\verbatim
-!printmacs
-!endgroup
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input fcwebmac \endgroup}
+\printmacs
 \endgroup
 \vfill\eject
 @z
 ------------------------------------------------------------------------------
 @x l.1505
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.61)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.61 [p19])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [p20])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

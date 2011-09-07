@@ -1,5 +1,5 @@
 ;
-; LOCALE $VER: CWEB.CD 1.15 (02.01.2001)
+; LOCALE $VER: CWEB.CD 1.16 (09.03.2002)
 ;
 ; This is the description of all English strings used in the three
 ; modules COMMON.W, CTANGLE.W, CWEAVE.W and their related change files.
@@ -40,6 +40,7 @@
 ;          January 22, 2000:  Updated for patch level [p17].  (V1.13)
 ;          July 25, 2000:  Updated for patch level [p18].  (V1.14)
 ;          January 2, 2001:  Updated for patch level [p19].  (V1.15)
+;          March 9, 2002:  Updated for patch level [p20].  (V1.16)
 ;                       
 ; Copyright (c) 1993 Andreas Scherer
 ;
@@ -183,7 +184,7 @@ MSG_FATAL_CO85 (/0/)
 ; Messages displayed in CTANGLE.W and CTANGLE.CH:
 ;
 MSG_BANNER_CT1 (/0/)
-This is CTANGLE (Version 3.62 [p19])\n
+This is CTANGLE (Version 3.64 [p20])\n
 ;
 MSG_OVERFLOW_CT26 (/0/)
 token
@@ -296,7 +297,7 @@ MSG_STATS_CT95_5 (/0/)
 ; Messages displayed in CWEAVE.W and CWEAVE.CH
 ;
 MSG_BANNER_CW1 (/0/)
-This is CWEAVE (Version 3.61 [p19])\n
+This is CWEAVE (Version 3.64 [p20])\n
 ;
 MSG_OVERFLOW_CW21 (/0/)
 cross-reference

@@ -84,8 +84,8 @@ reset_input()
 void reset_input(void)
 @z
 
-@x l.316
-get_line() /* inputs the next line */
+@x l.318
+int get_line() /* inputs the next line */
 @y
 int get_line(void) /* inputs the next line */
 @z

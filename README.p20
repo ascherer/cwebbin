@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.63 [p19]).
+% This file is part of CWEBbin (Version 3.64 [p20]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated January 2, 2001 by Andreas Scherer.
+% This README file was last updated March 9, 2002 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -107,7 +107,7 @@ GENERAL CONTRIBUTION:
 ./cweav-patch.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w
 ./cwebman.ch			change file for cwebman.tex
-./README.p19			the current file
+./README.p20			the current file
 ./wmerg-ansi.ch			change file for wmerge.w
 ./wmerg-extensions.ch		change file for wmerge.w
 ./wmerg-memory.ch		change file for wmerge.w
@@ -191,7 +191,7 @@ SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [UNIX/Linux, GCC] The current setup of CWEBbin has been created on a Linux PC
-	running SuSE Linux 6.3 including the gcc 2.91.66 compiler and the
+	running SuSE Linux 7.2 including the gcc 2.95.3 compiler and the
 	teTeX 1.0 TeX system.  Any similar setup should also work.  All set?
 	-- Then proceed as follows:
 
@@ -275,9 +275,9 @@ So here are some words about the `special features':
 
    - [GENERAL] The complete source code can (or at least at some point of time
      could) be recompiled with SAS/C for AmigaOS, with Borland C/C++ 3.1 for
-     MS/DOS, with MS/VC++ 4.1 and for MS/Windows, and with CC, C89, and GCC
-     for UNIX without the need for further changes.  Well, to be honest, the
-     complete source code was only compiled using gcc 2.91.66 and msvc-- 6.0.
+     MS/DOS, with MS/VC++ 4.1 and 6.0 for MS/Windows, and with CC, C89, and
+     GCC for UNIX without the need for further changes.  Well, to be honest,
+     the complete source code was only compiled using gcc 2.95.3.
 
    - [GENERAL] The `+l' (or `-l') option with its argument `X' causes CWEAVE
      to prepend `X' to `cwebmac.tex' in the first line of the output file.
@@ -321,8 +321,8 @@ So here are some words about the `special features':
      German, and Italian strings are provided in the ./catalogs directory
      for non-localized operating systems.  On AmigaOS 2.1/3.0 localization is
      done with the help of language catalogs and the system `locale.library'.
-	  Default is (of course) English; catalogs descriptions for German and
-	  Italian are provided and other language catalogs can easily be added.
+     Default is (of course) English; catalogs descriptions for German and
+     Italian are provided and other language catalogs can easily be added.
 
    - [GENERAL] An algorithm for recursive `@i'nclude file search was adapted
      from the Web2c implementation of TeX and METAFONT.  The weave and tangle
@@ -429,7 +429,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-January 2, 2001.
+March 9, 2002.
 
 Andreas Scherer
 Rochusstraﬂe 22-24

@@ -1,15 +1,15 @@
-# This file, makefile.sas, is part of CWEBBIN (Version 3.63 [p19]).
+# This file, makefile.sas, is part of CWEBBIN (Version 3.64 [p20]).
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
 #
 # Modified for SAS/C++ 6.57 under AmigaOS 2.1 on an AMIGA 2000 by
 # Andreas Scherer <andreas.scherer@pobox.com>, March 1993
-# Last updated by Andreas Scherer, January 3, 2001.
+# Last updated by Andreas Scherer, March 9, 2002.
 # IMPORTANT NOTE: This installation was not tested.
 
 # Copyright (C) 1987,1990,1993,1998 Silvio Levy and Donald E. Knuth
 #
-# The following copyright notice extends to this Amiga Makefile only,
-# not to any part of the original CWEB distribution.
+# The following copyright notice extends to the changes in this Makefile
+# only, not to any part of the original CWEB distribution.
 #
 # Copyright (C) 1993-1999 Andreas Scherer
 
@@ -57,23 +57,23 @@ CATINCLUDE = catalogs/
 DESTPREF = c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
-CCHANGES = comm-p19.ch
+CCHANGES = comm-p20.ch
 
 # Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES = comm-p19.hch
+HCHANGES = comm-p20.hch
 
 # Set HPATCH to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH = comm-p19.h
+HPATCH = comm-p20.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
-TCHANGES = ctang-p19.ch
+TCHANGES = ctang-p20.ch
 
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
-WCHANGES = cweav-p19.ch
+WCHANGES = cweav-p20.ch
 
 # Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
-MCHANGES = wmerg-p19.ch
+MCHANGES = wmerg-p20.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
@@ -127,9 +127,10 @@ WMERGE = wmerge
 SOURCES = common.w common.h ctangle.w cweave.w prod.w examples/wmerge.w
 
 ORIGINAL = $(SOURCES) comm-amiga.ch comm-bs.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctangle.c \
-	cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch cweav-vms.ch \
+	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
+	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
+	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
+	cweav-vms.ch cweav-w32.ch \
 	cweb.1 cweb.el cwebmac.tex cwebman.tex Makefile \
 	makefile.bs README readme.ql c++lib.w \
         examples/extex.w examples/kspell.el examples/Makefile \
@@ -155,7 +156,7 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
-	cwebman.ch README.p19 Makefile.bcc Makefile.sas Makefile.unix \
+	cwebman.ch README.p20 Makefile.bcc Makefile.sas Makefile.unix \
 	comm-newpage.ch ctang-newpage.ch cweav-newpage.ch
 
 AREXX = arexx
@@ -370,7 +371,7 @@ clean:
 	$(RM) \#?.(o|lnk|bak|log|dvi|pdf|toc|idx|scn)
 	$(RM) common.tex cweave.tex cweave.$(EXTENSION) wmerge.$(EXTENSION)
 	$(RM) ctangle.tex cweave ctangle cwebmana.tex wmerge.tex wmerge
-	$(RM) \#?-p19.\#? \#?-doc.ch
+	$(RM) \#?-p20.\#? \#?-doc.ch
 
 # Install the new program versions where they can be found
 install: progs
@@ -386,15 +387,16 @@ install: progs
 remove-orig:
 	$(RM) $(SOURCES)
 	$(RM) comm-amiga.ch comm-bs.ch comm-mac.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctangle.c \
-	cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch cweav-vms.ch
+	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
+	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
+	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
+	cweav-vms.ch cweav-w32.ch
 	$(RM) cweb.1 cweb.el cwebmac.tex cwebman.tex \
 	Makefile makefile.bs README readme.ql c++lib.w
 	$(RM) examples/extex.w examples/kspell.el examples/Makefile \
 	examples/oemacs.el examples/oemacs.w examples/README
 	$(RM) examples/treeprint.w examples/wc.w examples/wc-dos.ch \
-	examples/wmerge.c examples/wmerg-pc.ch examples/wmer-os2.ch \
+	examples/wmerg-pc.ch examples/wmer-os2.ch \
 	examples/wordtest.w examples/xlib_types.w examples/xview_types.w
 
 # Remove the patch completely

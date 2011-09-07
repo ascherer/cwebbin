@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, CWEAV-P19.CH, is part of CWEBBIN (Version 3.63 [p19]).
-It is a changefile for CWEAVE.W, Version 3.61.
+This file, CWEAV-P20.CH, is part of CWEBBIN (Version 3.64 [p20]).
+It is a changefile for CWEAVE.W, Version 3.64.
 
-Technically, CWEAV-P19.CH is constructed from a multitude of separate
+Technically, CWEAV-P20.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
 (like this introduction) are removed from the final output, so
 CWEAV-PATCH.CH is the place to look up the development history.
@@ -161,17 +161,21 @@ Version 3.61 --- Don Knuth, Silvio Levy, May 2000
 
 p18 17 May 2000 AS Updated for patch level [p18].
 p19 2 January 2001 AS Updated for patch level [p19].
+
+Version 3.64 --- Don Knuth, Silvio Levy, February 2002
+
+p20 9 March 2002 AS Update for patch level [p20].
 ------------------------------------------------------------------------------
 @x l.30
-\def\title{CWEAVE (Version 3.61)}
+\def\title{CWEAVE (Version 3.64)}
 @y
-\def\title{CWEAVE (Version 3.61 [p19])}
+\def\title{CWEAVE (Version 3.64 [p20])}
 @z
 
 @x l.34
-  \centerline{(Version 3.61)}
+  \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.61 [p19])}
+  \centerline{(Version 3.64 [p20])}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -183,15 +187,15 @@ y
 z
 
 @x l.64
-@d banner "This is CWEAVE (Version 3.61)\n"
+@d banner "This is CWEAVE (Version 3.64)\n"
 @y
-@d banner "This is CWEAVE (Version 3.61 [p19])\n"
+@d banner "This is CWEAVE (Version 3.64 [p20])\n"
 @z
 
 @x l.139
 @i common.h
 @y
-@i comm-p19.h
+@i comm-p20.h
 @z
 
 @x l.226
@@ -221,7 +225,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CWeave 3.61 [p19] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: CWeave 3.64 [p20] ("__DATE__", "__TIME__")\n";
 
 @** Index.
 @z

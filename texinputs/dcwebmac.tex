@@ -24,6 +24,7 @@
 % Version 3.5 [p17] --- Andreas Scherer, December 1999
 % Version 3.61 [p18] --- Andreas Scherer, July 2000
 % Version 3.63 [p19] --- Andreas Scherer, January 2001
+% Version 3.64 [p20] --- Andreas Scherer, March 2002
 
 \ifx\undefined\documentclass\else\endinput\fi % LaTeX will use other macros
 
@@ -78,29 +79,30 @@
   \if L\lr\else\null\vfill\eject\fi % finish the current page
   \parfillskip 0pt plus 1fil
   \def\grouptitle{ABSCHNITTSNAMEN}
-  \ifacro \def\outsecname{Abschnittsnamen} \let\Xpdf\X \fi
-  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb
-    \pdfoutline goto name {NOS} count -\secno {\outsecname}
-    \def\X##1:##2\X{\Xpdf##1:##2\X
-      \firstsecno##1.\toks0{##2}\pdfoutline goto num \the\toksA {\the\toks0}}
-  \else\ifpdf
-    \special{pdf: outline -1 << /Title (\outsecname)
-      /Dest [ @thispage /FitH @ypos ] >>}
-    \def\X##1:##2\X{\Xpdf##1:##2\X
-      \firstsecno##1.\toks0{##2} \special{pdf: outline 0 << /Title
-        (\the\toks0) /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
-  \fi\fi
   \let\topsecno=\nullsec
   \message{Abschnittsnamen:}
   \output={\normaloutput\page\lheader\rheader}
   \setpage
   \def\note##1##2.{\quad{\eightrm##1~\ifacro{\pdfnote##2.}\else{##2}\fi.}}
   \def\Q{\note{Zitiert in Abschnitt}} % crossref for mention of a section
-  \def\Qs{\note{Zitiert in den Abschnitten}}
-    % crossref for mentions of a section
+  \def\Qs{\note{Zitiert in den Abschnitten}} % crossref for mentions of a section
   \def\U{\note{Verwendet in Abschnitt}} % crossref for use of a section
   \def\Us{\note{Verwendet in den Abschnitten}} % crossref for uses of a section
   \def\I{\par\hangindent 2em}\let\*=*
+  \ifacro \def\outsecname{Abschnittsnamen} \let\Xpdf\X
+  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb
+    \pdfoutline goto name {NOS} count -\secno {\outsecname}
+    \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      \pdfoutline goto num \the\toksA \expandafter{\the\toksE}}
+  \else\ifpdf
+    \special{pdf: outline -1 << /Title (\outsecname)
+      /Dest [ @thispage /FitH @ypos ] >>}
+    \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      \special{pdf: outline 0 << /Title (\the\toksE)
+        /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
+  \fi\fi\fi
   \readsections}
 \def\con{\par\vfill\eject % finish the section names
 % \ifodd\pageno\else\titletrue\null\vfill\eject\fi % for duplex printers

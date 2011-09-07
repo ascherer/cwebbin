@@ -183,7 +183,7 @@
 #define MSG_FATAL_CO85_STR "! Fehler bei der Speicherallokierung"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.62 [p19])\n"
+#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.64 [p20])\n"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "Token"
@@ -294,7 +294,7 @@
 #define MSG_STATS_CT95_5_STR "%ld Token (von %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.61 [p19])\n"
+#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.64 [p20])\n"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "Querverweise"

@@ -62,11 +62,11 @@ char *change_buffer; /* next line of |change_file| */
   static char *temp_file_name; 
 @z
 
-@x l.372
-  while (*loc!=' '&&*loc!='\t'&&*loc!='"'&&k<=cur_file_name_end) *k++=*loc++;
+@x l.375
+  if (*loc=='"') {
 @y
   alloc_object(temp_file_name,max_file_name_length,char);
-  while (*loc!=' '&&*loc!='\t'&&*loc!='"'&&k<=cur_file_name_end) *k++=*loc++;
+  if (*loc=='"') {
 @z
 
 @x l.578

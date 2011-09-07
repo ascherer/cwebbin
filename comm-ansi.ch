@@ -42,7 +42,7 @@ static void prime_the_change_buffer(void)
 @z
 
 @x l.293
-  change_limit=change_buffer-buffer+limit;
+  change_limit=change_buffer+(limit-buffer);
   strncpy(change_buffer,buffer,limit-buffer+1);
 @y
   change_limit=change_buffer+(ptrdiff_t)(limit-buffer);
