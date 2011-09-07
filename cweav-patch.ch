@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CWEAV-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
+This file, CWEAV-P21.CH, is part of CWEBBIN (Version 3.64 [22p]).
 It is a changefile for CWEAVE.W, Version 3.64.
 
 Technically, CWEAV-P21.CH is constructed from a multitude of separate
@@ -13,10 +13,10 @@ Authors and Contributors:
 
 (BOB) (bob@microprograms.com).
 
-(H2B) Hans-Hermann Bode, Universität Osnabrück,
+(H2B) Hans-Hermann Bode, UniversitÃ¤t OsnabrÃ¼ck,
   (hhbode@@dosuni1.rz.uni-osnabrueck.de or HHBODE@@DOSUNI1.BITNET).
 
-(GG) Giuseppe Ghibò,
+(GG) Giuseppe GhibÃ²,
   (ghibo@@galileo.polito.it).
 
 (KG) Klaus Guntermann, TH Darmstadt,
@@ -25,7 +25,7 @@ Authors and Contributors:
 (AS) Andreas Scherer, RWTH Aachen,
   (andreas.scherer@@pobox.com).
 
-(CS) Carsten Steger, Universität München,
+(CS) Carsten Steger, UniversitÃ¤t MÃ¼nchen,
   (carsten.steger@@informatik.tu-muenchen.de).
 
 (TW) Tomas Willis,
@@ -166,17 +166,18 @@ Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
 p20 9 March 2002 AS Update for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
+22p 18 August 2011 AS GCC patches for patch level [22p].
 ------------------------------------------------------------------------------
 @x l.30
 \def\title{CWEAVE (Version 3.64)}
 @y
-\def\title{CWEAVE (Version 3.64 [p21])}
+\def\title{CWEAVE (Version 3.64 [22p])}
 @z
 
 @x l.34
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [p21])}
+  \centerline{(Version 3.64 [22p])}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -190,7 +191,7 @@ z
 @x l.64
 @d banner "This is CWEAVE (Version 3.64)\n"
 @y
-@d banner "This is CWEAVE (Version 3.64 [p21])\n"
+@d banner "This is CWEAVE (Version 3.64 [22p])\n"
 @z
 
 @x l.107
@@ -202,7 +203,7 @@ z
 @x l.139
 @i common.h
 @y
-@i comm-p21.h
+@i comm-22p.h
 @z
 
 @x l.226
@@ -296,7 +297,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CWeave 3.64 [p21] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: CWeave 3.64 [22p] ("__DATE__", "__TIME__")\n";
 
 @** Index.
 @z

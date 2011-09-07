@@ -1,12 +1,12 @@
 ;
-## version $VER: CWEB.catalog 1.17 (29.10.2005)
+## version $VER: CWEB.catalog 1.18 (18.08.2011)
 ## codeset 0
 ## language italiano
 ;
 ; Questo file contiene tutte le stringhe presenti nei tre
 ; moduli COMMON.W, CTANGLE.W, CWEAVE.W e nei loro relativi change file.
-; PuÚ servire come punto di riferimento per traduzioni in altre lingue.
-; A tal proposito Ë necessaria la versione 2.1 o superiore di AmigaOS.
+; Pu√≤ servire come punto di riferimento per traduzioni in altre lingue.
+; A tal proposito √® necessaria la versione 2.1 o superiore di AmigaOS.
 ; Per creare il catalog per altre lingue, usare un programma tipo `CatComp'
 ; con la seguente linea di comando:
 ;
@@ -19,9 +19,9 @@
 ; Data: 6 Dicembre 1993 (Setup della versione 1.0)
 ;
 ; Autore: Andreas Scherer
-;         Eichendorffstraﬂe 2
-;         10115 Berlin, Germany
-;         <andreas_tug@freenet.de>
+;         Abt-Wolf-Stra√üe 17
+;         96215 Lichtenfels, Germany
+;         <andreas_tex@freenet.de>
 ;
 ; Modifiche: 18 gennaio 1994: Version information included. (V1.1)
 ;            13 maggio 1994:  Nuovo patch con allocazione dinamica della
@@ -39,19 +39,20 @@
 ;            02 gennaio 2001: Updated for patch level [p19].  (V1.15)
 ;            09 march 2002: Updated for patch level [p20].  (V1.16)
 ;            29 ottobre 2005: Updated for patch level [p21].  (V1.17)
+;            18 agosto 2011: Updated for patch level [22p].  (V1.18)
 ;
 ; Copyright (c) 1993 Andreas Scherer
 ;
-; Autore: Giuseppe GhibÚ <ghibo@galileo.polito.it>
+; Autore: Giuseppe Ghib√≤ <ghibo@galileo.polito.it>
 ;         Via Sestriere, 133
 ;         10090 C. Vica - Rivoli (TO), Italy
 ;
 ; 12.09.1994: This Italian catalog translation was submitted
-;             to Andreas Scherer by Giuseppe GhibÚ by e-mail
+;             to Andreas Scherer by Giuseppe Ghib√≤ by e-mail
 ;             for inclusion in the distribution.
 ;             Thank you very much, Giuseppe! (V1.0)
 ;
-; Copyright (c) 1994 Giuseppe GhibÚ
+; Copyright (c) 1994 Giuseppe Ghib√≤
 ;
 ; Permission is granted to make and distribute verbatim copies of this
 ; document provided that the copyright notice and this permission notice
@@ -85,7 +86,7 @@ MSG_ERROR_CO16_2
 ; ! CWEB file ended during a change
 ;
 MSG_ERROR_CO17_1
-! Dov'Ë il corrispondente @y?
+! Dov'√® il corrispondente @y?
 ; ! Where is the matching @y?
 ;
 MSG_ERROR_CO17_2
@@ -121,11 +122,11 @@ MSG_ERROR_CO25_1
 ; ! Change file ended without @z
 ;
 MSG_ERROR_CO25_2
-! Dov'Ë il corrispondente @z?
+! Dov'√® il corrispondente @z?
 ; ! Where is the matching @z?
 ;
 MSG_ERROR_CO26
-! C'Ë una voce nel change file che non corrisponde
+! C'√® una voce nel change file che non corrisponde
 ; ! Change file entry did not match
 ;
 MSG_OVERFLOW_CO39_1
@@ -145,7 +146,7 @@ MSG_ERROR_CO50_2
 ; >\n and <
 ;
 MSG_ERROR_CO52_1
-\n! Il nuovo nome Ë un prefisso per <
+\n! Il nuovo nome √® un prefisso per <
 ; \n! New name is a prefix of <
 ;
 MSG_ERROR_CO52_2
@@ -185,15 +186,15 @@ MSG_ERROR_CO62
 ; (Pardon me, but I think I spotted something wrong.)\n
 ;
 MSG_FATAL_CO62
-(Caro amico, si Ë verificato un errore importante.)\n
+(Caro amico, si √® verificato un errore importante.)\n
 ; (That was a fatal error, my friend.)\n
 ;
 MSG_FATAL_CO65
-\n! Spiacente, %s capacit‡ superata
+\n! Spiacente, %s capacit√† superata
 ; \n! Sorry, %s capacity exceeded
 ;
 MSG_FATAL_CO66
-! Questo non puÚ avvenire: 
+! Questo non pu√≤ avvenire: 
 ; ! This can't happen: 
 ;
 MSG_FATAL_CO73
@@ -233,8 +234,8 @@ MSG_FATAL_CO85
 ; ! Memory allocation failure
 ;
 MSG_BANNER_CT1
-Questo Ë CTANGLE (Versione 3.64 [p21])\n
-; This is CTANGLE (Version 3.64 [p21])\n
+Questo √® CTANGLE (Versione 3.64 [22p])\n
+; This is CTANGLE (Version 3.64 [22p])\n
 ;
 MSG_OVERFLOW_CT26
 token
@@ -253,7 +254,7 @@ file di output
 ; output files
 ;
 MSG_WARNING_CT42
-\n! Nessun testo di programma Ë stato specificato.
+\n! Nessun testo di programma √® stato specificato.
 ; \n! No program text was specified.
 ;
 MSG_PROGRESS_CT42_1
@@ -381,8 +382,8 @@ MSG_STATS_CT95_5
 ; %ld tokens (out of %ld)\n
 ;
 MSG_BANNER_CW1
-Questo Ë CWEAVE (Versione 3.64 [p21])\n
-; This is CWEAVE (Version 3.64 [p21])\n
+Questo √® CWEAVE (Versione 3.64 [22p])\n
+; This is CWEAVE (Version 3.64 [22p])\n
 ;
 MSG_OVERFLOW_CW21
 referimento incrociato
@@ -485,7 +486,7 @@ MSG_ERROR_CW214
 ; ! Improper format definition
 ;
 MSG_ERROR_CW217
-! » necessario un segno di = dopo il nome della sezione
+! √à necessario un segno di = dopo il nome della sezione
 ; ! You need an = sign after the section name
 ;
 MSG_ERROR_CW218

@@ -22,49 +22,49 @@
 #define MSG_ERROR_CO9_STR "! Eingabezeile zu lang"
 
 #define MSG_ERROR_CO13 1
-#define MSG_ERROR_CO13_STR "! Fehlendes @x in der Änderungsdatei"
+#define MSG_ERROR_CO13_STR "! Fehlendes @x in der Ã„nderungsdatei"
 
 #define MSG_ERROR_CO14 2
-#define MSG_ERROR_CO14_STR "! Änderungsdatei endete nach @x"
+#define MSG_ERROR_CO14_STR "! Ã„nderungsdatei endete nach @x"
 
 #define MSG_ERROR_CO16_1 3
-#define MSG_ERROR_CO16_1_STR "! Änderungsdatei endete vor @y"
+#define MSG_ERROR_CO16_1_STR "! Ã„nderungsdatei endete vor @y"
 
 #define MSG_ERROR_CO16_2 4
-#define MSG_ERROR_CO16_2_STR "! CWEB-Datei endete während einer Änderung"
+#define MSG_ERROR_CO16_2_STR "! CWEB-Datei endete wÃ¤hrend einer Ã„nderung"
 
 #define MSG_ERROR_CO17_1 5
-#define MSG_ERROR_CO17_1_STR "! Wo ist das zugehörige @y?"
+#define MSG_ERROR_CO17_1_STR "! Wo ist das zugehÃ¶rige @y?"
 
 #define MSG_ERROR_CO17_2 6
-#define MSG_ERROR_CO17_2_STR "der vorangegangenen Zeilen stimmen nicht überein"
+#define MSG_ERROR_CO17_2_STR "der vorangegangenen Zeilen stimmen nicht Ã¼berein"
 
 #define MSG_FATAL_CO19_1 7
-#define MSG_FATAL_CO19_1_STR "! Kann Eingabedatei nicht öffnen: "
+#define MSG_FATAL_CO19_1_STR "! Kann Eingabedatei nicht Ã¶ffnen: "
 
 #define MSG_FATAL_CO19_2 8
-#define MSG_FATAL_CO19_2_STR "! Kann Änderungsdatei nicht öffnen: "
+#define MSG_FATAL_CO19_2_STR "! Kann Ã„nderungsdatei nicht Ã¶ffnen: "
 
 #define MSG_ERROR_CO21_1 9
-#define MSG_ERROR_CO21_1_STR "! Name der Einfügedatei nicht angegeben"
+#define MSG_ERROR_CO21_1_STR "! Name der EinfÃ¼gedatei nicht angegeben"
 
 #define MSG_ERROR_CO21_2 10
-#define MSG_ERROR_CO21_2_STR "! Zu viele verschachtelte Einfügungen"
+#define MSG_ERROR_CO21_2_STR "! Zu viele verschachtelte EinfÃ¼gungen"
 
 #define MSG_ERROR_CO22 11
-#define MSG_ERROR_CO22_STR "! Name der Einfügedatei zu lang"
+#define MSG_ERROR_CO22_STR "! Name der EinfÃ¼gedatei zu lang"
 
 #define MSG_ERROR_CO23 12
-#define MSG_ERROR_CO23_STR "! Kann Einfügedatei nicht öffnen"
+#define MSG_ERROR_CO23_STR "! Kann EinfÃ¼gedatei nicht Ã¶ffnen"
 
 #define MSG_ERROR_CO25_1 13
-#define MSG_ERROR_CO25_1_STR "! Änderungsdatei endete ohne @z"
+#define MSG_ERROR_CO25_1_STR "! Ã„nderungsdatei endete ohne @z"
 
 #define MSG_ERROR_CO25_2 14
-#define MSG_ERROR_CO25_2_STR "! Wo ist das zugehörige @z?"
+#define MSG_ERROR_CO25_2_STR "! Wo ist das zugehÃ¶rige @z?"
 
 #define MSG_ERROR_CO26 15
-#define MSG_ERROR_CO26_STR "! Eintrag in der Änderungsdatei stimmt nicht überein"
+#define MSG_ERROR_CO26_STR "! Eintrag in der Ã„nderungsdatei stimmt nicht Ã¼berein"
 
 #define MSG_OVERFLOW_CO39_1 16
 #define MSG_OVERFLOW_CO39_1_STR "Byte-Speicher"
@@ -73,31 +73,31 @@
 #define MSG_OVERFLOW_CO39_2_STR "Bezeichner"
 
 #define MSG_ERROR_CO50_1 18
-#define MSG_ERROR_CO50_1_STR "\n! Mehrdeutiger Präfix: paßt zu <"
+#define MSG_ERROR_CO50_1_STR "\n! Mehrdeutiger PrÃ¤fix: paÃŸt zu <"
 
 #define MSG_ERROR_CO50_2 19
 #define MSG_ERROR_CO50_2_STR ">\n und <"
 
 #define MSG_ERROR_CO52_1 20
-#define MSG_ERROR_CO52_1_STR "\n! Neuer Name ist Präfix von <"
+#define MSG_ERROR_CO52_1_STR "\n! Neuer Name ist PrÃ¤fix von <"
 
 #define MSG_ERROR_CO52_2 21
 #define MSG_ERROR_CO52_2_STR "\n! Neuer Name erweitert <"
 
 #define MSG_ERROR_CO52_3 22
-#define MSG_ERROR_CO52_3_STR "\n! Abschnittname paßt nicht zu <"
+#define MSG_ERROR_CO52_3_STR "\n! Abschnittname paÃŸt nicht zu <"
 
 #define MSG_ERROR_CO52_4 23
-#define MSG_ERROR_CO52_4_STR ">,\n einer Abkürzung von <"
+#define MSG_ERROR_CO52_4_STR ">,\n einer AbkÃ¼rzung von <"
 
 #define MSG_ERROR_CO59_1 24
-#define MSG_ERROR_CO59_1_STR ". (Zeile %d der Änderungsdatei)\n"
+#define MSG_ERROR_CO59_1_STR ". (Zeile %d der Ã„nderungsdatei)\n"
 
 #define MSG_ERROR_CO59_2 25
 #define MSG_ERROR_CO59_2_STR ". (Zeile %d)\n"
 
 #define MSG_ERROR_CO59_3 26
-#define MSG_ERROR_CO59_3_STR ". (Zeile %d der Einfügedatei %s)\n"
+#define MSG_ERROR_CO59_3_STR ". (Zeile %d der EinfÃ¼gedatei %s)\n"
 
 #define MSG_HAPPINESS_CO62 27
 #define MSG_HAPPINESS_CO62_STR "(Keine Fehler gefunden.)\n"
@@ -109,10 +109,10 @@
 #define MSG_ERROR_CO62_STR "(Entschuldige bitte, aber ich glaube, etwas stimmt nicht.)\n"
 
 #define MSG_FATAL_CO62 30
-#define MSG_FATAL_CO62_STR "(Mensch, das war ein böser Fehler.)\n"
+#define MSG_FATAL_CO62_STR "(Mensch, das war ein bÃ¶ser Fehler.)\n"
 
 #define MSG_FATAL_CO65 31
-#define MSG_FATAL_CO65_STR "\n! Tut mir leid, Kapazität für %s überschritten"
+#define MSG_FATAL_CO65_STR "\n! Tut mir leid, KapazitÃ¤t fÃ¼r %s Ã¼berschritten"
 
 #define MSG_FATAL_CO66 32
 #define MSG_FATAL_CO66_STR "! Das kann nicht sein: "
@@ -125,7 +125,7 @@
 	"[{changefile[.ch]|-} [outfile[.c]]]\n" \
 	"Optionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\n" \
 	"b [+] Gib eine Startmeldung aus\n" \
-	"h [+] Bestätige einen fehlerfreien Lauf\n" \
+	"h [+] BestÃ¤tige einen fehlerfreien Lauf\n" \
 	"m [-] Aktiviere die ARexx-Kommunikation\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
 	"s [-] Melde die Verbrauchsstatistik\n"
@@ -135,7 +135,7 @@
 	"[{changefile[.ch]|-} [outfile[.c]]]\n" \
 	"Optionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\n" \
 	"b [+] Gib eine Startmeldung aus\n" \
-	"h [+] Bestätige einen fehlerfreien Lauf\n" \
+	"h [+] BestÃ¤tige einen fehlerfreien Lauf\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
 	"s [-] Melde die Verbrauchsstatistik\n"
 
@@ -144,46 +144,46 @@
 	"[{changefile[.ch]|-} [outfile[.tex]]]\nOptionen sind " \
 	"(+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\n" \
 	"b [+] Gib eine Startmeldung aus\n" \
-	"e [-] Schließe C-Material in \\PB-Klammern ein\n" \
-	"f [+] Erzwinge Zeilenumbrüche nach jeder Anweisung\n" \
-	"h [+] Bestätige einen fehlerfreien Lauf\n" \
-	"i [+] Rücke Parameterdeklarationen ein\n" \
-	"lX [ ] Verwende die Makros für Sprache X aus Xcwebmac.tex\n" \
+	"e [-] SchlieÃŸe C-Material in \\PB-Klammern ein\n" \
+	"f [+] Erzwinge ZeilenumbrÃ¼che nach jeder Anweisung\n" \
+	"h [+] BestÃ¤tige einen fehlerfreien Lauf\n" \
+	"i [+] RÃ¼cke Parameterdeklarationen ein\n" \
+	"lX [ ] Verwende die Makros fÃ¼r Sprache X aus Xcwebmac.tex\n" \
 	"m [-] Aktiviere die ARexx-Kommunikation\n" \
 	"o [+] Trenne Deklarationen und Anweisungen\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
 	"s [-] Melde die Verbrauchsstatistik\n" \
-	"x [+] Füge Indexe und Inhaltsverzeichnisse ein\n"
+	"x [+] FÃ¼ge Indexe und Inhaltsverzeichnisse ein\n"
 
 #define MSG_FATAL_CO75_4 37
 #define MSG_FATAL_CO75_4_STR "! Aufruf: cweave [Optionen] webfile[.w] " \
 	"[{changefile[.ch]|-} [outfile[.tex]]]\n" \
 	"Optionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\n" \
 	"b [+] Gib eine Startmeldung aus\n" \
-	"e [-] Schließe C-Material in \\PB-Klammern ein\n" \
-	"f [+] Erzwinge Zeilenumbrüche nach jeder Anweisung\n" \
-	"h [+] Bestätige einen fehlerfreien Lauf\n" \
-	"i [+] Rücke Parameterdeklarationen ein\n" \
-	"lX [ ] Verwende die Makros für Sprache X aus Xcwebmac.tex\n" \
+	"e [-] SchlieÃŸe C-Material in \\PB-Klammern ein\n" \
+	"f [+] Erzwinge ZeilenumbrÃ¼che nach jeder Anweisung\n" \
+	"h [+] BestÃ¤tige einen fehlerfreien Lauf\n" \
+	"i [+] RÃ¼cke Parameterdeklarationen ein\n" \
+	"lX [ ] Verwende die Makros fÃ¼r Sprache X aus Xcwebmac.tex\n" \
 	"o [+] Trenne Deklarationen und Anweisungen\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
 	"s [-] Melde die Verbrauchsstatistik\n" \
-	"x [+] Füge Indexe und Inhaltsverzeichnisse ein\n"
+	"x [+] FÃ¼ge Indexe und Inhaltsverzeichnisse ein\n"
 
 #define MSG_FATAL_CO76 38
 #define MSG_FATAL_CO76_STR "! Dateiname zu lang\n"
 
 #define MSG_FATAL_CO78 39
-#define MSG_FATAL_CO78_STR "! Kann Ausgabedatei nicht öffnen: "
+#define MSG_FATAL_CO78_STR "! Kann Ausgabedatei nicht Ã¶ffnen: "
 
 #define MSG_ERROR_CO82 40
-#define MSG_ERROR_CO82_STR "! Einfügepfad zu lang"
+#define MSG_ERROR_CO82_STR "! EinfÃ¼gepfad zu lang"
 
 #define MSG_FATAL_CO85 41
 #define MSG_FATAL_CO85_STR "! Fehler bei der Speicherallokierung"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.64 [p21])\n"
+#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "Token"
@@ -228,7 +228,7 @@
 #define MSG_ERROR_CT67_3_STR "\n! Zeichenkette zu lang: "
 
 #define MSG_ERROR_CT68_1 57
-#define MSG_ERROR_CT68_1_STR "! Verwende @l ausschließlich im Einführungsteil"
+#define MSG_ERROR_CT68_1_STR "! Verwende @l ausschlieÃŸlich im EinfÃ¼hrungsteil"
 
 #define MSG_ERROR_CT68_2 58
 #define MSG_ERROR_CT68_2_STR "! In Kontrolltexten sollten doppelte @ verwendet werden"
@@ -267,19 +267,19 @@
 #define MSG_ERROR_CT81_STR "! Unbekannte Escape-Sequenz"
 
 #define MSG_ERROR_CT85 70
-#define MSG_ERROR_CT85_STR "! Definition übergangen, muß mit einem Bezeichner anfangen"
+#define MSG_ERROR_CT85_STR "! Definition Ã¼bergangen, muÃŸ mit einem Bezeichner anfangen"
 
 #define MSG_ERROR_CT93 71
-#define MSG_ERROR_CT93_STR "! Im Einführungsteil sollten doppelte @ verwendet werden"
+#define MSG_ERROR_CT93_STR "! Im EinfÃ¼hrungsteil sollten doppelte @ verwendet werden"
 
 #define MSG_ERROR_CT94_1 72
-#define MSG_ERROR_CT94_1_STR "! Ungültige Hexadezimalzahl nach @l"
+#define MSG_ERROR_CT94_1_STR "! UngÃ¼ltige Hexadezimalzahl nach @l"
 
 #define MSG_ERROR_CT94_2 73
 #define MSG_ERROR_CT94_2_STR "! Ersetzungstext in @l zu lang"
 
 #define MSG_STATS_CT95_1 74
-#define MSG_STATS_CT95_1_STR "\nStatistik über den Speicherbedarf:\n"
+#define MSG_STATS_CT95_1_STR "\nStatistik Ã¼ber den Speicherbedarf:\n"
 
 #define MSG_STATS_CT95_2 75
 #define MSG_STATS_CT95_2_STR "%ld Namen (von %ld)\n"
@@ -294,7 +294,7 @@
 #define MSG_STATS_CT95_5_STR "%ld Token (von %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.64 [p21])\n"
+#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "Querverweise"
@@ -324,13 +324,13 @@
 #define MSG_WARNING_CW75_2_STR "\n! Nicht benutzt: <"
 
 #define MSG_WARNING_CW85 89
-#define MSG_WARNING_CW85_STR "\n! Zeile mußte umgebrochen werden (Ausgabezeile %d):\n"
+#define MSG_WARNING_CW85_STR "\n! Zeile muÃŸte umgebrochen werden (Ausgabezeile %d):\n"
 
 #define MSG_ERROR_CW92_1 90
 #define MSG_ERROR_CW92_1_STR "! Fehlende } in Kommentar"
 
 #define MSG_ERROR_CW92_2 91
-#define MSG_ERROR_CW92_2_STR "! Zusätzliche } in Kommentar"
+#define MSG_ERROR_CW92_2_STR "! ZusÃ¤tzliche } in Kommentar"
 
 #define MSG_ERROR_CW94 92
 #define MSG_ERROR_CW94_STR "! Unerlaubte Verwendung von @ in Kommentar"
@@ -366,13 +366,13 @@
 #define MSG_ERROR_CW209_2_STR "! Das geht nicht im TeX-Text"
 
 #define MSG_ERROR_CW213 103
-#define MSG_ERROR_CW213_STR "! Ungültige Makrodefinition"
+#define MSG_ERROR_CW213_STR "! UngÃ¼ltige Makrodefinition"
 
 #define MSG_ERROR_CW214 104
-#define MSG_ERROR_CW214_STR "! Ungültige Formatdefinition"
+#define MSG_ERROR_CW214_STR "! UngÃ¼ltige Formatdefinition"
 
 #define MSG_ERROR_CW217 105
-#define MSG_ERROR_CW217_STR "! Hinter dem Abschnittnamen muß ein = Zeichen stehen"
+#define MSG_ERROR_CW217_STR "! Hinter dem Abschnittnamen muÃŸ ein = Zeichen stehen"
 
 #define MSG_ERROR_CW218 106
 #define MSG_ERROR_CW218_STR "! Das geht nicht im C-Text"
@@ -381,10 +381,10 @@
 #define MSG_PROGRESS_CW225_STR "\nSchreibe den Index..."
 
 #define MSG_FATAL_CW225_1 108
-#define MSG_FATAL_CW225_1_STR "! Kann die Indexdatei nicht öffnen: "
+#define MSG_FATAL_CW225_1_STR "! Kann die Indexdatei nicht Ã¶ffnen: "
 
 #define MSG_FATAL_CW225_2 109
-#define MSG_FATAL_CW225_2_STR "! Kann die Abschnittdatei nicht öffnen: "
+#define MSG_FATAL_CW225_2_STR "! Kann die Abschnittdatei nicht Ã¶ffnen: "
 
 #define MSG_OVERFLOW_CW237 110
 #define MSG_OVERFLOW_CW237_STR "Sortieren"

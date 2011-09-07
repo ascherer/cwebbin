@@ -1,17 +1,17 @@
 								-*-Web-*-
-This file, CTANG-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
+This file, CTANG-P21.CH, is part of CWEBBIN (Version 3.64 [22p]).
 It is a changefile for CTANGLE.W, Version 3.64.
 
-Technically, CTANG-P21.CH is constructed from a multitude of separate
+Technically, CTANG-P22.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
 (like this introduction) are removed from the final output, so
 CTANG-PATCH.CH is the place to look up the development history.
 
 Authors and Contributors:
-(H2B) Hans-Hermann Bode, Universität Osnabrück,
+(H2B) Hans-Hermann Bode, UniversitÃ¤t OsnabrÃ¼ck,
   (hhbode@@dosuni1.rz.uni-osnabrueck.de or HHBODE@@DOSUNI1.BITNET).
 
-(GG) Giuseppe Ghibò,
+(GG) Giuseppe GhibÃ²,
   (ghibo@@galileo.polito.it).
 
 (KG) Klaus Guntermann, TH Darmstadt,
@@ -20,7 +20,7 @@ Authors and Contributors:
 (AS) Andreas Scherer, RWTH Aachen,
   (andreas.scherer@@pobox.com).
 
-(CS) Carsten Steger, Universität München,
+(CS) Carsten Steger, UniversitÃ¤t MÃ¼nchen,
   (carsten.steger@@informatik.tu-muenchen.de).
 
 (TW) Tomas Willis,
@@ -31,7 +31,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CTANGLE.W.
 
-Copyright (C) 1993-1995,1998,2000,2005 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2011 Andreas Scherer
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
 Permission is granted to make and distribute verbatim copies of this
@@ -151,17 +151,18 @@ Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
 p20 9 March 2002 AS Updated for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
+22p 18 August 2011 AS GCC patches for patch level [22p].
 ------------------------------------------------------------------------------
 @x l.27
 \def\title{CTANGLE (Version 3.64)}
 @y
-\def\title{CTANGLE (Version 3.64 [p21])}
+\def\title{CTANGLE (Version 3.64 [22p])}
 @z
 
 @x l.31
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [p21])}
+  \centerline{(Version 3.64 [22p])}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -175,7 +176,7 @@ z
 @x l.62
 @d banner "This is CTANGLE (Version 3.64)\n"
 @y
-@d banner "This is CTANGLE (Version 3.64 [p21])\n"
+@d banner "This is CTANGLE (Version 3.64 [22p])\n"
 @z
 
 @x l.100
@@ -187,7 +188,7 @@ z
 @x l.127
 @i common.h
 @y
-@i comm-p21.h
+@i comm-22p.h
 @z
 
 @x l.954
@@ -207,7 +208,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CTangle 3.64 [p21] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: CTangle 3.64 [22p] ("__DATE__", "__TIME__")\n";
 
 @** Index.
 @z

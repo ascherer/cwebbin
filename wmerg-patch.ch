@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, WMERG-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
+This file, WMERG-P21.CH, is part of CWEBBIN (Version 3.64 [22p]).
 It is a changefile for WMERGE.W, Version 3.64.
 
 Technically, WMERG-P21.CH is constructed from a multitude of separate
@@ -8,7 +8,7 @@ change files by applying Klaus Guntermann's TIE processor.  Any comments
 WMERG-PATCH.CH is the place to look up the development history.
 
 Authors and Contributors:
-(H2B) Hans-Hermann Bode, Universität Osnabrück,
+(H2B) Hans-Hermann Bode, UniversitÃ¤t OsnabrÃ¼ck,
   (hhbode@@dosuni1.rz.uni-osnabrueck.de or HHBODE@@DOSUNI1.BITNET).
 
 (KG) Klaus Guntermann, TH Darmstadt,
@@ -20,7 +20,7 @@ Authors and Contributors:
 (BS) Barry Schwartz
   (trashman@@crud.mn.org).
 
-(GG) Giuseppe Ghibò
+(GG) Giuseppe GhibÃ²
   (ghibo@@galileo.polito.it).
 
 This program is distributed WITHOUT ANY WARRANTY, express or implied.
@@ -115,6 +115,7 @@ Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
 p20 9 March 2002 AS Update for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
+22p 18 August 2011 AS ANSI C++ patches for patch level [22p].
 ------------------------------------------------------------------------------
 @x l.86
 @:caddr_t}{\bf caddr_t@>
@@ -137,7 +138,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Defi...@>=
-const char Version[] = "$VER: WMerge 3.64 [p21] ("__DATE__", "__TIME__")\n";
+const char Version[] = "$VER: WMerge 3.64 [22p] ("__DATE__", "__TIME__")\n";
 
 @* Index.
 @z

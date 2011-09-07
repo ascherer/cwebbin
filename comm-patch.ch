@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, COMM-P21.CH, is part of CWEBBIN (Version 3.64 [p21]).
+This file, COMM-P21.CH, is part of CWEBBIN (Version 3.64 [22p]).
 It is a changefile for COMMON.W, Version 3.64.
 
 Technically, COMM-P21.CH is constructed from a multitude of separate change
@@ -8,10 +8,10 @@ this introduction) are removed from the final output, so COMM-PATCH.CH is
 the place to look up the development history.
 
 Authors and Contributors:
-(H2B) Hans-Hermann Bode, Universität Osnabrück,
+(H2B) Hans-Hermann Bode, UniversitÃ¤t OsnabrÃ¼ck,
   (hhbode@@dosuni1.rz.uni-osnabrueck.de or HHBODE@@DOSUNI1.BITNET).
 
-(GG) Giuseppe Ghibò,
+(GG) Giuseppe GhibÃ²,
   (ghibo@@galileo.polito.it).
 
 (KG) Klaus Guntermann, TH Darmstadt,
@@ -23,7 +23,7 @@ Authors and Contributors:
 (BS) Barry Schwartz,
   (trashman@@crud.mn.org).
 
-(CS) Carsten Steger, Universität München,
+(CS) Carsten Steger, UniversitÃ¤t MÃ¼nchen,
   (carsten.steger@@informatik.tu-muenchen.de).
 
 (TW) Tomas Willis,
@@ -164,17 +164,18 @@ Version 3.64 --- Don Knuth, Silvio Ley, February 2002
 
 p20 9 March 2002 AS Update for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches to patch level [p21].
+22p 18 August 2011 AS GCC patches to patch level [22p].
 ------------------------------------------------------------------------------
 @x l.20
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
 @y
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [p21])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [22p])}
 @z
 
 @x l.25
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [p21])}
+  \centerline{(Version 3.64 [22p])}
 @z
 
 Activate this, if only the changed modules should be printed.

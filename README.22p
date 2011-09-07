@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64 [p21]).
+% This file is part of CWEBbin (Version 3.64 [22p]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated October 29, 2005 by Andreas Scherer.
+% This README file was last updated August 18, 2011 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -32,8 +32,8 @@
 
 % Please send comments, suggestions, etc., related to changes specific
 % for this modified distribution CWEBbin, especially language catalog
-% translations to andreas.scherer@pobox.com.
-% Postal address: Andreas Scherer, Eichendorffstraﬂe 2, 10115 Berlin, Germany.
+% translations to andreas_tex@freenet.de.
+% Postal address: Andreas Scherer, Abt-Wolf-Stra√üe 17, 96215 Lichtenfels, Germany.
 
 %%% WHAT IS THIS STUFF? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -41,9 +41,10 @@ CWEBbin is the ANSI-C/C++ implementation of Silvio Levy's and Donald Ervin
 Knuth's CWEB system, compiled and provided with changefiles for ANSI-C and
 makefiles for Borland C/C++ 3.1 (no longer actively supported), MS/VC++ 4.1
 (no longer actively supported) and 6.0, SAS/C++ 6.57 (no longer actively
-supported), and most of all UNIX-cc/g++.  Additional features differing from
-the original distribution are described further below.  General information is
-provided in the original README file shipped with the CWEB distribution.
+supported), and most of all UNIX-cc/g++ (currently 4.4.3).  Additional features
+differing from the original distribution are described further below.
+General information is provided in the original README file shipped with the
+CWEB distribution.
 
 CWEBbin started from the Amiga port of CWEB 2.8 by Carsten Steger.  Then it
 was merged with the CWEB-PC 3.0 distribution by Hans-Hermann Bode and Klaus
@@ -55,7 +56,7 @@ The distribution of CWEBbin consists of the additional files for this patch
 only.  The complete contents of the original distribution is a prerequisite.
 CWEB can be retrieved via anonymous ftp from
 
-	labrea.stanford.edu:/pub/cweb
+	ftp.cs.stanford.edu:/pub/cweb
 	CTAN:/tex-archive/web/cweb
 
 To apply this patched version of CWEB, extract the patch archive (yielding a
@@ -107,7 +108,7 @@ GENERAL CONTRIBUTION:
 ./cweav-patch.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w
 ./cwebman.ch			change file for cwebman.tex
-./README.p21			the current file
+./README.22p			the current file
 ./wmerg-ansi.ch			change file for wmerge.w
 ./wmerg-extensions.ch		change file for wmerge.w
 ./wmerg-memory.ch		change file for wmerge.w
@@ -191,8 +192,8 @@ SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [UNIX/Linux, GCC] The current setup of CWEBbin has been created on a Linux PC
-	running SuSE Linux 7.2 including the gcc 2.95.3 compiler and the
-	teTeX 1.0 TeX system.  Any similar setup should also work.  All set?
+	running Kubuntu Linux 10.04 including the gcc 4.4.3 compiler and the
+	TeXLive 2011 system.  Any similar setup should also work.  All set?
 	-- Then proceed as follows:
 
 	1. Check the entries in Makefile.unix for local conditions like a
@@ -288,7 +289,7 @@ So here are some words about the `special features':
      some modifications to the original `cwebmac.tex' file as described in the
      documentation.  At the time of writing there are  macro packages
      `dcwebmac.tex' by  Andreas Scherer for German users, `icwebmac.tex' by
-     Giuseppe GhibÚ for Italian users, and `fcwebmac.tex' by Denis B. Roegel
+     Giuseppe Ghib√≤ for Italian users, and `fcwebmac.tex' by Denis B. Roegel
      for French users.  These macro files translate all captions used by the
      CWEAVE processor into the respective languages and also include support
      for special characters like umlauts (diacritics) and some other
@@ -429,11 +430,11 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-Octobre 29, 2005.
+August 18, 2011.
 
 Andreas Scherer
-Eichendorffstraﬂe 2
-10115 Berlin, Germany
-<andreas_tug@freenet.de>
+Abt-Wolf-Stra√üe 17 
+96215 Lichtenfels, Germany
+<andreas_tex@freenet.de>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

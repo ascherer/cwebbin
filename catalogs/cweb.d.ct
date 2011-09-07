@@ -1,56 +1,57 @@
 ;
-## version $VER: CWEB.catalog 1.18 (29.10.2005)
+## version $VER: CWEB.catalog 1.19 (18.08.2011)
 ## codeset 0
 ## language deutsch
 ;
-; Dies sind die Übersetzungen der englischen Texte, die in den Modulen
-; COMMON.W, CTANGLE.W und CWEAVE.W und den zugehörigen Änderungsdateien
-; verwendet werden.  Hieraus läßt sich ein deutscher Katalog erstellen.
-; Zur Verwendung ist AmigaOS 2.1 oder höher notwendig.  Die Erzeugung
+; Dies sind die Ãœbersetzungen der englischen Texte, die in den Modulen
+; COMMON.W, CTANGLE.W und CWEAVE.W und den zugehÃ¶rigen Ã„nderungsdateien
+; verwendet werden.  Hieraus lÃ¤ÃŸt sich ein deutscher Katalog erstellen.
+; Zur Verwendung ist AmigaOS 2.1 oder hÃ¶her notwendig.  Die Erzeugung
 ; eines Systemkatalogs geschieht mit Hilfe von CatComp durch den Aufruf:
 ;
 ;     PROMPT> CatComp cweb.cd cweb.d.ct CATALOG deutsch/cweb.catalog
 ;
-; Diese Datei kann als Ausgangspunkt für Übersetzungen in andere Sprachen
-; dienen.  Sollte jemand so eine Übersetzung anfertigen, würde ich mich
-; über die Zusendung der CatalogTranslation freuen.
+; Diese Datei kann als Ausgangspunkt fÃ¼r Ãœbersetzungen in andere Sprachen
+; dienen.  Sollte jemand so eine Ãœbersetzung anfertigen, wÃ¼rde ich mich
+; Ã¼ber die Zusendung der CatalogTranslation freuen.
 ;
 ; Datum: 6. Dezember 1993 (Version 1.0 aufgestellt)
 ;
 ; Autor: Andreas Scherer
-;        Eichendorffstraße 2
-;        10115 Berlin, Deutschland
-;        <andreas_tug@freenet.de>
+;        Abt-Wolf-StraÃŸe 17
+;        96215 Lichtenfels, Deutschland
+;        <andreas_tex@freenet.de>
 ;
-; Änderungen: 18. Januar 1994: Versionsinformation eingebaut (V1.1)
+; Ã„nderungen: 18. Januar 1994: Versionsinformation eingebaut (V1.1)
 ;             13. Mai 1994:    Neuer Patch Level wegen der
 ;                              dynamischen Speicherallokierung (V1.2)
 ;             15. Juli 1994:   `+/- m'-Option vergessen (V1.3)
-;             12. August 1994: Geänderter Urheberrechtshinweis (V1.4)
+;             12. August 1994: GeÃ¤nderter Urheberrechtshinweis (V1.4)
 ;             24. August 1994: Neue Optionsliste (V1.5)
 ;             03. Dezember 1994: CWEB 3.3 (V1.7)
 ;             18. April 1995:  CWEB 3.4 (V1.8)
-;             25. März 1996: `Checksum' Information hinzugefügt (V1.9)
+;             25. MÃ¤rz 1996: `Checksum' Information hinzugefÃ¼gt (V1.9)
 ;             29. August 1996: Falsche Endung bei CWEAVE-Meldung (V1.10)
-;             11. März 1997: Neuer Patchlevel [p14] (V1.11)
+;             11. MÃ¤rz 1997: Neuer Patchlevel [p14] (V1.11)
 ;             13. August 1998: Neuer Patchlevel [p15] (V1.12)
 ;             14. Oktober 1998: Neuer Patchlevel [p16] (V1.13)
 ;             22. Januar 2000: Neuer Patchlevel [p17] (V1.14)
 ;             25. Juli 2000: Neuer Patchlevel [p18] (V1.15)
 ;             2. Januar 2001: Neuer Patchlevel [p19] (V1.16)
-;             9. März 2002: Neuer Patchlevel [p20] (V1.17)
+;             9. MÃ¤rz 2002: Neuer Patchlevel [p20] (V1.17)
 ;             29. Oktober 2005: Neuer Patchlevel [p21] (V1.18)
+;             18. August 2011: Neuer Patchlevel [22p] (V1.19)
 ;
 ; Copyright (c) 1993 Andreas Scherer
 ;
-; Die Anfertigung und Verteilung von unveränderten Kopien dieses
+; Die Anfertigung und Verteilung von unverÃ¤nderten Kopien dieses
 ; Dokumentes ist erlaubt, sofern der Urheberrechtshinweis und dieser
 ; Berechtigungshinweis bei allen Kopien erhalten bleibt.
 ;
-; Die Anfertigung und Verteilung von veränderten Versionen dieses
-; Dokumentes ist erlaubt unter den Bedingungen für unveränderte Kopien,
-; sofern das gesamte hiervon abgeleitete Werk einen geänderten Namen
-; erhält und unter den Bedingungen eines mit diesem vergleichbaren
+; Die Anfertigung und Verteilung von verÃ¤nderten Versionen dieses
+; Dokumentes ist erlaubt unter den Bedingungen fÃ¼r unverÃ¤nderte Kopien,
+; sofern das gesamte hiervon abgeleitete Werk einen geÃ¤nderten Namen
+; erhÃ¤lt und unter den Bedingungen eines mit diesem vergleichbaren
 ; Berechtigungshinweises verteilt wird.
 ;
 ; Permission is granted to make and distribute verbatim copies of this
@@ -67,63 +68,63 @@ MSG_ERROR_CO9
 ; ! Input line too long
 ;
 MSG_ERROR_CO13
-! Fehlendes @x in der Änderungsdatei
+! Fehlendes @x in der Ã„nderungsdatei
 ; ! Missing @x in change file
 ;
 MSG_ERROR_CO14
-! Änderungsdatei endete nach @x
+! Ã„nderungsdatei endete nach @x
 ; ! Change file ended after @x
 ;
 MSG_ERROR_CO16_1
-! Änderungsdatei endete vor @y
+! Ã„nderungsdatei endete vor @y
 ; ! Change file ended before @y
 ;
 MSG_ERROR_CO16_2
-! CWEB-Datei endete während einer Änderung
+! CWEB-Datei endete wÃ¤hrend einer Ã„nderung
 ; ! CWEB file ended during a change
 ;
 MSG_ERROR_CO17_1
-! Wo ist das zugehörige @y?
+! Wo ist das zugehÃ¶rige @y?
 ; ! Where is the matching @y?
 ;
 MSG_ERROR_CO17_2
-der vorangegangenen Zeilen stimmen nicht überein
+der vorangegangenen Zeilen stimmen nicht Ã¼berein
 ; of the preceding lines failed to match
 ;
 MSG_FATAL_CO19_1
-! Kann Eingabedatei nicht öffnen: 
+! Kann Eingabedatei nicht Ã¶ffnen: 
 ; ! Cannot open input file 
 ;
 MSG_FATAL_CO19_2
-! Kann Änderungsdatei nicht öffnen: 
+! Kann Ã„nderungsdatei nicht Ã¶ffnen: 
 ; ! Cannot open change file 
 ;
 MSG_ERROR_CO21_1
-! Name der Einfügedatei nicht angegeben
+! Name der EinfÃ¼gedatei nicht angegeben
 ; ! Include file name not given
 ;
 MSG_ERROR_CO21_2
-! Zu viele verschachtelte Einfügungen
+! Zu viele verschachtelte EinfÃ¼gungen
 ; ! Too many nested includes
 ;
 MSG_ERROR_CO22
-! Name der Einfügedatei zu lang
+! Name der EinfÃ¼gedatei zu lang
 ; ! Include file name too long
 ;
 MSG_ERROR_CO23
-! Kann Einfügedatei nicht öffnen
+! Kann EinfÃ¼gedatei nicht Ã¶ffnen
 ; ! Cannot open include file
 ;
 MSG_ERROR_CO25_1
-! Änderungsdatei endete ohne @z
+! Ã„nderungsdatei endete ohne @z
 ; ! Change file ended without @z
 ;
 MSG_ERROR_CO25_2
-! Wo ist das zugehörige @z?
+! Wo ist das zugehÃ¶rige @z?
 ; ! Where is the matching @z?
 ;
 MSG_ERROR_CO26
-! Eintrag in der Änderungsdatei stimmt nicht überein
+! Eintrag in der Ã„nderungsdatei stimmt nicht Ã¼berein
 ; ! Change file entry did not match
 ;
 MSG_OVERFLOW_CO39_1
@@ -135,7 +136,7 @@ Bezeichner
 ; name
 ;
 MSG_ERROR_CO50_1
-\n! Mehrdeutiger Präfix: paßt zu <
+\n! Mehrdeutiger PrÃ¤fix: paÃŸt zu <
 ; \n! Ambiguous prefix: matches <
 ;
 MSG_ERROR_CO50_2
@@ -143,7 +144,7 @@ MSG_ERROR_CO50_2
 ; >\n and <
 ;
 MSG_ERROR_CO52_1
-\n! Neuer Name ist Präfix von <
+\n! Neuer Name ist PrÃ¤fix von <
 ; \n! New name is a prefix of <
 ;
 MSG_ERROR_CO52_2
@@ -151,15 +152,15 @@ MSG_ERROR_CO52_2
 ; \n! New name extends <
 ;
 MSG_ERROR_CO52_3
-\n! Abschnittname paßt nicht zu <
+\n! Abschnittname paÃŸt nicht zu <
 ; \n! Section name incompatible with <
 ;
 MSG_ERROR_CO52_4
->,\n einer Abkürzung von <
+>,\n einer AbkÃ¼rzung von <
 ; >,\n which abbreviates <
 ;
 MSG_ERROR_CO59_1
-. (Zeile %d der Änderungsdatei)\n
+. (Zeile %d der Ã„nderungsdatei)\n
 ; . (l. %d of change file)\n
 ;
 MSG_ERROR_CO59_2
@@ -167,7 +168,7 @@ MSG_ERROR_CO59_2
 ; . (l. %d)\n
 ;
 MSG_ERROR_CO59_3
-. (Zeile %d der Einfügedatei %s)\n
+. (Zeile %d der EinfÃ¼gedatei %s)\n
 ; . (l. %d of include file %s)\n
 ;
 MSG_HAPPINESS_CO62
@@ -183,11 +184,11 @@ MSG_ERROR_CO62
 ; (Pardon me, but I think I spotted something wrong.)\n
 ;
 MSG_FATAL_CO62
-(Mensch, das war ein böser Fehler.)\n
+(Mensch, das war ein bÃ¶ser Fehler.)\n
 ; (That was a fatal error, my friend.)\n
 ;
 MSG_FATAL_CO65
-\n! Tut mir leid, Kapazität für %s überschritten
+\n! Tut mir leid, KapazitÃ¤t fÃ¼r %s Ã¼berschritten
 ; \n! Sorry, %s capacity exceeded
 ;
 MSG_FATAL_CO66
@@ -199,19 +200,19 @@ MSG_FATAL_CO73
 ; ! Output file name should end with .tex\n
 ;
 MSG_FATAL_CO75_1
-! Aufruf: ctangle [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\nh [+] Bestätige einen fehlerfreien Lauf\nm [-] Aktiviere die ARexx-Kommunikation\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\n
+! Aufruf: ctangle [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\nh [+] BestÃ¤tige einen fehlerfreien Lauf\nm [-] Aktiviere die ARexx-Kommunikation\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\n
 ; ! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\nh [+] print happy message\nm [-] enable ARexx communication\np [+] give progress reports\ns [-] show statistics\n
 ;
 MSG_FATAL_CO75_2
-! Aufruf: ctangle [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\nh [+] Bestätige einen fehlerfreien Lauf\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\n
+! Aufruf: ctangle [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\nh [+] BestÃ¤tige einen fehlerfreien Lauf\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\n
 ; ! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\nh [+] print happy message\np [+] give progress reports\ns [-] show statistics\n
 ;
 MSG_FATAL_CO75_3
-! Aufruf: cweave [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\ne [-] Schließe C-Material in \\PB-Klammern ein\nf [+] Erzwinge Zeilenumbrüche nach jeder Anweisung\nh [+] Bestätige einen fehlerfreien Lauf\ni [+] Rücke Parameterdeklarationen ein\nlX [ ] Verwende die Makros für Sprache X aus Xcwebmac.tex\nm [-] Aktiviere die ARexx-Kommunikation\no [+] Trenne Deklarationen und Anweisungen\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\nx [+] Füge Indexe und Inhaltsverzeichnisse ein\n
+! Aufruf: cweave [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\ne [-] SchlieÃŸe C-Material in \\PB-Klammern ein\nf [+] Erzwinge ZeilenumbrÃ¼che nach jeder Anweisung\nh [+] BestÃ¤tige einen fehlerfreien Lauf\ni [+] RÃ¼cke Parameterdeklarationen ein\nlX [ ] Verwende die Makros fÃ¼r Sprache X aus Xcwebmac.tex\nm [-] Aktiviere die ARexx-Kommunikation\no [+] Trenne Deklarationen und Anweisungen\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\nx [+] FÃ¼ge Indexe und Inhaltsverzeichnisse ein\n
 ; ! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\ne [-] enclose C material in \\PB brackets\nf [+] force line breaks\nh [+] print happy message\ni [+] indent parameter declarations\nlX [ ] use macros for language X as of Xcwebmac.tex\nm [-] enable ARexx communication\no [+] separate declarations and statements\np [+] give progress reports\ns [-] show statistics\nx [+] include indexes and table of contents\n
 ;
 MSG_FATAL_CO75_4
-! Aufruf: cweave [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\ne [-] Schließe C-Material in \\PB-Klammern ein\nf [+] Erzwinge Zeilenumbrüche nach jeder Anweisung\nh [+] Bestätige einen fehlerfreien Lauf\ni [+] Rücke Parameterdeklarationen ein\nlX [ ] Verwende die Makros für Sprache X aus Xcwebmac.tex\no [+] Trenne Deklarationen und Anweisungen\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\nx [+] Füge Indexe und Inhaltsverzeichnisse ein\n
+! Aufruf: cweave [Optionen] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptionen sind (+ schaltet ein, - schaltet aus, Vorgabe in Klammern):\nb [+] Gib eine Startmeldung aus\ne [-] SchlieÃŸe C-Material in \\PB-Klammern ein\nf [+] Erzwinge ZeilenumbrÃ¼che nach jeder Anweisung\nh [+] BestÃ¤tige einen fehlerfreien Lauf\ni [+] RÃ¼cke Parameterdeklarationen ein\nlX [ ] Verwende die Makros fÃ¼r Sprache X aus Xcwebmac.tex\no [+] Trenne Deklarationen und Anweisungen\np [+] Zeige einen Zwischenbericht\ns [-] Melde die Verbrauchsstatistik\nx [+] FÃ¼ge Indexe und Inhaltsverzeichnisse ein\n
 ; ! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\e [-] enclose C material in \\PB brackets\nf [+] force line breaks\nh [+] print happy message\ni [+] indent parameter declarations\nlX [ ] use macros for language X as of Xcwebmac.tex\no [+] separate declarations and statements\np [+] give progress reports\ns [-] show statistics\nx [+] include indexes and table of contents\n
 ;
 MSG_FATAL_CO76
@@ -219,11 +220,11 @@ MSG_FATAL_CO76
 ; ! File name too long\n
 ;
 MSG_FATAL_CO78
-! Kann Ausgabedatei nicht öffnen: 
+! Kann Ausgabedatei nicht Ã¶ffnen: 
 ; ! Cannot open output file 
 ;
 MSG_ERROR_CO82
-! Einfügepfad zu lang
+! EinfÃ¼gepfad zu lang
 ; ! Include path too long
 ;
 MSG_FATAL_CO85
@@ -231,8 +232,8 @@ MSG_FATAL_CO85
 ; ! Memory allocation failure
 ;
 MSG_BANNER_CT1
-Dies ist CTANGLE (Version 3.64 [p21])\n
-; This is CTANGLE (Version 3.64 [p21])\n
+Dies ist CTANGLE (Version 3.64 [22p])\n
+; This is CTANGLE (Version 3.64 [22p])\n
 ;
 MSG_OVERFLOW_CT26
 Token
@@ -291,7 +292,7 @@ MSG_ERROR_CT67_3
 ; \n! String too long: 
 ;
 MSG_ERROR_CT68_1
-! Verwende @l ausschließlich im Einführungsteil
+! Verwende @l ausschlieÃŸlich im EinfÃ¼hrungsteil
 ; ! Use @l in limbo only
 ;
 MSG_ERROR_CT68_2
@@ -343,15 +344,15 @@ MSG_ERROR_CT81
 ; ! Unrecognized escape sequence
 ;
 MSG_ERROR_CT85
-! Definition übergangen, muß mit einem Bezeichner anfangen
+! Definition Ã¼bergangen, muÃŸ mit einem Bezeichner anfangen
 ; ! Definition flushed, must start with identifier
 ;
 MSG_ERROR_CT93
-! Im Einführungsteil sollten doppelte @ verwendet werden
+! Im EinfÃ¼hrungsteil sollten doppelte @ verwendet werden
 ; ! Double @ should be used in limbo
 ;
 MSG_ERROR_CT94_1
-! Ungültige Hexadezimalzahl nach @l
+! UngÃ¼ltige Hexadezimalzahl nach @l
 ; ! Improper hex number following @l
 ;
 MSG_ERROR_CT94_2
@@ -359,7 +360,7 @@ MSG_ERROR_CT94_2
 ; ! Replacement string in @l too long
 ;
 MSG_STATS_CT95_1
-\nStatistik über den Speicherbedarf:\n
+\nStatistik Ã¼ber den Speicherbedarf:\n
 ; \nMemory usage statistics:\n
 ;
 MSG_STATS_CT95_2
@@ -379,8 +380,8 @@ MSG_STATS_CT95_5
 ; %ld tokens (out of %ld)\n
 ;
 MSG_BANNER_CW1
-Dies ist CWEAVE (Version 3.64 [p21])\n
-; This is CWEAVE (Version 3.64 [p21])\n
+Dies ist CWEAVE (Version 3.64 [22p])\n
+; This is CWEAVE (Version 3.64 [22p])\n
 ;
 MSG_OVERFLOW_CW21
 Querverweise
@@ -419,7 +420,7 @@ MSG_WARNING_CW75_2
 ; \n! Never used: <
 ;
 MSG_WARNING_CW85
-\n! Zeile mußte umgebrochen werden (Ausgabezeile %d):\n
+\n! Zeile muÃŸte umgebrochen werden (Ausgabezeile %d):\n
 ; \n! Line had to be broken (output l. %d):\n
 ;
 MSG_ERROR_CW92_1
@@ -427,7 +428,7 @@ MSG_ERROR_CW92_1
 ; ! Missing } in comment
 ;
 MSG_ERROR_CW92_2
-! Zusätzliche } in Kommentar
+! ZusÃ¤tzliche } in Kommentar
 ; ! Extra } in comment
 ;
 MSG_ERROR_CW94
@@ -475,15 +476,15 @@ MSG_ERROR_CW209_2
 ; ! You can't do that in TeX text
 ;
 MSG_ERROR_CW213
-! Ungültige Makrodefinition
+! UngÃ¼ltige Makrodefinition
 ; ! Improper macro definition
 ;
 MSG_ERROR_CW214
-! Ungültige Formatdefinition
+! UngÃ¼ltige Formatdefinition
 ; ! Improper format definition
 ;
 MSG_ERROR_CW217
-! Hinter dem Abschnittnamen muß ein = Zeichen stehen
+! Hinter dem Abschnittnamen muÃŸ ein = Zeichen stehen
 ; ! You need an = sign after the section name
 ;
 MSG_ERROR_CW218
@@ -495,11 +496,11 @@ MSG_PROGRESS_CW225
 ; \nWriting the index...
 ;
 MSG_FATAL_CW225_1
-! Kann die Indexdatei nicht öffnen: 
+! Kann die Indexdatei nicht Ã¶ffnen: 
 ; ! Cannot open index file 
 ;
 MSG_FATAL_CW225_2
-! Kann die Abschnittdatei nicht öffnen: 
+! Kann die Abschnittdatei nicht Ã¶ffnen: 
 ; ! Cannot open section file 
 ;
 MSG_OVERFLOW_CW237

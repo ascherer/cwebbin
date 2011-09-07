@@ -34,7 +34,7 @@
 #define MSG_ERROR_CO16_2_STR "! File CWEB terminato durante un change"
 
 #define MSG_ERROR_CO17_1 5
-#define MSG_ERROR_CO17_1_STR "! Dov\'è il corrispondente @y?"
+#define MSG_ERROR_CO17_1_STR "! Dov\'Ã¨ il corrispondente @y?"
 
 #define MSG_ERROR_CO17_2 6
 #define MSG_ERROR_CO17_2_STR "delle linee precedenti, corrispondenza non trovata"
@@ -61,10 +61,10 @@
 #define MSG_ERROR_CO25_1_STR "! Change file terminato senza un @z"
 
 #define MSG_ERROR_CO25_2 14
-#define MSG_ERROR_CO25_2_STR "! Dov\'è il corrispondente @z?"
+#define MSG_ERROR_CO25_2_STR "! Dov\'Ã¨ il corrispondente @z?"
 
 #define MSG_ERROR_CO26 15
-#define MSG_ERROR_CO26_STR "! C\'è una voce nel change file che non corrisponde"
+#define MSG_ERROR_CO26_STR "! C\'Ã¨ una voce nel change file che non corrisponde"
 
 #define MSG_OVERFLOW_CO39_1 16
 #define MSG_OVERFLOW_CO39_1_STR "byte di memoria"
@@ -79,7 +79,7 @@
 #define MSG_ERROR_CO50_2_STR ">\n e <"
 
 #define MSG_ERROR_CO52_1 20
-#define MSG_ERROR_CO52_1_STR "\n! Il nuovo nome è un prefisso per <"
+#define MSG_ERROR_CO52_1_STR "\n! Il nuovo nome Ã¨ un prefisso per <"
 
 #define MSG_ERROR_CO52_2 21
 #define MSG_ERROR_CO52_2_STR "\n! Il nuovo nome estende <"
@@ -109,13 +109,13 @@
 #define MSG_ERROR_CO62_STR "(Scusa, ma credo che sia avvenuto qualcosa di errato.)\n"
 
 #define MSG_FATAL_CO62 30
-#define MSG_FATAL_CO62_STR "(Caro amico, si è verificato un errore importante.)\n"
+#define MSG_FATAL_CO62_STR "(Caro amico, si Ã¨ verificato un errore importante.)\n"
 
 #define MSG_FATAL_CO65 31
-#define MSG_FATAL_CO65_STR "\n! Spiacente, %s capacità superata"
+#define MSG_FATAL_CO65_STR "\n! Spiacente, %s capacitÃ  superata"
 
 #define MSG_FATAL_CO66 32
-#define MSG_FATAL_CO66_STR "! Questo non può avvenire: "
+#define MSG_FATAL_CO66_STR "! Questo non puÃ² avvenire: "
 
 #define MSG_FATAL_CO73 33
 #define MSG_FATAL_CO73_STR "! Il nome del file di output dovrebbe terminare con .tex\n"
@@ -183,7 +183,7 @@
 #define MSG_FATAL_CO85_STR "! Allocazione di memoria fallita"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "Questo è CTANGLE (Versione 3.64 [p21])\n"
+#define MSG_BANNER_CT1_STR "Questo Ã¨ CTANGLE (Versione 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "token"
@@ -198,7 +198,7 @@
 #define MSG_OVERFLOW_CT40_STR "file di output"
 
 #define MSG_WARNING_CT42 47
-#define MSG_WARNING_CT42_STR "\n! Nessun testo di programma è stato specificato."
+#define MSG_WARNING_CT42_STR "\n! Nessun testo di programma Ã¨ stato specificato."
 
 #define MSG_PROGRESS_CT42_1 48
 #define MSG_PROGRESS_CT42_1_STR "\nScrittura del file di output (%s):"
@@ -294,7 +294,7 @@
 #define MSG_STATS_CT95_5_STR "%ld token (fuori da %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "Questo è CWEAVE (Versione 3.64 [p21])\n"
+#define MSG_BANNER_CW1_STR "Questo Ã¨ CWEAVE (Versione 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "referimento incrociato"
@@ -372,7 +372,7 @@
 #define MSG_ERROR_CW214_STR "! Definizione di formato impropria"
 
 #define MSG_ERROR_CW217 105
-#define MSG_ERROR_CW217_STR "! È necessario un segno di = dopo il nome della sezione"
+#define MSG_ERROR_CW217_STR "! Ãˆ necessario un segno di = dopo il nome della sezione"
 
 #define MSG_ERROR_CW218 106
 #define MSG_ERROR_CW218_STR "! Non puoi fare quello nella parte in C"

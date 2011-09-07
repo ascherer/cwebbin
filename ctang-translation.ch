@@ -11,7 +11,7 @@ CTANG-EXTENSIONS.CH, CTANG-MEMORY.CH to be applied as well.
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 @x l.186 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [p21])\n"
+@d banner "This is CTANGLE (Version 3.64 [22p])\n"
 @y
 @d banner get_string(MSG_BANNER_CT1)
 @z

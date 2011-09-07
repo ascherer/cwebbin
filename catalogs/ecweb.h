@@ -182,7 +182,7 @@
 #define MSG_FATAL_CO85_STR "! Memory allocation failure"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "This is CTANGLE (Version 3.64 [p21])\n"
+#define MSG_BANNER_CT1_STR "This is CTANGLE (Version 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "token"
@@ -293,7 +293,7 @@
 #define MSG_STATS_CT95_5_STR "%ld tokens (out of %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "This is CWEAVE (Version 3.64 [p21])\n"
+#define MSG_BANNER_CW1_STR "This is CWEAVE (Version 3.64 [22p])\n"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "cross-reference"
