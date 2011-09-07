@@ -1,0 +1,82 @@
+Changes for COMMON.H by Andreas Scherer, May 25, 2000.
+
+This set of changes converts the COMMON.H module into ANSI-C and C++ code.
+All functions are declared in prototypical form.  At several places
+additional casts are introduced and `char *' is replaced by `void *', the
+default pointer type in ANSI-C.
+
+This is a standalone change file.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.79
+@d length(c) (c+1)->byte_start-(c)->byte_start /* the length of a name */
+@y
+@d length(c) (size_t)((c+1)->byte_start-(c)->byte_start) /* the length of a name */
+@z
+
+@x l.96
+  char *equiv_or_xref; /* info corresponding to names */
+@y
+  void *equiv_or_xref; /* info corresponding to names */
+@z
+
+@x l.109
+extern name_pointer id_lookup(); /* looks up a string in the identifier table */
+extern name_pointer section_lookup(); /* finds section name */
+extern void print_section_name(), sprint_section_name();
+@y
+extern int names_match(name_pointer,char *,size_t,eight_bits);@/
+extern name_pointer id_lookup(char *,char *,char);
+   /* looks up a string in the identifier table */
+extern name_pointer prefix_lookup(char *,char *); /* finds section name given a prefix */
+extern name_pointer section_lookup(char *,char *,int);@/
+extern void init_node(name_pointer);@/
+extern void init_p(name_pointer,eight_bits);@/
+extern void print_prefix_name(name_pointer);@/
+extern void print_section_name(name_pointer);@/
+extern void sprint_section_name(char *,name_pointer);@/
+@z
+
+@x l.123
+extern history; /* indicates how bad this run was */
+extern err_print(); /* print error message and context */
+extern wrap_up(); /* indicate |history| and exit */
+extern void fatal(); /* issue error message and die */
+extern void overflow(); /* succumb because a table has overflowed */
+@y
+extern int history; /* indicates how bad this run was */
+extern int wrap_up(void); /* indicate |history| and exit */
+extern void err_print(char *); /* prints error message and context */
+extern void fatal(char *,char *); /* issue error message and die */
+extern void overflow(char *); /* succumb because a table has overflowed */
+@z
+
+@x l.138
+extern include_depth; /* current level of nesting */
+@y
+extern int include_depth; /* current level of nesting */
+@z
+
+@x l.149
+extern change_line; /* number of current line in change file */
+@y
+extern int change_line; /* number of current line in change file */
+@z
+
+@x l.153
+extern reset_input(); /* initialize to read the web file and change file */
+extern get_line(); /* inputs the next line */
+extern check_complete(); /* checks that all changes were picked up */
+@y
+extern boolean get_line(void); /* inputs the next line */
+extern void check_complete(void); /* checks that all changes were picked up */
+extern void reset_input(void); /* initialize to read the web file and change file */
+@z
+
+@x l.192
+extern void common_init();
+@y
+extern void print_stats(void);
+extern void common_init(void);
+@z

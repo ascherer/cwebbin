@@ -1,0 +1,101 @@
+Changes for COMMON.H by Andreas Scherer, May 10, 1995.
+
+This set of changes provides support for installing CWEB on MS/DOS systems
+with Borland C++ 3.1.  Arrays larger than 64 KB are allocated with a
+system-dependent routine `farcalloc'.  For this, several pointer variables
+have to be declared as `huge'.  Care has been taken to avoid conflicts with
+other operating systems which are not restricted to the limitations of DOS.
+(DOS isn't restricted to the 64 KB limit either, or else this full sized
+patch would not be possible.  But instead of `farcalloc' a `non-ANSI' sized
+`malloc' would be much more convenient.)  For other MS/DOS compilers than
+Borland C++ 3.1 you'll have to replace this file by other changes.
+
+This change file requires COMM-ANSI.HCH, COMM-EXTENSIONS.HCH,
+COMM-MEMORY.HCH, COMM-TRANSLATION.HCH to be applied as well.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.24
+First comes general stuff:
+
+@y
+First comes general stuff.
+In {\mc TURBO} \CEE/, we use |huge| pointers instead of large arrays.
+@^system dependencies@>
+
+@f far int
+@f huge int
+@f HUGE int
+@#
+@z
+
+@x l.33
+extern int phase; /* which phase are we in? */
+@y
+extern int phase; /* which phase are we in? */
+@#
+#ifdef __TURBOC__
+#define HUGE huge
+#else
+#define HUGE
+#endif
+@^system dependencies@>
+@z
+
+@x l.36
+#include <stdio.h>
+@y
+#include <stdio.h>
+@#
+#ifdef __TURBOC__
+#include <io.h>
+#endif
+@z
+
+@x l.88
+typedef struct name_info {
+  char *byte_start; /* beginning of the name in |byte_mem| */
+  struct name_info *link;
+  union {
+    struct name_info *Rlink; /* right link in binary search tree for section
+      names */
+    char Ilk; /* used by identifiers in \.{CWEAVE} only */
+  } dummy;
+  void *equiv_or_xref; /* info corresponding to names */
+} name_info; /* contains information about an identifier or section name */
+@y
+typedef struct name_info {
+  char HUGE *byte_start; /* beginning of the name in |byte_mem| */
+  struct name_info HUGE *link;
+  union {
+    struct name_info HUGE *Rlink; /* right link in binary search tree for section
+      names */  
+    char Ilk; /* used by identifiers in \.{WEAVE} only */
+  } dummy;
+  void HUGE *equiv_or_xref; /* info corresponding to names */
+} name_info; /* contains information about an identifier or section name */
+@z
+
+@x l.98
+typedef name_info *name_pointer; /* pointer into array of \&{name\_info}s */
+@y
+typedef name_info HUGE *name_pointer; /* pointer into array of |name_info|s */
+@z
+
+@x l.49 of COMM-MEMORY.HCH
+extern char *byte_mem; /* characters of names */
+extern char *byte_mem_end; /* end of |byte_mem| */
+@y
+extern char HUGE *byte_mem; /* characters of names */
+extern char HUGE *byte_mem_end; /* end of |byte_mem| */
+@z
+
+@x l.105
+extern char *byte_ptr; /* first unused position in |byte_mem| */
+@y
+extern char HUGE *byte_ptr; /* first unused position in |byte_mem| */
+#ifdef __TURBOC__
+extern void far *allocsafe(unsigned long,unsigned long);
+#endif
+@^system dependencies@>
+@z

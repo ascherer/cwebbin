@@ -1,0 +1,17 @@
+Changes for COMMON.H by Andreas Scherer, May 10, 1995.
+
+This set of changees introduces communication between CWEB and the message
+browser of the SAS/C++ 6.55 development system.  You need not apply this
+file if you use CWEB on a non-Amiga system or with a different C compiler.
+
+This change file requires COMM-ANSI.HCH, COMM-EXTENSIONS.HCH,
+COMM-MEMORY.HCH, COMM-TRANSLATION.HCH to be applied as well.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.168
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@y
+@d send_error_messages flags['m'] /* should {\mc AREXX} communication be used? */
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@z

@@ -1,0 +1,533 @@
+;
+## version $VER: CWEB.catalog 1.14 (25.07.2000)
+## codeset 0
+## language italiano
+;
+; Questo file contiene tutte le stringhe presenti nei tre
+; moduli COMMON.W, CTANGLE.W, CWEAVE.W e nei loro relativi change file.
+; Può servire come punto di riferimento per traduzioni in altre lingue.
+; A tal proposito è necessaria la versione 2.1 o superiore di AmigaOS.
+; Per creare il catalog per altre lingue, usare un programma tipo `CatComp'
+; con la seguente linea di comando:
+;
+;     PROMPT> CatComp cweb.cd cweb.i.ct CATALOG italiano/cweb.catalog
+;
+; Se qualcuno dovesse creare traduzioni per altre lingue, apprezzerei di
+; ricevere una copia del CatalogTranslation da includere in questo
+; archivio.
+;
+; Data: 6 Dicembre 1993 (Setup della versione 1.0)
+;
+; Autore: Andreas Scherer
+;         Rochusstraße 22-24
+;         52062 Aachen, Germany
+;         <andreas.scherer@pobox.com>
+e>
+;
+; Modifiche: 18 gennaio 1994: Version information included. (V1.1)
+;            13 maggio 1994:  Nuovo patch con allocazione dinamica della
+;                             memoria. (V1.2)
+;            17 luglio 1994:  Inclusa opzione `+/- m'. (V1.3)
+;            12 agosto 1994:  Modificate informazioni di copyright. (V1.4)
+;            03 dicembre 1994: CWEB 3.3. (V1.7)
+;            18 aprile 1995: CWEB 3.4. (V1.8)
+;            25 march 1996: `Checksum' information added.  (V1.9)
+;            11 march 1997: Updated for patch level [p14].  (V1.10)
+;            13 august 1998: Updated for patch level [p15].  (V1.11)
+;            14 ottobre 1998: Updated for patch level [p16].  (V1.12)
+;            31 dicembre 1999: Updated for patch level [p17].  (V1.13)
+;            25 luglio 2000: Updated for patch level [p18].  (V1.14)
+;            02 gennaio 2001: Updated for patch level [p19].  (V1.15)
+;
+; Copyright (c) 1993 Andreas Scherer
+;
+; Autore: Giuseppe Ghibò <ghibo@galileo.polito.it>
+;         Via Sestriere, 133
+;         10090 C. Vica - Rivoli (TO), Italy
+;
+; 12.09.1994: This Italian catalog translation was submitted
+;             to Andreas Scherer by Giuseppe Ghibò by e-mail
+;             for inclusion in the distribution.
+;             Thank you very much, Giuseppe! (V1.0)
+;
+; Copyright (c) 1994 Giuseppe Ghibò
+;
+; Permission is granted to make and distribute verbatim copies of this
+; document provided that the copyright notice and this permission notice
+; are preserved on all copies.
+;
+; Permission is granted to copy and distribute modified versions of this
+; document under the conditions for verbatim copying, provided that the
+; entire resulting derived work is given a different name and distributed
+; under the terms of a permission notice identical to this one.
+;
+; Messaggi mostrati in COMMON.W e in COMMON.CH
+;
+MSG_ERROR_CO9
+! Linea in input troppo lunga
+; ! Input line too long
+;
+MSG_ERROR_CO13
+! Omesso @x nel change file
+; ! Missing @x in change file
+;
+MSG_ERROR_CO14
+! Change file terminato dopo @x
+; ! Change file ended after @x
+;
+MSG_ERROR_CO16_1
+! Change file terminato prima di @y
+; ! Change file ended before @y
+;
+MSG_ERROR_CO16_2
+! File CWEB terminato durante un change
+; ! CWEB file ended during a change
+;
+MSG_ERROR_CO17_1
+! Dov'è il corrispondente @y?
+; ! Where is the matching @y?
+;
+MSG_ERROR_CO17_2
+delle linee precedenti, corrispondenza non trovata
+; of the preceding lines failed to match
+;
+MSG_FATAL_CO19_1
+! Non posso aprire il file di input 
+; ! Cannot open input file 
+;
+MSG_FATAL_CO19_2
+! Non posso aprire il change file 
+; ! Cannot open change file 
+;
+MSG_ERROR_CO21_1
+! Nome del file include assente
+; ! Include file name not given
+;
+MSG_ERROR_CO21_2
+! Troppi include annidati
+; ! Too many nested includes
+;
+MSG_ERROR_CO22
+! Nome file include troppo lungo
+; ! Include file name too long
+;
+MSG_ERROR_CO23
+! Non posso aprire il file include
+; ! Cannot open include file
+;
+MSG_ERROR_CO25_1
+! Change file terminato senza un @z
+; ! Change file ended without @z
+;
+MSG_ERROR_CO25_2
+! Dov'è il corrispondente @z?
+; ! Where is the matching @z?
+;
+MSG_ERROR_CO26
+! C'è una voce nel change file che non corrisponde
+; ! Change file entry did not match
+;
+MSG_OVERFLOW_CO39_1
+byte di memoria
+; byte memory
+;
+MSG_OVERFLOW_CO39_2
+nome
+; name
+;
+MSG_ERROR_CO50_1
+\n! Prefisso ambiguo: corrispondenze trovate <
+; \n! Ambiguous prefix: matches <
+;
+MSG_ERROR_CO50_2
+>\n e <
+; >\n and <
+;
+MSG_ERROR_CO52_1
+\n! Il nuovo nome è un prefisso per <
+; \n! New name is a prefix of <
+;
+MSG_ERROR_CO52_2
+\n! Il nuovo nome estende <
+; \n! New name extends <
+;
+MSG_ERROR_CO52_3
+\n! Nome sezione incompatibile con <
+; \n! Section name incompatible with <
+;
+MSG_ERROR_CO52_4
+>,\n che abbrevia <
+; >,\n which abbreviates <
+;
+MSG_ERROR_CO59_1
+. (l. %d del change file)\n
+; . (l. %d of change file)\n
+;
+MSG_ERROR_CO59_2
+. (l. %d)\n
+; . (l. %d)\n
+;
+MSG_ERROR_CO59_3
+. (l. %d del file include %s)\n
+; . (l. %d of include file %s)\n
+;
+MSG_HAPPINESS_CO62
+(Nessun errore trovato.)\n
+; (No errors were found.)\n
+;
+MSG_WARNING_CO62
+(Hai visto i messaggi di warning sopra?)\n
+; (Did you see the warning message above?)\n
+;
+MSG_ERROR_CO62
+(Scusa, ma credo che sia avvenuto qualcosa di errato.)\n
+; (Pardon me, but I think I spotted something wrong.)\n
+;
+MSG_FATAL_CO62
+(Caro amico, si è verificato un errore importante.)\n
+; (That was a fatal error, my friend.)\n
+;
+MSG_FATAL_CO65
+\n! Spiacente, %s capacità superata
+; \n! Sorry, %s capacity exceeded
+;
+MSG_FATAL_CO66
+! Questo non può avvenire: 
+; ! This can't happen: 
+;
+MSG_FATAL_CO73
+! Il nome del file di output dovrebbe terminare con .tex\n
+; ! Output file name should end with .tex\n
+;
+MSG_FATAL_CO75_1
+! Uso: ctangle [Opzioni] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOpzioni (+ attiva, - disattiva, default indicato tra parentesi quadre):\nb [+] stampa una riga di titoli\nh [+] stampa un messaggio di "buon fine"\nm [-] abilita comunicazioni ARexx\np [+] mostra andamento elaborazione\ns [-] mostra statistiche\n
+; ! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\nh [+] print happy message\nm [-] enable ARexx communication\np [+] give progress reports\ns [-] show statistics\n
+;
+MSG_FATAL_CO75_2
+! Uso: ctangle [Opzioni] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOpzioni (+ attiva, - disattiva, default indicato tra parentesi quadre):\nb [+] stampa una riga di titoli\nh [+] stampa un messaggio di "buon fine"\np [+] mostra andamento elaborazione\ns [-] mostra statistiche\n
+; ! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\nh [+] print happy message\np [+] give progress reports\ns [-] show statistics\n
+;
+MSG_FATAL_CO75_3
+! Uso: cweave [Opzioni] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOpzioni (+ attiva, - disattiva, default indicato tra parentesi quadre):\nb [+] stampa una riga di titoli\ne [-] C material in \\PB parentesi\nf [+] forza i line break\nh [+] stampa un messaggio di "buon fine"\ni [+] rientranza delle dichiarazioni\nlX [ ] usa macro in lingua X contenute in Xcwebmac.tex\nm [-] abilita comunicazioni ARexx\no [+] separa dichiarazioni e statement\np [+] mostra andamento elaborazione\ns [-] mostra statistiche\nx [+] include indici\n
+; ! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\ne [-] enclose C material in \\PB brackets\nf [+] force line breaks\nh [+] print happy message\ni [+] indent parameter declarations\nlX [ ] use macros for language X as of Xcwebmac.tex\nm [-] enable ARexx communication\no [+] separate declarations and statements\np [+] give progress reports\ns [-] show statistics\nx [+] include indexes and table of contents\n
+;
+MSG_FATAL_CO75_4
+! Uso: cweave [Opzioni] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOpzioni (+ attiva, - disattiva, default indicato tra parentesi quadre):\nb [+] stampa una riga di titoli\ne [-] C material in \\PB parentesi\nf [+] forza i line break\nh [+] stampa un messaggio di "buon fine"\ni [+] rientranza delle dichiarazioni\nlX [ ] usa macro in lingua X contenute in Xcwebmac.tex\no [+] separa dichiarazioni e statement\np [+] mostra andamento elaborazione\ns [-] mostra statistiche\nx [+] include indici\n
+; ! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\nOptions are (+ turns on, - turns off, default in brackets):\nb [+] print banner line\ne [-] enclose C material in \\PB brackets\nf [+] force line breaks\nh [+] print happy message\ni [+] indent parameter declarations\nlX [ ] use macros for language X as of Xcwebmac.tex\no [+] separate declarations and statements\np [+] give progress reports\ns [-] show statistics\nx [+] include indexes and table of contents\n
+;
+MSG_FATAL_CO76
+! Nome file troppo lungo\n
+; ! File name too long\n
+;
+MSG_FATAL_CO78
+! Non posso aprire il file di output 
+; ! Cannot open output file 
+;
+MSG_ERROR_CO82
+! Path include troppo lungo
+; ! Include path too long
+;
+MSG_FATAL_CO85
+! Allocazione di memoria fallita
+; ! Memory allocation failure
+;
+MSG_BANNER_CT1
+Questo è CTANGLE (Versione 3.62 [p19])\n
+; This is CTANGLE (Version 3.62 [p19])\n
+;
+MSG_OVERFLOW_CT26
+token
+; token
+;
+MSG_OVERFLOW_CT30
+stack
+; stack
+;
+MSG_ERROR_CT34
+\n! Non presente: <
+; \n! Not present: <
+;
+MSG_OVERFLOW_CT40
+file di output
+; output files
+;
+MSG_WARNING_CT42
+\n! Nessun testo di programma è stato specificato.
+; \n! No program text was specified.
+;
+MSG_PROGRESS_CT42_1
+\nScrittura del file di output (%s):
+; \nWriting the output file (%s):
+;
+MSG_PROGRESS_CT42_2
+\nScrittura dei file di output:
+; \nWriting the output files:
+;
+MSG_PROGRESS_CT42_3
+\nFatto.
+; \nDone.
+;
+MSG_CONFUSION_CT47
+definizione macro contiene uno strano carattere
+; macro defs have strange char
+;
+MSG_ERROR_CT60_1
+! Input terminato nel commento intermedio
+; ! Input ended in mid-comment
+;
+MSG_ERROR_CT60_2
+! Nome sezione terminato all'interno del commento intermedio
+; ! Section name ended in mid-comment
+;
+MSG_ERROR_CT67_1
+! Stringa non terminata
+; ! String didn't end
+;
+MSG_ERROR_CT67_2
+! Input terminato nel mezzo di una stringa
+; ! Input ended in middle of string
+;
+MSG_ERROR_CT67_3
+\n! Stringa troppo lunga: 
+; \n! String too long: 
+;
+MSG_ERROR_CT68_1
+! Usare @l solo nel limbo
+; ! Use @l in limbo only
+;
+MSG_ERROR_CT68_2
+! I doppi @ dovrebbero essere usati nel "control text"
+; ! Double @ should be used in control text
+;
+MSG_ERROR_CT69
+! I doppi @ dovrebbero essere usati nelle costanti ASCII
+; ! Double @ should be used in ASCII constant
+;
+MSG_ERROR_CT72_1
+! Input terminato all'interno del nome di una sezione
+; ! Input ended in section name
+;
+MSG_ERROR_CT72_2
+\n! Nome sezione troppo lungo: 
+; \n! Section name too long: 
+;
+MSG_ERROR_CT73_1
+! Nome sezione non terminato
+; ! Section name didn't end
+;
+MSG_ERROR_CT73_2
+! Nomi di sezioni l'uno dentro l'altro non consentiti
+; ! Nesting of section names not allowed
+;
+MSG_ERROR_CT74
+! Stringa verbatim non terminata
+; ! Verbatim string didn't end
+;
+MSG_OVERFLOW_CT76
+testo
+; text
+;
+MSG_ERROR_CT78
+! @d, @f e @c sono ignorati nella parte C
+; ! @d, @f and @c are ignored in C text
+;
+MSG_ERROR_CT79
+! Omesso `@ ' prima di una sezione con nome
+; ! Missing `@ ' before a named section
+;
+MSG_ERROR_CT80
+! I doppi @ dovrebbero essere usati nelle stringhe
+; ! Double @ should be used in string
+;
+MSG_ERROR_CT81
+! Sequenza di escape non riconosciuta
+; ! Unrecognized escape sequence
+;
+MSG_ERROR_CT85
+! Definizione liberata (flushed), iniziare con un identificatore
+; ! Definition flushed, must start with identifier
+;
+MSG_ERROR_CT93
+! I doppi @ dovrebbero essere usati nel limbo
+; ! Double @ should be used in limbo
+;
+MSG_ERROR_CT94_1
+! Un numero decimale improprio segue @l
+; ! Improper hex number following @l
+;
+MSG_ERROR_CT94_2
+! Stringa sostitutiva in @l troppo lunga
+; ! Replacement string in @l too long
+;
+MSG_STATS_CT95_1
+\nStatistiche uso memoria:\n
+; \nMemory usage statistics:\n
+;
+MSG_STATS_CT95_2
+%ld nomi (fuori da %ld)\n
+; %ld names (out of %ld)\n
+;
+MSG_STATS_CT95_3
+%ld replacement text (fuori da %ld)\n
+; %ld replacement texts (out of %ld)\n
+;
+MSG_STATS_CT95_4
+%ld byte (fuori da %ld)\n
+; %ld bytes (out of %ld)\n
+;
+MSG_STATS_CT95_5
+%ld token (fuori da %ld)\n
+; %ld tokens (out of %ld)\n
+;
+MSG_BANNER_CW1
+Questo è CWEAVE (Versione 3.61 [p19])\n
+; This is CWEAVE (Version 3.61 [p19])\n
+;
+MSG_OVERFLOW_CW21
+referimento incrociato
+; cross-reference
+;
+MSG_ERROR_CW54
+! I codici di controllo sono vietati all'interno dei nomi delle sezioni
+; ! Control codes are forbidden in section name
+;
+MSG_ERROR_CW56_1
+! Control text non terminato
+; ! Control text didn't end
+;
+MSG_ERROR_CW56_2
+! I codici di controllo sono vietati nel "control text"
+; ! Control codes are forbidden in control text
+;
+MSG_OVERFLOW_CW61
+numero sezione
+; section number
+;
+MSG_ERROR_CW71_1
+! Omesso identificatore sinistro di @s
+; ! Missing left identifier of @s
+;
+MSG_ERROR_CW71_2
+! Omesso identificatore destro di @s
+; ! Missing right identifier of @s
+;
+MSG_WARNING_CW75_1
+\n! Mai definito: <
+; \n! Never defined: <
+;
+MSG_WARNING_CW75_2
+\n! Mai usato: <
+; \n! Never used: <
+;
+MSG_WARNING_CW85
+\n! La linea deve essere spezzata (output l. %d):\n
+; \n! Line had to be broken (output l. %d):\n
+;
+MSG_ERROR_CW92_1
+! Omesso } nel commento
+; ! Missing } in comment
+;
+MSG_ERROR_CW92_2
+! Extra } nel commento
+; ! Extra } in comment
+;
+MSG_ERROR_CW94
+! Uso illegale di @ nel commento
+; ! Illegal use of @ in comment
+;
+MSG_WARNING_CW171
+\nSequenza scrap irriducibile nella sezione %d:
+; \nIrreducible scrap sequence in section %d:
+;
+MSG_WARNING_CW172
+\nTracing dopo l. %d:\n
+; \nTracing after l. %d:\n
+;
+MSG_OVERFLOW_CW176
+scrap/token/text
+; scrap/token/text
+;
+MSG_ERROR_CW182
+! Omesso `|' dopo il testo in C
+; ! Missing `|' after C text
+;
+MSG_ERROR_CW201
+\n! Codice di controllo illegale nella sezione: <
+; \n! Illegal control code in section name: <
+;
+MSG_ERROR_CW202
+\n! Testo C nel nome di una sezione, non terminato: <
+; \n! C text in section name didn't end: <
+;
+MSG_OVERFLOW_CW202
+buffer
+; buffer
+;
+MSG_PROGRESS_CW204
+\nScrittura file di output...
+; \nWriting the output file...
+;
+MSG_ERROR_CW209_1
+! Stringa TeX dovrebbe stare solo nel testo in C
+; ! TeX string should be in C text only
+;
+MSG_ERROR_CW209_2
+! Non puoi fare quello nel testo in TeX
+; ! You can't do that in TeX text
+;
+MSG_ERROR_CW213
+! Definizione di macro impropria
+; ! Improper macro definition
+;
+MSG_ERROR_CW214
+! Definizione di formato impropria
+; ! Improper format definition
+;
+MSG_ERROR_CW217
+! È necessario un segno di = dopo il nome della sezione
+; ! You need an = sign after the section name
+;
+MSG_ERROR_CW218
+! Non puoi fare quello nella parte in C
+; ! You can't do that in C text
+;
+MSG_PROGRESS_CW225
+\nScrittura dell'indice...
+; \nWriting the index...
+;
+MSG_FATAL_CW225_1
+! Non posso aprire il file per l'indice
+; ! Cannot open index file 
+;
+MSG_FATAL_CW225_2
+! Non posso aprire il section file 
+; ! Cannot open section file 
+;
+MSG_OVERFLOW_CW237
+ordinamento
+; sorting
+;
+MSG_STATS_CW248_1
+%ld riferimenti incrociati (fuori da %ld)\n
+; %ld cross-references (out of %ld)\n
+;
+MSG_STATS_CW248_2
+Analisi:\n
+; Parsing:\n
+;
+MSG_STATS_CW248_3
+%ld scrap (fuori da %ld)\n
+; %ld scraps (out of %ld)\n
+;
+MSG_STATS_CW248_4
+%ld text (fuori da %ld)\n
+; %ld texts (out of %ld)\n
+;
+MSG_STATS_CW248_5
+%ld livelli (fuori da %ld)\n
+; %ld levels (out of %ld)\n
+;
+MSG_STATS_CW248_6
+Ordinamento:\n
+; Sorting:\n
+;

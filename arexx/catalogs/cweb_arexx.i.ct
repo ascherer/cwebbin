@@ -1,0 +1,76 @@
+;
+## version $VER: CWEB_AREXX.I.CT 1.7 (14.10.1998)
+## codeset 0
+## language italiano
+;
+; Questa è la traduzione in italiano delle frasi in inglese usate
+; nello script arexx `Start_Web.ced' per la produzione di un catalog
+; in Italiano. A tal proposito è nessaria la versione 2.1 o superiore di
+; AmigaOS. La creazione del catalog file può essere fatta con un programma
+; come CatComp, tramite:
+;
+;     PROMPT> CatComp cweb_arexx.cd cweb_arexx.i.ct CATALOG italiano/cweb_arexx.catalog
+;
+; Questo file può essere il punto di partenza per traduzioni in altre
+; lingue. Se qualcuno dovesse creare traduzioni per altre lingue, apprezzerei
+; di ricevere una copia del CatalogTranslation.
+;
+; Autore:
+;    Andreas Scherer
+;    Rochusstraße 22-24
+;    52062 Aachen, Germany
+;    <andreas.scherer@pobox.com>
+;
+; Copyright (c) 1993 Andreas Scherer
+;
+; Italian translation by
+;
+;    Giuseppe Ghibò
+;    Via Sestriere, 133
+;    10090 C. Vica - Rivoli (TO), Italy
+;    <ghibo@galileo.polito.it>
+;
+; Copyright (c) 1994 Giuseppe Ghibò
+;
+; Permission is granted to make and distribute verbatim copies of this
+; document provided that the copyright notice and this permission notice
+; are preserved on all copies.
+;
+; Permission is granted to copy and distribute modified versions of this
+; document under the conditions for verbatim copying, provided that the
+; entire resulting derived work is given a different name and distributed
+; under the terms of a permission notice identical to this one.
+;
+; Modifiche:
+;    06.12.1993: Nuovo nome per il catalog file, per evitare
+;                confusione con i nomi dei catalog file
+;                del sistema CWEB. (V1.2)
+;    12.08.1994: Modificate le informazioni di copyright. (V1.3);
+;    12.09.1994: This Italian catalog translation was submitted
+;                to Andreas Scherer by Giuseppe Ghibò by e-mail
+;                for inclusion in the distribution.
+;                Thank you very much, Giuseppe! (V1.4)
+;    16.03.1995: `wpp'->`wxx'. (V1.5)
+;    21.03.1996: `Checksum' information added.  (V1.6)
+;    14.10.1998: `Checksum' information removed.  (V1.7)
+;
+MSG_ERROR_EXTENSION
+Errore, il file deve avere estensione `.w' o `.web' o `.wxx'.
+; Fehler, die Datei muß eine Endung `.w', `.web' oder `.wxx' haben.
+;
+MSG_ERROR_FATAL
+annullato con un errore fatale! Nessun output!
+; mit fatalem Fehler abgebrochen! Keine Ausgabe!
+;
+MSG_ERROR_ERROR
+terminato con un errore! Output difettoso!
+; beendet mit Fehler! Ausgabe fehlerhaft!
+;
+MSG_ERROR_WARNING
+terminato con warning!\nProbabilmente l'output è corretto.
+; beendet mit Warnung!\nAusgabe wahrscheinlich korrekt.
+;
+MSG_ERROR_END
+Errore con
+; Fehler bei
+;

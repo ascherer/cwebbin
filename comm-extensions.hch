@@ -1,0 +1,37 @@
+Changes for COMMON.H by Andreas Scherer, May 28, 1995.
+
+This set of changes introduces several extensions to the standard behaviour
+of the CWEB system.  Several new command line options are provided here.
+See `cwebmana.ch' for details about these new features.
+
+This change file requires COMM-ANSI.HCH to be applied as well.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.131
+@d max_file_name_length 60
+@y
+@d max_file_name_length 255
+@z
+
+@x l.148
+extern line[]; /* number of current line in the stacked files */
+@y
+extern line[]; /* number of current line in the stacked files */
+extern char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+@z
+
+@x l.168
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@y
+@d show_progress flags['p'] /* should progress reports be printed? */
+@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
+@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@z
+
+@x l.173
+extern boolean flags[]; /* an option for each 7-bit code */
+@y
+extern boolean flags[]; /* an option for each 8-bit code */
+@z

@@ -1,0 +1,82 @@
+Changes for COMMON.H by Andreas Scherer, May 10, 1995.
+
+This set of changes translates all string values written by the CWEB module
+COMMON.H in case of errors or information requests.  Some system-dependent
+code for the Amiga operating system is introduced to make use of the
+`locale.library' mechanism for user-definable language support.  Care has
+been taken to avoid conflicts with non-Amiga systems.  By editing the
+external header file `cweb.h' and applying this change file, you can set up
+the CWEB programs for a different language than English.
+
+This change file requires COMM-ANSI.HCH, COMM-EXTENSIONS.HCH,
+COMM-MEMORY.HCH to be applied as well.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.16 of COMM-MEMORY.HCH
+@ @f type int /* \.{type} becomes the pseudotype \&{type} */
+@#
+@d alloc_object(object,size,@!type)
+   if(!(object = (type *)malloc((size)*sizeof(type))))
+      fatal("","! Memory allocation failure");
+
+@d free_object(object)
+   if(object) {
+      free(object);
+      object=NULL;
+      }
+
+@<Include files@>=
+#include <stdio.h>
+@y
+@ Version~2.1 of the {\mc AMIGA} operating system introduced localization
+of programs and applications by means of ``language catalogs'' that contain
+replacement strings for terminal texts produced by suitably prepared programs.
+The complete \.{CWEB} system has been modified to accommodate this great idea
+and so the \.{cweb.h} header file with the original English strings is
+included in this section.  Other systems than the {\mc AMIGA} will have to do
+the language conversion by different means, so a little bit of care is to be
+taken with what follows.
+
+@f type int /* \.{type} becomes the pseudotype \&{type} */
+@#
+@d alloc_object(object,size,@!type)
+   if(!(object = (type *)malloc((size)*sizeof(type))))
+      fatal("",get_string(MSG_FATAL_CO85));
+
+@d free_object(object)
+   if(object) {
+      free(object);
+      object=NULL;
+      }
+
+@<Include files@>=
+#include <stdio.h>
+@#
+#ifndef _AMIGA /* non-{\mc AMIGA} systems don't know about \.{<exec/types.h>} */
+typedef long int LONG; /* excerpt from \.{<exec/types.h>} */
+typedef char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
+#define EXEC_TYPES_H 1 /* don't include \.{<exec/types.h>} in \.{"cweb.h"} */
+#endif
+@#
+#ifdef STRINGARRAY
+#undef STRINGARRAY /* don't include the string array |AppStrings| again */
+#endif
+#define get_string(n) AppStrings[n].as_Str
+@#
+#include "cweb.h"
+@#
+struct AppString
+{
+   LONG   as_ID;
+   STRPTR as_Str;
+};
+@#
+extern struct AppString AppStrings[];
+@z
+
+@x l.120
+@d confusion(s) fatal("! This can't happen: ",s)
+@y
+@d confusion(s) fatal(get_string(MSG_FATAL_CO66),s)
+@z
