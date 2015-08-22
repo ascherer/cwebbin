@@ -1,6 +1,6 @@
 Name: cwebbin
 Version: 22p
-Release: 3
+Release: 4
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -13,6 +13,9 @@ BuildArch: i386
 # TeXlive comes with the 'tie' processor used in the build process
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ad.tar.gz
 Source1: %{name}-%{version}.tar.bz2
+
+%define texlive /opt/texlive/current/bin/i386-linux
+%define texmf /opt/texlive/texmf-local
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
@@ -29,10 +32,10 @@ make -f Makefile.unix boot cautiously all
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/local/share/texmf/tex/generic/cweb
-cp texinputs/* $RPM_BUILD_ROOT/usr/local/share/texmf/tex/generic/cweb
+mkdir -p $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
+cp texinputs/* $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
 # cweb-3.65.tar.gz at least has an updated version number :-)
-cp cwebmac.tex $RPM_BUILD_ROOT/usr/local/share/texmf/tex/generic/cweb
+cp cwebmac.tex $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
 mkdir -p $RPM_BUILD_ROOT/usr/local/lib/cweb
 cp c++lib.w $RPM_BUILD_ROOT/usr/local/lib/cweb
 mkdir -p $RPM_BUILD_ROOT/usr/local/bin
@@ -43,20 +46,22 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-/usr/local/share/texmf/tex/generic/cweb/
-%dir /usr/local/share/texmf/tex/generic
+%{texmf}/tex/generic/cweb/
+%dir %{texmf}/tex/generic
 /usr/local/lib/cweb/c++lib.w
 /usr/local/bin/ctangle
 /usr/local/bin/cweave
 /usr/local/bin/wmerge
 
 %post
-texhash
+%{texlive}/texhash
 
 %postun
-texhash
+%{texlive}/texhash
 
 %changelog
+* Sat Aug 22 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-4
+- Put the TeX stuff into the correct 'local texmf tree'
 * Sat Aug 15 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-3
 - Provide consistent information in URL and Source0
 * Mon Jul 06 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-2
