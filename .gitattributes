@@ -1,2 +1,3 @@
 *.ch linguist-language=C
 *.hch linguist-language=C
+*.sas linguist-vendored
