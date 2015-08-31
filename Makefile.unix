@@ -122,7 +122,7 @@ TFLAGS = +s
 
 # What C compiler are you using?
 CC = g++ # gcc cc
-MAKE = make
+MAKE = make -f Makefile.unix
 
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
