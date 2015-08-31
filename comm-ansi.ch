@@ -355,6 +355,12 @@ fatal(s,t)
 @z
 
 @x l.1183
+  if (*s) printf(s);
+@y
+  if (*s) fputs(s,stdout);
+@z
+
+@x l.1190
 @c void
 overflow(t)
   char *t;
@@ -373,6 +379,12 @@ void
 scan_args()
 @y
 static void scan_args(void)
+@z
+
+@x l.1346
+    flags[*dot_pos]=flag_change;
+@y
+    flags[0+*dot_pos]=flag_change;
 @z
 
 @x l.1403
@@ -416,7 +428,6 @@ void sprint_section_name(char *,name_pointer);
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
-static boolean set_path(char *,char *);@/
 static int input_ln(FILE *);@/
 static int web_strcmp(char *,int,char *,int);@/
 static void check_change(void);@/

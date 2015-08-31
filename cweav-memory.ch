@@ -19,8 +19,7 @@ xref_pointer xmem_end;
 @z
 
 @x l.244
-xref_ptr=xmem; name_dir->xref=(void *)xmem;
-xref_switch=0; section_xref_switch=0;
+xref_ptr=xmem; name_dir->xref=(void *)xmem; xref_switch=0; section_xref_switch=0;
 @y
 alloc_object(section_text,longest_name+1,char);
 section_text_end = section_text + longest_name;

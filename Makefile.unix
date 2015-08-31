@@ -442,11 +442,14 @@ remove-orig:
 	cweav-vms.ch cweav-w32.ch
 	- $(RM) cweb.1 cweb.el cwebmac.tex cwebman.tex \
 	Makefile makefile.bs README readme.ql c++lib.w
-	- $(RM) examples/extex.w examples/extex.ch examples/kspell.el \
-	examples/Makefile examples/oemacs.el examples/oemacs.w examples/README
-	- $(RM) examples/treeprint.w examples/wc.w examples/wc-dos.ch \
+	- $(RM) examples/extex.w examples/extex.ch examples/extex.c \
+	examples/kspell.el examples/Makefile examples/oemacs.el \
+	examples/oemacs.w examples/oemacs.c examples/README
+	- $(RM) examples/treeprint.w examples/treeprint.c examples/wc.w \
+	examples/wc.c examples/wc-dos.ch examples/wmerge.c \
 	examples/wmerg-pc.ch examples/wmer-os2.ch \
-	examples/wordtest.w examples/xlib_types.w examples/xview_types.w
+	examples/wordtest.w examples/wordtest.c \
+	examples/xlib_types.w examples/xview_types.w
 	- $(RM) $(CATINCLUDE)/cweb.h
 
 # Remove the patch completely

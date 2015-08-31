@@ -401,6 +401,7 @@ static void scan_args(void);
 /*:69*//*82:*/
 #line 1041 "comm-22p.ch"
 
+static boolean set_path(char*,char*);
 boolean get_line(void);
 name_pointer add_section_name(name_pointer,int,char*,char*,int);
 name_pointer id_lookup(const char*,const char*,char);
@@ -414,9 +415,8 @@ void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
 /*:82*//*83:*/
-#line 1056 "comm-22p.ch"
+#line 1057 "comm-22p.ch"
 
-static boolean set_path(char*,char*);
 static int input_ln(FILE*);
 static int web_strcmp(char*,int,char*,int);
 static void check_change(void);

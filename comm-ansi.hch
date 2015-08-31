@@ -64,9 +64,11 @@ extern include_depth; /* current level of nesting */
 extern int include_depth; /* current level of nesting */
 @z
 
-@x l.149
+@x l.148
+extern line[]; /* number of current line in the stacked files */
 extern change_line; /* number of current line in change file */
 @y
+extern int line[]; /* number of current line in the stacked files */
 extern int change_line; /* number of current line in change file */
 @z
 

@@ -47,11 +47,35 @@ int main (int ac, char **av)
 /* argument count and argument values */
 @z
 
+@x l.107
+  if (show_banner) printf(banner); /* print a ``banner line'' */
+@y
+  if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
+@z
+
+@x l.139
+@i common.h
+@y
+@i comm-22p.h
+@z
+
+@x l.226
+typedef struct xref_info {
+  sixteen_bits num; /* section number plus zero or |def_flag| */
+  struct xref_info *xlink; /* pointer to the previous cross-reference */
+} xref_info;
+@y
+typedef sixteen_bits token;
+typedef struct xref_info {
+  sixteen_bits num; /* section number plus zero or |def_flag| */
+  struct xref_info *xlink; /* pointer to the previous cross-reference */
+} xref_info;
+@z
+
 @x l.244
 xref_ptr=xmem; name_dir->xref=(char*)xmem; xref_switch=0; section_xref_switch=0;
 @y
-xref_ptr=xmem; name_dir->xref=(void *)xmem;
-xref_switch=0; section_xref_switch=0;
+xref_ptr=xmem; name_dir->xref=(void *)xmem; xref_switch=0; section_xref_switch=0;
 @z
 
 @x l.263
@@ -94,6 +118,11 @@ static void set_file_flag(name_pointer p)
   p->xref = (char *)xref_ptr;
 @y
   p->xref = (void *)xref_ptr;
+@z
+
+@x l.336
+typedef sixteen_bits token;
+@y
 @z
 
 @x l.359
@@ -182,10 +211,30 @@ static eight_bits get_next(void) /* produces the next input token */
   eight_bits c; /* the current character */
 @z
 
+@x l.780
+    else if (*loc=='>') if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
+                        else compress(minus_gt); break;
+@y
+    else { if (*loc=='>') { if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
+                        else compress(minus_gt); } } break;
+@z
+
 @x l.795
   case '!': if (*loc=='=') compress(not_eq); break;
 @y
   case '!': if (*loc=='=') compress(non_eq); break;
+@z
+
+@x l.870
+    if (c=='\\') if (loc>=limit) continue;
+      else if (++id_loc<=section_text_end) {
+        *id_loc = '\\'; c=*loc++;
+      }
+@y
+    if (c=='\\') { if (loc>=limit) continue;
+      else { if (++id_loc<=section_text_end) {
+        *id_loc = '\\'; c=*loc++;
+      } } }
 @z
 
 @x l.934
@@ -354,12 +403,26 @@ static int copy_comment(@t\1\1@> /* copies \TeX\ code in comments */
   int bal@t\2\2@>) /* brace balance */
 @z
 
+@x l.1607
+else if (c=='\\' && *loc!='@@')
+  if (phase==2) app_tok(*(loc++)) else loc++;
+@y
+else { if (c=='\\' && *loc!='@@') {
+  if (phase==2) app_tok(*(loc++)) else loc++; } }
+@z
+
 @x l.1734
 void
 print_cat(c) /* symbolic printout of a category */
 eight_bits c;
 @y
 static void print_cat(eight_bits c) /* symbolic printout of a category */
+@z
+
+@x l.1787
+  printf(cat_name[c]);
+@y
+  fputs(cat_name[c],stdout);
 @z
 
 @x l.2062
@@ -588,32 +651,62 @@ static void make_output(void) /* outputs the equivalents of tokens */
   eight_bits a=0, /* current output byte */
 @z
 
-@x l.3804
+@x l.3927
+    if (b=='\'' || b=='"')
+      if (delim==0) delim=b;
+      else if (delim==b) delim=0;
+@y
+    if (b=='\'' || b=='"') {
+      if (delim==0) delim=b;
+      else if (delim==b) delim=0; }
+@z
+
+@x l.3951
 void phase_two();
 @y
 static void phase_two(void);
 @z
 
-@x l.3807
+@x l.3954
 void
 phase_two() {
 @y
 static void phase_two(void) {
 @z
 
-@x l.3927
+@x l.4074
 void finish_C();
 @y
 static void finish_C(boolean);
 @z
 
-@x l.3930
+@x l.4077
 void
 finish_C(visible) /* finishes a definition or a \CEE/ part */
   boolean visible; /* nonzero if we should produce \TEX/ output */
 @y
 static void finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
   boolean visible@t\2\2@>) /* nonzero if we should produce \TeX\ output */
+@z
+
+@x l.4088
+    if (out_ptr>out_buf+1)
+      if (*(out_ptr-1)=='\\')
+@.\\6@>
+@.\\7@>
+@.\\Y@>
+        if (*out_ptr=='6') out_ptr-=2;
+        else if (*out_ptr=='7') *out_ptr='Y';
+@y
+    if (out_ptr>out_buf+1) {
+      if (*(out_ptr-1)=='\\') {
+@.\\6@>
+@.\\7@>
+@.\\Y@>
+        if (*out_ptr=='6') out_ptr-=2;
+        else if (*out_ptr=='7') *out_ptr='Y';
+      }
+    }
 @z
 
 @x l.4098

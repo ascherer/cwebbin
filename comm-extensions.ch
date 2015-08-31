@@ -245,7 +245,7 @@ used, when no changes are desired.
 
 @x l.1345
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    flags[*dot_pos]=flag_change;
+    flags[0+*dot_pos]=flag_change;
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if(*dot_pos=='l') {
@@ -254,6 +254,13 @@ used, when no changes are desired.
        }
     else
       flags[0+*dot_pos]=flag_change;
+@z
+
+@x l.430 of comm-ansi.ch
+@<Predecl...@>=
+@y
+@<Predecl...@>=
+static boolean set_path(char *,char *);@/
 @z
 
 @x l.1415

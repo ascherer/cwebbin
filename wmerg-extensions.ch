@@ -183,6 +183,13 @@ be used, when no changes are desired.
 #endif
 @z
 
+@x l.163 of wmerg-ansi.ch
+@<Predecl...@>=
+@y
+@<Predecl...@>=
+static boolean set_path(char *,char *);@/
+@z
+
 @x l.709
 @* Index.
 @y

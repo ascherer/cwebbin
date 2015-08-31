@@ -117,18 +117,6 @@ p20 9 March 2002 AS Update for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 22p 18 August 2011 AS ANSI C++ patches for patch level [22p].
 ------------------------------------------------------------------------------
-@x l.86
-@:caddr_t}{\bf caddr_t@>
-@y
-@:caddr_t}{\bf caddr\_t@>
-@z
-
-@x l.687
-    flags[*dot_pos]=flag_change;
-@y
-    flags[0+*dot_pos]=flag_change;
-@z
-
 @x l.709
 @* Index.
 @y

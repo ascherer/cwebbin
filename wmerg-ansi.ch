@@ -41,6 +41,12 @@ instead of predeclaring the standard system functions |strlen|, |strcmp|,
 @^system dependencies@>
 @z
 
+@x l.86
+@:caddr_t}{\bf caddr_t@>
+@y
+@:caddr_t}{\bf caddr\_t@>
+@z
+
 @x l.94
 input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
@@ -142,6 +148,12 @@ scan_args()
 void scan_args(void)
 @z
 
+@x l.687
+    flags[*dot_pos]=flag_change;
+@y
+    flags[0+*dot_pos]=flag_change;
+@z
+
 @x l.709
 @* Index.
 @y
@@ -158,11 +170,6 @@ void check_complete(void);@/
 void prime_the_change_buffer(void);@/
 void put_line(void);@/
 void reset_input(void);
-
-@ The following function is private to |"wmerge.w"|.
-
-@<Predecl...@>=
-static boolean set_path(char *,char *);
 
 @* Index.
 @z

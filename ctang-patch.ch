@@ -179,26 +179,6 @@ z
 @d banner "This is CTANGLE (Version 3.64 [22p])\n"
 @z
 
-@x l.100
-  if (show_banner) printf(banner); /* print a ``banner line'' */
-@y
-  if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
-@z
-
-@x l.127
-@i common.h
-@y
-@i comm-22p.h
-@z
-
-@x l.954
-    else if (*loc=='>') if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
-                        else compress(minus_gt); break;
-@y
-    else { if (*loc=='>') { if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
-                        else compress(minus_gt); } } break;
-@z
-
 @x l.1546
 @** Index.
 @y
