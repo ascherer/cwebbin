@@ -257,8 +257,12 @@ used, when no changes are desired.
 @z
 
 @x l.430 of comm-ansi.ch
+@ The following functions are private to |"common.w"|.
+
 @<Predecl...@>=
 @y
+@ The following functions are private to |"common.w"|.
+
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/
 @z
