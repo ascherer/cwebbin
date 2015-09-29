@@ -1,12 +1,14 @@
-# This file, makefile.unix, is part of CWEBBIN (Version 3.64 [22p]).
+# This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
+# Version 3.64 [22p] --- September 2015
 
+# Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
+#
 # Modified for the GCC compiler under Linux by Andreas Scherer
 # (andreas.scherer@pobox.com), June 8, 1996.
 # Last updated by Andreas Scherer, October 29, 2005.
+# Revised by Andreas Scherer, September 29, 2015.
 
-# Copyright (C) 1987,1990,1993,1998 Silvio Levy and Donald E. Knuth
-#
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
@@ -21,58 +23,58 @@
 # entire resulting derived work is given a different name and distributed
 # under the terms of a permission notice identical to this one.
 
-#
+# 
 # Read the README file, then edit this file to reflect local conditions
 #
 
 # directory for TeX inputs (cwebmac.tex and (X|d|f|i)cwebmac.tex and
 # the 8-bit encodings go here)
-MACROSDIR = /usr/local/share/texmf/tex/generic/cweb
+MACROSDIR= /usr/local/share/texmf/tex/generic/cweb
 
 # directory for CWEB inputs in @i files
-CWEBINPUTS = /usr/local/lib/cweb
+CWEBINPUTS= /usr/local/lib/cweb
 
 # extension for manual pages ("l" distinguishes local from system stuff)
-#MANEXT = l
-MANEXT = 1
+MANEXT= l
+#MANEXT= 1
 
 # directory for manual pages (cweb.1 goes here)
-MANDIR = /usr/local/man/man$(MANEXT)
+MANDIR= /usr/share/man/man$(MANEXT)
 
 # destination directory for executables; must end in /
-DESTDIR = /usr/local/bin/
+DESTDIR= /usr/local/bin/
 
 # directory for GNU EMACS Lisp code (cweb.el goes here)
-EMACSDIR = /usr/local/emacs/lisp
+EMACSDIR= /usr/share/emacs/site-lisp
 
 # directory for the language header file "cweb.h"
-CATINCLUDE = ./catalogs
+CATINCLUDE= ./catalogs
 
 # "$(CATLANGUAGE)cweb.h" is linked to "cweb.h"; it can be one of [dei]
-CATLANGUAGE = e
+CATLANGUAGE=e
 
-# Set DESTPREF to null if you want to call the executables "tangle" and
-# "weave" (probably NOT a good idea; we recommend leaving DESTPREF = c)
-DESTPREF = c
+# Set DESTPREF to null if you want to call the executables "tangle" and "weave"
+# (probably NOT a good idea; we recommend leaving DESTPREF=c)
+DESTPREF=c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
-CCHANGES = comm-22p.ch
+CCHANGES= comm-22p.ch
 
 # Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES = comm-22p.hch
+HCHANGES= comm-22p.hch
 
 # Set HPATCH to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH = comm-22p.h
+HPATCH= comm-22p.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
-TCHANGES = ctang-22p.ch
+TCHANGES= ctang-22p.ch
 
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
-WCHANGES = cweav-22p.ch
+WCHANGES= cweav-22p.ch
 
 # Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
-MCHANGES = wmerg-22p.ch
+MCHANGES= wmerg-22p.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
@@ -83,9 +85,12 @@ MCHANGES = wmerg-22p.ch
 # much stricter checking of type conversions and module interfaces.
 # For highest portability, all of the extra features of C++ are
 # avoided in the CWEB system, thus using something like C--.
-EXTENSION = cxx
+EXTENSION= cxx
 
-# We keep debugging info around, for fun, but most users don't need it.
+# We keep debugging info around, for fun, but most users don't need it
+CFLAGS = -g
+#CFLAGS = -O
+
 # These lists of arguments are specific for CC and GCC.  Change, add or
 # delete things here to suit your personal conditions.
 
@@ -120,44 +125,49 @@ LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 WFLAGS = -f +lX +s
 TFLAGS = +s
 
-# What C compiler are you using?
-CC = g++ # gcc cc
+# Always use this extended Makefile
 MAKE = make -f Makefile.unix
 
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
 
+# What C compiler are you using?
+CC = g++ # gcc cc
+
 # RM and CP are used below in case rm and cp are aliased
-RM = /bin/rm
-CP = /bin/cp
-INSTALL = $(CP)
+RM= /bin/rm
+CP= /bin/cp
 
-# uncomment the second line if you use TeX plus PDF postprocessor
-PDFTEX = pdftex
+# uncomment the second line if you use pdftex to bypass .dvi files
 #PDFTEX = dvipdfm
+PDFTEX = pdftex
 
-##########  You shouldn't have to change anything below this point #######
+##########  You shouldn't have to change anything after this point #######
 
-CWEAVE = ./cweave
-CTANGLE = ./ctangle
-WMERGE = ./wmerge
+CWEAVE = ./cweave $(WFLAGS)
+CTANGLE = ./ctangle $(TFLAGS)
 
 # The following files come from the original CWEB distribution and
 # are left completely unmodified.
 
-SOURCES = common.w common.h ctangle.w cweave.w prod.w examples/wmerge.w
+SOURCES = cweave.w common.w ctangle.w examples/wmerge.w
 
-ORIGINAL = $(SOURCES) comm-amiga.ch comm-bs.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
-	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
-	cweav-vms.ch cweav-w32.ch \
-	cweb.1 cweb.el cwebmac.tex cwebman.tex Makefile \
-	makefile.bs README readme.ql c++lib.w \
-        examples/extex.w examples/kspell.el examples/Makefile \
-	examples/oemacs.el examples/oemacs.w examples/README \
-	examples/treeprint.w examples/wc.w examples/wc-dos.ch \
-	examples/wmerg-pc.ch examples/wmer-os2.ch examples/wordtest.w \
+ORIGINAL = $(SOURCES) prod.w \
+	Makefile common.c common.h ctangle.c \
+	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
+	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
+	comm-pc.ch ctang-pc.ch cweav-pc.ch comm-amiga.ch \
+        comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
+	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
+	comm-w32.ch ctang-w32.ch cweav-w32.ch \
+	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
+	examples/extex.c examples/extex.ch examples/extex.w \
+	examples/kspell.el examples/Makefile examples/README \
+	examples/oemacs.c examples/oemacs.el examples/oemacs.w \
+	examples/treeprint.c examples/treeprint.w \
+	examples/wc.c examples/wc.w examples/wc-dos.ch \
+	examples/wmerge.c examples/wmerg-pc.ch examples/wmer-os2.ch \
+	examples/wordtest.c examples/wordtest.w \
 	examples/xlib_types.w examples/xview_types.w
 
 # The following files make the body of this patched distribution
@@ -178,37 +188,35 @@ WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
 	cwebman.ch README.22p Makefile.bcc Makefile.sas Makefile.unix \
-	comm-newpage.ch ctang-newpage.ch cweav-newpage.ch
+	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp
 
 AREXX = arexx
-
-BIN = bin
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
-	examples/treeprint.ch examples/wc.ch examples/wordtest.ch
+	examples/treeprint-ansi.ch examples/wc-ansi.ch examples/wordtest-ansi.ch
 
 INCLUDE = cwebinputs
 
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(AREXX) $(BIN) $(EXAMPLES) $(INCLUDE) $(MACROS)
+	$(PATCH) $(AREXX) $(EXAMPLES) $(INCLUDE) $(MACROS)
 
-.SUFFIXES:
 .SUFFIXES: .dvi .tex .w .pdf
 
 .w.tex:
-	$(CWEAVE) $(WFLAGS) $* $*
+	$(CWEAVE) $*
 
 .tex.dvi:	
-	TEXINPUTS=.//:; tex $*
+	TEXINPUTS=.//: tex $<
 
-.tex.pdf:	
-	TEXINPUTS=.//:; \
-	if test "$(PDFTEX)" = "dvipdfm"; then tex "\let\pdf+ \input $*"; fi; \
-	$(PDFTEX) $*
+.tex.pdf:
+	case "$(PDFTEX)" in \
+	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
+	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
+	esac
 
 .w.dvi:
 	$(MAKE) $*.tex
@@ -231,15 +239,15 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 # The complete set of files contains the two programs `ctangle' and
 # `cweave' plus the program `wmerge', the manuals `cwebman' and `cwebmana'
 # and the source documentations.
-all: ctangle cweave wmerge cwebmac.tex
+all: ctangle cweave wmerge fullmanual
 
 cautiously: ctangle
 	$(CP) common.$(EXTENSION) SAVEcommon.$(EXTENSION)
-	$(CTANGLE) $(TFLAGS) common $(CCHANGES) common.$(EXTENSION)
+	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 	diff common.$(EXTENSION) SAVEcommon.$(EXTENSION)
 	$(RM) SAVEcommon.$(EXTENSION)
 	$(CP) ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
-	$(CTANGLE) $(TFLAGS) ctangle $(TCHANGES) ctangle.$(EXTENSION)
+	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 	diff ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
 	$(RM) SAVEctangle.$(EXTENSION)
 
@@ -250,40 +258,40 @@ SAVEcommon.$(EXTENSION):
 	$(CP) common.$(EXTENSION) SAVEcommon.$(EXTENSION)
 
 common.$(EXTENSION): common.w $(CCHANGES)
-	$(CTANGLE) $(TFLAGS) common $(CCHANGES) common.$(EXTENSION)
+	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 
 common.o: common.$(EXTENSION) $(CATINCLUDE)/cweb.h
-	$(CC) $(CFLAGS) -c common.$(EXTENSION) -o common.o
+	$(CC) $(CFLAGS) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -c common.$(EXTENSION)
 
 ctangle: ctangle.o common.o
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o 
 
 ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HPATCH)
-	$(CTANGLE) $(TFLAGS) ctangle $(TCHANGES) ctangle.$(EXTENSION)
+	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 
 ctangle.o: ctangle.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
-	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION) -o ctangle.o
+	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 
 cweave: cweave.o common.o
 	$(CC) $(LINKFLAGS) -o cweave cweave.o common.o
 
 cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HPATCH)
-	$(CTANGLE) $(TFLAGS) cweave $(WCHANGES) cweave.$(EXTENSION)
+	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
 
 cweave.o: cweave.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
-	$(CC) $(CFLAGS) -c cweave.$(EXTENSION) -o cweave.o
+	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
 
 wmerge: wmerge.$(EXTENSION)
 	$(CC) $(CFLAGS) -o wmerge wmerge.$(EXTENSION) $(LINKFLAGS)
 
 wmerge.$(EXTENSION): examples/wmerge.w $(MCHANGES)
-	$(CTANGLE) $(TFLAGS) examples/wmerge $(MCHANGES) wmerge.$(EXTENSION)
+	$(CTANGLE) examples/wmerge $(MCHANGES) wmerge.$(EXTENSION)
 
 boot:
-	if test ! -h ./catalogs/cweb.h; \
-		then ln -s $(CATLANGUAGE)cweb.h ./catalogs/cweb.h; fi
-	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION) -o ctangle.o
-	$(CC) $(CFLAGS) -c common.$(EXTENSION) -o common.o
+	if test ! -h $(CATINCLUDE)/cweb.h; \
+		then ln -s $(CATLANGUAGE)cweb.h $(CATINCLUDE)/cweb.h; fi
+	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
+	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o
 
 # Take a good lecture for bedtime reading
@@ -302,56 +310,41 @@ usermanual: cwebmana.pdf
 
 fullmanual: usermanual $(SOURCES) \
 	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HPATCH) $(MCHANGES)
-	$(CWEAVE) $(WFLAGS) common.w comm-doc.ch
+	$(CWEAVE) common.w comm-doc.ch
 	$(MAKE) common.pdf
-	$(CWEAVE) $(WFLAGS) ctangle.w ctang-doc.ch
+	$(CWEAVE) ctangle.w ctang-doc.ch
 	$(MAKE) ctangle.pdf
-	$(CWEAVE) $(WFLAGS) cweave.w cweav-doc.ch
+	$(CWEAVE) cweave.w cweav-doc.ch
 	$(MAKE) cweave.pdf
-	$(CWEAVE) $(WFLAGS) examples/wmerge.w $(MCHANGES)
+	$(CWEAVE) examples/wmerge.w $(MCHANGES)
 	$(MAKE) wmerge.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
-	$(TIE) -m cwebmana.tex cwebman.tex cwebman.ch
+	$(TIE) -m $@ $^
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
 # change files listed above are actually used here, so you won't see
 # any system-dependent parts not available under UNIX.
-comm-doc.ch: common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-memory.ch comm-translation.ch comm-output.ch \
-	comm-man.ch comm-newpage.ch
-	$(TIE) -c comm-doc.ch common.w \
-	comm-patch.ch comm-ansi.ch comm-extensions.ch comm-memory.ch \
-	comm-translation.ch comm-output.ch \
-	comm-man.ch comm-newpage.ch
-ctang-doc.ch: ctangle.w ctang-patch.ch ctang-ansi.ch ctang-memory.ch \
-	ctang-translation.ch ctang-output.ch \
-	ctang-man.ch ctang-newpage.ch
-	$(TIE) -c ctang-doc.ch ctangle.w \
-	ctang-patch.ch ctang-ansi.ch ctang-memory.ch \
-	ctang-translation.ch ctang-output.ch \
-	ctang-man.ch ctang-newpage.ch
-cweav-doc.ch: cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch \
-	cweav-man.ch cweav-newpage.ch
-	$(TIE) -c cweav-doc.ch cweave.w \
-	cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-memory.ch \
-	cweav-translation.ch cweav-output.ch \
-	cweav-man.ch cweav-newpage.ch
+comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
+	$(TIE) -c $@ $^
+ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
+	$(TIE) -c $@ $^
+cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
+	$(TIE) -c $@ $^
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HPATCH)
-	$(CWEAVE) $(WFLAGS) ctangle $(TCHANGES)
+	$(CWEAVE) ctangle $(TCHANGES)
 
 cweave.tex: cweave.w $(WCHANGES) $(HPATCH)
-	$(CWEAVE) $(WFLAGS) cweave $(WCHANGES)
+	$(CWEAVE) cweave $(WCHANGES)
 
 common.tex: common.w $(CCHANGES)
-	$(CWEAVE) $(WFLAGS) common $(CCHANGES)
+	$(CWEAVE) common $(CCHANGES)
 
 wmerge.tex: examples/wmerge.w $(MCHANGES)
-	$(CWEAVE) $(WFLAGS) examples/wmerge $(MCHANGES)
+	$(CWEAVE) examples/wmerge $(MCHANGES)
 
 # the master change files are created automatically by the TIE processor
 # from a set of separate change files.  note that not all change files
@@ -359,110 +352,82 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-memory.ch comm-translation.ch comm-output.ch
-	$(TIE) -c $(CCHANGES) common.w \
-	comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-memory.ch comm-translation.ch comm-output.ch
+	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
 	comm-memory.hch comm-translation.hch comm-output.hch
-	$(TIE) -c $(HCHANGES) common.h \
-	comm-ansi.hch comm-extensions.hch comm-memory.hch \
-	comm-translation.hch comm-output.hch
+	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
-	$(TIE) -m $(HPATCH) common.h $(HCHANGES)
+	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
 	ctang-memory.ch ctang-translation.ch ctang-output.ch
-	$(TIE) -c $(TCHANGES) ctangle.w \
-	ctang-patch.ch ctang-ansi.ch ctang-memory.ch \
-	ctang-translation.ch ctang-output.ch
+	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-memory.ch cweav-translation.ch cweav-output.ch
-	$(TIE) -c $(WCHANGES) cweave.w \
-	cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch
+	$(TIE) -c $@ $^
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch
-	$(TIE) -c $(MCHANGES) examples/wmerge.w \
-	wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch \
-	wmerg-memory.ch wmerg-output.ch
+	$(TIE) -c $@ $^
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # and $(HPATCH) for bootstrapping
 clean:
-	$(RM) -f *~ *.o *.orig *.rej common.tex cweave.tex cweave.$(EXTENSION) \
-	wmerge.$(EXTENSION) ctangle.tex *.log *.dvi *.pdf *.toc *.idx \
-	*.scn core cweave.w.[12] cweave ctangle cwebmana.tex wmerge.tex \
-	wmerge *-22p.* *-doc.ch
+	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
+	cweave.w.[12] cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
+	  *-22p.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
+	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
-# Install the new program versions where they can be found
 install: all
-	- mkdir -p $(DESTDIR)
+	- mkdir $(DESTDIR)
 	$(CP) cweave $(DESTDIR)$(DESTPREF)weave
 	chmod 755 $(DESTDIR)$(DESTPREF)weave
 	$(CP) ctangle $(DESTDIR)$(DESTPREF)tangle
 	chmod 755 $(DESTDIR)$(DESTPREF)tangle
 	$(CP) wmerge $(DESTDIR)wmerge
 	chmod 755 $(DESTDIR)wmerge
-	- mkdir -p $(MANDIR)
+	- mkdir $(MANDIR)
 	$(CP) cweb.1 $(MANDIR)/cweb.$(MANEXT)
 	chmod 644 $(MANDIR)/cweb.$(MANEXT)
-	- mkdir -p $(MACROSDIR)
+	- mkdir $(MACROSDIR)
 	$(CP) cwebmac.tex $(MACROSDIR)
 	chmod 644 $(MACROSDIR)/cwebmac.tex
 	$(CP) $(MACROS)/* $(MACROSDIR)
 	chmod 644 $(MACROSDIR)/*
-	- mkdir -p $(CWEBINPUTS)
-	$(CP) $(INCLUDE)/* $(CWEBINPUTS)
-	$(CP) c++lib.w $(CWEBINPUTS)
-	chmod 644 $(CWEBINPUTS)/*
-	- mkdir -p $(EMACSDIR)
+	- mkdir $(EMACSDIR)
 	$(CP) cweb.el $(EMACSDIR)
 	chmod 644 $(EMACSDIR)/cweb.el
+	- mkdir $(CWEBINPUTS)
+	$(CP) c++lib.w $(CWEBINPUTS)
+	chmod 644 $(CWEBINPUTS)/c++lib.w
+	$(CP) $(INCLUDE)/* $(CWEBINPUTS)
+	chmod 644 $(CWEBINPUTS)/*
 
-bundle: $(ALL)
-	/usr/local/bin/shar -m100000 -c -v -f cweb $(ALL)
-
-tags: $(ALL)
-	etags -z $(ALL)
-
-cweb.tar: $(ALL)
-	tar cvhf cweb.tar $(ALL)
-
-floppy: $(ALL)
-	bar cvhf /dev/rfd0 $(ALL)
+floppy: $(ORIGINAL)
+	bar cvhf /dev/rfd0 $(ORIGINAL)
 	bar tvf /dev/rfd0
 	eject
 
+tags: $(ORIGINAL)
+	etags -lnone $(ORIGINAL)
+
+tarfile: $(ORIGINAL)
+	tar cvhf /tmp/cweb.tar $(ORIGINAL)
+	gzip -9 /tmp/cweb.tar
+
 # Remove the original distribution completely.
 remove-orig:
-	- $(RM) $(SOURCES)
-	- $(RM) comm-amiga.ch comm-bs.ch comm-mac.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
-	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
-	cweav-vms.ch cweav-w32.ch
-	- $(RM) cweb.1 cweb.el cwebmac.tex cwebman.tex \
-	Makefile makefile.bs README readme.ql c++lib.w
-	- $(RM) examples/extex.w examples/extex.ch examples/extex.c \
-	examples/kspell.el examples/Makefile examples/oemacs.el \
-	examples/oemacs.w examples/oemacs.c examples/README
-	- $(RM) examples/treeprint.w examples/treeprint.c examples/wc.w \
-	examples/wc.c examples/wc-dos.ch examples/wmerge.c \
-	examples/wmerg-pc.ch examples/wmer-os2.ch \
-	examples/wordtest.w examples/wordtest.c \
-	examples/xlib_types.w examples/xview_types.w
-	- $(RM) $(CATINCLUDE)/cweb.h
+	- $(RM) $(ORIGINAL)
 
 # Remove the patch completely
 remove:
-	$(RM) $(COMMPATCH)
-	$(RM) $(CTANGPATCH)
-	$(RM) $(CWEAVPATCH)
-	$(RM) $(WMERGPATCH)
-	$(RM) $(PATCH)
-	$(RM) -r $(AREXX)
-	$(RM) -r $(BIN)
-	$(RM) $(EXAMPLES)
-	$(RM) -r $(INCLUDE)
-	$(RM) -r $(MACROS)
+	- $(RM) $(COMMPATCH)
+	- $(RM) $(CTANGPATCH)
+	- $(RM) $(CWEAVPATCH)
+	- $(RM) $(WMERGPATCH)
+	- $(RM) $(PATCH)
+	- $(RM) $(EXAMPLES)
+	- $(RM) -r $(AREXX)
+	- $(RM) -r $(CATINCLUDE)
+	- $(RM) -r $(INCLUDE)
+	- $(RM) -r $(MACROS)
 
 # End of Makefile.unix
