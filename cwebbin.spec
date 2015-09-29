@@ -1,6 +1,6 @@
 Name: cwebbin
 Version: 22p
-Release: 4
+Release: 5
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -13,6 +13,7 @@ BuildArch: i386
 # TeXlive comes with the 'tie' processor used in the build process
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ad.tar.gz
 Source1: %{name}-%{version}.tar.bz2
+Patch0: 0001-Makefile.unix-originates-from-Makefile.patch
 
 %define texlive /opt/texlive/current/bin/i386-linux
 %define texmf /opt/texlive/texmf-local
@@ -24,6 +25,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %prep
 %setup -c -q
 %setup -D -q -T -a 1
+patch -p1 -i %{PATCH0} -o Makefile.unix
 
 %build
 touch *.cxx
@@ -60,6 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %{texlive}/texhash
 
 %changelog
+* Mon Sep 28 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-5
+- Create Makefile.unix from Makefile
 * Sat Aug 22 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-4
 - Put the TeX stuff into the correct 'local texmf tree'
 * Sat Aug 15 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-3
