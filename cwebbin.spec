@@ -78,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 - Install (and hide) cwebmac.tex
 * Fri Nov 04 2005 Andreas Scherer <andreas_tug@freenet.de> p21-2
 - Build from two source archives (CWEBbin + cweb)
-* Thu Oct 29 2005 Andreas Scherer <andreas_tug@freenet.de> p21-1
+* Sat Oct 29 2005 Andreas Scherer <andreas_tug@freenet.de> p21-1
 - Initial build
