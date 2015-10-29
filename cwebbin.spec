@@ -1,6 +1,6 @@
 Name: cwebbin
 Version: 22p
-Release: 5
+Release: 6
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -15,7 +15,6 @@ Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ad.tar.gz
 Source1: %{name}-%{version}.tar.bz2
 Patch0: 0001-Makefile.unix-originates-from-Makefile.patch
 
-%define texlive /opt/texlive/current/bin/i386-linux
 %define texmf /opt/texlive/texmf-local
 
 %description
@@ -24,43 +23,45 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %setup -c -q -a 1
-patch -p1 -i %{PATCH0} -o Makefile.unix
+%{__patch} -p1 -i %{PATCH0} -o Makefile.unix
 
 %build
-touch *.cxx
-ln -s catalogs/dcweb.h cweb.h
-make -f Makefile.unix boot cautiously all
+%{__touch} *.cxx
+%{__ln_s} catalogs/dcweb.h cweb.h
+%{__make} -f Makefile.unix boot cautiously all
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
-cp texinputs/* $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
+%{__rm} -rf $RPM_BUILD_ROOT
+%{__mkdir_p} $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
+%{__cp} texinputs/* $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
 # cweb-3.65.tar.gz at least has an updated version number :-)
-cp cwebmac.tex $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
-mkdir -p $RPM_BUILD_ROOT/usr/local/lib/cweb
-cp c++lib.w $RPM_BUILD_ROOT/usr/local/lib/cweb
-mkdir -p $RPM_BUILD_ROOT/usr/local/bin
-cp ctangle cweave wmerge $RPM_BUILD_ROOT/usr/local/bin
+%{__cp} cwebmac.tex $RPM_BUILD_ROOT/%{texmf}/tex/generic/cweb
+%{__mkdir_p} $RPM_BUILD_ROOT/usr/local/lib/cweb
+%{__cp} c++lib.w $RPM_BUILD_ROOT/usr/local/lib/cweb
+%{__mkdir_p} $RPM_BUILD_ROOT/usr/local/bin
+%{__cp} ctangle cweave wmerge $RPM_BUILD_ROOT/usr/local/bin
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
 %{texmf}/tex/generic/cweb/
 %dir %{texmf}/tex/generic
-/usr/local/lib/cweb/c++lib.w
-/usr/local/bin/ctangle
-/usr/local/bin/cweave
-/usr/local/bin/wmerge
+%{_usr}/local/lib/cweb/c++lib.w
+%{_usr}/local/bin/ctangle
+%{_usr}/local/bin/cweave
+%{_usr}/local/bin/wmerge
 
 %post
-%{texlive}/texhash
+%{__texhash}
 
 %postun
-%{texlive}/texhash
+%{__texhash}
 
 %changelog
+* Thu Oct 29 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-6
+- Fully parametrized specfile
 * Mon Sep 28 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-5
 - Create Makefile.unix from Makefile
 * Sat Aug 22 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-4
