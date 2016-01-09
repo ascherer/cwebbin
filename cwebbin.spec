@@ -1,3 +1,7 @@
+# 'make fullmanual' requires TeX (pdflatex).
+# use '--without tex' to exclude this step; default is 'with'.
+%bcond_without tex
+
 Name: cwebbin
 Version: 22p
 Release: 5
@@ -24,6 +28,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %setup -c -q -a 1
+%{!?with_tex:%{__sed} "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
 %build
 %{__touch} *.cxx
@@ -32,10 +37,12 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %install
 %{__rm} -rf %{buildroot}
+%if %{with tex}
 %{__mkdir_p} %{buildroot}%{texmf}/tex/generic/cweb
 %{__cp} texinputs/* %{buildroot}%{texmf}/tex/generic/cweb
 # cweb-3.65.tar.gz at least has an updated version number :-)
 %{__cp} cwebmac.tex %{buildroot}%{texmf}/tex/generic/cweb
+%endif
 %{__mkdir_p} %{buildroot}%{_libdir}/cweb
 %{__cp} c++lib.w %{buildroot}%{_libdir}/cweb
 %{__mkdir_p} %{buildroot}%{_bindir}
@@ -45,20 +52,25 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %files
 %defattr(-,root,root,-)
+%if %{with tex}
 %{texmf}/tex/generic/cweb/
 %dir %{texmf}/tex/generic
+%endif
 %{_libdir}/cweb/c++lib.w
 %{_bindir}/ctangle
 %{_bindir}/cweave
 %{_bindir}/wmerge
 
 %post
-%{__texhash}
+%{?with_tex:%{__texhash}}
 
 %postun
-%{__texhash}
+%{?with_tex:%{__texhash}}
 
 %changelog
+* Sat Jan 09 2016 Andreas Scherer <https://ascherer.github.io>
+- Conditional Build Stuff for non-TeX systems
+
 * Thu Oct 29 2015 Andreas Scherer <andreas_tex@freenet.de> 22p-5
 - Fully parametrized specfile
 
