@@ -51,15 +51,12 @@ and Donald Knuth for Literate Programming in C/C++.
 %clean
 
 %files
-%defattr(-,root,root,-)
-%if %{with tex}
-%{texmf}/tex/generic/cweb/
-%dir %{texmf}/tex/generic
-%endif
+%defattr(644,root,root,755)
+%{?with_tex:%{texmf}/tex/generic/cweb/}
 %{_libdir}/cweb/c++lib.w
-%{_bindir}/ctangle
-%{_bindir}/cweave
-%{_bindir}/wmerge
+%attr(755,root,root) %{_bindir}/ctangle
+%attr(755,root,root) %{_bindir}/cweave
+%attr(755,root,root) %{_bindir}/wmerge
 
 %post
 %{?with_tex:%{__texhash}}
