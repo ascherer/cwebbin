@@ -195,7 +195,7 @@ AREXX = arexx
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
-	examples/treeprint-ansi.ch examples/wc-ansi.ch examples/wordtest-ansi.ch
+	examples/treeprint-ansi.ch examples/wc-ansi.ch
 
 INCLUDE = cwebinputs
 

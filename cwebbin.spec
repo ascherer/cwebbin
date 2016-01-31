@@ -4,7 +4,7 @@
 
 Name: cwebbin
 Version: 22p
-Release: 5
+Release: 6
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -17,7 +17,7 @@ BuildArch: i386
 #BuildRequires: texlive
 # TeXlive comes with the 'tie' processor used in the build process
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ad.tar.gz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ae.tar.gz
 Source1: %{name}-%{version}.tar.bz2
 
 %define texmf /opt/texlive/texmf-local
@@ -65,6 +65,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{?with_tex:%{__texhash}}
 
 %changelog
+* Son Jan 31 2016 Andreas Scherer <https://ascherer.github.io>
+- Update for the 2016 sources
+
 * Sat Jan 09 2016 Andreas Scherer <https://ascherer.github.io>
 - Conditional Build Stuff for non-TeX systems
 

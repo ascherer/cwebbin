@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated August 18, 2011 by Andreas Scherer.
+% This README file was last updated January 31, 2016 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2016 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -28,12 +28,11 @@
 % under the terms of a permission notice identical to this one.
 
 % Please send comments, suggestions, etc., concerning the original CWEB
-% implementation to levy@math.berkeley.edu.
+% implementation to tex-k@tug.org.
 
 % Please send comments, suggestions, etc., related to changes specific
 % for this modified distribution CWEBbin, especially language catalog
-% translations to andreas_tex@freenet.de.
-% Postal address: Andreas Scherer, Abt-Wolf-Straße 17, 96215 Lichtenfels, Germany.
+% translations to https://ascherer.github.io.
 
 %%% WHAT IS THIS STUFF? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -132,7 +131,6 @@ GENERAL CONTRIBUTION:
 ./examples/sample.w     	program to produce random numbers
 ./examples/treeprint-ansi.ch	change file for treeprint.w
 ./examples/wc-ansi.ch		change file for wc.w
-./examples/wordtest-ansi.ch	change file for wordtest.w
 ./texinputs/Xcwebmac.tex	beautifications for cwebmac.tex
 ./texinputs/dcwebmac.tex	German captions in addition to cwebmac.tex
 ./texinputs/ecma94.sty		Umlauts and special characters for Latin-1
@@ -430,11 +428,8 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-August 18, 2011.
+January 31, 2016.
 
 Andreas Scherer
-Abt-Wolf-Straße 17 
-96215 Lichtenfels, Germany
-<andreas_tex@freenet.de>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

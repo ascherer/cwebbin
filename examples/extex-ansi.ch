@@ -30,6 +30,7 @@ Some external routines and all the internal routines need prototypes.
 @c
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 extern void exit(); /* system routine that terminates execution */
 @#
 @<Global variables@>@;
@@ -39,9 +40,9 @@ int main(argc,argv)
 @y
 @c
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 @#
 @<Global variables@>@;
 @<Prototypes@>@;
