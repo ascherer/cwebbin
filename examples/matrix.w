@@ -60,7 +60,7 @@
 %
 \nocon
 
-@i ecma94.w % For the sake of CWEB and TeX
+@i ../cwebinputs/ecma94.w % For the sake of CWEB and TeX
 
 \input german.sty \originalthree % Redefine `\3' from `dcwebmac.tex'.
 
@@ -301,10 +301,11 @@ sowie die mathematischen Funktionen benötigen wir die
 Standarddeklarationen, wie sie in den Include-Dateien zu finden sind.
 
 @<Globale \#|include|s@>=
-#include <math.h>
-#include <complex.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <complex>
+using std::complex;
 @<Zusätzliche Deklarationen für den Coprozessor@>
 
 @ Bei der Benutzung des mathematischen Coprozessors sollten zusätzlich zu

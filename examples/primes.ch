@@ -334,9 +334,9 @@ int main(void)
       case 3:
          fputs("The third ",stdout); break;
       default:
-         printf("The %dth ",i);
+         printf("The %ldth ",i);
          }
-      printf("prime number is %d.\n\n",p[i-1]);
+      printf("prime number is %ld.\n\n",p[i-1]);
       }
 
 @* For further reading. Here is a very short list of literature that has
