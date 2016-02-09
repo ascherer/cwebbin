@@ -33,12 +33,17 @@ The internal routines deserve their declarations.
 @<Global definitions@>@;
 @<Global include files@>@;
 @<Global declarations@>@;
+
+@#
+main(argc, argv)
 @y
 @c
 @<Global definitions@>@;
 @<Global include files@>@;
 @<Global declarations@>@;
-@<Prototypes@>@;
+
+@#
+int main(argc, argv)
 @z
 ------------------------------------------------------------------------------
 @x l.55
@@ -82,16 +87,15 @@ void add_tree(rootptr, p)
 
 @
 @<Global decl...@>= char *malloc();
-
-@ In this simple implementation, we just read from standard input.
-@<Read...@>= read_tree(stdin,&root);
 @y
        (*rootptr)->data = malloc (strlen(p)+1);
 
 @ |malloc| is already declared in {\tt stdlib.h>}.
-
-@ In this simple implementation, we just read from standard input.
-@<Read...@>= read_tree(stdin,&root);
+@<Global decl...@>=
+void read_tree(FILE *,struct tnode **);
+void add_tree(struct tnode **,char *);
+void print_node(FILE *,char *,struct tnode *);
+int main(int,char **);
 @z
 ------------------------------------------------------------------------------
 @x l.193
@@ -106,19 +110,5 @@ void print_node(fp, indent_string, node)
      FILE *fp;
      char *indent_string;
      struct tnode *node;
-@z
-------------------------------------------------------------------------------
-The module numbering is preserved.
-@x l.247
-@*Index.
-@y
-@ At last we declare the function prototypes.
-
-@<Prototypes@>=
-int main(int,char **);
-void read_tree(FILE *,struct tnode **);
-void add_tree(struct tnode **,char *);
-void print_node(FILE *,char *,struct tnode *);
-@* Index.
 @z
 ------------------------------------------------------------------------------
