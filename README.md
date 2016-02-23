@@ -3,7 +3,7 @@
 cwebbin is the ansi-c/c++ implementation of silvio levy's and donald ervin
 knuth's [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html). it
 requires the contents of [the original source
-drop](https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ae.tar.gz), to
+drop](https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb.tar.gz), to
 which it applies a set of patches to fix warnings issued by modern c/c++
 compilers and to introduce advanced features. see the extensive
 [readme](README.22p) for the full story. unix/linux  users should work with
