@@ -161,13 +161,13 @@ ORIGINAL = $(SOURCES) prod.w \
 	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
 	comm-w32.ch ctang-w32.ch cweav-w32.ch \
 	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
-	examples/extex.c examples/extex.ch examples/extex.w \
+	examples/extex.ch examples/extex.w \
 	examples/kspell.el examples/Makefile examples/README \
-	examples/oemacs.c examples/oemacs.el examples/oemacs.w \
-	examples/treeprint.c examples/treeprint.w \
-	examples/wc.c examples/wc.w examples/wc-dos.ch \
-	examples/wmerge.c examples/wmerg-pc.ch examples/wmer-os2.ch \
-	examples/wordtest.c examples/wordtest.w \
+	examples/oemacs.el examples/oemacs.w \
+	examples/treeprint.w \
+	examples/wc.w examples/wc-dos.ch \
+	examples/wmerg-pc.ch examples/wmer-os2.ch \
+	examples/wordtest.w \
 	examples/xlib_types.w examples/xview_types.w
 
 # The following files make the body of this patched distribution
@@ -195,7 +195,7 @@ AREXX = arexx
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
-	examples/treeprint-ansi.ch examples/wc-ansi.ch
+	examples/treeprint-ansi.ch examples/wc-ansi.ch examples/wordtest-ansi.ch
 
 INCLUDE = cwebinputs
 
@@ -412,6 +412,9 @@ tags: $(ORIGINAL)
 tarfile: $(ORIGINAL)
 	tar cvhf /tmp/cweb.tar $(ORIGINAL)
 	gzip -9 /tmp/cweb.tar
+
+tarball:
+	tar zcvhf /tmp/cweb.tgz $(ORIGINAL) examples
 
 # Remove the original distribution completely.
 remove-orig:
