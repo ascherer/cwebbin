@@ -1,0 +1,58 @@
+diff --git a/texk/web2c/cwebdir/cweb.1 b/texk/web2c/cwebdir/cweb.1
+index ad41c42..27cfc9f 100644
+--- a/texk/web2c/cwebdir/cweb.1
++++ b/texk/web2c/cwebdir/cweb.1
+@@ -81,7 +81,7 @@ The
+ option prints statistics about memory usage at the end of a run
+ (assuming that the programs have been compiled with the -DSTAT switch).
+ .PP
+-There are three other options applicable to
++There are four other options applicable to
+ .I cweave
+ only:
+ .B \-f
+@@ -97,6 +97,9 @@ can be used by
+ and similar programs.
+ .B \-x
+ means omit the index and table of contents.
++.B \+l
++means include source file name and line number references in the TeX
++file (useful with some DVI previewers).
+ .
+ .SH FILES
+ .TP
+diff --git a/texk/web2c/cwebdir/cwebmac.tex b/texk/web2c/cwebdir/cwebmac.tex
+index d50987d..26d342e 100644
+--- a/texk/web2c/cwebdir/cwebmac.tex
++++ b/texk/web2c/cwebdir/cwebmac.tex
+@@ -309,9 +309,19 @@
+ \let\K== % assignment operator
+ %\let\K=\leftarrow % "honest" alternative to standard assignment operator
+ % \L is Polish letter suppressed-L
+-\outer\def\M#1{\MN{#1}\ifon\vfil\penalty-100\vfilneg % beginning of section
+-  \vskip\intersecskip\startsection\ignorespaces}
+-\outer\def\N#1#2#3.{% beginning of starred section
++\newif\ifsrcloc
++\srclocfalse % cweave will set this true if it's emitting source locations.
++\outer\def\M{\ifsrcloc \expandafter\MS \else \expandafter\MX \fi}
++\outer\def\N{\ifsrcloc \expandafter\NS \else \expandafter\NX \fi}
++\newtoks\srcloc
++\def\MS[#1]{\srcloc={#1}\MX}
++\def\NS[#1]{\srcloc={#1}\NX}
++\def\MX#1{\MN{#1}%
++  \ifon\vfil\penalty-100\vfilneg % beginning of section
++  \vskip\intersecskip%
++  \ifsrcloc\special{src:\the\srcloc}\fi
++  \startsection\ignorespaces}
++\def\NX#1#2#3.{% beginning of starred section
+   \ifacro{\toksF={}\makeoutlinetoks#3\outlinedone\outlinedone}\fi
+   \gdepth=#1\gtitle={#3}\MN{#2}%
+   \ifon\ifnum#1<\secpagedepth \vfil\eject % force page break if depth is small
+@@ -326,6 +336,7 @@
+       \advancenumber{chunk\the\countB.\expnumber{curr\the\countB}}\fi\fi
+   \ifpdf\special{pdf: outline #1 << /Title (\the\toksE) /Dest
+     [ @thispage /FitH @ypos ] >>}\fi
++  \ifsrcloc\special{src:\the\srcloc}\fi
+   \ifon\startsection{\bf#3.\quad}\ignorespaces}
+ \def\MN#1{\par % common code for \M, \N
+   {\xdef\secstar{#1}\let\*=\empty\xdef\secno{#1}}% remove \* from section name
