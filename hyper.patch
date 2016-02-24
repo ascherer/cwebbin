@@ -15,7 +15,7 @@ index ad41c42..27cfc9f 100644
  and similar programs.
  .B \-x
  means omit the index and table of contents.
-+.B \+l
++.B \+r
 +means include source file name and line number references in the TeX
 +file (useful with some DVI previewers).
  .

@@ -151,6 +151,7 @@
 	"m [-] enable ARexx communication\n" \
 	"o [+] separate declarations and statements\n" \
 	"p [+] give progress reports\n" \
+	"r [-] include source locations in TeX file\n" \
 	"s [-] show statistics\n" \
 	"x [+] include indexes and table of contents\n"
 
@@ -166,6 +167,7 @@
 	"lX [ ] use macros for language X as of Xcwebmac.tex\n" \
 	"o [+] separate declarations and statements\n" \
 	"p [+] give progress reports\n" \
+	"r [-] include source locations in TeX file\n" \
 	"s [-] show statistics\n" \
 	"x [+] include indexes and table of contents\n"
 

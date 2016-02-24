@@ -152,6 +152,7 @@
 	"m [-] abilita comunicazioni ARexx\n" \
 	"o [+] separa dichiarazioni e statement\n" \
 	"p [+] mostra andamento elaborazione\n" \
+	"r [-] include source locations in TeX file\n" \
 	"s [-] mostra statistiche\n" \
 	"x [+] include indici\n"
 
@@ -167,6 +168,7 @@
 	"lX [ ] usa macro in lingua X contenute in Xcwebmac.tex\n" \
 	"o [+] separa dichiarazioni e statement\n" \
 	"p [+] mostra andamento elaborazione\n" \
+	"r [-] include source locations in TeX file\n" \
 	"s [-] mostra statistiche\n" \
 	"x [+] include indici\n"
 

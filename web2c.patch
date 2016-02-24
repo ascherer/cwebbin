@@ -6,7 +6,7 @@ index 1d12856..a50cf06 100644
      "-x          omit indices and table of contents",
      "+e          enclose C material in \\PB{...}",
      "+s          print usage statistics",
-+    "+l          include source locations in TeX file",
++    "+r          include source locations in TeX file",
      "--help      display this help and exit",
      "--version   output version information and exit",
      NULL

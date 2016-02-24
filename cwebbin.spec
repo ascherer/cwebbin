@@ -21,7 +21,6 @@ Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64af.tgz
 Source1: %{name}-%{version}.tar.bz2
 
 Patch0: hyper.patch
-#Patch1: web2c.patch
 
 %define texmf /opt/texlive/texmf-local
 
@@ -31,8 +30,6 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %autosetup -c -a 1 -S git -v -p4
-#patch0 -p4
-#patch1 -p3
 %{!?with_tex:%{__sed} "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
 %build

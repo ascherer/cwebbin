@@ -8,12 +8,11 @@
 Section 80.
 
 @x l.1370
-*out_ptr='c'; tex_printf("\\input cwebma");
+tex_printf("cwebma");
 @y
+tex_printf("cwebma");
 if (src_locs) {
-  *out_ptr='e'; tex_printf("\\input cwebmac\n\\srcloctru");
-} else {
-  *out_ptr='c'; tex_printf("\\input cwebma");
+  *out_ptr='e'; tex_printf("c\n\\srcloctru");
 }
 @z
  
@@ -36,7 +35,7 @@ If the section has changed, we put \.{\\*} just after the section number.
 (The \TEX/ control sequences that start sections will interpret any initial
 text that's surrounded with square brackets as instruction to
 emit a source special, supported by some DVI previewers.)
-@d src_locs flags['l'] /* whether source specials be output */
+@d src_locs flags['r'] /* whether source specials be output */
 @d out_src_loc() if (src_locs) { char s[20+1+max_file_name_length];
   sprintf(s,"[%d %s]",cur_line,basename(cur_file_name));out_str(s); }
 @z

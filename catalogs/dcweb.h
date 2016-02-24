@@ -152,6 +152,7 @@
 	"m [-] Aktiviere die ARexx-Kommunikation\n" \
 	"o [+] Trenne Deklarationen und Anweisungen\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
+	"r [-] Füge Quellreferenzen in die TeX-Datei ein\n" \
 	"s [-] Melde die Verbrauchsstatistik\n" \
 	"x [+] Füge Indexe und Inhaltsverzeichnisse ein\n"
 
@@ -167,6 +168,7 @@
 	"lX [ ] Verwende die Makros für Sprache X aus Xcwebmac.tex\n" \
 	"o [+] Trenne Deklarationen und Anweisungen\n" \
 	"p [+] Zeige einen Zwischenbericht\n" \
+	"r [-] Füge Quellreferenzen in die TeX-Datei ein\n" \
 	"s [-] Melde die Verbrauchsstatistik\n" \
 	"x [+] Füge Indexe und Inhaltsverzeichnisse ein\n"
 
