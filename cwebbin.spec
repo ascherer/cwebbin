@@ -27,7 +27,7 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
-%setup -c -q -a 1
+%autosetup -c -a 1 -S git -v
 %{!?with_tex:%{__sed} "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
 %build
