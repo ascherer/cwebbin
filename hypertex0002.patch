@@ -1,5 +1,5 @@
 diff --git a/texk/web2c/cwebdir/cwebmac.tex b/texk/web2c/cwebdir/cwebmac.tex
-index c1880cd..66ce114 100644
+index f2d19ca..0a9a0ee 100644
 --- a/texk/web2c/cwebdir/cwebmac.tex
 +++ b/texk/web2c/cwebdir/cwebmac.tex
 @@ -16,6 +16,8 @@
@@ -191,16 +191,16 @@ index c1880cd..66ce114 100644
  \let\startsection=\stsec
  \def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
  \def\A{\note{See also section}} % xref for doubly defined section name
-@@ -316,7 +401,7 @@
- \outer\def\M#1{\MN{#1}\ifon\vfil\penalty-100\vfilneg % beginning of section
-   \vskip\intersecskip\startsection\ignorespaces}
- \outer\def\N#1#2#3.{% beginning of starred section
+@@ -326,7 +411,7 @@
+   \ifsrcloc\special{src:\the\srcloc}\fi
+   \startsection\ignorespaces}
+ \def\NX#1#2#3.{% beginning of starred section
 -  \ifacro{\toksF={}\makeoutlinetoks#3\outlinedone\outlinedone}\fi
 +  \makeoutlineentry{#1}
    \gdepth=#1\gtitle={#3}\MN{#2}%
    \ifon\ifnum#1<\secpagedepth \vfil\eject % force page break if depth is small
      \else\vfil\penalty-100\vfilneg\vskip\intersecskip\fi\fi
-@@ -325,11 +410,7 @@
+@@ -335,11 +420,7 @@
    \edef\gtitletoks{\expandafter\stripprefix\meaning\gtitletoks}%
    \edef\next{\write\cont{\ZZ{\gtitletoks}{#1}{\secno}% write to contents file
     {\noexpand\the\pageno}{\the\toksE}}}\next % \ZZ{title}{depth}{sec}{page}{ss}
@@ -210,10 +210,10 @@ index c1880cd..66ce114 100644
 -  \ifpdf\special{pdf: outline #1 << /Title (\the\toksE) /Dest
 -    [ @thispage /FitH @ypos ] >>}\fi
 +  \addtooutline{#1}
+   \ifsrcloc\special{src:\the\srcloc}\fi
    \ifon\startsection{\bf#3.\quad}\ignorespaces}
  \def\MN#1{\par % common code for \M, \N
-   {\xdef\secstar{#1}\let\*=\empty\xdef\secno{#1}}% remove \* from section name
-@@ -353,8 +434,7 @@
+@@ -364,8 +445,7 @@
  \let\V=\lor % logical or
  \let\W=\land % logical and
  \def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi %$% section name
@@ -223,7 +223,7 @@ index c1880cd..66ce114 100644
  \def\Y{\par\yskip}
  \let\Z=\le
  \let\ZZ=\let % now you can \write the control sequence \ZZ
-@@ -393,6 +473,7 @@
+@@ -404,6 +484,7 @@
  \def\normaloutput#1#2#3{\ifodd\pageno\hoffset=\pageshift\fi
   \shipout\vbox{
    \vbox to\fullpageheight{
@@ -231,7 +231,7 @@ index c1880cd..66ce114 100644
    \iftitle\global\titlefalse
    \else\hbox to\pagewidth{\vbox to10pt{}\ifodd\pageno #3\else#2\fi}\fi
    \vfill#1}} % parameter #1 is the page itself
-@@ -403,8 +484,6 @@
+@@ -414,8 +495,6 @@
  \def\title{\expandafter\uppercase\expandafter{\jobname}}
  \def\topofcontents{\centerline{\titlefont\title}\vskip.7in
    \vfill} % this material will start the table of contents page
@@ -240,7 +240,7 @@ index c1880cd..66ce114 100644
  \def\botofcontents{\vfill
    \centerline{\covernote}} % this material will end the table of contents page
  \def\covernote{}
-@@ -454,7 +533,7 @@
+@@ -465,7 +544,7 @@
    \message{Index:}
    \parskip 0pt plus .5pt
    \outer\def\I##1, ##2.{\par\hangindent2em\noindent##1:\kern1em
@@ -249,7 +249,7 @@ index c1880cd..66ce114 100644
    \def\[##1]{$\underline{##1}$} % underlined index item
    \rm \rightskip0pt plus 2.5em \tolerance 10000 \let\*=\lapstar
    \hyphenpenalty 10000 \parindent0pt
-@@ -462,43 +541,21 @@
+@@ -473,43 +552,21 @@
  \def\fin{\par\vfill\eject % this is done when we are ending the index
    \ifpagesaved\null\vfill\eject\fi % output a null index column
    \if L\lr\else\null\vfill\eject\fi % finish the current page
@@ -296,7 +296,7 @@ index c1880cd..66ce114 100644
  \def\con{\par\vfill\eject % finish the section names
  % \ifodd\pageno\else\titletrue\null\vfill\eject\fi % for duplex printers
    \rightskip 0pt \hyphenpenalty 50 \tolerance 200
-@@ -515,7 +572,7 @@
+@@ -526,7 +583,7 @@
  \def\contentsline#1#2#3#4#5{\ifnum#2=0 \smallbreak\fi
      \line{\consetup{#2}#1
        \rm\leaders\hbox to .5em{.\hfil}\hfil

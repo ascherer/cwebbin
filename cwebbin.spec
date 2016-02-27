@@ -20,7 +20,7 @@ BuildArch: i386
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64af.tgz
 Source1: %{name}-%{version}.tar.bz2
 
-#Patch1: hypertex0001.patch
+Patch1: hypertex0001.patch
 Patch2: hypertex0002.patch
 #Patch3: hypertex0003.patch
 
