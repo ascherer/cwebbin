@@ -1,17 +1,17 @@
 diff --git a/texk/web2c/cwebdir/cwebmac.tex b/texk/web2c/cwebdir/cwebmac.tex
-index d50987d..ae220c0 100644
+index c1880cd..66ce114 100644
 --- a/texk/web2c/cwebdir/cwebmac.tex
 +++ b/texk/web2c/cwebdir/cwebmac.tex
-@@ -12,6 +12,8 @@
- \ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
- \else \pdftextrue \pdfoutput=1 \input pdfcolor \let\setcolor\pdfsetcolor \fi\fi
+@@ -16,6 +16,8 @@
+   \def\Blue{\pdfliteral{0 0 1 rg 0 0 1 RG}}
+ \fi\fi
  \newif\ifacro \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
 +\newif\ifhypertex
 +\ifx\hypertex+\hypertextrue\fi
  
  \let\:=\. % preserve a way to get the dot accent
   % (all other accents will still work as usual)
-@@ -120,7 +122,7 @@
+@@ -124,7 +126,7 @@
  \let\yskip=\smallskip
  \def\?{\mathrel?}
  \def\note#1#2.{\Y\noindent{\hangindent2em%
@@ -20,7 +20,7 @@ index d50987d..ae220c0 100644
  
  \newtoks\toksA \newtoks\toksB \newtoks\toksC \newtoks\toksD
  \newtoks\toksE \newtoks\toksF \newtoks\usersanitizer
-@@ -129,7 +131,7 @@
+@@ -133,7 +135,7 @@
  \newif\iftokprocessed \newif\ifTnum \newif\ifinstr
  {\def\\{\global\let\spacechar= }\\ }
  
@@ -29,7 +29,7 @@ index d50987d..ae220c0 100644
  \def\thewidth{\the\wd0 \space}
  \def\theheight{\the\ht\strutbox\space}
  \def\thedepth{\the\dp\strutbox\space}
-@@ -141,29 +143,16 @@
+@@ -145,29 +147,16 @@
      \special{pdf: ec}}\special{pdf: ann width \thewidth height \theheight
        depth \thedepth << /Type /Annot /Subtype /Link
        /Border [0 0 0] /A << /S /GoTo /D (#2) >> >>}\box0\relax}\fi
@@ -63,18 +63,17 @@ index d50987d..ae220c0 100644
 +  \special{pdf: dest (page.#1) [ @thispage /FitH @ypos ]}\fi}
 +\ifpdftex
 +  \def\pdfpagelink#1{\hbox{\pdfannotlink height\ht\strutbox depth\dp\strutbox
-+      attr{/Border [0 0 0]} goto Page #1 {/Fit} \BlueGreen #1\Black\pdfendlink}}
++      attr{/Border [0 0 0]} goto Page #1 {/Fit} \Blue #1\Black\pdfendlink}}
 +\else%
 +  \def\pdfpagelink#1{\pdflink{#1}{page.#1}}\fi
  \def\pdfURL#1#2{\ifpdftex\pdfannotlink height\ht\strutbox depth\dp\strutbox
    attr {/Border [0 0 0]} user { /Type /Action /Subtype /Link /A
-       << /S /URI /URI (#2) >>}\BlueGreen #1\Black \pdfendlink
-@@ -271,18 +260,115 @@
+       << /S /URI /URI (#2) >>}\Blue #1\Black \pdfendlink % changed in 3.69
+@@ -275,18 +264,114 @@
  }
  \def\outlinedone{\edef\outlinest{\global\noexpand\toksE={\the\toksF}}%
    \outlinest\let\outlinedone=\relax}
 -\fi % End of pdf macros
-+
 +
 +% Internal cross reference links for named section numbers pass
 +% through here to parse the comma/space\ET delimited, period
@@ -192,7 +191,7 @@ index d50987d..ae220c0 100644
  \let\startsection=\stsec
  \def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
  \def\A{\note{See also section}} % xref for doubly defined section name
-@@ -312,7 +398,7 @@
+@@ -316,7 +401,7 @@
  \outer\def\M#1{\MN{#1}\ifon\vfil\penalty-100\vfilneg % beginning of section
    \vskip\intersecskip\startsection\ignorespaces}
  \outer\def\N#1#2#3.{% beginning of starred section
@@ -201,7 +200,7 @@ index d50987d..ae220c0 100644
    \gdepth=#1\gtitle={#3}\MN{#2}%
    \ifon\ifnum#1<\secpagedepth \vfil\eject % force page break if depth is small
      \else\vfil\penalty-100\vfilneg\vskip\intersecskip\fi\fi
-@@ -321,11 +407,7 @@
+@@ -325,11 +410,7 @@
    \edef\gtitletoks{\expandafter\stripprefix\meaning\gtitletoks}%
    \edef\next{\write\cont{\ZZ{\gtitletoks}{#1}{\secno}% write to contents file
     {\noexpand\the\pageno}{\the\toksE}}}\next % \ZZ{title}{depth}{sec}{page}{ss}
@@ -214,7 +213,7 @@ index d50987d..ae220c0 100644
    \ifon\startsection{\bf#3.\quad}\ignorespaces}
  \def\MN#1{\par % common code for \M, \N
    {\xdef\secstar{#1}\let\*=\empty\xdef\secno{#1}}% remove \* from section name
-@@ -349,8 +431,7 @@
+@@ -353,8 +434,7 @@
  \let\V=\lor % logical or
  \let\W=\land % logical and
  \def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi %$% section name
@@ -224,7 +223,7 @@ index d50987d..ae220c0 100644
  \def\Y{\par\yskip}
  \let\Z=\le
  \let\ZZ=\let % now you can \write the control sequence \ZZ
-@@ -389,6 +470,7 @@
+@@ -393,6 +473,7 @@
  \def\normaloutput#1#2#3{\ifodd\pageno\hoffset=\pageshift\fi
   \shipout\vbox{
    \vbox to\fullpageheight{
@@ -232,7 +231,7 @@ index d50987d..ae220c0 100644
    \iftitle\global\titlefalse
    \else\hbox to\pagewidth{\vbox to10pt{}\ifodd\pageno #3\else#2\fi}\fi
    \vfill#1}} % parameter #1 is the page itself
-@@ -399,8 +481,6 @@
+@@ -403,8 +484,6 @@
  \def\title{\expandafter\uppercase\expandafter{\jobname}}
  \def\topofcontents{\centerline{\titlefont\title}\vskip.7in
    \vfill} % this material will start the table of contents page
@@ -241,7 +240,7 @@ index d50987d..ae220c0 100644
  \def\botofcontents{\vfill
    \centerline{\covernote}} % this material will end the table of contents page
  \def\covernote{}
-@@ -450,7 +530,7 @@
+@@ -454,7 +533,7 @@
    \message{Index:}
    \parskip 0pt plus .5pt
    \outer\def\I##1, ##2.{\par\hangindent2em\noindent##1:\kern1em
@@ -250,7 +249,7 @@ index d50987d..ae220c0 100644
    \def\[##1]{$\underline{##1}$} % underlined index item
    \rm \rightskip0pt plus 2.5em \tolerance 10000 \let\*=\lapstar
    \hyphenpenalty 10000 \parindent0pt
-@@ -458,43 +538,21 @@
+@@ -462,43 +541,21 @@
  \def\fin{\par\vfill\eject % this is done when we are ending the index
    \ifpagesaved\null\vfill\eject\fi % output a null index column
    \if L\lr\else\null\vfill\eject\fi % finish the current page
@@ -271,7 +270,7 @@ index d50987d..ae220c0 100644
    \def\I{\par\hangindent 2em}\let\*=*
 -  \ifacro \def\outsecname{Names of the sections} \let\Xpdf\X
 -%  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb % in versions < 3.68
--  \ifpdftex \pdfdest name {NOS} fitb % changed in version 3.68
+-  \ifpdftex \pdfdest name {NOS} fith % changed in version 3.69
 -    \pdfoutline goto name {NOS} count -\secno {\outsecname}
 -    \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
 -      {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
@@ -297,7 +296,7 @@ index d50987d..ae220c0 100644
  \def\con{\par\vfill\eject % finish the section names
  % \ifodd\pageno\else\titletrue\null\vfill\eject\fi % for duplex printers
    \rightskip 0pt \hyphenpenalty 50 \tolerance 200
-@@ -511,7 +569,7 @@
+@@ -515,7 +572,7 @@
  \def\contentsline#1#2#3#4#5{\ifnum#2=0 \smallbreak\fi
      \line{\consetup{#2}#1
        \rm\leaders\hbox to .5em{.\hfil}\hfil
