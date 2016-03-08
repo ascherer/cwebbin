@@ -26,6 +26,7 @@
 % Version 3.63 [p19] --- Andreas Scherer, January 2001
 % Version 3.64 [p20] --- Andreas Scherer, March 2002
 % Version 3.64 [p21] --- Andreas Scherer, Octobre 2005
+% Version 3.64 [p22] --- Andreas Scherer, March 2016
 
 % french translations --- Denis Roegel, 18 September 1994
 
@@ -75,6 +76,7 @@
 \def\fin{\par\vfill\eject % this is done when we are ending the index
   \ifpagesaved\null\vfill\eject\fi % output a null index column
   \if L\lr\else\null\vfill\eject\fi % finish the current page
+  \ifpdftex \makebookmarks \fi % added in Version 3.68
   \parfillskip 0pt plus 1fil
   \def\grouptitle{NOMS DES SECTIONS}
   \let\topsecno=\nullsec
@@ -88,7 +90,8 @@
   \def\Us{\note{Utilis\'e dans les sections}} % crossref for uses of a section
   \def\I{\par\hangindent 2em}\let\*=*
   \ifacro \def\outsecname{Noms des sections} \let\Xpdf\X
-  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb
+%  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb % in versions < 3.68
+  \ifpdftex \pdfdest name {NOS} fith % changed in version 3.69
     \pdfoutline goto name {NOS} count -\secno {\outsecname}
     \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
       {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
@@ -126,6 +129,11 @@
 \def\datethis{\def\startsection{\leftline{\sc\today\ \`a \hours}\bigskip
   \let\startsection=\stsec\stsec}}
   % say `\datethis' in limbo, to get your listing timestamped before section 1
-\def\datecontentspage{%
-  \def\topofcontents{\leftline{\sc\today\ \`a \hours}\bigskip
-   \centerline{\titlefont\title}\vfill}} % timestamps the contents page
+%\def\datecontentspage{% versions up to 3.65
+%  \def\topofcontents{\leftline{\sc\today\ \`a \hours}\bigskip
+%   \centerline{\titlefont\title}\vfill}} % timestamps the contents page
+\def\datecontentspage{% changed in version 3.66
+  \def\botofcontents{\vfill
+   \centerline{\covernote}
+   \bigskip
+   \leftline{\sc\today\ \`a \hours}}} % timestamps the contents page
