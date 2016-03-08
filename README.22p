@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated January 31, 2016 by Andreas Scherer.
+% This README file was last updated March 8, 2016 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -32,7 +32,8 @@
 
 % Please send comments, suggestions, etc., related to changes specific
 % for this modified distribution CWEBbin, especially language catalog
-% translations to https://ascherer.github.io.
+% translations to https://ascherer.github.io, or write an issue or pull
+% request in https://github.com/ascherer/cwebbin.
 
 %%% WHAT IS THIS STUFF? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,8 +191,8 @@ SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [UNIX/Linux, GCC] The current setup of CWEBbin has been created on a Linux PC
-	running Kubuntu Linux 10.04 including the gcc 4.4.3 compiler and the
-	TeXLive 2011 system.  Any similar setup should also work.  All set?
+	running Linux Mint 17.2 including the gcc 4.8.4 compiler and the
+	TeXLive 2015 system.  Any similar setup should also work.  All set?
 	-- Then proceed as follows:
 
 	1. Check the entries in Makefile.unix for local conditions like a
@@ -428,7 +429,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-January 31, 2016.
+March 8, 2016.
 
 Andreas Scherer
 
