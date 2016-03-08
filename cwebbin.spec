@@ -11,14 +11,14 @@ License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
 
 Group: Productivity/Publishing/TeX/Base
-Distribution: Kubuntu 12.04 (i386)
+Distribution: Linux Mint 17.2 (i386)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: i386
 #BuildRequires: texlive
 # TeXlive comes with the 'tie' processor used in the build process
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64af.tgz
-Source1: %{name}-%{version}.tar.bz2
+Source1: %{name}-%{version}.tar.gz
 
 %define texmf /opt/texlive/texmf-local
 
@@ -65,6 +65,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{?with_tex:%{__texhash}}
 
 %changelog
+* Tue Mar 08 2016 Andreas Scherer <https://ascherer.github.io>
+- Prepare release for CTAN/Web2c/TeX Live
+
 * Tue Feb 23 2016 Andreas Scherer <https://ascherer.github.io>
 - Update for the updated 2016 sources
 
