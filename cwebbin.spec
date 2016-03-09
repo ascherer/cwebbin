@@ -71,7 +71,7 @@ and Donald Knuth for Literate Programming in C/C++.
 * Tue Feb 23 2016 Andreas Scherer <https://ascherer.github.io>
 - Update for the updated 2016 sources
 
-* Son Jan 31 2016 Andreas Scherer <https://ascherer.github.io>
+* Sun Jan 31 2016 Andreas Scherer <https://ascherer.github.io>
 - Update for the 2016 sources
 
 * Sat Jan 09 2016 Andreas Scherer <https://ascherer.github.io>
