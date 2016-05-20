@@ -4,7 +4,7 @@
 
 Name: cwebbin
 Version: 22p
-Release: 8
+Release: 9
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -17,7 +17,7 @@ BuildArch: i386
 #BuildRequires: texlive
 # TeXlive comes with the 'tie' processor used in the build process
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ag.tgz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ah.tgz
 Source1: %{name}-%{version}.tar.gz
 
 %define texmf /opt/texlive/texmf-local
