@@ -11,9 +11,9 @@ License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
 
 Group: Productivity/Publishing/TeX/Base
-Distribution: Linux Mint 17.2 (i386)
+Distribution: Kubuntu 16.04 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildArch: i386
+BuildArch: amd64
 #BuildRequires: texlive
 # TeXlive comes with the 'tie' processor used in the build process
 
