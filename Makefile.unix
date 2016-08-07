@@ -132,7 +132,7 @@ MAKE = make -f Makefile.unix
 TIE = tie
 
 # What C compiler are you using?
-CC = g++ # gcc cc
+CC = g++ -std=c++14 # gcc cc
 
 # RM and CP are used below in case rm and cp are aliased
 RM= /bin/rm
