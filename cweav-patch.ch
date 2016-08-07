@@ -204,10 +204,8 @@ other operating systems as well.
 
 @<Glob...@>=
 const char Version[] = "$VER: CWeave 3.64 [22p] ("@/
-   @t\quad\quad@>__DATE__@/
-   @t\quad\quad@>", "@/
-   @t\quad\quad@>__TIME__@/
-   @t\quad\quad@>")\n";
+   @t\quad\quad@>__DATE__ ", "@/
+   @t\quad\quad@>__TIME__ ")\n";
 
 @** Index.
 @z

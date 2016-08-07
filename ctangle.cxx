@@ -424,10 +424,8 @@ extern sixteen_bits section_count;
 #line 693 "ctang-22p.ch"
 
 const char Version[]= "$VER: CTangle 3.64 [22p] ("
-__DATE__
-", "
-__TIME__
-")\n";
+__DATE__", "
+__TIME__")\n";
 
 /*:96*/
 #line 69 "ctangle.w"
@@ -468,7 +466,7 @@ static void skip_limbo(void);
 #line 1477 "ctangle.w"
 
 /*:92*//*97:*/
-#line 704 "ctang-22p.ch"
+#line 702 "ctang-22p.ch"
 
 static eight_bits get_next(void);
 static eight_bits skip_ahead(void);
@@ -788,7 +786,7 @@ writeloop:/*43:*/
 
 fclose(C_file);C_file= NULL;
 /*98:*/
-#line 724 "ctang-22p.ch"
+#line 722 "ctang-22p.ch"
 
 if((C_file= fopen(C_file_name,"r"))!=NULL){
 char*x,*y;
@@ -801,7 +799,7 @@ alloc_object(x,BUFSIZ,char);
 alloc_object(y,BUFSIZ,char);
 
 /*99:*/
-#line 750 "ctang-22p.ch"
+#line 748 "ctang-22p.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -811,14 +809,14 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:99*/
-#line 735 "ctang-22p.ch"
+#line 733 "ctang-22p.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*100:*/
-#line 761 "ctang-22p.ch"
+#line 759 "ctang-22p.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -828,7 +826,7 @@ rename(check_file_name,C_file_name);
 }
 
 /*:100*/
-#line 740 "ctang-22p.ch"
+#line 738 "ctang-22p.ch"
 
 
 free_object(y);
@@ -856,7 +854,7 @@ cur_end= (cur_repl+1)->tok_start;
 while(stack_ptr> stack)get_output();
 flush_buffer();fclose(C_file);C_file= NULL;
 /*101:*/
-#line 769 "ctang-22p.ch"
+#line 767 "ctang-22p.ch"
 
 if((C_file= fopen(output_file_name,"r"))!=NULL){
 char*x,*y;
@@ -869,7 +867,7 @@ alloc_object(x,BUFSIZ,char);
 alloc_object(y,BUFSIZ,char);
 
 /*99:*/
-#line 750 "ctang-22p.ch"
+#line 748 "ctang-22p.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -879,14 +877,14 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:99*/
-#line 780 "ctang-22p.ch"
+#line 778 "ctang-22p.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*102:*/
-#line 795 "ctang-22p.ch"
+#line 793 "ctang-22p.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -896,7 +894,7 @@ rename(check_file_name,output_file_name);
 }
 
 /*:102*/
-#line 785 "ctang-22p.ch"
+#line 783 "ctang-22p.ch"
 
 
 free_object(y);
