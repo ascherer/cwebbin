@@ -14,8 +14,10 @@ Group: Productivity/Publishing/TeX/Base
 Distribution: Kubuntu 16.04 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: amd64
-#BuildRequires: texlive
-# TeXlive comes with the 'tie' processor used in the build process
+%if %{with tex}
+BuildRequires: texlive
+Requires: texlive
+%endif
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ah.tgz
 Source1: %{name}-%{version}.tar.gz
