@@ -651,6 +651,24 @@ static void make_output(void) /* outputs the equivalents of tokens */
   eight_bits a=0, /* current output byte */
 @z
 
+@x
+  else if (b!='|') out(b)
+@y
+  else { if (b!='|') out(b)@;
+@z
+
+@x
+  }
+@y
+  } }
+@z
+
+@x
+     @<Copy a quoted character into the buffer@>
+@y
+     @<Copy a quoted character into the buffer@>@;
+@z
+
 @x l.3927
     if (b=='\'' || b=='"')
       if (delim==0) delim=b;
