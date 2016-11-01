@@ -408,7 +408,7 @@ else if (c=='\\' && *loc!='@@')
   if (phase==2) app_tok(*(loc++)) else loc++;
 @y
 else { if (c=='\\' && *loc!='@@') {
-  if (phase==2) app_tok(*(loc++)) else loc++; } }
+  if (phase==2) app_tok(*(loc++))@; else loc++; } }
 @z
 
 @x l.1734
