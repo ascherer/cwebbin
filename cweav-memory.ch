@@ -71,12 +71,12 @@ for (c=0; c<256; c++) ccode[c]=0;}
 
 @x l.1261
 char out_buf[line_length+1]; /* assembled characters */
-char *out_ptr; /* just after last character in |out_buf| */
+char *out_ptr; /* last character in |out_buf| */
 char *out_buf_end = out_buf+line_length; /* end of |out_buf| */
 @y
 char *out_buf; /* assembled characters */
 char *out_buf_end; /* end of |out_buf| */
-char *out_ptr; /* just after last character in |out_buf| */
+char *out_ptr; /* last character in |out_buf| */
 @z
 
 @x l.1330

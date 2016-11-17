@@ -315,7 +315,7 @@ static void section_check(name_pointer p)
 @x l.1283
 void
 flush_buffer(b,per_cent,carryover)
-char *b;  /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
+char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 boolean per_cent,carryover;
 @y
 static void flush_buffer(char *b,boolean per_cent,boolean carryover)
@@ -403,9 +403,9 @@ static int copy_comment(@t\1\1@> /* copies \TeX\ code in comments */
   int bal@t\2\2@>) /* brace balance */
 @z
 
-@x l.1607
+@x l.1608
 else if (c=='\\' && *loc!='@@')
-  if (phase==2) app_tok(*(loc++)) else loc++;
+  if (phase==2) app_tok(*(loc++))@; else loc++;
 @y
 else { if (c=='\\' && *loc!='@@') {
   if (phase==2) app_tok(*(loc++))@; else loc++; } }
@@ -652,7 +652,7 @@ static void make_output(void) /* outputs the equivalents of tokens */
 @z
 
 @x
-  else if (b!='|') out(b)
+  else if (b!='|') out(b)@;
 @y
   else { if (b!='|') out(b)@;
 @z
@@ -661,12 +661,6 @@ static void make_output(void) /* outputs the equivalents of tokens */
   }
 @y
   } }
-@z
-
-@x
-     @<Copy a quoted character into the buffer@>
-@y
-     @<Copy a quoted character into the buffer@>@;
 @z
 
 @x l.3927

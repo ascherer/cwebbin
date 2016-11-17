@@ -4,7 +4,7 @@
 
 Name: cwebbin
 Version: 22p
-Release: 9
+Release: 10
 Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
@@ -19,7 +19,7 @@ BuildRequires: texlive
 Requires: texlive
 %endif
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ah.tgz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ai.tgz
 Source1: %{name}-%{version}.tar.gz
 
 %define texmf /opt/texlive/texmf-local
