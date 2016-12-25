@@ -241,7 +241,7 @@ caratteristiche richieste dall'output generato da \.{CWEAVE}.
 \vfill\eject
 \def\runninghead{APPENDICE B --- MACROS POUR LE FORMATTING}
 \section Appendice B: Le text \.{fcwebmac.tex}.
-Voici le text qui élargit le format ``plain \TEX/''
+Voici le text qui \'elargit le format ``plain \TEX/''
 et soutient l'output de \.{CWEAVE}.
 
 \vskip6pt

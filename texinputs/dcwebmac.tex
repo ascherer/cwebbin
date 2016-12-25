@@ -28,9 +28,8 @@
 % Version 3.64 [p21] --- Andreas Scherer, Octobre 2005
 % Version 3.64 [p22] --- Andreas Scherer, March 2016
 
-\ifx\undefined\documentclass\else\endinput\fi % LaTeX will use other macros
-
-\input Xcwebmac.tex
+\ifx\undefined\documentclass\input Xcwebmac.tex
+\else\endinput\fi % LaTeX will use other macros
 
 % In case `german.sty' has been loaded, we have to redefine the `\3'
 % macro for an optional break within a statement.  This should be the
@@ -93,8 +92,7 @@
   \def\Us{\note{Verwendet in den Abschnitten}} % crossref for uses of a section
   \def\I{\par\hangindent 2em}\let\*=*
   \ifacro \def\outsecname{Abschnittsnamen} \let\Xpdf\X
-%  \ifpdftex \makebookmarks \pdfdest name {NOS} fitb % in versions < 3.68
-  \ifpdftex \pdfdest name {NOS} fith % changed in version 3.69
+  \ifpdftex \pdfdest name {NOS} fith
     \pdfoutline goto name {NOS} count -\secno {\outsecname}
     \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
       {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
@@ -132,9 +130,6 @@
 \def\datethis{\def\startsection{\leftline{\sc\today\ um \hours}\bigskip
   \let\startsection=\stsec\stsec}}
   % say `\datethis' in limbo, to get your listing timestamped before section 1
-%\def\datecontentspage{% versions up to 3.65
-%  \def\topofcontents{\leftline{\sc\today\ um \hours}\bigskip
-%   \centerline{\titlefont\title}\vfill}} % timestamps the contents page
 \def\datecontentspage{% changed in version 3.66
   \def\botofcontents{\vfill
    \centerline{\covernote}

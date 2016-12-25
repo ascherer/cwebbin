@@ -25,9 +25,8 @@
 % Version 3.64 [p20] --- Andreas Scherer, March 2002
 % Version 3.64 [p21] --- Andreas Scherer, Octobre 2005
 
-\ifx\undefined\documentclass\else\endinput\fi % LaTeX will use other macros
-
-\input cwebmac.tex
+\ifx\undefined\documentclass\input cwebmac.tex
+\else\endinput\fi % LaTeX will use other macros
 
 \xdef\fmtversion{\fmtversion[p21]}
 
