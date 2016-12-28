@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, October 29, 2005.
+Changes for CWEAVE.W by Andreas Scherer, December 28, 2016.
 
 This set of changes converts the CWEAVE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -166,6 +166,26 @@ void init_node(name_pointer p)
   p->xref=(char*)xmem;
 @y
   p->xref=(void *)xmem;
+@z
+
+@x l.450
+id_lookup("int",NULL,raw_int);
+@y
+id_lookup("int",NULL,raw_int);
+id_lookup("int8_t",NULL,raw_int);
+id_lookup("int16_t",NULL,raw_int);
+id_lookup("int32_t",NULL,raw_int);
+id_lookup("int64_t",NULL,raw_int);
+@z
+
+@x l.489
+id_lookup("typename",NULL,struct_like);
+@y
+id_lookup("typename",NULL,struct_like);
+id_lookup("uint8_t",NULL,raw_int);
+id_lookup("uint16_t",NULL,raw_int);
+id_lookup("uint32_t",NULL,raw_int);
+id_lookup("uint64_t",NULL,raw_int);
 @z
 
 @x l.563
@@ -423,6 +443,26 @@ static void print_cat(eight_bits c) /* symbolic printout of a category */
   printf(cat_name[c]);
 @y
   fputs(cat_name[c],stdout);
+@z
+
+@x l.1973
+\.{int}&|raw_int|: \stars&maybe\cr
+@y
+\.{int}&|raw_int|: \stars&maybe\cr
+\.{int8\_t}&|raw_int|: \stars&maybe\cr
+\.{int16\_t}&|raw_int|: \stars&maybe\cr
+\.{int32\_t}&|raw_int|: \stars&maybe\cr
+\.{int64\_t}&|raw_int|: \stars&maybe\cr
+@z
+
+@x l.2014
+\.{typename}&|struct_like|: \stars&maybe\cr
+@y
+\.{typename}&|struct_like|: \stars&maybe\cr
+\.{uint8\_t}&|raw_int|: \stars&maybe\cr
+\.{uint16\_t}&|raw_int|: \stars&maybe\cr
+\.{uint32\_t}&|raw_int|: \stars&maybe\cr
+\.{uint64\_t}&|raw_int|: \stars&maybe\cr
 @z
 
 @x l.2062
