@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, October 29, 2005.
+Changes for COMMON.W by Andreas Scherer, December 29, 2016.
 
 This set of changes converts the COMMON.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -16,6 +16,12 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @y
 @z
 
+@x l.74
+typedef short boolean;
+@y
+typedef bool boolean;
+@z
+
 @x l.89
 void
 common_init()
@@ -27,6 +33,14 @@ void common_init(void)
 @d not_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @y
 @d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
+@z
+
+@x l.166
+#include <stdio.h>
+@y
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
 @z
 
 @x l.172
@@ -78,8 +92,8 @@ void reset_input(void)
 @x l.418
 typedef unsigned short sixteen_bits;
 @y
-typedef unsigned char eight_bits;
-typedef unsigned short sixteen_bits;
+typedef uint8_t eight_bits;
+typedef uint16_t sixteen_bits;
 @z
 
 @x l.426

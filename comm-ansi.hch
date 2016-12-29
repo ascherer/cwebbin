@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, October 29, 2005.
+Changes for COMMON.H by Andreas Scherer, December 29, 2016.
 
 This set of changes converts the COMMON.H module into ANSI-C and C++ code.
 All functions are declared in prototypical form.  At several places
@@ -8,6 +8,23 @@ default pointer type in ANSI-C.
 This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.30
+typedef short boolean;
+typedef char unsigned eight_bits;
+@y
+typedef bool boolean;
+typedef uint8_t eight_bits;
+typedef uint16_t sixteen_bits;
+@z
+
+@x l.36
+#include <stdio.h>
+@y
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+@z
 
 @x l.47
 @d not_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
@@ -80,6 +97,11 @@ extern check_complete(); /* checks that all changes were picked up */
 extern boolean get_line(void); /* inputs the next line */
 extern void check_complete(void); /* checks that all changes were picked up */
 extern void reset_input(void); /* initialize to read the web file and change file */
+@z
+
+@x l.159
+typedef unsigned short sixteen_bits;
+@y
 @z
 
 @x l.192

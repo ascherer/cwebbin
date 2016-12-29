@@ -10,6 +10,8 @@
 /*:2*//*6:*/
 #line 71 "ctang-22p.ch"
 
+#include <stdbool.h> 
+#include <stdint.h> 
 #include <stdio.h> 
 
 #ifndef _AMIGA 
@@ -183,8 +185,9 @@ object= NULL; \
 /*5:*/
 #line 71 "ctang-22p.ch"
 
-typedef short boolean;
-typedef char unsigned eight_bits;
+typedef bool boolean;
+typedef uint8_t eight_bits;
+typedef uint16_t sixteen_bits;
 extern boolean program;
 extern int phase;
 
@@ -274,7 +277,6 @@ extern void reset_input(void);
 /*:11*//*12:*/
 #line 71 "ctang-22p.ch"
 
-typedef unsigned short sixteen_bits;
 extern sixteen_bits section_count;
 extern boolean*changed_section;
 extern boolean change_pending;

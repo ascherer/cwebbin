@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, May 10, 1995.
+Changes for COMMON.H by Andreas Scherer, December 29, 2016.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.H in case of errors or information requests.  Some system-dependent
@@ -27,6 +27,8 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
       }
 
 @<Include files@>=
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 @y
 @ Version~2.1 of the {\mc AMIGA} operating system introduced localization
@@ -51,6 +53,8 @@ taken with what follows.
       }
 
 @<Include files@>=
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 @#
 #ifndef _AMIGA /* non-{\mc AMIGA} systems don't know about \.{<exec/types.h>} */

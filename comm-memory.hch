@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, May 28, 1995.
+Changes for COMMON.H by Andreas Scherer, December 29, 2016.
 
 This set of changes provides dynamic memory allocation for the internal
 fields of the CWEB system.  There is no external memory configuration file
@@ -11,7 +11,6 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 @x l.35
 @ @<Include files@>=
-#include <stdio.h>
 @y
 @ @f type int /* \.{type} becomes the pseudotype \&{type} */
 @#
@@ -26,7 +25,6 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
       }
 
 @<Include files@>=
-#include <stdio.h>
 @z
 
 @x l.58
