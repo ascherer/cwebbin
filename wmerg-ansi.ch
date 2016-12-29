@@ -1,4 +1,4 @@
-Changes for WMERGE.W by Andreas Scherer, January 22, 2000.
+Changes for WMERGE.W by Andreas Scherer, December 29, 2016.
 
 This set of changes converts the WMERGE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -12,6 +12,8 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 @x l.14
 #include <stdio.h>
 @y
+#include <stdbool.h>
+#include <stdint.h>
 #include <string.h>
 #include <stdio.h>
 @z
@@ -21,6 +23,14 @@ main (ac,av)
 int ac; char **av;
 @y
 int main (int ac, char **av)
+@z
+
+@x l.38
+typedef short boolean;
+typedef unsigned char eight_bits;
+@y
+typedef bool boolean;
+typedef uint8_t eight_bits;
 @z
 
 @x l.40
