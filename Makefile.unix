@@ -346,22 +346,17 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # from a set of separate change files.  note that not all change files
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
-$(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-memory.ch comm-translation.ch comm-output.ch
+$(CCHANGES): common.w comm-ansi.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-memory.hch comm-translation.hch comm-output.hch
+$(HCHANGES): common.h comm-ansi.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
-	ctang-memory.ch ctang-translation.ch ctang-output.ch
+$(TCHANGES): ctangle.w ctang-ansi.ch
 	$(TIE) -c $@ $^
-$(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch
+$(WCHANGES): cweave.w cweav-ansi.ch
 	$(TIE) -c $@ $^
-$(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
-	wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch
+$(MCHANGES): examples/wmerge.w wmerg-ansi.ch
 	$(TIE) -c $@ $^
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
