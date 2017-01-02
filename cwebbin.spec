@@ -35,7 +35,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %build
 %{__touch} *.cxx
 %{__ln_s} catalogs/dcweb.h cweb.h
-%{__make} -f Makefile.unix boot cautiously all
+%{__make} -f Makefile.unix -e PDFTEX=pdftex boot cautiously all
 
 %install
 %{__rm} -rf %{buildroot}

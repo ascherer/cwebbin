@@ -139,8 +139,8 @@ RM= /bin/rm
 CP= /bin/cp
 
 # uncomment the second line if you use pdftex to bypass .dvi files
-#PDFTEX = dvipdfm
-PDFTEX = pdftex
+PDFTEX = dvipdfm
+#PDFTEX = pdftex
 
 ##########  You shouldn't have to change anything after this point #######
 
