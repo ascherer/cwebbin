@@ -1,6 +1,9 @@
 # 'make fullmanual' requires TeX (pdflatex).
 # use '--without tex' to exclude this step; default is 'with'.
 %bcond_without tex
+# By default CWEB and CWEBBIN are compiled and linked with optimization
+# switched on. Use '--with debuginfo' to switch debugging on.
+%bcond_with debuginfo
 
 Name: cwebbin
 Version: 22p
@@ -31,6 +34,10 @@ and Donald Knuth for Literate Programming in C/C++.
 %prep
 %autosetup -c -a1
 %{!?with_tex:%{__sed} "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
+%if ! %{with debuginfo}
+%{__sed} "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
+%{__sed} "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
+%endif
 
 %build
 %{__touch} *.cxx
