@@ -87,15 +87,15 @@ MCHANGES= wmerg-22p.ch
 # avoided in the CWEB system, thus using something like C--.
 EXTENSION= cxx
 
-# We keep debugging info around, for fun, but most users don't need it
-CFLAGS = -g
-#CFLAGS = -O
-
-# These lists of arguments are specific for CC and GCC.  Change, add or
-# delete things here to suit your personal conditions.
-
 # This list of options works for all UNIX compilers tested.
-OPT = -O3 -I$(CATINCLUDE) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
+OPT = -I$(CATINCLUDE) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
+
+# We keep debugging info around, for fun, but most users don't need it
+CFLAGS = -g $(OPT)
+#CFLAGS = -O $(OPT)
+# All linkers tested worked fine with this option.
+LINKFLAGS = -g
+#LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
 # The following set of options work for CC 8.00 on HP-UX 8.00.
 # The script cpp.sh is a local workaround for HP-UX 8.00 to unprotorize
@@ -113,11 +113,7 @@ OPT = -O3 -I$(CATINCLUDE) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
 #CFLAGS = $(OPT) -DEXIT_FAILURE=20L
 
 # SGI's IRIX 4.0.5 and DEC's Ultrix 4.4 don't need special treatment.
-CFLAGS = $(OPT)
-
-# All linkers tested worked fine with this option.
-#LINKFLAGS = -g
-LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
+#CFLAGS = $(OPT)
 
 # The `f' flag is turned off to save paper
 # The `lX' flag includes Xcwebmac.tex
