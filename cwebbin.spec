@@ -6,15 +6,21 @@
 %bcond_with debuginfo
 
 Name: cwebbin
-Version: 22p
-Release: 10
-Packager: Andreas Scherer <andreas@komputer.de>
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
+Version: 22p
+Release: 10
+Packager: Andreas Scherer <andreas@komputer.de>
 
-Group: Productivity/Publishing/TeX/Base
+%if %{_vendor} == "debbuild"
+Group: tex
 Distribution: Kubuntu 16.04 (x86_64)
+%else
+Group: Productivity/Publishing/TeX/Base
+Distribution: openSUSE 42 (x86_64)
+%endif
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: amd64
 %if %{with tex}
