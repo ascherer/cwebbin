@@ -11,22 +11,23 @@ License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
 Version: 22p
 Release: 10
-Packager: Andreas Scherer <andreas@komputer.de>
+Packager: Andreas Scherer <https://ascherer.github.io>
 
 %if %{_vendor} == "debbuild"
 Group: tex
 Distribution: Kubuntu 16.04 (x86_64)
-%else
-Group: Productivity/Publishing/TeX/Base
-Distribution: openSUSE 42 (x86_64)
-%endif
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: amd64
 %if %{with tex}
 BuildRequires: texlive
 Requires: texlive
 %endif
+%else
+Group: Productivity/Publishing/TeX/Base
+Distribution: openSUSE 42 (x86_64)
+BuildArch: x86_64
+%global __touch /usr/bin/touch
+%endif
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ai.tgz
 Source1: %{name}-%{version}.tar.gz
