@@ -16,7 +16,6 @@ Packager: Andreas Scherer <https://ascherer.github.io>
 %if %{_vendor} == "debbuild"
 Group: tex
 Distribution: Kubuntu 16.04 (x86_64)
-BuildArch: amd64
 %if %{with tex}
 BuildRequires: texlive
 Requires: texlive
@@ -24,7 +23,6 @@ Requires: texlive
 %else
 Group: Productivity/Publishing/TeX/Base
 Distribution: openSUSE 42 (x86_64)
-BuildArch: x86_64
 %global __touch /usr/bin/touch
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
