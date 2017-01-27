@@ -4,6 +4,8 @@
 # By default CWEB and CWEBBIN are compiled and linked with optimization
 # switched on. Use '--with debuginfo' to switch debugging on.
 %bcond_with debuginfo
+# Apply only the set of ANSI changes.
+%bcond_with ansi_only
 
 Name: cwebbin
 Summary: The CWEBbin extension of the CWEB package
@@ -29,6 +31,10 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ai.tgz
 Source1: %{name}-%{version}.tar.gz
+
+%if %{with ansi_only}
+Patch0: 0001-Barebone-CWEB-ANSI-style.patch
+%endif
 
 %define texmf /opt/texlive/texmf-local
 
