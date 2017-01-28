@@ -11,8 +11,6 @@ Name: cwebbin
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
-Version: 22p
-Release: 10
 Packager: Andreas Scherer <https://ascherer.github.io>
 
 %if %{_vendor} == "debbuild"
@@ -30,10 +28,14 @@ Distribution: openSUSE 42 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ai.tgz
-Source1: %{name}-%{version}.tar.gz
-
 %if %{with ansi_only}
-Patch0: 0001-Barebone-CWEB-ANSI-style.patch
+Version: 3.64ai
+Release: ansi
+Source1: %{name}-22p.tar.gz
+%else
+Version: 22p
+Release: 10
+Source1: %{name}-%{version}.tar.gz
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -48,6 +50,10 @@ and Donald Knuth for Literate Programming in C/C++.
 %if ! %{with debuginfo}
 %{__sed} "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
 %{__sed} "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
+%endif
+%if %{with ansi_only}
+%{__sed} -i Makefile.unix -e \
+"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %endif
 
 %build
