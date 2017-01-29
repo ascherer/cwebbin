@@ -34,7 +34,7 @@ Release: ansi
 Source1: %{name}-22p.tar.gz
 %else
 Version: 22p
-Release: 10
+Release: 11
 Source1: %{name}-%{version}.tar.gz
 %endif
 

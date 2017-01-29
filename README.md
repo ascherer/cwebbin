@@ -30,6 +30,9 @@ debbuild -ba SPECS/cwebbin.spec
 depending on your preferences.
 
 if all you want is plain vanilla cweb without any add-ons and minus heaps of
-compiler warnings, switch to the
-[cweb-ansi](https://github.com/ascherer/cwebbin/tree/cweb-ansi) branch and
-proceed as described.
+compiler warnings, use the special option `--with ansi_only` to include only
+the minimal changes required for a clean compilation.
+```
+rpmbuild -ba SPECS/cwebbin.spec --with ansi_only
+debbuild -ba SPECS/cwebbin.spec --with ansi_only
+```
