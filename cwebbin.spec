@@ -74,8 +74,6 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__mkdir_p} %{buildroot}%{_bindir}
 %{__cp} ctangle cweave wmerge %{buildroot}%{_bindir}
 
-%clean
-
 %files
 %defattr(644,root,root,755)
 %{?with_tex:%{texmf}/tex/generic/cweb/}
