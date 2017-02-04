@@ -54,6 +54,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
+%{?with_tex:%{__sed} "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
 %endif
 
 %build
