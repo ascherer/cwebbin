@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64 [22p]).
+% This file is part of CWEBbin (Version 3.64b [22p]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated March 8, 2016 by Andreas Scherer.
+% This README file was last updated February 19, 2017 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2016 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2017 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -56,8 +56,8 @@ The distribution of CWEBbin consists of the additional files for this patch
 only.  The complete contents of the original distribution is a prerequisite.
 CWEB can be retrieved via anonymous ftp from
 
-	ftp.cs.stanford.edu:/pub/cweb
-	CTAN:/tex-archive/web/cweb
+	FTP: ftp://ftp.cs.stanford.edu/pub/cweb
+	CTAN: http://ctan.org/pkg/cweb
 
 To apply this patched version of CWEB, extract the patch archive (yielding a
 new subdirectory) and add the original distribution.  Care has been taken to
@@ -70,7 +70,7 @@ general sources by means of an executable wmerge, ctangle, cweave, and an
 ANSI-C/C++ compiler.  In addition you need Klaus Guntermann's TIE processor,
 which is available at
 
-	CTAN:/tex-archive/web/tie
+	CTAN: http://ctan.org/pkg/tie
 
 TIE should be available on all systems with a recent TeX installation.
 
@@ -429,7 +429,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-March 8, 2016.
+February 19, 2017.
 
 Andreas Scherer
 
