@@ -8,7 +8,7 @@
 #line 83 "ctangle.w"
 
 /*:2*//*6:*/
-#line 71 "ctang-22p.ch"
+#line 57 "comm-22p.h"
 
 #include <stdbool.h> 
 #include <stdint.h> 
@@ -183,7 +183,7 @@ object= NULL; \
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 71 "ctang-22p.ch"
+#line 29 "comm-22p.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
@@ -192,7 +192,7 @@ extern boolean program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 71 "ctang-22p.ch"
+#line 102 "comm-22p.h"
 
 char*section_text;
 char*section_text_end;
@@ -200,7 +200,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 71 "ctang-22p.ch"
+#line 117 "comm-22p.h"
 
 extern char*buffer;
 extern char*buffer_end;
@@ -208,7 +208,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 71 "ctang-22p.ch"
+#line 132 "comm-22p.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -243,7 +243,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:9*//*10:*/
-#line 71 "ctang-22p.ch"
+#line 174 "comm-22p.h"
 
 extern int history;
 extern int wrap_up(void);
@@ -252,7 +252,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:10*//*11:*/
-#line 71 "ctang-22p.ch"
+#line 189 "comm-22p.h"
 
 extern int include_depth;
 extern FILE**file;
@@ -267,6 +267,7 @@ extern char*change_file_name;
 extern int*line;
 extern const char*use_language;
 extern int change_line;
+extern int change_depth;
 extern boolean input_has_ended;
 extern boolean changing;
 extern boolean web_file_open;
@@ -275,7 +276,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*12:*/
-#line 71 "ctang-22p.ch"
+#line 212 "comm-22p.h"
 
 extern sixteen_bits section_count;
 extern boolean*changed_section;
@@ -283,14 +284,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 71 "ctang-22p.ch"
+#line 225 "comm-22p.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 71 "ctang-22p.ch"
+#line 237 "comm-22p.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -300,7 +301,7 @@ extern FILE*scn_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 71 "ctang-22p.ch"
+#line 247 "comm-22p.h"
 
 extern void print_stats(void);
 extern void common_init(void);
@@ -418,7 +419,7 @@ text_pointer cur_text;
 eight_bits next_control;
 
 /*:75*//*82:*/
-#line 1350 "ctangle.w"
+#line 1353 "ctangle.w"
 
 extern sixteen_bits section_count;
 
@@ -454,18 +455,18 @@ static void out_char(eight_bits);
 #line 650 "ctangle.w"
 
 /*:48*//*90:*/
-#line 1457 "ctangle.w"
+#line 1460 "ctangle.w"
 
 #line 593 "ctang-22p.ch"
 static void phase_one(void);
-#line 1459 "ctangle.w"
+#line 1462 "ctangle.w"
 
 /*:90*//*92:*/
-#line 1475 "ctangle.w"
+#line 1478 "ctangle.w"
 
 #line 606 "ctang-22p.ch"
 static void skip_limbo(void);
-#line 1477 "ctangle.w"
+#line 1480 "ctangle.w"
 
 /*:92*//*97:*/
 #line 702 "ctang-22p.ch"
@@ -1144,11 +1145,14 @@ print_where= 0;
 #line 1225 "ctangle.w"
 
 store_two_bytes(0150000);
-if(changing)id_first= change_file_name;
-else id_first= cur_file_name;
+if(changing&&include_depth==change_depth){
+id_first= change_file_name;
+store_two_bytes((sixteen_bits)change_line);
+}else{
+id_first= cur_file_name;
+store_two_bytes((sixteen_bits)cur_line);
+}
 id_loc= id_first+strlen(id_first);
-if(changing)store_two_bytes((sixteen_bits)change_line);
-else store_two_bytes((sixteen_bits)cur_line);
 {int a= id_lookup(id_first,id_loc,0)-name_dir;app_repl((a/0400)+0200);
 app_repl(a%0400);}
 
@@ -1478,11 +1482,14 @@ if(t==section_name){/*77:*/
 #line 1225 "ctangle.w"
 
 store_two_bytes(0150000);
-if(changing)id_first= change_file_name;
-else id_first= cur_file_name;
+if(changing&&include_depth==change_depth){
+id_first= change_file_name;
+store_two_bytes((sixteen_bits)change_line);
+}else{
+id_first= cur_file_name;
+store_two_bytes((sixteen_bits)cur_line);
+}
 id_loc= id_first+strlen(id_first);
-if(changing)store_two_bytes((sixteen_bits)change_line);
-else store_two_bytes((sixteen_bits)cur_line);
 {int a= id_lookup(id_first,id_loc,0)-name_dir;app_repl((a/0400)+0200);
 app_repl(a%0400);}
 
@@ -1491,7 +1498,7 @@ app_repl(a%0400);}
 ;}
 while(1)switch(a= get_next()){
 /*78:*/
-#line 1235 "ctangle.w"
+#line 1238 "ctangle.w"
 
 case identifier:a= id_lookup(id_first,id_loc,0)-name_dir;
 app_repl((a/0400)+0200);
@@ -1499,7 +1506,7 @@ app_repl(a%0400);break;
 case section_name:if(t!=section_name)goto done;
 else{
 /*79:*/
-#line 1268 "ctangle.w"
+#line 1271 "ctangle.w"
 {
 char*try_loc= loc;
 while(*try_loc==' '&&try_loc<limit)try_loc++;
@@ -1507,14 +1514,14 @@ if(*try_loc=='+'&&try_loc<limit)try_loc++;
 while(*try_loc==' '&&try_loc<limit)try_loc++;
 #line 556 "ctang-22p.ch"
 if(*try_loc=='=')err_print(get_string(MSG_ERROR_CT79));
-#line 1274 "ctangle.w"
+#line 1277 "ctangle.w"
 
 
 
 }
 
 /*:79*/
-#line 1241 "ctangle.w"
+#line 1244 "ctangle.w"
 ;
 a= cur_section_name-name_dir;
 app_repl((a/0400)+0250);
@@ -1523,16 +1530,19 @@ app_repl(a%0400);
 #line 1225 "ctangle.w"
 
 store_two_bytes(0150000);
-if(changing)id_first= change_file_name;
-else id_first= cur_file_name;
+if(changing&&include_depth==change_depth){
+id_first= change_file_name;
+store_two_bytes((sixteen_bits)change_line);
+}else{
+id_first= cur_file_name;
+store_two_bytes((sixteen_bits)cur_line);
+}
 id_loc= id_first+strlen(id_first);
-if(changing)store_two_bytes((sixteen_bits)change_line);
-else store_two_bytes((sixteen_bits)cur_line);
 {int a= id_lookup(id_first,id_loc,0)-name_dir;app_repl((a/0400)+0200);
 app_repl(a%0400);}
 
 /*:77*/
-#line 1245 "ctangle.w"
+#line 1248 "ctangle.w"
 ;break;
 }
 case output_defs_code:if(t!=section_name)err_print("! Misplaced @h");
@@ -1546,22 +1556,25 @@ app_repl(a%0400);
 #line 1225 "ctangle.w"
 
 store_two_bytes(0150000);
-if(changing)id_first= change_file_name;
-else id_first= cur_file_name;
+if(changing&&include_depth==change_depth){
+id_first= change_file_name;
+store_two_bytes((sixteen_bits)change_line);
+}else{
+id_first= cur_file_name;
+store_two_bytes((sixteen_bits)cur_line);
+}
 id_loc= id_first+strlen(id_first);
-if(changing)store_two_bytes((sixteen_bits)change_line);
-else store_two_bytes((sixteen_bits)cur_line);
 {int a= id_lookup(id_first,id_loc,0)-name_dir;app_repl((a/0400)+0200);
 app_repl(a%0400);}
 
 /*:77*/
-#line 1254 "ctangle.w"
+#line 1257 "ctangle.w"
 ;
 }
 break;
 case constant:case string:
 /*80:*/
-#line 1279 "ctangle.w"
+#line 1282 "ctangle.w"
 
 app_repl(a);
 while(id_first<id_loc){
@@ -1569,7 +1582,7 @@ if(*id_first=='@'){
 if(*(id_first+1)=='@')id_first++;
 #line 562 "ctang-22p.ch"
 else err_print(get_string(MSG_ERROR_CT80));
-#line 1285 "ctangle.w"
+#line 1288 "ctangle.w"
 
 }
 app_repl(*id_first++);
@@ -1577,11 +1590,11 @@ app_repl(*id_first++);
 app_repl(a);break;
 
 /*:80*/
-#line 1258 "ctangle.w"
+#line 1261 "ctangle.w"
 ;
 case ord:
 /*81:*/
-#line 1295 "ctangle.w"
+#line 1298 "ctangle.w"
 {
 int c= (eight_bits)*id_first;
 if(c=='\\'){
@@ -1620,7 +1633,7 @@ case'\'':c= '\'';break;
 case'\"':c= '\"';break;
 #line 568 "ctang-22p.ch"
 default:err_print(get_string(MSG_ERROR_CT81));
-#line 1332 "ctangle.w"
+#line 1335 "ctangle.w"
 
 }
 }
@@ -1634,13 +1647,13 @@ app_repl(constant);
 break;
 
 /*:81*/
-#line 1260 "ctangle.w"
+#line 1263 "ctangle.w"
 ;
 case definition:case format_code:case begin_C:if(t!=section_name)goto done;
 else{
 #line 550 "ctang-22p.ch"
 err_print(get_string(MSG_ERROR_CT78));continue;
-#line 1264 "ctangle.w"
+#line 1267 "ctangle.w"
 
 }
 case new_section:goto done;
@@ -1661,11 +1674,11 @@ cur_text= text_ptr;(++text_ptr)->tok_start= tok_ptr;
 }
 
 /*:76*//*83:*/
-#line 1357 "ctangle.w"
+#line 1360 "ctangle.w"
 
 #line 575 "ctang-22p.ch"
 static void scan_section(void)
-#line 1360 "ctangle.w"
+#line 1363 "ctangle.w"
 {
 name_pointer p;
 text_pointer q;
@@ -1677,7 +1690,7 @@ printf("*%d",section_count);update_terminal;
 next_control= 0;
 while(1){
 /*84:*/
-#line 1396 "ctangle.w"
+#line 1399 "ctangle.w"
 
 while(next_control<definition)
 
@@ -1686,17 +1699,17 @@ loc-= 2;next_control= get_next();
 }
 
 /*:84*/
-#line 1371 "ctangle.w"
+#line 1374 "ctangle.w"
 ;
 if(next_control==definition){
 /*85:*/
-#line 1403 "ctangle.w"
+#line 1406 "ctangle.w"
 {
 while((next_control= get_next())=='\n');
 if(next_control!=identifier){
 #line 581 "ctang-22p.ch"
 err_print(get_string(MSG_ERROR_CT85));
-#line 1407 "ctangle.w"
+#line 1410 "ctangle.w"
 
 continue;
 }
@@ -1711,7 +1724,7 @@ cur_text->text_link= 0;
 }
 
 /*:85*/
-#line 1373 "ctangle.w"
+#line 1376 "ctangle.w"
 
 continue;
 }
@@ -1721,14 +1734,14 @@ p= name_dir;break;
 if(next_control==section_name){
 p= cur_section_name;
 /*86:*/
-#line 1428 "ctangle.w"
+#line 1431 "ctangle.w"
 
 while((next_control= get_next())=='+');
 if(next_control!='='&&next_control!=eq_eq)
 continue;
 
 /*:86*/
-#line 1381 "ctangle.w"
+#line 1384 "ctangle.w"
 ;
 break;
 }
@@ -1736,27 +1749,27 @@ return;
 }
 no_where= print_where= 0;
 /*87:*/
-#line 1433 "ctangle.w"
+#line 1436 "ctangle.w"
 
 /*88:*/
-#line 1438 "ctangle.w"
+#line 1441 "ctangle.w"
 
 store_two_bytes((sixteen_bits)(0150000+section_count));
 
 
 /*:88*/
-#line 1434 "ctangle.w"
+#line 1437 "ctangle.w"
 ;
 scan_repl(section_name);
 /*89:*/
-#line 1442 "ctangle.w"
+#line 1445 "ctangle.w"
 
 if(p==name_dir||p==0){
 (last_unnamed)->text_link= cur_text-text_info;last_unnamed= cur_text;
 }
 #line 587 "ctang-22p.ch"
 else if(p->equiv==(void*)text_info)p->equiv= (void*)cur_text;
-#line 1447 "ctangle.w"
+#line 1450 "ctangle.w"
 
 else{
 q= (text_pointer)p->equiv;
@@ -1768,20 +1781,20 @@ cur_text->text_link= section_flag;
 
 
 /*:89*/
-#line 1436 "ctangle.w"
+#line 1439 "ctangle.w"
 ;
 
 /*:87*/
-#line 1387 "ctangle.w"
+#line 1390 "ctangle.w"
 ;
 }
 
 /*:83*//*91:*/
-#line 1460 "ctangle.w"
+#line 1463 "ctangle.w"
 
 #line 600 "ctang-22p.ch"
 static void phase_one(void){
-#line 1463 "ctangle.w"
+#line 1466 "ctangle.w"
 phase= 1;
 section_count= 0;
 reset_input();
@@ -1792,11 +1805,11 @@ phase= 2;
 }
 
 /*:91*//*93:*/
-#line 1478 "ctangle.w"
+#line 1481 "ctangle.w"
 
 #line 613 "ctang-22p.ch"
 static void skip_limbo(void)
-#line 1481 "ctangle.w"
+#line 1484 "ctangle.w"
 {
 char c;
 while(1){
@@ -1808,7 +1821,7 @@ c= *loc++;
 if(ccode[(eight_bits)c]==new_section)break;
 switch(ccode[(eight_bits)c]){
 case translit_code:/*94:*/
-#line 1507 "ctangle.w"
+#line 1510 "ctangle.w"
 
 while(xisspace(*loc)&&loc<limit)loc++;
 loc+= 3;
@@ -1816,7 +1829,7 @@ if(loc> limit||!xisxdigit(*(loc-3))||!xisxdigit(*(loc-2))
 ||(*(loc-3)>='0'&&*(loc-3)<='7')||!xisspace(*(loc-1)))
 #line 631 "ctang-22p.ch"
 err_print(get_string(MSG_ERROR_CT94_1));
-#line 1513 "ctangle.w"
+#line 1516 "ctangle.w"
 
 else{
 unsigned i;
@@ -1828,19 +1841,19 @@ while(loc<limit&&(xisalpha(*loc)||xisdigit(*loc)||*loc=='_'))loc++;
 if(loc-beg>=translit_length)
 #line 637 "ctang-22p.ch"
 err_print(get_string(MSG_ERROR_CT94_2));
-#line 1523 "ctangle.w"
+#line 1526 "ctangle.w"
 
 else{
 #line 643 "ctang-22p.ch"
 strncpy(translit[i-0200],beg,(size_t)(loc-beg));
-#line 1526 "ctangle.w"
+#line 1529 "ctangle.w"
 translit[i-0200][loc-beg]= '\0';
 }
 }
 
 #line 654 "ctang-22p.ch"
 /*:94*/
-#line 1491 "ctangle.w"
+#line 1494 "ctangle.w"
 ;break;
 case format_code:case'@':break;
 case control_text:if(c=='q'||c=='Q'){
@@ -1848,13 +1861,13 @@ while((c= skip_ahead())=='@');
 if(*(loc-1)!='>')
 #line 619 "ctang-22p.ch"
 err_print(get_string(MSG_ERROR_CT68_2));
-#line 1497 "ctangle.w"
+#line 1500 "ctangle.w"
 
 break;
 }
 #line 625 "ctang-22p.ch"
 default:err_print(get_string(MSG_ERROR_CT93));
-#line 1501 "ctangle.w"
+#line 1504 "ctangle.w"
 
 }
 }
@@ -1875,7 +1888,7 @@ printf(get_string(MSG_STATS_CT95_4),
 (long)(byte_ptr-byte_mem),(long)max_bytes);
 printf(get_string(MSG_STATS_CT95_5),
 (long)(tok_ptr-tok_mem),(long)max_toks);
-#line 1545 "ctangle.w"
+#line 1548 "ctangle.w"
 }
 
 #line 688 "ctang-22p.ch"
