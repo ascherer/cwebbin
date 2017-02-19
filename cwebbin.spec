@@ -27,14 +27,14 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64ai.tgz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64b.tar.gz
 %if %{with ansi_only}
-Version: 3.64ai
+Version: 3.64b
 Release: ansi
 Source1: %{name}-22p.tar.gz
 %else
 Version: 22p
-Release: 11
+Release: 12
 Source1: %{name}-%{version}.tar.gz
 %endif
 
@@ -90,6 +90,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{?with_tex:%{__texhash}}
 
 %changelog
+* Sun Feb 19 2017 Andreas Scherer <https://ascherer.github.io>
+- Update for the 2017 sources
+
 * Tue Mar 08 2016 Andreas Scherer <https://ascherer.github.io>
 - Prepare release for CTAN/Web2c/TeX Live
 

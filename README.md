@@ -8,7 +8,7 @@ which it applies a set of change files to fix warnings issued by modern c/c++
 compilers and to introduce advanced features. see the extensive
 [readme](README.22p) for the full story.
 
-extract *cwebbin-22p.tar.gz* and add the contents of *cweb-3.64ai.tar.gz* for
+extract *cwebbin-22p.tar.gz* and add the contents of *cweb-3.64b.tar.gz* for
 the full set of source files.  unix/linux  users should work with
 [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
@@ -18,7 +18,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-3.64ai.tgz cweb-3.64ai
+git archive -o cweb-3.64b.tgz cweb-3.64b
 git archive -o cwebbin-22p.tar.gz cwebbin-22p
 ```
 respectively, put these two tarballs in the *SOURCES* directory and
