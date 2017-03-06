@@ -18,7 +18,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-3.64b.tgz cweb-3.64b
+git archive -o cweb-3.64b.tar.gz cweb-3.64b
 git archive -o cwebbin-22p.tar.gz cwebbin-22p
 ```
 respectively, put these two tarballs in the *SOURCES* directory and
