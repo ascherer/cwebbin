@@ -63,17 +63,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__make} -f Makefile.unix -e PDFTEX=pdftex boot cautiously all
 
 %install
-%{__rm} -rf %{buildroot}
-%if %{with tex}
-%{__mkdir_p} %{buildroot}%{texmf}/tex/generic/cweb
-%{__cp} texinputs/* %{buildroot}%{texmf}/tex/generic/cweb
-# cweb-3.65.tar.gz at least has an updated version number :-)
-%{__cp} cwebmac.tex %{buildroot}%{texmf}/tex/generic/cweb
-%endif
-%{__mkdir_p} %{buildroot}%{_libdir}/cweb
-%{__cp} c++lib.w %{buildroot}%{_libdir}/cweb
-%{__mkdir_p} %{buildroot}%{_bindir}
-%{__cp} ctangle cweave wmerge %{buildroot}%{_bindir}
+%{?with_tex:%{__install} cwebmac.tex texinputs/* -D -t %{buildroot}%{texmf}/tex/generic/cweb}
+%{__install} c++lib.w -D -t %{buildroot}%{_libdir}/cweb
+%{__install} ctangle cweave wmerge -D -t %{buildroot}%{_bindir}
 
 %files
 %defattr(644,root,root,755)
