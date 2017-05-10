@@ -188,9 +188,11 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CTangle 3.64 [22p] ("@/
-   @t\quad\quad@>__DATE__ ", "@/
-   @t\quad\quad@>__TIME__ ")\n";
+const char Version[] = "$VER: CTangle 3.64 [22p] ("
+  @, __DATE__
+  @, ", "
+  @, __TIME__
+  @, ")\n";
 
 @** Index.
 @z
