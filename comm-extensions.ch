@@ -216,6 +216,17 @@ systems the contents of the compile-time variable |_DEV_NULL|---should be
 used, when no changes are desired.
 @z
 
+@x l.1265
+  strcpy(change_file_name,"/dev/null");
+@y
+#ifdef _DEV_NULL
+  strcpy(change_file_name,_DEV_NULL);
+#else
+  strcpy(change_file_name,"/dev/null");
+#endif
+@^system dependencies@>
+@z
+
 @x l.1262
       while (*s) {
         if (*s=='.') dot_pos=s++;
@@ -229,17 +240,6 @@ used, when no changes are desired.
           dot_pos=NULL,name_pos=++s;
         else s++;
       }
-@^system dependencies@>
-@z
-
-@x l.1275
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-@y
-#ifdef _DEV_NULL
-  if (found_change<=0) strcpy(change_file_name,_DEV_NULL);
-#else
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-#endif
 @^system dependencies@>
 @z
 

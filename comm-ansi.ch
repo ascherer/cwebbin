@@ -395,6 +395,33 @@ scan_args()
 static void scan_args(void)
 @z
 
+@x l.1265
+  while (--argc > 0) {
+@y
+  strcpy(change_file_name,"/dev/null");
+  while (--argc > 0) {
+@z
+
+@x l.1282
+  if (found_change<=0) strcpy(change_file_name,"/dev/null");
+@y
+@z
+
+@x l.1312
+  if (strcmp(*argv,"-")==0) found_change=-1;
+  else {
+@y
+  if (strcmp(*argv,"-")!=0) {
+@z
+
+@x l.1319
+    found_change=1;
+  }
+@y
+  }
+  found_change=1;
+@z
+
 @x l.1346
     flags[*dot_pos]=flag_change;
 @y
