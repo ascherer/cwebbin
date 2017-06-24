@@ -8,7 +8,7 @@
 #line 83 "ctangle.w"
 
 /*:2*//*6:*/
-#line 57 "comm-22p.h"
+#line 59 "comm-22p.h"
 
 #include <stdbool.h> 
 #include <stdint.h> 
@@ -183,7 +183,7 @@ object= NULL; \
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 29 "comm-22p.h"
+#line 31 "comm-22p.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
@@ -192,7 +192,7 @@ extern boolean program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 102 "comm-22p.h"
+#line 104 "comm-22p.h"
 
 char*section_text;
 char*section_text_end;
@@ -200,7 +200,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 117 "comm-22p.h"
+#line 119 "comm-22p.h"
 
 extern char*buffer;
 extern char*buffer_end;
@@ -208,7 +208,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 132 "comm-22p.h"
+#line 134 "comm-22p.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -243,7 +243,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:9*//*10:*/
-#line 174 "comm-22p.h"
+#line 176 "comm-22p.h"
 
 extern int history;
 extern int wrap_up(void);
@@ -252,7 +252,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:10*//*11:*/
-#line 189 "comm-22p.h"
+#line 191 "comm-22p.h"
 
 extern int include_depth;
 extern FILE**file;
@@ -276,7 +276,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*12:*/
-#line 212 "comm-22p.h"
+#line 214 "comm-22p.h"
 
 extern sixteen_bits section_count;
 extern boolean*changed_section;
@@ -284,14 +284,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 225 "comm-22p.h"
+#line 227 "comm-22p.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 237 "comm-22p.h"
+#line 239 "comm-22p.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -301,7 +301,7 @@ extern FILE*scn_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 247 "comm-22p.h"
+#line 249 "comm-22p.h"
 
 extern void print_stats(void);
 extern void common_init(void);
@@ -426,9 +426,7 @@ extern sixteen_bits section_count;
 /*:82*//*96:*/
 #line 693 "ctang-22p.ch"
 
-const char Version[]= "$VER: CTangle 3.64 [22p] ("
-__DATE__", "
-__TIME__")\n";
+const char Version[]= "$VER: CTangle 3.64 [22p] (" __DATE__ ", " __TIME__ ")\n";
 
 /*:96*/
 #line 69 "ctangle.w"
@@ -469,7 +467,7 @@ static void skip_limbo(void);
 #line 1480 "ctangle.w"
 
 /*:92*//*97:*/
-#line 702 "ctang-22p.ch"
+#line 700 "ctang-22p.ch"
 
 static eight_bits get_next(void);
 static eight_bits skip_ahead(void);
@@ -789,7 +787,7 @@ writeloop:/*43:*/
 
 fclose(C_file);C_file= NULL;
 /*98:*/
-#line 722 "ctang-22p.ch"
+#line 720 "ctang-22p.ch"
 
 if((C_file= fopen(C_file_name,"r"))!=NULL){
 char*x,*y;
@@ -802,7 +800,7 @@ alloc_object(x,BUFSIZ,char);
 alloc_object(y,BUFSIZ,char);
 
 /*99:*/
-#line 748 "ctang-22p.ch"
+#line 746 "ctang-22p.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -812,14 +810,14 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:99*/
-#line 733 "ctang-22p.ch"
+#line 731 "ctang-22p.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*100:*/
-#line 759 "ctang-22p.ch"
+#line 757 "ctang-22p.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -829,7 +827,7 @@ rename(check_file_name,C_file_name);
 }
 
 /*:100*/
-#line 738 "ctang-22p.ch"
+#line 736 "ctang-22p.ch"
 
 
 free_object(y);
@@ -857,7 +855,7 @@ cur_end= (cur_repl+1)->tok_start;
 while(stack_ptr> stack)get_output();
 flush_buffer();fclose(C_file);C_file= NULL;
 /*101:*/
-#line 767 "ctang-22p.ch"
+#line 765 "ctang-22p.ch"
 
 if((C_file= fopen(output_file_name,"r"))!=NULL){
 char*x,*y;
@@ -870,7 +868,7 @@ alloc_object(x,BUFSIZ,char);
 alloc_object(y,BUFSIZ,char);
 
 /*99:*/
-#line 748 "ctang-22p.ch"
+#line 746 "ctang-22p.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -880,14 +878,14 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:99*/
-#line 778 "ctang-22p.ch"
+#line 776 "ctang-22p.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*102:*/
-#line 793 "ctang-22p.ch"
+#line 791 "ctang-22p.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -897,7 +895,7 @@ rename(check_file_name,output_file_name);
 }
 
 /*:102*/
-#line 783 "ctang-22p.ch"
+#line 781 "ctang-22p.ch"
 
 
 free_object(y);
