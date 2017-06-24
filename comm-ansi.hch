@@ -9,6 +9,14 @@ This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
+@x
+First comes general stuff:
+@y
+First comes general stuff:
+
+@i iso_types.w
+@z
+
 @x l.30
 typedef short boolean;
 typedef char unsigned eight_bits;

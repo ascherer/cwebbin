@@ -14,6 +14,8 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @x l.44
 @s not_eq normal @q unreserve a C++ keyword @>
 @y
+
+@i iso_types.w
 @z
 
 @x l.74

@@ -9,6 +9,14 @@ This change file requires that WMERG-PATCH.CH is applied as well.
 
 For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 
+@x l.3
+\def\9#1{} % this hack is explained in CWEB manual Appendix F11
+@y
+\def\9#1{} % this hack is explained in CWEB manual Appendix F11
+
+@i iso_types.w
+@z
+
 @x l.14
 #include <stdio.h>
 @y
