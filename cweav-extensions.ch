@@ -8,6 +8,25 @@ This change file requires CWEAV-PATCH.CH and CWEAV-ANSI.CH to be applied.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+@x l.708
+    else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"'))@|
+@y
+    else if (c=='\'' || c=='"'@|
+           || ((c=='L' || c=='u' || c=='U')&&(*loc=='\'' || *loc=='"'))@|
+           || ((c=='u' && *loc=='8')&&(*(loc+1)=='\'' || *(loc+1)=='"'))@|
+@z
+
+@x l.852
+  if (delim=='L') { /* wide character constant */
+    delim=*loc++; *++id_loc=delim;
+  }
+@y
+  if (delim=='L' || delim=='u' || delim=='U') { /* wide character constant */
+    if (delim=='u' && *loc=='8') { *++id_loc=*loc++; }
+    delim=*loc++; *++id_loc=delim;
+  }
+@z
+
 @x l.1324
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
