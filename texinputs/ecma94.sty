@@ -1,11 +1,12 @@
 %
-% TEX/LATEX $VER: ECMA94.STY 1.10 (18.08.2011)
+% TEX/LATEX $VER: ECMA94.STY 1.11 (10.07.2017)
 %
 % SYNOPSIS:
 %    Conversion of umlauts and special characters of the
-%    ECMA-94/ISO-Latin-1 charset for plain TeX with the
-%    encoding of Computer Modern Font.  ECMA-94 seems to
-%    be a standard charset for many conputers and printers.
+%    ECMA-94/ISO-Latin-1/ISO-8859-1 charset for plain TeX
+%    with the encoding of Computer Modern Font.  ISO-8859-1
+%    seems to be a standard charset for many conputers and
+%    printers (https://en.m.wikipedia.org/wiki/ISO/IEC_8859-1).
 %    Some (but not all) characters with codes higher than
 %    code 127 are replaced by their TeX equivalents.
 %    This encoding is *different* to the DC encoding, which
@@ -15,12 +16,10 @@
 %    11.01.94: Derived from AMIGA.TEX by Georg He{\ss}mann (V1.0)
 %
 % AUTHOR:
-%    Andreas Scherer
-%    Abt-Wolf-Straße 17
-%    96215 Lichtenfels, Germany
-%    <andreas_tex@freenet.de>
+%    Andreas Scherer <https://ascherer.github.io/>
 %
-% Please send suggestions and bug reports to this address.
+% Please send suggestions (pull requests) and bug reports (issues)
+% to https://github.com/ascherer/cwebbin
 %
 % CHANGES:
 %    12.01.1994: Portable encoding with ^^xx notation for all systems
@@ -37,6 +36,7 @@
 %    25.03.1996: New postal address.  (V1.8)
 %    13.08.1998: New e-mail address.  (V1.9)
 %    18.08.2011: New postal address.  (V1.10)
+%    10.07.2017: Complete overhaul.  (V1.11)
 %
 % COPYRIGHT:
 %    There is no restriction to the usage of this file.
@@ -52,7 +52,7 @@
 
 \lccode`^^a0=`^^a0 \uccode`^^a0=`^^a0 \catcode`^^a0=\active \def ^^a0{~}
 \lccode`^^a1=`^^a1 \uccode`^^a1=`^^a1 \catcode`^^a1=\active \def ^^a1{{!`}}
-
+% ^^a2 would be ¢
 \lccode`^^a3=`^^a3 \uccode`^^a3=`^^a3 \catcode`^^a3=\active
   \def ^^a3{\ifTeX{\it\$}\else\pounds\fi}
 
@@ -63,11 +63,11 @@
   \def ^^aa{\ifmmode
     {}^{\hbox{\ifTeX\sevenrm\else\small\fi\b{a}}}\else
     $^{\hbox{\ifTeX\sevenrm\else\small\fi\b{a}}}$\fi}
-
+% ^^ab would be closing guillemet («)
 \lccode`^^ac=`^^ac \uccode`^^ac=`^^ac \catcode`^^ac=\active
   \def ^^ac{\ifmmode\lnot\else$\lnot$\fi}
 \lccode`^^ad=`^^ad \uccode`^^ad=`^^ad \catcode`^^ad=\active \def ^^ad{--}
-
+% ^^ae would be 'registered trade mark' (circled R)
 \lccode`^^af=`^^af \uccode`^^af=`^^af \catcode`^^af=\active \def ^^af{\={}}
 
 \lccode`^^b0=`^^b0 \uccode`^^b0=`^^b0 \catcode`^^b0=\active
@@ -91,6 +91,7 @@
   \def ^^ba{\ifmmode
     {}^{\hbox{\ifTeX\sevenrm\else\small\fi\b{o}}}\else
     $^{\hbox{\ifTeX\sevenrm\else\small\fi\b{o}}}$\fi}
+% ^^bb would be opening guillemet (»)
 
 \def\Fraction#1#2{\ifmmode\ifTeX{#1\over#2}\else\frac{#1}{#2}\fi\else
   \ifTeX$#1\over#2$\else$\frac{#1}{#2}$\fi\fi}
@@ -120,6 +121,7 @@
 \lccode`^^ce=`^^ee \uccode`^^ce=`^^ce \catcode`^^ce=\active \def ^^ce{\^I}
 \lccode`^^cf=`^^ef \uccode`^^cf=`^^cf \catcode`^^cf=\active \def ^^cf{\"I}
 
+% ^^d0 would be capital 'eth'
 \lccode`^^d1=`^^f1 \uccode`^^d1=`^^d1 \catcode`^^d1=\active \def ^^d1{\~N}
 \lccode`^^d2=`^^f2 \uccode`^^d2=`^^d2 \catcode`^^d2=\active \def ^^d2{\`O}
 \lccode`^^d3=`^^f3 \uccode`^^d3=`^^d3 \catcode`^^d3=\active \def ^^d3{\'O}
@@ -134,7 +136,7 @@
 \lccode`^^db=`^^fb \uccode`^^db=`^^db \catcode`^^db=\active \def ^^db{\^U}
 \lccode`^^dc=`^^fc \uccode`^^dc=`^^dc \catcode`^^dc=\active \def ^^dc{\"U}
 \lccode`^^dd=`^^fd \uccode`^^dd=`^^dd \catcode`^^dd=\active \def ^^dd{\'Y}
-
+% ^^de would be capital 'thorn'
 \lccode`^^df=`^^df \uccode`^^df=`^^df \catcode`^^df=\active \def ^^df{{\ss}}
 
 \lccode`^^e0=`^^e0 \uccode`^^e0=`^^c0 \catcode`^^e0=\active \def ^^e0{\`a}
@@ -154,6 +156,7 @@
 \lccode`^^ee=`^^ee \uccode`^^ee=`^^ce \catcode`^^ee=\active \def ^^ee{{\^\i}}
 \lccode`^^ef=`^^ef \uccode`^^ef=`^^cf \catcode`^^ef=\active \def ^^ef{{\"\i}}
 
+% ^^f0 would be miniscule 'eth'
 \lccode`^^f1=`^^f1 \uccode`^^f1=`^^d1 \catcode`^^f1=\active \def ^^f1{\~n}
 \lccode`^^f2=`^^f2 \uccode`^^f2=`^^d2 \catcode`^^f2=\active \def ^^f2{\`o}
 \lccode`^^f3=`^^f3 \uccode`^^f3=`^^d3 \catcode`^^f3=\active \def ^^f3{\'o}
@@ -168,7 +171,7 @@
 \lccode`^^fb=`^^fb \uccode`^^fb=`^^db \catcode`^^fb=\active \def ^^fb{\^u}
 \lccode`^^fc=`^^fc \uccode`^^fc=`^^dc \catcode`^^fc=\active \def ^^fc{\"u}
 \lccode`^^fd=`^^fd \uccode`^^fd=`^^dd \catcode`^^fd=\active \def ^^fd{\'y}
-
+% ^^fe would be miniscule 'thorn'
 \lccode`^^ff=`^^ff \uccode`^^ff=`^^ff   \catcode`^^ff=\active \def ^^ff{\"y}
 
 % The following macro supports 8-bit characters in "strings".
