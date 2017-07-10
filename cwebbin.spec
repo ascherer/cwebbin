@@ -65,18 +65,14 @@ and Donald Knuth for Literate Programming in C/C++.
 %install
 %{__rm} -rf %{buildroot}
 %{?with_tex:%{__install} cwebmac.tex texinputs/* -D -t %{buildroot}%{texmf}/tex/plain/cweb}
-%{__install} c++lib.w cwebinputs/c++1xlib.w cwebinputs/iso_types.w -D -t %{buildroot}%{_libdir}/cweb
+%{__install} c++lib.w cwebinputs/* -D -t %{buildroot}%{_libdir}/cweb
 %{__install} ctangle cweave wmerge -D -t %{buildroot}%{_bindir}
 
 %files
 %defattr(644,root,root,755)
 %{?with_tex:%{texmf}/tex/plain/cweb/*}
-%{_libdir}/cweb/c++lib.w
-%{_libdir}/cweb/c++1xlib.w
-%{_libdir}/cweb/iso_types.w
-%attr(755,root,root) %{_bindir}/ctangle
-%attr(755,root,root) %{_bindir}/cweave
-%attr(755,root,root) %{_bindir}/wmerge
+%{_libdir}/cweb/*
+%attr(755,root,root) %{_bindir}/*
 
 %post
 %{?with_tex:%{__texhash}}

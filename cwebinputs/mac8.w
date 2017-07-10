@@ -1,5 +1,5 @@
 %
-% CWEB/INCLUDE $VER: MAC8.W 1.4 (11.06.2000)
+% CWEB/INCLUDE $VER: MAC8.W 1.5 (10.07.2017)
 %
 % SYNOPSIS:
 %   Transliteration table for umlauts and special characters
@@ -10,12 +10,10 @@
 % DATE: 23.06.94: Derived from MAC8.TEX (V1.0)
 %
 % AUTHOR:
-%    Andreas Scherer
-%    Rochusstraﬂe 22-24
-%    52062 Aachen, Germany
-%    <andreas.scherer@@pobox.com>
+%    Andreas Scherer <https://ascherer.github.io/>
 %
-% Please send suggestions and bug reports to this address.
+% Please send suggestions (pull requests) and bug reports (issues)
+% to https://github.com/ascherer/cwebbin
 %
 % COPYRIGHT: There is no restriction to the usage of this file.
 %
@@ -23,6 +21,7 @@
 %    March 25, 1996: New postal address.  (V1.2)
 %    August 13, 1998: New e-mail address.  (V1.3)
 %    June 11, 2000: Include matching TeX macros.  (V1.4)
+%    July 10, 2017: Complete overhaul.  (V1.5)
 
 \input mac8.sty
 \noatl
