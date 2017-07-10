@@ -70,7 +70,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %files
 %defattr(644,root,root,755)
-%{?with_tex:%{texmf}/tex/plain/cweb/}
+%{?with_tex:%{texmf}/tex/plain/cweb/*}
 %{_libdir}/cweb/c++lib.w
 %{_libdir}/cweb/c++1xlib.w
 %{_libdir}/cweb/iso_types.w
