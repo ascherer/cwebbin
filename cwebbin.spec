@@ -27,9 +27,9 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64b.tar.gz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
 %if %{with ansi_only}
-Version: 3.64b
+Version: 3.64c
 Release: ansi
 Source1: %{name}-22p.tar.gz
 %else
