@@ -140,8 +140,8 @@ PDFTEX = dvipdfm
 
 ##########  You shouldn't have to change anything after this point #######
 
-CWEAVE = ./cweave $(WFLAGS)
-CTANGLE = ./ctangle $(TFLAGS)
+CWEAVE = CWEBINPUTS=$(INCLUDE) ./cweave $(WFLAGS)
+CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 
 # The following files come from the original CWEB distribution and
 # are left completely unmodified.
