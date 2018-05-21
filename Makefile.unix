@@ -208,19 +208,9 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 .tex.dvi:	
 	TEXINPUTS=.//: tex $<
 
-.tex.pdf:
-	case "$(PDFTEX)" in \
-	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
-	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
-	esac
-
 .w.dvi:
 	$(MAKE) $*.tex
 	$(MAKE) $*.dvi
-
-.w.pdf:
-	$(MAKE) $*.tex
-	$(MAKE) $*.pdf
 
 .w.$(EXTENSION):
 	$(CTANGLE) $* - $*.$(EXTENSION)
@@ -231,6 +221,16 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 
 .$(EXTENSION).o:
 	$(CC) $(CFLAGS) -c $*.$(EXTENSION)
+
+.w.pdf:
+	$(MAKE) $*.tex
+	$(MAKE) $*.pdf
+
+.tex.pdf:
+	case "$(PDFTEX)" in \
+	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
+	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
+	esac
 
 # The complete set of files contains the two programs `ctangle' and
 # `cweave' plus the program `wmerge', the manuals `cwebman' and `cwebmana'
