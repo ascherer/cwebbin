@@ -190,14 +190,14 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 .tex.dvi:
 	tex $<
 
-.tex.dvi:
+.tex.pdf:
 	pdftex $<
 
 .w.dvi:
 	$(MAKE) $*.tex
 	$(MAKE) $*.dvi
 
-.w.dvi:
+.w.pdf:
 	$(MAKE) $*.tex
 	$(MAKE) $*.pdf
 
