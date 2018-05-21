@@ -228,7 +228,7 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 
 .tex.pdf:
 	case "$(PDFTEX)" in \
-	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
+	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $*.dvi ;; \
 	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
 	esac
 
