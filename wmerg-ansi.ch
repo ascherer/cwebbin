@@ -1,5 +1,3 @@
-Changes for WMERGE.W by Andreas Scherer, December 29, 2016.
-
 This set of changes converts the WMERGE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  Additional
@@ -30,7 +28,8 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 main (ac,av)
 int ac; char **av;
 @y
-int main (int ac, char **av)
+int main (
+int ac, char **av)
 @z
 
 @x l.38
@@ -70,7 +69,7 @@ input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
 @y
 int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
-  FILE *fp@t\2\2@>) /* what file to read from */
+FILE *fp@t\2\2@>) /* what file to read from */
 @z
 
 @x l.157
@@ -85,7 +84,8 @@ int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
 void
 prime_the_change_buffer()
 @y
-void prime_the_change_buffer(void)
+void
+prime_the_change_buffer(void)
 @z
 
 @x l.215
@@ -98,14 +98,16 @@ void prime_the_change_buffer(void)
 void
 check_change() /* switches to |change_file| if the buffers match */
 @y
-void check_change(void) /* switches to |change_file| if the buffers match */
+void
+check_change(void) /* switches to |change_file| if the buffers match */
 @z
 
 @x l.283
 void
 reset_input()
 @y
-void reset_input(void)
+void
+reset_input(void)
 @z
 
 @x l.318
@@ -124,7 +126,8 @@ void put_line(void)
 void
 check_complete(){
 @y
-void check_complete(void) {
+void
+check_complete(void) {
 @z
 
 @x l.453
@@ -144,7 +147,9 @@ void
 err_print(s) /* prints `\..' and location of error message */
 char *s;
 @y
-void err_print(const char *s) /* prints `\..' and location of error message */
+void
+err_print(@t\1\1@> /* prints `\..' and location of error message */
+const char *s@t\2\2@>)
 @z
 
 @x l.547
@@ -163,7 +168,8 @@ void scan_args(void);
 void
 scan_args()
 @y
-void scan_args(void)
+void
+scan_args(void)
 @z
 
 @x l.687

@@ -1,5 +1,3 @@
-Changes for COMMON.W by Andreas Scherer, December 29, 2016.
-
 This set of changes converts the COMMON.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
@@ -28,7 +26,8 @@ typedef bool boolean;
 void
 common_init()
 @y
-void common_init(void)
+void
+common_init(void)
 @z
 
 @x l.129
@@ -50,7 +49,7 @@ int input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
 @y
 static int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
-  FILE *fp@t\2\2@>) /* what file to read from */
+FILE *fp@t\2\2@>) /* what file to read from */
 @z
 
 @x l.236
@@ -65,7 +64,8 @@ static int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
 void
 prime_the_change_buffer()
 @y
-static void prime_the_change_buffer(void)
+static void
+prime_the_change_buffer(void)
 @z
 
 @x l.293
@@ -80,15 +80,16 @@ static void prime_the_change_buffer(void)
 void
 check_change() /* switches to |change_file| if the buffers match */
 @y
-static void check_change(void)
-  /* switches to |change_file| if the buffers match */
+static void
+check_change(void) /* switches to |change_file| if the buffers match */
 @z
 
 @x l.378
 void
 reset_input()
 @y
-void reset_input(void)
+void
+reset_input(void)
 @z
 
 @x l.418
@@ -118,7 +119,8 @@ check_complete(){
     strncpy(buffer,change_buffer,change_limit-change_buffer+1);
     limit=buffer+(int)(change_limit-change_buffer);
 @y
-void check_complete(void) {
+void
+check_complete(void) {
   if (change_limit!=change_buffer) { /* |changing| is 0 */
     strncpy(buffer,change_buffer,(size_t)(change_limit-change_buffer+1));
     limit=buffer+(ptrdiff_t)(change_limit-change_buffer);
@@ -145,10 +147,11 @@ char t; /* the |ilk|; used by \.{CWEAVE} only */
 {
   char *i=first; /* position in |buffer| */
 @y
-name_pointer id_lookup(@t\1\1@> /* looks up a string in the identifier table */
-  const char *first, /* first character of string */
-  const char *last, /* last character of string plus one */
-  char t@t\2\2@>) /* the |ilk|; used by \.{CWEAVE} only */
+name_pointer
+id_lookup(@t\1\1@> /* looks up a string in the identifier table */
+const char *first, /* first character of string */
+const char *last, /* last character of string plus one */
+char t@t\2\2@>) /* the |ilk|; used by \.{CWEAVE} only */
 {
   const char *i=first; /* position in |buffer| */
 @z
@@ -170,7 +173,9 @@ void
 print_section_name(p)
 name_pointer p;
 @y
-void print_section_name(name_pointer p)
+void
+print_section_name(
+name_pointer p)
 @z
 
 @x l.767
@@ -189,7 +194,10 @@ sprint_section_name(dest,p)
   char*dest;
   name_pointer p;
 @y
-void sprint_section_name(char *dest,name_pointer p)
+void
+sprint_section_name(
+  char *dest,
+  name_pointer p)
 @z
 
 @x l.791
@@ -203,7 +211,9 @@ void
 print_prefix_name(p)
 name_pointer p;
 @y
-void print_prefix_name(name_pointer p)
+void
+print_prefix_name(
+name_pointer p)
 @z
 
 @x l.819
@@ -233,12 +243,13 @@ char *first; /* first character of section name */
 char *last; /* last character of section name, plus one */
 int ispref; /* are we adding a prefix or a full name? */
 @y
-name_pointer add_section_name(@t\1\1@> /* install a new node in the tree */
-  name_pointer par, /* parent of new node */
-  int c, /* right or left? */
-  char *first, /* first character of section name */
-  char *last, /* last character of section name, plus one */
-  int ispref@t\2\2@>) /* are we adding a prefix or a full name? */
+name_pointer
+add_section_name(@t\1\1@> /* install a new node in the tree */
+name_pointer par, /* parent of new node */
+int c, /* right or left? */
+char *first, /* first character of section name */
+char *last, /* last character of section name, plus one */
+int ispref@t\2\2@>) /* are we adding a prefix or a full name? */
 @z
 
 @x l.859
@@ -255,11 +266,12 @@ char *first; /* beginning of extension text */
 char *last; /* one beyond end of extension text */
 int ispref; /* are we adding a prefix or a full name? */
 @y
-void extend_section_name(@t\1\1@>
-  name_pointer p, /* name to be extended */
-  char *first, /* beginning of extension text */
-  char *last, /* one beyond end of extension text */
-  int ispref@t\2\2@>) /* are we adding a prefix or a full name? */
+void
+extend_section_name(@t\1\1@>
+name_pointer p, /* name to be extended */
+char *first, /* beginning of extension text */
+char *last, /* one beyond end of extension text */
+int ispref@t\2\2@>) /* are we adding a prefix or a full name? */
 @z
 
 @x l.887
@@ -274,9 +286,10 @@ section_lookup(first,last,ispref) /* find or install section name in tree */
 char *first, *last; /* first and last characters of new name */
 int ispref; /* is the new name a prefix or a full name? */
 @y
-name_pointer section_lookup(@t\1\1@> /* find or install section name in tree */
-  char *first,char *last, /* first and last characters of new name */
-  int ispref@t\2\2@>) /* is the new name a prefix or a full name? */
+name_pointer
+section_lookup(@t\1\1@> /* find or install section name in tree */
+char *first,char *last, /* first and last characters of new name */
+int ispref@t\2\2@>) /* is the new name a prefix or a full name? */
 @z
 
 @x l.917
@@ -298,9 +311,9 @@ int len; /* length of string */
 name_pointer r; /* section name being compared */
 @y
 static int section_name_cmp(@t\1\1@>
-  char **pfirst, /* pointer to beginning of comparison string */
-  int len, /* length of string */
-  name_pointer r@t\2\2@>) /* section name being compared */
+char **pfirst, /* pointer to beginning of comparison string */
+int len, /* length of string */
+name_pointer r@t\2\2@>) /* section name being compared */
 @z
 
 @x l.1031
@@ -338,7 +351,9 @@ void
 err_print(s) /* prints `\..' and location of error message */
 char *s;
 @y
-void err_print(const char *s) /* prints `\..' and location of error message */
+void
+err_print(@t\1\1@> /* prints `\..' and location of error message */
+const char *s@t\2\2@>)
 @z
 
 @x l.1134
@@ -367,7 +382,9 @@ extern void overflow(const char *);
 fatal(s,t)
   char *s,*t;
 @y
-@c void fatal(const char *s,const char *t)
+@c void
+fatal(
+  const char *s,const char *t)
 @z
 
 @x l.1183
@@ -381,7 +398,9 @@ fatal(s,t)
 overflow(t)
   char *t;
 @y
-@c void overflow(const char *t)
+@c void
+overflow(
+  const char *t)
 @z
 
 @x l.1245
@@ -394,7 +413,8 @@ static void scan_args(void);@/
 void
 scan_args()
 @y
-static void scan_args(void)
+static void
+scan_args(void)
 @z
 
 @x l.1265

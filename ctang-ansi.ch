@@ -1,5 +1,3 @@
-Changes for CTANGLE.W by Andreas Scherer, October 29, 2005.
-
 This set of changes converts the CTANGLE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
@@ -43,7 +41,9 @@ int main (ac, av)
 int ac;
 char **av;
 @y
-int main (int ac, char **av)
+int main (
+int ac,
+char **av)
 @z
 
 @x l.100
@@ -71,10 +71,10 @@ char *first; /* position of first character of string */
 int l; /* length of identifier */
 @y
 int names_match(@t\1\1@>
-  name_pointer p, /* points to the proposed match */
-  const char *first, /* position of first character of string */
-  size_t l, /* length of identifier */
-  eight_bits@t\2\2@>) /* not used by \.{TANGLE} */
+name_pointer p, /* points to the proposed match */
+const char *first, /* position of first character of string */
+size_t l, /* length of identifier */
+eight_bits@t\2\2@>) /* not used by \.{TANGLE} */
 @z
 
 @x l.196
@@ -82,7 +82,9 @@ void
 init_node(node)
 name_pointer node;
 @y
-void init_node(name_pointer node)
+void
+init_node(
+name_pointer node)
 @z
 
 @x l.200
@@ -95,8 +97,8 @@ void init_node(name_pointer node)
 void
 init_p() {}
 @y
-void init_p(name_pointer,eight_bits)
-{}
+void
+init_p(name_pointer,eight_bits) {}
 @z
 
 @x l.258
@@ -104,7 +106,9 @@ void
 store_two_bytes(x)
 sixteen_bits x;
 @y
-static void store_two_bytes(sixteen_bits x)
+static void
+store_two_bytes(
+sixteen_bits x)
 @z
 
 @x l.334
@@ -112,7 +116,9 @@ void
 push_level(p) /* suspends the current level */
 name_pointer p;
 @y
-static void push_level(name_pointer p) /* suspends the current level */
+static void
+push_level(@t\1\1@> /* suspends the current level */
+name_pointer p@t\2\2@>)
 @z
 
 @x l.353
@@ -120,14 +126,17 @@ void
 pop_level(flag) /* do this when |cur_byte| reaches |cur_end| */
 int flag; /* |flag==0| means we are in |output_defs| */
 @y
-static void pop_level(int flag) /* do this when |cur_byte| reaches |cur_end| */
+static void
+pop_level(@t\1\1@> /* do this when |cur_byte| reaches |cur_end| */
+int flag@t\2\2@>) /* |flag==0| means we are in |output_defs| */
 @z
 
 @x l.389
 void
 get_output() /* sends next token to |out_char| */
 @y
-static void get_output(void) /* sends next token to |out_char| */
+static void
+get_output(void) /* sends next token to |out_char| */
 @z
 
 @x l.423
@@ -140,7 +149,8 @@ static void get_output(void) /* sends next token to |out_char| */
 void
 flush_buffer() /* writes one line to output file */
 @y
-static void flush_buffer(void) /* writes one line to output file */
+static void
+flush_buffer(void) /* writes one line to output file */
 @z
 
 @x l.531
@@ -153,7 +163,8 @@ static void phase_two(void);
 void
 phase_two () {
 @y
-static void phase_two (void) {
+static void
+phase_two (void) {
 @z
 
 @x l.600
@@ -166,7 +177,8 @@ static void output_defs(void);
 void
 output_defs()
 @y
-static void output_defs(void)
+static void
+output_defs(void)
 @z
 
 @x l.646
@@ -180,7 +192,9 @@ static void
 out_char(cur_char)
 eight_bits cur_char;
 @y
-static void out_char(eight_bits cur_char)
+static void
+out_char(
+eight_bits cur_char)
 @z
 
 @x l.690
@@ -193,21 +207,24 @@ case non_eq: C_putc('!'); C_putc('='); out_state=normal; break;
 eight_bits
 skip_ahead() /* skip to next control code */
 @y
-static eight_bits skip_ahead(void) /* skip to next control code */
+static eight_bits
+skip_ahead(void) /* skip to next control code */
 @z
 
 @x l.842
 int skip_comment(is_long_comment) /* skips over comments */
 boolean is_long_comment;
 @y
-static int skip_comment(boolean is_long_comment) /* skips over comments */
+static int skip_comment(@t\1\1@> /* skips over comments */
+boolean is_long_comment@t\2\2@>)
 @z
 
 @x l.893
 eight_bits
 get_next() /* produces the next input token */
 @y
-static eight_bits get_next(void) /* produces the next input token */
+static eight_bits
+get_next(void) /* produces the next input token */
 @z
 
 @x l.954
@@ -229,14 +246,17 @@ void
 scan_repl(t) /* creates a replacement text */
 eight_bits t;
 @y
-static void scan_repl(eight_bits t) /* creates a replacement text */
+static void
+scan_repl(@t\1\1@> /* creates a replacement text */
+eight_bits t@t\2\2@>)
 @z
 
 @x l.1349
 void
 scan_section()
 @y
-static void scan_section(void)
+static void
+scan_section(void)
 @z
 
 @x l.1437
@@ -255,7 +275,8 @@ static void phase_one(void);
 void
 phase_one() {
 @y
-static void phase_one(void) {
+static void
+phase_one(void) {
 @z
 
 @x l.1467
@@ -268,7 +289,8 @@ static void skip_limbo(void);
 void
 skip_limbo()
 @y
-static void skip_limbo(void)
+static void
+skip_limbo(void)
 @z
 
 @x l.1516
@@ -291,7 +313,8 @@ so we use \.{\%ld} to print these quantities and cast them to |long|
 explicitly.
 
 @c
-void print_stats(void) {
+void
+print_stats(void) {
 @z
 
 @x l.1538
