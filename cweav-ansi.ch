@@ -41,9 +41,9 @@ int main (ac, av)
 int ac; /* argument count */
 char **av; /* argument values */
 @y
-int main (
+int main (@t\1\1@>
 int ac, /* argument count */
-char **av) /* argument values */
+char **av@t\2\2@>) /* argument values */
 @z
 
 @x l.107
@@ -290,8 +290,8 @@ C_xref( spec_ctrl ) /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl;
 @y
 static void
-C_xref( /* makes cross-references for \CEE/ identifiers */
-  eight_bits spec_ctrl )
+C_xref(@t\1\1@> /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl@t\2\2@>)
 @z
 
 @x l.1066
@@ -337,9 +337,9 @@ char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 boolean per_cent,carryover;
 @y
 static void
-flush_buffer(
+flush_buffer(@t\1\1@>
 char *b, /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
-boolean per_cent,boolean carryover)
+boolean per_cent,boolean carryover@t\2\2@>)
 @z
 
 @x l.1299
@@ -362,8 +362,8 @@ out_str(s) /* output characters from |s| to end of string */
 char *s;
 @y
 static void
-out_str( /* output characters from |s| to end of string */
-const char*s)
+out_str(@t\1\1@> /* output characters from |s| to end of string */
+const char*s@t\2\2@>)
 @z
 
 @x l.1363
@@ -448,8 +448,8 @@ print_cat(c) /* symbolic printout of a category */
 eight_bits c;
 @y
 static void
-print_cat( /* symbolic printout of a category */
-eight_bits c)
+print_cat(@t\1\1@> /* symbolic printout of a category */
+eight_bits c@t\2\2@>)
 @z
 
 @x l.1787
@@ -465,8 +465,8 @@ text_pointer p;
 @y
 #ifdef DEAD_CODE /* not used in |main| */
 static void
-print_text( /* prints a token list for debugging; not used in |main| */
-text_pointer p)
+print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+text_pointer p@t\2\2@>)
 @z
 
 @x
@@ -532,8 +532,8 @@ make_reserved(p) /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p;
 @y
 static void
-make_reserved( /* make the first identifier in |p->trans| like |int| */
-scrap_pointer p)
+make_reserved(@t\1\1@> /* make the first identifier in |p->trans| like |int| */
+scrap_pointer p@t\2\2@>)
 @z
 
 @x l.2356
@@ -549,9 +549,9 @@ make_underlined(p)
 scrap_pointer p;
 @y
 static void
-make_underlined(
+make_underlined(@t\1\1@>
 /* underline the entry for the first identifier in |p->trans| */
-scrap_pointer p)
+scrap_pointer p@t\2\2@>)
 @z
 
 @x l.2388
@@ -618,8 +618,8 @@ C_parse(spec_ctrl) /* creates scraps from \CEE/ tokens */
   eight_bits spec_ctrl;
 @y
 static void
-C_parse( /* creates scraps from \CEE/ tokens */
-  eight_bits spec_ctrl)
+C_parse(@t\1\1@> /* creates scraps from \CEE/ tokens */
+  eight_bits spec_ctrl@t\2\2@>)
 @z
 
 @x l.3301
@@ -640,8 +640,8 @@ app_cur_id(scrapping)
 boolean scrapping; /* are we making this into a scrap? */
 @y
 void
-app_cur_id(
-boolean scrapping) /* are we making this into a scrap? */
+app_cur_id(@t\1\1@>
+boolean scrapping@t\2\2@>) /* are we making this into a scrap? */
 @z
 
 @x l.3313
@@ -666,8 +666,8 @@ push_level(p) /* suspends the current level */
 text_pointer p;
 @y
 static void
-push_level( /* suspends the current level */
-text_pointer p)
+push_level(@t\1\1@> /* suspends the current level */
+text_pointer p@t\2\2@>)
 @z
 
 @x l.3459
@@ -802,8 +802,8 @@ footnote(flag) /* outputs section cross-references */
 sixteen_bits flag;
 @y
 static void
-footnote( /* outputs section cross-references */
-sixteen_bits flag)
+footnote(@t\1\1@> /* outputs section cross-references */
+sixteen_bits flag@t\2\2@>)
 @z
 
 @x l.4146
@@ -904,8 +904,8 @@ unbucket(d) /* empties buckets having depth |d| */
 eight_bits d;
 @y
 static void
-unbucket( /* empties buckets having depth |d| */
-eight_bits d)
+unbucket(@t\1\1@> /* empties buckets having depth |d| */
+eight_bits d@t\2\2@>)
 @z
 
 @x l.4447
@@ -920,8 +920,8 @@ section_print(p) /* print all section names in subtree |p| */
 name_pointer p;
 @y
 static void
-section_print( /* print all section names in subtree |p| */
-name_pointer p)
+section_print(@t\1\1@> /* print all section names in subtree |p| */
+name_pointer p@t\2\2@>)
 @z
 
 @x l.4468

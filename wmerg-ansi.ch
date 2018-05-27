@@ -148,8 +148,8 @@ err_print(s) /* prints `\..' and location of error message */
 char *s;
 @y
 void
-err_print( /* prints `\..' and location of error message */
-const char *s)
+err_print(@t\1\1@> /* prints `\..' and location of error message */
+const char *s@t\2\2@>)
 @z
 
 @x l.547

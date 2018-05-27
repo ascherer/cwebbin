@@ -117,8 +117,8 @@ push_level(p) /* suspends the current level */
 name_pointer p;
 @y
 static void
-push_level( /* suspends the current level */
-name_pointer p)
+push_level(@t\1\1@> /* suspends the current level */
+name_pointer p@t\2\2@>)
 @z
 
 @x l.353
@@ -127,8 +127,8 @@ pop_level(flag) /* do this when |cur_byte| reaches |cur_end| */
 int flag; /* |flag==0| means we are in |output_defs| */
 @y
 static void
-pop_level( /* do this when |cur_byte| reaches |cur_end| */
-int flag) /* |flag==0| means we are in |output_defs| */
+pop_level(@t\1\1@> /* do this when |cur_byte| reaches |cur_end| */
+int flag@t\2\2@>) /* |flag==0| means we are in |output_defs| */
 @z
 
 @x l.389
@@ -215,8 +215,8 @@ skip_ahead(void) /* skip to next control code */
 int skip_comment(is_long_comment) /* skips over comments */
 boolean is_long_comment;
 @y
-static int skip_comment( /* skips over comments */
-boolean is_long_comment)
+static int skip_comment(@t\1\1@> /* skips over comments */
+boolean is_long_comment@t\2\2@>)
 @z
 
 @x l.893
@@ -247,8 +247,8 @@ scan_repl(t) /* creates a replacement text */
 eight_bits t;
 @y
 static void
-scan_repl( /* creates a replacement text */
-eight_bits t)
+scan_repl(@t\1\1@> /* creates a replacement text */
+eight_bits t@t\2\2@>)
 @z
 
 @x l.1349
