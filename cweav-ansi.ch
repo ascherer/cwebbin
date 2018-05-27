@@ -1,5 +1,3 @@
-Changes for CWEAVE.W by Andreas Scherer, December 28, 2016.
-
 This set of changes converts the CWEAVE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
@@ -43,8 +41,9 @@ int main (ac, av)
 int ac; /* argument count */
 char **av; /* argument values */
 @y
-int main (int ac, char **av)
-/* argument count and argument values */
+int main (
+int ac, /* argument count */
+char **av) /* argument values */
 @z
 
 @x l.107
@@ -83,7 +82,9 @@ void
 new_xref(p)
 name_pointer p;
 @y
-static void new_xref(name_pointer p)
+static void
+new_xref(
+name_pointer p)
 @z
 
 @x l.279
@@ -97,7 +98,9 @@ void
 new_section_xref(p)
 name_pointer p;
 @y
-static void new_section_xref(name_pointer p)
+static void
+new_section_xref(
+name_pointer p)
 @z
 
 @x l.306
@@ -111,7 +114,9 @@ void
 set_file_flag(p)
 name_pointer p;
 @y
-static void set_file_flag(name_pointer p)
+static void
+set_file_flag(
+name_pointer p)
 @z
 
 @x l.323
@@ -133,10 +138,10 @@ int l; /* length of identifier */
 eight_bits t; /* desired ilk */
 @y
 int names_match(@t\1\1@>
-  name_pointer p, /* points to the proposed match */
-  const char *first, /* position of first character of string */
-  size_t l, /* length of identifier */
-  eight_bits t@t\2\2@>) /* desired |ilk| */
+name_pointer p, /* points to the proposed match */
+const char *first, /* position of first character of string */
+size_t l, /* length of identifier */
+eight_bits t@t\2\2@>) /* desired |ilk| */
 @z
 
 @x l.370
@@ -145,7 +150,10 @@ init_p(p,t)
 name_pointer p;
 eight_bits t;
 @y
-void init_p(name_pointer p,eight_bits t)
+void
+init_p(
+name_pointer p,
+eight_bits t)
 @z
 
 @x l.375
@@ -159,7 +167,9 @@ void
 init_node(p)
 name_pointer p;
 @y
-void init_node(name_pointer p)
+void
+init_node(
+name_pointer p)
 @z
 
 @x l.382
@@ -178,14 +188,16 @@ static void skip_limbo(void);
 void
 skip_limbo() {
 @y
-static void skip_limbo(void) {
+static void
+skip_limbo(void) {
 @z
 
 @x l.588
 unsigned
 skip_TeX() /* skip past pure \TEX/ code */
 @y
-static unsigned skip_TeX(void) /* skip past pure \TEX/ code */
+static unsigned
+skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
 @x l.646
@@ -206,7 +218,8 @@ eight_bits
 get_next() /* produces the next input token */
 {@+eight_bits c; /* the current character */
 @y
-static eight_bits get_next(void) /* produces the next input token */
+static eight_bits
+get_next(void) /* produces the next input token */
 {
   eight_bits c; /* the current character */
 @z
@@ -247,7 +260,8 @@ void skip_restricted(void);
 void
 skip_restricted()
 @y
-void skip_restricted(void)
+void
+skip_restricted(void)
 @z
 
 @x l.987
@@ -260,7 +274,8 @@ static void phase_one(void);
 void
 phase_one() {
 @y
-static void phase_one(void) {
+static void
+phase_one(void) {
 @z
 
 @x l.1038
@@ -274,8 +289,9 @@ void
 C_xref( spec_ctrl ) /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl;
 @y
-static void C_xref( eight_bits spec_ctrl )
-   /* makes cross-references for \CEE/ identifiers */
+static void
+C_xref( /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl )
 @z
 
 @x l.1066
@@ -288,7 +304,8 @@ static void outer_xref(void);
 void
 outer_xref() /* extension of |C_xref| */
 @y
-static void outer_xref(void) /* extension of |C_xref| */
+static void
+outer_xref(void) /* extension of |C_xref| */
 @z
 
 @x l.1168
@@ -308,8 +325,9 @@ void
 section_check(p)
 name_pointer p; /* print anomalies in subtree |p| */
 @y
-static void section_check(name_pointer p)
-   /* print anomalies in subtree |p| */
+static void
+section_check(
+name_pointer p) /* print anomalies in subtree |p| */
 @z
 
 @x l.1283
@@ -318,8 +336,10 @@ flush_buffer(b,per_cent,carryover)
 char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 boolean per_cent,carryover;
 @y
-static void flush_buffer(char *b,boolean per_cent,boolean carryover)
-   /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
+static void
+flush_buffer(
+char *b, /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
+boolean per_cent,boolean carryover)
 @z
 
 @x l.1299
@@ -332,7 +352,8 @@ static void flush_buffer(char *b,boolean per_cent,boolean carryover)
 void
 finish_line() /* do this at the end of a line */
 @y
-static void finish_line(void) /* do this at the end of a line */
+static void
+finish_line(void) /* do this at the end of a line */
 @z
 
 @x l.1344
@@ -340,7 +361,9 @@ void
 out_str(s) /* output characters from |s| to end of string */
 char *s;
 @y
-static void out_str(const char*s) /* output characters from |s| to end of string */
+static void
+out_str( /* output characters from |s| to end of string */
+const char*s)
 @z
 
 @x l.1363
@@ -353,7 +376,8 @@ static void break_out(void);
 void
 break_out() /* finds a way to break the output line */
 @y
-static void break_out(void) /* finds a way to break the output line */
+static void
+break_out(void) /* finds a way to break the output line */
 @z
 
 @x l.1401
@@ -361,7 +385,9 @@ void
 out_section(n)
 sixteen_bits n;
 @y
-static void out_section(sixteen_bits n)
+static void
+out_section(
+sixteen_bits n)
 @z
 
 @x l.1415
@@ -370,21 +396,26 @@ out_name(p,quote_xalpha)
 name_pointer p;
 boolean quote_xalpha;
 @y
-static void out_name(name_pointer p, boolean quote_xalpha)
+static void
+out_name(
+name_pointer p,
+boolean quote_xalpha)
 @z
 
 @x l.1442
 void
 copy_limbo()
 @y
-static void copy_limbo(void)
+static void
+copy_limbo(void)
 @z
 
 @x l.1477
 eight_bits
 copy_TeX()
 @y
-static eight_bits copy_TeX(void)
+static eight_bits
+copy_TeX(void)
 @z
 
 @x l.1506
@@ -399,8 +430,8 @@ boolean is_long_comment; /* is this a traditional \CEE/ comment? */
 int bal; /* brace balance */
 @y
 static int copy_comment(@t\1\1@> /* copies \TeX\ code in comments */
-  boolean is_long_comment, /* is this a traditional \CEE/ comment? */
-  int bal@t\2\2@>) /* brace balance */
+boolean is_long_comment, /* is this a traditional \CEE/ comment? */
+int bal@t\2\2@>) /* brace balance */
 @z
 
 @x l.1608
@@ -416,7 +447,9 @@ void
 print_cat(c) /* symbolic printout of a category */
 eight_bits c;
 @y
-static void print_cat(eight_bits c) /* symbolic printout of a category */
+static void
+print_cat( /* symbolic printout of a category */
+eight_bits c)
 @z
 
 @x l.1787
@@ -431,8 +464,9 @@ print_text(p) /* prints a token list for debugging; not used in |main| */
 text_pointer p;
 @y
 #ifdef DEAD_CODE /* not used in |main| */
-static void print_text(text_pointer p)
-   /* prints a token list for debugging; not used in |main| */
+static void
+print_text( /* prints a token list for debugging; not used in |main| */
+text_pointer p)
 @z
 
 @x
@@ -457,7 +491,9 @@ void
 app_str(s)
 char *s;
 @y
-static void app_str(const char *s)
+static void
+app_str(
+const char *s)
 @z
 
 @x l.2194
@@ -465,7 +501,9 @@ void
 big_app(a)
 token a;
 @y
-static void big_app(token a)
+static void
+big_app(
+token a)
 @z
 
 @x l.2211
@@ -473,7 +511,9 @@ void
 big_app1(a)
 scrap_pointer a;
 @y
-static void big_app1(scrap_pointer a)
+static void
+big_app1(
+scrap_pointer a)
 @z
 
 @x l.2312
@@ -481,7 +521,9 @@ token_pointer
 find_first_ident(p)
 text_pointer p;
 @y
-static token_pointer find_first_ident(text_pointer p)
+static token_pointer
+find_first_ident(
+text_pointer p)
 @z
 
 @x l.2339
@@ -489,8 +531,9 @@ void
 make_reserved(p) /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p;
 @y
-static void make_reserved(scrap_pointer p)
-/* make the first identifier in |p->trans| like |int| */
+static void
+make_reserved( /* make the first identifier in |p->trans| like |int| */
+scrap_pointer p)
 @z
 
 @x l.2356
@@ -505,8 +548,10 @@ make_underlined(p)
 /* underline the entry for the first identifier in |p->trans| */
 scrap_pointer p;
 @y
-static void make_underlined(scrap_pointer p)
+static void
+make_underlined(
 /* underline the entry for the first identifier in |p->trans| */
+scrap_pointer p)
 @z
 
 @x l.2388
@@ -520,7 +565,9 @@ void
 underline_xref(p)
 name_pointer p;
 @y
-static void underline_xref(name_pointer p)
+static void
+underline_xref(
+name_pointer p)
 @z
 
 @x l.2423
@@ -536,7 +583,11 @@ scrap_pointer j;
 eight_bits c;
 short k, d, n;
 @y
-static void reduce(scrap_pointer j, short k, eight_bits c, short d, short n)
+static void
+reduce(
+scrap_pointer j, short k,
+eight_bits c,
+short d, short n)
 @z
 
 @x l.2898
@@ -546,14 +597,19 @@ scrap_pointer j;
 eight_bits c;
 short k, d, n;
 @y
-static void squash(scrap_pointer j, short k, eight_bits c, short d, short n)
+static void
+squash(
+scrap_pointer j, short k,
+eight_bits c,
+short d, short n)
 @z
 
 @x l.2994
 text_pointer
 translate() /* converts a sequence of scraps */
 @y
-static text_pointer translate(void) /* converts a sequence of scraps */
+static text_pointer
+translate(void) /* converts a sequence of scraps */
 @z
 
 @x l.3059
@@ -561,8 +617,9 @@ void
 C_parse(spec_ctrl) /* creates scraps from \CEE/ tokens */
   eight_bits spec_ctrl;
 @y
-static void C_parse(eight_bits spec_ctrl)
-  /* creates scraps from \CEE/ tokens */
+static void
+C_parse( /* creates scraps from \CEE/ tokens */
+  eight_bits spec_ctrl)
 @z
 
 @x l.3301
@@ -582,21 +639,25 @@ void
 app_cur_id(scrapping)
 boolean scrapping; /* are we making this into a scrap? */
 @y
-void app_cur_id(boolean scrapping) /* are we making this into a scrap? */
+void
+app_cur_id(
+boolean scrapping) /* are we making this into a scrap? */
 @z
 
 @x l.3313
 text_pointer
 C_translate()
 @y
-static text_pointer C_translate(void)
+static text_pointer
+C_translate(void)
 @z
 
 @x l.3335
 void
 outer_parse() /* makes scraps from \CEE/ tokens and comments */
 @y
-static void outer_parse(void) /* makes scraps from \CEE/ tokens and comments */
+static void
+outer_parse(void) /* makes scraps from \CEE/ tokens and comments */
 @z
 
 @x l.3439
@@ -604,21 +665,25 @@ void
 push_level(p) /* suspends the current level */
 text_pointer p;
 @y
-static void push_level(text_pointer p) /* suspends the current level */
+static void
+push_level( /* suspends the current level */
+text_pointer p)
 @z
 
 @x l.3459
 void
 pop_level()
 @y
-static void pop_level(void)
+static void
+pop_level(void)
 @z
 
 @x l.3481
 eight_bits
 get_output() /* returns the next token of output */
 @y
-static eight_bits get_output(void) /* returns the next token of output */
+static eight_bits
+get_output(void) /* returns the next token of output */
 @z
 
 @x l.3499
@@ -631,7 +696,8 @@ static eight_bits get_output(void) /* returns the next token of output */
 void
 output_C() /* outputs the current token list */
 @y
-static void output_C(void) /* outputs the current token list */
+static void
+output_C(void) /* outputs the current token list */
 @z
 
 @x l.3544
@@ -646,7 +712,8 @@ make_output() /* outputs the equivalents of tokens */
 {
   eight_bits a, /* current output byte */
 @y
-static void make_output(void) /* outputs the equivalents of tokens */
+static void
+make_output(void) /* outputs the equivalents of tokens */
 {
   eight_bits a=0, /* current output byte */
 @z
@@ -683,7 +750,8 @@ static void phase_two(void);
 void
 phase_two() {
 @y
-static void phase_two(void) {
+static void
+phase_two(void) {
 @z
 
 @x l.4074
@@ -697,7 +765,8 @@ void
 finish_C(visible) /* finishes a definition or a \CEE/ part */
   boolean visible; /* nonzero if we should produce \TEX/ output */
 @y
-static void finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
+static void
+finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
   boolean visible@t\2\2@>) /* nonzero if we should produce \TeX\ output */
 @z
 
@@ -732,7 +801,9 @@ void
 footnote(flag) /* outputs section cross-references */
 sixteen_bits flag;
 @y
-static void footnote(sixteen_bits flag) /* outputs section cross-references */
+static void
+footnote( /* outputs section cross-references */
+sixteen_bits flag)
 @z
 
 @x l.4146
@@ -745,7 +816,8 @@ static void phase_three(void);
 void
 phase_three() {
 @y
-static void phase_three(void) {
+static void
+phase_three(void) {
 @z
 
 @x l.4238
@@ -831,7 +903,9 @@ void
 unbucket(d) /* empties buckets having depth |d| */
 eight_bits d;
 @y
-static void unbucket(eight_bits d) /* empties buckets having depth |d| */
+static void
+unbucket( /* empties buckets having depth |d| */
+eight_bits d)
 @z
 
 @x l.4447
@@ -845,7 +919,9 @@ void
 section_print(p) /* print all section names in subtree |p| */
 name_pointer p;
 @y
-static void section_print(name_pointer p) /* print all section names in subtree |p| */
+static void
+section_print( /* print all section names in subtree |p| */
+name_pointer p)
 @z
 
 @x l.4468
@@ -862,7 +938,8 @@ so we use \.{\%ld} to print these quantities and cast them to |long|
 explicitly.
 
 @c
-void print_stats(void) {
+void
+print_stats(void) {
 @z
 
 @x l.4496
