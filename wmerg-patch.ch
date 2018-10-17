@@ -128,7 +128,8 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Defi...@>=
-const char Version[] = "$VER: WMerge 3.64 [CWEBbin 2018] ("@= @>__DATE__@= @>", "@= @>__TIME__@= @>")\n";
+const char Version[] = "$VER: WMerge 3.64 [CWEBbin 2018] ("
+  @= @>__DATE__@= @>", "@= @>__TIME__@= @>")\n";
 
 @* Index.
 @z
