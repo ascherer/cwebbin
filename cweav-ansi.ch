@@ -55,7 +55,7 @@ char **av@t\2\2@>) /* argument values */
 @x l.139
 @i common.h
 @y
-@i comm-22p.h
+@i comm-foo.h
 @z
 
 @x l.226

@@ -10,11 +10,7 @@
 %
 % CREATION DATE: 09.07.1994
 %
-% AUTHOR:
-%    Andreas Scherer
-%    Rochusstraﬂe 22-24
-%    52062 Aachen, Germany
-%    <andreas.scherer@@pobox.com>
+% AUTHOR: Andreas Scherer
 %
 % COPYRIGHT: (c) 1994 Andreas Scherer
 %

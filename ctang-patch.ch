@@ -1,8 +1,8 @@
 								-*-Web-*-
-This file, CTANG-P21.CH, is part of CWEBBIN (Version 3.64 [22p]).
+This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.64 [2018]).
 It is a changefile for CTANGLE.W, Version 3.64.
 
-Technically, CTANG-P22.CH is constructed from a multitude of separate
+Technically, CTANG-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
 (like this introduction) are removed from the final output, so
 CTANG-PATCH.CH is the place to look up the development history.
@@ -152,17 +152,19 @@ Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 p20 9 March 2002 AS Updated for patch level [p20].
 p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 22p 18 August 2011 AS GCC patches for patch level [22p].
+
+2018 17 October 2018 AS updated version number [2018].
 ------------------------------------------------------------------------------
 @x l.27
 \def\title{CTANGLE (Version 3.64)}
 @y
-\def\title{CTANGLE (Version 3.64 [22p])}
+\def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
 @z
 
 @x l.31
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [22p])}
+  \centerline{(Version 3.64 [CWEBbin 2018])}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -176,7 +178,7 @@ z
 @x l.62
 @d banner "This is CTANGLE (Version 3.64)\n"
 @y
-@d banner "This is CTANGLE (Version 3.64 [22p])\n"
+@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
 @z
 
 @x l.1546
@@ -188,7 +190,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CTangle 3.64 [22p] ("@= @>__DATE__@= @>", "@= @>__TIME__@= @>")\n";
+const char Version[] = "$VER: CTangle 3.64 [CWEBbin 2018] ("@= @>__DATE__@= @>", "@= @>__TIME__@= @>")\n";
 
 @** Index.
 @z

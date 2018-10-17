@@ -1,7 +1,7 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64b [22p]).
+% This file is part of CWEBbin (Version 3.64c [2018]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
@@ -108,7 +108,7 @@ GENERAL CONTRIBUTION:
 ./cweav-patch.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w
 ./cwebman.ch			change file for cwebman.tex
-./README.22p			the current file
+./README.txt			the current file
 ./wmerg-ansi.ch			change file for wmerge.w
 ./wmerg-extensions.ch		change file for wmerge.w
 ./wmerg-memory.ch		change file for wmerge.w

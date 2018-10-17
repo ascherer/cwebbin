@@ -6,9 +6,9 @@ requires the contents of [the original source
 drop](http://mirrors.ctan.org/web/c_cpp/cweb/cweb.tar.gz), to
 which it applies a set of change files to fix warnings issued by modern c/c++
 compilers and to introduce advanced features. see the extensive
-[readme](README.22p) for the full story.
+[readme](README.txt) for the full story.
 
-extract *cwebbin-22p.tar.gz* and add the contents of *cweb-3.64c.tar.gz* for
+extract *cwebbin-2018.tar.gz* and add the contents of *cweb-3.64c.tar.gz* for
 the full set of source files.  unix/linux  users should work with
 [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
@@ -19,7 +19,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
 git archive -o cweb-3.64c.tar.gz cweb-3.64c
-git archive -o cwebbin-22p.tar.gz cwebbin-22p
+git archive -o cwebbin-2018.tar.gz cwebbin-2018
 ```
 respectively, put these two tarballs in the *SOURCES* directory and
 *cwebbin.spec* in the *SPECS* directory of your build arena, and run

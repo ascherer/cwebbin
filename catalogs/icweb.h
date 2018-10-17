@@ -183,7 +183,7 @@
 #define MSG_FATAL_CO85_STR "! Allocazione di memoria fallita"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "Questo è CTANGLE (Versione 3.64 [22p])\n"
+#define MSG_BANNER_CT1_STR "Questo è CTANGLE (Versione 3.64 [CWEBbin 2018])\n"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "token"
@@ -294,7 +294,7 @@
 #define MSG_STATS_CT95_5_STR "%ld token (fuori da %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "Questo è CWEAVE (Versione 3.64 [22p])\n"
+#define MSG_BANNER_CW1_STR "Questo è CWEAVE (Versione 3.64 [CWEBbin 2018])\n"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "referimento incrociato"

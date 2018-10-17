@@ -31,9 +31,9 @@ Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
 %if %{with ansi_only}
 Version: 3.64c
 Release: ansi
-Source1: %{name}-22p.tar.gz
+Source1: %{name}-2018.tar.gz
 %else
-Version: 22p
+Version: 2018
 Release: 12
 Source1: %{name}-%{version}.tar.gz
 %endif
@@ -46,15 +46,15 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %autosetup -c -a1
-%{!?with_tex:%{__sed} "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
+%{!?with_tex:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 %if ! %{with debuginfo}
-%{__sed} "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
-%{__sed} "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
+%{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
+%{__sed} -e "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
 %endif
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_tex:%{__sed} "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
+%{?with_tex:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
 %endif
 
 %build

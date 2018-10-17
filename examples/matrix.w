@@ -20,11 +20,7 @@
 %
 % ERSTELLUNGSDATUM: 21.11.1993 (V1.0)
 %
-% AUTOR:
-%    Andreas Scherer
-%    Rochusstraﬂe 22-24
-%    52062 Aachen, Germany
-%    <andreas.scherer@@pobox.com>
+% AUTOR: Andreas Scherer
 %
 % URHEBERRECHT: (c) 1993 Andreas Scherer
 %

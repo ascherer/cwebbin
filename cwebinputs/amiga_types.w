@@ -8,13 +8,7 @@
 %
 % CREATION DATE: unknown
 %
-% AUTHOR:
-%    Andreas Scherer
-%    Rochusstraﬂe 22-24
-%    52062 Aachen, Germany
-%    <andreas.scherer@@pobox.com>
-%
-% Please send suggestions and bug reports to this address.
+% AUTHOR: Andreas Scherer
 %
 % COPYRIGHT: There is no restriction to the usage of this file.
 

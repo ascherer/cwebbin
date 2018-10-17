@@ -1,6 +1,6 @@
 # This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [22p] --- September 2015
+# Version 3.64 [2018] --- October 2018
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -58,23 +58,23 @@ CATLANGUAGE=e
 DESTPREF=c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
-CCHANGES= comm-22p.ch
+CCHANGES= comm-foo.ch
 
 # Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES= comm-22p.hch
+HCHANGES= comm-foo.hch
 
 # Set HPATCH to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH= comm-22p.h
+HPATCH= comm-foo.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
-TCHANGES= ctang-22p.ch
+TCHANGES= ctang-foo.ch
 
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
-WCHANGES= cweav-22p.ch
+WCHANGES= cweav-foo.ch
 
 # Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
-MCHANGES= wmerg-22p.ch
+MCHANGES= wmerg-foo.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
@@ -183,7 +183,7 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
-	cwebman.ch README.22p Makefile.bcc Makefile.sas Makefile.unix \
+	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp
 
 AREXX = arexx
@@ -369,7 +369,7 @@ $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
 	cweave.w.[12] cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
-	  *-22p.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
+	  *-foo.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
 install: all

@@ -55,7 +55,7 @@ char **av)
 @x l.127
 @i common.h
 @y
-@i comm-22p.h
+@i comm-foo.h
 @z
 
 @x l.175

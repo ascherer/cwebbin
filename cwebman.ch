@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [22p]).  It is a
+This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [2018]).  It is a
 changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
@@ -61,13 +61,13 @@ Use the already changed macro file.  Also we will need special characters.
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [22p])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [CWEBbin 2018])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(Version 3.64 [22p] --- August 2011)}
+\vskip 18pt\centerline{(Version 3.64 [CWEBbin 2018] --- October 2018)}
 @z
 ------------------------------------------------------------------------------
 @x l.913
@@ -259,6 +259,6 @@ et soutient l'output de \.{CWEAVE}.
 @x l.1505
   \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [22p])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [CWEBbin 2018])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
