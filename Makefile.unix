@@ -27,7 +27,7 @@
 #
 
 # directory for TeX inputs (cwebmac.tex and (X|d|f|i)cwebmac.tex and
-# the 8-bit encodings go here)
+# the 8-bit encodings go here); the prefix can be overwritten from outside
 TEXMFDIR= /usr/local/share/texlive/texmf-local
 MACROSDIR= $(TEXMFDIR)/tex/plain/cweb
 
@@ -380,9 +380,7 @@ install: all
 	#$(CP) cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	#chmod 644 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	- mkdir -p $(DESTDIR)$(MACROSDIR)
-	$(CP) cwebmac.tex $(DESTDIR)$(MACROSDIR)
-	chmod 644 $(DESTDIR)$(MACROSDIR)/cwebmac.tex
-	$(CP) $(MACROS)/* $(DESTDIR)$(MACROSDIR)
+	$(CP) cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
 	chmod 644 $(DESTDIR)$(MACROSDIR)/*
 	#- mkdir -p $(DESTDIR)$(EMACSDIR)
 	#$(CP) cweb.el $(DESTDIR)$(EMACSDIR)
