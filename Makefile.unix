@@ -28,7 +28,8 @@
 
 # directory for TeX inputs (cwebmac.tex and (X|d|f|i)cwebmac.tex and
 # the 8-bit encodings go here)
-MACROSDIR= /usr/local/share/texlive/texmf-local/tex/generic/cweb
+TEXMFDIR= /usr/local/share/texlive/texmf-local
+MACROSDIR= $(TEXMFDIR)/tex/plain/cweb
 
 # directory for CWEB inputs in @i files
 CWEBINPUTS= /usr/lib/cweb
