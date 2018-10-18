@@ -57,7 +57,7 @@ only.  The complete contents of the original distribution is a prerequisite.
 CWEB can be retrieved via anonymous ftp from
 
 	FTP: ftp://ftp.cs.stanford.edu/pub/cweb
-	CTAN: http://ctan.org/pkg/cweb
+	CTAN: https://ctan.org/pkg/cweb
 
 To apply this patched version of CWEB, extract the patch archive (yielding a
 new subdirectory) and add the original distribution.  Care has been taken to
@@ -66,11 +66,11 @@ Makefiles provide a target to cleanly remove the patch leaving only the files
 of the original distribution (and vice versa).
 
 Intermediate files with extensions .tex and .cxx are reproducable from the
-general sources by means of an executable wmerge, ctangle, cweave, and an
-ANSI-C/C++ compiler.  In addition you need Klaus Guntermann's TIE processor,
-which is available at
+general sources by means of an executable ctangle, cweave, and an ANSI-C/C++
+compiler.  In addition you need Klaus Guntermann's TIE processor, which is
+available at
 
-	CTAN: http://ctan.org/pkg/tie
+	CTAN: https://ctan.org/pkg/tie
 
 TIE should be available on all systems with a recent TeX installation.
 
@@ -181,7 +181,7 @@ WITH MODIFICATIONS BY ANDREAS SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
 ./wmerg-borlandc.ch	change file for wmerge.w
 
 SPECIALS FOR USERS OF MS/WINDOWS AND MICROSOFT VISUAL C++ 6.0 BY ANDREAS
-SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
+SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
 
 ./ctangle.dsp		Developer Studio Project for CTANGLE
 ./cweave.dsp		Developer Studio Project for CWEAVE
@@ -191,8 +191,7 @@ SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [UNIX/Linux, GCC] The current setup of CWEBbin has been created on a Linux PC
-	running Linux Mint 17.2 including the gcc 4.8.4 compiler and the
-	TeXLive 2015 system.  Any similar setup should also work.  All set?
+	running GNU/Linux including the gcc/g++ compiler and the TeXLive system.	Any similar setup should also work.  All set?
 	-- Then proceed as follows:
 
 	1. Check the entries in Makefile.unix for local conditions like a
@@ -262,7 +261,7 @@ SCHERER: (OLDER VERSIONS NO LONGER ACTIVELY SUPPORTED!)
 [MS/WINDOWS, MS/VC++ 6.0] Double-click on "cwebbin.dsw" and proceed as usual.
 	"Batch build" should result in "ctangle.exe", "cweave.exe", and
 	"wmerge.exe".  Then proceed by hand.  See the gcc Makefile.unix for
-	the "real thing".  Any improvements would be greatly appreciated!
+	the "real thing".  Good luck!
 
 %%% LIST OF FEATURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -277,7 +276,7 @@ So here are some words about the `special features':
      could) be recompiled with SAS/C for AmigaOS, with Borland C/C++ 3.1 for
      MS/DOS, with MS/VC++ 4.1 and 6.0 for MS/Windows, and with CC, C89, and
      GCC for UNIX without the need for further changes.  Well, to be honest,
-     the complete source code was only compiled using gcc 2.95.3.
+     the complete source code was only compiled using GCC.
 
    - [GENERAL] The `+l' (or `-l') option with its argument `X' causes CWEAVE
      to prepend `X' to `cwebmac.tex' in the first line of the output file.
@@ -286,13 +285,13 @@ So here are some words about the `special features':
      file `danskcwebmac.tex' (if there's such a thing) would be included
      instead of `cwebmac.tex'.  The macro file `Xcwebmac.tex' itself contains
      some modifications to the original `cwebmac.tex' file as described in the
-     documentation.  At the time of writing there are  macro packages
+     documentation.  At the time of writing there are macro packages
      `dcwebmac.tex' by  Andreas Scherer for German users, `icwebmac.tex' by
      Giuseppe Ghibò for Italian users, and `fcwebmac.tex' by Denis B. Roegel
      for French users.  These macro files translate all captions used by the
      CWEAVE processor into the respective languages and also include support
      for special characters like umlauts (diacritics) and some other
-     frequently used specials according to ISO Latin-1, IBM  PC International
+     frequently used specials according to ISO Latin-1, IBM PC International
      Codepage 850, Macintosh 8-bit font table and HP Roman 8.  Similar
      packages for other languages can easily be added to this scheme.  To date
      there are no conflicting languages, so single-character strings are used.
@@ -360,7 +359,7 @@ So here are some words about the `special features':
    - [AMIGA] All three system programs support the `version' information
      command of the Amiga operating system.
 
-   - [AMIGA] All three system  programs are compiled in the NEAR data segment
+   - [AMIGA] All three system programs are compiled in the NEAR data segment
      and can be made `resident'.
 
    - [AMIGA] The `+m' option enables ARexx communication between CWEB and the

@@ -159,7 +159,7 @@ original documentation, but it was not implemented.
 
 These changes by Andreas Scherer are based on ideas by Carsten Steger
 provided in his `CWeb 2.0' port from ><> 551 and his `CWeb 2.8' port
-from the electronic nets and on suggestions by Giuseppe Ghibò.  The string
+from the electronic nets and on suggestions by Giuseppe GhibÃ².  The string
 argument to the `-l' option was suggested by Carsten Steger in a private
 communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between

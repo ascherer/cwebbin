@@ -9,7 +9,7 @@ compilers and to introduce advanced features. see the extensive
 [readme](README.txt) for the full story.
 
 extract *cwebbin-2018.tar.gz* and add the contents of *cweb-3.64c.tar.gz* for
-the full set of source files.  unix/linux  users should work with
+the full set of source files.  unix/linux users should work with
 [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
 
