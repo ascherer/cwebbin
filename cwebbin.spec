@@ -68,15 +68,15 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %files
 %defattr(-,root,root,-)
-%{?with_tex:%{texmf}/tex/plain/cweb/*}
-%{_libdir}/cweb/*
 %{_bindir}/*
+%{_libdir}/cweb/*
+%{texmf}/tex/plain/cweb/*
 
 %post
-%{?with_tex:%{__texhash}}
+%{__texhash}
 
 %postun
-%{?with_tex:%{__texhash}}
+%{__texhash}
 
 %changelog
 * Sun Feb 19 2017 Andreas Scherer <https://ascherer.github.io>
