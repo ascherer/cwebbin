@@ -4,8 +4,7 @@
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
-# Modified for the GCC compiler under Linux by Andreas Scherer
-# (andreas.scherer@pobox.com), June 8, 1996.
+# Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
 # Last updated by Andreas Scherer, October 29, 2005.
 # Revised by Andreas Scherer, September 29, 2015.
 
@@ -51,11 +50,11 @@ EMACSDIR= /usr/share/emacs/site-lisp
 CATINCLUDE= ./catalogs
 
 # "$(CATLANGUAGE)cweb.h" is linked to "cweb.h"; it can be one of [dei]
-CATLANGUAGE=e
+CATLANGUAGE= e
 
 # Set DESTPREF to null if you want to call the executables "tangle" and "weave"
 # (probably NOT a good idea; we recommend leaving DESTPREF=c)
-DESTPREF=c
+DESTPREF= c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
 CCHANGES= comm-foo.ch
@@ -73,7 +72,7 @@ TCHANGES= ctang-foo.ch
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
 WCHANGES= cweav-foo.ch
 
-# Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
+# Set MCHANGES to wmerg-foo.ch if you need changes to wmerge.w
 MCHANGES= wmerg-foo.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
@@ -257,7 +256,7 @@ common.$(EXTENSION): common.w $(CCHANGES)
 	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 
 common.o: common.$(EXTENSION) $(CATINCLUDE)/cweb.h
-	$(CC) $(CFLAGS) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -c common.$(EXTENSION)
+	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 
 ctangle: ctangle.o common.o
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o 
@@ -285,7 +284,7 @@ wmerge.$(EXTENSION): examples/wmerge.w $(MCHANGES)
 
 boot:
 	if test ! -h $(CATINCLUDE)/cweb.h; \
-		then ln -s $(CATLANGUAGE)cweb.h $(CATINCLUDE)/cweb.h; fi
+	then ln -s $(CATLANGUAGE)cweb.h $(CATINCLUDE)/cweb.h; fi
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o
@@ -306,14 +305,10 @@ usermanual: cwebmana.pdf
 
 fullmanual: usermanual $(SOURCES) \
 	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HPATCH) $(MCHANGES)
-	$(CWEAVE) common.w comm-doc.ch
-	$(MAKE) common.pdf
-	$(CWEAVE) ctangle.w ctang-doc.ch
-	$(MAKE) ctangle.pdf
-	$(CWEAVE) cweave.w cweav-doc.ch
-	$(MAKE) cweave.pdf
-	$(CWEAVE) examples/wmerge.w $(MCHANGES)
-	$(MAKE) wmerge.pdf
+	$(CWEAVE) common.w comm-doc.ch; $(MAKE) common.pdf
+	$(CWEAVE) ctangle.w ctang-doc.ch; $(MAKE) ctangle.pdf
+	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
+	$(CWEAVE) examples/wmerge.w $(MCHANGES); $(MAKE) wmerge.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m $@ $^
@@ -368,7 +363,7 @@ $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 # and $(HPATCH) for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
-	cweave.w.[12] cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
+	cweave.w cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
 	  *-foo.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
@@ -408,7 +403,7 @@ tarfile: $(ORIGINAL)
 	gzip -9 /tmp/cweb.tar
 
 tarball:
-	tar zcvhf /tmp/cweb.tgz $(ORIGINAL) examples
+	tar zcvhf /tmp/cweb.tgz $(ORIGINAL)
 
 # Remove the original distribution completely.
 remove-orig:
