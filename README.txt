@@ -191,7 +191,8 @@ SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [UNIX/Linux, GCC] The current setup of CWEBbin has been created on a Linux PC
-	running GNU/Linux including the gcc/g++ compiler and the TeXLive system.	Any similar setup should also work.  All set?
+	running GNU/Linux including the gcc/g++ compiler and the TeXLive system.
+	Any similar setup should also work.  All set?
 	-- Then proceed as follows:
 
 	1. Check the entries in Makefile.unix for local conditions like a
