@@ -66,7 +66,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %install
 %{__rm} -rf %{buildroot}
-%make_install -f Makefile.unix -e TEXMFDIR=%{texmf}
+%make_install -f Makefile.unix -e TEXMFDIR=%{texmf} -e CWEBINPUTS=%{_libdir}/cweb
 
 %files
 %defattr(-,root,root,-)
