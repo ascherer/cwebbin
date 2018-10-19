@@ -38,6 +38,8 @@ Release: 12
 Source1: %{name}-%{version}.tar.gz
 %endif
 
+Patch: 0001-Update-CWEBbin-manpage.patch
+
 %define texmf /opt/texlive/texmf-local
 
 %description

@@ -1,0 +1,69 @@
+From 1b097b2b32c45ed7a1b6706bafcc3f0154bd99ed Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 19 Oct 2018 10:09:44 +0200
+Subject: [PATCH] Update CWEBbin manpage.
+
+---
+ cweb.1 | 20 ++++++++++++++------
+ 1 file changed, 14 insertions(+), 6 deletions(-)
+
+diff --git a/cweb.1 b/cweb.1
+index ad41c42..cab74be 100644
+--- a/cweb.1
++++ b/cweb.1
+@@ -1,4 +1,4 @@
+-.TH CWEB 1L 2002-Apr-13
++.TH CWEBbin 1L 2018-Oct-19
+ .
+ .SH NAME
+ ctangle, cweave \- translate CWEB to C and/or TeX
+@@ -14,9 +14,11 @@ ctangle, cweave \- translate CWEB to C and/or TeX
+ .br
+ .B cweave
+ [
+-.B \-befhpx
++.B \-bfhiopx
+ ] [
+-.B +s
++.B \-lX
++] [
++.B +es
+ ] webfile[.w] [changefile[.ch]] [outputfile[.tex]]
+ .ad
+ .
+@@ -81,7 +83,7 @@ The
+ option prints statistics about memory usage at the end of a run
+ (assuming that the programs have been compiled with the -DSTAT switch).
+ .PP
+-There are three other options applicable to
++There are six other options applicable to
+ .I cweave
+ only:
+ .B \-f
+@@ -95,10 +97,16 @@ Such brackets are normally inserted so that special hooks
+ can be used by
+ .I cweb-latex
+ and similar programs.
++.B \-i
++suppresses the indentation of parameter declarations.
++.B \-lX
++uses macros for language X\ from Xcwebmac.tex.
++.B \-o
++suppresses the visual separation of declarations and statements.
+ .B \-x
+ means omit the index and table of contents.
+ .
+-.SH FILES
++.SH FILES (paths may vary)
+ .TP
+ /usr/local/lib/tex/inputs/cwebmac.tex
+ TeX macros used by cweave output.
+@@ -135,4 +143,4 @@ Silvio Levy designed and developed CWEB
+ by adapting the WEB conventions to\ C and by recoding everything in CWEB.
+ Knuth began using CWEB and made further refinements.
+ Many other helpers are acknowledged in the CWEB manual.
+-
++CWEBbin was developed by Andreas Scherer.
+-- 
+2.19.1
+
