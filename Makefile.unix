@@ -376,15 +376,15 @@ install: all
 	chmod 755 $(DESTDIR)$(BINDIR)$(DESTPREF)tangle
 	$(CP) wmerge $(DESTDIR)$(BINDIR)wmerge
 	chmod 755 $(DESTDIR)$(BINDIR)wmerge
-	#- mkdir -p $(DESTDIR)$(MANDIR)
-	#$(CP) cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
-	#chmod 644 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
+	- mkdir -p $(DESTDIR)$(MANDIR)
+	$(CP) cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
+	chmod 644 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	- mkdir -p $(DESTDIR)$(MACROSDIR)
 	$(CP) cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
 	chmod 644 $(DESTDIR)$(MACROSDIR)/*
-	#- mkdir -p $(DESTDIR)$(EMACSDIR)
-	#$(CP) cweb.el $(DESTDIR)$(EMACSDIR)
-	#chmod 644 $(DESTDIR)$(EMACSDIR)/cweb.el
+	- mkdir -p $(DESTDIR)$(EMACSDIR)
+	$(CP) cweb.el $(DESTDIR)$(EMACSDIR)
+	chmod 644 $(DESTDIR)$(EMACSDIR)/cweb.el
 	- mkdir -p $(DESTDIR)$(CWEBINPUTS)
 	$(CP) c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
 	chmod 644 $(DESTDIR)$(CWEBINPUTS)/*

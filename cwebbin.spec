@@ -69,7 +69,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %files
 %defattr(-,root,root,-)
 %{_bindir}/*
+%{_datadir}/emacs/site-lisp/cweb.el
 %{_libdir}/cweb/*
+%{_mandir}/man1/cweb.1.gz
 %{texmf}/tex/plain/cweb/*
 
 %post
