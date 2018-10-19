@@ -1,6 +1,6 @@
 # 'make fullmanual' requires TeX (pdflatex).
-# use '--without tex' to exclude this step; default is 'with'.
-%bcond_without tex
+# use '--without doc' to exclude this step; default is 'with'.
+%bcond_without doc
 # By default CWEB and CWEBBIN are compiled and linked with optimization
 # switched on. Use '--with debuginfo' to switch debugging on.
 %bcond_with debuginfo
@@ -16,9 +16,9 @@ Packager: Andreas Scherer <https://ascherer.github.io>
 %if %{_vendor} == "debbuild"
 Group: tex
 Distribution: Kubuntu 16.04 (x86_64)
-%if %{with tex}
-BuildRequires: texlive
 Requires: texlive
+%if %{with doc}
+BuildRequires: texlive
 %endif
 %else
 Group: Productivity/Publishing/TeX/Base
@@ -46,7 +46,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %autosetup -c -a1
-%{!?with_tex:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
+%{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 %if ! %{with debuginfo}
 %{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
 %{__sed} -e "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
@@ -54,7 +54,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_tex:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
+%{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
 %endif
 
 %build
