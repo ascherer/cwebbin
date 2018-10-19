@@ -35,8 +35,8 @@ MACROSDIR= $(TEXMFDIR)/tex/plain/cweb
 CWEBINPUTS= /usr/lib/cweb
 
 # extension for manual pages ("l" distinguishes local from system stuff)
-MANEXT= l
-#MANEXT= 1
+#MANEXT= l
+MANEXT= 1
 
 # directory for manual pages (cweb.1 goes here)
 MANDIR= /usr/share/man/man$(MANEXT)
