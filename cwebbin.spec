@@ -38,6 +38,8 @@ Release: 12
 Source1: %{name}-%{version}.tar.gz
 %endif
 
+%global __make %{__make} -f Makefile.unix
+
 Patch: 0001-Update-CWEBbin-manpage.patch
 
 %define texmf /opt/texlive/texmf-local
@@ -62,11 +64,11 @@ and Donald Knuth for Literate Programming in C/C++.
 %build
 %{__touch} *.cxx
 %{?_l_:%{__ln_s} %{_l_}cweb.h catalogs/cweb.h}
-%{__make} -f Makefile.unix -e PDFTEX=pdftex boot cautiously all
+%{__make} -e PDFTEX=pdftex boot cautiously all
 
 %install
 %{__rm} -rf %{buildroot}
-%make_install -f Makefile.unix -e TEXMFDIR=%{texmf} -e CWEBINPUTS=%{_libdir}/cweb
+%make_install -e TEXMFDIR=%{texmf} -e CWEBINPUTS=%{_libdir}/cweb
 
 %files
 %defattr(-,root,root,-)
