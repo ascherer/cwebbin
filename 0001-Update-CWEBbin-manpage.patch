@@ -1,23 +1,30 @@
-From 1b097b2b32c45ed7a1b6706bafcc3f0154bd99ed Mon Sep 17 00:00:00 2001
+From bd3028f287f17d785b74b3fbc0802a5d74cec171 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
-Date: Fri, 19 Oct 2018 10:09:44 +0200
+Date: Sat, 20 Oct 2018 10:56:03 +0200
 Subject: [PATCH] Update CWEBbin manpage.
 
+Add new options for cweave in the CWEBbin extension.
+Use some formatting ideas from cweb.1 in TeXlive.
 ---
- cweb.1 | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ cweb.1 | 38 +++++++++++++++++++++++---------------
+ 1 file changed, 23 insertions(+), 15 deletions(-)
 
 diff --git a/cweb.1 b/cweb.1
-index ad41c42..cab74be 100644
+index ad41c42..6e30392 100644
 --- a/cweb.1
 +++ b/cweb.1
 @@ -1,4 +1,4 @@
 -.TH CWEB 1L 2002-Apr-13
-+.TH CWEBbin 1L 2018-Oct-19
++.TH CWEB 1 "20 October 2018" "CWEBbin 2018"
  .
  .SH NAME
  ctangle, cweave \- translate CWEB to C and/or TeX
-@@ -14,9 +14,11 @@ ctangle, cweave \- translate CWEB to C and/or TeX
+@@ -10,14 +10,16 @@ ctangle, cweave \- translate CWEB to C and/or TeX
+ .B \-bhp
+ ] [
+ .B +s
+-] webfile[.w] [changefile[.ch]] [outputfile[.c]]
++] webfile[.w] [{changefile[.ch]|-} [outputfile[.c]]]
  .br
  .B cweave
  [
@@ -25,12 +32,14 @@ index ad41c42..cab74be 100644
 +.B \-bfhiopx
  ] [
 -.B +s
+-] webfile[.w] [changefile[.ch]] [outputfile[.tex]]
 +.B \-lX
 +] [
 +.B +es
- ] webfile[.w] [changefile[.ch]] [outputfile[.tex]]
++] webfile[.w] [{changefile[.ch]|-} [outputfile[.tex]]]
  .ad
  .
+ .SH DESCRIPTION
 @@ -81,7 +83,7 @@ The
  option prints statistics about memory usage at the end of a run
  (assuming that the programs have been compiled with the -DSTAT switch).
@@ -40,7 +49,7 @@ index ad41c42..cab74be 100644
  .I cweave
  only:
  .B \-f
-@@ -95,10 +97,16 @@ Such brackets are normally inserted so that special hooks
+@@ -95,24 +97,29 @@ Such brackets are normally inserted so that special hooks
  can be used by
  .I cweb-latex
  and similar programs.
@@ -53,17 +62,38 @@ index ad41c42..cab74be 100644
  .B \-x
  means omit the index and table of contents.
  .
--.SH FILES
-+.SH FILES (paths may vary)
++.SH ENVIRONMENT
++The environment variable CWEBINPUTS is used to search for the input files,
++or the system default if CWEBINPUTS is not set.
++.
+ .SH FILES
++The location of the files mentioned below varies from system to system.
  .TP
- /usr/local/lib/tex/inputs/cwebmac.tex
+-/usr/local/lib/tex/inputs/cwebmac.tex
++cwebmac.tex
  TeX macros used by cweave output.
-@@ -135,4 +143,4 @@ Silvio Levy designed and developed CWEB
+ .TP
+-/usr/local/src/cweb/cwebman.tex
++cwebman.tex
+ The user manual.
+ .TP
+-/usr/local/src/cweb/examples/wc.w
+-An introductory example.
+-.TP
+-/usr/local/src/cweb/examples/wmerge.w
+-Patch program based on CWEB-style change files.
+-.TP
+-/usr/local/lib/cweb
++/usr/lib/cweb
+ Directory for cweb "include" files.
+ .
+ .SH "SEE ALSO"
+@@ -135,4 +142,5 @@ Silvio Levy designed and developed CWEB
  by adapting the WEB conventions to\ C and by recoding everything in CWEB.
  Knuth began using CWEB and made further refinements.
  Many other helpers are acknowledged in the CWEB manual.
--
 +CWEBbin was developed by Andreas Scherer.
+ 
 -- 
 2.19.1
 

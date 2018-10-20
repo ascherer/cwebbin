@@ -73,7 +73,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %{_bindir}/*
 %{_datadir}/emacs/site-lisp/cweb.el
 %{_libdir}/cweb/*
-%{_mandir}/man1/cweb.1.gz
+%{_mandir}/man1/*
 %{texmf}/tex/plain/cweb/*
 
 %post

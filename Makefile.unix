@@ -184,7 +184,8 @@ WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
 	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
-	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp
+	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp \
+	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1
 
 AREXX = arexx
 
@@ -378,7 +379,9 @@ install: all
 	chmod 755 $(DESTDIR)$(BINDIR)wmerge
 	- mkdir -p $(DESTDIR)$(MANDIR)
 	$(CP) cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
-	chmod 644 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
+	$(CP) ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
+	$(CP) cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
+	chmod 644 $(DESTDIR)$(MANDIR)/*.$(MANEXT)
 	- mkdir -p $(DESTDIR)$(MACROSDIR)
 	$(CP) cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
 	chmod 644 $(DESTDIR)$(MACROSDIR)/*
