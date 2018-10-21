@@ -28,21 +28,24 @@ Distribution: openSUSE 42 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
-%if %{with ansi_only}
-Version: 3.64c
-Release: ansi
 Source1: %{name}-2018.tar.gz
-%else
-Version: 2018
-Release: 12
-Source1: %{name}-%{version}.tar.gz
-%endif
-
-%global __make %{__make} -f Makefile.unix
 
 Patch: 0001-Update-CWEBbin-manpage.patch
 
+%if %{with ansi_only}
+Version: 3.64c
+Release: ansi
+%else
+Version: 2018
+Release: 12
+%endif
+
 %define texmf /opt/texlive/texmf-local
+
+%global __make %{__make} -f Makefile.unix \\\
+	-e PDFTEX=pdftex \\\
+	-e TEXMFDIR=%{texmf} \\\
+	-e CWEBINPUTS=%{_libdir}/cweb
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
@@ -50,11 +53,14 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %autosetup -c -a1
+
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
+
 %if ! %{with debuginfo}
 %{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
 %{__sed} -e "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
 %endif
+
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
@@ -64,11 +70,11 @@ and Donald Knuth for Literate Programming in C/C++.
 %build
 %{__touch} *.cxx
 %{?_l_:%{__ln_s} %{_l_}cweb.h catalogs/cweb.h}
-%{__make} -e PDFTEX=pdftex boot cautiously all
+%{__make} boot cautiously all
 
 %install
 %{__rm} -rf %{buildroot}
-%make_install -e TEXMFDIR=%{texmf} -e CWEBINPUTS=%{_libdir}/cweb
+%make_install
 
 %files
 %defattr(-,root,root,-)
