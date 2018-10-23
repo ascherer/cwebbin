@@ -370,27 +370,23 @@ clean:
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
 install: all
-	- mkdir -p $(DESTDIR)$(BINDIR)
-	$(CP) cweave $(DESTDIR)$(BINDIR)$(DESTPREF)weave
-	chmod 755 $(DESTDIR)$(BINDIR)$(DESTPREF)weave
-	$(CP) ctangle $(DESTDIR)$(BINDIR)$(DESTPREF)tangle
-	chmod 755 $(DESTDIR)$(BINDIR)$(DESTPREF)tangle
-	$(CP) wmerge $(DESTDIR)$(BINDIR)wmerge
-	chmod 755 $(DESTDIR)$(BINDIR)wmerge
-	- mkdir -p $(DESTDIR)$(MANDIR)
-	$(CP) cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
-	$(CP) ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
-	$(CP) cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
-	chmod 644 $(DESTDIR)$(MANDIR)/*.$(MANEXT)
-	- mkdir -p $(DESTDIR)$(MACROSDIR)
-	$(CP) cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
-	chmod 644 $(DESTDIR)$(MACROSDIR)/*
-	- mkdir -p $(DESTDIR)$(EMACSDIR)
-	$(CP) cweb.el $(DESTDIR)$(EMACSDIR)
-	chmod 644 $(DESTDIR)$(EMACSDIR)/cweb.el
-	- mkdir -p $(DESTDIR)$(CWEBINPUTS)
-	$(CP) c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
-	chmod 644 $(DESTDIR)$(CWEBINPUTS)/*
+	$(INSTALL) -d $(DESTDIR)$(BINDIR) \
+		$(DESTDIR)$(MANDIR) \
+		$(DESTDIR)$(MACROSDIR) \
+		$(DESTDIR)$(EMACSDIR) \
+		$(DESTDIR)$(CWEBINPUTS)
+
+	$(INSTALL) cweave $(DESTDIR)$(BINDIR)$(DESTPREF)weave
+	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)$(DESTPREF)tangle
+	$(INSTALL) wmerge $(DESTDIR)$(BINDIR)wmerge
+
+	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
+	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
+	$(INSTALL) -m 644 cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
+
+	$(INSTALL) -m 644 cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
+	$(INSTALL) -m 644 cweb.el $(DESTDIR)$(EMACSDIR)
+	$(INSTALL) -m 644 c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
 
 floppy: $(ORIGINAL)
 	bar cvhf /dev/rfd0 $(ORIGINAL)
