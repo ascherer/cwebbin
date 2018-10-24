@@ -42,7 +42,7 @@ MANEXT= 1
 MANDIR= /usr/share/man/man$(MANEXT)
 
 # destination directory for executables; must end in /
-BINDIR= /usr/bin/
+BINDIR= /usr/bin
 
 # directory for GNU EMACS Lisp code (cweb.el goes here)
 EMACSDIR= /usr/share/emacs/site-lisp
@@ -376,9 +376,9 @@ install: all
 		$(DESTDIR)$(EMACSDIR) \
 		$(DESTDIR)$(CWEBINPUTS)
 
-	$(INSTALL) cweave $(DESTDIR)$(BINDIR)$(DESTPREF)weave
-	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)$(DESTPREF)tangle
-	$(INSTALL) wmerge $(DESTDIR)$(BINDIR)wmerge
+	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
+	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)/$(DESTPREF)tangle
+	$(INSTALL) wmerge $(DESTDIR)$(BINDIR)/wmerge
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
