@@ -346,8 +346,8 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-memory.ch comm-translation.ch comm-output.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-memory.hch comm-translation.hch comm-output.hch
+$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-output.hch \
+	# comm-memory.hch comm-translation.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^

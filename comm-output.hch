@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, May 11, 1995.
+Changes for COMMON.H by Andreas Scherer, October 30, 2018.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,21 +6,18 @@ manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
 previous results are not destroyed.
 
-This change file requires COMM-ANSI.HCH, COMM-EXTENSIONS.HCH,
-COMM-MEMORY.HCH, COMM-TRANSLATION.HCH to be applied as well.
-
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-@x l.81 of COMM-MEMORY.HCH
-extern char *scn_file_name; /* name of |scn_file| */
+@x l.144
+extern char scn_file_name[]; /* name of |scn_file| */
 @y
-extern char *check_file_name; /* name of |check_file| */
-extern char *scn_file_name; /* name of |scn_file| */
+extern char scn_file_name[]; /* name of |scn_file| */
+extern char check_file_name[]; /* name of |check_file| */
 @z
 
-@x l.186
+@x l.187
 extern FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
-extern FILE *check_file; /* temporary output file */
 extern FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
+extern FILE *check_file; /* temporary output file */
 @z
