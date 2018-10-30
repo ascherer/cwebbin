@@ -79,8 +79,8 @@ if((out_file=fopen(out_file_name,"r"))!=NULL) {
 
   @<Compare the temporary output to the previous output@>@;
 
-  fclose(out_file);
-  fclose(check_file);
+  fclose(out_file); out_file=NULL;
+  fclose(check_file); check_file=NULL;
 
   @<Take appropriate action depending on the comparison@>@;
 } else
