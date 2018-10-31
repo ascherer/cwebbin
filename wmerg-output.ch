@@ -31,15 +31,15 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 @x l.587
 char out_file_name[max_file_name_length]; /* name of |out_file| */
 @y
-char check_file_name[max_file_name_length]; /* name of |check_file| */
 char out_file_name[max_file_name_length]; /* name of |out_file| */
+char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
 @x l.701
 FILE *out_file; /* where output goes */
 @y
-FILE *check_file; /* where the temporary output goes */
 FILE *out_file; /* where output goes */
+FILE *check_file; /* where the temporary output goes */
 @z
 
 @x l.705
