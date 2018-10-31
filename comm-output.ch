@@ -11,13 +11,6 @@ COMM-MEMORY.CH, COMM-TRANSLATION.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.649
-for (h=hash; h<=hash_end; *h++=NULL) ;
-@y
-for (h=hash; h<=hash_end; *h++=NULL) ;
-alloc_object(check_file_name,max_file_name_length,char);
-@z
-
 @x l.129 of COMM-EXTENSIONS.CH
   switch(history) {
 @y
@@ -87,7 +80,7 @@ sure that the output files are correctly written.
   if(C_file) fclose(C_file);
   if(tex_file) fclose(tex_file);
   if(check_file) fclose(check_file);
-  if(check_file_name) /* Delete the temporary file in case of a break */
+  if(strlen(check_file_name)) /* Delete the temporary file in case of a break */
     remove(check_file_name);
 
 @** Index.
