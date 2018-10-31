@@ -25,11 +25,11 @@ alloc_object(check_file_name,max_file_name_length,char);
   switch(history) {
 @z
 
-@x l.125 of COMM-MEMORY.CH
-char *scn_file_name; /* name of |scn_file| */
+@x l.1226
+char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
-char *scn_file_name; /* name of |scn_file| */
-char *check_file_name; /* name of |check_file| */
+char scn_file_name[max_file_name_length]; /* name of |scn_file| */
+char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
 @x l.1371
@@ -44,12 +44,12 @@ FILE *check_file; /* temporary output file */
 scan_args();
 if (program==ctangle) {
   if ((C_file=fopen(C_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), C_file_name);
+    fatal("! Cannot open output file ", C_file_name);
 @.Cannot open output file@>
 }
 else {
   if ((tex_file=fopen(tex_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), tex_file_name);
+    fatal("! Cannot open output file ", tex_file_name);
 }
 @y
 @ @<Scan arguments and open output files@>=
@@ -62,7 +62,7 @@ if (program==ctangle) {
     else strcpy(dot_pos,".ttp");
     }
   if ((C_file=fopen(check_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), check_file_name);
+    fatal("! Cannot open output file ", check_file_name);
 @.Cannot open output file@>
 }
 else {
@@ -73,7 +73,7 @@ else {
     else strcpy(dot_pos,".wtp");
     }
   if ((tex_file=fopen(check_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), check_file_name);
+    fatal("! Cannot open output file ", check_file_name);
 }
 @z
 
