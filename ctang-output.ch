@@ -12,14 +12,14 @@ to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-@x l.569
+@x l.572
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     fclose(C_file);
     C_file=fopen(output_file_name,"w");
-    if (C_file ==0) fatal(get_string(MSG_FATAL_CO78),output_file_name);
+    if (C_file ==0) fatal("! Cannot open output file:",output_file_name);
 @.Cannot open output file@>
     printf("\n(%s)",output_file_name); update_terminal;
     cur_line=1;
@@ -39,7 +39,7 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     if((C_file=fopen(check_file_name,"w"))==NULL)
-      fatal(get_string(MSG_FATAL_CO78),check_file_name);
+      fatal("! Cannot open output file:",check_file_name);
 @.Cannot open output file@>
     printf("\n(%s)",output_file_name); update_terminal;
     cur_line=1;
@@ -52,7 +52,7 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     flush_buffer(); fclose(C_file); C_file=NULL;
     @<Update the secondary results when they have changed@>@;
 }
-check_file_name=NULL; /* We want to get rid of the temporary file */
+strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @z
 
 @x l.1538
@@ -68,14 +68,11 @@ be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the primary result...@>=
 if((C_file=fopen(C_file_name,"r"))!=NULL) {
-  char *x,*y;
+  char x[BUFSIZ],y[BUFSIZ];
   int x_size,y_size,comparison;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78),check_file_name);
-
-  alloc_object(x,BUFSIZ,char);
-  alloc_object(y,BUFSIZ,char);
+    fatal("! Cannot open output file:",check_file_name);
 
   @<Compare the temporary output to the previous output@>@;
 
@@ -83,11 +80,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
   fclose(check_file); check_file=NULL;
 
   @<Create the primary output depending on the comparison@>@;
-
-  free_object(y);
-  free_object(x);
-  }
-else
+} else
   rename(check_file_name,C_file_name); /* This was the first run */
 
 @ We hope that this runs fast on most systems.
@@ -98,7 +91,7 @@ do {
   y_size = fread(y,1,BUFSIZ,check_file);
   comparison = (x_size == y_size); /* Do not merge these statements! */
   if(comparison) comparison = !memcmp(x,y,x_size);
-  } while(comparison && !feof(C_file) && !feof(check_file));
+} while(comparison && !feof(C_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
 get around a bug in some implementations of |rename|.
@@ -109,18 +102,15 @@ if(comparison)
 else {
   remove(C_file_name);
   rename(check_file_name,C_file_name);
-  }
+}
 
 @ @<Update the secondary results...@>=
 if((C_file=fopen(output_file_name,"r"))!=NULL) {
-  char *x,*y;
+  char x[BUFSIZ],y[BUFSIZ];
   int x_size,y_size,comparison;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78),check_file_name);
-
-  alloc_object(x,BUFSIZ,char);
-  alloc_object(y,BUFSIZ,char);
+    fatal("! Cannot open output file:",check_file_name);
 
   @<Compare the temp...@>@;
 
@@ -128,22 +118,18 @@ if((C_file=fopen(output_file_name,"r"))!=NULL) {
   fclose(check_file); check_file=NULL;
 
   @<Create the secondary output depending on the comparison@>@;
-
-  free_object(y);
-  free_object(x);
-  }
-else
+} else
   rename(check_file_name,output_file_name); /* This was the first run */
 
 @ Again, we use a call to |remove| before |rename|.
 
 @<Create the secondary output...@>=
-  if(comparison)
-    remove(check_file_name); /* The output remains untouched */
+if(comparison)
+  remove(check_file_name); /* The output remains untouched */
 else {
-    remove(output_file_name);
-    rename(check_file_name,output_file_name);
-    }
+  remove(output_file_name);
+  rename(check_file_name,output_file_name);
+}
 
 @** Index.
 @z
