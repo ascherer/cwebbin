@@ -86,6 +86,8 @@ if((out_file=fopen(out_file_name,"r"))!=NULL) {
 } else
   rename(check_file_name,out_file_name); /* This was the first run */
 
+strcpy(check_file_name,""); /* We want to get rid of the temporary file */
+
 @ We hope that this runs fast on most systems.
 
 @<Compare the temp...@>=
@@ -112,7 +114,7 @@ else {
     fclose(out_file);
   if(check_file)
     fclose(check_file);
-  if(check_file_name)
+  if(strlen(check_file_name))
     remove(check_file_name);
 
 @* Index.
