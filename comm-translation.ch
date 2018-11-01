@@ -194,6 +194,18 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
     fputs(get_string(MSG_ERROR_CO52_4),stdout);
 @z
 
+@x l.1116
+{if (changing && include_depth==change_depth)
+  printf(". (l. %d of change file)\n", change_line);
+else if (include_depth==0) printf(". (l. %d)\n", cur_line);
+  else printf(". (l. %d of include file %s)\n", cur_line, cur_file_name);
+@y
+{if (changing && include_depth==change_depth)
+  printf(get_string(MSG_ERROR_CO59_1), change_line);
+else if (include_depth==0) printf(get_string(MSG_ERROR_CO59_2), cur_line);
+  else printf(get_string(MSG_ERROR_CO59_3), cur_line, cur_file_name);
+@z
+
 @x l.1155
   @<Print the job |history|@>;
 @y
