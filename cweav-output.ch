@@ -121,7 +121,7 @@ if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
 } else
   rename(check_file_name,tex_file_name); /* This was the first run */
 
-check_file_name=NULL; /* We want to get rid of the temporary file */
+strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 
 @ We hope that this runs fast on most systems.
 
