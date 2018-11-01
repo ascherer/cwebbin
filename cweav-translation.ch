@@ -325,6 +325,32 @@ reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
   err_print(get_string(MSG_ERROR_CW218));
 @z
 
+@x l.4307
+  phase=3; if (show_progress) printf("\nWriting the index...");
+@y
+  phase=3; if (show_progress) {
+    fputs(get_string(MSG_PROGRESS_CW225),stdout); fflush(stdout);
+  }
+@z
+
+@x l.4311
+    fatal("! Cannot open index file ",idx_file_name);
+@y
+    fatal(get_string(MSG_FATAL_CW225_1),idx_file_name);
+@z
+
+@x l.4326
+    fatal("! Cannot open section file ",scn_file_name);
+@y
+    fatal(get_string(MSG_FATAL_CW225_2),scn_file_name);
+@z
+
+@x l.4338
+if (show_happiness) printf("\nDone.");
+@y
+if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
+@z
+
 @x l.4486
     if (sort_ptr>=scrap_info_end) overflow("sorting");
 @y
