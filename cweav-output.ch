@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, June 15, 1995.
+Changes for CWEAVE.W by Andreas Scherer, November 1, 2018.
 
 This set of chagnes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,13 +6,12 @@ manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
 previous results are not destroyed.
 
-This change file requires CWEAV-PATCH.CH, CWEAV-ANSI.CH,
-CWEAV-EXTENSIONS.CH, CWEAV-MEMORY.CH, CWEAV-TRANSLATION.CH
-to be applied as well.
+This change file requires CWEAV-PATCH.CH, CWEAV-ANSI.CH, and
+CWEAV-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.4152
+@x l.4300
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -60,14 +59,11 @@ if (no_xref) {
   active_file=tex_file;
 }
 else {
-  phase=3;
-  if (show_progress) {
-    fputs(get_string(MSG_PROGRESS_CW225),stdout); fflush(stdout);
-  }
+  phase=3; if (show_progress) printf("\nWriting the index...");
 @.Writing the index...@>
   finish_line();
   if ((idx_file=fopen(idx_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CW225_1),idx_file_name);
+    fatal("! Cannot open index file ",idx_file_name);
 @.Cannot open index file@>
   if (change_exists) {
     @<Tell about changed sections@>; finish_line(); finish_line();
@@ -82,7 +78,7 @@ else {
   out_str("\\fin"); finish_line();
 @.\\fin@>
   if ((scn_file=fopen(scn_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CW225_2),scn_file_name);
+    fatal("! Cannot open section file ",scn_file_name);
 @.Cannot open section file@>
   active_file=scn_file; /* change active file to section listing file */
   @<Output all the section names@>;
@@ -94,10 +90,10 @@ else {
 }
 finish_line(); fclose(active_file); active_file=NULL;
 @<Update the result when it has changed@>@;
-if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
+if (show_happiness) printf("\nDone.");
 @z
 
-@x l.4496
+@x l.4644
 @** Index.
 @y
 @** Output file update.  Most \CEE/ projects are controlled by a
@@ -110,14 +106,11 @@ be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the result...@>=
 if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
-  char *x,*y;
+  char x[BUFSIZ],y[BUFSIZ];
   int x_size,y_size,comparison;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78),check_file_name);
-
-  alloc_object(x,BUFSIZ,char);
-  alloc_object(y,BUFSIZ,char);
+    fatal("! Cannot open output file",check_file_name);
 
   @<Compare the temporary output to the previous output@>@;
 
@@ -125,11 +118,7 @@ if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
   fclose(check_file); check_file=NULL;
 
   @<Take appropriate action depending on the comparison@>@;
-
-  free_object(y);
-  free_object(x);
-  }
-else
+} else
   rename(check_file_name,tex_file_name); /* This was the first run */
 
 check_file_name=NULL; /* We want to get rid of the temporary file */
@@ -142,7 +131,7 @@ do {
   y_size = fread(y,1,BUFSIZ,check_file);
   comparison = (x_size == y_size); /* Do not merge these statements! */
   if(comparison) comparison = !memcmp(x,y,x_size);
-  } while(comparison && !feof(tex_file) && !feof(check_file));
+} while(comparison && !feof(tex_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
 get around a bug in some implementations of |rename|.
@@ -153,7 +142,7 @@ if(comparison)
 else {
   remove(tex_file_name);
   rename(check_file_name,tex_file_name);
-  }
+}
 
 @** Index.
 @z
