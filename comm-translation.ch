@@ -265,7 +265,7 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
   if ((C_file=fopen(check_file_name,"w"))==NULL)
     fatal("! Cannot open output file ", check_file_name);
 @y
-  if ((C_file=fopen(C_file_name,"w"))==NULL)
+  if ((C_file=fopen(check_file_name,"w"))==NULL)
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
