@@ -75,7 +75,7 @@ if((out_file=fopen(out_file_name,"r"))!=NULL) {
   int x_size,y_size,comparison;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal("! Cannot open output file",check_file_name);
+    fatal("! Cannot open output file ",check_file_name);
 
   @<Compare the temporary output to the previous output@>@;
 
