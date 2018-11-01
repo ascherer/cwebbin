@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, June 17, 1995.
+Changes for COMMON.W by Andreas Scherer, November 1, 2018.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests.  Some system-dependent
@@ -9,7 +9,7 @@ external header file `cweb.h' and applying this change file, you can set up
 the CWEB programs for a different language than English.
 
 This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH,
-COMM-MEMORY.CH to be applied as well.
+and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
@@ -128,12 +128,6 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
     err_print("! Change file entry did not match");
 @y
     err_print(get_string(MSG_ERROR_CO26));
-@z
-
-@x l.88 of COMM-MEMORY.CH
-      fatal("","! Memory allocation failure")@;
-@y
-      fatal("",get_string(MSG_FATAL_CO85))@;
 @z
 
 @x l.700

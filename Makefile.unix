@@ -344,10 +344,10 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-output.ch # comm-memory.ch comm-translation.ch
+	comm-output.ch comm-translation.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-output.hch
-	# comm-memory.hch comm-translation.hch
+$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-output.hch \
+	comm-translation.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
