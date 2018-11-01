@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, June 15, 1995.
+Changes for CTANGLE.W by Andreas Scherer, November 1, 2018.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,9 +6,8 @@ manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
 previous results are not destroyed.
 
-This change file requires CTANG-PATCH.CH, CTANG-ANSI.CH,
-CTANG-EXTENSIONS.CH, CTANG-MEMORY.CH, CTANG-TRANSLATION.CH
-to be applied as well.
+This change file requires CTANG-PATCH.CH, CTANG-ANSI.CH, and
+CTANG-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
@@ -55,11 +54,11 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
 strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @z
 
-@x l.1538
+@x l.1550
 @** Index.
 @y
 @** Output file update.  Most \CEE/ projects are controlled by a
-\.{makefile} which automatically takes care of the temporal dependecies
+\.{makefile} that automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to
 some of them. Thus the \.{make} process will only recompile those modules
@@ -68,6 +67,12 @@ be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the primary result...@>=
 if((C_file=fopen(C_file_name,"r"))!=NULL) {
+  @<Set up the comparison of temporary output@>@;
+  @<Create the primary output depending on the comparison@>@;
+} else
+  rename(check_file_name,C_file_name); /* This was the first run */
+
+@ @<Set up the comparison of temporary output@>=
   char x[BUFSIZ],y[BUFSIZ];
   int x_size,y_size,comparison;
 
@@ -78,10 +83,6 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
 
   fclose(C_file); C_file=NULL;
   fclose(check_file); check_file=NULL;
-
-  @<Create the primary output depending on the comparison@>@;
-} else
-  rename(check_file_name,C_file_name); /* This was the first run */
 
 @ We hope that this runs fast on most systems.
 
@@ -106,17 +107,7 @@ else {
 
 @ @<Update the secondary results...@>=
 if((C_file=fopen(output_file_name,"r"))!=NULL) {
-  char x[BUFSIZ],y[BUFSIZ];
-  int x_size,y_size,comparison;
-
-  if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal("! Cannot open output file:",check_file_name);
-
-  @<Compare the temp...@>@;
-
-  fclose(C_file); C_file=NULL;
-  fclose(check_file); check_file=NULL;
-
+  @<Set up the comparison of temporary output@>@;
   @<Create the secondary output depending on the comparison@>@;
 } else
   rename(check_file_name,output_file_name); /* This was the first run */
