@@ -355,7 +355,7 @@ $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-output.ch \
 	ctang-translation.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-output.ch # cweav-memory.ch cweav-translation.ch
+	cweav-output.ch cweav-translation.ch
 	$(TIE) -c $@ $^
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	wmerg-extensions.ch wmerg-output.ch
