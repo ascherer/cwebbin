@@ -346,13 +346,13 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-translation.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-output.hch \
-	comm-translation.hch
+$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
+	comm-output.hch comm-translation.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-output.ch \
-	ctang-translation.ch
+$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
+	ctang-output.ch ctang-translation.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-translation.ch
