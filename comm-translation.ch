@@ -21,7 +21,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @i "./cwebinputs/amiga_types.w"
 @z
 
-@x l.92
+@x l.93
   @<Initialize pointers@>;
 @y
   @<Initialize pointers@>;
@@ -30,55 +30,55 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 #endif
 @z
 
-@x l.183
+@x l.184
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
 @y
       ungetc(c,fp); loc=buffer; err_print(get_string(MSG_ERROR_CO9));
 @z
 
-@x l.274
+@x l.275
     err_print("! Missing @@x in change file");
 @y
     err_print(get_string(MSG_ERROR_CO13));
 @z
 
-@x l.285
+@x l.286
     err_print("! Change file ended after @@x");
 @y
     err_print(get_string(MSG_ERROR_CO14));
 @z
 
-@x l.333
+@x l.334
       err_print("! Change file ended before @@y");
 @y
       err_print(get_string(MSG_ERROR_CO16_1));
 @z
 
-@x l.347
+@x l.348
         err_print("! CWEB file ended during a change");
 @y
         err_print(get_string(MSG_ERROR_CO16_2));
 @z
 
-@x l.359
+@x l.360
   loc=buffer+2; err_print("! Where is the matching @@y?");
 @y
   loc=buffer+2; err_print(get_string(MSG_ERROR_CO17_1));
 @z
 
-@x l.366
+@x l.367
     err_print("of the preceding lines failed to match");
 @y
     err_print(get_string(MSG_ERROR_CO17_2));
 @z
 
-@x l.396
+@x l.397
        fatal("! Cannot open input file ", web_file_name);
 @y
        fatal(get_string(MSG_FATAL_CO19_1), web_file_name);
 @z
 
-@x l.401
+@x l.402
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal("! Cannot open change file ", change_file_name);
 @y
@@ -86,19 +86,19 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(get_string(MSG_FATAL_CO19_2), change_file_name);
 @z
 
-@x l.440
+@x l.442
       err_print("! Include file name not given");
 @y
       err_print(get_string(MSG_ERROR_CO21_1));
 @z
 
-@x l.445
+@x l.447
       err_print("! Too many nested includes");
 @y
       err_print(get_string(MSG_ERROR_CO21_2));
 @z
 
-@x l.466
+@x l.468
 @d too_long() {include_depth--;
         err_print("! Include file name too long"); goto restart;}
 @y
@@ -106,31 +106,31 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
         err_print(get_string(MSG_ERROR_CO22)); goto restart;}
 @z
 
-@x l.510
+@x l.517
   include_depth--; err_print("! Cannot open include file"); goto restart;
 @y
   include_depth--; err_print(get_string(MSG_ERROR_CO23)); goto restart;
 @z
 
-@x l.533
+@x l.540
     err_print("! Change file ended without @@z");
 @y
     err_print(get_string(MSG_ERROR_CO25_1));
 @z
 
-@x l.549
+@x l.556
         err_print("! Where is the matching @@z?");
 @y
         err_print(get_string(MSG_ERROR_CO25_2));
 @z
 
-@x l.569
+@x l.576
     err_print("! Change file entry did not match");
 @y
     err_print(get_string(MSG_ERROR_CO26));
 @z
 
-@x l.700
+@x l.707
   if (byte_ptr+l>byte_mem_end) overflow("byte memory");
   if (name_ptr>=name_dir_end) overflow("name");
 @y
@@ -138,7 +138,7 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
   if (name_ptr>=name_dir_end) overflow(get_string(MSG_OVERFLOW_CO39_2));
 @z
 
-@x l.860
+@x l.867
   if (s+name_len>byte_mem_end) overflow("byte memory");
   if (name_ptr+1>=name_dir_end) overflow("name");
 @y
@@ -146,19 +146,19 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
   if (name_ptr+1>=name_dir_end) overflow(get_string(MSG_OVERFLOW_CO39_2));
 @z
 
-@x l.888
+@x l.895
   if (name_ptr>=name_dir_end) overflow("name");
 @y
   if (name_ptr>=name_dir_end) overflow(get_string(MSG_OVERFLOW_CO39_2));
 @z
 
-@x l.893
+@x l.900
   if (s+name_len>byte_mem_end) overflow("byte memory");
 @y
   if (s+name_len>byte_mem_end) overflow(get_string(MSG_OVERFLOW_CO39_1));
 @z
 
-@x l.938
+@x l.945
       printf("\n! Ambiguous prefix: matches <");
 @.Ambiguous prefix ... @>
       print_prefix_name(p);
@@ -170,19 +170,19 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
       fputs(get_string(MSG_ERROR_CO50_2),stdout);
 @z
 
-@x l.967
+@x l.974
       printf("\n! New name is a prefix of <");
 @y
       fputs(get_string(MSG_ERROR_CO52_1),stdout);
 @z
 
-@x l.979
+@x l.986
       printf("\n! New name extends <");
 @y
       fputs(get_string(MSG_ERROR_CO52_2),stdout);
 @z
 
-@x l.985
+@x l.992
     printf("\n! Section name incompatible with <");
 @.Section name incompatible...@>
     print_prefix_name(r);
@@ -194,7 +194,7 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
     fputs(get_string(MSG_ERROR_CO52_4),stdout);
 @z
 
-@x l.1148
+@x l.1155
   @<Print the job |history|@>;
 @y
   @<Print the job |history|@>;
@@ -203,7 +203,7 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
 #endif
 @z
 
-@x l.1155
+@x l.1162
 case spotless: if (show_happiness) printf("(No errors were found.)\n"); break;
 case harmless_message:
   printf("(Did you see the warning message above?)\n"); break;
@@ -221,19 +221,19 @@ case fatal_message:
   fputs(get_string(MSG_FATAL_CO62),stdout);
 @z
 
-@x l.1187
+@x l.1194
   printf("\n! Sorry, %s capacity exceeded",t); fatal("","");
 @y
   printf(get_string(MSG_FATAL_CO65),t); fatal("","");
 @z
 
-@x l.1196
+@x l.1203
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
 @d confusion(s) fatal(get_string(MSG_FATAL_CO66),s)
 @z
 
-@x l.1349
+@x l.1352
 @ @<Print usage error message and quit@>=
 {
 if (program==ctangle)
@@ -255,39 +255,29 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 @.Usage:@>
 @z
 
-@x l.1361
+@x l.1364
 @ @<Complain about arg...@>= fatal("! Filename too long\n", *argv);
 @y
 @ @<Complain about arg...@>= fatal(get_string(MSG_FATAL_CO76), *argv);
 @z
 
-@x l.1374
-@ @<Scan arguments and open output files@>=
-scan_args();
-if (program==ctangle) {
-  if ((C_file=fopen(C_file_name,"w"))==NULL)
-    fatal("! Cannot open output file ", C_file_name);
-@.Cannot open output file@>
-}
-else {
-  if ((tex_file=fopen(tex_file_name,"w"))==NULL)
-    fatal("! Cannot open output file ", tex_file_name);
-}
+@x l.57 of COMM-OUTPUT.CH
+  if ((C_file=fopen(check_file_name,"w"))==NULL)
+    fatal("! Cannot open output file ", check_file_name);
 @y
-@ @<Scan arguments and open output files@>=
-scan_args();
-if (program==ctangle) {
   if ((C_file=fopen(C_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), C_file_name);
-@.Cannot open output file@>
-}
-else {
-  if ((tex_file=fopen(tex_file_name,"w"))==NULL)
-    fatal(get_string(MSG_FATAL_CO78), tex_file_name);
-}
+    fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
-@x l.1415
+@x l.68 of COMM-OUTPUT.CH
+  if ((tex_file=fopen(check_file_name,"w"))==NULL)
+    fatal("! Cannot open output file ", check_file_name);
+@y
+  if ((tex_file=fopen(check_file_name,"w"))==NULL)
+    fatal(get_string(MSG_FATAL_CO78), check_file_name);
+@z
+
+@x l.1418
 @** Index.
 @y
 @** Multilinguality.  The {\mc AMIGA} operating system (and maybe some
@@ -325,24 +315,24 @@ internal version~38) will replace the complete set of terminal output strings
 by an external translation in accordance to the system default language.
 
 @<Use catalog translations@>=
-  if(LocaleBase=(struct Library *)OpenLibrary(
-    (unsigned char *)"locale.library",38L)) {
-    if(catalog=OpenCatalog(NULL,"cweb.catalog",
-      OC_BuiltInLanguage,"english",TAG_DONE)) {
-      for(i=MSG_ERROR_CO9; i<=MSG_STATS_CW248_6; ++i)
-        AppStrings[i].as_Str=GetCatalogStr(catalog,i,AppStrings[i].as_Str);
-      }
-    }
+if(LocaleBase=(struct Library *)OpenLibrary(
+  (unsigned char *)"locale.library",38L)) {
+  if(catalog=OpenCatalog(NULL,"cweb.catalog",
+    OC_BuiltInLanguage,"english",TAG_DONE)) {
+    for(i=MSG_ERROR_CO9; i<=MSG_STATS_CW248_6; ++i)
+      AppStrings[i].as_Str=GetCatalogStr(catalog,i,AppStrings[i].as_Str);
+  }
+}
 
 @ It is essential to close the pointer references to the language catalog
 and to the system library before shutting down the program itself.
 @^system dependencies@>
 
 @<Close the language catalog@>=
-  if(LocaleBase) {
-    CloseCatalog(catalog);
-    CloseLibrary(LocaleBase);
-    }
+if(LocaleBase) {
+  CloseCatalog(catalog);
+  CloseLibrary(LocaleBase);
+}
 
 @** Index.
 @z
