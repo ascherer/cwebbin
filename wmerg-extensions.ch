@@ -36,7 +36,7 @@ char separators[]="://"; /* UNIX set up */
   include_depth=0; cur_line=0; change_line=0;
 @y
   include_depth=0; cur_line=0; change_line=0;
-  @<Open input files@>;
+  @<Open input files@>@;
 @z
 
 @x l.352

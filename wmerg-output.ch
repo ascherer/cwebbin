@@ -25,7 +25,7 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
   @<Print the job |history|@>;
 @y
   @<Remove the temporary file if not already done@>@;
-  @<Print the job |history|@>;
+  @<Print the job |history|@>@;
 @z
 
 @x l.587

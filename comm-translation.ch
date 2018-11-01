@@ -24,9 +24,9 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @x l.93
   @<Initialize pointers@>;
 @y
-  @<Initialize pointers@>;
+  @<Initialize pointers@>@;
 #ifdef _AMIGA
-  @<Use catalog translations@>;
+  @<Use catalog translations@>@;
 #endif
 @z
 
@@ -209,9 +209,9 @@ else if (include_depth==0) printf(get_string(MSG_ERROR_CO59_2), cur_line);
 @x l.1155
   @<Print the job |history|@>;
 @y
-  @<Print the job |history|@>;
+  @<Print the job |history|@>@;
 #ifdef _AMIGA
-  @<Close the language catalog@>;
+  @<Close the language catalog@>@;
 #endif
 @z
 
