@@ -251,9 +251,8 @@ used, when no changes are desired.
     if(*dot_pos=='l') {
        use_language=++dot_pos;
        break;
-       }
-    else
-      flags[0+*dot_pos]=flag_change;
+    }
+    else flags[0+*dot_pos]=flag_change;
 @z
 
 @x l.430 of comm-ansi.ch
@@ -292,8 +291,7 @@ static boolean set_path(char *include_path,char *environment)
     if(strlen(environment)+strlen(include_path) >= max_path_length) {
       err_print("! Include path too long"); return(0);
 @.Include path too long@>
-    }
-    else {
+    } else {
       sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
       strcpy(include_path,string);
     }

@@ -27,14 +27,10 @@ if (no_xref) {
 }
 @z
 
-@x l.4313
-  if (change_exists) {
+@x l.4314
     @<Tell about changed sections@>; finish_line(); finish_line();
-  }
 @y
-  if (change_exists) {
     @<Tell about changed sections@>@; finish_line(); finish_line();
-  }
 @z
 
 @x l.4319

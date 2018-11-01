@@ -142,7 +142,7 @@ made sensitive to these conditions.
   case error_message: return(RETURN_ERROR); break;
   case fatal_message: return(RETURN_FAIL); break;
   default: return(RETURN_OK);
-    }
+  }
 @z
 
 @x l.569
@@ -215,8 +215,7 @@ static boolean set_path(char *include_path,char *environment)
     if(strlen(environment)+strlen(include_path) >= max_path_length) {
       err_print("! Include path too long"); return(0);
 @.Include path too long@>
-    }
-    else {
+    } else {
       sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
       strcpy(include_path,string);
     }
