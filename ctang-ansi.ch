@@ -12,12 +12,6 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.49
 @s not_eq normal @q unreserve a C++ keyword @>
 @y
-@ The next few sections contain stuff from the file |"common.w"| that must
-be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
-file |"comm-foo.h"|, which needs to be updated when |"common.w"| or any of
-the added changefiles change.
-
-@i comm-foo.h
 @z
 
 @x l.69
@@ -56,16 +50,6 @@ char **av)
   if (show_banner) printf(banner); /* print a ``banner line'' */
 @y
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
-@z
-
-@x l.124
-@ The next few sections contain stuff from the file |"common.w"| that must
-be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
-file |"common.h"|, which needs to be updated when |"common.w"| changes.
-
-@i common.h
-
-@y
 @z
 
 @x l.175

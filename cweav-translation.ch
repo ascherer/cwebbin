@@ -16,6 +16,29 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @d banner get_string(MSG_BANNER_CW1)
 @z
 
+@x l.36 of CWEAV-ANSI.CH
+#include <string.h>
+@y
+#include <string.h>
+
+@ The next few sections contain stuff from the file |"common.w"| that must
+be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
+file |"comm-foo.h"|, which needs to be updated when |"common.w"| or any of
+the added changefiles change.
+
+@i comm-foo.h
+@z
+
+@x l.140
+@ The next few sections contain stuff from the file |"common.w"| that must
+be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
+file |"common.h"|, which needs to be updated when |"common.w"| changes.
+
+@i common.h
+
+@y
+@z
+
 @x l.267
 @d append_xref(c) if (xref_ptr==xmem_end) overflow("cross-reference");
 @y
