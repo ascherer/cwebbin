@@ -66,7 +66,6 @@ extern char C_file_name[]; /* name of |C_file| */
 extern char tex_file_name[]; /* name of |tex_file| */
 extern char idx_file_name[]; /* name of |idx_file| */
 extern char scn_file_name[]; /* name of |scn_file| */
-extern char check_file_name[]; /* name of |check_file| */
 extern char file_name[][max_file_name_length];
   /* stack of non-change file names */
 extern char change_file_name[]; /* name of change file */
@@ -78,7 +77,6 @@ extern char *C_file_name; /* name of |C_file| */
 extern char *tex_file_name; /* name of |tex_file| */
 extern char *idx_file_name; /* name of |idx_file| */
 extern char *scn_file_name; /* name of |scn_file| */
-extern char *check_file_name; /* name of |check_file| */
 extern char **file_name; /* stack of non-change file names */
 extern char *change_file_name; /* name of change file */
 extern int *line; /* number of current line in the stacked files */
