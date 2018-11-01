@@ -52,6 +52,12 @@ char **av)
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
 @z
 
+@x l.127
+@i common.h
+@y
+@i comm-foo.h
+@z
+
 @x l.175
 name_dir->equiv=(char *)text_info; /* the undefined section has no replacement text */
 @y
