@@ -34,12 +34,12 @@ char separators[]= "://";
 #line 473 "common.w"
 
 /*:22*//*81:*/
-#line 983 "comm-foo.ch"
+#line 982 "comm-foo.ch"
 
 #include <string.h> 
 
 /*:81*//*87:*/
-#line 1077 "comm-foo.ch"
+#line 1075 "comm-foo.ch"
 
 #ifdef _AMIGA
 #include <proto/exec.h> 
@@ -297,13 +297,13 @@ boolean flags[256];
 FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
-#line 923 "comm-foo.ch"
+#line 922 "comm-foo.ch"
 FILE*scn_file;
 FILE*check_file;
 #line 1375 "common.w"
 FILE*active_file;
 
-#line 940 "comm-foo.ch"
+#line 939 "comm-foo.ch"
 /*:77*/
 #line 61 "common.w"
 
@@ -318,7 +318,7 @@ char change_buffer[buf_size];
 char*change_limit;
 
 /*:11*//*85:*/
-#line 1052 "comm-foo.ch"
+#line 1050 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -386,7 +386,7 @@ static void scan_args(void);
 #line 1253 "common.w"
 
 /*:69*//*82:*/
-#line 990 "comm-foo.ch"
+#line 989 "comm-foo.ch"
 
 boolean get_line(void);
 name_pointer add_section_name(name_pointer,int,char*,char*,int);
@@ -401,7 +401,7 @@ void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
 /*:82*//*83:*/
-#line 1005 "comm-foo.ch"
+#line 1004 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 static int input_ln(FILE*);
@@ -410,7 +410,7 @@ static void check_change(void);
 static void prime_the_change_buffer(void);
 #line 1417 "common.w"
 
-#line 1016 "comm-foo.ch"
+#line 1015 "comm-foo.ch"
 /*:83*/
 #line 63 "common.w"
 
@@ -446,7 +446,7 @@ root= NULL;
 
 #ifdef _AMIGA
 /*88:*/
-#line 1100 "comm-foo.ch"
+#line 1098 "comm-foo.ch"
 
 if(LocaleBase= (struct Library*)OpenLibrary(
 (unsigned char*)"locale.library",38L)){
@@ -473,7 +473,7 @@ use_language= "";
 #line 94 "common.w"
 ;
 /*78:*/
-#line 940 "comm-foo.ch"
+#line 939 "comm-foo.ch"
 
 scan_args();
 if(program==ctangle){
@@ -1305,7 +1305,7 @@ fputs(get_string(MSG_FATAL_CO62),stdout);
 
 #ifdef _AMIGA
 /*89:*/
-#line 1114 "comm-foo.ch"
+#line 1112 "comm-foo.ch"
 
 if(LocaleBase){
 CloseCatalog(catalog);
@@ -1318,7 +1318,7 @@ CloseLibrary(LocaleBase);
 #endif
 #line 693 "comm-foo.ch"
 /*86:*/
-#line 1059 "comm-foo.ch"
+#line 1057 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1401,12 +1401,11 @@ if(*dot_pos=='l'){
 use_language= ++dot_pos;
 break;
 }
-else
-flags[0+*dot_pos]= flag_change;
+else flags[0+*dot_pos]= flag_change;
 #line 1350 "common.w"
 }
 
-#line 905 "comm-foo.ch"
+#line 904 "comm-foo.ch"
 /*:74*/
 #line 1266 "common.w"
 
@@ -1427,7 +1426,7 @@ if(!found_web)/*71:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*76:*/
-#line 917 "comm-foo.ch"
+#line 916 "comm-foo.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1461,7 +1460,7 @@ if(strcmp(*argv,"-")!=0){
 #line 1314 "common.w"
 if(s-*argv> max_file_name_length-4)
 /*76:*/
-#line 917 "comm-foo.ch"
+#line 916 "comm-foo.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1487,7 +1486,7 @@ else if(!found_out)/*73:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*76:*/
-#line 917 "comm-foo.ch"
+#line 916 "comm-foo.ch"
 fatal(get_string(MSG_FATAL_CO76),*argv);
 #line 1365 "common.w"
 
@@ -1516,7 +1515,7 @@ found_out= 1;
 #line 1277 "common.w"
 
 else/*75:*/
-#line 905 "comm-foo.ch"
+#line 904 "comm-foo.ch"
 
 {
 if(program==ctangle)
@@ -1526,14 +1525,14 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 
 #line 1363 "common.w"
 
-#line 917 "comm-foo.ch"
+#line 916 "comm-foo.ch"
 /*:75*/
 #line 1278 "common.w"
 ;
 }
 }
 if(!found_web)/*75:*/
-#line 905 "comm-foo.ch"
+#line 904 "comm-foo.ch"
 
 {
 if(program==ctangle)
@@ -1543,7 +1542,7 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 
 #line 1363 "common.w"
 
-#line 917 "comm-foo.ch"
+#line 916 "comm-foo.ch"
 /*:75*/
 #line 1281 "common.w"
 ;
@@ -1551,7 +1550,7 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 }
 
 /*:70*//*84:*/
-#line 1025 "comm-foo.ch"
+#line 1024 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
@@ -1565,8 +1564,7 @@ if(environment){
 if(strlen(environment)+strlen(include_path)>=max_path_length){
 err_print(get_string(MSG_ERROR_CO82));return(0);
 
-}
-else{
+}else{
 sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
 strcpy(include_path,string);
 }
