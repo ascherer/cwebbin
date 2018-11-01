@@ -402,3 +402,9 @@ if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
 }
 @z
+
+@x l.89 of CWEAV-OUTPUT.CH
+    fatal("! Cannot open output file ",check_file_name);
+@y
+    fatal(get_string(MSG_FATAL_CO78),check_file_name);
+@z
