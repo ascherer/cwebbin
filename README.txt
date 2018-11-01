@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated February 19, 2017 by Andreas Scherer.
+% This README file was last updated November 1, 2018 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2017 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -40,11 +40,10 @@
 CWEBbin is the ANSI-C/C++ implementation of Silvio Levy's and Donald Ervin
 Knuth's CWEB system, compiled and provided with changefiles for ANSI-C and
 makefiles for Borland C/C++ 3.1 (no longer actively supported), MS/VC++ 4.1
-(no longer actively supported) and 6.0, SAS/C++ 6.57 (no longer actively
-supported), and most of all UNIX-cc/g++ (currently 4.4.3).  Additional features
-differing from the original distribution are described further below.
-General information is provided in the original README file shipped with the
-CWEB distribution.
+and 6.0 (both no longer actively supported), SAS/C++ 6.57 (no longer actively
+supported), and most of all UNIX-cc/g++.  Additional features differing from
+the original distribution are described further below.  General information is
+provided in the original README file shipped with the CWEB distribution.
 
 CWEBbin started from the Amiga port of CWEB 2.8 by Carsten Steger.  Then it
 was merged with the CWEB-PC 3.0 distribution by Hans-Hermann Bode and Klaus
@@ -84,8 +83,8 @@ GENERAL CONTRIBUTION:
 ./comm-ansi.hch			change file for common.h
 ./comm-extensions.ch		change file for common.w
 ./comm-extensions.hch		change file for common.h
-./comm-memory.ch		change file for common.w
-./comm-memory.hch		change file for common.h
+./comm-memory.ch		change file for common.w (defunct)
+./comm-memory.hch		change file for common.h (defunct)
 ./comm-newpage.ch		change file for common.w
 ./comm-output.ch		change file for common.w
 ./comm-output.hch		change file for common.h
@@ -94,7 +93,7 @@ GENERAL CONTRIBUTION:
 ./comm-translation.hch		change file for common.h
 ./common.cxx			ctangled product of common.w and the above
 ./ctang-ansi.ch			change file for ctangle.w
-./ctang-memory.ch		change file for ctangle.w
+./ctang-memory.ch		change file for ctangle.w (defunct)
 ./ctang-newpage.ch		change file for ctangle.w
 ./ctang-output.ch		change file for ctangle.w
 ./ctang-patch.ch		change file for ctangle.w
@@ -102,24 +101,27 @@ GENERAL CONTRIBUTION:
 ./ctangle.cxx			ctangled product of ctangle.w and the above
 ./cweav-ansi.ch			change file for cweave.w
 ./cweav-extensions.ch		change file for cweave.w
-./cweav-memory.ch		change file for cweave.w
+./cweav-memory.ch		change file for cweave.w (defunct)
 ./cweav-newpage.ch		change file for cweave.w
 ./cweav-output.ch		change file for cweave.w
 ./cweav-patch.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w
 ./cwebman.ch			change file for cwebman.tex
+./0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
 ./README.txt			the current file
 ./wmerg-ansi.ch			change file for wmerge.w
 ./wmerg-extensions.ch		change file for wmerge.w
-./wmerg-memory.ch		change file for wmerge.w
+./wmerg-memory.ch		change file for wmerge.w (defunct)
 ./wmerg-output.ch		change file for wmerge.w
 ./wmerg-patch.ch		change file for wmerge.w
 ./catalogs/dcweb.h		header file with the German strings
 ./catalogs/ecweb.h		header file with the English default strings
 ./catalogs/icweb.h		header file with the Italian strings
 ./cwebinputs/amiga_types.w	AMIGA specific keywords by Commodore and SAS
+./cwebinputs/c++1xlib.w		Keywords for modern C++ standards
 ./cwebinputs/ecma94.w		Transliteration table for Latin-1
 ./cwebinputs/hp8.w		Transliteration table for HP Roman 8
+./cwebinputs/iso_types.w	Keywords for ISO C/C++ standards
 ./cwebinputs/mac8.w		Transliteration table for Macintosh 8-bit font
 ./cwebinputs/pc850.w		Transliteration table for Codepage 850
 ./examples/cct.w		program to translate between character tables
@@ -253,16 +255,11 @@ SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
 	ctangle.exe binary to create the TIE processor and then create the
 	complete set of change files according to Makefile.bcc.  Good luck!
 
-[MS/WINDOWS, MS/VC++ 4.1] I can no longer support this compiler and most
-	likely it is impossible to install CWEBbin with this version of the
-	Microsoft compiler.  The current version of MS/VC++ is supported
+[MS/WINDOWS, MS/VC++ 4.1 and 6.0] I can no longer support this compiler and
+	most likely it is impossible to install CWEBbin with this version of
+	the Microsoft compiler.  The current version of MS/VC++ is supported
 	through binary versions of CTANGLE and CWEAVE at
 	http://www.literateprogramming.com.
-
-[MS/WINDOWS, MS/VC++ 6.0] Double-click on "cwebbin.dsw" and proceed as usual.
-	"Batch build" should result in "ctangle.exe", "cweave.exe", and
-	"wmerge.exe".  Then proceed by hand.  See the gcc Makefile.unix for
-	the "real thing".  Good luck!
 
 %%% LIST OF FEATURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -296,6 +293,7 @@ So here are some words about the `special features':
      Codepage 850, Macintosh 8-bit font table and HP Roman 8.  Similar
      packages for other languages can easily be added to this scheme.  To date
      there are no conflicting languages, so single-character strings are used.
+     However, there is no support for UTF-8 at this time.
 
    - [GENERAL] <Obsolete> As of March 1997 five new macros with the prefix
      `pdf' are available.  Together with the "tex2pdf/pdftex" system they
@@ -338,7 +336,7 @@ So here are some words about the `special features':
      don't have to repeat the defaults.
 
    - [GENERAL] The `-o' option was added in connection with Carsten Steger's
-     `-i' option.
+     `-i' option.  Both affect typographic niceties in the woven output.
 
    - [GENERAL] The output files of CTANGLE and CWEAVE are only written when
      there are significant changes to their contents, i.e., when a CWEB source
@@ -429,7 +427,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-February 19, 2017.
+November 1, 2018.
 
 Andreas Scherer
 
