@@ -12,6 +12,12 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @x l.54
 @s not_eq normal @q unreserve a C++ keyword @>
 @y
+@ The next few sections contain stuff from the file |"common.w"| that must
+be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
+file |"comm-foo.h"|, which needs to be updated when |"common.w"| or any of
+the added changefiles change.
+
+@i comm-foo.h
 @z
 
 @x l.73
@@ -52,10 +58,14 @@ char **av@t\2\2@>) /* argument values */
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
 @z
 
-@x l.139
+@x l.140
+@ The next few sections contain stuff from the file |"common.w"| that must
+be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
+file |"common.h"|, which needs to be updated when |"common.w"| changes.
+
 @i common.h
+
 @y
-@i comm-foo.h
 @z
 
 @x l.226

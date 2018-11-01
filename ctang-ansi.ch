@@ -64,6 +64,7 @@ be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"common.h"|, which needs to be updated when |"common.w"| changes.
 
 @i common.h
+
 @y
 @z
 

@@ -6,7 +6,7 @@ external header file `cweb.h' and applying this change file, you can set up
 the CWEB system for a different language than English.
 
 This change file requires CTANG-PATCH.CH, CTANG-ANSI.ch,
-CTANG-EXTENSIONS.CH, CTANG-MEMORY.CH to be applied as well.
+CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
