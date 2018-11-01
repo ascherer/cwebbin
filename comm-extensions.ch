@@ -267,7 +267,7 @@ used, when no changes are desired.
 static boolean set_path(char *,char *);@/
 @z
 
-@x l.1415
+@x l.1418
 @** Index.
 @y
 @** Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking

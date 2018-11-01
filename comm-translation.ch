@@ -277,6 +277,12 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
+@x l.293 of COMM-EXTENSIONS.CH
+      err_print("! Include path too long"); return(0);
+@y
+      err_print(get_string(MSG_ERROR_CO82)); return(0);
+@z
+
 @x l.1418
 @** Index.
 @y
