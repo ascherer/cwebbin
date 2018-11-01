@@ -52,6 +52,12 @@ char **av@t\2\2@>) /* argument values */
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
 @z
 
+@x l.139
+@i common.h
+@y
+@i comm-foo.h
+@z
+
 @x l.226
 typedef struct xref_info {
   sixteen_bits num; /* section number plus zero or |def_flag| */
