@@ -460,7 +460,7 @@ typedef const char*STRPTR;
 #endif
 #define get_string(n) AppStrings[n].as_Str
 
-#include "cweb.h"
+#include "cweb.h" 
 
 struct AppString
 {
