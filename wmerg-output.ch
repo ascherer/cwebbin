@@ -110,12 +110,12 @@ else {
 }
 
 @ @<Remove the temporary file...@>=
-  if(out_file)
-    fclose(out_file);
-  if(check_file)
-    fclose(check_file);
-  if(strlen(check_file_name))
-    remove(check_file_name);
+if(out_file)
+  fclose(out_file);
+if(check_file)
+  fclose(check_file);
+if(strlen(check_file_name))
+  remove(check_file_name);
 
 @* Index.
 @z
