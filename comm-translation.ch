@@ -78,11 +78,9 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
        fatal(get_string(MSG_FATAL_CO19_1), web_file_name);
 @z
 
-@x l.402
-if ((change_file=fopen(change_file_name,"r"))==NULL)
+@x l.403
        fatal("! Cannot open change file ", change_file_name);
 @y
-if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(get_string(MSG_FATAL_CO19_2), change_file_name);
 @z
 
@@ -98,11 +96,9 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
       err_print(get_string(MSG_ERROR_CO21_2));
 @z
 
-@x l.468
-@d too_long() {include_depth--;
+@x l.469
         err_print("! Include file name too long"); goto restart;}
 @y
-@d too_long() {include_depth--;
         err_print(get_string(MSG_ERROR_CO22)); goto restart;}
 @z
 
@@ -160,13 +156,13 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
 
 @x l.945
       printf("\n! Ambiguous prefix: matches <");
-@.Ambiguous prefix ... @>
-      print_prefix_name(p);
-      printf(">\n and <");
 @y
       fputs(get_string(MSG_ERROR_CO50_1),stdout);
-@.Ambiguous prefix ... @>
-      print_prefix_name(p);
+@z
+
+@x l.948
+      printf(">\n and <");
+@y
       fputs(get_string(MSG_ERROR_CO50_2),stdout);
 @z
 
@@ -184,23 +180,21 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
 
 @x l.992
     printf("\n! Section name incompatible with <");
-@.Section name incompatible...@>
-    print_prefix_name(r);
-    printf(">,\n which abbreviates <");
 @y
     fputs(get_string(MSG_ERROR_CO52_3),stdout);
-@.Section name incompatible...@>
-    print_prefix_name(r);
+@z
+
+@x l.995
+    printf(">,\n which abbreviates <");
+@y
     fputs(get_string(MSG_ERROR_CO52_4),stdout);
 @z
 
-@x l.1116
-{if (changing && include_depth==change_depth)
+@x l.1117
   printf(". (l. %d of change file)\n", change_line);
 else if (include_depth==0) printf(". (l. %d)\n", cur_line);
   else printf(". (l. %d of include file %s)\n", cur_line, cur_file_name);
 @y
-{if (changing && include_depth==change_depth)
   printf(get_string(MSG_ERROR_CO59_1), change_line);
 else if (include_depth==0) printf(get_string(MSG_ERROR_CO59_2), cur_line);
   else printf(get_string(MSG_ERROR_CO59_3), cur_line, cur_file_name);
@@ -245,9 +239,7 @@ case fatal_message:
 @d confusion(s) fatal(get_string(MSG_FATAL_CO66),s)
 @z
 
-@x l.1352
-@ @<Print usage error message and quit@>=
-{
+@x l.1354
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -256,14 +248,9 @@ if (program==ctangle)
 else fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
-}
 @y
-@ @<Print usage error message and quit@>=
-{
-if (program==ctangle)
-  fatal(get_string(MSG_FATAL_CO75_2),"");
+if (program==ctangle) fatal(get_string(MSG_FATAL_CO75_2),"");
 else fatal(get_string(MSG_FATAL_CO75_4),"");
-}
 @.Usage:@>
 @z
 
@@ -273,19 +260,15 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 @ @<Complain about arg...@>= fatal(get_string(MSG_FATAL_CO76), *argv);
 @z
 
-@x l.57 of COMM-OUTPUT.CH
-  if ((C_file=fopen(check_file_name,"w"))==NULL)
+@x l.58 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
-  if ((C_file=fopen(check_file_name,"w"))==NULL)
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
-@x l.68 of COMM-OUTPUT.CH
-  if ((tex_file=fopen(check_file_name,"w"))==NULL)
+@x l.69 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
-  if ((tex_file=fopen(check_file_name,"w"))==NULL)
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
@@ -326,7 +309,7 @@ typedef const char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
 #define STRINGARRAY 1 /* include the string array |AppStrings| for real */
 #define get_string(n) AppStrings[n].as_Str /* reference string $n$ */
 @#
-#include "cweb.h"
+#include "cweb.h" /* This header file contains all translated strings */
 
 @ Version~2.1 or higher of the {\mc AMIGA} operating system (represented as
 internal version~38) will replace the complete set of terminal output strings

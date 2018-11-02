@@ -6,7 +6,7 @@ external header file `cweb.h' and applying this change file, you can set up
 the CWEB system for a different language than English.
 
 This change file requires CWEAV-PATCH.CH, CWEAVE-ANSI.CH,
-CWEAV-EXTENSIONS.CH, CWEAV-OUTPUT.CH to be applied as well.
+CWEAV-EXTENSIONS.CH, and CWEAV-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
@@ -15,6 +15,8 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @y
 @d banner get_string(MSG_BANNER_CW1)
 @z
+
+We have to move "comm-foo.h" up before the first use, i.e., banner output.
 
 @x l.36 of CWEAV-ANSI.CH
 #include <string.h>

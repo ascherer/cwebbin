@@ -2,7 +2,8 @@ This set of changes converts the COMMON.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
 places additional casts are introduced and `char *' is replaced by
-`void *', the default pointer type in ANSI-C.
+`void *', the default pointer type in ANSI-C. Fix-sized integer types and
+'boolean' are also replaced with their C99/C++ equivalents.
 
 This is a standalone change file, although COMM-PATCH.CH should be applied
 as well to bump the revision information.
@@ -416,6 +417,10 @@ scan_args()
 static void
 scan_args(void)
 @z
+
+After 'boolean' was changed from 'short' to 'bool' it became obvious that '-1'
+is not really a useful value to designate special case '-' for the changefile
+argument. By flipping the detection logic all is fine again.
 
 @x l.1265
   while (--argc > 0) {

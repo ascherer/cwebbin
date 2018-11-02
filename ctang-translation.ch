@@ -16,6 +16,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @d banner get_string(MSG_BANNER_CT1)
 @z
 
+We have to move "comm-foo.h" up for the first use, i.e., the banner output.
+
 @x l.42 of CTANG-ANSI.CH
 #include <string.h>
 @y
