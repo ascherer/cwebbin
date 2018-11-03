@@ -11,7 +11,7 @@
 Section 1.
 
 This collides with our own "cweb.h" that is used for translations.
-XXX Will have to adapt one way or the other. XXX
+FIXME: Will have to adapt one way or the other.
 
 %@x l.63
 %@<Predeclaration of procedures@>@/
@@ -260,7 +260,7 @@ Section 74.
 
 Section 75.
 
-XXX Need new translation strings XXX
+FIXME: Need new translation strings.
 
 @x l.252 of COMM-TRANSLATION.CH
 if (program==ctangle) fatal(get_string(MSG_FATAL_CO75_2),"");
