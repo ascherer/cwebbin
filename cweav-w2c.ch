@@ -39,7 +39,7 @@ The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
 @d banner "This is CWEAVE (Version 3.64)\n"
-@y 
+@y
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 

@@ -20,7 +20,7 @@ FIXME: Will have to adapt one way or the other.
 %@<Predeclaration of procedures@>@/
 %@z
 
-Section 2. 
+Section 2.
 
 @x l.25 of COMM-ANSI.CH
 typedef bool boolean;
@@ -109,7 +109,7 @@ environment variable \.{CWEBINPUTS} as an alternative place to be
 searched for files, if they could not be found in the current
 directory.
 
-This version uses the \Kpathsea/ mechanism for searching files. 
+This version uses the \Kpathsea/ mechanism for searching files.
 The directories to be searched for come from three sources:
 
  (a)~a user-set environment variable \.{CWEBINPUTS}
@@ -134,7 +134,7 @@ different search paths.
 FIXME: Not sure this is the best way to go about this.
 
 @<Set up |PROGNAME| feature and initialize the search path mechanism@>=
-kpse_set_program_name(argv[0], "cweb"); 
+kpse_set_program_name(argv[0], "cweb");
 @z
 
 Section 23.
