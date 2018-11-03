@@ -167,13 +167,13 @@ COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
-	comm-patch.ch comm-translation.ch comm-translation.hch
+	comm-patch.ch comm-translation.ch comm-translation.hch comm-w2c.ch
 CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
 	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
-	ctang-patch.ch ctang-translation.ch
+	ctang-patch.ch ctang-translation.ch ctang-w2c.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-newpage.ch cweav-memory.ch cweav-output.ch \
-	cweav-patch.ch cweav-translation.ch
+	cweav-patch.ch cweav-translation.ch cweav-w2c.ch
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
