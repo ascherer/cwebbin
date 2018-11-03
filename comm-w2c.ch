@@ -286,6 +286,8 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
+FIXME: Resolve conceptional naming conflict about "cweb.h".
+
 @x l.1418
 @** Index.
 @y
@@ -293,11 +295,12 @@ char *found_filename; /* filename found by |kpse_find_file| */
 header file \.{cweb.h} containing the declaration of all functions defined
 in \.{common.w} and used in \.{ctangle.w} and \.{cweave.w} or vice versa.
 
-@(cweb.h@>=
+%(cweb.h@>=
 @=/* Prototypes for functions, either@>
 @= * declared in common.w and used in ctangle.w and cweave.w, or@>
-@= * used in common.w and declared in ctangle.w and cweave.w.  */@>
-@<External functions@>@;
+@= * used in common.w and declared in ctangle.w and cweave.w. */@>
+%@<External functions@>@;
+@c
 extern const char *versionstring;
 
 @** System dependent changes.
