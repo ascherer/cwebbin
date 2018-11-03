@@ -243,6 +243,13 @@ get_next(void) /* produces the next input token */
   case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
+@x l.974
+  while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
+@y
+  while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
+      || isxalpha(*loc) || ishigh(*loc));
+@z
+
 @x l.1196
 void
 scan_repl(t) /* creates a replacement text */
@@ -253,6 +260,25 @@ scan_repl(@t\1\1@> /* creates a replacement text */
 eight_bits t@t\2\2@>)
 @z
 
+@x l.1232 -- rename local var, not to shadow previous local
+{int a=id_lookup(id_first,id_loc,0)-name_dir; app_repl((a / 0400)+0200);
+  app_repl(a % 0400);}
+@y
+{int a_l=id_lookup(id_first,id_loc,0)-name_dir; app_repl((a_l / 0400)+0200);
+  app_repl(a_l % 0400);}
+@z
+
+@x l.1320
+        c=toupper(*id_first)-'A'+10;
+@y
+        c=toupper((unsigned char)*id_first)-'A'+10;
+@z
+
+@x l.1325
+        c=16*c+toupper(*id_first)-'A'+10;
+@y
+        c=16*c+toupper((unsigned char)*id_first)-'A'+10;
+@z
 @x l.1349
 void
 scan_section()

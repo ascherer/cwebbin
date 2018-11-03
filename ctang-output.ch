@@ -37,7 +37,7 @@ fclose(C_file); C_file=NULL;
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
-    if((C_file=fopen(check_file_name,"w"))==NULL)
+    if((C_file=fopen(check_file_name,"wb"))==NULL)
       fatal("! Cannot open output file:",check_file_name);
 @.Cannot open output file@>
     printf("\n(%s)",output_file_name); update_terminal;

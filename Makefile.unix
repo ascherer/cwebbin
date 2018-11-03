@@ -168,8 +168,9 @@ COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
 	comm-patch.ch comm-translation.ch comm-translation.hch
-CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-i18n.ch ctang-memory.ch \
-	ctang-newpage.ch ctang-output.ch ctang-patch.ch ctang-translation.ch
+CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
+	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
+	ctang-patch.ch ctang-translation.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-newpage.ch cweav-memory.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch
@@ -343,7 +344,7 @@ $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
+$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch ctang-w2c.ch
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-w2c.ch
