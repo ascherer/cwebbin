@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 1, 2018.
+Changes for COMMON.W by Andreas Scherer, November 3, 2018.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -11,7 +11,7 @@ COMM-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.135 of COMM-EXTENSIONS.CH
+@x l.156 of COMM-EXTENSIONS.CH
   switch(history) {
 @y
   @<Remove the temporary file if not already done@>@;
@@ -54,7 +54,7 @@ if (program==ctangle) {
     if(dot_pos==NULL) strcat(check_file_name,".ttp");
     else strcpy(dot_pos,".ttp");
   }
-  if ((C_file=fopen(check_file_name,"w"))==NULL)
+  if ((C_file=fopen(check_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", check_file_name);
 @.Cannot open output file@>
 }
@@ -65,7 +65,7 @@ else {
     if(dot_pos==NULL) strcat(check_file_name,".wtp");
     else strcpy(dot_pos,".wtp");
   }
-  if ((tex_file=fopen(check_file_name,"w"))==NULL)
+  if ((tex_file=fopen(check_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", check_file_name);
 }
 @z

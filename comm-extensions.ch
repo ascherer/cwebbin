@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, September 19, 1995.
+Changes for COMMON.W by Andreas Scherer, November 3, 2018.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -9,13 +9,25 @@ This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.206
-@d max_file_name_length 60
+@x l.153
+@d buf_size 100 /* for \.{CWEAVE} and \.{CTANGLE} */
 @y
-@d max_file_name_length 255
+@d buf_size 1000 /* for \.{CWEAVE} and \.{CTANGLE} */
 @z
 
-@x l.455
+@x l.207 - max_file_name_length is way too small.
+@d max_file_name_length 60
+@y
+@d max_file_name_length 1024
+@z
+
+@x l.415
+@d max_sections 2000 /* number of identifiers, strings, section names;
+@y
+@d max_sections 10239 /* number of identifiers, strings, section names;
+@z
+
+@x l.457
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -41,7 +53,23 @@ be needed.
 @^system dependencies@>
 @z
 
-@x l.486
+@x l.472
+#include <stdlib.h> /* declaration of |getenv| and |exit| */
+@y
+#include <stdlib.h> /* declaration of |getenv| and |exit| */
+@#
+#ifdef SEPARATORS
+char separators[]=SEPARATORS;
+#else
+char separators[]="://";
+#endif
+@#
+#define PATH_SEPARATOR   separators[0]
+#define DIR_SEPARATOR    separators[1]
+#define DEVICE_SEPARATOR separators[2]
+@z
+
+@x l.493
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -90,7 +118,25 @@ be needed.
   }
 @z
 
-@x l.1137
+@x l.589
+@d max_bytes 90000 /* the number of bytes in identifiers,
+@y
+@d max_bytes 1000000 /* the number of bytes in identifiers,
+@z
+
+@x l.591
+@d max_names 4000 /* number of identifiers, strings, section names;
+@y
+@d max_names 10239 /* number of identifiers, strings, section names;
+@z
+
+@x l.642
+@d hash_size 353 /* should be prime */
+@y
+@d hash_size 8501 /* should be prime */
+@z
+
+@x l.1144
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -112,7 +158,7 @@ made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1149
+@x l.1156
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -149,7 +195,7 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1205
+@x l.1212
 the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 
@@ -169,20 +215,20 @@ for future extensions.
 @d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
 @z
 
-@x l.1219
+@x l.1226
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
-@x l.1220
+@x l.1227
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[256]; /* an option for each 8-bit code */
 @z
 
-@x l.1226
+@x l.1233
 @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>=
 show_banner=show_happiness=show_progress=1;
 @y
@@ -191,7 +237,7 @@ show_banner=show_happiness=show_progress=indent_param_decl=order_decl_stmt=1;
 use_language="";
 @z
 
-@x l.1238
+@x l.1245
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -200,7 +246,7 @@ systems the contents of the compile-time variable |_DEV_NULL|---should be
 used, when no changes are desired.
 @z
 
-@x l.1265
+@x l.455 of COMM-ANSI.CH
   strcpy(change_file_name,"/dev/null");
 @y
 #ifdef _DEV_NULL
@@ -211,7 +257,7 @@ used, when no changes are desired.
 @^system dependencies@>
 @z
 
-@x l.1262
+@x l.1269
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -227,19 +273,19 @@ used, when no changes are desired.
 @^system dependencies@>
 @z
 
-@x l.1345
+@x l.1348
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    flags[0+*dot_pos]=flag_change;
+    flags[(unsigned char)*dot_pos]=flag_change;
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if(*dot_pos=='l') {
        use_language=++dot_pos;
        break;
     }
-    else flags[0+*dot_pos]=flag_change;
+    else flags[(unsigned char)*dot_pos]=flag_change;
 @z
 
-@x l.430 of comm-ansi.ch
+@x l.522 of COMM-ANSI.CH
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
