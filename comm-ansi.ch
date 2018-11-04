@@ -43,8 +43,8 @@ common_init(void)
 @d xisspace(c) (isspace(c)&&((unsigned char)c<0200))
 @d xisupper(c) (isupper(c)&&((unsigned char)c<0200))
 @y
-@d xisspace(c) (isspace((unsigned char)c)&&((unsigned char)c<0200))
-@d xisupper(c) (isupper((unsigned char)c)&&((unsigned char)c<0200))
+@d xisspace(c) (isspace((eight_bits)c)&&((eight_bits)c<0200))
+@d xisupper(c) (isupper((eight_bits)c)&&((eight_bits)c<0200))
 @z
 
 @x l.166
