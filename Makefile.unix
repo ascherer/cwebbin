@@ -239,11 +239,11 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 all: ctangle cweave wmerge fullmanual
 
 cautiously: ctangle
-	$(CP) common.$(EXTENSION) SAVEcommon.$(EXTENSION)
+	$(MAKE) SAVEcommon.$(EXTENSION)
 	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 	diff common.$(EXTENSION) SAVEcommon.$(EXTENSION)
 	$(RM) SAVEcommon.$(EXTENSION)
-	$(CP) ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
+	$(MAKE) SAVEctangle.$(EXTENSION)
 	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 	diff ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
 	$(RM) SAVEctangle.$(EXTENSION)
