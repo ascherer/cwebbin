@@ -249,7 +249,7 @@ Section 74.
 @y
   else flag_change=1;
   if (*(*argv+1)=='d')
-    if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>;
+    if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
 @z
 
 Section 75.
