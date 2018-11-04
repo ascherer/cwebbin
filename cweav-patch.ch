@@ -170,13 +170,13 @@ p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 
 2018 17 October 2018 AS updated version number [2018].
 ------------------------------------------------------------------------------
-@x l.30
+@x l.33
 \def\title{CWEAVE (Version 3.64)}
 @y
 \def\title{CWEAVE (Version 3.64 [CWEBbin 2018])}
 @z
 
-@x l.34
+@x l.37
   \centerline{(Version 3.64)}
 @y
   \centerline{(Version 3.64 [CWEBbin 2018])}
@@ -196,7 +196,7 @@ z
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
 @z
 
-@x l.4496
+@x l.4644
 @** Index.
 @y
 @** Version information.  The {\mc AMIGA} operating system provides the

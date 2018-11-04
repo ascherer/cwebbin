@@ -6,19 +6,19 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.120
+@x l.121
 @d max_bytes 90000 /* the number of bytes in identifiers,
 @y
 @d max_bytes 1000000 /* the number of bytes in identifiers,
 @z
 
-@x l.112
+@x l.123
 @d max_names 4000 /* number of identifiers, strings, section names;
 @y
 @d max_names 10239 /* number of identifiers, strings, section names;
 @z
 
-@x l.124
+@x l.125
 @d max_sections 2000 /* greater than the total number of sections */
 @d hash_size 353 /* should be prime */
 @d buf_size 100 /* maximum length of input line, plus one */
@@ -28,7 +28,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @d buf_size 1000 /* maximum length of input line, plus one */
 @z
 
-@x l.131
+@x l.132
 @d max_refs 20000 /* number of cross-references; must be less than 65536 */
 @d max_toks 20000 /* number of symbols in \CEE/ texts being parsed;
 @y
@@ -36,13 +36,13 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @d max_toks 65535 /* number of symbols in \CEE/ texts being parsed;
 @z
 
-@x l.134
+@x l.135
 @d max_texts 4000 /* number of phrases in \CEE/ texts being parsed;
 @y
 @d max_texts 10239 /* number of phrases in \CEE/ texts being parsed;
 @z
 
-@x l.136
+@x l.137
 @d max_scraps 2000 /* number of tokens in \CEE/ texts being parsed */
 @y
 @d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
@@ -69,7 +69,7 @@ Parse C++ string prefixes L, U, u, u8.
   }
 @z
 
-@x l.1324
+@x l.1364
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -99,7 +99,7 @@ CWeave indents declarations after old-style function definitions.  With the
 `-i' option they will come out flush left.  You won't see any difference if
 you use the ANSI-style function definitions.
 
-@x l.2432
+@x l.2540
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp); big_app(indent); app(indent);
@@ -116,7 +116,7 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
 }
 @z
 
-@x l.2537
+@x l.2640
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
@@ -167,7 +167,7 @@ yet present.  Here is a simple implementation.  The purpose is to suppress
 the extra space between local variable declarations and the first statement
 in a function block.
 
-@x l.2562
+@x l.2665
 else if (cat1==stmt || cat1==function) {
   big_app1(pp); big_app(big_force);
   big_app1(pp+1); reduce(pp,2,cat1,-1,41);
@@ -181,7 +181,7 @@ else if (cat1==stmt || cat1==function) {
 }
 @z
 
-@x l.2608
+@x l.2713
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);

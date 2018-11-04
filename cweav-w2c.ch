@@ -1,7 +1,6 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
-
 @x l.32
 \def\title{CWEAVE (Version 3.64)}
 \def\topofcontents{\null\vfill
@@ -46,7 +45,6 @@ is modified.
 @d banner "This is CWEAVE, Version 3.64"
 @z
 
-
 Section 3.
 
 @x l.107 - Add Web2C version to banner.
@@ -55,13 +53,6 @@ Section 3.
   if (show_banner) {
      printf("%s%s\n", banner, versionstring); /* print a ``banner line'' */
   }
-@z
-
-@x l.112 - 'use' print_text(), used nowhere else
-  return wrap_up(); /* and exit gracefully */
-@y
-  if (0) print_text(text_ptr);
-  return wrap_up(); /* and exit gracefully */
 @z
 
 Section 6.
@@ -114,44 +105,4 @@ Section 38.
 @x l.682 - Add declaration for versionstring.
 #include <ctype.h> /* definition of |isalpha|, |isdigit| and so on */
 @y
-@z
-
-Section 169.
-
-@x l.3096 -- rename local var, not to shadow param
-{ scrap_pointer k; /* pointer into |scrap_info| */
-  if (tracing==2) {
-    printf("\n%d:",n);
-    for (k=scrap_base; k<=lo_ptr; k++) {
-      if (k==pp) putxchar('*'); else putxchar(' ');
-      if (k->mathness %4 ==  yes_math) putchar('+');
-      else if (k->mathness %4 ==  no_math) putchar('-');
-      print_cat(k->cat);
-      if (k->mathness /4 ==  yes_math) putchar('+');
-      else if (k->mathness /4 ==  no_math) putchar('-');
-@y
-{ scrap_pointer k_l; /* pointer into |scrap_info| */
-  if (tracing==2) {
-    printf("\n%d:",n);
-    for (k_l=scrap_base; k_l<=lo_ptr; k_l++) {
-      if (k_l==pp) putxchar('*'); else putxchar(' ');
-      if (k_l->mathness %4 ==  yes_math) putchar('+');
-      else if (k_l->mathness %4 ==  no_math) putchar('-');
-      print_cat(k_l->cat);
-      if (k_l->mathness /4 ==  yes_math) putchar('+');
-      else if (k_l->mathness /4 ==  no_math) putchar('-');
-@z
-
-Section 226.
-
-@x l.4309 Use binary mode for output files
-  if ((idx_file=fopen(idx_file_name,"w"))==NULL)
-@y
-  if ((idx_file=fopen(idx_file_name,"wb"))==NULL)
-@z
-
-@x l.4324 Use binary mode for output files
-  if ((scn_file=fopen(scn_file_name,"w"))==NULL)
-@y
-  if ((scn_file=fopen(scn_file_name,"wb"))==NULL)
 @z

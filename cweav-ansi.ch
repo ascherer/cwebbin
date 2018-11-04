@@ -14,7 +14,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @y
 @z
 
-@x l.73
+@x l.78
 @ We predeclare several standard system functions here instead of including
 their system header files, because the names of the header files are not as
 standard as the names of the functions. (For example, some \CEE/ environments
@@ -36,7 +36,7 @@ of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
 #include <string.h>
 @z
 
-@x l.94
+@x l.99
 int main (ac, av)
 int ac; /* argument count */
 char **av; /* argument values */
@@ -46,19 +46,28 @@ int ac, /* argument count */
 char **av@t\2\2@>) /* argument values */
 @z
 
-@x l.107
+@x l.108
   if (show_banner) printf(banner); /* print a ``banner line'' */
 @y
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
 @z
 
-@x l.139
+@x l.112 - 'use' print_text(), used nowhere else
+  return wrap_up(); /* and exit gracefully */
+@y
+#ifdef DEAD_CODE
+  if (0) print_text(text_ptr);
+#endif
+  return wrap_up(); /* and exit gracefully */
+@z
+
+@x l.144
 @i common.h
 @y
 @i comm-foo.h
 @z
 
-@x l.226
+@x l.234
 typedef struct xref_info {
   sixteen_bits num; /* section number plus zero or |def_flag| */
   struct xref_info *xlink; /* pointer to the previous cross-reference */
@@ -71,13 +80,13 @@ typedef struct xref_info {
 } xref_info;
 @z
 
-@x l.244
+@x l.255
 xref_ptr=xmem; name_dir->xref=(char*)xmem; xref_switch=0; section_xref_switch=0;
 @y
 xref_ptr=xmem; name_dir->xref=(void *)xmem; xref_switch=0; section_xref_switch=0;
 @z
 
-@x l.263
+@x l.276
 void
 new_xref(p)
 name_pointer p;
@@ -87,13 +96,13 @@ new_xref(
 name_pointer p)
 @z
 
-@x l.279
+@x l.292
   append_xref(m); xref_ptr->xlink=q; p->xref=(char*)xref_ptr;
 @y
   append_xref(m); xref_ptr->xlink=q; p->xref=(void *)xref_ptr;
 @z
 
-@x l.294
+@x l.307
 void
 new_section_xref(p)
 name_pointer p;
@@ -103,13 +112,13 @@ new_section_xref(
 name_pointer p)
 @z
 
-@x l.306
+@x l.319
   if (r==xmem) p->xref=(char*)xref_ptr;
 @y
   if (r==xmem) p->xref=(void *)xref_ptr;
 @z
 
-@x l.314
+@x l.327
 void
 set_file_flag(p)
 name_pointer p;
@@ -119,18 +128,18 @@ set_file_flag(
 name_pointer p)
 @z
 
-@x l.323
+@x l.336
   p->xref = (char *)xref_ptr;
 @y
   p->xref = (void *)xref_ptr;
 @z
 
-@x l.336
+@x l.346
 typedef sixteen_bits token;
 @y
 @z
 
-@x l.359
+@x l.372
 int names_match(p,first,l,t)
 name_pointer p; /* points to the proposed match */
 char *first; /* position of first character of string */
@@ -144,7 +153,7 @@ size_t l, /* length of identifier */
 eight_bits t@t\2\2@>) /* desired |ilk| */
 @z
 
-@x l.370
+@x l.383
 void
 init_p(p,t)
 name_pointer p;
@@ -156,13 +165,13 @@ name_pointer p,
 eight_bits t)
 @z
 
-@x l.375
+@x l.388
   p->ilk=t; p->xref=(char*)xmem;
 @y
   p->ilk=t; p->xref=(void *)xmem;
 @z
 
-@x l.378
+@x l.391
 void
 init_node(p)
 name_pointer p;
@@ -172,19 +181,19 @@ init_node(
 name_pointer p)
 @z
 
-@x l.382
+@x l.395
   p->xref=(char*)xmem;
 @y
   p->xref=(void *)xmem;
 @z
 
-@x l.563
+@x l.601
 void   skip_limbo();
 @y
 static void skip_limbo(void);
 @z
 
-@x l.566
+@x l.604
 void
 skip_limbo() {
 @y
@@ -192,7 +201,7 @@ static void
 skip_limbo(void) {
 @z
 
-@x l.588
+@x l.626
 unsigned
 skip_TeX() /* skip past pure \TEX/ code */
 @y
@@ -200,13 +209,20 @@ static unsigned
 skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
-@x l.656
+@x l.684
+#include <stdlib.h> /* definition of |exit| */
+@y
+#include <stddef.h> /* type definition of |ptrdiff_t| */
+#include <stdlib.h> /* definition of |exit| */
+@z
+
+@x l.697
 eight_bits get_next();
 @y
 static eight_bits get_next(void);
 @z
 
-@x l.659
+@x l.700
 eight_bits
 get_next() /* produces the next input token */
 {@+eight_bits c; /* the current character */
@@ -225,26 +241,26 @@ get_next(void) /* produces the next input token */
                         else compress(minus_gt); } } break;
 @z
 
-@x l.795
+@x l.796
   case '!': if (*loc=='=') compress(not_eq); break;
 @y
   case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
-@x l.800
+@x l.801
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
   while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
       || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
 @z
 
-@x l.835
+@x l.836
     *id_loc++='$'; *id_loc++=toupper(*loc); loc++;
 @y
     *id_loc++='$'; *id_loc++=toupper((unsigned char)*loc); loc++;
 @z
 
-@x l.870
+@x l.871
     if (c=='\\') if (loc>=limit) continue;
       else if (++id_loc<=section_text_end) {
         *id_loc = '\\'; c=*loc++;
@@ -256,13 +272,13 @@ get_next(void) /* produces the next input token */
       } } }
 @z
 
-@x l.934
+@x l.972
 void skip_restricted();
 @y
 void skip_restricted(void);
 @z
 
-@x l.937
+@x l.975
 void
 skip_restricted()
 @y
@@ -270,13 +286,13 @@ void
 skip_restricted(void)
 @z
 
-@x l.987
+@x l.1025
 void phase_one();
 @y
 static void phase_one(void);
 @z
 
-@x l.990
+@x l.1028
 void
 phase_one() {
 @y
@@ -284,13 +300,13 @@ static void
 phase_one(void) {
 @z
 
-@x l.1038
+@x l.1077
 void C_xref();
 @y
 static void C_xref(eight_bits);
 @z
 
-@x l.1041
+@x l.1080
 void
 C_xref( spec_ctrl ) /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl;
@@ -300,13 +316,13 @@ C_xref(@t\1\1@> /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl@t\2\2@>)
 @z
 
-@x l.1066
+@x l.1105
 void outer_xref();
 @y
 static void outer_xref(void);
 @z
 
-@x l.1069
+@x l.1108
 void
 outer_xref() /* extension of |C_xref| */
 @y
@@ -314,19 +330,19 @@ static void
 outer_xref(void) /* extension of |C_xref| */
 @z
 
-@x l.1168
+@x l.1208
             else lhs->xref=(char*)q->xlink;
 @y
             else lhs->xref=(void *)q->xlink;
 @z
 
-@x l.1227
+@x l.1267
 void section_check();
 @y
 static void section_check(name_pointer);
 @z
 
-@x l.1230
+@x l.1270
 void
 section_check(p)
 name_pointer p; /* print anomalies in subtree |p| */
@@ -336,7 +352,7 @@ section_check(
 name_pointer p) /* print anomalies in subtree |p| */
 @z
 
-@x l.1283
+@x l.1323
 void
 flush_buffer(b,per_cent,carryover)
 char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
@@ -348,13 +364,13 @@ char *b, /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 boolean per_cent,boolean carryover@t\2\2@>)
 @z
 
-@x l.1299
+@x l.1339
   if (b<out_ptr) strncpy(out_buf+1,b+1,out_ptr-b);
 @y
   if (b<out_ptr) strncpy(out_buf+1,b+1,(size_t)(out_ptr-b));
 @z
 
-@x l.1312
+@x l.1352
 void
 finish_line() /* do this at the end of a line */
 @y
@@ -362,7 +378,7 @@ static void
 finish_line(void) /* do this at the end of a line */
 @z
 
-@x l.1344
+@x l.1384
 void
 out_str(s) /* output characters from |s| to end of string */
 char *s;
@@ -372,13 +388,13 @@ out_str(@t\1\1@> /* output characters from |s| to end of string */
 const char*s@t\2\2@>)
 @z
 
-@x l.1363
+@x l.1403
 void break_out();
 @y
 static void break_out(void);
 @z
 
-@x l.1366
+@x l.1406
 void
 break_out() /* finds a way to break the output line */
 @y
@@ -386,7 +402,7 @@ static void
 break_out(void) /* finds a way to break the output line */
 @z
 
-@x l.1401
+@x l.1441
 void
 out_section(n)
 sixteen_bits n;
@@ -396,7 +412,7 @@ out_section(
 sixteen_bits n)
 @z
 
-@x l.1415
+@x l.1455
 void
 out_name(p,quote_xalpha)
 name_pointer p;
@@ -408,7 +424,7 @@ name_pointer p,
 boolean quote_xalpha)
 @z
 
-@x l.1442
+@x l.1485
 void
 copy_limbo()
 @y
@@ -416,7 +432,7 @@ static void
 copy_limbo(void)
 @z
 
-@x l.1477
+@x l.1520
 eight_bits
 copy_TeX()
 @y
@@ -424,13 +440,13 @@ static eight_bits
 copy_TeX(void)
 @z
 
-@x l.1506
+@x l.1549
 int copy_comment();
 @y
 static int copy_comment(boolean,int);
 @z
 
-@x l.1509
+@x l.1552
 int copy_comment(is_long_comment,bal) /* copies \TEX/ code in comments */
 boolean is_long_comment; /* is this a traditional \CEE/ comment? */
 int bal; /* brace balance */
@@ -448,7 +464,7 @@ else { if (c=='\\' && *loc!='@@') {
   if (phase==2) app_tok(*(loc++))@; else loc++; } }
 @z
 
-@x l.1734
+@x l.1784
 void
 print_cat(c) /* symbolic printout of a category */
 eight_bits c;
@@ -458,13 +474,13 @@ print_cat(@t\1\1@> /* symbolic printout of a category */
 eight_bits c@t\2\2@>)
 @z
 
-@x l.1787
+@x l.1788
   printf(cat_name[c]);
 @y
   fputs(cat_name[c],stdout);
 @z
 
-@x l.2062
+@x l.2139
 void
 print_text(p) /* prints a token list for debugging; not used in |main| */
 text_pointer p;
@@ -484,7 +500,7 @@ text_pointer p@t\2\2@>)
 #endif /* |DEAD_CODE| */
 @z
 
-@x l.2180
+@x l.2257
 @d app(a) *(tok_ptr++)=a
 @d app1(a) *(tok_ptr++)=tok_flag+(int)((a)->trans-tok_start)
 @y
@@ -492,7 +508,7 @@ text_pointer p@t\2\2@>)
 @d app1(a) *(tok_ptr++)=(token)(tok_flag+(int)((a)->trans-tok_start))
 @z
 
-@x l.2187
+@x l.2264
 void
 app_str(s)
 char *s;
@@ -502,7 +518,7 @@ app_str(
 const char *s)
 @z
 
-@x l.2194
+@x l.2271
 void
 big_app(a)
 token a;
@@ -512,7 +528,7 @@ big_app(
 token a)
 @z
 
-@x l.2211
+@x l.2288
 void
 big_app1(a)
 scrap_pointer a;
@@ -522,7 +538,7 @@ big_app1(
 scrap_pointer a)
 @z
 
-@x l.2312
+@x l.2415
 token_pointer
 find_first_ident(p)
 text_pointer p;
@@ -532,7 +548,7 @@ find_first_ident(
 text_pointer p)
 @z
 
-@x l.2339
+@x l.2447
 void
 make_reserved(p) /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p;
@@ -542,13 +558,13 @@ make_reserved(@t\1\1@> /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p@t\2\2@>)
 @z
 
-@x l.2356
+@x l.2464
   (name_dir+(sixteen_bits)(tok_value%id_flag))->ilk=raw_int;
 @y
   (name_dir+(ptrdiff_t)(tok_value%id_flag))->ilk=raw_int;
 @z
 
-@x l.2370
+@x l.2478
 void
 make_underlined(p)
 /* underline the entry for the first identifier in |p->trans| */
@@ -560,13 +576,13 @@ make_underlined(@t\1\1@>
 scrap_pointer p@t\2\2@>)
 @z
 
-@x l.2388
+@x l.2496
 void  underline_xref();
 @y
 static void underline_xref(name_pointer);
 @z
 
-@x l.2391
+@x l.2499
 void
 underline_xref(p)
 name_pointer p;
@@ -576,13 +592,13 @@ underline_xref(
 name_pointer p)
 @z
 
-@x l.2423
+@x l.2531
   p->xref=(char*)xref_ptr;
 @y
   p->xref=(void *)xref_ptr;
 @z
 
-@x l.2868
+@x l.3004
 void
 reduce(j,k,c,d,n)
 scrap_pointer j;
@@ -596,7 +612,7 @@ eight_bits c,
 short d, short n)
 @z
 
-@x l.2898
+@x l.3030
 void
 squash(j,k,c,d,n)
 scrap_pointer j;
@@ -610,7 +626,31 @@ eight_bits c,
 short d, short n)
 @z
 
-@x l.2994
+@x l.3097 -- rename local var, not to shadow param
+{ scrap_pointer k; /* pointer into |scrap_info| */
+  if (tracing==2) {
+    printf("\n%d:",n);
+    for (k=scrap_base; k<=lo_ptr; k++) {
+      if (k==pp) putxchar('*'); else putxchar(' ');
+      if (k->mathness %4 ==  yes_math) putchar('+');
+      else if (k->mathness %4 ==  no_math) putchar('-');
+      print_cat(k->cat);
+      if (k->mathness /4 ==  yes_math) putchar('+');
+      else if (k->mathness /4 ==  no_math) putchar('-');
+@y
+{ scrap_pointer k_l; /* pointer into |scrap_info| */
+  if (tracing==2) {
+    printf("\n%d:",n);
+    for (k_l=scrap_base; k_l<=lo_ptr; k_l++) {
+      if (k_l==pp) putxchar('*'); else putxchar(' ');
+      if (k_l->mathness %4 ==  yes_math) putchar('+');
+      else if (k_l->mathness %4 ==  no_math) putchar('-');
+      print_cat(k_l->cat);
+      if (k_l->mathness /4 ==  yes_math) putchar('+');
+      else if (k_l->mathness /4 ==  no_math) putchar('-');
+@z
+
+@x l.3126
 text_pointer
 translate() /* converts a sequence of scraps */
 @y
@@ -618,7 +658,7 @@ static text_pointer
 translate(void) /* converts a sequence of scraps */
 @z
 
-@x l.3059
+@x l.3191
 void
 C_parse(spec_ctrl) /* creates scraps from \CEE/ tokens */
   eight_bits spec_ctrl;
@@ -628,19 +668,19 @@ C_parse(@t\1\1@> /* creates scraps from \CEE/ tokens */
   eight_bits spec_ctrl@t\2\2@>)
 @z
 
-@x l.3301
+@x l.3302
 case not_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
 @y
 case non_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
 @z
 
-@x l.3421
+@x l.3422
 void app_cur_id();
 @y
 void app_cur_id(boolean);
 @z
 
-@x l.3424
+@x l.3425
 void
 app_cur_id(scrapping)
 boolean scrapping; /* are we making this into a scrap? */
@@ -650,7 +690,7 @@ app_cur_id(@t\1\1@>
 boolean scrapping@t\2\2@>) /* are we making this into a scrap? */
 @z
 
-@x l.3313
+@x l.3450
 text_pointer
 C_translate()
 @y
@@ -658,7 +698,7 @@ static text_pointer
 C_translate(void)
 @z
 
-@x l.3335
+@x l.3480
 void
 outer_parse() /* makes scraps from \CEE/ tokens and comments */
 @y
@@ -666,7 +706,7 @@ static void
 outer_parse(void) /* makes scraps from \CEE/ tokens and comments */
 @z
 
-@x l.3439
+@x l.3586
 void
 push_level(p) /* suspends the current level */
 text_pointer p;
@@ -676,7 +716,7 @@ push_level(@t\1\1@> /* suspends the current level */
 text_pointer p@t\2\2@>)
 @z
 
-@x l.3459
+@x l.3606
 void
 pop_level()
 @y
@@ -684,7 +724,7 @@ static void
 pop_level(void)
 @z
 
-@x l.3481
+@x l.3628
 eight_bits
 get_output() /* returns the next token of output */
 @y
@@ -692,13 +732,13 @@ static eight_bits
 get_output(void) /* returns the next token of output */
 @z
 
-@x l.3499
+@x l.3646
   return(a);
 @y
   return((eight_bits)a);
 @z
 
-@x l.3523
+@x l.3665
 void
 output_C() /* outputs the current token list */
 @y
@@ -706,13 +746,13 @@ static void
 output_C(void) /* outputs the current token list */
 @z
 
-@x l.3544
+@x l.3688
 void make_output();
 @y
 static void make_output(void);
 @z
 
-@x l.3547
+@x l.3691
 void
 make_output() /* outputs the equivalents of tokens */
 {
@@ -724,19 +764,19 @@ make_output(void) /* outputs the equivalents of tokens */
   eight_bits a=0, /* current output byte */
 @z
 
-@x
+@x l.3894
   else if (b!='|') out(b)@;
 @y
   else { if (b!='|') out(b)@;
 @z
 
-@x
+@x l.3900
   }
 @y
   } }
 @z
 
-@x l.3927
+@x l.3928
     if (b=='\'' || b=='"')
       if (delim==0) delim=b;
       else if (delim==b) delim=0;
@@ -746,7 +786,7 @@ make_output(void) /* outputs the equivalents of tokens */
       else if (delim==b) delim=0; }
 @z
 
-@x l.3951
+@x l.3952
 void phase_two();
 @y
 static void phase_two(void);
@@ -802,7 +842,7 @@ void footnote();
 static void footnote(sixteen_bits);
 @z
 
-@x l.4101
+@x l.4249
 void
 footnote(flag) /* outputs section cross-references */
 sixteen_bits flag;
@@ -812,13 +852,13 @@ footnote(@t\1\1@> /* outputs section cross-references */
 sixteen_bits flag@t\2\2@>)
 @z
 
-@x l.4146
+@x l.4295
 void phase_three();
 @y
 static void phase_three(void);
 @z
 
-@x l.4146
+@x l.4298
 void
 phase_three() {
 @y
@@ -826,13 +866,13 @@ static void
 phase_three(void) {
 @z
 
-@x l.4238
+@x l.4386
     if (cur_name->xref!=(char*)xmem) {
 @y
     if (cur_name->xref!=(void *)xmem) {
 @z
 
-@x l.4292
+@x l.4440
 collate[0]=0;
 strcpy(collate+1," \1\2\3\4\5\6\7\10\11\12\13\14\15\16\17");
 /* 16 characters + 1 = 17 */
@@ -898,13 +938,13 @@ strcpy((char *)collate+213,
 /* 16 characters + 213 = 229 */
 @z
 
-@x l.4327
+@x l.4475
 void  unbucket();
 @y
 static void unbucket(eight_bits);
 @z
 
-@x l.4330
+@x l.4478
 void
 unbucket(d) /* empties buckets having depth |d| */
 eight_bits d;
@@ -914,13 +954,13 @@ unbucket(@t\1\1@> /* empties buckets having depth |d| */
 eight_bits d@t\2\2@>)
 @z
 
-@x l.4447
+@x l.4595
 void section_print();
 @y
 static void section_print(name_pointer);
 @z
 
-@x l.4450
+@x l.4598
 void
 section_print(p) /* print all section names in subtree |p| */
 name_pointer p;
@@ -930,7 +970,7 @@ section_print(@t\1\1@> /* print all section names in subtree |p| */
 name_pointer p@t\2\2@>)
 @z
 
-@x l.4468
+@x l.4616
 @ Because on some systems the difference between two pointers is a |long|
 rather than an |int|, we use \.{\%ld} to print these quantities.
 
@@ -948,7 +988,7 @@ void
 print_stats(void) {
 @z
 
-@x l.4496
+@x l.4644
 @** Index.
 @y
 @** Function declarations.  Here are declarations---conforming to
