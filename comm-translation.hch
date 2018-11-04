@@ -37,7 +37,7 @@ typedef const char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
 #endif
 #define get_string(n) AppStrings[n].as_Str
 @#
-#include "cweb.h" /* This header file contains all translated strings */
+#include "catalogs/cweb.h" /* This header file contains all translated strings */
 @#
 struct AppString
 {

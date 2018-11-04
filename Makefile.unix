@@ -88,7 +88,7 @@ MCHANGES= wmerg-foo.ch
 EXTENSION= cxx
 
 # This list of options works for all UNIX compilers tested.
-OPT = -I$(CATINCLUDE) -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
+OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)

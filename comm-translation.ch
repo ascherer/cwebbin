@@ -309,7 +309,7 @@ typedef const char * STRPTR; /* ditto, but \UNIX/ says it's signed. */
 #define STRINGARRAY 1 /* include the string array |AppStrings| for real */
 #define get_string(n) AppStrings[n].as_Str /* reference string $n$ */
 @#
-#include "cweb.h" /* This header file contains all translated strings */
+#include "catalogs/cweb.h" /* This header file contains all translated strings */
 
 @ Version~2.1 or higher of the {\mc AMIGA} operating system (represented as
 internal version~38) will replace the complete set of terminal output strings

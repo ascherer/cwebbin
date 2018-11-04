@@ -57,7 +57,7 @@ typedef const char*STRPTR;
 #define STRINGARRAY 1 
 #define get_string(n) AppStrings[n].as_Str 
 
-#include "cweb.h" 
+#include "catalogs/cweb.h" 
 
 /*:87*/
 #line 59 "common.w"
