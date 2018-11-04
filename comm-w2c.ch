@@ -225,12 +225,6 @@ Debugging output is always written to |stderr|, and begins with the string
 
 Section 71.
 
-@x l.456 of COMM-ANSI.CH - use a define for /dev/null
-  strcpy(change_file_name,"/dev/null");
-@y
-  strcpy(change_file_name,DEV_NULL);
-@z
-
 @x l.1302 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y

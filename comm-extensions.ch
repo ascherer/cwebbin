@@ -249,7 +249,9 @@ used, when no changes are desired.
 @x l.455 of COMM-ANSI.CH
   strcpy(change_file_name,"/dev/null");
 @y
-#ifdef _DEV_NULL
+#if defined DEV_NULL
+  strcpy(change_file_name,DEV_NULL);
+#elif defined _DEV_NULL
   strcpy(change_file_name,_DEV_NULL);
 #else
   strcpy(change_file_name,"/dev/null");
