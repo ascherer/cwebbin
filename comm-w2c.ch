@@ -2,23 +2,32 @@
 % This file is in the Public Domain.
 
 @x l.20
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
+\def\topofcontents{\null\vfill
+  \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
+    {\ttitlefont CWEAVE}}
+  \vskip 15pt
+  \centerline{(Version 3.64)}
+  \vfill}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64k)}
+\def\topofcontents{\null\vfill
+  \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
+    {\ttitlefont CWEAVE}}
+  \vskip 15pt
+  \centerline{(Version 3.64k)}
+  \vfill}
 @z
 
 Section 1.
 
-This collides with our own "cweb.h" that is used for translations.
-FIXME: Will have to adapt one way or the other.
-
-%@x l.63
-%@<Predeclaration of procedures@>@/
-%@y
-%#include "cweb.h"
-%@<Predeclaration of procedures@>@/
-%@z
+@x l.63
+@<Predeclaration of procedures@>@/
+@y
+#include "cweb.h"
+@<Predeclaration of procedures@>@/
+@z
 
 Section 2.
 

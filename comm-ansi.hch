@@ -38,7 +38,7 @@ typedef uint16_t sixteen_bits;
 @d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @z
 
-@x common.h l.65
+@x l.65
 @d xisalpha(c) (isalpha(c)&&((eight_bits)c<0200))
 @d xisdigit(c) (isdigit(c)&&((eight_bits)c<0200))
 @d xisspace(c) (isspace(c)&&((eight_bits)c<0200))
