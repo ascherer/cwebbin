@@ -247,7 +247,7 @@ get_next(void) /* produces the next input token */
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
   while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
-      || isxalpha(*loc) || ishigh(*loc));
+      || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
 @z
 
 @x l.1196

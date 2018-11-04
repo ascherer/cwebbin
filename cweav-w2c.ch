@@ -116,44 +116,6 @@ Section 38.
 @y
 @z
 
-Section 45.
-
-@x l.800
-  while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
-@y
-  while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc) || isxalpha(*loc) || ishigh(*loc));
-@z
-
-@x l.835
-    *id_loc++='$'; *id_loc++=toupper(*loc); loc++;
-@y
-    *id_loc++='$'; *id_loc++=toupper((unsigned char)*loc); loc++;
-@z
-
-Section 48.
-
-@x l.870
-    if (c=='\\') if (loc>=limit) continue;
-      else if (++id_loc<=section_text_end) {
-        *id_loc = '\\'; c=*loc++;
-      }
-@y
-    if (c=='\\') {
-      if (loc>=limit) continue;
-      else if (++id_loc<=section_text_end) {
-        *id_loc = '\\'; c=*loc++;
-      }
-    }
-@z
-
-Section 93.
-
-@x l.1608
-  if (phase==2) app_tok(*(loc++))@; else loc++;
-@y
-  {if (phase==2) app_tok(*(loc++))@; else loc++;}
-@z
-
 Section 169.
 
 @x l.3096 -- rename local var, not to shadow param
@@ -178,31 +140,6 @@ Section 169.
       print_cat(k_l->cat);
       if (k_l->mathness /4 ==  yes_math) putchar('+');
       else if (k_l->mathness /4 ==  no_math) putchar('-');
-@z
-
-Section 202.
-
-@x l.3927
-    if (b=='\'' || b=='"')
-      if (delim==0) delim=b;
-      else if (delim==b) delim=0;
-@y
-    if (b=='\'' || b=='"') {
-      if (delim==0) delim=b;
-      else if (delim==b) delim=0;
-    }
-@z
-
-Section 212.
-
-@x l.4092
-        if (*out_ptr=='6') out_ptr-=2;
-        else if (*out_ptr=='7') *out_ptr='Y';
-@y
-      {
-        if (*out_ptr=='6') out_ptr-=2;
-        else if (*out_ptr=='7') *out_ptr='Y';
-      }
 @z
 
 Section 226.

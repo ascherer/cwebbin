@@ -231,6 +231,19 @@ get_next(void) /* produces the next input token */
   case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
+@x l.800
+  while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
+@y
+  while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
+      || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
+@z
+
+@x l.835
+    *id_loc++='$'; *id_loc++=toupper(*loc); loc++;
+@y
+    *id_loc++='$'; *id_loc++=toupper((unsigned char)*loc); loc++;
+@z
+
 @x l.870
     if (c=='\\') if (loc>=limit) continue;
       else if (++id_loc<=section_text_end) {
