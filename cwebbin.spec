@@ -44,8 +44,8 @@ Release: 13
 
 %define texmf /opt/texlive/texmf-local
 
-%global texlive-source %{getenv:HOME}/Work/tmp/texlive-source/
-%global cwebdir %{?texlive-source}texk/web2c/cwebdir
+%global texlive_source %{getenv:HOME}/Work/tmp/texlive-source/
+%global cwebdir %{?texlive_source}texk/web2c/cwebdir
 
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
@@ -75,7 +75,7 @@ upstream, i.e., in 'texlive-source'.
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 %else
-%{!?with_texlive:%{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix}
+%{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix
 %endif
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
@@ -106,7 +106,7 @@ upstream, i.e., in 'texlive-source'.
 %{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 
 %if %{with texlive}
-%{__install} -d %buildroot}%{cwebdir}/catalogs
+%{__install} -d %{buildroot}%{cwebdir}/catalogs
 %{__install} -m 644 *-w2c.ch %{buildroot}%{cwebdir}
 %{__install} -m 644 catalogs/cweb.h %{buildroot}%{cwebdir}/catalogs
 %{__install} -m 644 texinputs/* %{buildroot}%{cwebdir}
