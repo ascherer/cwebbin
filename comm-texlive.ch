@@ -1,7 +1,9 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
-@x l.20
+FIXME: Apply a more generic @VERSION@ scheme.
+
+x l.20 and l.174 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
@@ -9,7 +11,7 @@
   \vskip 15pt
   \centerline{(Version 3.64)}
   \vfill}
-@y
+y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64k)}
 \def\topofcontents{\null\vfill
@@ -18,18 +20,22 @@
   \vskip 15pt
   \centerline{(Version 3.64k)}
   \vfill}
-@z
+z
 
 Section 1.
 
-@x l.63
+We don't use "cweb.h"!?
+
+x l.63
 @<Predeclaration of procedures@>@/
-@y
+y
 #include "cweb.h"
 @<Predeclaration of procedures@>@/
-@z
+z
 
 Section 2.
+
+Avoid type clash with kpathsea.
 
 @x l.25 of COMM-ANSI.CH
 typedef bool boolean;
@@ -40,7 +46,7 @@ typedef bool boolean;
 
 Section 4.
 
-@x l.93
+@x l.93 and l.27 of COMM-TRANSLATION.CH
   @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
@@ -74,7 +80,7 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394 plus COMM-TRANSLATION.CH
+@x l.394 and l.78 of COMM-TRANSLATION.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -90,7 +96,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
 }
 @z
 
-@x l.402
+@x l.402 and l.84 of COMM-TRANSLATION.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(get_string(MSG_FATAL_CO19_2), change_file_name);
 @y
@@ -134,8 +140,8 @@ The directories to be searched for come from three sources:
 @ The simple file searching is replaced by `path searching' mechanism
 that \Kpathsea/ library provides.
 
-We set |kpse_program_name| to a |"cweb"|.  This means if the
-variable |CWEBINPUTS.cweb| is present in \.{texmf.cnf} (or |CWEBINPUTS_cweb|
+We set |kpse_program_name| to |"cweb"|.  This means if the variable
+|CWEBINPUTS.cweb| is present in \.{texmf.cnf} (or |CWEBINPUTS_cweb|
 in the environment) its value will be used as the search path for
 filenames.  This allows different flavors of \.{CWEB} to have
 different search paths.
@@ -264,6 +270,8 @@ Section 74.
 Section 75.
 
 FIXME: Need new translation strings.
+On the other hand, 'usage()' pulls English texts from "help.h" outside cwebdir/
+anyway. So, no translation at this time.
 
 @x l.252 of COMM-TRANSLATION.CH
 if (program==ctangle) fatal(get_string(MSG_FATAL_CO75_2),"");
@@ -289,23 +297,26 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
-FIXME: Resolve conceptional naming conflict about "cweb.h".
+FIXME: Do we need this extra header?
+CWEBbin uses a modified "comm-foo.h" instead of "common.h".
 
-@x l.1418
+x l.1418
 @** Index.
-@y
+y
 @** External functions.  In order to allow for type checking we create a
 header file \.{cweb.h} containing the declaration of all functions defined
 in \.{common.w} and used in \.{ctangle.w} and \.{cweave.w} or vice versa.
 
-%(cweb.h@>=
+@(cweb.h@>=
 @=/* Prototypes for functions, either@>
 @= * declared in common.w and used in ctangle.w and cweave.w, or@>
 @= * used in common.w and declared in ctangle.w and cweave.w. */@>
 %@<External functions@>@;
-@c
 extern const char *versionstring;
 
+@x l.1418
+@** Index.
+@y
 @** System dependent changes.
 
 @ Modules for dealing with help messages and version info.
