@@ -1,0 +1,11 @@
+% Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
+% This file is in the Public Domain.
+
+@x l.30 of COMM-ANSI.HCH
+
+#include <stdbool.h>
+@y
+#include <kpathsea/kpathsea.h>
+@#
+#include <stdbool.h>
+@z

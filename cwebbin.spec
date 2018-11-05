@@ -108,6 +108,7 @@ upstream, i.e., in 'texlive-source'.
 %if %{with texlive}
 %{__install} -d %{buildroot}%{cwebdir}/catalogs
 %{__install} -m 644 *-w2c.ch %{buildroot}%{cwebdir}
+%{__install} -m 644 comm-foo.h %{buildroot}%{cwebdir}
 %{__install} -m 644 catalogs/cweb.h %{buildroot}%{cwebdir}/catalogs
 %{__install} -m 644 texinputs/* %{buildroot}%{cwebdir}
 %{__install} -m 644 cwebinputs/* %{buildroot}%{cwebdir}
@@ -126,6 +127,7 @@ upstream, i.e., in 'texlive-source'.
 %if %{with texlive}
 %files texlive
 %{cwebdir}/catalogs/cweb.h
+%{cwebdir}/comm-foo.h
 %{cwebdir}/comm-w2c.ch
 %{cwebdir}/ctang-w2c.ch
 %{cwebdir}/cweav-w2c.ch

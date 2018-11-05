@@ -168,7 +168,7 @@ COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
 	comm-patch.ch comm-translation.ch comm-translation.hch \
-	comm-texlive.ch
+	comm-texlive.ch comm-texlive.hch
 CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
 	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
@@ -341,7 +341,7 @@ $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch comm-texlive.ch
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-output.hch comm-i18n.hch
+	comm-output.hch comm-i18n.hch comm-texlive.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
