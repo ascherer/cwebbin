@@ -76,6 +76,7 @@ upstream, i.e., in 'texlive-source'.
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 %else
 %{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix
+%{__sed} -e "s/lation.hch .*-texlive.hch/lation.hch/" -i Makefile.unix
 %endif
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
