@@ -44,6 +44,9 @@ Release: 13
 
 %define texmf /opt/texlive/texmf-local
 
+%global texlive-source %{getenv:HOME}/Work/tmp/texlive-source/
+%global cwebdir %{?texlive-source}texk/web2c/cwebdir
+
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{texmf} \\\
@@ -103,7 +106,6 @@ upstream, i.e., in 'texlive-source'.
 %{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 
 %if %{with texlive}
-%global cwebdir texk/web2c/cwebdir
 %{__install} -d %buildroot}%{cwebdir}/catalogs
 %{__install} -m 644 *-w2c.ch %{buildroot}%{cwebdir}
 %{__install} -m 644 catalogs/cweb.h %{buildroot}%{cwebdir}/catalogs
