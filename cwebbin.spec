@@ -56,7 +56,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %prep
 %autosetup -c -a1
 
-%{!?with_texlive:%{__sed} -e "s/lation.ch .*-w2c.ch/lation.ch/" -i Makefile.unix}
+%{!?with_texlive:%{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix}
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
