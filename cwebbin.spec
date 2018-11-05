@@ -53,19 +53,27 @@ Release: 13
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
+%package texlive
+Summary: Integrate %{name} with Web2c/TeXLive.
+BuildArch: noarch
+
+%description texlive
+The 'CWEBbin' package is used as an interface layer between the original CWEB
+sources and the TeXLive ecosystem. By collecting all active changefiles in a
+small set of '*-w2c.ch' files, almost no changes to the texlive-sources are
+necessary. Only a few extra files are added. Infrastructure adaptions are made
+upstream, i.e., in 'texlive-source'.
+
 %prep
 %autosetup -c -a1
 
-# TODO: Set up a package 'texlive' (noarch, all) for publication
-# on texlive-source with replacements in texk/web2c/cwebdir/ for
-# the *-w2c.ch files and additions necessary for compilation
-# (catalogs/cweb.h) and contributions (macros, manual).
 %if %{with texlive}
 %{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 %else
 %{!?with_texlive:%{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix}
+%endif
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
@@ -78,8 +86,6 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
-%endif
-
 %endif
 
 %build
@@ -96,6 +102,15 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__install} -m 644 po/de/cweb.mo %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
 %{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 
+%if %{with texlive}
+%global cwebdir texk/web2c/cwebdir
+%{__install} -d %buildroot}%{cwebdir}/catalogs
+%{__install} -m 644 *-w2c.ch %{buildroot}%{cwebdir}
+%{__install} -m 644 catalogs/cweb.h %{buildroot}%{cwebdir}/catalogs
+%{__install} -m 644 texinputs/* %{buildroot}%{cwebdir}
+%{__install} -m 644 cwebinputs/* %{buildroot}%{cwebdir}
+%endif
+
 %files
 %defattr(-,root,root,-)
 %{_bindir}/*
@@ -106,6 +121,20 @@ and Donald Knuth for Literate Programming in C/C++.
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
+%if %{with texlive}
+%files texlive
+%{cwebdir}/catalogs/cweb.h
+%{cwebdir}/comm-w2c.ch
+%{cwebdir}/ctang-w2c.ch
+%{cwebdir}/cweav-w2c.ch
+%{cwebdir}/c++1xlib.w
+%{cwebdir}/iso_types.w
+%{cwebdir}/Xcwebmac.tex
+%{cwebdir}/dcwebmac.tex
+%{cwebdir}/fcwebmac.tex
+%{cwebdir}/icwebmac.tex
+%endif
+
 %post
 %{__texhash}
 
@@ -115,6 +144,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %changelog
 * Fri Nov 09 2018 Andreas Scherer <https://ascherer.github.io>
 - Add internationalization (i18n)
+
+* Mon Nov 05 2018 Andreas Scherer <https://ascherer.github.io>
+- Create package 'texlive' for integration with TeXLive
 
 * Sun Feb 19 2017 Andreas Scherer <https://ascherer.github.io>
 - Update for the 2017 sources
