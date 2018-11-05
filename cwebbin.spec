@@ -56,7 +56,17 @@ and Donald Knuth for Literate Programming in C/C++.
 %prep
 %autosetup -c -a1
 
+# TODO: Set up a package 'texlive' (noarch, all) for publication
+# on texlive-source with replacements in texk/web2c/cwebdir/ for
+# the *-w2c.ch files and additions necessary for compilation
+# (catalogs/cweb.h) and contributions (macros, manual).
+%if %{with texlive}
+%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
+%{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
+%{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
+%else
 %{!?with_texlive:%{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix}
+
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
@@ -68,6 +78,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
+%endif
+
 %endif
 
 %build
