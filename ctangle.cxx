@@ -400,7 +400,7 @@ extern sixteen_bits section_count;
 #line 672 "ctang-foo.ch"
 
 const char Version[]= "$VER: CTangle 3.64 [CWEBbin 2018] ("
- __DATE__ ", " __TIME__ ")\n";
+__DATE__ ", " __TIME__ ")\n";
 
 /*:96*/
 #line 69 "ctangle.w"
