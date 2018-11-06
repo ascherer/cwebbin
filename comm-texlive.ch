@@ -36,16 +36,6 @@ Section 4.
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
 @z
 
-Section 5.
-
-@x l.103
-#include <ctype.h>
-@y
-#define CWEB
-#include "cpascal.h"
-#include <ctype.h>
-@z
-
 Section 9.
 
 @x l.181
@@ -101,6 +91,9 @@ Section 22.
 @#
 typedef bool boolean;
 #define HAVE_BOOLEAN
+@#
+#define CWEB
+#include "cpascal.h"
 #include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 #include "help.h"
 
