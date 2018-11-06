@@ -124,36 +124,37 @@ p13	10 May 1995	AS	Separate change files for the various
 				elements of this patch to facilitate
 				maintenance.  Aggregated with Guntermann's
 				TIE processor.
-p14 11 March 1997 AS  Updated for patch level [p14].
+p14	11 March 1997	AS	Updated for patch level [p14].
 
 Version 3.42 --- Don Knuth, Silvio Levy, August 1998
 
-p15 13 August 1998 AS Updated for patch level [p15].
+p15	13 August 1998	AS	Updated for patch level [p15].
 
 Version 3.43 --- Don Knuth, Silvio Levy, September 1998
 
-p16 14 October 1998 AS Updated for patch level [p16].
+p16	14 October 1998	AS	Updated for patch level [p16].
 
 Version 3.5 --- Don Knuth, Silvio Levy, December 1999
 
-p17 31 December 1999 AS Updated for patch level [p17].
+p17	31 December 1999 AS	Updated for patch level [p17].
 
 Version 3.6 --- Don Knuth, Silvio Levy, May 2000
 Version 3.61 --- Don Knuth, Silvio Levy, July 2000
 
-p18 25 July 2000 AS Updated for patch level [p18].
+p18	25 July 2000	AS	Updated for patch level [p18].
 
 Version 3.62 --- Don Knuth, Silvio Levy, September 2000
 
-p19 2 Januar 2001 AS Updated for patch level [p19].
+p19	02 Januar 2001	AS	Updated for patch level [p19].
 
 Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
-p20 9 March 2002 AS Updated for patch level [p20].
-p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
-22p 18 August 2011 AS GCC patches for patch level [22p].
+p20	09 March 2002	AS	Updated for patch level [p20].
+p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
+22p	18 August 2011	AS	GCC patches for patch level [22p].
 
-2018 17 October 2018 AS updated version number [2018].
+2018	17 October 2018	AS	Updated version number [2018].
+	06 November 2018 AS	Integration with TeXLive.
 ------------------------------------------------------------------------------
 @x l.27
 \def\title{CTANGLE (Version 3.64)}
@@ -194,7 +195,7 @@ other operating systems as well.
 
 @<Glob...@>=
 const char Version[] = "$VER: CTangle 3.64 [CWEBbin 2018] ("@|
-  @= @>__DATE__@= @>", "@= @>__TIME__@= @>")\n";
+  __DATE__@= @>", "@= @>__TIME__@= @>")\n";
 
 @** Index.
 @z

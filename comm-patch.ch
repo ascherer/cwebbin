@@ -143,30 +143,31 @@ Version 3.4c --- Don Knuth, Silvio Levy, June 1995
 	13 Jun 1995	AS	Updated for COMMON.W 3.4c.
 	15 Jun 1995	AS	Bug in temporary output mechanism fixed.
 
-p14 11 March 1997 AS  Updated for patch level [p14].
+p14	11 March 1997	AS	Updated for patch level [p14].
 
 Version 3.42 --- Don Knuth, Silvio Levy, August 1998
 
-p15 13 August 1998 AS Updated for patch level [p15].
-p16 14 October 1998 AS Updated for patch level [p16].
+p15	13 August 1998	AS	Updated for patch level [p15].
+p16	14 October 1998	AS	Updated for patch level [p16].
 
 Version 3.5 --- Don Knuth, Silvio Levy, December 1999
 
-p17 31 December 1999 AS Updated for patch level [p17].
+p17	31 December 1999 AS	Updated for patch level [p17].
 
 Version 3.6 --- Don Knuth, Silvio Levy, May 2000
 Version 3.61 --- Don Knuth, Silvio Levy, July 2000
 
-p18 25 July 2000 AS Updated for patch level [p18].
-p19 2 Januar 2001 AS Updated for patch level [p19].
+p18	25 July 2000	AS	Updated for patch level [p18].
+p19	02 Januar 2001	AS	Updated for patch level [p19].
 
-Version 3.64 --- Don Knuth, Silvio Ley, February 2002
+Version 3.64 --- Don Knuth, Silvio Levy, February 2002
 
-p20 9 March 2002 AS Update for patch level [p20].
-p21 29 October 2005 AS ANSI C++ patches to patch level [p21].
-22p 18 August 2011 AS GCC patches to patch level [22p].
+p20	09 March 2002	AS	Update for patch level [p20].
+p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
+22p	18 August 2011	AS	GCC patches to patch level [22p].
 
-2018 17 October 2018 AS updated version number [2018].
+2018	17 October 2018	AS	Updated version number [2018].
+	06 November 2018 AS	Integration with TeXLive.
 ------------------------------------------------------------------------------
 @x l.20
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
