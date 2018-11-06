@@ -22,17 +22,6 @@ y
   \vfill}
 z
 
-Section 1.
-
-We don't use "cweb.h"!?
-
-x l.63
-@<Predeclaration of procedures@>@/
-y
-#include "cweb.h"
-@<Predeclaration of procedures@>@/
-z
-
 Section 2.
 
 Avoid type clash with kpathsea.
