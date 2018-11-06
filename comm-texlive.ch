@@ -22,6 +22,11 @@ y
   \vfill}
 z
 
+@x l.74 and l.25 of COMM-ANS.CH
+typedef bool boolean;
+@y
+@z
+
 Section 4.
 
 @x l.93 and l.27 of COMM-TRANSLATION.CH
@@ -93,6 +98,8 @@ Section 22.
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
 @y
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
+@#
+typedef bool boolean;
 #define HAVE_BOOLEAN
 #include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 #include "help.h"

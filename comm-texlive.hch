@@ -1,11 +1,18 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
+@x l.30 and l.24 of COMM-ANSI.HCH
+typedef bool boolean;
+@y
+@z
+
 @x l.34 of COMM-ANSI.HCH
 #include <stdio.h>
 @y
 #include <stdio.h>
 @#
+typedef bool boolean;
+#define HAVE_BOOLEAN
 #include <kpathsea/kpathsea.h>
 extern const char *versionstring;
 @z
