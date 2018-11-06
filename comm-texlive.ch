@@ -22,17 +22,6 @@ y
   \vfill}
 z
 
-Section 2.
-
-Avoid type clash with kpathsea.
-
-@x l.25 of COMM-ANSI.CH
-typedef bool boolean;
-@y
-typedef bool boolean;
-#define HAVE_BOOLEAN
-@z
-
 Section 4.
 
 @x l.93 and l.27 of COMM-TRANSLATION.CH
@@ -103,8 +92,9 @@ Section 22.
 @x l.472
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
 @y
-#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
+#define HAVE_BOOLEAN
+#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 #include "help.h"
 
 @ The \.{ctangle} and \.{cweave} programs from the original \.{CWEB}
