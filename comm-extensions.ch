@@ -242,8 +242,8 @@ An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
 An omitted change file argument means that |"/dev/null"| or---on non-\UNIX/
-systems the contents of the compile-time variable |_DEV_NULL|---should be
-used, when no changes are desired.
+systems the contents of the compile-time variable |DEV_NULL| (TeXLive) or
+|_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
 @x l.455 of COMM-ANSI.CH

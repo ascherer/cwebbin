@@ -1,3 +1,5 @@
+Changes for COMMON.H by Andreas Scherer, November 6, 2018.
+
 This set of changes converts the COMMON.H module into ANSI-C and C++ code.
 All functions are declared in prototypical form.  At several places
 additional casts are introduced and `char *' is replaced by `void *', the
@@ -7,7 +9,7 @@ This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-@x
+@x l.24
 First comes general stuff:
 @y
 @i iso_types.w
@@ -113,7 +115,7 @@ extern int change_line; /* number of current line in change file */
 extern int change_depth; /* where \.{@@y} originated during a change */
 @z
 
-@x l.153
+@x l.154
 extern reset_input(); /* initialize to read the web file and change file */
 extern get_line(); /* inputs the next line */
 extern check_complete(); /* checks that all changes were picked up */
@@ -123,12 +125,12 @@ extern void check_complete(void); /* checks that all changes were picked up */
 extern void reset_input(void); /* initialize to read the web file and change file */
 @z
 
-@x l.159
+@x l.160
 typedef unsigned short sixteen_bits;
 @y
 @z
 
-@x l.192
+@x l.193
 extern void common_init();
 @y
 extern void print_stats(void);

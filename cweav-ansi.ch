@@ -1,3 +1,5 @@
+Changes for CWEAVE.W by Andreas Scherer, November 6, 2018.
+
 This set of changes converts the CWEAVE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
@@ -52,7 +54,7 @@ char **av@t\2\2@>) /* argument values */
   if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
 @z
 
-@x l.112 - 'use' print_text(), used nowhere else
+@x l.113 - 'use' print_text(), used nowhere else
   return wrap_up(); /* and exit gracefully */
 @y
 #ifdef DEAD_CODE
@@ -233,7 +235,7 @@ get_next(void) /* produces the next input token */
   eight_bits c; /* the current character */
 @z
 
-@x l.780
+@x l.781
     else if (*loc=='>') if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
                         else compress(minus_gt); break;
 @y
@@ -491,7 +493,7 @@ print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
 text_pointer p@t\2\2@>)
 @z
 
-@x
+@x l.2160
   fflush(stdout);
 }
 @y
@@ -792,7 +794,7 @@ void phase_two();
 static void phase_two(void);
 @z
 
-@x l.3954
+@x l.3955
 void
 phase_two() {
 @y
@@ -800,13 +802,13 @@ static void
 phase_two(void) {
 @z
 
-@x l.4074
+@x l.4075
 void finish_C();
 @y
 static void finish_C(boolean);
 @z
 
-@x l.4077
+@x l.4078
 void
 finish_C(visible) /* finishes a definition or a \CEE/ part */
   boolean visible; /* nonzero if we should produce \TEX/ output */
@@ -836,7 +838,7 @@ finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
     }
 @z
 
-@x l.4098
+@x l.4246
 void footnote();
 @y
 static void footnote(sixteen_bits);

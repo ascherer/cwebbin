@@ -1,3 +1,5 @@
+Changes for CTANGLE.W by Andreas Scherer, November 6, 2018.
+
 This set of changes converts the CTANGLE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  At several
@@ -14,7 +16,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @y
 @z
 
-@x l.69
+@x l.72
 @ We predeclare several standard system functions here instead of including
 their system header files, because the names of the header files are not as
 standard as the names of the functions. (For example, some \CEE/ environments
@@ -36,7 +38,7 @@ of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
 #include <string.h>
 @z
 
-@x l.89
+@x l.92
 int main (ac, av)
 int ac;
 char **av;
@@ -58,13 +60,13 @@ char **av)
 @i comm-foo.h
 @z
 
-@x l.175
+@x l.178
 name_dir->equiv=(char *)text_info; /* the undefined section has no replacement text */
 @y
 name_dir->equiv=(void *)text_info; /* the undefined section has no replacement text */
 @z
 
-@x l.181
+@x l.184
 int names_match(p,first,l)
 name_pointer p; /* points to the proposed match */
 char *first; /* position of first character of string */
@@ -79,7 +81,7 @@ eight_bits t@t\2\2@>) /* not used by \.{TANGLE} */
 {@+(void)t;
 @z
 
-@x l.196
+@x l.199
 void
 init_node(node)
 name_pointer node;
@@ -89,13 +91,13 @@ init_node(
 name_pointer node)
 @z
 
-@x l.200
+@x l.203
     node->equiv=(char *)text_info;
 @y
     node->equiv=(void *)text_info;
 @z
 
-@x l.202
+@x l.205
 void
 init_p() {}
 @y
@@ -103,7 +105,7 @@ void
 init_p(name_pointer p,eight_bits t) {@+(void)p;@+(void)t;@+}
 @z
 
-@x l.258
+@x l.261
 void
 store_two_bytes(x)
 sixteen_bits x;
@@ -113,7 +115,7 @@ store_two_bytes(
 sixteen_bits x)
 @z
 
-@x l.334
+@x l.337
 void
 push_level(p) /* suspends the current level */
 name_pointer p;
@@ -123,7 +125,7 @@ push_level(@t\1\1@> /* suspends the current level */
 name_pointer p@t\2\2@>)
 @z
 
-@x l.353
+@x l.356
 void
 pop_level(flag) /* do this when |cur_byte| reaches |cur_end| */
 int flag; /* |flag==0| means we are in |output_defs| */
@@ -133,7 +135,7 @@ pop_level(@t\1\1@> /* do this when |cur_byte| reaches |cur_end| */
 int flag@t\2\2@>) /* |flag==0| means we are in |output_defs| */
 @z
 
-@x l.389
+@x l.392
 void
 get_output() /* sends next token to |out_char| */
 @y
@@ -141,13 +143,13 @@ static void
 get_output(void) /* sends next token to |out_char| */
 @z
 
-@x l.423
+@x l.426
   if ((a+name_dir)->equiv!=(char *)text_info) push_level(a+name_dir);
 @y
   if ((a+name_dir)->equiv!=(void *)text_info) push_level(a+name_dir);
 @z
 
-@x l.479
+@x l.482
 void
 flush_buffer() /* writes one line to output file */
 @y
@@ -155,13 +157,13 @@ static void
 flush_buffer(void) /* writes one line to output file */
 @z
 
-@x l.531
+@x l.534
 void phase_two();
 @y
 static void phase_two(void);
 @z
 
-@x l.534
+@x l.537
 void
 phase_two () {
 @y
@@ -169,13 +171,13 @@ static void
 phase_two (void) {
 @z
 
-@x l.600
+@x l.603
 void output_defs();
 @y
 static void output_defs(void);
 @z
 
-@x l.603
+@x l.606
 void
 output_defs()
 @y
@@ -183,13 +185,13 @@ static void
 output_defs(void)
 @z
 
-@x l.646
+@x l.649
 static void out_char();
 @y
 static void out_char(eight_bits);
 @z
 
-@x l.649
+@x l.652
 static void
 out_char(cur_char)
 eight_bits cur_char;
@@ -205,7 +207,7 @@ case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
 case non_eq: C_putc('!'); C_putc('='); out_state=normal; break;
 @z
 
-@x l.807
+@x l.814
 eight_bits
 skip_ahead() /* skip to next control code */
 @y
@@ -213,7 +215,7 @@ static eight_bits
 skip_ahead(void) /* skip to next control code */
 @z
 
-@x l.842
+@x l.849
 int skip_comment(is_long_comment) /* skips over comments */
 boolean is_long_comment;
 @y
@@ -221,7 +223,7 @@ static int skip_comment(@t\1\1@> /* skips over comments */
 boolean is_long_comment@t\2\2@>)
 @z
 
-@x l.893
+@x l.901
 eight_bits
 get_next() /* produces the next input token */
 @y
@@ -250,7 +252,7 @@ get_next(void) /* produces the next input token */
       || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
 @z
 
-@x l.1196
+@x l.1200
 void
 scan_repl(t) /* creates a replacement text */
 eight_bits t;
@@ -260,7 +262,7 @@ scan_repl(@t\1\1@> /* creates a replacement text */
 eight_bits t@t\2\2@>)
 @z
 
-@x l.1232 -- rename local var, not to shadow previous local
+@x l.1235 -- rename local var, not to shadow previous local
 {int a=id_lookup(id_first,id_loc,0)-name_dir; app_repl((a / 0400)+0200);
   app_repl(a % 0400);}
 @y
@@ -268,18 +270,18 @@ eight_bits t@t\2\2@>)
   app_repl(a_l % 0400);}
 @z
 
-@x l.1320
+@x l.1323
         c=toupper(*id_first)-'A'+10;
 @y
         c=toupper((unsigned char)*id_first)-'A'+10;
 @z
 
-@x l.1325
+@x l.1328
         c=16*c+toupper(*id_first)-'A'+10;
 @y
         c=16*c+toupper((unsigned char)*id_first)-'A'+10;
 @z
-@x l.1349
+@x l.1361
 void
 scan_section()
 @y
@@ -287,19 +289,19 @@ static void
 scan_section(void)
 @z
 
-@x l.1437
+@x l.1449
 else if (p->equiv==(char *)text_info) p->equiv=(char *)cur_text;
 @y
 else if (p->equiv==(void *)text_info) p->equiv=(void *)cur_text;
 @z
 
-@x l.1449
+@x l.1461
 void phase_one();
 @y
 static void phase_one(void);
 @z
 
-@x l.1452
+@x l.1464
 void
 phase_one() {
 @y
@@ -307,13 +309,13 @@ static void
 phase_one(void) {
 @z
 
-@x l.1467
+@x l.1479
 void skip_limbo();
 @y
 static void skip_limbo(void);
 @z
 
-@x l.1470
+@x l.1482
 void
 skip_limbo()
 @y
@@ -321,13 +323,13 @@ static void
 skip_limbo(void)
 @z
 
-@x l.1516
+@x l.1528
       strncpy(translit[i-0200],beg,loc-beg);
 @y
       strncpy(translit[i-0200],beg,(size_t)(loc-beg));
 @z
 
-@x l.1521
+@x l.1533
 @ Because on some systems the difference between two pointers is a |long|
 but not an |int|, we use \.{\%ld} to print these quantities.
 
@@ -345,7 +347,7 @@ void
 print_stats(void) {
 @z
 
-@x l.1538
+@x l.1550
 @** Index.
 @y
 @** Function declarations.  Here are declarations---conforming to
