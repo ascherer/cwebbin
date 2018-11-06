@@ -6,6 +6,7 @@
 #include <stdbool.h>
 @y
 #include <kpathsea/kpathsea.h>
+extern const char *versionstring;
 @#
 #include <stdbool.h>
 @z

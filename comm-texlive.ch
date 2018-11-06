@@ -297,22 +297,7 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
-FIXME: Do we need this extra header?
-CWEBbin uses a modified "comm-foo.h" instead of "common.h".
-
-x l.1418
-@** Index.
-y
-@** External functions.  In order to allow for type checking we create a
-header file \.{cweb.h} containing the declaration of all functions defined
-in \.{common.w} and used in \.{ctangle.w} and \.{cweave.w} or vice versa.
-
-@(cweb.h@>=
-@=/* Prototypes for functions, either@>
-@= * declared in common.w and used in ctangle.w and cweave.w, or@>
-@= * used in common.w and declared in ctangle.w and cweave.w. */@>
-%@<External functions@>@;
-extern const char *versionstring;
+FIXME: Yet more version strings to translate.
 
 @x l.1418
 @** Index.
