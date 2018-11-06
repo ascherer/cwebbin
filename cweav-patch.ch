@@ -184,10 +184,13 @@ p21 29 October 2005 AS ANSI C++ patches for patch level [p21].
 
 Activate this, if only the changed modules should be printed.
 
+This change cannot be applied when `tie' is used
+(TOC file can not be typeset).
+
 x l.51
 \let\maybe=\iftrue
 y
-\let\maybe=\iffalse
+\let\maybe=\iffalse % print only changed modules
 z
 
 @x l.64

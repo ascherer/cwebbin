@@ -19,15 +19,6 @@ y
   \vfill}
 z
 
-This change can not be applied when `tie' is  used
-(TOC file can not be typeset).
-
-x l.48
-\let\maybe=\iftrue
-y
-\let\maybe=\iffalse % print only sections that change
-z
-
 Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.

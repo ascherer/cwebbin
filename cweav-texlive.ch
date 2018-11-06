@@ -23,15 +23,6 @@ y
   \vfill}
 z
 
-This change cannot be applied when `tie' is  used
-(TOC file can not be typeset).
-
-x l.51
-\let\maybe=\iftrue
-y
-\let\maybe=\iffalse % print only changed modules
-z
-
 Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.

@@ -1,8 +1,6 @@
-Changes for CTANGLE.W by Andreas Scherer, November 3, 2018.
+Changes for CTANGLE.W by Andreas Scherer, November 6, 2018.
 
-This set of changes adapts the buffer sizes to COMM-FOO.H
-
-This change file requires CTANG-PATCH.CH and CTANG-ANSI.CH to be applied.
+This set of changes adapts the buffer sizes to those in COMM-FOO.H
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
