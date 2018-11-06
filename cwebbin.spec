@@ -75,7 +75,7 @@ upstream, i.e., in 'texlive-source'.
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 %{__make} comm-foo.h
-%{__sed} -e "s/OPT =/& -I%{texlive_source}/" -i Makefile.unix
+%{__sed} -e "s|OPT =|& -I%{texlive_source}|" -i Makefile.unix
 %else
 %{__sed} -e "s/lation.ch .*-texlive.ch/lation.ch/" -i Makefile.unix
 %{__sed} -e "s/lation.hch .*-texlive.hch/lation.hch/" -i Makefile.unix
