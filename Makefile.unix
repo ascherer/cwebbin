@@ -79,7 +79,7 @@ MCHANGES= wmerg-foo.ch
 # much stricter checking of type conversions and module interfaces.
 # For highest portability, all of the extra features of C++ are
 # avoided in the CWEB system, thus using something like C--.
-EXTENSION= cxx
+EXTENSION= c
 
 # This list of options works for all UNIX compilers tested.
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
@@ -122,7 +122,7 @@ MAKE = make -f Makefile.unix
 TIE = tie
 
 # What C compiler are you using?
-CC = g++ # gcc cc
+CC = gcc # g++ # gcc cc
 
 # RM and CP are used below in case rm and cp are aliased
 RM= /bin/rm
