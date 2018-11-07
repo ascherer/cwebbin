@@ -22,7 +22,7 @@ y
   \vfill}
 z
 
-@x l.74 and l.25 of COMM-ANS.CH
+@x l.74 and l.25 of COMM-ANSI.CH
 typedef bool boolean;
 @y
 @z
@@ -84,10 +84,10 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
 
 Section 22.
 
-@x l.472
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
+@x l.472 and l.69 of COMM-EXTENSIONS.CH
+#define DEVICE_SEPARATOR separators[2]
 @y
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
+#define DEVICE_SEPARATOR separators[2]
 @#
 typedef bool boolean;
 #define HAVE_BOOLEAN
