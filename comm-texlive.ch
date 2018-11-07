@@ -29,8 +29,8 @@ typedef bool boolean;
 
 Section 4.
 
-@x l.93 and l.27 of COMM-TRANSLATION.CH
-  @<Initialize pointers@>@;
+@x l.93
+  @<Initialize pointers@>;
 @y
   @<Initialize pointers@>@;
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
@@ -53,29 +53,29 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394 and l.78 of COMM-TRANSLATION.CH
+@x l.394
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
-       fatal(get_string(MSG_FATAL_CO19_1), web_file_name);
+       fatal("! Cannot open input file ", web_file_name);
 }
 @y
 if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
     (web_file=fopen(found_filename,"r"))==NULL) {
-  fatal(get_string(MSG_FATAL_CO19_1), web_file_name);
+  fatal("! Cannot open input file ", web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(web_file_name, found_filename);
   free(found_filename);
 }
 @z
 
-@x l.402 and l.84 of COMM-TRANSLATION.CH
+@x l.402
 if ((change_file=fopen(change_file_name,"r"))==NULL)
-       fatal(get_string(MSG_FATAL_CO19_2), change_file_name);
+       fatal("! Cannot open change file ", change_file_name);
 @y
 if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
     (change_file=fopen(found_filename,"r"))==NULL) {
-  fatal(get_string(MSG_FATAL_CO19_2), change_file_name);
+  fatal("! Cannot open change file ", change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(change_file_name, found_filename);
   free(found_filename);
@@ -252,10 +252,15 @@ FIXME: Need new translation strings.
 On the other hand, 'usage()' pulls English texts from "help.h" outside cwebdir/
 anyway. So, no translation at this time.
 
-@x l.252 of COMM-TRANSLATION.CH
-if (program==ctangle) fatal(get_string(MSG_FATAL_CO75_2),"");
-else fatal(get_string(MSG_FATAL_CO75_4),"");
+@x l.1354
+if (program==ctangle)
+  fatal(
+"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+   ,"");
 @.Usage:@>
+else fatal(
+"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
 @y
 if (program==ctangle) {
   fprintf(stderr, "ctangle: Need one to three file arguments.\n");
