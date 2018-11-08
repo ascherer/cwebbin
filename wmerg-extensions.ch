@@ -9,10 +9,10 @@ This change file requires WMERG-PATCH.CH, WMERG-ANSI.CH to be applied.
 
 For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 
-@x l.14
-#include <stdio.h>
+@x l.18
+#include <ctype.h> /* definition of |isalpha|, |isdigit| and so on */
 @y
-#include <stdio.h>
+#include <ctype.h> /* definition of |isalpha|, |isdigit| and so on */
 @#
 #ifdef SEPARATORS
 char separators[]=SEPARATORS;
