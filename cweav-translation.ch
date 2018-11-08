@@ -335,19 +335,15 @@ reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
   }
 @z
 
-@x l.4310 Use binary mode for output files
-  if ((idx_file=fopen(idx_file_name,"w"))==NULL)
+@x l.4311
     fatal("! Cannot open index file ",idx_file_name);
 @y
-  if ((idx_file=fopen(idx_file_name,"wb"))==NULL)
     fatal(get_string(MSG_FATAL_CW225_1),idx_file_name);
 @z
 
-@x l.4325 Use binary mode for output files
-  if ((scn_file=fopen(scn_file_name,"w"))==NULL)
+@x l.4326
     fatal("! Cannot open section file ",scn_file_name);
 @y
-  if ((scn_file=fopen(scn_file_name,"wb"))==NULL)
     fatal(get_string(MSG_FATAL_CW225_2),scn_file_name);
 @z
 

@@ -27,6 +27,12 @@ if (no_xref) {
 }
 @z
 
+@x l.4310 Use binary mode for output files
+  if ((idx_file=fopen(idx_file_name,"w"))==NULL)
+@y
+  if ((idx_file=fopen(idx_file_name,"wb"))==NULL)
+@z
+
 @x l.4314
     @<Tell about changed sections@>; finish_line(); finish_line();
 @y
@@ -39,6 +45,12 @@ if (no_xref) {
 @y
   @<Do the first pass of sorting@>@;
   @<Sort and output the index@>@;
+@z
+
+@x l.4325 Use binary mode for output files
+  if ((scn_file=fopen(scn_file_name,"w"))==NULL)
+@y
+  if ((scn_file=fopen(scn_file_name,"wb"))==NULL)
 @z
 
 @x l.4329
