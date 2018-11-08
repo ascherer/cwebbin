@@ -37,14 +37,6 @@ common_init(void)
 @d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @z
 
-@x l.166
-#include <stdio.h>
-@y
-#include <stdbool.h>
-#include <stdint.h>
-#include <stdio.h>
-@z
-
 @x l.172
 int input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
@@ -104,13 +96,6 @@ typedef uint16_t sixteen_bits;
 int get_line() /* inputs the next line */
 @y
 boolean get_line(void) /* inputs the next line */
-@z
-
-@x l.470
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@y
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
 @z
 
 @x l.563
@@ -500,4 +485,17 @@ static int input_ln(FILE *);@/
 static int web_strcmp(char *,int,char *,int);@/
 static void check_change(void);@/
 static void prime_the_change_buffer(void);
+@z
+
+@x l.1418
+@** Index.
+@y
+@** Standard C library interfaces.
+
+@<Include files@>=
+#include <stddef.h> /* type definition of |ptrdiff_t| */
+#include <stdbool.h> /* type definition of |bool| */
+#include <stdint.h> /* type definition of |uint8_t| et al. */
+
+@** Index.
 @z

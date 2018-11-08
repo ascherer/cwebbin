@@ -37,7 +37,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 12
+Release: 13
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -69,12 +69,17 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %build
 %{__touch} *.cxx
-%{?_l_:%{__ln_s} %{_l_}cweb.h catalogs/cweb.h}
 %{__make} boot cautiously all
 
 %install
 %{__rm} -rf %{buildroot}
+
 %make_install
+
+%{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES \
+	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
+%{__install} -m 644 po/de/cweb.mo %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
+%{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 
 %files
 %defattr(-,root,root,-)
@@ -83,6 +88,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{_libdir}/cweb/*
 %{_mandir}/man1/*
 %{texmf}/tex/plain/cweb/*
+%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
+%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %post
 %{__texhash}
@@ -91,6 +98,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__texhash}
 
 %changelog
+* Fri Nov 09 2018 Andreas Scherer <https://ascherer.github.io>
+- Add internationalization (i18n)
+
 * Sun Feb 19 2017 Andreas Scherer <https://ascherer.github.io>
 - Update for the 2017 sources
 

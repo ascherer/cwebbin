@@ -1,0 +1,22 @@
+Changes for COMMON.H by Andreas Scherer, November 9, 2018.
+
+This set of changes translates all string values written by the CWEB module
+COMMON.H in case of errors or information requests with the help of 'gettext'
+and the 'libintl' library.
+
+For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
+
+@x l.35
+@ @<Include files@>=
+@y
+@ @<Include files@>=
+#include <libintl.h>
+#include <locale.h>
+@z
+
+@x l.120
+@d confusion(s) fatal("! This can't happen: ",s)
+@y
+@d _(STRING) gettext(STRING)
+@d confusion(s) fatal(_("! This can't happen: "),s)
+@z

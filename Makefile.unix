@@ -1,6 +1,6 @@
 # This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [2018] --- October 2018
+# Version 3.64 [2018] --- November 2018
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -47,7 +47,7 @@ BINDIR= /usr/bin
 # directory for GNU EMACS Lisp code (cweb.el goes here)
 EMACSDIR= /usr/share/emacs/site-lisp
 
-# directory for the language header file "cweb.h"
+# directory for the language header file "cweb.h" (obsolete)
 CATINCLUDE= ./catalogs
 
 # "$(CATLANGUAGE)cweb.h" is linked to "cweb.h"; it can be one of [dei]
@@ -171,14 +171,14 @@ ORIGINAL = $(SOURCES) prod.w \
 
 COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
-	comm-extensions.hch comm-memory.ch comm-memory.hch \
-	comm-newpage.ch comm-output.ch comm-output.hch comm-patch.ch \
-	comm-translation.ch comm-translation.hch
-CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-memory.ch \
+	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
+	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
+	comm-patch.ch comm-translation.ch comm-translation.hch
+CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-i18n.ch ctang-memory.ch \
 	ctang-newpage.ch ctang-output.ch ctang-patch.ch ctang-translation.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
-	cweav-newpage.ch cweav-memory.ch cweav-output.ch cweav-patch.ch \
-	cweav-translation.ch
+	cweav-i18n.ch cweav-newpage.ch cweav-memory.ch cweav-output.ch \
+	cweav-patch.ch cweav-translation.ch
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
@@ -194,12 +194,14 @@ EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/treeprint-ansi.ch examples/wc-ansi.ch \
 	examples/wordtest-ansi.ch
 
+I18N = po
+
 INCLUDE = cwebinputs
 
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(AREXX) $(EXAMPLES) $(INCLUDE) $(MACROS)
+	$(PATCH) $(AREXX) $(CATINCLUDE) $(EXAMPLES) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf
 
@@ -257,7 +259,7 @@ SAVEcommon.$(EXTENSION):
 common.$(EXTENSION): common.w $(CCHANGES)
 	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 
-common.o: common.$(EXTENSION) $(CATINCLUDE)/cweb.h
+common.o: common.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 
 ctangle: ctangle.o common.o
@@ -266,7 +268,7 @@ ctangle: ctangle.o common.o
 ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HPATCH)
 	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 
-ctangle.o: ctangle.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
+ctangle.o: ctangle.$(EXTENSION) $(HPATCH)
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 
 cweave: cweave.o common.o
@@ -275,7 +277,7 @@ cweave: cweave.o common.o
 cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HPATCH)
 	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
 
-cweave.o: cweave.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
+cweave.o: cweave.$(EXTENSION) $(HPATCH)
 	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
 
 wmerge: wmerge.$(EXTENSION)
@@ -285,8 +287,6 @@ wmerge.$(EXTENSION): examples/wmerge.w $(MCHANGES)
 	$(CTANGLE) examples/wmerge $(MCHANGES) wmerge.$(EXTENSION)
 
 boot:
-	if test ! -h $(CATINCLUDE)/cweb.h; \
-	then ln -s $(CATLANGUAGE)cweb.h $(CATINCLUDE)/cweb.h; fi
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o
@@ -344,18 +344,18 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-output.ch comm-translation.ch
+	comm-output.ch comm-i18n.ch
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-output.hch comm-translation.hch
+	comm-output.hch comm-i18n.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
-	ctang-output.ch ctang-translation.ch
+	ctang-output.ch ctang-i18n.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-output.ch cweav-translation.ch
+	cweav-output.ch cweav-i18n.ch
 	$(TIE) -c $@ $^
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	wmerg-extensions.ch wmerg-output.ch
@@ -366,7 +366,7 @@ $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
 	cweave.w cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
-	  *-foo.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
+	  *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
 install: all
@@ -417,6 +417,7 @@ remove:
 	- $(RM) $(EXAMPLES)
 	- $(RM) -r $(AREXX)
 	- $(RM) -r $(CATINCLUDE)
+	- $(RM) -r $(I18N)
 	- $(RM) -r $(INCLUDE)
 	- $(RM) -r $(MACROS)
 
