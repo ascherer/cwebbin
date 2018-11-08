@@ -58,6 +58,8 @@ instead of predeclaring the standard system functions |strlen|, |strcmp|,
 @^system dependencies@>
 @z
 
+One of the last long-standing bugs in CWEB; reported to DEK long ago.
+
 @x l.86
 @:caddr_t}{\bf caddr_t@>
 @y
