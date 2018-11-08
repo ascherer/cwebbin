@@ -69,12 +69,14 @@ int names_match(p,first,l)
 name_pointer p; /* points to the proposed match */
 char *first; /* position of first character of string */
 int l; /* length of identifier */
+{
 @y
 int names_match(@t\1\1@>
 name_pointer p, /* points to the proposed match */
 const char *first, /* position of first character of string */
 size_t l, /* length of identifier */
-eight_bits@t\2\2@>) /* not used by \.{TANGLE} */
+eight_bits t@t\2\2@>) /* not used by \.{TANGLE} */
+{@+(void)t;
 @z
 
 @x l.196
@@ -98,7 +100,7 @@ void
 init_p() {}
 @y
 void
-init_p(name_pointer,eight_bits) {}
+init_p(name_pointer p,eight_bits t) {@+(void)p;@+(void)t;@+}
 @z
 
 @x l.258
