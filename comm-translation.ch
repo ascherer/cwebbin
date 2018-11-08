@@ -13,12 +13,12 @@ and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.43
-\let\maybe=\iftrue
+@x l.46
+@** Introduction.  This file contains code common
 @y
-\let\maybe=\iftrue
+@i amiga_types.w
 
-@i "./cwebinputs/amiga_types.w"
+@** Introduction.  This file contains code common
 @z
 
 @x l.93
