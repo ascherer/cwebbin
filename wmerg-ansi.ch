@@ -141,7 +141,7 @@ check_complete(void) {
 @x l.491
 void  err_print();
 @y
-void  err_print(const char *);
+void err_print(const char *);
 @z
 
 @x l.495
