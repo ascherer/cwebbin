@@ -475,7 +475,7 @@ text_pointer p@t\2\2@>)
 @y
   fflush(stdout);
 }
-#endif /* DEAD_CODE */
+#endif /* |DEAD_CODE| */
 @z
 
 @x l.2180
