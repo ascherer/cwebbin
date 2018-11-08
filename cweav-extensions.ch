@@ -4,8 +4,6 @@ This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
 See `cwebmana.ch' for details about these new features.
 
-This change file requires CWEAV-PATCH.CH and CWEAV-ANSI.CH to be applied.
-
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 @x l.708
