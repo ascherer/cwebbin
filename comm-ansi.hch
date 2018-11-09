@@ -24,12 +24,12 @@ typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;
 @z
 
-@x l.36
-#include <stdio.h>
+@x l.35
+@ @<Include files@>=
 @y
+@ @<Include files@>=
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdio.h>
 @z
 
 @x l.47
