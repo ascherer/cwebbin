@@ -20,7 +20,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @y
   program=ctangle;
   setlocale(LC_ALL, "");
-  bindtextdomain("cweb", getenv("PWD"));
+  bindtextdomain("cweb", "/usr/share/locale/");
   textdomain("cweb");
 @z
 

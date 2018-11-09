@@ -20,7 +20,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @y
   program=cweave;
   setlocale(LC_ALL, "");
-  bindtextdomain("cweb", getenv("PWD"));
+  bindtextdomain("cweb", "/usr/share/locale/");
   textdomain("cweb");
 @z
 
