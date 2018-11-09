@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 1, 2018.
+Changes for COMMON.W by Andreas Scherer, November 9, 2018.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests with the help of 'gettext'
@@ -8,6 +8,16 @@ This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH,
 and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
+
+@x l.93
+  @<Initialize pointers@>;
+@y
+  setlocale(LC_ALL, "");
+  bindtextdomain("cweb", getenv("PWD"));
+  textdomain("cweb");
+@#
+  @<Initialize pointers@>@;
+@z
 
 @x l.184
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
