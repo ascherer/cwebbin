@@ -1,6 +1,6 @@
 # This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [2018] --- October 2018
+# Version 3.64 [2018] --- November 2018
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -47,7 +47,7 @@ BINDIR= /usr/bin
 # directory for GNU EMACS Lisp code (cweb.el goes here)
 EMACSDIR= /usr/share/emacs/site-lisp
 
-# directory for the language header file "cweb.h"
+# directory for the language header file "cweb.h" (obsolete)
 CATINCLUDE= ./catalogs
 
 # "$(CATLANGUAGE)cweb.h" is linked to "cweb.h"; it can be one of [dei]
@@ -194,12 +194,14 @@ EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/treeprint-ansi.ch examples/wc-ansi.ch \
 	examples/wordtest-ansi.ch
 
+I18N = po
+
 INCLUDE = cwebinputs
 
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(AREXX) $(EXAMPLES) $(INCLUDE) $(MACROS)
+	$(PATCH) $(AREXX) $(CATINCLUDE) $(EXAMPLES) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf
 
@@ -257,7 +259,7 @@ SAVEcommon.$(EXTENSION):
 common.$(EXTENSION): common.w $(CCHANGES)
 	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
 
-common.o: common.$(EXTENSION) $(CATINCLUDE)/cweb.h
+common.o: common.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 
 ctangle: ctangle.o common.o
@@ -266,7 +268,7 @@ ctangle: ctangle.o common.o
 ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HPATCH)
 	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 
-ctangle.o: ctangle.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
+ctangle.o: ctangle.$(EXTENSION) $(HPATCH)
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 
 cweave: cweave.o common.o
@@ -275,7 +277,7 @@ cweave: cweave.o common.o
 cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HPATCH)
 	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
 
-cweave.o: cweave.$(EXTENSION) $(CATINCLUDE)/cweb.h $(HPATCH)
+cweave.o: cweave.$(EXTENSION) $(HPATCH)
 	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
 
 wmerge: wmerge.$(EXTENSION)
@@ -285,8 +287,6 @@ wmerge.$(EXTENSION): examples/wmerge.w $(MCHANGES)
 	$(CTANGLE) examples/wmerge $(MCHANGES) wmerge.$(EXTENSION)
 
 boot:
-	if test ! -h $(CATINCLUDE)/cweb.h; \
-	then ln -s $(CATLANGUAGE)cweb.h $(CATINCLUDE)/cweb.h; fi
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o
@@ -366,7 +366,7 @@ $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
 	cweave.w cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
-	  *-foo.* *-doc.ch *.orig *.rej $(CATINCLUDE)/cweb.h \
+	  *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
 install: all
@@ -417,6 +417,7 @@ remove:
 	- $(RM) $(EXAMPLES)
 	- $(RM) -r $(AREXX)
 	- $(RM) -r $(CATINCLUDE)
+	- $(RM) -r $(I18N)
 	- $(RM) -r $(INCLUDE)
 	- $(RM) -r $(MACROS)
 
