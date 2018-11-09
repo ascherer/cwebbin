@@ -496,7 +496,6 @@ static void prime_the_change_buffer(void);
 #include <stddef.h> /* type definition of |ptrdiff_t| */
 #include <stdbool.h> /* type definition of |bool| */
 #include <stdint.h> /* type definition of |uint8_t| et al. */
-@z
 
 @** Index.
 @z
