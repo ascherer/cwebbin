@@ -75,6 +75,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__rm} -rf %{buildroot}
 %make_install
 
+%{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
+%{__install} -m 644 po/de/cweb.mo %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
+
 %files
 %defattr(-,root,root,-)
 %{_bindir}/*
@@ -82,6 +85,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %{_libdir}/cweb/*
 %{_mandir}/man1/*
 %{texmf}/tex/plain/cweb/*
+%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 
 %post
 %{__texhash}
