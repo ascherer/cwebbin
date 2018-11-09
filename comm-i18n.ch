@@ -9,14 +9,6 @@ and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.58
-@c
-@y
-@d _(STRING) gettext(STRING)
-
-@c
-@z
-
 @x l.184
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
 @y
@@ -255,16 +247,22 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1403+ and l.477 of COMM-ANSI.CH
-#include <string.h>
-@y
-#include <string.h>
-#include <libintl.h>
-#include <locale.h>
-@z
-
 @x l.1418 and l.293 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print(_("! Include path too long")); return(0);
+@z
+
+@x l.1418
+@** Index.
+@y
+@** Internationalization.
+
+@d _(STRING) gettext(STRING)
+
+@<Include files@>=
+#include <libintl.h>
+#include <locale.h>
+
+@** Index.
 @z

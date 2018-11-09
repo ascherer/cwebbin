@@ -41,22 +41,6 @@ be needed.
 @^system dependencies@>
 @z
 
-@x l.470
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@y
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@#
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://";
-#endif
-@#
-#define PATH_SEPARATOR   separators[0]
-#define DIR_SEPARATOR    separators[1]
-#define DEVICE_SEPARATOR separators[2]
-@z
-
 @x l.486
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
@@ -137,7 +121,7 @@ made sensitive to these conditions.
   case error_message: return(RETURN_ERROR); break;
   case fatal_message: return(RETURN_FAIL); break;
   default: return(RETURN_OK);
-    }
+  }
 @z
 
 C and CWEB are `international' languages, so non-English speaking users may
@@ -304,9 +288,19 @@ needs a few extra variables.
 
 @d max_path_length (BUFSIZ-2)
 
+@d PATH_SEPARATOR   separators[0]
+@d DIR_SEPARATOR    separators[1]
+@d DEVICE_SEPARATOR separators[2]
+
 @<Other...@>=
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
+
+#ifdef SEPARATORS
+char separators[]=SEPARATORS;
+#else
+char separators[]="://";
+#endif
 
 @** Index.
 @z
