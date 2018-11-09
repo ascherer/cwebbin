@@ -14,16 +14,11 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 @y
 @ Standard interface for |gettext| toolset.
 
+@d _(STRING) gettext(STRING)
+
 @<Include files@>=
 #include <libintl.h>
 #include <locale.h>
-
-@ @d _(STRING) gettext(STRING)
-
-@<Set init...@>=
-setlocale(LC_ALL, "");
-bindtextdomain("cweb", getenv("PWD"));
-textdomain("cweb");
 
 @ Code related to the character set:
 @z

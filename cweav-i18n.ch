@@ -9,10 +9,19 @@ CWEAV-EXTENSIONS.CH, and CWEAV-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.196 of CWEAV-PATCH.CH
+@x l.64+ and 196 of CWEAV-PATCH.CH
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
 @y
 @d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])\n")
+@z
+
+@x l.104
+  program=cweave;
+@y
+  program=cweave;
+  setlocale(LC_ALL, "");
+  bindtextdomain("cweb", getenv("PWD"));
+  textdomain("cweb");
 @z
 
 @x l.267
