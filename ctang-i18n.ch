@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, NOVEMBER 8, 2018.
+Changes for CTANGLE.W by Andreas Scherer, NOVEMBER 9, 2018.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests with the help of 'gettext'
@@ -235,7 +235,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
           (long)(byte_ptr-byte_mem),(long)max_bytes);
   printf("%ld tokens (out of %ld)\n",
 @y
-  fputs(_("\nMemory usage statistics:\n"));
+  fputs(_("\nMemory usage statistics:\n"),stdout);
   printf(_("%ld names (out of %ld)\n"),
           (long)(name_ptr-name_dir),(long)max_names);
   printf(_("%ld replacement texts (out of %ld)\n"),
