@@ -72,13 +72,13 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @x l.397
        fatal("! Cannot open input file ", web_file_name);
 @y
-       fatal(_("! Cannot open input file ", web_file_name));
+       fatal(_("! Cannot open input file "), web_file_name);
 @z
 
 @x l.403
        fatal("! Cannot open change file ", change_file_name);
 @y
-       fatal(_("! Cannot open change file ", change_file_name));
+       fatal(_("! Cannot open change file "), change_file_name);
 @z
 
 @x l.442
