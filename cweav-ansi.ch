@@ -200,13 +200,6 @@ static unsigned
 skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
-@x l.646
-#include <stdlib.h> /* definition of |exit| */
-@y
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdlib.h> /* definition of |exit| */
-@z
-
 @x l.656
 eight_bits get_next();
 @y
@@ -982,6 +975,11 @@ static void reduce(scrap_pointer,short,eight_bits,short,short);@/
 static void set_file_flag(name_pointer);@/
 static void skip_limbo(void);@/
 static void squash(scrap_pointer,short,eight_bits,short,short);@/
+
+@** Standard C library interface.
+
+@<Include files@>=
+#include <stddef.h> /* type definition of |ptrdiff_t| */
 
 @** Index.
 @z
