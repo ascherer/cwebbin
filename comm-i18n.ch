@@ -17,16 +17,6 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @c
 @z
 
-@x l.93
-  @<Initialize pointers@>;
-@y
-  setlocale(LC_ALL, "");
-  bindtextdomain("cweb", getenv("PWD"));
-  textdomain("cweb");
-@#
-  @<Initialize pointers@>@;
-@z
-
 @x l.184
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
 @y
