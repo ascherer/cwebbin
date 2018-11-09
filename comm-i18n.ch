@@ -218,7 +218,7 @@ case fatal_message:
 @x l.1194
   printf("\n! Sorry, %s capacity exceeded",t); fatal("","");
 @y
-  printf(_("\n! Sorry, %s capacity exceeded",t)); fatal("","");
+  printf(_("\n! Sorry, %s capacity exceeded"),t); fatal("","");
 @z
 
 @x l.1203
