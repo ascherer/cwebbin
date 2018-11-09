@@ -16,7 +16,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 @d _(STRING) gettext(STRING)
 
-@c
+@<Include files@>=
 #include <libintl.h>
 #include <locale.h>
 
