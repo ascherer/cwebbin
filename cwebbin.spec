@@ -37,7 +37,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 12
+Release: 13
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -69,7 +69,6 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %build
 %{__touch} *.cxx
-%{?_l_:%{__ln_s} %{_l_}cweb.h catalogs/cweb.h}
 %{__make} boot cautiously all
 
 %install
