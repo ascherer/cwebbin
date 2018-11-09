@@ -73,6 +73,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %install
 %{__rm} -rf %{buildroot}
+
 %make_install
 
 %{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
@@ -94,6 +95,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__texhash}
 
 %changelog
+* Fri Nov 09 2018 Andreas Scherer <https://ascherer.github.io>
+- Add internationalization (i18n)
+
 * Sun Feb 19 2017 Andreas Scherer <https://ascherer.github.io>
 - Update for the 2017 sources
 
