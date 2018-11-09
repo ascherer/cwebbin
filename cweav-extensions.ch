@@ -6,6 +6,14 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+@x l.106
+  common_init();
+  @<Set initial values@>;
+@y
+  @<Set initial values@>@;
+  common_init();
+@z
+
 @x l.708
     else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"'))@|
 @y
