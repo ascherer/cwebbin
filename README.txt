@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated November 1, 2018 by Andreas Scherer.
+% This README file was last updated November 9, 2018 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -83,29 +83,33 @@ GENERAL CONTRIBUTION:
 ./comm-ansi.hch			change file for common.h
 ./comm-extensions.ch		change file for common.w
 ./comm-extensions.hch		change file for common.h
+./comm-i18n.ch			change file for common.w
+./comm-i18n.hch			change file for common.h
 ./comm-memory.ch		change file for common.w (defunct)
 ./comm-memory.hch		change file for common.h (defunct)
 ./comm-newpage.ch		change file for common.w
 ./comm-output.ch		change file for common.w
 ./comm-output.hch		change file for common.h
 ./comm-patch.ch			change file for common.w
-./comm-translation.ch		change file for common.w
-./comm-translation.hch		change file for common.h
+./comm-translation.ch		change file for common.w (obsolete)
+./comm-translation.hch		change file for common.h (obsolete)
 ./common.cxx			ctangled product of common.w and the above
 ./ctang-ansi.ch			change file for ctangle.w
+./ctang-i18n.ch			change file for ctangle.w
 ./ctang-memory.ch		change file for ctangle.w (defunct)
 ./ctang-newpage.ch		change file for ctangle.w
 ./ctang-output.ch		change file for ctangle.w
 ./ctang-patch.ch		change file for ctangle.w
-./ctang-translation.ch		change file for ctangle.w
+./ctang-translation.ch		change file for ctangle.w (obsolete)
 ./ctangle.cxx			ctangled product of ctangle.w and the above
 ./cweav-ansi.ch			change file for cweave.w
+./cweav-i18n.ch			change file for cweave.w
 ./cweav-extensions.ch		change file for cweave.w
 ./cweav-memory.ch		change file for cweave.w (defunct)
 ./cweav-newpage.ch		change file for cweave.w
 ./cweav-output.ch		change file for cweave.w
 ./cweav-patch.ch		change file for cweave.w
-./cweav-translation.ch		change file for cweave.w
+./cweav-translation.ch		change file for cweave.w (obsolete)
 ./cwebman.ch			change file for cwebman.tex
 ./0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
 ./README.txt			the current file
@@ -134,6 +138,11 @@ GENERAL CONTRIBUTION:
 ./examples/sample.w     	program to produce random numbers
 ./examples/treeprint-ansi.ch	change file for treeprint.w
 ./examples/wc-ansi.ch		change file for wc.w
+./po/cweb.pot
+./po/de/cweb.mo
+./po/de/cweb.po
+./po/it/cweb.mo
+./po/it/cweb.mo
 ./texinputs/Xcwebmac.tex	beautifications for cwebmac.tex
 ./texinputs/dcwebmac.tex	German captions in addition to cwebmac.tex
 ./texinputs/ecma94.sty		Umlauts and special characters for Latin-1
@@ -427,7 +436,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-November 1, 2018.
+November 9, 2018.
 
 Andreas Scherer
 
