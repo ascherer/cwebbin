@@ -53,29 +53,29 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394
+@x l.394+ and l.57 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
-       fatal("! Cannot open input file ", web_file_name);
+       fatal(_("! Cannot open input file "), web_file_name);
 }
 @y
 if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
     (web_file=fopen(found_filename,"r"))==NULL) {
-  fatal("! Cannot open input file ", web_file_name);
+  fatal(_("! Cannot open input file "), web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(web_file_name, found_filename);
   free(found_filename);
 }
 @z
 
-@x l.402
+@x l.402+ and l.63 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
-       fatal("! Cannot open change file ", change_file_name);
+       fatal(_("! Cannot open change file "), change_file_name);
 @y
 if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
     (change_file=fopen(found_filename,"r"))==NULL) {
-  fatal("! Cannot open change file ", change_file_name);
+  fatal(_("! Cannot open change file "), change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(change_file_name, found_filename);
   free(found_filename);
@@ -252,14 +252,14 @@ FIXME: Need new translation strings.
 On the other hand, 'usage()' pulls English texts from "help.h" outside cwebdir/
 anyway. So, no translation at this time.
 
-@x l.1354
+@x l.1354+ and l.224 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
-"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
    ,"");
 @.Usage:@>
 else fatal(
-"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 @y
 if (program==ctangle) {
