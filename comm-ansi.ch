@@ -47,14 +47,6 @@ common_init(void)
 @d xisupper(c) (isupper((eight_bits)c)&&((eight_bits)c<0200))
 @z
 
-@x l.166
-#include <stdio.h>
-@y
-#include <stdbool.h>
-#include <stdint.h>
-#include <stdio.h>
-@z
-
 @x l.173
 int input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
@@ -126,13 +118,6 @@ typedef uint16_t sixteen_bits;
 int get_line() /* inputs the next line */
 @y
 boolean get_line(void) /* inputs the next line */
-@z
-
-@x l.472
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@y
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
 @z
 
 @x l.553
