@@ -82,55 +82,6 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
 }
 @z
 
-Section 22.
-
-@x l.472 and l.69 of COMM-EXTENSIONS.CH
-#define DEVICE_SEPARATOR separators[2]
-@y
-#define DEVICE_SEPARATOR separators[2]
-@#
-typedef bool boolean;
-#define HAVE_BOOLEAN
-@#
-#define CWEB
-#include "cpascal.h"
-#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
-#include "help.h"
-
-@ The \.{ctangle} and \.{cweave} programs from the original \.{CWEB}
-package use the compile-time default directory or the value of the
-environment variable \.{CWEBINPUTS} as an alternative place to be
-searched for files, if they could not be found in the current
-directory.
-
-This version uses the \Kpathsea/ mechanism for searching files.
-The directories to be searched for come from three sources:
-
- (a)~a user-set environment variable \.{CWEBINPUTS}
-    (overriden by \.{CWEBINPUTS\_cweb});\par
- (b)~a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
-    e.g. \.{CWEBINPUTS=.:$TEXMF/texmf/cweb//}
-    or \.{CWEBINPUTS.cweb=.:$TEXMF/texmf/cweb//};\hangindent=2\parindent\par
- (c)~compile-time default directories \.{.:$TEXMF/texmf/cweb//}
-    (specified in \.{texmf.in}).
-
-@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
-
-@ The simple file searching is replaced by `path searching' mechanism
-that \Kpathsea/ library provides.
-
-We set |kpse_program_name| to |"cweb"|.  This means if the variable
-|CWEBINPUTS.cweb| is present in \.{texmf.cnf} (or |CWEBINPUTS_cweb|
-in the environment) its value will be used as the search path for
-filenames.  This allows different flavors of \.{CWEB} to have
-different search paths.
-
-FIXME: Not sure this is the best way to go about this.
-
-@<Set up |PROGNAME| feature and initialize the search path mechanism@>=
-kpse_set_program_name(argv[0], "cweb");
-@z
-
 Section 23.
 
 @x l.475
@@ -303,6 +254,50 @@ usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
 printversionandexit((program==ctangle ? ctangle_banner : cweave_banner),
   "Silvio Levy and Donald E. Knuth", NULL, NULL);
 @.--version@>
+
+@* File lookup with kpathsea.
+
+@<Include files@>=
+typedef bool boolean;
+#define HAVE_BOOLEAN
+@#
+#define CWEB
+#include "cpascal.h"
+#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
+#include "help.h"
+
+@ The \.{ctangle} and \.{cweave} programs from the original \.{CWEB}
+package use the compile-time default directory or the value of the
+environment variable \.{CWEBINPUTS} as an alternative place to be
+searched for files, if they could not be found in the current
+directory.
+
+This version uses the \Kpathsea/ mechanism for searching files.
+The directories to be searched for come from three sources:
+
+ (a)~a user-set environment variable \.{CWEBINPUTS}
+    (overriden by \.{CWEBINPUTS\_cweb});\par
+ (b)~a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
+    e.g. \.{CWEBINPUTS=.:$TEXMF/texmf/cweb//}
+    or \.{CWEBINPUTS.cweb=.:$TEXMF/texmf/cweb//};\hangindent=2\parindent\par
+ (c)~compile-time default directories \.{.:$TEXMF/texmf/cweb//}
+    (specified in \.{texmf.in}).
+
+@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
+
+@ The simple file searching is replaced by `path searching' mechanism
+that \Kpathsea/ library provides.
+
+We set |kpse_program_name| to |"cweb"|.  This means if the variable
+|CWEBINPUTS.cweb| is present in \.{texmf.cnf} (or |CWEBINPUTS_cweb|
+in the environment) its value will be used as the search path for
+filenames.  This allows different flavors of \.{CWEB} to have
+different search paths.
+
+FIXME: Not sure this is the best way to go about this.
+
+@<Set up |PROGNAME| feature and initialize the search path mechanism@>=
+kpse_set_program_name(argv[0], "cweb");
 
 @** Index.
 @z

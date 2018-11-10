@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 3, 2018.
+Changes for COMMON.W by Andreas Scherer, November 10, 2018.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -51,22 +51,6 @@ device names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost
 character.  For other systems than the {\mc AMIGA} different settings may
 be needed.
 @^system dependencies@>
-@z
-
-@x l.472
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@y
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@#
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://";
-#endif
-@#
-#define PATH_SEPARATOR   separators[0]
-#define DIR_SEPARATOR    separators[1]
-#define DEVICE_SEPARATOR separators[2]
 @z
 
 @x l.493
