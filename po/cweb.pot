@@ -155,7 +155,7 @@ msgid ""
 msgstr ""
 
 #: ctang-i18n.ch:186
-msgid "! @@d, @@f and @@c are ignored in C text"
+msgid "! @d, @f and @c are ignored in C text"
 msgstr ""
 
 #: comm-i18n.ch:39
@@ -191,15 +191,15 @@ msgid "! Cannot open section file "
 msgstr ""
 
 #: comm-i18n.ch:27
-msgid "! Change file ended after @@x"
+msgid "! Change file ended after @x"
 msgstr ""
 
 #: comm-i18n.ch:33
-msgid "! Change file ended before @@y"
+msgid "! Change file ended before @y"
 msgstr ""
 
 #: comm-i18n.ch:93
-msgid "! Change file ended without @@z"
+msgid "! Change file ended without @z"
 msgstr ""
 
 #: comm-i18n.ch:105
@@ -223,23 +223,23 @@ msgid "! Definition flushed, must start with identifier"
 msgstr ""
 
 #: ctang-i18n.ch:132
-msgid "! Double @@ should be used in ASCII constant"
+msgid "! Double @ should be used in ASCII constant"
 msgstr ""
 
 #: ctang-i18n.ch:126 ctang-i18n.ch:216
-msgid "! Double @@ should be used in control text"
+msgid "! Double @ should be used in control text"
 msgstr ""
 
 #: ctang-i18n.ch:222 cweav-i18n.ch:146
-msgid "! Double @@ should be used in limbo"
+msgid "! Double @ should be used in limbo"
 msgstr ""
 
 #: ctang-i18n.ch:198
-msgid "! Double @@ should be used in string"
+msgid "! Double @ should be used in string"
 msgstr ""
 
 #: cweav-i18n.ch:224
-msgid "! Double @@ should be used in strings"
+msgid "! Double @ should be used in strings"
 msgstr ""
 
 #: cweav-i18n.ch:170
@@ -251,7 +251,7 @@ msgid "! Filename too long\n"
 msgstr ""
 
 #: cweav-i18n.ch:182
-msgid "! Illegal use of @@ in comment"
+msgid "! Illegal use of @ in comment"
 msgstr ""
 
 #: cweav-i18n.ch:296
@@ -259,7 +259,7 @@ msgid "! Improper format definition"
 msgstr ""
 
 #: ctang-i18n.ch:228
-msgid "! Improper hex number following @@l"
+msgid "! Improper hex number following @l"
 msgstr ""
 
 #: cweav-i18n.ch:284 cweav-i18n.ch:290
@@ -299,19 +299,19 @@ msgid "! Missing '|' after C text"
 msgstr ""
 
 #: comm-i18n.ch:21
-msgid "! Missing @@x in change file"
+msgid "! Missing @x in change file"
 msgstr ""
 
 #: ctang-i18n.ch:192
-msgid "! Missing `@@ ' before a named section"
+msgid "! Missing `@ ' before a named section"
 msgstr ""
 
 #: cweav-i18n.ch:114
-msgid "! Missing left identifier of @@s"
+msgid "! Missing left identifier of @s"
 msgstr ""
 
 #: cweav-i18n.ch:120
-msgid "! Missing right identifier of @@s"
+msgid "! Missing right identifier of @s"
 msgstr ""
 
 #: cweav-i18n.ch:164 cweav-i18n.ch:176
@@ -323,7 +323,7 @@ msgid "! Nesting of section names not allowed"
 msgstr ""
 
 #: ctang-i18n.ch:234
-msgid "! Replacement string in @@l too long"
+msgid "! Replacement string in @l too long"
 msgstr ""
 
 #: ctang-i18n.ch:156 cweav-i18n.ch:72
@@ -365,7 +365,7 @@ msgid ""
 msgstr ""
 
 #: ctang-i18n.ch:120 cweav-i18n.ch:54 cweav-i18n.ch:108
-msgid "! Use @@l in limbo only"
+msgid "! Use @l in limbo only"
 msgstr ""
 
 #: ctang-i18n.ch:168 cweav-i18n.ch:96
@@ -373,11 +373,11 @@ msgid "! Verbatim string didn't end"
 msgstr ""
 
 #: comm-i18n.ch:45
-msgid "! Where is the matching @@y?"
+msgid "! Where is the matching @y?"
 msgstr ""
 
 #: comm-i18n.ch:99
-msgid "! Where is the matching @@z?"
+msgid "! Where is the matching @z?"
 msgstr ""
 
 #: cweav-i18n.ch:308
