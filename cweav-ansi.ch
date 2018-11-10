@@ -211,13 +211,6 @@ static unsigned
 skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
-@x l.684
-#include <stdlib.h> /* definition of |exit| */
-@y
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdlib.h> /* definition of |exit| */
-@z
-
 @x l.697
 eight_bits get_next();
 @y
