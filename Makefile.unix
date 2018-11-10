@@ -47,12 +47,6 @@ BINDIR= /usr/bin
 # directory for GNU EMACS Lisp code (cweb.el goes here)
 EMACSDIR= /usr/share/emacs/site-lisp
 
-# directory for the language header file "cweb.h" (obsolete)
-CATINCLUDE= ./catalogs
-
-# "$(CATLANGUAGE)cweb.h" is linked to "cweb.h"; it can be one of [dei]
-CATLANGUAGE= e
-
 # Set DESTPREF to null if you want to call the executables "tangle" and "weave"
 # (probably NOT a good idea; we recommend leaving DESTPREF=c)
 DESTPREF= c
@@ -186,8 +180,6 @@ PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp \
 	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1
 
-AREXX = arexx
-
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
@@ -201,7 +193,7 @@ INCLUDE = cwebinputs
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(AREXX) $(CATINCLUDE) $(EXAMPLES) $(I18N) $(INCLUDE) $(MACROS)
+	$(PATCH) $(EXAMPLES) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf
 
@@ -415,8 +407,6 @@ remove:
 	- $(RM) $(WMERGPATCH)
 	- $(RM) $(PATCH)
 	- $(RM) $(EXAMPLES)
-	- $(RM) -r $(AREXX)
-	- $(RM) -r $(CATINCLUDE)
 	- $(RM) -r $(I18N)
 	- $(RM) -r $(INCLUDE)
 	- $(RM) -r $(MACROS)
