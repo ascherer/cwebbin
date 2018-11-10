@@ -347,6 +347,7 @@ $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch ctang-texlive.ch
+	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-texlive.ch
 	$(TIE) -c $@ $^
