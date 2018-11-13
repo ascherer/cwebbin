@@ -6,7 +6,7 @@ typedef bool boolean;
 @y
 @z
 
-@x l.34 of COMM-ANSI.HCH
+@x l.36
 #include <stdio.h>
 @y
 #include <stdio.h>

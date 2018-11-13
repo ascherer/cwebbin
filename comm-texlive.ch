@@ -3,7 +3,7 @@
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.20 and l.174 of COMM-PATCH.CH
+@x l.20 and l.175 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
@@ -85,7 +85,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
 Section 23.
 
 Revert change from COMM-EXTENSIONS.CH: @include file search is done with
-KPathSea, and COMM-TEXLIVE.CH doesn't change the description.  We reatore
+KPathSea, and COMM-TEXLIVE.CH doesn't change the description.  We restore
 the original wording from COMMON.W.  FIXME!
 
 @x l.457
@@ -165,7 +165,7 @@ Replaced by Kpathsea `kpse_find_file'
 
 Section 67.
 
-@x l.1212 and l.207 of COMM-EXTENSIONS.CH
+@x l.1212 and l.191 of COMM-EXTENSIONS.CH
 the names of those files. Most of the 256 flags are undefined but available
 for future extensions.
 @y
@@ -247,7 +247,7 @@ FIXME: Need new translation strings.
 On the other hand, 'usage()' pulls English texts from "help.h" outside cwebdir/
 anyway. So, no translation at this time.
 
-@x l.1354+ and l.224 of COMM-I18N.CH
+@x l.1354+ and l.222 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")

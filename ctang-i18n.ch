@@ -9,7 +9,7 @@ CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-@x l.62+ and l.181 of CTANG-PATCH.CH
+@x l.62+ and l.185 of CTANG-PATCH.CH
 @d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
 @y
 @d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])\n")
@@ -72,7 +72,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
     if(show_happiness) fputs(_("\nDone."),stdout);
 @z
 
-@x l.41 of CTANG-OUTPUT.CH
+@x l.572 and l.41 of CTANG-OUTPUT.CH
       fatal("! Cannot open output file:",check_file_name);
 @y
       fatal(_("! Cannot open output file:"),check_file_name);

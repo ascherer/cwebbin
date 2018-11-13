@@ -9,7 +9,7 @@ CWEAV-EXTENSIONS.CH, and CWEAV-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.64+ and 196 of CWEAV-PATCH.CH
+@x l.64+ and 200 of CWEAV-PATCH.CH
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
 @y
 @d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])\n")
@@ -384,7 +384,7 @@ if (show_happiness) fputs(_("\nDone."),stdout);
 }
 @z
 
-@x l.89 of CWEAV-OUTPUT.CH
+@x l.4644+ and l.97 of CWEAV-OUTPUT.CH
     fatal("! Cannot open output file ",check_file_name);
 @y
     fatal(_("! Cannot open output file "),check_file_name);

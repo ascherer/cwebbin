@@ -201,14 +201,10 @@ for future extensions.
 
 @x l.1226
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
+boolean flags[128]; /* an option for each 7-bit code */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
-@z
-
-@x l.1227
-boolean flags[128]; /* an option for each 7-bit code */
-@y
 boolean flags[256]; /* an option for each 8-bit code */
 @z
 
@@ -230,7 +226,7 @@ systems the contents of the compile-time variable |DEV_NULL| (TeXLive) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-@x l.455 of COMM-ANSI.CH
+@x l.441 of COMM-ANSI.CH
   strcpy(change_file_name,"/dev/null");
 @y
 #if defined DEV_NULL
@@ -271,7 +267,7 @@ systems the contents of the compile-time variable |DEV_NULL| (TeXLive) or
     else flags[(unsigned char)*dot_pos]=flag_change;
 @z
 
-@x l.522 of COMM-ANSI.CH
+@x l.514 of COMM-ANSI.CH
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=

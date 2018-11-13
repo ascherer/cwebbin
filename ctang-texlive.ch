@@ -23,7 +23,7 @@ Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.62 and l.185 of CTANG-PATCH.CH and l.16 of CTANG-I18N.CH
+@x l.62 and l.185 of CTANG-PATCH.CH and l.15 of CTANG-I18N.CH
 The ``banner line'' defined here should be changed whenever \.{CTANGLE}
 is modified.
 

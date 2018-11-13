@@ -11,7 +11,7 @@ COMM-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.156 of COMM-EXTENSIONS.CH
+@x l.149 of COMM-EXTENSIONS.CH
   switch(history) {
 @y
   @<Remove the temporary file if not already done@>@;
