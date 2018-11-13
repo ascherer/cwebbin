@@ -21,20 +21,20 @@
 
 #include <string.h> 
 
-/*:81*//*84:*/
-#line 1016 "comm-foo.ch"
+/*:81*//*85:*/
+#line 1023 "comm-foo.ch"
 
 #include <stddef.h>  
 #include <stdbool.h>  
 #include <stdint.h>  
 
-/*:84*//*88:*/
-#line 1084 "comm-foo.ch"
+/*:85*//*89:*/
+#line 1091 "comm-foo.ch"
 
 #include <libintl.h> 
 #include <locale.h> 
 
-/*:88*/
+/*:89*/
 #line 59 "common.w"
 
 #define ctangle 0
@@ -298,8 +298,8 @@ int phase;
 char change_buffer[buf_size];
 char*change_limit;
 
-/*:11*//*86:*/
-#line 1060 "comm-foo.ch"
+/*:11*//*87:*/
+#line 1067 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -310,7 +310,7 @@ char separators[]= SEPARATORS;
 char separators[]= "://";
 #endif
 
-/*:86*/
+/*:87*/
 #line 62 "common.w"
 
 /*33:*/
@@ -372,8 +372,8 @@ extern void overflow(const char*);
 static void scan_args(void);
 #line 1253 "common.w"
 
-/*:69*//*82:*/
-#line 988 "comm-foo.ch"
+/*:69*//*83:*/
+#line 995 "comm-foo.ch"
 
 boolean get_line(void);
 name_pointer id_lookup(const char*,const char*,char);
@@ -385,8 +385,8 @@ void print_section_name(name_pointer);
 void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
-/*:82*//*83:*/
-#line 1001 "comm-foo.ch"
+/*:83*//*84:*/
+#line 1008 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 static int input_ln(FILE*);
@@ -397,8 +397,8 @@ static void check_change(void);
 static void prime_the_change_buffer(void);
 #line 1417 "common.w"
 
-#line 1014 "comm-foo.ch"
-/*:83*/
+#line 1021 "comm-foo.ch"
+/*:84*/
 #line 63 "common.w"
 
 
@@ -1281,8 +1281,8 @@ fputs(_("(That was a fatal error, my friend.)\n"),stdout);
 #line 1155 "common.w"
 ;
 #line 692 "comm-foo.ch"
-/*87:*/
-#line 1073 "comm-foo.ch"
+/*88:*/
+#line 1080 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1290,7 +1290,7 @@ if(check_file)fclose(check_file);
 if(strlen(check_file_name))
 remove(check_file_name);
 
-/*:87*/
+/*:88*/
 #line 692 "comm-foo.ch"
 
 switch(history){
@@ -1524,8 +1524,8 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 #line 1283 "common.w"
 }
 
-/*:70*//*85:*/
-#line 1030 "comm-foo.ch"
+/*:70*//*86:*/
+#line 1037 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
@@ -1547,4 +1547,4 @@ strcpy(include_path,string);
 return(1);
 }
 
-/*:85*/
+/*:86*/
