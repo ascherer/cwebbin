@@ -338,18 +338,18 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-output.ch comm-i18n.ch comm-texlive.ch
+	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-output.hch comm-i18n.hch comm-texlive.hch
+	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
-	ctang-output.ch ctang-i18n.ch ctang-texlive.ch
+	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-output.ch cweav-i18n.ch cweav-texlive.ch
+	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	wmerg-extensions.ch wmerg-output.ch
