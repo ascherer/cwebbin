@@ -281,7 +281,7 @@ FIXME: Yet more version strings to translate.
 @x l.1418
 @** Index.
 @y
-@** System dependent changes.
+@* System dependent changes.
 
 @ Modules for dealing with help messages and version info.
 

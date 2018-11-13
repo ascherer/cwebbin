@@ -256,7 +256,7 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 @x l.1418
 @** Index.
 @y
-@** Internationalization.
+@* Internationalization.
 
 @d _(STRING) gettext(STRING)
 

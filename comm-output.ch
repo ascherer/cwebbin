@@ -73,7 +73,7 @@ else {
 @x l.1418
 @** Index.
 @y
-@** Temporary file output.  Before we leave the program we have to make
+@* Temporary file output.  Before we leave the program we have to make
 sure that the output files are correctly written.
 
 @<Remove the temporary file...@>=

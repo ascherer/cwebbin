@@ -489,7 +489,14 @@ of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
 @<Include...@>=
 #include <string.h>
 
-@** Function declarations. Here are declarations, conforming to {\mc
+@** Extensions for modern \.{CWEB}.
+
+The following sections introduce code changes and extensions that have been
+created by numerous contributors over the course of a quarter century. They
+make \.{CWEB} adhere to modern coding standards and introduce new or improved
+features.
+
+@* Function declarations. Here are declarations, conforming to {\mc
 ANSI~C}, of all functions in this code that appear in |"common.h"| and
 thus should agree with \.{CTANGLE} and \.{CWEAVE}.
 
@@ -518,7 +525,7 @@ static void prime_the_change_buffer(void);
 @x l.1418
 @** Index.
 @y
-@** Standard C library interfaces.
+@* Standard C library interfaces.
 
 @<Include files@>=
 #include <stddef.h> /* type definition of |ptrdiff_t| */

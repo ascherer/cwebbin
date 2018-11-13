@@ -203,7 +203,14 @@ z
 @x l.4644
 @** Index.
 @y
-@** Version information.  The {\mc AMIGA} operating system provides the
+@** Extensions for modern \.{CWEB}.
+
+The following sections introduce code changes and extensions that have been
+created by numerous contributors over the course of a quarter century. They
+make \.{CWEB} adhere to modern coding standards and introduce new or improved
+features.
+
+@* Version information.  The {\mc AMIGA} operating system provides the
 `version' command and good programs answer with some informations about
 their creation date and their current version.  This might be useful for
 other operating systems as well.

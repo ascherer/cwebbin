@@ -986,7 +986,7 @@ print_stats(void) {
 @x l.4644
 @** Index.
 @y
-@** Function declarations.  Here are declarations---conforming to
+@* Function declarations.  Here are declarations---conforming to
 {\mc ANSI~C}---of all functions in this code, as far as they are
 not already in |"common.h"|.  These are private to \.{CWEAVE}.
 
@@ -1024,7 +1024,7 @@ static void set_file_flag(name_pointer);@/
 static void skip_limbo(void);@/
 static void squash(scrap_pointer,short,eight_bits,short,short);@/
 
-@** Standard C library interface.
+@* Standard C library interface.
 
 @<Include files@>=
 #include <stddef.h> /* type definition of |ptrdiff_t| */

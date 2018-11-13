@@ -350,7 +350,7 @@ print_stats(void) {
 @x l.1550
 @** Index.
 @y
-@** Function declarations.  Here are declarations---conforming to
+@* Function declarations.  Here are declarations---conforming to
 {\mc ANSI~C}---of all functions in this code, as far as they are
 not already in |"common.h"|.  These are private to \.{CTANGLE}.
 

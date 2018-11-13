@@ -285,7 +285,7 @@ static boolean set_path(char *,char *);@/
 @x l.1418
 @** Index.
 @y
-@** Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
+@* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
 personal needs.  If this variable is empty, some decent defaults are used
