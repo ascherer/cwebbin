@@ -47,7 +47,7 @@ Release: 13
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{texmf} \\\
-	-e CWEBINPUTS=%{_libdir}/cweb:cwebinputs:
+	-e CWEBINPUTS=%{_libdir}/cweb%{?with_texlive::cwebinputs:}
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
