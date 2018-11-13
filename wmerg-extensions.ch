@@ -25,13 +25,13 @@ char separators[]="://"; /* UNIX set up */
 #define DEVICE_SEPARATOR separators[2]
 @z
 
-@x l.127
+@x l.129
 @d max_file_name_length 60
 @y
 @d max_file_name_length 255
 @z
 
-@x l.287
+@x l.289
   @<Open input files@>;
   include_depth=0; cur_line=0; change_line=0;
 @y
@@ -39,7 +39,7 @@ char separators[]="://"; /* UNIX set up */
   @<Open input files@>@;
 @z
 
-@x l.352
+@x l.355
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -62,7 +62,7 @@ searched for in the current directory first.  You also may include device
 names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @z
 
-@x l.380
+@x l.388
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -111,7 +111,7 @@ names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   }
 @z
 
-@x l.540
+@x l.549
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -133,7 +133,7 @@ made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.549
+@x l.558
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -145,19 +145,19 @@ made sensitive to these conditions.
   }
 @z
 
-@x l.569
+@x l.578
 the names of those files. Most of the 128 flags are undefined but available
 @y
 the names of those files. Most of the 256 flags are undefined but available
 @z
 
-@x l.579
+@x l.588
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[256]; /* an option for each 8-bit code */
 @z
 
-@x l.593
+@x l.602
 An omitted change file argument means that |'/dev/null'| should be used,
 when no changes are desired.
 @y
@@ -166,14 +166,14 @@ systems the contents of the compile-time variable |_DEV_NULL|---should
 be used, when no changes are desired.
 @z
 
-@x l.620
+@x l.628
         else if (*s=='/') dot_pos=NULL,++s;
 @y
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,++s;
 @z
 
-@x l.630
+@x l.638
   if (!found_change) strcpy(change_file_name,"/dev/null");
 @y
 #ifdef _DEV_NULL
@@ -183,14 +183,14 @@ be used, when no changes are desired.
 #endif
 @z
 
-@x l.163 of wmerg-ansi.ch
+@x l.191 of wmerg-ansi.ch
 @<Predecl...@>=
 @y
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/
 @z
 
-@x l.709
+@x l.717
 @* Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking

@@ -6,6 +6,8 @@
 %bcond_with debuginfo
 # Apply only the set of ANSI changes.
 %bcond_with ansi_only
+# Prepare CWEBbin as base for TeXLive.
+%bcond_with texlive
 
 Name: cwebbin
 Summary: The CWEBbin extension of the CWEB package
@@ -23,6 +25,7 @@ BuildRequires: texlive
 %else
 Group: Productivity/Publishing/TeX/Base
 Distribution: openSUSE 42 (x86_64)
+%define __msgfmt /usr/bin/msgfmt
 %global __touch /usr/bin/touch
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
@@ -45,7 +48,7 @@ Release: 13
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{texmf} \\\
-	-e CWEBINPUTS=%{_libdir}/cweb
+	-e CWEBINPUTS=%{_libdir}/cweb%{?with_texlive::cwebinputs:}
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
@@ -53,6 +56,20 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %prep
 %autosetup -c -a1
+
+%if %{with texlive}
+%{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
+
+%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
+%{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
+%{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
+
+%{__make} comm-foo.h
+
+# Use system CWEB, most likely from TeXLive
+%{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
+%{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
+%else
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
 
@@ -67,7 +84,11 @@ and Donald Knuth for Literate Programming in C/C++.
 %{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
 %endif
 
+%endif
+
 %build
+%{?with_texlive:%{error:Forget it! TeXLive version needs TL ecosystem.}}
+
 %{__touch} *.cxx
 %{__make} boot cautiously all
 
@@ -78,8 +99,8 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES \
 	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
-%{__install} -m 644 po/de/cweb.mo %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
-%{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
+%{__msgfmt} po/de/cweb.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
+%{__msgfmt} po/it/cweb.po -o %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %files
 %defattr(-,root,root,-)

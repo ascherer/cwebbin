@@ -31,7 +31,7 @@ the added changefiles change.
 @i comm-foo.h
 @z
 
-@x l.140 and l.58 of CWEAV-ANSI.CH
+@x l.140 and l.67 of CWEAV-ANSI.CH
 @ The next few sections contain stuff from the file |"common.w"| that must
 be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"common.h"|, which needs to be updated when |"common.w"| changes.
@@ -405,7 +405,7 @@ if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 }
 @z
 
-@x l.89 of CWEAV-OUTPUT.CH
+@x l.85 of CWEAV-OUTPUT.CH
     fatal("! Cannot open output file ",check_file_name);
 @y
     fatal(get_string(MSG_FATAL_CO78),check_file_name);

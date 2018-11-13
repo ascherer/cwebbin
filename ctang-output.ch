@@ -37,7 +37,7 @@ fclose(C_file); C_file=NULL;
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
-    if((C_file=fopen(check_file_name,"w"))==NULL)
+    if((C_file=fopen(check_file_name,"wb"))==NULL)
       fatal("! Cannot open output file:",check_file_name);
 @.Cannot open output file@>
     printf("\n(%s)",output_file_name); update_terminal;
@@ -57,7 +57,7 @@ strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @x l.1550
 @** Index.
 @y
-@** Output file update.  Most \CEE/ projects are controlled by a
+@* Output file update.  Most \CEE/ projects are controlled by a
 \.{makefile} that automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to

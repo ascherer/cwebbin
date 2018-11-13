@@ -167,12 +167,14 @@ COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
-	comm-patch.ch comm-translation.ch comm-translation.hch
-CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-i18n.ch ctang-memory.ch \
-	ctang-newpage.ch ctang-output.ch ctang-patch.ch ctang-translation.ch
+	comm-patch.ch comm-translation.ch comm-translation.hch \
+	comm-texlive.ch comm-texlive.hch
+CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
+	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
+	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-newpage.ch cweav-memory.ch cweav-output.ch \
-	cweav-patch.ch cweav-translation.ch
+	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
@@ -336,18 +338,18 @@ wmerge.tex: examples/wmerge.w $(MCHANGES)
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-output.ch comm-i18n.ch
+	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
-	comm-output.hch comm-i18n.hch
+	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -c $@ $^
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
-	ctang-output.ch ctang-i18n.ch
+$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
+	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-output.ch cweav-i18n.ch
+	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	wmerg-extensions.ch wmerg-output.ch

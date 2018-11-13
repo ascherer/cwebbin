@@ -27,6 +27,12 @@ if (no_xref) {
 }
 @z
 
+@x l.4310 Use binary mode for output files
+  if ((idx_file=fopen(idx_file_name,"w"))==NULL)
+@y
+  if ((idx_file=fopen(idx_file_name,"wb"))==NULL)
+@z
+
 @x l.4314
     @<Tell about changed sections@>; finish_line(); finish_line();
 @y
@@ -39,6 +45,12 @@ if (no_xref) {
 @y
   @<Do the first pass of sorting@>@;
   @<Sort and output the index@>@;
+@z
+
+@x l.4325 Use binary mode for output files
+  if ((scn_file=fopen(scn_file_name,"w"))==NULL)
+@y
+  if ((scn_file=fopen(scn_file_name,"wb"))==NULL)
 @z
 
 @x l.4329
@@ -68,7 +80,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 @x l.4644
 @** Index.
 @y
-@** Output file update.  Most \CEE/ projects are controlled by a
+@* Output file update.  Most \CEE/ projects are controlled by a
 \.{makefile} which automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to

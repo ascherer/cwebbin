@@ -1,3 +1,5 @@
+Changes for WMERGE.W by Andreas Scherer, November 6, 2018.
+
 This set of changes converts the WMERGE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
 several functions are declared `static' instead of `extern'.  Additional
@@ -15,7 +17,7 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 @i iso_types.w
 @z
 
-@x l.14
+@x l.16
 #include <stdio.h>
 @y
 #include <stdbool.h>
@@ -24,7 +26,7 @@ For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 #include <stdio.h>
 @z
 
-@x l.20
+@x l.22
 main (ac,av)
 int ac; char **av;
 @y
@@ -40,7 +42,7 @@ typedef bool boolean;
 typedef uint8_t eight_bits;
 @z
 
-@x l.40
+@x l.42
 @ We predeclare some standard string-handling functions here instead of
 including their system header files, because the names of the header files
 are not as standard as the names of the functions. (There's confusion
@@ -60,13 +62,13 @@ instead of predeclaring the standard system functions |strlen|, |strcmp|,
 
 One of the last long-standing bugs in CWEB; reported to DEK long ago.
 
-@x l.86
+@x l.88
 @:caddr_t}{\bf caddr_t@>
 @y
 @:caddr_t}{\bf caddr\_t@>
 @z
 
-@x l.94
+@x l.96
 input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
 @y
@@ -74,7 +76,7 @@ int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
 FILE *fp@t\2\2@>) /* what file to read from */
 @z
 
-@x l.157
+@x l.159
 @d lines_dont_match (change_limit-change_buffer != limit-buffer ||
   strncmp(buffer, change_buffer, limit-buffer))
 @y
@@ -82,7 +84,7 @@ FILE *fp@t\2\2@>) /* what file to read from */
   strncmp(buffer, change_buffer, (size_t)(limit-buffer)))
 @z
 
-@x l.172
+@x l.174
 void
 prime_the_change_buffer()
 @y
@@ -90,13 +92,13 @@ void
 prime_the_change_buffer(void)
 @z
 
-@x l.215
+@x l.217
   strncpy(change_buffer,buffer,limit-buffer+1);
 @y
   strncpy(change_buffer,buffer,(size_t)(limit-buffer+1));
 @z
 
-@x l.231
+@x l.233
 void
 check_change() /* switches to |change_file| if the buffers match */
 @y
@@ -104,7 +106,7 @@ void
 check_change(void) /* switches to |change_file| if the buffers match */
 @z
 
-@x l.283
+@x l.285
 void
 reset_input()
 @y
@@ -118,13 +120,13 @@ int get_line() /* inputs the next line */
 int get_line(void) /* inputs the next line */
 @z
 
-@x l.345
+@x l.348
 void put_line()
 @y
 void put_line(void)
 @z
 
-@x l.450
+@x l.458
 void
 check_complete(){
 @y
@@ -132,19 +134,19 @@ void
 check_complete(void) {
 @z
 
-@x l.453
+@x l.461
     strncpy(buffer,change_buffer,change_limit-change_buffer+1);
 @y
     strncpy(buffer,change_buffer,(size_t)(change_limit-change_buffer+1));
 @z
 
-@x l.491
+@x l.499
 void  err_print();
 @y
 void err_print(const char *);
 @z
 
-@x l.495
+@x l.503
 void
 err_print(s) /* prints `\..' and location of error message */
 char *s;
@@ -154,19 +156,19 @@ err_print(@t\1\1@> /* prints `\..' and location of error message */
 const char *s@t\2\2@>)
 @z
 
-@x l.547
+@x l.556
 wrap_up() {
 @y
 int wrap_up(void) {
 @z
 
-@x l.600
+@x l.609
 void scan_args();
 @y
 void scan_args(void);
 @z
 
-@x l.604
+@x l.613
 void
 scan_args()
 @y
@@ -180,7 +182,7 @@ scan_args(void)
     flags[0+*dot_pos]=flag_change;
 @z
 
-@x l.709
+@x l.717
 @* Index.
 @y
 @* Function declarations.  To satisfy all the {\mc ANSI} compilers out
