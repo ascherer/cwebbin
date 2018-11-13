@@ -274,8 +274,8 @@ extern FILE*active_file;
 /*:14*//*15:*/
 #line 211 "comm-foo.h"
 
-extern void print_stats(void);
 extern void common_init(void);
+extern void print_stats(void);
 #line 128 "ctangle.w"
 
 /*:15*/
