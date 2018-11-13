@@ -25,6 +25,7 @@ BuildRequires: texlive
 %else
 Group: Productivity/Publishing/TeX/Base
 Distribution: openSUSE 42 (x86_64)
+%define __msgfmt /usr/bin/msgfmt
 %global __touch /usr/bin/touch
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
@@ -98,8 +99,8 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES \
 	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
-%{__install} -m 644 po/de/cweb.mo %{buildroot}%{_datadir}/locale/de/LC_MESSAGES
-%{__install} -m 644 po/it/cweb.mo %{buildroot}%{_datadir}/locale/it/LC_MESSAGES
+%{__msgfmt} po/de/cweb.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
+%{__msgfmt} po/it/cweb.po -o %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %files
 %defattr(-,root,root,-)
