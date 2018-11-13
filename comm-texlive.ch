@@ -3,15 +3,15 @@
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-x l.20 and l.174 of COMM-PATCH.CH
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
+@x l.20 and l.174 of COMM-PATCH.CH
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
     {\ttitlefont CWEAVE}}
   \vskip 15pt
-  \centerline{(Version 3.64)}
+  \centerline{(Version 3.64 [CWEBbin 2018])}
   \vfill}
-y
+@y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64k)}
 \def\topofcontents{\null\vfill
@@ -20,7 +20,7 @@ y
   \vskip 15pt
   \centerline{(Version 3.64k)}
   \vfill}
-z
+@z
 
 @x l.74 and l.25 of COMM-ANSI.CH
 typedef bool boolean;
@@ -41,7 +41,7 @@ Section 9.
 @x l.181
     if ((*(k++) = c) != ' ') limit = k;
 @y
-    if ((*(k++) = c) != ' ' && c!='\r') limit = k;
+    if ((*(k++) = c) != ' ' && c != '\r') limit = k;
 @z
 
 Section 10.
