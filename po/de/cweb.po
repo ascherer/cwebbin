@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: CWEBbin 2018\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-10 10:03+0100\n"
-"PO-Revision-Date: 2018-11-10 10:09+0100\n"
+"PO-Revision-Date: 2018-11-13 19:06+0100\n"
 "Last-Translator: Andreas Scherer <andreas_github@freenet.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -611,3 +611,26 @@ msgstr "Text"
 #: cweav-i18n.ch:200
 msgid "token"
 msgstr "Token"
+
+#
+# New strings from *-texlive.ch added manually 2018-11-13 by Andreas Scherer
+#
+#: comm-texlive.ch:261
+msgid "ctangle: Need one to three file arguments.\n"
+msgstr "ctangle: Benötige ein bis drei Dateiargumente.\n"
+
+#: comm-texlive.ch:265
+msgid "cweave: Need one to three file arguments.\n"
+msgstr "cweave: Benötige ein bis drei Dateiargumente.\n"
+
+#: comm-texlive.ch:294 ctang-texlive:35
+msgid "This is CTANGLE, Version 3.64"
+msgstr "Dies ist CTANGLE, Version 3.64"
+
+#: comm-texlive.ch:295 cweav-texlive.ch:39
+msgid "This is CWEAVE, Version 3.64"
+msgstr "Dies ist CWEAVE, Version 3.64"
+
+#: comm-texlive.ch:299
+msgid "Silvio Levy and Donald E. Knuth"
+msgstr "Silvio Levy und Donald E. Knuth"

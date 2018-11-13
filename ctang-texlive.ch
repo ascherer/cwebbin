@@ -32,7 +32,7 @@ is modified.
 The ``banner line'' defined here should be changed whenever \.{CTANGLE}
 is modified.
 
-@d banner "This is CTANGLE, Version 3.64"
+@d banner _("This is CTANGLE, Version 3.64")
 @z
 
 Section 3.

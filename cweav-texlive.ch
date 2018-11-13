@@ -36,7 +36,7 @@ is modified.
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
-@d banner "This is CWEAVE, Version 3.64"
+@d banner _("This is CWEAVE, Version 3.64")
 @z
 
 Section 3.

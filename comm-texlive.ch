@@ -258,11 +258,11 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
    ,"");
 @y
 if (program==ctangle) {
-  fprintf(stderr, "ctangle: Need one to three file arguments.\n");
+  fputs(_("ctangle: Need one to three file arguments.\n"),stderr);
   usage("ctangle");
 @.Usage:@>
 } else {
-  fprintf(stderr, "cweave: Need one to three file arguments.\n");
+  fputs(_("cweave: Need one to three file arguments.\n"),stderr);
   usage("cweave");
 }
 @z
@@ -291,12 +291,12 @@ usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
 
 @ Will have to change these if the version numbers change (ouch).
 
-@d ctangle_banner "This is CTANGLE, Version 3.64"
-@d cweave_banner "This is CWEAVE, Version 3.64"
+@d ctangle_banner _("This is CTANGLE, Version 3.64")
+@d cweave_banner _("This is CWEAVE, Version 3.64")
 
 @<Display version information and exit@>=
 printversionandexit((program==ctangle ? ctangle_banner : cweave_banner),
-  "Silvio Levy and Donald E. Knuth", NULL, NULL);
+  _("Silvio Levy and Donald E. Knuth"), NULL, NULL);
 @.--version@>
 
 @* File lookup with kpathsea.

@@ -543,3 +543,26 @@ msgstr ""
 #: cweav-i18n.ch:200
 msgid "token"
 msgstr ""
+
+#
+# New strings from *-texlive.ch added manually 2018-11-13 by Andreas Scherer
+#
+#: comm-texlive.ch:261
+msgid "ctangle: Need one to three file arguments.\n"
+msgstr ""
+
+#: comm-texlive.ch:265
+msgid "cweave: Need one to three file arguments.\n"
+msgstr ""
+
+#: comm-texlive.ch:294 ctang-texlive:35
+msgid "This is CTANGLE, Version 3.64"
+msgstr ""
+
+#: comm-texlive.ch:295 cweav-texlive.ch:39
+msgid "This is CWEAVE, Version 3.64"
+msgstr ""
+
+#: comm-texlive.ch:299
+msgid "Silvio Levy and Donald E. Knuth"
+msgstr ""
