@@ -84,6 +84,36 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
 
 Section 23.
 
+Revert change from COMM-EXTENSIONS.CH: @include file search is done with
+KPathSea, and COMM-TEXLIVE.CH doesn't change the description.  We reatore
+the original wording from COMMON.W.  FIXME!
+
+@x l.457
+@ When an \.{@@i} line is found in the |cur_file|, we must temporarily
+stop reading it and start reading from the named include file.  The
+\.{@@i} line should give a complete file name with or without
+double quotes.  The remainder of the \.{@@i} line after the file name
+is ignored.  \.{CWEB} will look for include files in standard directories
+specified in the environment variable \.{CWEBINPUTS}. Multiple search paths
+can be specified by delimiting them with \.{PATH\_SEPARATOR}s.  The given
+file is searched for in the current directory first.  You also may include
+device names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost
+character.  For other systems than the {\mc AMIGA} different settings may
+be needed.
+@^system dependencies@>
+@y
+@ When an \.{@@i} line is found in the |cur_file|, we must temporarily
+stop reading it and start reading from the named include file.  The
+\.{@@i} line should give a complete file name with or without
+double quotes.
+If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
+of the same name was defined at compile time,
+\.{CWEB} will look for include files in the directory thus named, if
+it cannot find them in the current directory.
+(Colon-separated paths are not supported.)
+The remainder of the \.{@@i} line after the file name is ignored.
+@z
+
 @x l.475
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
@@ -108,7 +138,7 @@ Section 23.
 
 Replaced by Kpathsea `kpse_find_file'
 
-@x l.98 of COMM-EXTENSIONS.CH
+@x l.493 and l.82 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -169,6 +199,20 @@ Debugging output is always written to |stderr|, and begins with the string
 @z
 
 Section 71.
+
+@x l.1285
+@ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
+otherwise we add |".w"|. If this file can't be opened, we prepare an
+|alt_web_file_name| by adding |"web"| after the dot.
+The other file names come from adding other things
+after the dot.  We must check that there is enough room in
+|web_file_name| and the other arrays for the argument.
+@y
+@ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
+otherwise we add |".w"|.  The other file names come from adding other things
+after the dot.  We must check that there is enough room in |web_file_name| and
+the other arrays for the argument.
+@z
 
 @x l.1302 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
