@@ -578,7 +578,7 @@ msgstr ""
 msgid "  Tangle WEBFILE with CHANGEFILE into a C/C++ program."
 msgstr ""
 
-#: help.h:54
+#: help.h:54 help.h:71
 msgid "  Default CHANGEFILE is "
 msgstr ""
 
@@ -586,27 +586,27 @@ msgstr ""
 msgid "  C output goes to the basename of WEBFILE extended with `.c'"
 msgstr ""
 
-#: help.h:56
+#: help.h:56 help.h:73
 msgid "  unless otherwise specified by OUTFILE; in this case, '-' specifies"
 msgstr ""
 
-#: help.h:57
+#: help.h:57 help.h:74
 msgid "  a null CHANGEFILE."
 msgstr ""
 
-#: help.h:59
+#: help.h:59 help.h:76
 msgid "-b          suppress banner line on terminal"
 msgstr ""
 
-#: help.h:60
+#: help.h:60 help.h:78
 msgid "-h          suppress success message on completion"
 msgstr ""
 
-#: help.h:61
+#: help.h:61 help.h:81
 msgid "-p          suppress progress report messages"
 msgstr ""
 
-#: help.h:62
+#: help.h:62 help.h:85
 msgid "+s          print usage statistics"
 msgstr ""
 
@@ -626,32 +626,12 @@ msgstr ""
 msgid "  Weave WEBFILE with CHANGEFILE into a TeX document."
 msgstr ""
 
-#: help.h:71
-msgid "  Default CHANGEFILE is "
-msgstr ""
-
 #: help.h:72
 msgid "  TeX output goes to the basename of WEBFILE extended with `.tex'"
 msgstr ""
 
-#: help.h:73
-msgid "  unless otherwise specified by OUTFILE; in this case, '-' specifies"
-msgstr ""
-
-#: help.h:74
-msgid "  a null CHANGEFILE."
-msgstr ""
-
-#: help.h:76
-msgid "-b          suppress banner line on terminal"
-msgstr ""
-
 #: help.h:77
 msgid "-f          do not force a newline after every C statement in output"
-msgstr ""
-
-#: help.h:78
-msgid "-h          suppress success message on completion"
 msgstr ""
 
 #: help.h:79
@@ -660,10 +640,6 @@ msgstr ""
 
 #: help.h:80
 msgid "-o          suppress separation of declarations and statements"
-msgstr ""
-
-#: help.h:81
-msgid "-p          suppress progress report messages"
 msgstr ""
 
 #: help.h:82
@@ -676,8 +652,4 @@ msgstr ""
 
 #: help.h:84
 msgid "+lX         use macros for language X as of Xcwebmac.tex"
-msgstr ""
-
-#: help.h:85
-msgid "+s          print usage statistics"
 msgstr ""
