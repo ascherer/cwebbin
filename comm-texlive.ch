@@ -243,10 +243,6 @@ Section 74.
 
 Section 75.
 
-FIXME: Need new translation strings.
-On the other hand, 'usage()' pulls English texts from "help.h" outside cwebdir/
-anyway. So, no translation at this time.
-
 @x l.1354+ and l.222 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
@@ -259,11 +255,11 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 @y
 if (program==ctangle) {
   fputs(_("ctangle: Need one to three file arguments.\n"),stderr);
-  usage("ctangle");
+  cb_usage("ctangle");
 @.Usage:@>
 } else {
   fputs(_("cweave: Need one to three file arguments.\n"),stderr);
-  usage("cweave");
+  cb_usage("cweave");
 }
 @z
 
@@ -276,8 +272,6 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
-FIXME: Yet more version strings to translate.
-
 @x l.1418
 @** Index.
 @y
@@ -286,8 +280,35 @@ FIXME: Yet more version strings to translate.
 @ Modules for dealing with help messages and version info.
 
 @<Display help message and exit@>=
-usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
+cb_usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
 @.--help@>
+
+@ Special variants from \Kpathsea/ for i18n/t10n.
+
+@<Predecl...@>=
+static void cb_usage (const_string str);
+static void cb_usagehelp (const_string *message, const_string bug_email);
+
+@ We simply filter the strings through the catalog (if available).
+
+@c
+static void cb_usage (const_string str)
+{
+  fprintf (stderr, _("Try `%s --help' for more information.\n"), str);
+  uexit (1);
+}
+
+static void cb_usagehelp (const_string *message, const_string bug_email)
+{
+    if (!bug_email)
+        bug_email = "tex-k@@tug.org";
+    while (*message) {
+        printf("%s\n", strcmp("", *message) ? _(*message) : *message);
+        ++message;
+    }
+    printf(_("\nEmail bug reports to %s.\n"), bug_email);
+    uexit(0);
+}
 
 @ Will have to change these if the version numbers change (ouch).
 
@@ -296,7 +317,7 @@ usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
 
 @<Display version information and exit@>=
 printversionandexit((program==ctangle ? ctangle_banner : cweave_banner),
-  _("Silvio Levy and Donald E. Knuth"), NULL, NULL);
+  "Silvio Levy and Donald E. Knuth", NULL, NULL);
 @.--version@>
 
 @* File lookup with kpathsea.

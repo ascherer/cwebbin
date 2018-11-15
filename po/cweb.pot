@@ -553,15 +553,25 @@ msgstr ""
 msgid "cweave: Need one to three file arguments.\n"
 msgstr ""
 
-#: comm-texlive.ch:294 ctang-texlive:35
+#: comm-texlive.ch:303
+msgid "Try `%s --help' for more information.\n"
+msgstr ""
+
+#: comm-texlive.ch:315
+msgid ""
+"\n"
+"Email bug reports to %s.\n"
+msgstr ""
+
+#: comm-texlive.ch:321 ctang-texlive:35
 msgid "This is CTANGLE, Version 3.64"
 msgstr ""
 
-#: comm-texlive.ch:295 cweav-texlive.ch:39
+#: comm-texlive.ch:322 cweav-texlive.ch:39
 msgid "This is CWEAVE, Version 3.64"
 msgstr ""
 
-#: comm-texlive.ch:299
+#: comm-texlive.ch:326
 msgid "Silvio Levy and Donald E. Knuth"
 msgstr ""
 
