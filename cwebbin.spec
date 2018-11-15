@@ -69,6 +69,9 @@ and Donald Knuth for Literate Programming in C/C++.
 # Use system CWEB, most likely from TeXLive
 %{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
 %{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
+
+%{__msgfmt} po/de/cweb.po -o po/de/cweb.mo
+%{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
 %else
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
