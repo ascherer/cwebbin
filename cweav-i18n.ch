@@ -329,7 +329,10 @@ reset_input(); if (show_progress) fputs(_("\nWriting the output file..."),stdout
 @x l.4338
 if (show_happiness) printf("\nDone.");
 @y
-if (show_happiness) fputs(_("\nDone."),stdout);
+if (show_happiness) {
+  if (show_progress) new_line;
+  fputs(_("Done."),stdout);
+}
 @z
 
 @x l.4486

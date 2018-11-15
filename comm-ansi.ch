@@ -380,8 +380,10 @@ extern void print_stats(void);@/
 
 @x l.1151
 int wrap_up() {
+  putchar('\n');
 @y
 int wrap_up(void) {
+  if (show_progress) new_line;
 @z
 
 @x l.1174

@@ -69,7 +69,10 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @x l.564
     if(show_happiness) printf("\nDone.");
 @y
-    if(show_happiness) fputs(_("\nDone."),stdout);
+    if (show_happiness) {
+      if (show_progress) new_line;
+      fputs(_("Done."),stdout);
+    }
 @z
 
 @x l.572 and l.41 of CTANG-OUTPUT.CH

@@ -131,13 +131,9 @@ msgstr ""
 "\n"
 "! Stringa troppo lunga: "
 
-#: ctang-i18n.ch:72 cweav-i18n.ch:332
-msgid ""
-"\n"
-"Done."
-msgstr ""
-"\n"
-"Fatto."
+#: ctang-i18n.ch:74 cweav-i18n.ch:334
+msgid "Done."
+msgstr "Fatto."
 
 #: cweav-i18n.ch:206
 #, c-format

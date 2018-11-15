@@ -103,10 +103,8 @@ msgid ""
 "! String too long: "
 msgstr ""
 
-#: ctang-i18n.ch:72 cweav-i18n.ch:332
-msgid ""
-"\n"
-"Done."
+#: ctang-i18n.ch:74 cweav-i18n.ch:334
+msgid "Done."
 msgstr ""
 
 #: cweav-i18n.ch:206
