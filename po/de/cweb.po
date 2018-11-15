@@ -611,19 +611,15 @@ msgstr "Token"
 #
 # New strings from *-texlive.ch added manually 2018-11-13 by Andreas Scherer
 #
-#: comm-texlive.ch:261
-msgid "ctangle: Need one to three file arguments.\n"
-msgstr "ctangle: Benötige ein bis drei Dateiargumente.\n"
+#: comm-texlive.ch:291
+msgid "%s: Need one to three file arguments.\n"
+msgstr "%s: Benötige ein bis drei Dateiargumente.\n"
 
-#: comm-texlive.ch:265
-msgid "cweave: Need one to three file arguments.\n"
-msgstr "cweave: Benötige ein bis drei Dateiargumente.\n"
-
-#: comm-texlive.ch:303
+#: comm-texlive.ch:292
 msgid "Try `%s --help' for more information.\n"
 msgstr "Versuche `%s --help' für weitere Informationen.\n"
 
-#: comm-texlive.ch:315
+#: comm-texlive.ch:304
 msgid ""
 "\n"
 "Email bug reports to %s.\n"
@@ -631,15 +627,15 @@ msgstr ""
 "\n"
 "Sende Fehler per Email an %s.\n"
 
-#: comm-texlive.ch:321 ctang-texlive:35
+#: comm-texlive.ch:310 ctang-texlive:35
 msgid "This is CTANGLE, Version 3.64"
 msgstr "Dies ist CTANGLE, Version 3.64"
 
-#: comm-texlive.ch:322 cweav-texlive.ch:39
+#: comm-texlive.ch:311 cweav-texlive.ch:39
 msgid "This is CWEAVE, Version 3.64"
 msgstr "Dies ist CWEAVE, Version 3.64"
 
-#: comm-texlive.ch:299
+#: comm-texlive.ch:315
 msgid "Silvio Levy and Donald E. Knuth"
 msgstr "Silvio Levy und Donald E. Knuth"
 
@@ -655,8 +651,8 @@ msgid "  Tangle WEBFILE with CHANGEFILE into a C/C++ program."
 msgstr "  Verknüpfe WEBFILE mit CHANGEFILE in ein C/C++ Programm."
 
 #: help.h:54 help.h:71
-msgid "  Default CHANGEFILE is "
-msgstr "  Vorgabe für CHANGEFILE ist "
+msgid "  Default CHANGEFILE is /dev/null;"
+msgstr "  Vorgabe für CHANGEFILE ist /dev/null;"
 
 #: help.h:55
 msgid "  C output goes to the basename of WEBFILE extended with `.c'"

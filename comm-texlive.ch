@@ -253,14 +253,8 @@ else fatal(
 _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 @y
-if (program==ctangle) {
-  fputs(_("ctangle: Need one to three file arguments.\n"),stderr);
-  cb_usage("ctangle");
+cb_usage(program==ctangle ? "ctangle" : "cweave");
 @.Usage:@>
-} else {
-  fputs(_("cweave: Need one to three file arguments.\n"),stderr);
-  cb_usage("cweave");
-}
 @z
 
 Section 77.
@@ -294,6 +288,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email);
 @c
 static void cb_usage (const_string str)
 {
+  fprintf (stderr, _("%s: Need one to three file arguments.\n"), str);
   fprintf (stderr, _("Try `%s --help' for more information.\n"), str);
   uexit (1);
 }
