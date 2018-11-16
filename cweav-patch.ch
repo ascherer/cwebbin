@@ -197,7 +197,7 @@ z
 @x l.64
 @d banner "This is CWEAVE (Version 3.64)\n"
 @y
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
 @x l.4644

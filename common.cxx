@@ -1266,13 +1266,13 @@ print_stats();
 switch(history){
 #line 711 "comm-foo.ch"
 case spotless:
-if(show_happiness)fputs(_("(No errors were found.)\n"),stdout);break;
+if(show_happiness)puts(_("(No errors were found.)"));break;
 case harmless_message:
-fputs(_("(Did you see the warning message above?)\n"),stdout);break;
+puts(_("(Did you see the warning message above?)"));break;
 case error_message:
-fputs(_("(Pardon me, but I think I spotted something wrong.)\n"),stdout);break;
+puts(_("(Pardon me, but I think I spotted something wrong.)"));break;
 case fatal_message:
-fputs(_("(That was a fatal error, my friend.)\n"),stdout);
+puts(_("(That was a fatal error, my friend.)"));
 #line 1168 "common.w"
 }
 

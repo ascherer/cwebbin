@@ -182,7 +182,7 @@ z
 @x l.62
 @d banner "This is CTANGLE (Version 3.64)\n"
 @y
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @z
 
 @x l.1546

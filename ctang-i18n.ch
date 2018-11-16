@@ -10,9 +10,9 @@ CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 @x l.62+ and l.185 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @y
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])\n")
+@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
 @z
 
 @x l.97
@@ -247,7 +247,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
           (long)(byte_ptr-byte_mem),(long)max_bytes);
   printf("%ld tokens (out of %ld)\n",
 @y
-  fputs(_("\nMemory usage statistics:\n"),stdout);
+  puts(_("\nMemory usage statistics:"));
   printf(_("%ld names (out of %ld)\n"),
           (long)(name_ptr-name_dir),(long)max_names);
   printf(_("%ld replacement texts (out of %ld)\n"),

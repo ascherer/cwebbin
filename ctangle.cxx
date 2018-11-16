@@ -25,7 +25,7 @@
 /*:62*/
 #line 65 "ctangle.w"
 
-#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])\n")  \
+#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")  \
 
 #define max_bytes 1000000 \
 
@@ -524,7 +524,7 @@ section_text[0]= ' ';
 ;
 common_init();
 #line 68 "ctang-foo.ch"
-if(show_banner)fputs(banner,stdout);
+if(show_banner)puts(banner);
 #line 101 "ctangle.w"
 phase_one();
 phase_two();
@@ -1865,7 +1865,7 @@ default:err_print(_("! Double @ should be used in limbo"));
 void
 print_stats(void){
 #line 653 "ctang-foo.ch"
-fputs(_("\nMemory usage statistics:\n"),stdout);
+puts(_("\nMemory usage statistics:"));
 printf(_("%ld names (out of %ld)\n"),
 (long)(name_ptr-name_dir),(long)max_names);
 printf(_("%ld replacement texts (out of %ld)\n"),

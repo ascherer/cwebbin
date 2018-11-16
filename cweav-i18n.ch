@@ -10,9 +10,9 @@ CWEAV-EXTENSIONS.CH, and CWEAV-OUTPUT.CH to be applied as well.
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 @x l.64+ and 200 of CWEAV-PATCH.CH
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @y
-@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])\n")
+@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])")
 @z
 
 @x l.104
@@ -364,7 +364,7 @@ if (show_happiness) {
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
 }
 @y
-  fputs(_("\nMemory usage statistics:\n"),stdout);
+  puts(_("\nMemory usage statistics:"));
 @.Memory usage statistics:@>
   printf(_("%ld names (out of %ld)\n"),
             (long)(name_ptr-name_dir),(long)max_names);
@@ -372,7 +372,7 @@ if (show_happiness) {
             (long)(xref_ptr-xmem),(long)max_refs);
   printf(_("%ld bytes (out of %ld)\n"),
             (long)(byte_ptr-byte_mem),(long)max_bytes);
-  fputs(_("Parsing:\n"),stdout);
+  puts(_("Parsing:"));
   printf(_("%ld scraps (out of %ld)\n"),
             (long)(max_scr_ptr-scrap_info),(long)max_scraps);
   printf(_("%ld texts (out of %ld)\n"),
@@ -381,7 +381,7 @@ if (show_happiness) {
             (long)(max_tok_ptr-tok_mem),(long)max_toks);
   printf(_("%ld levels (out of %ld)\n"),
             (long)(max_stack_ptr-stack),(long)stack_size);
-  fputs(_("Sorting:\n"),stdout);
+  puts(_("Sorting:"));
   printf(_("%ld levels (out of %ld)\n"),
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
 }

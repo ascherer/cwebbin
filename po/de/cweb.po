@@ -147,10 +147,10 @@ msgstr ""
 #: ctang-i18n.ch:247 cweav-i18n.ch:364
 msgid ""
 "\n"
-"Memory usage statistics:\n"
+"Memory usage statistics:"
 msgstr ""
 "\n"
-"Statistik über den Speicherbedarf:\n"
+"Statistik über den Speicherbedarf:"
 
 #: cweav-i18n.ch:212
 #, c-format
@@ -493,12 +493,12 @@ msgid "%ld tokens (out of %ld)\n"
 msgstr "%ld Token (von %ld)\n"
 
 #: comm-i18n.ch:193
-msgid "(Did you see the warning message above?)\n"
-msgstr "(Hast du die obige Warnung gesehen?)\n"
+msgid "(Did you see the warning message above?)"
+msgstr "(Hast du die obige Warnung gesehen?)"
 
 #: comm-i18n.ch:191
-msgid "(No errors were found.)\n"
-msgstr "(Keine Fehler gefunden.)\n"
+msgid "(No errors were found.)"
+msgstr "(Keine Fehler gefunden.)"
 
 #: comm-i18n.ch:195
 msgid "(Pardon me, but I think I spotted something wrong.)\n"
@@ -540,20 +540,20 @@ msgstr ""
 " einer Abkürzung von <"
 
 #: cweav-i18n.ch:372
-msgid "Parsing:\n"
-msgstr "Parsen:\n"
+msgid "Parsing:"
+msgstr "Parsen:"
 
 #: cweav-i18n.ch:381
-msgid "Sorting:\n"
-msgstr "Sortieren:\n"
+msgid "Sorting:"
+msgstr "Sortieren:"
 
 #: ctang-i18n.ch:15
-msgid "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
-msgstr "Dies ist CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+msgid "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
+msgstr "Dies ist CTANGLE (Version 3.64 [CWEBbin 2018])"
 
 #: cweav-i18n.ch:15
-msgid "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
-msgstr "Dies ist CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+msgid "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
+msgstr "Dies ist CWEAVE (Version 3.64 [CWEBbin 2018])"
 
 #: cweav-i18n.ch:254 cweav-i18n.ch:260
 msgid "buffer"

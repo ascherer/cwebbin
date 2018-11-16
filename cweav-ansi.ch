@@ -51,7 +51,7 @@ char **av@t\2\2@>) /* argument values */
 @x l.108
   if (show_banner) printf(banner); /* print a ``banner line'' */
 @y
-  if (show_banner) fputs(banner,stdout); /* print a ``banner line'' */
+  if (show_banner) puts(banner); /* print a ``banner line'' */
 @z
 
 @x l.113 - 'use' print_text(), used nowhere else

@@ -117,7 +117,7 @@ msgstr ""
 #: ctang-i18n.ch:247 cweav-i18n.ch:364
 msgid ""
 "\n"
-"Memory usage statistics:\n"
+"Memory usage statistics:"
 msgstr ""
 
 #: cweav-i18n.ch:212
@@ -431,11 +431,11 @@ msgid "%ld tokens (out of %ld)\n"
 msgstr ""
 
 #: comm-i18n.ch:193
-msgid "(Did you see the warning message above?)\n"
+msgid "(Did you see the warning message above?)"
 msgstr ""
 
 #: comm-i18n.ch:191
-msgid "(No errors were found.)\n"
+msgid "(No errors were found.)"
 msgstr ""
 
 #: comm-i18n.ch:195
@@ -474,19 +474,19 @@ msgid ""
 msgstr ""
 
 #: cweav-i18n.ch:372
-msgid "Parsing:\n"
+msgid "Parsing:"
 msgstr ""
 
 #: cweav-i18n.ch:381
-msgid "Sorting:\n"
+msgid "Sorting:"
 msgstr ""
 
 #: ctang-i18n.ch:15
-msgid "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+msgid "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 msgstr ""
 
 #: cweav-i18n.ch:15
-msgid "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+msgid "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 msgstr ""
 
 #: cweav-i18n.ch:254 cweav-i18n.ch:260
