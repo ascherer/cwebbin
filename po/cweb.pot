@@ -559,16 +559,16 @@ msgid ""
 "Email bug reports to %s.\n"
 msgstr ""
 
-#: comm-texlive.ch:310 ctang-texlive:35
+#: ctang-texlive:35
 msgid "This is CTANGLE, Version 3.64"
 msgstr ""
 
-#: comm-texlive.ch:311 cweav-texlive.ch:39
+#: cweav-texlive.ch:39
 msgid "This is CWEAVE, Version 3.64"
 msgstr ""
 
 #: comm-texlive.ch:315
-msgid "Silvio Levy and Donald E. Knuth"
+msgid "Copyright 2019 Silvio Levy and Donald E. Knuth"
 msgstr ""
 
 #

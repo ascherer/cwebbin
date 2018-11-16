@@ -313,13 +313,15 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
 
 @ Will have to change these if the version numbers change (ouch).
 
-@d ctangle_banner _("This is CTANGLE, Version 3.64")
-@d cweave_banner _("This is CWEAVE, Version 3.64")
+@d ctangle_banner "CTANGLE (CWEBBIN, TeX Live 2019/dev) 3.64"
+@d cweave_banner "CWEAVE (CWEBBIN, TeX Live 2019/dev) 3.64"
 
-@<Display version information and exit@>=
-printversionandexit((program==ctangle ? ctangle_banner : cweave_banner),
-  "Silvio Levy and Donald E. Knuth", NULL, NULL);
+@<Display version information and exit@>={
+  puts(program==ctangle ? ctangle_banner : cweave_banner);
 @.--version@>
+  puts("Copyright 2019 Silvio Levy and Donald E. Knuth");
+  exit(0);
+}
 
 @* File lookup with kpathsea.
 
