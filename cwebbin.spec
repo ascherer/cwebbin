@@ -103,7 +103,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %install
 %if %{with texlive}
 
-%{__pax} *-w2c.ch comm-foo.h po -wzf %{getenv:PWD}/cweb-texlive.tar.gz
+%{__pax} *-w2c.ch comm-foo.h po cwebinputs texinputs \
+	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
 
