@@ -667,16 +667,16 @@ msgid "  a null CHANGEFILE."
 msgstr "  bezeichnet '-' ein leeres CHANGEFILE."
 
 #: help.h:59 help.h:76
-msgid "-b          suppress banner line on terminal"
-msgstr "-b          unterdrücke die Startmeldung"
+msgid "+b          print banner line on terminal"
+msgstr "+b          schreibe die Startmeldung"
 
 #: help.h:60 help.h:78
-msgid "-h          suppress success message on completion"
-msgstr "-h          unterdrücke die Erfolgsmeldung am Ende"
+msgid "+h          print success message on completion"
+msgstr "+h          schreibe die Erfolgsmeldung am Ende"
 
 #: help.h:61 help.h:81
-msgid "-p          suppress progress report messages"
-msgstr "-p          unterdrücke die Fortschrittsmeldungen"
+msgid "+p          print progress report messages"
+msgstr "+p          schreibe die Fortschrittsmeldungen"
 
 #: help.h:62 help.h:85
 msgid "+s          print usage statistics"

@@ -198,6 +198,12 @@ Debugging output is always written to |stderr|, and begins with the string
   /* should results of file searching be shown? */
 @z
 
+@x l.1233+ and l.216 of COMM-EXTENSIONS.CH
+show_banner=show_happiness=show_progress=indent_param_decl=order_decl_stmt=1;
+@y
+indent_param_decl=order_decl_stmt=1;
+@z
+
 Section 71.
 
 @x l.1285
