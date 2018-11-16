@@ -23,7 +23,7 @@ msgid ""
 "! Ambiguous prefix: matches <"
 msgstr ""
 "\n"
-"! Mehrdeutiger Präfix: paßt zu <"
+"! Mehrdeutiger Präfix: passt zu <"
 
 #: cweav-i18n.ch:248
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "! Line had to be broken (output l. %d):\n"
 msgstr ""
 "\n"
-"! Zeile mußte umbrochen werden (Ausgabezeile %d):\n"
+"! Zeile musste umbrochen werden (Ausgabezeile %d):\n"
 
 #: cweav-i18n.ch:126
 msgid ""
@@ -104,7 +104,7 @@ msgid ""
 "! Section name incompatible with <"
 msgstr ""
 "\n"
-"! Abschnittname paßt nicht zu <"
+"! Abschnittname passt nicht zu <"
 
 #: ctang-i18n.ch:150 cweav-i18n.ch:66
 msgid ""
@@ -260,7 +260,7 @@ msgstr "! Kontrolltext nicht beendet"
 
 #: ctang-i18n.ch:210
 msgid "! Definition flushed, must start with identifier"
-msgstr "! Definition übergangen, muß mit einem Bezeichner anfangen"
+msgstr "! Definition übergangen, muss mit einem Bezeichner anfangen"
 
 #: ctang-i18n.ch:132
 msgid "! Double @ should be used in ASCII constant"
@@ -450,7 +450,7 @@ msgstr "! Das geht nicht im TeX-Text"
 
 #: cweav-i18n.ch:302
 msgid "! You need an = sign after the section name"
-msgstr "! Hinter dem Abschnittnamen muß ein = Zeichen stehen"
+msgstr "! Hinter dem Abschnittnamen muss ein = Zeichen stehen"
 
 #: ctang-i18n.ch:252 cweav-i18n.ch:370
 #, c-format
@@ -708,7 +708,7 @@ msgstr "-f          erzwinge keinen Zeilenumbruch nach jedem C Statement"
 
 #: help.h:79
 msgid "-i          suppress indentation of parameter declarations"
-msgstr "-i          unterdrücke die Einrückung von Parameterdrklarationen"
+msgstr "-i          unterdrücke die Einrückung von Parameterdeklarationen"
 
 #: help.h:80
 msgid "-o          suppress separation of declarations and statements"
@@ -716,7 +716,7 @@ msgstr "-o          unterdrücke die Trennung von Deklarationen und Statements"
 
 #: help.h:82
 msgid "-x          omit indices, section names, table of contents"
-msgstr "-x          verzichte auf Indexe, Abschnittnamen und Inhaltsverzeichni"
+msgstr "-x          verzichte auf Indexe, Abschnittnamen und Inhaltsverzeichnis"
 
 #: help.h:83
 msgid "+e          enclose C material in \\PB{...}"
