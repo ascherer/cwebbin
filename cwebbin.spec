@@ -60,18 +60,6 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
 
-%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
-%{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
-%{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
-
-%{__make} comm-foo.h
-
-# Use system CWEB, most likely from TeXLive
-%{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
-%{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
-
-%{__msgfmt} po/de/cweb.po -o po/de/cweb.mo
-%{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
 %else
 
 %{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
@@ -90,12 +78,35 @@ and Donald Knuth for Literate Programming in C/C++.
 %endif
 
 %build
-%{?with_texlive:%{error:Forget it! TeXLive version needs TL ecosystem.}}
+%if %{with texlive}
+
+%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
+%{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
+%{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
+
+%{__make} comm-foo.h
+
+# Use system CWEB, most likely from TeXLive
+%{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
+%{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
+
+%{__msgfmt} po/de/cweb.po -o po/de/cweb.mo
+%{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
+
+%else
 
 %{__touch} *.cxx
 %{__make} boot cautiously all
 
+%endif
+
 %install
+%if %{with texlive}
+
+%{__pax} *-w2c.ch comm-foo.h po -wzf %{getenv:PWD}/cweb-texlive.tar.gz
+
+%else
+
 %{__rm} -rf %{buildroot}
 
 %make_install
@@ -104,6 +115,8 @@ and Donald Knuth for Literate Programming in C/C++.
 	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 %{__msgfmt} po/de/cweb.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 %{__msgfmt} po/it/cweb.po -o %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
+
+%endif
 
 %files
 %defattr(-,root,root,-)
