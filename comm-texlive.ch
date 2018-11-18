@@ -320,7 +320,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   puts(program==ctangle ? ctangle_banner : cweave_banner);
 @.--version@>
   puts("Copyright 2019 Silvio Levy and Donald E. Knuth");
-  exit(0);
+  uexit(0);
 }
 
 @* File lookup with kpathsea.
