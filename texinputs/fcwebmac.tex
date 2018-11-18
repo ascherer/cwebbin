@@ -121,7 +121,6 @@
   Janvier\or F\'evrier\or Mars\or Avril\or Mai\or Juin\or
   Juillet\or Ao\^ut\or Septembre\or Octobre\or Novembre\or D\'ecembre\fi
   \space\number\year}
-\newcount\twodigits
 \def\hours{\twodigits=\time \divide\twodigits by60 \printtwodigits
   \null\space\sc h\space % distinguish between time and year
   \multiply\twodigits by-60 \advance\twodigits by\time \printtwodigits}

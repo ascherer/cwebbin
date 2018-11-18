@@ -123,7 +123,6 @@
   Januar\or Februar\or M\"arz\or April\or Mai\or Juni\or
   Juli\or August\or September\or Oktober\or November\or Dezember\fi
   \space\number\year}
-\newcount\twodigits
 \def\hours{\twodigits=\time \divide\twodigits by60 \printtwodigits
   \null\space\sc Uhr\space % distinguish between time and year
   \multiply\twodigits by-60 \advance\twodigits by\time \printtwodigits}
