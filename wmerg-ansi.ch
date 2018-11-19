@@ -58,14 +58,8 @@ extern char* strncpy(); /* copy up to $n$ string characters */
 instead of predeclaring the standard system functions |strlen|, |strcmp|,
 |strcpy|, and |strncpy|.  This is done in the main section.
 @^system dependencies@>
-@z
 
-One of the last long-standing bugs in CWEB; reported to DEK long ago.
-
-@x l.88
-@:caddr_t}{\bf caddr_t@>
-@y
-@:caddr_t}{\bf caddr\_t@>
+@<Predecl...@>=
 @z
 
 @x l.96
