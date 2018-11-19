@@ -326,13 +326,10 @@ reset_input(); if (show_progress) fputs(_("\nWriting the output file..."),stdout
     fatal(_("! Cannot open section file "),scn_file_name);
 @z
 
-@x l.4338
-if (show_happiness) printf("\nDone.");
+@x l.4338+ and l.218 of CWEAV-PATCH.CH
+  printf("Done.");
 @y
-if (show_happiness) {
-  if (show_progress) new_line;
   fputs(_("Done."),stdout);
-}
 @z
 
 @x l.4486

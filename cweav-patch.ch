@@ -208,6 +208,17 @@ char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 @z
 
+Fix bug: Avoid empty line for '-bp'.
+
+@x l.4338
+if (show_happiness) printf("\nDone.");
+@y
+if (show_happiness) {
+  if (show_progress) new_line;
+  printf("Done.");
+}
+@z
+
 @x l.4644
 @** Index.
 @y

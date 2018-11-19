@@ -66,13 +66,10 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564
-    if(show_happiness) printf("\nDone.");
+@x l.564+ and l.193 of CTANG-PATCH.CH
+      printf("Done.");
 @y
-    if (show_happiness) {
-      if (show_progress) new_line;
       fputs(_("Done."),stdout);
-    }
 @z
 
 @x l.572 and l.41 of CTANG-OUTPUT.CH

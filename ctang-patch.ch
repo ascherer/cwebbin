@@ -185,6 +185,15 @@ z
 @d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @z
 
+@x l.564
+    if(show_happiness) printf("\nDone.");
+@y
+    if (show_happiness) {
+      if (show_progress) new_line;
+      printf("Done.");
+    }
+@z
+
 @x l.1546
 @** Index.
 @y

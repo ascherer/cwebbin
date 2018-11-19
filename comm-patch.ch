@@ -191,3 +191,13 @@ x l.43
 y
 \let\maybe=\iffalse % print only changed modules
 z
+
+Fix bug: Don't print empty line for '-ph'.
+
+@x l.1151
+int wrap_up() {
+  putchar('\n');
+@y
+int wrap_up() {
+  if (show_progress) new_line;
+@z
