@@ -1,4 +1,4 @@
-Changes for WMERGE.W by Andreas Scherer, September 19, 1995.
+Changes for WMERGE.W by Andreas Scherer, October 19, 2018.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  An extended path search mechanism for lookup of
@@ -9,34 +9,10 @@ This change file requires WMERG-PATCH.CH, WMERG-ANSI.CH to be applied.
 
 For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 
-@x l.18
-#include <ctype.h> /* definition of |isalpha|, |isdigit| and so on */
-@y
-#include <ctype.h> /* definition of |isalpha|, |isdigit| and so on */
-@#
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://"; /* UNIX set up */
-#endif
-@#
-#define PATH_SEPARATOR   separators[0]
-#define DIR_SEPARATOR    separators[1]
-#define DEVICE_SEPARATOR separators[2]
-@z
-
 @x l.129
 @d max_file_name_length 60
 @y
 @d max_file_name_length 255
-@z
-
-@x l.289
-  @<Open input files@>;
-  include_depth=0; cur_line=0; change_line=0;
-@y
-  include_depth=0; cur_line=0; change_line=0;
-  @<Open input files@>@;
 @z
 
 @x l.355
@@ -53,8 +29,9 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @y
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
-\.{@@i} line should give a complete file name with or without double
-quotes.  The remainder of the \.{@@i} line after the file name is ignored.
+\.{@@i} line should give a complete file name with or without
+double quotes.
+The remainder of the \.{@@i} line after the file name is ignored.
 \.{CWEB} will look for include files in standard directories specified in
 the environment variable \.{CWEBINPUTS}. Multiple search paths can be
 specified by delimiting them with \.{PATH\_SEPARATOR}s.  The given file is
@@ -202,7 +179,18 @@ are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
 @^system dependencies@>
 
-@c
+@d PATH_SEPARATOR   separators[0]
+@d DIR_SEPARATOR    separators[1]
+@d DEVICE_SEPARATOR separators[2]
+
+@<Definitions@>=
+#ifdef SEPARATORS
+char separators[]=SEPARATORS;
+#else
+char separators[]="://"; /* UNIX set up */
+#endif
+
+@ @c
 static boolean set_path(char *include_path,char *environment)
 {
   char string[max_path_length+2];
@@ -228,7 +216,7 @@ needs a few extra variables.
 
 @d max_path_length (BUFSIZ-2)
 
-@<Definitions...@>=
+@<Definitions@>=
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
