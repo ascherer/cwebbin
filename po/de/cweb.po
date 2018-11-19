@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: ctang-i18n.ch:74 cweav-i18n.ch:334
+msgid "Done."
+msgstr "Fertig."
+
 #: comm-i18n.ch:139
 msgid ""
 "\n"
@@ -130,10 +134,6 @@ msgid ""
 msgstr ""
 "\n"
 "! Zeichenkette zu lang: "
-
-#: ctang-i18n.ch:74 cweav-i18n.ch:334
-msgid "Done."
-msgstr "Fertig."
 
 #: cweav-i18n.ch:206
 #, c-format
@@ -501,12 +501,12 @@ msgid "(No errors were found.)"
 msgstr "(Keine Fehler gefunden.)"
 
 #: comm-i18n.ch:195
-msgid "(Pardon me, but I think I spotted something wrong.)\n"
-msgstr "(Entschuldige bitte, aber ich glaube, etwas stimmt nicht.)\n"
+msgid "(Pardon me, but I think I spotted something wrong.)"
+msgstr "(Entschuldige bitte, aber ich glaube, etwas stimmt nicht.)"
 
 #: comm-i18n.ch:197
-msgid "(That was a fatal error, my friend.)\n"
-msgstr "(Mensch, das war ein böser Fehler.)\n"
+msgid "(That was a fatal error, my friend.)"
+msgstr "(Mensch, das war ein böser Fehler.)"
 
 #: comm-i18n.ch:177
 #, c-format
