@@ -69,6 +69,13 @@ Parse C++ string prefixes L, U, u, u8.
   }
 @z
 
+@x l.1320
+@d tex_printf(c) fprintf(active_file,c)
+@y
+@d tex_printf(c) fprintf(active_file,"%s",c)
+@d tex_puts(c) fputs(c,active_file)
+@z
+
 @x l.1364
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
@@ -90,9 +97,9 @@ prepended to `\.{cwebmac.tex}', e.g., if you call \.{CWEAVE} with
 
 @<Set init...@>=
 out_ptr=out_buf+1; out_line=1; active_file=tex_file; *out_ptr='c';
-tex_printf("\\input ");
-fprintf(active_file,"%s",use_language);
-tex_printf("cwebma");
+tex_puts("\\input ");
+tex_printf(use_language);
+tex_puts("cwebma");
 @z
 
 CWeave indents declarations after old-style function definitions.  With the
