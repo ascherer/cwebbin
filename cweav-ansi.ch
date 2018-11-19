@@ -347,10 +347,10 @@ section_check(
 name_pointer p) /* print anomalies in subtree |p| */
 @z
 
-@x l.1323
+@x l.1323 and l.208 of COMM-PATCH.CH
 void
 flush_buffer(b,per_cent,carryover)
-char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
+char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 boolean per_cent,carryover;
 @y
 static void
@@ -490,7 +490,7 @@ text_pointer p@t\2\2@>)
   fflush(stdout);
 }
 @y
-  fflush(stdout);
+  update_terminal;
 }
 #endif /* |DEAD_CODE| */
 @z

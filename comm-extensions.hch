@@ -22,9 +22,9 @@ extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @x l.168
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @y
+@d show_happiness flags['h'] /* should lack of errors be announced? */
 @d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
 @d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
-@d show_happiness flags['h'] /* should lack of errors be announced? */
 @z
 
 @x l.173

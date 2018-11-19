@@ -92,14 +92,13 @@ the original wording from COMMON.W.  FIXME!
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
-double quotes.  The remainder of the \.{@@i} line after the file name
-is ignored.  \.{CWEB} will look for include files in standard directories
-specified in the environment variable \.{CWEBINPUTS}. Multiple search paths
-can be specified by delimiting them with \.{PATH\_SEPARATOR}s.  The given
-file is searched for in the current directory first.  You also may include
-device names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost
-character.  For other systems than the {\mc AMIGA} different settings may
-be needed.
+double quotes.
+The remainder of the \.{@@i} line after the file name is ignored.
+\.{CWEB} will look for include files in standard directories specified in the
+environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
+delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
+the current directory first.  You also may include device names; these must
+have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@>
 @y
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
@@ -193,9 +192,9 @@ Debugging output is always written to |stderr|, and begins with the string
 @x l.1218
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
 @d show_kpathsea_debug flags['d']
   /* should results of file searching be shown? */
+@d show_happiness flags['h'] /* should lack of errors be announced? */
 @z
 
 @x l.1233+ and l.216 of COMM-EXTENSIONS.CH

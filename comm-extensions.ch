@@ -23,8 +23,10 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
 @x l.415
 @d max_sections 2000 /* number of identifiers, strings, section names;
+  must be less than 10240 */
 @y
 @d max_sections 10239 /* number of identifiers, strings, section names;
+  must be less than 10240 */
 @z
 
 @x l.457
@@ -42,14 +44,13 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
-double quotes.  The remainder of the \.{@@i} line after the file name
-is ignored.  \.{CWEB} will look for include files in standard directories
-specified in the environment variable \.{CWEBINPUTS}. Multiple search paths
-can be specified by delimiting them with \.{PATH\_SEPARATOR}s.  The given
-file is searched for in the current directory first.  You also may include
-device names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost
-character.  For other systems than the {\mc AMIGA} different settings may
-be needed.
+double quotes.
+The remainder of the \.{@@i} line after the file name is ignored.
+\.{CWEB} will look for include files in standard directories specified in the
+environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
+delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
+the current directory first.  You also may include device names; these must
+have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@>
 @z
 
@@ -104,14 +105,14 @@ be needed.
 
 @x l.589
 @d max_bytes 90000 /* the number of bytes in identifiers,
+  index entries, and section names; must be less than $2^{24}$ */
+@d max_names 4000 /* number of identifiers, strings, section names;
+  must be less than 10240 */
 @y
 @d max_bytes 1000000 /* the number of bytes in identifiers,
-@z
-
-@x l.591
-@d max_names 4000 /* number of identifiers, strings, section names;
-@y
+  index entries, and section names; must be less than $2^{24}$ */
 @d max_names 10239 /* number of identifiers, strings, section names;
+  must be less than 10240 */
 @z
 
 @x l.642
@@ -204,8 +205,8 @@ char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
-const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 boolean flags[256]; /* an option for each 8-bit code */
+const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
 @x l.1233
@@ -222,7 +223,7 @@ An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
 An omitted change file argument means that |"/dev/null"| or---on non-\UNIX/
-systems the contents of the compile-time variable |DEV_NULL| (TeXLive) or
+systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
@@ -275,7 +276,7 @@ systems the contents of the compile-time variable |DEV_NULL| (TeXLive) or
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
-static boolean set_path(char *,char *);@/
+static boolean set_path(char *,char *);
 @z
 
 @x l.1418

@@ -77,7 +77,7 @@ extern int names_match(name_pointer,const char *,size_t,eight_bits);@/
 extern name_pointer id_lookup(const char *,const char *,char);
    /* looks up a string in the identifier table */
 extern name_pointer prefix_lookup(char *,char *); /* finds section name given a prefix */
-extern name_pointer section_lookup(char *,char *,int);@/
+extern name_pointer section_lookup(char *,char *,int); /* finds section name */
 extern void init_node(name_pointer);@/
 extern void init_p(name_pointer,eight_bits);@/
 extern void print_prefix_name(name_pointer);@/
@@ -94,7 +94,7 @@ extern void overflow(); /* succumb because a table has overflowed */
 @y
 extern int history; /* indicates how bad this run was */
 extern int wrap_up(void); /* indicate |history| and exit */
-extern void err_print(const char *); /* prints error message and context */
+extern void err_print(const char *); /* print error message and context */
 extern void fatal(const char *,const char *); /* issue error message and die */
 extern void overflow(const char *); /* succumb because a table has overflowed */
 @z

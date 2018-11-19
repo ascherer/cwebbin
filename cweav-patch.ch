@@ -200,6 +200,14 @@ z
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
+Fix typo in comment.
+
+@x l.1325
+char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
+@y
+char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
+@z
+
 @x l.4644
 @** Index.
 @y

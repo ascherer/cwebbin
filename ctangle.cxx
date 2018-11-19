@@ -89,9 +89,9 @@
 
 #define show_banner flags['b']
 #define show_progress flags['p']
+#define show_happiness flags['h']
 #define indent_param_decl flags['i']
-#define order_decl_stmt flags['o']
-#define show_happiness flags['h'] \
+#define order_decl_stmt flags['o'] \
 
 #define update_terminal fflush(stdout) 
 #define new_line putchar('\n') 
