@@ -431,37 +431,6 @@ static void
 scan_args(void)
 @z
 
-After 'boolean' was changed from 'short' to 'bool' it became obvious that '-1'
-is not really a useful value to designate special case '-' for the changefile
-argument. By flipping the detection logic all is fine again.
-
-@x l.1265
-  while (--argc > 0) {
-@y
-  strcpy(change_file_name,"/dev/null");
-  while (--argc > 0) {
-@z
-
-@x l.1282
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-@y
-@z
-
-@x l.1312
-  if (strcmp(*argv,"-")==0) found_change=-1;
-  else {
-@y
-  if (strcmp(*argv,"-")!=0) {
-@z
-
-@x l.1319
-    found_change=1;
-  }
-@y
-  }
-  found_change=1;
-@z
-
 @x l.1349
     flags[*dot_pos]=flag_change;
 @y
