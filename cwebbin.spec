@@ -26,7 +26,8 @@ BuildRequires: texlive
 Group: Productivity/Publishing/TeX/Base
 Distribution: openSUSE 42 (x86_64)
 %define __msgfmt /usr/bin/msgfmt
-%global __touch /usr/bin/touch
+%define __pax /bin/pax
+%define __touch /usr/bin/touch
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
