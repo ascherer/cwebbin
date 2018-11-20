@@ -75,7 +75,7 @@ and Donald Knuth for Literate Programming in C/C++.
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
 %{__sed} -i cweav-ansi.ch -e "s/, where/,where/"
-%{__sed} -i examples/wmerge.w -e "s/f caddr\_/f caddr-/"
+%{__sed} -i examples/wmerge.w -e "s/f caddr\_/f caddr\\\_/"
 %endif
 
 %endif
