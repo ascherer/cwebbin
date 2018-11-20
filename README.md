@@ -13,6 +13,8 @@ the full set of source files.  unix/linux users should work with
 [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
 
+## advanced packaging
+
 alternatively, you may want to use *rpmbuild* or *debbuild* for compiling the
 sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
@@ -29,10 +31,27 @@ debbuild -ba SPECS/cwebbin.spec
 ```
 depending on your preferences.
 
-if all you want is plain vanilla cweb without any add-ons and minus heaps of
+## plain vanilla cweb
+
+if all you want is the original cweb without any add-ons but minus heaps of
 compiler warnings, use the special option `--with ansi_only` to include only
 the minimal changes required for a clean compilation.
 ```
 rpmbuild -ba SPECS/cwebbin.spec --with ansi_only
 debbuild -ba SPECS/cwebbin.spec --with ansi_only
 ```
+
+## cweb for texlive
+
+in a [recent
+effort](https://github.com/ascherer/texlive-source/tree/integrate-cwebbin-in-texlive),
+the extended sources and the build system were modified to smoothly integrate
+with the texlive build system. by invoking
+```
+debbuild -bi SPECS/cwebbin.spec --with texlive
+```
+you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
+texlive's source directory `texk/web2c/cwebdir`. this tarball contains
+`*-w2c.ch` files that modify the original cweb sources for the texlive
+ecosystem.  additionally, it contains language catalogs, tex macros, and cweb
+include files.
