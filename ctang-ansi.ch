@@ -160,7 +160,7 @@ flush_buffer(void) /* writes one line to output file */
 @x l.534
 void phase_two();
 @y
-static void phase_two(void);
+static void phase_two(void);@/
 @z
 
 @x l.537
@@ -174,7 +174,7 @@ phase_two (void) {
 @x l.603
 void output_defs();
 @y
-static void output_defs(void);
+static void output_defs(void);@/
 @z
 
 @x l.606
@@ -188,7 +188,7 @@ output_defs(void)
 @x l.649
 static void out_char();
 @y
-static void out_char(eight_bits);
+static void out_char(eight_bits);@/
 @z
 
 @x l.652
@@ -298,7 +298,7 @@ else if (p->equiv==(void *)text_info) p->equiv=(void *)cur_text;
 @x l.1461
 void phase_one();
 @y
-static void phase_one(void);
+static void phase_one(void);@/
 @z
 
 @x l.1464
@@ -312,7 +312,7 @@ phase_one(void) {
 @x l.1479
 void skip_limbo();
 @y
-static void skip_limbo(void);
+static void skip_limbo(void);@/
 @z
 
 @x l.1482
@@ -364,7 +364,7 @@ static void pop_level(int);@/
 static void push_level(name_pointer);@/
 static void scan_repl(eight_bits);@/
 static void scan_section(void);@/
-static void store_two_bytes(sixteen_bits);
+static void store_two_bytes(sixteen_bits);@/
 
 @** Index.
 @z

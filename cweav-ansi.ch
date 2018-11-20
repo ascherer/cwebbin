@@ -192,7 +192,7 @@ name_pointer p)
 @x l.601
 void   skip_limbo();
 @y
-static void skip_limbo(void);
+static void skip_limbo(void);@/
 @z
 
 @x l.604
@@ -214,7 +214,7 @@ skip_TeX(void) /* skip past pure \TEX/ code */
 @x l.697
 eight_bits get_next();
 @y
-static eight_bits get_next(void);
+static eight_bits get_next(void);@/
 @z
 
 @x l.700
@@ -270,7 +270,7 @@ get_next(void) /* produces the next input token */
 @x l.972
 void skip_restricted();
 @y
-void skip_restricted(void);
+void skip_restricted(void);@/
 @z
 
 @x l.975
@@ -284,7 +284,7 @@ skip_restricted(void)
 @x l.1025
 void phase_one();
 @y
-static void phase_one(void);
+static void phase_one(void);@/
 @z
 
 @x l.1028
@@ -298,7 +298,7 @@ phase_one(void) {
 @x l.1077
 void C_xref();
 @y
-static void C_xref(eight_bits);
+static void C_xref(eight_bits);@/
 @z
 
 @x l.1080
@@ -314,7 +314,7 @@ C_xref(@t\1\1@> /* makes cross-references for \CEE/ identifiers */
 @x l.1105
 void outer_xref();
 @y
-static void outer_xref(void);
+static void outer_xref(void);@/
 @z
 
 @x l.1108
@@ -334,7 +334,7 @@ outer_xref(void) /* extension of |C_xref| */
 @x l.1267
 void section_check();
 @y
-static void section_check(name_pointer);
+static void section_check(name_pointer);@/
 @z
 
 @x l.1270
@@ -386,7 +386,7 @@ const char*s@t\2\2@>)
 @x l.1403
 void break_out();
 @y
-static void break_out(void);
+static void break_out(void);@/
 @z
 
 @x l.1406
@@ -438,7 +438,7 @@ copy_TeX(void)
 @x l.1549
 int copy_comment();
 @y
-static int copy_comment(boolean,int);
+static int copy_comment(boolean,int);@/
 @z
 
 @x l.1552
@@ -574,7 +574,7 @@ scrap_pointer p@t\2\2@>)
 @x l.2496
 void  underline_xref();
 @y
-static void underline_xref(name_pointer);
+static void underline_xref(name_pointer);@/
 @z
 
 @x l.2499
@@ -672,7 +672,7 @@ case non_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
 @x l.3422
 void app_cur_id();
 @y
-void app_cur_id(boolean);
+void app_cur_id(boolean);@/
 @z
 
 @x l.3425
@@ -744,7 +744,7 @@ output_C(void) /* outputs the current token list */
 @x l.3688
 void make_output();
 @y
-static void make_output(void);
+static void make_output(void);@/
 @z
 
 @x l.3691
@@ -784,7 +784,7 @@ make_output(void) /* outputs the equivalents of tokens */
 @x l.3952
 void phase_two();
 @y
-static void phase_two(void);
+static void phase_two(void);@/
 @z
 
 @x l.3955
@@ -798,7 +798,7 @@ phase_two(void) {
 @x l.4075
 void finish_C();
 @y
-static void finish_C(boolean);
+static void finish_C(boolean);@/
 @z
 
 @x l.4078
@@ -834,7 +834,7 @@ finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
 @x l.4246
 void footnote();
 @y
-static void footnote(sixteen_bits);
+static void footnote(sixteen_bits);@/
 @z
 
 @x l.4249
@@ -850,7 +850,7 @@ sixteen_bits flag@t\2\2@>)
 @x l.4295
 void phase_three();
 @y
-static void phase_three(void);
+static void phase_three(void);@/
 @z
 
 @x l.4298
@@ -936,7 +936,7 @@ strcpy((char *)collate+213,
 @x l.4475
 void  unbucket();
 @y
-static void unbucket(eight_bits);
+static void unbucket(eight_bits);@/
 @z
 
 @x l.4478
@@ -952,7 +952,7 @@ eight_bits d@t\2\2@>)
 @x l.4595
 void section_print();
 @y
-static void section_print(name_pointer);
+static void section_print(name_pointer);@/
 @z
 
 @x l.4598

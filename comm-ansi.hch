@@ -133,6 +133,6 @@ typedef unsigned short sixteen_bits;
 @x l.193
 extern void common_init();
 @y
-extern void common_init(void);
-extern void print_stats(void);
+extern void common_init(void);@/
+extern void print_stats(void);@/
 @z

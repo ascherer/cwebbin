@@ -387,8 +387,8 @@ int wrap_up(void) {
 @x l.1174
 void fatal(), overflow();
 @y
-extern void fatal(const char *,const char *);
-extern void overflow(const char *);
+extern void fatal(const char *,const char *);@/
+extern void overflow(const char *);@/
 @z
 
 @x l.1179
@@ -472,13 +472,13 @@ thus should agree with \.{CTANGLE} and \.{CWEAVE}.
 @<Predecl...@>=
 boolean get_line(void);@/
 name_pointer id_lookup(const char *,const char *,char);@/
-name_pointer section_lookup(char *,char *,int);
+name_pointer section_lookup(char *,char *,int);@/
 void check_complete(void);@/
 void common_init(void);@/
 void print_prefix_name(name_pointer);@/
 void print_section_name(name_pointer);@/
 void reset_input(void);@/
-void sprint_section_name(char *,name_pointer);
+void sprint_section_name(char *,name_pointer);@/
 
 @ The following functions are private to |"common.w"|.
 
@@ -488,7 +488,7 @@ static int web_strcmp(char *,int,char *,int);@/
 static name_pointer add_section_name(name_pointer,int,char *,char *,int);@/
 static void extend_section_name(name_pointer,char *,char *,int);@/
 static void check_change(void);@/
-static void prime_the_change_buffer(void);
+static void prime_the_change_buffer(void);@/
 @z
 
 @x l.1418

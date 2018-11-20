@@ -276,7 +276,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
-static boolean set_path(char *,char *);
+static boolean set_path(char *,char *);@/
 @z
 
 @x l.1418

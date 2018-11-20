@@ -285,8 +285,8 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
 @ Special variants from \Kpathsea/ for i18n/t10n.
 
 @<Predecl...@>=
-static void cb_usage (const_string str);
-static void cb_usagehelp (const_string *message, const_string bug_email);
+static void cb_usage (const_string str);@/
+static void cb_usagehelp (const_string *message, const_string bug_email);@/
 
 @ We simply filter the strings through the catalog (if available).
 
