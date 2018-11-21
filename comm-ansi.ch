@@ -17,6 +17,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @y
 
 @i iso_types.w
+@s boolean int
 @z
 
 @x l.74
@@ -457,13 +458,21 @@ of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
 
 @<Include...@>=
 #include <string.h>
+@z
 
+@x l.1418
+@** Index.
+@y
 @** Extensions for modern \.{CWEB}.
 
 The following sections introduce code changes and extensions that have been
 created by numerous contributors over the course of a quarter century. They
 make \.{CWEB} adhere to modern coding standards and introduce new or improved
 features.
+
+Care has been taken to keep the original section numbering intact, so this new
+section should have the same number as the original ``\&{82.~Index}'', and 
+additional material follows below.
 
 @* Function declarations. Here are declarations, conforming to {\mc
 ANSI~C}, of all functions in this code that appear in |"common.h"| and
@@ -489,12 +498,9 @@ static name_pointer add_section_name(name_pointer,int,char *,char *,int);@/
 static void extend_section_name(name_pointer,char *,char *,int);@/
 static void check_change(void);@/
 static void prime_the_change_buffer(void);@/
-@z
 
-@x l.1418
-@** Index.
-@y
-@* Standard C library interfaces.
+@* Standard C library interfaces.  This updated version of \.{CWEB} uses
+standard C types for pointers, boolean values, and objects with fixed sizes.
 
 @<Include files@>=
 #include <stddef.h> /* type definition of |ptrdiff_t| */

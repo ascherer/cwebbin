@@ -81,7 +81,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a
-\.{makefile} which automatically takes care of the temporal dependecies
+\.{Makefile} which automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to
 some of them.  Thus the \.{make} process will only recompile those modules

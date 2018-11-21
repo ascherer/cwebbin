@@ -58,7 +58,7 @@ strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a
-\.{makefile} that automatically takes care of the temporal dependecies
+\.{Makefile} that automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to
 some of them. Thus the \.{make} process will only recompile those modules
