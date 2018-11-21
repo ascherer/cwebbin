@@ -293,21 +293,21 @@ static void cb_usagehelp (const_string *message, const_string bug_email);@/
 @c
 static void cb_usage (const_string str)
 {
-  fprintf (stderr, _("%s: Need one to three file arguments.\n"), str);
-  fprintf (stderr, _("Try `%s --help' for more information.\n"), str);
-  uexit (1);
+  fprintf(stderr, _("%s: Need one to three file arguments.\n"), str);
+  fprintf(stderr, _("Try `%s --help' for more information.\n"), str);
+  history=fatal_message; exit(wrap_up());
 }
 
 static void cb_usagehelp (const_string *message, const_string bug_email)
 {
-    if (!bug_email)
-        bug_email = "tex-k@@tug.org";
-    while (*message) {
-        printf("%s\n", strcmp("", *message) ? _(*message) : *message);
-        ++message;
-    }
-    printf(_("\nEmail bug reports to %s.\n"), bug_email);
-    uexit(0);
+  if (!bug_email)
+    bug_email = "tex-k@@tug.org";
+  while (*message) {
+    printf("%s\n", strcmp("", *message) ? _(*message) : *message);
+    ++message;
+  }
+  printf(_("\nEmail bug reports to %s.\n"), bug_email);
+  history=spotless; exit(wrap_up());
 }
 
 @ Will have to change these if the version numbers change (ouch).
@@ -319,7 +319,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   puts(program==ctangle ? ctangle_banner : cweave_banner);
 @.--version@>
   puts("Copyright 2019 Silvio Levy and Donald E. Knuth");
-  uexit(0);
+  history=spotless; exit(wrap_up());
 }
 
 @* File lookup with kpathsea.
