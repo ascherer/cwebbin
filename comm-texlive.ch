@@ -128,7 +128,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @y
   if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL &&
       (cur_file=fopen(found_filename,"r"))!=NULL) {
-    /* Copy name for #line directives. */
+    /* Copy name for |#line| directives. */
     if (strlen(found_filename) < max_file_name_length) {
       strcpy(cur_file_name, found_filename);
       free(found_filename);
@@ -345,9 +345,9 @@ The directories to be searched for come from three sources:
  (a)~a user-set environment variable \.{CWEBINPUTS}
     (overriden by \.{CWEBINPUTS\_cweb});\par
  (b)~a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
-    e.g. \.{CWEBINPUTS=.:$TEXMF/texmf/cweb//}
-    or \.{CWEBINPUTS.cweb=.:$TEXMF/texmf/cweb//};\hangindent=2\parindent\par
- (c)~compile-time default directories \.{.:$TEXMF/texmf/cweb//}
+    e.g. \.{CWEBINPUTS=.:\$TEXMF/texmf/cweb//}
+    or \.{CWEBINPUTS.cweb=.:\$TEXMF/texmf/cweb//};\hangindent=2\parindent\par
+ (c)~compile-time default directories \.{.:\$TEXMF/texmf/cweb//}
     (specified in \.{texmf.in}).
 
 @d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
@@ -355,8 +355,8 @@ The directories to be searched for come from three sources:
 @ The simple file searching is replaced by `path searching' mechanism
 that \Kpathsea/ library provides.
 
-We set |kpse_program_name| to |"cweb"|.  This means if the variable
-|CWEBINPUTS.cweb| is present in \.{texmf.cnf} (or |CWEBINPUTS_cweb|
+We set |kpse_program_name| to `\.{cweb}'.  This means if the variable
+\.{CWEBINPUTS.cweb} is present in \.{texmf.cnf} (or \.{CWEBINPUTS\_cweb}
 in the environment) its value will be used as the search path for
 filenames.  This allows different flavors of \.{CWEB} to have
 different search paths.
