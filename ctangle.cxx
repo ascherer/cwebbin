@@ -8,7 +8,7 @@
 #line 83 "ctangle.w"
 
 /*:2*//*6:*/
-#line 38 "comm-foo.h"
+#line 39 "comm-foo.h"
 
 #include <libintl.h> 
 #include <locale.h> 
@@ -153,7 +153,7 @@
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 31 "comm-foo.h"
+#line 32 "comm-foo.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
@@ -162,7 +162,7 @@ extern boolean program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 64 "comm-foo.h"
+#line 65 "comm-foo.h"
 
 char section_text[longest_name+1];
 char*section_text_end= section_text+longest_name;
@@ -170,7 +170,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 79 "comm-foo.h"
+#line 80 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -178,7 +178,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 94 "comm-foo.h"
+#line 95 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -213,7 +213,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:9*//*10:*/
-#line 137 "comm-foo.h"
+#line 138 "comm-foo.h"
 
 extern int history;
 extern int wrap_up(void);
@@ -222,7 +222,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:10*//*11:*/
-#line 152 "comm-foo.h"
+#line 153 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -247,7 +247,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*12:*/
-#line 176 "comm-foo.h"
+#line 177 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -255,14 +255,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 189 "comm-foo.h"
+#line 190 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 201 "comm-foo.h"
+#line 202 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -272,7 +272,7 @@ extern FILE*check_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 211 "comm-foo.h"
+#line 212 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
@@ -386,7 +386,7 @@ eight_bits next_control;
 extern sixteen_bits section_count;
 
 /*:82*//*97:*/
-#line 678 "ctang-foo.ch"
+#line 682 "ctang-foo.ch"
 
 const char Version[]= "$VER: CTangle 3.64 [CWEBbin 2018] ("
 __DATE__ ", " __TIME__ ")\n";
@@ -430,7 +430,7 @@ static void skip_limbo(void);
 #line 1480 "ctangle.w"
 
 /*:92*//*98:*/
-#line 686 "ctang-foo.ch"
+#line 690 "ctang-foo.ch"
 
 static eight_bits get_next(void);
 static eight_bits skip_ahead(void);
@@ -747,11 +747,11 @@ writeloop:/*43:*/
 
 fclose(C_file);C_file= NULL;
 /*99:*/
-#line 706 "ctang-foo.ch"
+#line 710 "ctang-foo.ch"
 
 if((C_file= fopen(C_file_name,"r"))!=NULL){
 /*100:*/
-#line 713 "ctang-foo.ch"
+#line 717 "ctang-foo.ch"
 
 char x[BUFSIZ],y[BUFSIZ];
 int x_size,y_size,comparison;
@@ -760,7 +760,7 @@ if((check_file= fopen(check_file_name,"r"))==NULL)
 fatal(_("! Cannot open output file:"),check_file_name);
 
 /*101:*/
-#line 727 "ctang-foo.ch"
+#line 731 "ctang-foo.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -770,17 +770,17 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:101*/
-#line 720 "ctang-foo.ch"
+#line 724 "ctang-foo.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*:100*/
-#line 708 "ctang-foo.ch"
+#line 712 "ctang-foo.ch"
 
 /*102:*/
-#line 738 "ctang-foo.ch"
+#line 742 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -790,7 +790,7 @@ rename(check_file_name,C_file_name);
 }
 
 /*:102*/
-#line 709 "ctang-foo.ch"
+#line 713 "ctang-foo.ch"
 
 }else
 rename(check_file_name,C_file_name);
@@ -814,11 +814,11 @@ cur_end= (cur_repl+1)->tok_start;
 while(stack_ptr> stack)get_output();
 flush_buffer();fclose(C_file);C_file= NULL;
 /*103:*/
-#line 746 "ctang-foo.ch"
+#line 750 "ctang-foo.ch"
 
 if((C_file= fopen(output_file_name,"r"))!=NULL){
 /*100:*/
-#line 713 "ctang-foo.ch"
+#line 717 "ctang-foo.ch"
 
 char x[BUFSIZ],y[BUFSIZ];
 int x_size,y_size,comparison;
@@ -827,7 +827,7 @@ if((check_file= fopen(check_file_name,"r"))==NULL)
 fatal(_("! Cannot open output file:"),check_file_name);
 
 /*101:*/
-#line 727 "ctang-foo.ch"
+#line 731 "ctang-foo.ch"
 
 do{
 x_size= fread(x,1,BUFSIZ,C_file);
@@ -837,17 +837,17 @@ if(comparison)comparison= !memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:101*/
-#line 720 "ctang-foo.ch"
+#line 724 "ctang-foo.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*:100*/
-#line 748 "ctang-foo.ch"
+#line 752 "ctang-foo.ch"
 
 /*104:*/
-#line 755 "ctang-foo.ch"
+#line 759 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -857,7 +857,7 @@ rename(check_file_name,output_file_name);
 }
 
 /*:104*/
-#line 749 "ctang-foo.ch"
+#line 753 "ctang-foo.ch"
 
 }else
 rename(check_file_name,output_file_name);
