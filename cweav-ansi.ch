@@ -207,7 +207,7 @@ skip_limbo(void) {
 unsigned
 skip_TeX() /* skip past pure \TEX/ code */
 @y
-static unsigned
+static eight_bits
 skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
@@ -993,10 +993,10 @@ not already in |"common.h"|.  These are private to \.{CWEAVE}.
 @<Predecl...@>=
 static eight_bits copy_TeX(void);@/
 static eight_bits get_output(void);@/
+static eight_bits skip_TeX(void);@/
 static text_pointer C_translate(void);@/
 static text_pointer translate(void);@/
 static token_pointer find_first_ident(text_pointer);@/
-static unsigned skip_TeX(void);@/
 static void app_str(const char *);@/
 static void big_app(token);@/
 static void big_app1(scrap_pointer);@/
