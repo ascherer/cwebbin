@@ -13,6 +13,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 First comes general stuff:
 @y
 @i iso_types.w
+@s boolean int
 
 First comes general stuff:
 @z
