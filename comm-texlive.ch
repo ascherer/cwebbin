@@ -281,9 +281,9 @@ char *found_filename; /* filename found by |kpse_find_file| */
 @x l.1418
 @** Index.
 @y
-@* File lookup with kpathsea.  The \.{ctangle} and \.{cweave} programs from the
-original \.{CWEB} package use the compile-time default directory or the value
-of the environment variable \.{CWEBINPUTS} as an alternative place to be
+@* File lookup with \Kpathsea/.  The \.{ctangle} and \.{cweave} programs from
+the original \.{CWEB} package use the compile-time default directory or the
+value of the environment variable \.{CWEBINPUTS} as an alternative place to be
 searched for files, if they could not be found in the current directory.
 
 This version uses the \Kpathsea/ mechanism for searching files.
