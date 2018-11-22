@@ -262,7 +262,7 @@ This is just a shortcut for the `|gettext|' function from the ``GNU~gettext
 utilities.''
 
 If a translation catalog \.{cweb.mo} for your personal \.{LANGUAGE} is
-installed at the appropriate place (see ``|bindtext|'' in the index),
+installed at the appropriate place (see ``|bindtextdomain|'' in the index),
 \.{ctangle} and \.{cweave} will talk to you in your favorite language.
 
 If such a translation is not available you may want to improve this system by
