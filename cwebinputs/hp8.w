@@ -30,7 +30,7 @@
 @l a6 I    @l a7 Ie   @q a8 @>   @q a9 @>   @q aa @>   @q ab @>
 @q ac @>   @l ad U    @l ae U    @q af @>
 @q b0 @>   @l b1 Y    @l b2 y    @q b3 @>   @l b4 C    @l b5 c
-@l b6 N    @l b7 n    @q b8 @»   @q b9 @>   @q ba @>   @q bb @>
+@l b6 N    @l b7 n    @q b8 @>   @q b9 @>   @q ba @>   @q bb @>
 @q bc @>   @q bd @>   @q be @>   @q bf @>
 @l c0 a    @l c1 e    @l c2 o    @l c3 u    @l c4 a    @l c5 e
 @l c6 o    @l c7 u    @l c8 a    @l c9 e    @l ca o    @l cb u
@@ -42,5 +42,5 @@
 @l e6 I    @l e7 O    @l e8 O    @l e9 O    @l ea o    @q eb @>
 @q ec @>   @l ed U    @l ee Ye   @l ef ye
 @q f0 @>   @q f1 @>   @q f2 @>   @l f3 mu   @q f4 @>   @q f5 @>
-@q f6 @>   @q f7 @>   @q f8 @»   @q f9 @>   @q fa @>   @q fb @>
+@q f6 @>   @q f7 @>   @q f8 @>   @q f9 @>   @q fa @>   @q fb @>
 @q fc @>   @q fd @>   @q fe @>   @q ff @>
