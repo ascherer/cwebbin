@@ -302,10 +302,9 @@ The directories to be searched for come from three sources:
 @<Include files@>=
 typedef bool boolean;
 #define HAVE_BOOLEAN
+#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 @#
 #define CWEB
-#include "cpascal.h"
-#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
 #include "help.h"
 
 @ The simple file searching is replaced by the ``path searching'' mechanism

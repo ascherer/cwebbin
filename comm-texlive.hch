@@ -20,6 +20,6 @@ typedef bool boolean;
 @#
 typedef bool boolean;
 #define HAVE_BOOLEAN
-#include <kpathsea/kpathsea.h>
-extern const char *versionstring;
+#include <w2c/config.h> /* \&{integer} */
+#include <lib/lib.h> /* |versionstring| */
 @z
