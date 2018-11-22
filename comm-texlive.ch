@@ -22,6 +22,13 @@ FIXME: Apply a more generic @VERSION@ scheme.
   \vfill}
 @z
 
+@x l.19 of COMM-ANSI.CH
+@i iso_types.w
+@y
+@i iso_types.w
+@s boolean int
+@z
+
 @x l.74 and l.25 of COMM-ANSI.CH
 typedef bool boolean;
 @y

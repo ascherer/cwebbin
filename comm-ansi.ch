@@ -17,7 +17,6 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @y
 
 @i iso_types.w
-@s boolean int
 @z
 
 @x l.74

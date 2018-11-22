@@ -1,6 +1,13 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
+@x l.19 of COMM-ANSI.HCH
+@i iso_types.w
+@y
+@i iso_types.w
+@s boolean int
+@z
+
 @x l.30 and l.24 of COMM-ANSI.HCH
 typedef bool boolean;
 @y
