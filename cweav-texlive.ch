@@ -15,11 +15,11 @@ FIXME: Apply a more generic @VERSION@ scheme.
 \def\SQUARE{\vrule width 2pt depth -1pt height 3pt}
 \def\sqitem{\item{\SQUARE}}
 
-\def\title{CWEAVE (Version 3.64k)}
+\def\title{CWEAVE (\TeX~Live 2019/dev)}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont The {\ttitlefont CWEAVE} processor}
   \vskip 15pt
-  \centerline{(Version 3.64k)}
+  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
   \vfill}
 @z
 

@@ -13,12 +13,12 @@ FIXME: Apply a more generic @VERSION@ scheme.
   \vfill}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64k)}
+\def\title{Common code for CTANGLE and CWEAVE (\TeX~Live 2019/dev)}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
     {\ttitlefont CWEAVE}}
   \vskip 15pt
-  \centerline{(Version 3.64k)}
+  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
   \vfill}
 @z
 

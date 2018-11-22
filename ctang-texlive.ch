@@ -11,11 +11,11 @@ FIXME: Apply a more generic @VERSION@ scheme.
   \centerline{(Version 3.64 [CWEBbin 2018])}
   \vfill}
 @y
-\def\title{CTANGLE (Version 3.64k)}
+\def\title{CTANGLE (\TeX~Live 2019/dev)}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont The {\ttitlefont CTANGLE} processor}
   \vskip 15pt
-  \centerline{(Version 3.64k)}
+  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
   \vfill}
 @z
 
