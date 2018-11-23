@@ -6,8 +6,8 @@ current run is documented in a temporary output file which is copied to the
 expected file in the last moment.  In case of an user abort, previous
 results are not destroyed.
 
-This change file somewhat requires WMERG-PATCH.CH and WMERG-ANSI.CH
-to be applied as well.
+This change file somewhat requires WMERG-PATCH.CH, WMERG-ANSI.CH, and
+WMERG-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 

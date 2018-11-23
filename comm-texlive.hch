@@ -1,7 +1,22 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
-@x l.19 of COMM-ANSI.HCH
+% Most of the original changes were merged with the set of change files
+% of the CWEBbin project.  This stripped change file is last in line of
+% comm-ansi.hch, comm-extensions.hch, comm-output.hch, comm-i18n.hch and
+% comm-texlive.hch that get tie'd into comm-foo.h that is used in modified
+% CTANGLE amd CWEAVE.
+
+@x l.18
+% Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
+@y
+% Amendments to 'common.h' resulting in an extended 'comm-foo.h' were created
+% by numerous collaborators over the course of many years.
+
+% Please send comments, suggestions, etc. to tex-k@@tug.org.
+@z
+
+@x l.15 of COMM-ANSI.HCH
 @i iso_types.w
 @y
 @i iso_types.w

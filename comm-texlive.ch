@@ -1,6 +1,12 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
+% Most of the original changes were merged with the set of change files
+% of the CWEBbin project.  This stripped change file is last in line of
+% comm-patch.ch, comm-ansi.ch, comm-extensions.ch, comm-output.ch,
+% comm-i18n.ch and comm-texlive.ch that get tie'd into comm-w2c.ch that
+% is used as a monolithic changefile for common.w in TeX Live.
+
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.20 and l.175 of COMM-PATCH.CH
@@ -144,7 +150,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 
 Replaced by Kpathsea `kpse_find_file'
 
-@x l.493 and l.82 of COMM-EXTENSIONS.CH
+@x l.493 and l.83 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -171,7 +177,7 @@ Replaced by Kpathsea `kpse_find_file'
 
 Section 67.
 
-@x l.1212 and l.191 of COMM-EXTENSIONS.CH
+@x l.1212 and l.192 of COMM-EXTENSIONS.CH
 the names of those files. Most of the 256 flags are undefined but available
 for future extensions.
 @y
@@ -204,7 +210,7 @@ Debugging output is always written to |stderr|, and begins with the string
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @z
 
-@x l.1233+ and l.216 of COMM-EXTENSIONS.CH
+@x l.1233+ and l.217 of COMM-EXTENSIONS.CH
 show_banner=show_happiness=show_progress=indent_param_decl=order_decl_stmt=1;
 @y
 indent_param_decl=order_decl_stmt=1;

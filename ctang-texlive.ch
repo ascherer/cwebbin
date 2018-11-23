@@ -1,6 +1,12 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
+% Most of the original changes were merged with the set of change files
+% of the CWEBbin project.  This stripped change file is last in line of
+% ctang-patch.ch, ctang-ansi.ch, ctang-extensions.ch, ctang-output.ch,
+% ctang-i18n.ch and ctang-texlive.ch that get tie'd into ctang-w2c.ch that
+% is used as a monolithic changefile for ctangle.w in TeX Live.
+
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.27 and l.162 of CTANG-PATCH.CH
