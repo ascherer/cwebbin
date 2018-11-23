@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated November 9, 2018 by Andreas Scherer.
+% This README file was last updated November 23, 2018 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -91,6 +91,8 @@ GENERAL CONTRIBUTION:
 ./comm-output.ch		change file for common.w
 ./comm-output.hch		change file for common.h
 ./comm-patch.ch			change file for common.w
+./comm-texlive.ch		change file for common.w
+./comm-texlive.hch		change file for common.h
 ./comm-translation.ch		change file for common.w (obsolete)
 ./comm-translation.hch		change file for common.h (obsolete)
 ./common.cxx			ctangled product of common.w and the above
@@ -100,6 +102,7 @@ GENERAL CONTRIBUTION:
 ./ctang-newpage.ch		change file for ctangle.w
 ./ctang-output.ch		change file for ctangle.w
 ./ctang-patch.ch		change file for ctangle.w
+./ctang-texlive.ch		change file for ctangle.w
 ./ctang-translation.ch		change file for ctangle.w (obsolete)
 ./ctangle.cxx			ctangled product of ctangle.w and the above
 ./cweav-ansi.ch			change file for cweave.w
@@ -109,6 +112,7 @@ GENERAL CONTRIBUTION:
 ./cweav-newpage.ch		change file for cweave.w
 ./cweav-output.ch		change file for cweave.w
 ./cweav-patch.ch		change file for cweave.w
+./cweav-texlive.ch		change file for cweave.w
 ./cweav-translation.ch		change file for cweave.w (obsolete)
 ./cwebman.ch			change file for cwebman.tex
 ./0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
@@ -138,11 +142,9 @@ GENERAL CONTRIBUTION:
 ./examples/sample.w     	program to produce random numbers
 ./examples/treeprint-ansi.ch	change file for treeprint.w
 ./examples/wc-ansi.ch		change file for wc.w
-./po/cweb.pot
-./po/de/cweb.mo
-./po/de/cweb.po
-./po/it/cweb.mo
-./po/it/cweb.mo
+./po/cweb.pot			Portable Object Template for i18n
+./po/de/cweb.po			Portable Object for German tⅰ0n
+./po/it/cweb.po			Portable Object for Italian t10n
 ./texinputs/Xcwebmac.tex	beautifications for cwebmac.tex
 ./texinputs/dcwebmac.tex	German captions in addition to cwebmac.tex
 ./texinputs/ecma94.sty		Umlauts and special characters for Latin-1
@@ -324,12 +326,14 @@ So here are some words about the `special features':
      be `@i'ncluded in the source files where needed.
 
    - [GENERAL] Both CTANGLE and CWEAVE are fully localized for other natural
-     languages than the English default.  #include files with the English,
-     German, and Italian strings are provided in the ./catalogs directory
-     for non-localized operating systems.  On AmigaOS 2.1/3.0 localization is
-     done with the help of language catalogs and the system `locale.library'.
-     Default is (of course) English; catalogs descriptions for German and
-     Italian are provided and other language catalogs can easily be added.
+     languages than the English default.  See the 'po/' directory for the
+     files used with the "GNU gettext utilities".
+     <Obsolete>#include files with the English, German, and Italian strings
+     are provided in the ./catalogs directory for non-localized operating
+     systems.  On AmigaOS 2.1/3.0 localization is done with the help of
+     language catalogs and the system `locale.library'.  Default is (of
+     course) English; catalogs descriptions for German and Italian are
+     provided and other language catalogs can easily be added.</Obsolete>
 
    - [GENERAL] An algorithm for recursive `@i'nclude file search was adapted
      from the Web2c implementation of TeX and METAFONT.  The weave and tangle
@@ -358,6 +362,13 @@ So here are some words about the `special features':
      the C++ features of version 3.1.  The fifth example program is a simple
      text converter for files with extended character codes of ISO-Latin-1,
      PC-850, MAC 8-bit font, and HP 8-bit font.
+
+   - [GENERAL] The latest release of CWEBbin is fully compatible with the
+     "TeX Live" system.  'cwebbin.spec' and 'Makefile.unix' are prepared to
+     work with the '--with texlive' option.  This appends and merges the
+     *-texlive.* change files and creates a set of *-w2c.ch change files and
+     an extended comm-foo.h @include file.  These files are drop-in
+     replacements for the hand-coded files used in the TL ecosystem.
 
    - [AMIGA] Two AREXX scripts for use with the CygnusEd Professional Editor
      were added to this package, one for CTANGLE and CWEAVE, localized with
@@ -436,7 +447,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-November 9, 2018.
+November 23, 2018.
 
 Andreas Scherer
 
