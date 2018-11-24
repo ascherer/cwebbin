@@ -12,7 +12,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000,2005,2011 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005,2011,2018 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -43,12 +43,13 @@ a13	19 Sep 1994	AS	Support for French users by DBR.
 a14	03 Dec 1994	AS	Updated for CWEB 3.3.
 a15	18 Apr 1995	AS	Updated for CWEB 3.4.
 a16	12 May 1995	AS	Updated for private patch level.
-a17	13 Aug 1998 AS Updated for CWEB 3.42.
-a18	31 Dec 1999 AS Updated for CWEB 3.5.
-a19	25 Jul 2000 AS Updated for CWEB 3.61.
-a20	02 Jan 2001 AS Updated for CWEB 3.63.
-a21	09 Mar 2002 AS Updated for CWEB 3.64.
-a22	18 Aug 2011 AS Updated for CWEB 3.64ad.
+a17	13 Aug 1998	AS	Updated for CWEB 3.42.
+a18	31 Dec 1999	AS	Updated for CWEB 3.5.
+a19	25 Jul 2000	AS	Updated for CWEB 3.61.
+a20	02 Jan 2001	AS	Updated for CWEB 3.63.
+a21	09 Mar 2002	AS	Updated for CWEB 3.64.
+a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
+2018	24 Nov 2018	AS	Update for CWEBbin 2018.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -68,6 +69,18 @@ Use the already changed macro file.  Also we will need special characters.
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
 \vskip 18pt\centerline{(Version 3.64 [CWEBbin 2018] --- October 2018)}
+@z
+------------------------------------------------------------------------------
+@x l.106
+should be sent to Levy (\.{levy@math.berkeley.edu}).
+@y
+should be sent to \.{tex-k@tug.org}.
+@z
+------------------------------------------------------------------------------
+@x l.106
+email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}).
+@y
+email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
 @z
 ------------------------------------------------------------------------------
 @x l.913
