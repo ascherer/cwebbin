@@ -149,7 +149,7 @@ check_complete(void) {
 @x l.651
 extern int names_match();
 @y
-extern int names_match(name_pointer,const char *,size_t,eight_bits);@/
+extern boolean names_match(name_pointer,const char *,size_t,eight_bits);@/
 @z
 
 @x l.661

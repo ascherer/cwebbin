@@ -148,7 +148,7 @@ char *first; /* position of first character of string */
 int l; /* length of identifier */
 eight_bits t; /* desired ilk */
 @y
-int names_match(@t\1\1@>
+boolean names_match(@t\1\1@>
 name_pointer p, /* points to the proposed match */
 const char *first, /* position of first character of string */
 size_t l, /* length of identifier */
