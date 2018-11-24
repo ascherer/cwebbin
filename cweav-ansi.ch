@@ -245,14 +245,14 @@ get_next(void) /* produces the next input token */
 @x l.801
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
-  while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
-      || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
+  while (isalpha((eight_bits)*++loc) || isdigit((eight_bits)*loc)
+      || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
 @z
 
 @x l.836
     *id_loc++='$'; *id_loc++=toupper(*loc); loc++;
 @y
-    *id_loc++='$'; *id_loc++=toupper((unsigned char)*loc); loc++;
+    *id_loc++='$'; *id_loc++=toupper((eight_bits)*loc); loc++;
 @z
 
 @x l.871

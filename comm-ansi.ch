@@ -74,7 +74,7 @@ prime_the_change_buffer(void)
 @x l.271
   if (xisupper(buffer[1])) buffer[1]=tolower(buffer[1]);
 @y
-  if (xisupper(buffer[1])) buffer[1]=tolower((unsigned char)buffer[1]);
+  if (xisupper(buffer[1])) buffer[1]=tolower((eight_bits)buffer[1]);
 @z
 
 @x l.294
@@ -96,7 +96,7 @@ check_change(void) /* switches to |change_file| if the buffers match */
 @x l.340
       char xyz_code=xisupper(buffer[1])? tolower(buffer[1]): buffer[1];
 @y
-      char xyz_code=xisupper(buffer[1])? tolower((unsigned char)buffer[1]): buffer[1];
+      char xyz_code=xisupper(buffer[1])? tolower((eight_bits)buffer[1]): buffer[1];
 @z
 
 @x l.379
@@ -123,7 +123,7 @@ boolean get_line(void) /* inputs the next line */
 @x l.553
       if (xisupper(buffer[1])) buffer[1]=tolower(buffer[1]);
 @y
-      if (xisupper(buffer[1])) buffer[1]=tolower((unsigned char)buffer[1]);
+      if (xisupper(buffer[1])) buffer[1]=tolower((eight_bits)buffer[1]);
 @z
 
 @x l.570
@@ -434,7 +434,7 @@ scan_args(void)
 @x l.1349
     flags[*dot_pos]=flag_change;
 @y
-    flags[(unsigned char)*dot_pos]=flag_change;
+    flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
 @x l.1406

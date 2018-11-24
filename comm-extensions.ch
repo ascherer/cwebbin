@@ -260,16 +260,16 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @^system dependencies@>
 @z
 
-@x l.1348
+@x l.1348 and l.437 of COMM-ANSI.CH
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    flags[(unsigned char)*dot_pos]=flag_change;
+    flags[(eight_bits)*dot_pos]=flag_change;
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if(*dot_pos=='l') {
        use_language=++dot_pos;
        break;
     }
-    else flags[(unsigned char)*dot_pos]=flag_change;
+    else flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
 @x l.514 of COMM-ANSI.CH

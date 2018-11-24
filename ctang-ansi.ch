@@ -248,8 +248,8 @@ get_next(void) /* produces the next input token */
 @x l.974
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
-  while (isalpha((unsigned char)*++loc) || isdigit((unsigned char)*loc)
-      || isxalpha((unsigned char)*loc) || ishigh((unsigned char)*loc));
+  while (isalpha((eight_bits)*++loc) || isdigit((eight_bits)*loc)
+      || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
 @z
 
 @x l.1200
@@ -273,13 +273,13 @@ eight_bits t@t\2\2@>)
 @x l.1323
         c=toupper(*id_first)-'A'+10;
 @y
-        c=toupper((unsigned char)*id_first)-'A'+10;
+        c=toupper((eight_bits)*id_first)-'A'+10;
 @z
 
 @x l.1328
         c=16*c+toupper(*id_first)-'A'+10;
 @y
-        c=16*c+toupper((unsigned char)*id_first)-'A'+10;
+        c=16*c+toupper((eight_bits)*id_first)-'A'+10;
 @z
 @x l.1361
 void
