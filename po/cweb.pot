@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CWEBbin 2018\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-19 21:15+0100\n"
+"POT-Creation-Date: 2018-11-24 10:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ctang-i18n.ch:74 cweav-i18n.ch:334
+#: ctang-i18n.ch:72 cweav-i18n.ch:332
 msgid "Done."
 msgstr ""
 
@@ -575,7 +575,8 @@ msgstr ""
 # New strings from TL's 'help.h' added manually 2018-11-14 by Andreas Scherer
 #
 #: help.h:52
-msgid "Usage: ctangle [OPTIONS] WEBFILE[.w] [{CHANGEFILE[.ch]|-} [OUTFILE[.c]]]"
+msgid ""
+"Usage: ctangle [OPTIONS] WEBFILE[.w] [{CHANGEFILE[.ch]|-} [OUTFILE[.c]]]"
 msgstr ""
 
 #: help.h:53
@@ -623,7 +624,8 @@ msgid "--version   output version information and exit"
 msgstr ""
 
 #: help.h:69
-msgid "Usage: cweave [OPTIONS] WEBFILE[.w] [{CHANGEFILE[.ch]|-} [OUTFILE[.tex]]]"
+msgid ""
+"Usage: cweave [OPTIONS] WEBFILE[.w] [{CHANGEFILE[.ch]|-} [OUTFILE[.tex]]]"
 msgstr ""
 
 #: help.h:70
