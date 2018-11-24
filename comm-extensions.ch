@@ -233,9 +233,11 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
   strcpy(change_file_name,"/dev/null");
 @y
 #if defined DEV_NULL
-  strcpy(change_file_name,DEV_NULL);
+  strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
+  change_file_name[max_file_name_length-2]='\0';
 #elif defined _DEV_NULL
-  strcpy(change_file_name,_DEV_NULL);
+  strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
+  change_file_name[max_file_name_length-2]='\0';
 #else
   strcpy(change_file_name,"/dev/null");
 #endif
@@ -299,7 +301,8 @@ static boolean set_path(char *include_path,char *environment)
   char string[max_path_length+2];
 
 #ifdef CWEBINPUTS
-  strcpy(include_path,CWEBINPUTS);
+  strncpy(include_path,CWEBINPUTS,max_path_length);
+  include_path[max_path_length]='\0';
 #endif
 
   if(environment) {
