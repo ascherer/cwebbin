@@ -51,7 +51,7 @@ common_init(void)
 int input_ln(fp) /* copies a line into |buffer| or returns 0 */
 FILE *fp; /* what file to read from */
 @y
-static int input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
+static boolean input_ln(@t\1\1@> /* copies a line into |buffer| or returns 0 */
 FILE *fp@t\2\2@>) /* what file to read from */
 @z
 
@@ -491,7 +491,7 @@ void sprint_section_name(char *,name_pointer);@/
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
-static int input_ln(FILE *);@/
+static boolean input_ln(FILE *);@/
 static int web_strcmp(char *,int,char *,int);@/
 static name_pointer add_section_name(name_pointer,int,char *,char *,int);@/
 static void extend_section_name(name_pointer,char *,char *,int);@/
