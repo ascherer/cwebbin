@@ -170,7 +170,7 @@ eight_bits t)
 @x l.388
   p->ilk=t; p->xref=(char*)xmem;
 @y
-  p->ilk=t; p->xref=(void *)xmem;
+  p->ilk=t; init_node(p);
 @z
 
 @x l.391
