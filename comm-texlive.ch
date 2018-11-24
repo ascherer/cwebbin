@@ -211,9 +211,10 @@ Debugging output is always written to |stderr|, and begins with the string
 @z
 
 @x l.1233+ and l.217 of COMM-EXTENSIONS.CH
-show_banner=show_happiness=show_progress=indent_param_decl=order_decl_stmt=1;
+show_banner=show_happiness=show_progress=true;@/
+show_stats=false;@/
 @y
-indent_param_decl=order_decl_stmt=1;
+show_banner=show_happiness=show_progress=show_stats=false;@/
 @z
 
 Section 71.

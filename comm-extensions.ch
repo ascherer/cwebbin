@@ -214,7 +214,9 @@ const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 show_banner=show_happiness=show_progress=1;
 @y
 @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>=
-show_banner=show_happiness=show_progress=indent_param_decl=order_decl_stmt=1;
+show_banner=show_happiness=show_progress=true;@/
+show_stats=false;@/
+indent_param_decl=order_decl_stmt=true;@/
 use_language="";
 @z
 
