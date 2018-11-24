@@ -219,7 +219,7 @@ skip_ahead(void) /* skip to next control code */
 int skip_comment(is_long_comment) /* skips over comments */
 boolean is_long_comment;
 @y
-static int skip_comment(@t\1\1@> /* skips over comments */
+static boolean skip_comment(@t\1\1@> /* skips over comments */
 boolean is_long_comment@t\2\2@>)
 @z
 
@@ -357,7 +357,7 @@ not already in |"common.h"|.  These are private to \.{CTANGLE}.
 @<Predecl...@>=
 static eight_bits get_next(void);@/
 static eight_bits skip_ahead(void);@/
-static int skip_comment(boolean);@/
+static boolean skip_comment(boolean);@/
 static void flush_buffer(void);@/
 static void get_output(void);@/
 static void pop_level(int);@/
