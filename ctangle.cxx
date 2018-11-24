@@ -201,7 +201,7 @@ extern char*byte_ptr;
 extern name_pointer hash[];
 extern hash_pointer hash_end;
 extern hash_pointer h;
-extern int names_match(name_pointer,const char*,size_t,eight_bits);
+extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern name_pointer id_lookup(const char*,const char*,char);
 
 extern name_pointer prefix_lookup(char*,char*);
@@ -434,7 +434,7 @@ static void skip_limbo(void);
 
 static eight_bits get_next(void);
 static eight_bits skip_ahead(void);
-static int skip_comment(boolean);
+static boolean skip_comment(boolean);
 static void flush_buffer(void);
 static void get_output(void);
 static void pop_level(int);
@@ -535,7 +535,7 @@ return wrap_up();
 #line 183 "ctangle.w"
 
 #line 118 "ctang-foo.ch"
-int names_match(
+boolean names_match(
 name_pointer p,
 const char*first,
 size_t l,
@@ -1054,7 +1054,7 @@ if(c!=ignore||*(loc-1)=='>')return(c);
 #line 848 "ctangle.w"
 
 #line 364 "ctang-foo.ch"
-static int skip_comment(
+static boolean skip_comment(
 boolean is_long_comment)
 #line 851 "ctangle.w"
 {
@@ -1224,8 +1224,8 @@ else if(isalpha(c)||isxalpha(c)||ishigh(c))
 {
 id_first= --loc;
 #line 405 "ctang-foo.ch"
-while(isalpha((unsigned char)*++loc)||isdigit((unsigned char)*loc)
-||isxalpha((unsigned char)*loc)||ishigh((unsigned char)*loc));
+while(isalpha((eight_bits)*++loc)||isdigit((eight_bits)*loc)
+||isxalpha((eight_bits)*loc)||ishigh((eight_bits)*loc));
 #line 975 "ctangle.w"
 id_loc= loc;return(identifier);
 }
@@ -1599,14 +1599,14 @@ if(xisdigit(*(id_first+1)))c= *(++id_first)-'0';
 else if(xisxdigit(*(id_first+1))){
 ++id_first;
 #line 532 "ctang-foo.ch"
-c= toupper((unsigned char)*id_first)-'A'+10;
+c= toupper((eight_bits)*id_first)-'A'+10;
 #line 1324 "ctangle.w"
 }
 if(xisdigit(*(id_first+1)))c= 16*c+*(++id_first)-'0';
 else if(xisxdigit(*(id_first+1))){
 ++id_first;
 #line 538 "ctang-foo.ch"
-c= 16*c+toupper((unsigned char)*id_first)-'A'+10;
+c= 16*c+toupper((eight_bits)*id_first)-'A'+10;
 #line 1329 "ctangle.w"
 }
 break;
