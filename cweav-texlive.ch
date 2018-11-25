@@ -52,7 +52,6 @@ FIXME: Apply a more generic @VERSION@ scheme.
 @x l.108 and l.54 of CWEAV-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
-  if (show_banner) {
-    printf("%s%s\n", banner, versionstring); /* print a ``banner line'' */
-  }
+  if (show_banner) printf("%s%s\n", banner, versionstring);
+    /* print a ``banner line'' */
 @z
