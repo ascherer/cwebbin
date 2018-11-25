@@ -85,7 +85,7 @@ typedef struct xref_info {
 @x l.255
 xref_ptr=xmem; name_dir->xref=(char*)xmem; xref_switch=0; section_xref_switch=0;
 @y
-xref_ptr=xmem; name_dir->xref=(void *)xmem; xref_switch=0; section_xref_switch=0;
+xref_ptr=xmem; init_node(name_dir); xref_switch=0; section_xref_switch=0;
 @z
 
 @x l.276

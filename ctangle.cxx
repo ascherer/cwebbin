@@ -475,7 +475,7 @@ text_ptr= text_info+1;text_ptr->tok_start= tok_mem;
 #line 177 "ctangle.w"
 
 #line 108 "ctang-foo.ch"
-name_dir->equiv= (void*)text_info;
+init_node(name_dir);
 #line 179 "ctangle.w"
 
 /*:20*//*24:*/

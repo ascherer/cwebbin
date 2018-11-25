@@ -63,7 +63,7 @@ char **av)
 @x l.178
 name_dir->equiv=(char *)text_info; /* the undefined section has no replacement text */
 @y
-name_dir->equiv=(void *)text_info; /* the undefined section has no replacement text */
+init_node(name_dir); /* the undefined section has no replacement text */
 @z
 
 @x l.184
