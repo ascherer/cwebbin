@@ -41,7 +41,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 13
+Release: 14
 %endif
 
 %define texmf /opt/texlive/texmf-local
