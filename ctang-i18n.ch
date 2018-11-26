@@ -21,6 +21,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   program=ctangle;
   setlocale(LC_ALL, "");
   bindtextdomain("cweb", "/usr/share/locale/");
+  bindtextdomain("cweb-tl", "/usr/share/locale/");
+  bindtextdomain("web2c-help", "/usr/share/locale/");
   textdomain("cweb");
 @z
 

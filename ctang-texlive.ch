@@ -48,6 +48,8 @@ FIXME: Apply a more generic @VERSION@ scheme.
 @x l.100 and l.54 of CTANG-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
+  textdomain("cweb-tl");
   if (show_banner) printf("%s%s\n", banner, versionstring);
     /* print a ``banner line'' */
+  textdomain("cweb");
 @z

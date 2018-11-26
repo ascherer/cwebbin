@@ -94,6 +94,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
 
 %{__msgfmt} po/de/cweb.po -o po/de/cweb.mo
+%{__msgfmt} po/de/cweb-tl.po -o po/de/cweb-tl.mo
+%{__msgfmt} po/de/web2c-help.po -o po/de/web2c-help.mo
 %{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
 
 %else
@@ -118,6 +120,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES \
 	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
 %{__msgfmt} po/de/cweb.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
+%{__msgfmt} po/de/cweb-tl.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb-tl.mo
+%{__msgfmt} po/de/web2c-help.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/web2c-help.mo
 %{__msgfmt} po/it/cweb.po -o %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %endif
@@ -130,6 +134,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{_mandir}/man1/*
 %{texmf}/tex/plain/cweb/*
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
+%{_datadir}/locale/de/LC_MESSAGES/cweb-tl.mo
+%{_datadir}/locale/de/LC_MESSAGES/web2c-help.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %post

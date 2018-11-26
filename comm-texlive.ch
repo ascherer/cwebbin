@@ -347,8 +347,10 @@ static void cb_usagehelp (const_string *message, const_string bug_email);@/
 @c
 static void cb_usage (const_string str)
 {
+  textdomain("cweb-tl");
   fprintf(stderr, _("%s: Need one to three file arguments.\n"), str);
   fprintf(stderr, _("Try `%s --help' for more information.\n"), str);
+  textdomain("cweb");
   history=fatal_message; exit(wrap_up());
 }
 
@@ -356,11 +358,14 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
 {
   if (!bug_email)
     bug_email = "tex-k@@tug.org";
+  textdomain("web2c-help");
   while (*message) {
     printf("%s\n", strcmp("", *message) ? _(*message) : *message);
     ++message;
   }
+  textdomain("cweb-tl");
   printf(_("\nEmail bug reports to %s.\n"), bug_email);
+  textdomain("cweb");
   history=spotless; exit(wrap_up());
 }
 
