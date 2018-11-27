@@ -553,12 +553,6 @@ make_reserved(@t\1\1@> /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p@t\2\2@>)
 @z
 
-@x l.2464
-  (name_dir+(sixteen_bits)(tok_value%id_flag))->ilk=raw_int;
-@y
-  (name_dir+(ptrdiff_t)(tok_value%id_flag))->ilk=raw_int;
-@z
-
 @x l.2478
 void
 make_underlined(p)
@@ -965,20 +959,10 @@ section_print(@t\1\1@> /* print all section names in subtree |p| */
 name_pointer p@t\2\2@>)
 @z
 
-@x l.4616
-@ Because on some systems the difference between two pointers is a |long|
-rather than an |int|, we use \.{\%ld} to print these quantities.
-
-@c
+@x l.4620
 void
 print_stats() {
 @y
-@ {\mc ANSI C} declares the difference between two pointers to be of type
-|ptrdiff_t| which equals |long| on (almost) all systems instead of |int|,
-so we use \.{\%ld} to print these quantities and cast them to |long|
-explicitly.
-
-@c
 void
 print_stats(void) {
 @z
@@ -1023,11 +1007,6 @@ static void reduce(scrap_pointer,short,eight_bits,short,short);@/
 static void set_file_flag(name_pointer);@/
 static void skip_limbo(void);@/
 static void squash(scrap_pointer,short,eight_bits,short,short);@/
-
-@* Standard C library interface.
-
-@<Include files@>=
-#include <stddef.h> /* type definition of |ptrdiff_t| */
 
 @** Index.
 @z

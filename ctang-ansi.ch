@@ -329,20 +329,10 @@ skip_limbo(void)
       strncpy(translit[i-0200],beg,(size_t)(loc-beg));
 @z
 
-@x l.1533
-@ Because on some systems the difference between two pointers is a |long|
-but not an |int|, we use \.{\%ld} to print these quantities.
-
-@c
+@x l.1537
 void
 print_stats() {
 @y
-@ {\mc ANSI C} declares the difference between two pointers to be of type
-|ptrdiff_t| which equals |long| on (almost) all systems instead of |int|,
-so we use \.{\%ld} to print these quantities and cast them to |long|
-explicitly.
-
-@c
 void
 print_stats(void) {
 @z
