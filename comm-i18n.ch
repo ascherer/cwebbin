@@ -9,6 +9,17 @@ and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
+@x l.93
+  @<Initialize pointers@>;
+@y
+  @<Initialize pointers@>@;
+  setlocale(LC_ALL, "");
+  bindtextdomain("cweb", "/usr/share/locale/");
+  bindtextdomain("cweb-tl", "/usr/share/locale/");
+  bindtextdomain("web2c-help", "/usr/share/locale/");
+  textdomain("cweb");
+@z
+
 @x l.184
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
 @y

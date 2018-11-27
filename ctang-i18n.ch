@@ -15,17 +15,6 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
 @z
 
-@x l.97
-  program=ctangle;
-@y
-  program=ctangle;
-  setlocale(LC_ALL, "");
-  bindtextdomain("cweb", "/usr/share/locale/");
-  bindtextdomain("cweb-tl", "/usr/share/locale/");
-  bindtextdomain("web2c-help", "/usr/share/locale/");
-  textdomain("cweb");
-@z
-
 @x l.265
   if (tok_ptr+2>tok_mem_end) overflow("token");
 @y

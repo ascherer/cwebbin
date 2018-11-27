@@ -42,8 +42,8 @@ typedef bool boolean;
 
 Section 4.
 
-@x l.93
-  @<Initialize pointers@>;
+@x l.93 and l.15 of COMM-I18N.CH
+  @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;

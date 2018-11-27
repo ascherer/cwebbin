@@ -15,17 +15,6 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])")
 @z
 
-@x l.104
-  program=cweave;
-@y
-  program=cweave;
-  setlocale(LC_ALL, "");
-  bindtextdomain("cweb", "/usr/share/locale/");
-  bindtextdomain("cweb-tl", "/usr/share/locale/");
-  bindtextdomain("web2c-help", "/usr/share/locale/");
-  textdomain("cweb");
-@z
-
 @x l.267
 @d append_xref(c) if (xref_ptr==xmem_end) overflow("cross-reference");
 @y
