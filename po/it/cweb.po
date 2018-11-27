@@ -382,7 +382,7 @@ msgstr "! Stringa non terminata"
 msgid "! TeX string should be in C text only"
 msgstr "! Stringa TeX dovrebbe stare solo nel testo in C"
 
-#: comm-i18n.ch:220 comm-i18n.hch:21
+#: comm-i18n.ch:220 comm-i18n.hch:20
 msgid "! This can't happen: "
 msgstr "! Questo non può avvenire: "
 

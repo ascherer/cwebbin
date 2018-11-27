@@ -382,7 +382,7 @@ msgstr "! Zeichenkette nicht beendet"
 msgid "! TeX string should be in C text only"
 msgstr "! TeX-Zeichenkette sollte nur in C-Text stehen"
 
-#: comm-i18n.ch:220 comm-i18n.hch:21
+#: comm-i18n.ch:220 comm-i18n.hch:20
 msgid "! This can't happen: "
 msgstr "! Das kann nicht sein: "
 

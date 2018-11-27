@@ -340,7 +340,7 @@ msgstr ""
 msgid "! TeX string should be in C text only"
 msgstr ""
 
-#: comm-i18n.ch:220 comm-i18n.hch:21
+#: comm-i18n.ch:220 comm-i18n.hch:20
 msgid "! This can't happen: "
 msgstr ""
 
