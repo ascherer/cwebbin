@@ -272,7 +272,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
     else flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
-@x l.514 of COMM-ANSI.CH
+@x l.491 of COMM-ANSI.CH
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=

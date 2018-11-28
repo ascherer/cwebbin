@@ -66,7 +66,7 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394+ and l.57 of COMM-I18N.CH
+@x l.394+ and l.68 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -82,7 +82,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
 }
 @z
 
-@x l.402+ and l.63 of COMM-I18N.CH
+@x l.402+ and l.74 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -262,7 +262,7 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.222 of COMM-I18N.CH
+@x l.1354+ and l.235 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
