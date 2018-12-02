@@ -87,6 +87,10 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 
+%{__sed} -e "1r texlive.w" -e "1d" -i comm-w2c.ch
+%{__sed} -e "1r texlive.w" -e "1d" -i ctang-w2c.ch
+%{__sed} -e "1r texlive.w" -e "1d" -i cweav-w2c.ch
+
 %{__make} comm-foo.h
 
 # Use system CWEB, most likely from TeXLive
