@@ -19,8 +19,9 @@
 @x l.15 of COMM-ANSI.HCH
 @i iso_types.w
 @y
-@i iso_types.w
 @s boolean int
+@s uint8_t int
+@s uint16_t int
 @z
 
 @x l.30 and l.24 of COMM-ANSI.HCH
