@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 1, 2018.
+Changes for COMMON.W by Andreas Scherer, December 3, 2018.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests.  Some system-dependent
@@ -9,7 +9,7 @@ external header file `cweb.h' and applying this change file, you can set up
 the CWEB programs for a different language than English.
 
 This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH,
-and COMM-OUTPUT.CH to be applied as well.
+COMM-OUTPUT.CH, and COMM-MEMORY.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
@@ -21,8 +21,8 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @** Introduction.  This file contains code common
 @z
 
-@x l.93
-  @<Initialize pointers@>;
+@x l.93 and l.19 of COMM—MEMORY.CH
+  @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
 #ifdef _AMIGA
@@ -200,8 +200,8 @@ else if (include_depth==0) printf(get_string(MSG_ERROR_CO59_2), cur_line);
   else printf(get_string(MSG_ERROR_CO59_3), cur_line, cur_file_name);
 @z
 
-@x l.1155
-  @<Print the job |history|@>;
+@x l.1155 and l.17 of COMM-OUTPUT.CH
+  @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
 #ifdef _AMIGA
@@ -260,22 +260,24 @@ else fatal(get_string(MSG_FATAL_CO75_4),"");
 @ @<Complain about arg...@>= fatal(get_string(MSG_FATAL_CO76), *argv);
 @z
 
-@x l.58 of COMM-OUTPUT.CH
+@x l.1381 and l.58 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
-@x l.69 of COMM-OUTPUT.CH
+@x l.1386 and l.69 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
     fatal(get_string(MSG_FATAL_CO78), check_file_name);
 @z
 
-@x l.293 of COMM-EXTENSIONS.CH
-      err_print("! Include path too long"); return(0);
+@x l.163 of COMM-MEMORY.CH
+      err_print("! Include path too long");
+      free_object(string); return(0);
 @y
-      err_print(get_string(MSG_ERROR_CO82)); return(0);
+      err_print(get_string(MSG_ERROR_CO82));
+      free_object(string); return(0);
 @z
 
 @x l.1418

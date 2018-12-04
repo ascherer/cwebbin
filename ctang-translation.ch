@@ -1,17 +1,17 @@
-Changes for CTANGLE.W by Andreas Scherer, NOVEMBER 1, 2018.
+Changes for CTANGLE.W by Andreas Scherer, December 4, 2018.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests.  By editing the
 external header file `cweb.h' and applying this change file, you can set up
 the CWEB system for a different language than English.
 
-This change file requires CTANG-PATCH.CH, CTANG-ANSI.ch,
-CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
+This change file requires CTANG-PATCH.CH, CTANG-ANSI.ch, CTANG-EXTENSIONS.CH,
+CTANG-OUTPUT.CH, and CTANG-MEMORY.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-@x l.181 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+@x l.185 of CTANG-PATCH.CH
+@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @y
 @d banner get_string(MSG_BANNER_CT1)
 @z
@@ -83,10 +83,10 @@ file |"common.h"|, which needs to be updated when |"common.w"| changes.
         fputs(get_string(MSG_PROGRESS_CT42_2),stdout);
 @z
 
-@x l.564
-    if(show_happiness) printf("\nDone.");
+@x l.564 and l.193 of CTANG-PATCH.CH
+      printf("Done.");
 @y
-    if(show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
+      fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 @z
 
 @x l.41 of CTANG-OUTPUT.CH

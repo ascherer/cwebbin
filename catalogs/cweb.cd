@@ -184,7 +184,7 @@ MSG_FATAL_CO85 (/0/)
 ; Messages displayed in CTANGLE.W and CTANGLE.CH:
 ;
 MSG_BANNER_CT1 (/0/)
-This is CTANGLE (Version 3.64 [CWEBbin 2018])\n
+This is CTANGLE (Version 3.64 [CWEBbin 2018])
 ;
 MSG_OVERFLOW_CT26 (/0/)
 token
@@ -208,7 +208,7 @@ MSG_PROGRESS_CT42_2 (/0/)
 \nWriting the output files:
 ;
 MSG_PROGRESS_CT42_3 (/0/)
-\nDone.
+Done.
 ;
 MSG_CONFUSION_CT47 (/0/)
 macro defs have strange char
@@ -297,7 +297,7 @@ MSG_STATS_CT95_5 (/0/)
 ; Messages displayed in CWEAVE.W and CWEAVE.CH
 ;
 MSG_BANNER_CW1 (/0/)
-This is CWEAVE (Version 3.64 [CWEBbin 2018])\n
+This is CWEAVE (Version 3.64 [CWEBbin 2018])
 ;
 MSG_OVERFLOW_CW21 (/0/)
 cross-reference

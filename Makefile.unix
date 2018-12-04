@@ -1,6 +1,6 @@
 # This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [2018] --- November 2018
+# Version 3.64 [2018] --- December 2018
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -41,7 +41,7 @@ MANEXT= 1
 # directory for manual pages (cweb.1 goes here)
 MANDIR= /usr/share/man/man$(MANEXT)
 
-# destination directory for executables; must end in /
+# destination directory for executables
 BINDIR= /usr/bin
 
 # directory for GNU EMACS Lisp code (cweb.el goes here)
@@ -147,7 +147,7 @@ ORIGINAL = $(SOURCES) prod.w \
 	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
 	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
 	comm-pc.ch ctang-pc.ch cweav-pc.ch comm-amiga.ch \
-        comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
+	comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
 	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
 	comm-w32.ch ctang-w32.ch cweav-w32.ch \
 	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
@@ -173,7 +173,7 @@ CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
 	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
-	cweav-i18n.ch cweav-newpage.ch cweav-memory.ch cweav-output.ch \
+	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
@@ -188,6 +188,10 @@ EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/treeprint-ansi.ch examples/wc-ansi.ch \
 	examples/wordtest-ansi.ch
 
+AREXX = arexx
+
+CATALOGS = catalogs
+
 I18N = po
 
 INCLUDE = cwebinputs
@@ -195,7 +199,7 @@ INCLUDE = cwebinputs
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(EXAMPLES) $(I18N) $(INCLUDE) $(MACROS)
+	$(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf
 
@@ -409,6 +413,8 @@ remove:
 	- $(RM) $(WMERGPATCH)
 	- $(RM) $(PATCH)
 	- $(RM) $(EXAMPLES)
+	- $(RM) -r $(AREXX)
+	- $(RM) -r $(CATALOGS)
 	- $(RM) -r $(I18N)
 	- $(RM) -r $(INCLUDE)
 	- $(RM) -r $(MACROS)

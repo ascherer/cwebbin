@@ -232,8 +232,8 @@ MSG_FATAL_CO85
 ; ! Memory allocation failure
 ;
 MSG_BANNER_CT1
-Questo è CTANGLE (Versione 3.64 [CWEBbin 2018])\n
-; This is CTANGLE (Version 3.64 [CWEBbin 2018])\n
+Questo è CTANGLE (Versione 3.64 [CWEBbin 2018])
+; This is CTANGLE (Version 3.64 [CWEBbin 2018])
 ;
 MSG_OVERFLOW_CT26
 token
@@ -264,8 +264,8 @@ MSG_PROGRESS_CT42_2
 ; \nWriting the output files:
 ;
 MSG_PROGRESS_CT42_3
-\nFatto.
-; \nDone.
+Fatto.
+; Done.
 ;
 MSG_CONFUSION_CT47
 definizione macro contiene uno strano carattere
@@ -380,8 +380,8 @@ MSG_STATS_CT95_5
 ; %ld tokens (out of %ld)\n
 ;
 MSG_BANNER_CW1
-Questo è CWEAVE (Versione 3.64 [CWEBbin 2018])\n
-; This is CWEAVE (Version 3.64 [CWEBbin 2018])\n
+Questo è CWEAVE (Versione 3.64 [CWEBbin 2018])
+; This is CWEAVE (Version 3.64 [CWEBbin 2018])
 ;
 MSG_OVERFLOW_CW21
 referimento incrociato

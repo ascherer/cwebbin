@@ -1,17 +1,17 @@
-Changes for CWEAVE.W by Andreas Scherer, November 1, 2018.
+Changes for CWEAVE.W by Andreas Scherer, December 4, 2018.
 
 This set of changes translates all string values written by the CWEB module
 CWEAVE.W in case of errors or information requests.  By editing the
 external header file `cweb.h' and applying this change file, you can set up
 the CWEB system for a different language than English.
 
-This change file requires CWEAV-PATCH.CH, CWEAVE-ANSI.CH,
-CWEAV-EXTENSIONS.CH, and CWEAV-OUTPUT.CH to be applied as well.
+This change file requires CWEAV-PATCH.CH, CWEAVE-ANSI.CH, CWEAV-EXTENSIONS.CH,
+CWEAV-OUTPUT.CH, and CWEAV-MEMORY.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.196 of CWEAV-PATCH.CH
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+@x l.200 of CWEAV-PATCH.CH
+@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @y
 @d banner get_string(MSG_BANNER_CW1)
 @z
@@ -347,10 +347,10 @@ reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
     fatal(get_string(MSG_FATAL_CW225_2),scn_file_name);
 @z
 
-@x l.4338
-if (show_happiness) printf("\nDone.");
+@x l.4338 and l.218 of CWEAV-PATCH.CH
+  printf("Done.");
 @y
-if (show_happiness) fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
+  fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 @z
 
 @x l.4486

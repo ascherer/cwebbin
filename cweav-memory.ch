@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, May 13, 1995.
+Changes for CWEAVE.W by Andreas Scherer, December 4, 2018.
 
 This set of changes provides dynamic memory allocation for the internal
 fields of the CWEB system.  There is no external memory configuration file
@@ -18,14 +18,14 @@ xref_pointer xmem; /* contains cross-reference information */
 xref_pointer xmem_end;
 @z
 
-@x l.244
-xref_ptr=xmem; name_dir->xref=(void *)xmem; xref_switch=0; section_xref_switch=0;
+@x l.255 and l.88 of CWEAV-ANSI.CH
+xref_ptr=xmem; init_node(name_dir); xref_switch=0; section_xref_switch=0;
 @y
 alloc_object(section_text,longest_name+1,char);
 section_text_end = section_text + longest_name;
 alloc_object(xmem,max_refs,xref_info);
 xmem_end = xmem + max_refs - 1;
-xref_ptr=xmem; name_dir->xref=(void *)xmem;
+xref_ptr=xmem; init_node(name_dir);
 xref_switch=0; section_xref_switch=0;
 @z
 

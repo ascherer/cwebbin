@@ -1,17 +1,18 @@
-# This file, makefile.sas, is part of CWEBBIN (Version 3.64 [p21]).
+# This file, makefile.sas, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
+# Version 3.64 [2018] --- December 2018
+
+# Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for SAS/C++ 6.57 under AmigaOS 2.1 on an AMIGA 2000 by
-# Andreas Scherer <andreas.scherer@pobox.com>, March 1993
-# Last updated by Andreas Scherer, October 29, 2005.
+# Andreas Scherer <andreas.scherer@pobox.com>, March 1993.
+# Last updated by Andreas Scherer, December 4, 2018.
 # IMPORTANT NOTE: This installation was not tested.
 
-# Copyright (C) 1987,1990,1993,1998 Silvio Levy and Donald E. Knuth
-#
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1993-1999, 2005 Andreas Scherer
+# Copyright (C) 1993-1999, 2018 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -34,8 +35,8 @@ MACROSDIR = TeXMF:AmiWeb2c-2.1/texmf/tex/generic/cweb
 CWEBINPUTS = Local:cwebinputs
 
 # extension for manual pages ("l" distinguishes local from system stuff)
-MANEXT = l
-#MANEXT = 1
+#MANEXT = l
+MANEXT = 1
 
 # directory for manual pages (cweb.1 goes here)
 MANDIR =
@@ -57,23 +58,23 @@ CATINCLUDE = catalogs/
 DESTPREF = c
 
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
-CCHANGES = comm-p21.ch
+CCHANGES = comm-foo.ch
 
 # Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES = comm-p21.hch
+HCHANGES = comm-foo.hch
 
 # Set HPATCH to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH = comm-p21.h
+HPATCH = comm-foo.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
-TCHANGES = ctang-p21.ch
+TCHANGES = ctang-foo.ch
 
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
-WCHANGES = cweav-p21.ch
+WCHANGES = cweav-foo.ch
 
 # Set MCHANGES to wmerge-foo.ch if you need changes to wmerge.w
-MCHANGES = wmerg-p21.ch
+MCHANGES = wmerg-foo.ch
 
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
@@ -117,63 +118,73 @@ INSTALL = copy
 
 ##########  You shouldn't have to change anything below this point #######
 
-CWEAVE = cweave
-CTANGLE = ctangle
-WMERGE = wmerge
+CWEAVE = CWEBINPUTS=$(INCLUDE) ./cweave $(WFLAGS)
+CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 
 # The following files come from the original CWEB distribution and
 # are left completely unmodified.
 
-SOURCES = common.w common.h ctangle.w cweave.w prod.w examples/wmerge.w
+SOURCES = cweave.w common.w ctangle.w examples/wmerge.w
 
-ORIGINAL = $(SOURCES) comm-amiga.ch comm-bs.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
-	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
-	cweav-vms.ch cweav-w32.ch \
-	cweb.1 cweb.el cwebmac.tex cwebman.tex Makefile \
-	makefile.bs README readme.ql c++lib.w \
-        examples/extex.w examples/kspell.el examples/Makefile \
-	examples/oemacs.el examples/oemacs.w examples/README \
-	examples/treeprint.w examples/wc.w examples/wc-dos.ch \
-	examples/wmerg-pc.ch examples/wmer-os2.ch examples/wordtest.w \
+ORIGINAL = $(SOURCES) prod.w \
+	Makefile common.c common.h ctangle.c \
+	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
+	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
+	comm-pc.ch ctang-pc.ch cweav-pc.ch comm-amiga.ch \
+	comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
+	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
+	comm-w32.ch ctang-w32.ch cweav-w32.ch \
+	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
+	examples/extex.ch examples/extex.w \
+	examples/kspell.el examples/Makefile examples/README \
+	examples/oemacs.el examples/oemacs.w \
+	examples/treeprint.w \
+	examples/wc.w examples/wc-dos.ch \
+	examples/wmerg-pc.ch examples/wmer-os2.ch \
+	examples/wordtest.w \
 	examples/xlib_types.w examples/xview_types.w
 
 # The following files make the body of this patched distribution
 # of CWEB.
+# Note that not all of these changefiles are actually used.
 
 COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
-	comm-extensions.hch comm-memory.ch comm-memory.hch \
-	comm-output.ch comm-output.hch comm-patch.ch \
-	comm-translation.ch comm-translation.hch comm-newpage.ch
-CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-memory.ch \
-	ctang-output.ch ctang-patch.ch ctang-translation.ch \
-	ctang-newpage.ch
+	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
+	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
+	comm-patch.ch comm-translation.ch comm-translation.hch \
+	comm-texlive.ch comm-texlive.hch
+CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
+	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
+	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-output.ch cweav-patch.ch \
-	cweav-translation.ch cweav-newpage.ch
+	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
+	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
 	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
-	cwebman.ch README.p21 Makefile.bcc Makefile.sas Makefile.unix \
-	comm-newpage.ch ctang-newpage.ch cweav-newpage.ch
-
-AREXX = arexx
-
-BIN = bin
+	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
+	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp \
+	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
-	examples/treeprint.ch examples/wc.ch examples/wordtest.ch
+	examples/treeprint-ansi.ch examples/wc-ansi.ch \
+	examples/wordtest-ansi.ch
+
+AREXX = arexx
+
+CATALOGS = catalogs
+
+I18N = po
 
 INCLUDE = cwebinputs
 
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(AREXX) $(BIN) $(EXAMPLES) $(INCLUDE) $(MACROS)
+	$(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES:
 .SUFFIXES: .dvi .pdf .tex .w .$(EXTENSION) .o
@@ -217,11 +228,11 @@ all: progs docs
 progs: ctangle cweave wmerge
 
 cautiously: ctangle
-	$(CP) common.$(EXTENSION) SAVEcommon.$(EXTENSION)
+	$(MAKE) SAVEcommon.$(EXTENSION)
 	$(CTANGLE) $(TFLAGS) common $(CCHANGES) common.$(EXTENSION)
 	diff common.$(EXTENSION) SAVEcommon.$(EXTENSION)
 	$(RM) SAVEcommon.$(EXTENSION)
-	$(CP) ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
+	$(MAKE) SAVEctangle.$(EXTENSION)
 	$(CTANGLE) $(TFLAGS) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 	diff ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
 	$(RM) SAVEctangle.$(EXTENSION)
@@ -282,14 +293,10 @@ usermanual: cwebmana.dvi
 
 fullmanual: usermanual $(SOURCES) \
 	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HPATCH) $(MCHANGES)
-	$(CWEAVE) $(WFLAGS) common.w comm-doc.ch
-	$(MAKE) common.dvi
-	$(CWEAVE) $(WFLAGS) ctangle.w ctang-doc.ch
-	$(MAKE) ctangle.dvi
-	$(CWEAVE) $(WFLAGS) cweave.w cweav-doc.ch
-	$(MAKE) cweave.dvi
-	$(CWEAVE) $(WFLAGS) examples/wmerge.w $(MCHANGES)
-	$(MAKE) wmerge.dvi
+	$(CWEAVE) common.w comm-doc.ch; $(MAKE) common.dvi
+	$(CWEAVE) ctangle.w ctang-doc.ch; $(MAKE) ctangle.dvi
+	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.dvi
+	$(CWEAVE) examples/wmerge.w $(MCHANGES); $(MAKE) wmerge.dvi
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m cwebmana.tex cwebman.tex cwebman.ch
@@ -298,72 +305,60 @@ cwebmana.tex: cwebman.tex cwebman.ch
 # processor from a set of separate change files.  note that not all
 # change files listed above are actually used here, so you won't see
 # any system-dependent parts not available under AmigaOS.
-comm-doc.ch: common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-memory.ch comm-translation.ch comm-arexx.ch comm-output.ch \
+comm-doc.ch: common.w  $(CCHANGES) comm-man.ch comm-newpage.ch
+	$(TIE) -c comm-doc.ch common.w $(CCHANGES) \
 	comm-man.ch comm-newpage.ch
-	$(TIE) -c comm-doc.ch common.w \
-	comm-patch.ch comm-ansi.ch comm-extensions.ch comm-memory.ch \
-	comm-translation.ch comm-arexx.ch comm-output.ch \
-	comm-man.ch comm-newpage.ch
-ctang-doc.ch: ctangle.w ctang-patch.ch ctang-ansi.ch \
-	ctang-memory.ch ctang-translation.ch ctang-output.ch \
+ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
+	$(TIE) -c ctang-doc.ch ctangle.w $(TCHANGES) \
 	ctang-man.ch ctang-newpage.ch
-	$(TIE) -c ctang-doc.ch ctangle.w \
-	ctang-patch.ch ctang-ansi.ch ctang-memory.ch \
-	ctang-translation.ch ctang-output.ch \
-	ctang-man.ch ctang-newpage.ch
-cweav-doc.ch: cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch \
-	cweav-man.ch cweav-newpage.ch
-	$(TIE) -c cweav-doc.ch cweave.w \
-	cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch \
+cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
+	$(TIE) -c cweav-doc.ch cweave.w $(WCHANGES) \
 	cweav-man.ch cweav-newpage.ch
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HPATCH)
-	$(CWEAVE) $(WFLAGS) ctangle $(TCHANGES)
+	$(CWEAVE) ctangle $(TCHANGES)
 
 cweave.tex: cweave.w $(WCHANGES) $(HPATCH)
-	$(CWEAVE) $(WFLAGS) cweave $(WCHANGES)
+	$(CWEAVE) cweave $(WCHANGES)
 
 common.tex: common.w $(CCHANGES)
-	$(CWEAVE) $(WFLAGS) common $(CCHANGES)
+	$(CWEAVE) common $(CCHANGES)
 
 wmerge.tex: examples/wmerge.w $(MCHANGES)
-	$(CWEAVE) $(WFLAGS) examples/wmerge $(MCHANGES)
+	$(CWEAVE) examples/wmerge $(MCHANGES)
 
 # the master change files are created automatically by the TIE processor
 # from a set of separate change files.  note that not all change files
 # listed above are actually used here, so you should not try to port
 # the resulting sources to MS/DOS (UNIX is fine, though).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
-	comm-memory.ch comm-translation.ch comm-arexx.ch comm-output.ch
+	comm-output.ch comm-memory.ch comm-translation.ch comm-arexx.ch
 	$(TIE) -c $(CCHANGES) common.w \
-	comm-patch.ch comm-ansi.ch comm-extensions.ch comm-memory.ch \
-	comm-translation.ch comm-arexx.ch comm-output.ch
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-memory.hch \
-	comm-translation.hch comm-arexx.hch comm-output.hch
+	comm-patch.ch comm-ansi.ch comm-extensions.ch comm-output.ch \
+	comm-memory.ch comm-translation.ch comm-arexx.ch
+$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch comm-output.ch \
+	comm-memory.hch comm-translation.hch comm-arexx.hch
 	$(TIE) -c $(HCHANGES) common.h \
-	comm-ansi.hch comm-extensions.hch comm-memory.hch \
-	comm-translation.hch comm-arexx.hch comm-output.hch
+	comm-ansi.hch comm-extensions.hch comm-output.ch \
+	comm-memory.hch comm-translation.hch comm-arexx.hch
 $(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $(HPATCH) common.h $(HCHANGES)
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch \
-	ctang-memory.ch ctang-translation.ch ctang-output.ch
+$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-output.ch \
+	ctang-memory.ch ctang-translation.ch
 	$(TIE) -c $(TCHANGES) ctangle.w \
 	ctang-patch.ch ctang-ansi.ch ctang-memory.ch \
 	ctang-translation.ch ctang-output.ch
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-memory.ch cweav-translation.ch cweav-output.ch
+	cweav-output.ch cweav-memory.ch cweav-translation.ch
 	$(TIE) -c $(WCHANGES) cweave.w \
-	cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	 cweav-memory.ch cweav-translation.ch cweav-output.ch
+	cweav-patch.ch cweav-ansi.ch cweav-extensions.ch cweav-output.ch \
+	cweav-memory.ch cweav-translation.ch
 $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
-	wmerg-extensions.ch wmerg-memory.ch wmerg-output.ch
+	wmerg-extensions.ch wmerg-output.ch wmerg-memory.ch
 	$(TIE) -c $(MCHANGES) examples/wmerge.w \
 	wmerg-patch.ch wmerg-ansi.ch wmerg-extensions.ch \
-	wmerg-memory.ch wmerg-output.ch
+	wmerg-output.ch wmerg-memory.ch
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # and $(HPATCH) for bootstrapping
@@ -371,7 +366,7 @@ clean:
 	$(RM) \#?.(o|lnk|bak|log|dvi|pdf|toc|idx|scn)
 	$(RM) common.tex cweave.tex cweave.$(EXTENSION) wmerge.$(EXTENSION)
 	$(RM) ctangle.tex cweave ctangle cwebmana.tex wmerge.tex wmerge
-	$(RM) \#?-p21.\#? \#?-doc.ch
+	$(RM) \#?-foo.\#? \#?-doc.ch
 
 # Install the new program versions where they can be found
 install: progs
@@ -385,19 +380,7 @@ install: progs
 
 # Remove the original distribution completely.
 remove-orig:
-	$(RM) $(SOURCES)
-	$(RM) comm-amiga.ch comm-bs.ch comm-mac.ch comm-man.ch comm-os2.ch \
-	comm-pc.ch comm-ql.ch comm-vms.ch comm-w32.ch common.c ctang-bs.ch \
-	ctang-man.ch ctang-pc.ch ctang-ql.ch ctang-vms.ch ctang-w32.ch \
-	ctangle.c cweav-bs.ch cweav-man.ch cweav-pc.ch cweav-ql.ch \
-	cweav-vms.ch cweav-w32.ch
-	$(RM) cweb.1 cweb.el cwebmac.tex cwebman.tex \
-	Makefile makefile.bs README readme.ql c++lib.w
-	$(RM) examples/extex.w examples/kspell.el examples/Makefile \
-	examples/oemacs.el examples/oemacs.w examples/README
-	$(RM) examples/treeprint.w examples/wc.w examples/wc-dos.ch \
-	examples/wmerg-pc.ch examples/wmer-os2.ch \
-	examples/wordtest.w examples/xlib_types.w examples/xview_types.w
+	$(RM) $(ORIGINAL)
 
 # Remove the patch completely
 remove: clean
@@ -406,9 +389,10 @@ remove: clean
 	$(RM) $(CWEAVPATCH)
 	$(RM) $(WMERGPATCH)
 	$(RM) $(PATCH)
-	$(RM) $(AREXX) all
-	$(RM) $(BIN) all
 	$(RM) $(EXAMPLES)
+	$(RM) $(AREXX) all
+	$(RM) $(CATALOGS) all
+	$(RM) $(I18N) all
 	$(RM) $(INCLUDE) all
 	$(RM) $(MACROS) all
 

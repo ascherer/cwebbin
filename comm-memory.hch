@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, December 29, 2016.
+Changes for COMMON.H by Andreas Scherer, December 3, 2018.
 
 This set of changes provides dynamic memory allocation for the internal
 fields of the CWEB system.  There is no external memory configuration file
@@ -22,7 +22,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
    if(object) {
       free(object);
       object=NULL;
-      }
+   }
 
 @<Include files@>=
 @z
@@ -59,13 +59,14 @@ extern name_pointer hash[]; /* heads of hash lists */
 extern name_pointer *hash; /* heads of hash lists */
 @z
 
-@x l.139
+@x l.139 and l.15 of COMM-OUTPUT.HCH
 extern FILE *file[]; /* stack of non-change files */
 extern FILE *change_file; /* change file */
 extern char C_file_name[]; /* name of |C_file| */
 extern char tex_file_name[]; /* name of |tex_file| */
 extern char idx_file_name[]; /* name of |idx_file| */
 extern char scn_file_name[]; /* name of |scn_file| */
+extern char check_file_name[]; /* name of |check_file| */
 extern char file_name[][max_file_name_length];
   /* stack of non-change file names */
 extern char change_file_name[]; /* name of change file */
@@ -77,12 +78,13 @@ extern char *C_file_name; /* name of |C_file| */
 extern char *tex_file_name; /* name of |tex_file| */
 extern char *idx_file_name; /* name of |idx_file| */
 extern char *scn_file_name; /* name of |scn_file| */
+extern char *check_file_name; /* name of |check_file| */
 extern char **file_name; /* stack of non-change file names */
 extern char *change_file_name; /* name of change file */
 extern int *line; /* number of current line in the stacked files */
 @z
 
-@x l.161
+@x l.162
 extern boolean changed_section[]; /* is the section changed? */
 @y
 extern boolean *changed_section; /* is the section changed? */

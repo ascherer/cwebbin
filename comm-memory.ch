@@ -1,23 +1,27 @@
-Changes for COMMON.W by Andreas Scherer, September 19, 1995.
+Changes for COMMON.W by Andreas Scherer, December 3, 2018.
 
 This set of changes provides dynamic memory allocation for the internal
 fields of the CWEB system.  There is no external memory configuration file
 as for TeX (yet), but there's already the advantage that the CWEB programs
 can be compiled in the `NEAR' data section and be made `resident'.
 
-This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH
-to be applied as well.
+This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH,
+and COMM-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-@x l.92
+@x l.93
   @<Initialize pointers@>;
+  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>;
+  @<Scan arguments and open output files@>;
 @y
-  @<Set up the event trap@>;
-  @<Initialize pointers@>;
+  @<Set up the event trap@>@;
+  @<Initialize pointers@>@;
+  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
+  @<Scan arguments and open output files@>@;
 @z
 
-@x l.159
+@x l.160
 char buffer[long_buf_size]; /* where each line of input goes */
 char *buffer_end=buffer+buf_size-2; /* end of |buffer| */
 char *limit=buffer; /* points to the last character in the buffer */
@@ -29,7 +33,7 @@ char *limit; /* points to the last character in the buffer */
 char *loc; /* points to the next character to be read from the buffer */
 @z
 
-@x l.215
+@x l.216
 FILE *file[max_include_depth]; /* stack of non-change files */
 FILE *change_file; /* change file */
 char file_name[max_include_depth][max_file_name_length];
@@ -46,13 +50,13 @@ char *alt_web_file_name; /* alternate name to try */
 int *line; /* number of current line in the stacked files */
 @z
 
-@x l.240
+@x l.241
 char change_buffer[buf_size]; /* next line of |change_file| */
 @y
 char *change_buffer; /* next line of |change_file| */
 @z
 
-@x l.382
+@x l.383
   @<Open input files@>;
   include_depth=0; cur_line=0; change_line=0;
 @y
@@ -60,20 +64,20 @@ char *change_buffer; /* next line of |change_file| */
   @<Open input files@>;
 @z
 
-@x l.420
+@x l.421
 boolean changed_section[max_sections]; /* is the section changed? */
 @y
 boolean *changed_section; /* is the section changed? */
 @z
 
-@x l.470
+@x l.472
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
 @y
 #include <signal.h> /* declaration of |signal| and |SIGINT| */
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
 @z
 
-@x l.593
+@x l.600
 char byte_mem[max_bytes]; /* characters of names */
 char *byte_mem_end = byte_mem+max_bytes-1; /* end of |byte_mem| */
 name_info name_dir[max_names]; /* information about names */
@@ -85,7 +89,7 @@ name_pointer name_dir; /* information about names */
 name_pointer name_dir_end; /* end of |name_dir| */
 @z
 
-@x l.614
+@x l.621
 @ @<Init...@>=
 name_dir->byte_start=byte_ptr=byte_mem; /* position zero in both arrays */
 @y
@@ -117,7 +121,7 @@ name_dir_end = name_dir + max_names - 1;
 name_dir->byte_start=byte_ptr=byte_mem; /* position zero in both arrays */
 @z
 
-@x l.639
+@x l.646
 name_pointer hash[hash_size]; /* heads of hash lists */
 hash_pointer hash_end = hash+hash_size-1; /* end of |hash| */
 @y
@@ -125,7 +129,7 @@ hash_pointer hash; /* heads of hash lists */
 hash_pointer hash_end; /* end of |hash| */
 @z
 
-@x l.649
+@x l.656
 for (h=hash; h<=hash_end; *h++=NULL) ;
 @y
 alloc_object(hash,hash_size,name_pointer);
@@ -135,42 +139,44 @@ alloc_object(C_file_name,max_file_name_length,char);
 alloc_object(tex_file_name,max_file_name_length,char);
 alloc_object(idx_file_name,max_file_name_length,char);
 alloc_object(scn_file_name,max_file_name_length,char);
+alloc_object(check_file_name,max_file_name_length,char);
 @z
 
-@x l.1216
+@x l.1223 and l.25 of COMM-OUTPUT.CH
 char C_file_name[max_file_name_length]; /* name of |C_file| */
 char tex_file_name[max_file_name_length]; /* name of |tex_file| */
 char idx_file_name[max_file_name_length]; /* name of |idx_file| */
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
+char check_file_name[max_file_name_length]; /* name of |check_file| */
 @y
 char *C_file_name; /* name of |C_file| */
 char *tex_file_name; /* name of |tex_file| */
 char *idx_file_name; /* name of |idx_file| */
 char *scn_file_name; /* name of |scn_file| */
+char *check_file_name; /* name of |check_file| */
 @z
 
-@x l.268 of COMM-EXTENSIONS.CH
+@x l.301 of COMM-EXTENSIONS.CH
   char string[max_path_length+2];
 @y
   char *string;
-
   alloc_object(string,max_path_length+2,char);
 @z
 
-@x l.272 of COMM-EXTENSIONS.CH
+@x l.310 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print("! Include path too long");
       free_object(string); return(0);
 @z
 
-@x l.280 of COMM-EXTENSIONS.CH
+@x l.317 of COMM-EXTENSIONS.CH
   return(1);
 @y
   free_object(string); return(1);
 @z
 
-@x l.292 of COMM-EXTENSIONS.CH
+@x l.330 of COMM-EXTENSIONS.CH
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 @y
@@ -182,7 +188,7 @@ alloc_object(include_path,max_path_length+2,char);
 strcpy(include_path,"");
 @z
 
-@x l. 1415
+@x l. 1418
 @** Index.
 @y
 @** Memory allocation.  The idea of dynamic memory allocation is extended
@@ -199,8 +205,8 @@ frees these resources.  |exit| is not necessarily called after a break.
 @^system dependencies@>
 
 @<Set up the event trap@>=
-  if(signal(SIGINT,&catch_break) == SIG_ERR)
-    exit(EXIT_FAILURE); /* Interrupt handler could not be set up. */
+if(signal(SIGINT,&catch_break) == SIG_ERR)
+   exit(EXIT_FAILURE); /* Interrupt handler could not be set up. */
 
 @ The only purpose of the interrupt handler |catch_break| in case of an
 user abort is to call the cleanup routine that takes care of any opened
@@ -208,10 +214,10 @@ system resources.
 
 @c
 void catch_break(int)
-   {
+{
    history=fatal_message;
    exit(wrap_up());
-   }
+}
 
 @ @<Predec...@>=
 void catch_break(int);

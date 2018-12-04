@@ -183,7 +183,7 @@
 #define MSG_FATAL_CO85_STR "! Fehler bei der Speicherallokierung"
 
 #define MSG_BANNER_CT1 42
-#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.64 [CWEBbin 2018])\n"
+#define MSG_BANNER_CT1_STR "Dies ist CTANGLE (Version 3.64 [CWEBbin 2018])"
 
 #define MSG_OVERFLOW_CT26 43
 #define MSG_OVERFLOW_CT26_STR "Token"
@@ -207,7 +207,7 @@
 #define MSG_PROGRESS_CT42_2_STR "\nSchreibe die Ausgabedateien:"
 
 #define MSG_PROGRESS_CT42_3 50
-#define MSG_PROGRESS_CT42_3_STR "\nFertig."
+#define MSG_PROGRESS_CT42_3_STR "Fertig."
 
 #define MSG_CONFUSION_CT47 51
 #define MSG_CONFUSION_CT47_STR "Unpassendes Zeichen in einer Makrodefinition"
@@ -294,7 +294,7 @@
 #define MSG_STATS_CT95_5_STR "%ld Token (von %ld)\n"
 
 #define MSG_BANNER_CW1 79
-#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.64 [CWEBbin 2018])\n"
+#define MSG_BANNER_CW1_STR "Dies ist CWEAVE (Version 3.64 [CWEBbin 2018])"
 
 #define MSG_OVERFLOW_CW21 80
 #define MSG_OVERFLOW_CW21_STR "Querverweise"
