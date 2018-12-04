@@ -154,10 +154,10 @@ first case is used, or the system is crashed completely.  Really funny.
   case error_message: return(RETURN_ERROR); break;
   case fatal_message: return(RETURN_FAIL); break;
   default: return(RETURN_OK);
-    }
+  }
 @y
 #ifdef __TURBOC__
-  {
+{
   int return_val;
 
   switch(history) {
@@ -165,16 +165,16 @@ first case is used, or the system is crashed completely.  Really funny.
   case error_message: return_val=RETURN_ERROR; break;
   case fatal_message: return_val=RETURN_FAIL; break;
   default: return_val=RETURN_OK;
-    }
-  return(return_val);
   }
+  return(return_val);
+}
 #else
   switch(history) {
   case harmless_message: return(RETURN_WARN); break;
   case error_message: return(RETURN_ERROR); break;
   case fatal_message: return(RETURN_FAIL); break;
   default: return(RETURN_OK);
-    }
+  }
 #endif
 @z
 

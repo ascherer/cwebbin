@@ -27,7 +27,7 @@ first case is used, or the system is crashed completely.  Really funny.
   case error_message: return(RETURN_ERROR); break;
   case fatal_message: return(RETURN_FAIL); break;
   default: return(RETURN_OK);
-    }
+  }
 @y
 #ifdef __TURBOC__
   {

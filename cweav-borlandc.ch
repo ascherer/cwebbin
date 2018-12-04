@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, January 22, 2000.
+Changes for CWEAVE.W by Andreas Scherer, December 4, 2018.
 
 This set of changes provides support for installing CWEB on MS/DOS systems
 with Borland C++ 3.1.  Arrays larger than 64 KB are allocated with a
@@ -10,9 +10,8 @@ patch would not be possible.  But instead of `farcalloc' a `non-ANSI' sized
 `malloc' would be much more convenient.)  For other MS/DOS compilers than
 Borland C++ 3.1 you'll have to replace this file by other changes.
 
-This change file requires CWEAV-PATCH.CH, CWEAV-ANSI.CH,
-CWEAV-EXTENSIONS.CH, CWEAV-MEMORY.CH, CWEAV-TRANSLATIONS.CH
-to be applied as well.
+This change file requires CWEAV-PATCH.CH, CWEAV-ANSI.CH, CWEAV-EXTENSIONS.CH,
+CWEAV-OUTPUT.CH, CWEAV-MEMORY.CH, CWEAV-TRANSLATIONS.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
@@ -38,12 +37,6 @@ xmem=(xref_pointer)allocsafe(max_refs,sizeof(*xmem));
 #else
 alloc_object(xmem,max_refs,xref_info);
 #endif
-@z
-
-@x l.48 of CWEAV-ANSI.CH
-xref_ptr=xmem; name_dir->xref=(void *)xmem;
-@y
-xref_ptr=xmem; name_dir->xref=(void HUGE*)xmem;
 @z
 
 @x l.63 of CWEAV-ANSI.CH
@@ -83,12 +76,6 @@ alloc_object(tok_mem,max_toks,token);
 @^system dependencies@>
 @z
 
-@x l.120 of CWEAV-ANSI.CH
-  p->ilk=t; p->xref=(void *)xmem;
-@y
-  p->ilk=t; p->xref=(void HUGE*)xmem;
-@z
-
 @x l.134 of CWEAV-ANSI.CH
   p->xref=(void *)xmem;
 @y
@@ -112,16 +99,6 @@ alloc_object(tok_mem,max_toks,token);
   p->xref=(void *)xref_ptr;
 @y
   p->xref=(void HUGE*)xref_ptr;
-@z
-
-@x l.2890
-@ @<Change |pp| to $\max...@>=
-@y
-@ @<Change |pp| to $\max...@>=
-#ifdef __TURBOC__
-if (d<0 && pp+d>pp) pp=scrap_base; /* segmented architecture caused wrap */
-else
-#endif
 @z
 
 @x l.3554
@@ -180,8 +157,8 @@ char HUGE *cur_byte; /* index into |byte_mem| */
     else {char HUGE *j;
 @z
 
-@x l.4402
-  case custom: case quoted: {char *j; out_str("$\\");
+@x l.4550
+  case custom: {char *j; out_str("$\\");
 @y
-  case custom: case quoted: {char HUGE *j; out_str("$\\");
+  case custom: {char HUGE *j; out_str("$\\");
 @z

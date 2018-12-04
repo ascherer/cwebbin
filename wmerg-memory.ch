@@ -6,7 +6,7 @@ as for TeX (yet), but there's already the advantage that the CWEB programs
 can be compiled in the `NEAR' data section and be made `resident'.
 
 This change file requires WMERG-PATCH.CH, WMERG-ANSI.CH, WMERG-EXTENSIONS.CH,
-WMERG-OUTPUT.CH to be applied as well.
+and WMERG-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
 
