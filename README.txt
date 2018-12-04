@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated November 23, 2018 by Andreas Scherer.
+% This README file was last updated December 4, 2018 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -72,134 +72,140 @@ available at
 	CTAN: https://ctan.org/pkg/tie
 
 TIE should be available on all systems with a recent TeX installation.
+Alternatively, you can also try to use Julian Gilbey's CTIE processor, but
+intermediate results are different.
 
 %%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The following files were added to this distribution by various contributors:
 
 GENERAL CONTRIBUTION:
-
-./comm-ansi.ch			change file for common.w
-./comm-ansi.hch			change file for common.h
-./comm-extensions.ch		change file for common.w
-./comm-extensions.hch		change file for common.h
-./comm-i18n.ch			change file for common.w
-./comm-i18n.hch			change file for common.h
-./comm-memory.ch		change file for common.w (defunct)
-./comm-memory.hch		change file for common.h (defunct)
-./comm-newpage.ch		change file for common.w
-./comm-output.ch		change file for common.w
-./comm-output.hch		change file for common.h
-./comm-patch.ch			change file for common.w
-./comm-texlive.ch		change file for common.w
-./comm-texlive.hch		change file for common.h
-./comm-translation.ch		change file for common.w (obsolete)
-./comm-translation.hch		change file for common.h (obsolete)
-./common.cxx			ctangled product of common.w and the above
-./ctang-ansi.ch			change file for ctangle.w
-./ctang-i18n.ch			change file for ctangle.w
-./ctang-memory.ch		change file for ctangle.w (defunct)
-./ctang-newpage.ch		change file for ctangle.w
-./ctang-output.ch		change file for ctangle.w
-./ctang-patch.ch		change file for ctangle.w
-./ctang-texlive.ch		change file for ctangle.w
-./ctang-translation.ch		change file for ctangle.w (obsolete)
-./ctangle.cxx			ctangled product of ctangle.w and the above
-./cweav-ansi.ch			change file for cweave.w
-./cweav-i18n.ch			change file for cweave.w
-./cweav-extensions.ch		change file for cweave.w
-./cweav-memory.ch		change file for cweave.w (defunct)
-./cweav-newpage.ch		change file for cweave.w
-./cweav-output.ch		change file for cweave.w
-./cweav-patch.ch		change file for cweave.w
-./cweav-texlive.ch		change file for cweave.w
-./cweav-translation.ch		change file for cweave.w (obsolete)
-./cwebman.ch			change file for cwebman.tex
-./0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
-./README.txt			the current file
-./wmerg-ansi.ch			change file for wmerge.w
-./wmerg-extensions.ch		change file for wmerge.w
-./wmerg-memory.ch		change file for wmerge.w (defunct)
-./wmerg-output.ch		change file for wmerge.w
-./wmerg-patch.ch		change file for wmerge.w
-./catalogs/dcweb.h		header file with the German strings
-./catalogs/ecweb.h		header file with the English default strings
-./catalogs/icweb.h		header file with the Italian strings
-./cwebinputs/amiga_types.w	AMIGA specific keywords by Commodore and SAS
-./cwebinputs/c++1xlib.w		Keywords for modern C++ standards
-./cwebinputs/ecma94.w		Transliteration table for Latin-1
-./cwebinputs/hp8.w		Transliteration table for HP Roman 8
-./cwebinputs/iso_types.w	Keywords for ISO C/C++ standards
-./cwebinputs/mac8.w		Transliteration table for Macintosh 8-bit font
-./cwebinputs/pc850.w		Transliteration table for Codepage 850
-./examples/cct.w		program to translate between character tables
-./examples/commonwords.w	program to count word frequencies in text files
-./examples/extex-ansi.ch	change file for extex.w
-./examples/matrix.w		C++ program to invert complex 4x4 matrices
-./examples/primes.ch		changes for the first 1000000 prime numbers
-./examples/primes.w     	program to print the first 1000 prime numbers
-./examples/README.p11		extended description for the new examples
-./examples/sample.w     	program to produce random numbers
-./examples/treeprint-ansi.ch	change file for treeprint.w
-./examples/wc-ansi.ch		change file for wc.w
-./po/cweb.pot			Portable Object Template for i18n
-./po/de/cweb.po			Portable Object for German tⅰ0n
-./po/it/cweb.po			Portable Object for Italian t10n
-./texinputs/Xcwebmac.tex	beautifications for cwebmac.tex
-./texinputs/dcwebmac.tex	German captions in addition to cwebmac.tex
-./texinputs/ecma94.sty		Umlauts and special characters for Latin-1
-./texinputs/fcwebmac.tex	French captions in addition to cwebmac.tex
-./texinputs/hp8.sty		Umlauts and special characters for HP Roman 8
-./texinputs/icwebmac.tex	Italian captions in addition to cwebmac.tex
-./texinputs/mac8.sty		Umlauts and special characters for Macintosh
-./texinputs/pc850.sty		Umlauts and special characters for IBM 850
-
-SPECIAL FOR USERS OF CC, C89, GCC OR OTHER ANSI C AND C++ COMPILERS FOR UNIX
-BY KLAUS GUNTERMANN MODIFIED BY ANDREAS SCHERER ACCORDING TO THE ORIGINAL
-MAKEFILE FROM THE CWEB DISTRIBUTION:
-
-./Makefile.unix		makefile for cc, c89, gcc, ... on several machines
-
-SPECIALS FOR USERS OF THE AMIGA AND SAS/C++ 6.5 BY ANDREAS SCHERER:
-(NO LONGER ACTIVELY SUPPORTED!)
-
-./Makefile.sas			makefile for SAS/C compiler 6.0 and up
-./comm-arexx.ch			change file for common.w
-./comm-arexx.hch		change file for common.h
-./arexx/compile.ced		ARexx script to start SAS/C 6.x from CED (V3.5+)
-./arexx/start_web.ced		ARexx script to start cweave/ctangle from CED
-./arexx/catalogs/cweb_arexx.cd   catalog description for German defaults
-./arexx/catalogs/cweb_arexx.e.ct catalog translation for English users
-./arexx/catalogs/cweb_arexx.f.ct catalog translation for French users
-./arexx/catalogs/cweb_arexx.i.ct catalog translation for Italian users
-./arexx/catalogs/english/cweb_arexx.catalog  message catalog for English users
-./arexx/catalogs/francais/cweb_arexx.catalog message catalog for French users
-				(for compatibility reasons, the cedilla was
-				replaced with an ordinary `c'.  when you use
-				this on the AMIGA you have to rename it again.)
-./arexx/catalogs/italiano/cweb_arexx.catalog message catalog for Italian users
-./catalogs/cweb.cd		catalog description for English defaults
-./catalogs/cweb.d.ct		catalog translation for German users
-./catalogs/cweb.i.ct		catalog translation for Italian users
-./examples/Makefile.sas		makefile for SAS/C compiler 6.0 and up
-
-SPECIALS FOR USERS OF MS/DOS/WINDOWS AND BORLAND C++ 3.1 BY HANS-HERMANN BODE
-WITH MODIFICATIONS BY ANDREAS SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
-
-./Makefile.bcc		makefile for Borland C/C++
-./comm-borlandc.ch	change file for common.w
-./comm-borlandc.hch	change file for common.h
-./ctang-borlandc.ch	change file for ctangle.w
-./cweav-borlandc.ch	change file for cweave.w
-./wmerg-borlandc.ch	change file for wmerge.w
-
-SPECIALS FOR USERS OF MS/WINDOWS AND MICROSOFT VISUAL C++ 6.0 BY ANDREAS
-SCHERER: (NO LONGER ACTIVELY SUPPORTED!)
-
-./ctangle.dsp		Developer Studio Project for CTANGLE
-./cweave.dsp		Developer Studio Project for CWEAVE
-./wmerge.dsp		Developer Studio Project for WMERGE
-./cwebbin.dsw		Developer Studio Workspace for all three
+.
+├── 0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
+├── arexx				[AMIGA]
+│   ├── catalogs
+│   │   ├── cweb_arexx.cd		[AMIGA] catalog description for German defaults
+│   │   ├── cweb_arexx.e.ct		[AMIGA] catalog translation for English users
+│   │   ├── cweb_arexx.f.ct		[AMIGA] catalog translation for French users
+│   │   ├── cweb_arexx.i.ct		[AMIGA] catalog translation for Italian users
+│   │   ├── english
+│   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for English users
+│   │   ├── francais
+│   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for French users
+│   │   └── italiano
+│   │       └── cweb_arexx.catalog	[AMIGA] message catalog for Italian users
+│   ├── compile.ced			[AMIGA] ARexx script to start SAS/C 6.x from CED (V3.5+)
+│   └── start_web.ced			[AMIGA] ARexx script to start cweave/ctangle from CED
+├── catalogs
+│   ├── cweb.cd				[AMIGA] catalog description for English defaults
+│   ├── cweb.d.ct			[AMIGA] catalog translation for German users
+│   ├── cweb.i.ct			[AMIGA] catalog translation for Italian users
+│   ├── dcweb.h				[AMIGA,BCC] header file with the German strings
+│   ├── ecweb.h				[AMIGA,BCC] header file with the English default strings
+│   └── icweb.h				[AMIGA,BCC] header file with the Italian strings
+├── comm-ansi.ch			change file for common.w
+├── comm-ansi.hch			change file for common.h
+├── comm-arexx.ch			[AMIGA] change file for common.w
+├── comm-arexx.hch			[AMIGA] change file for common.h
+├── comm-borlandc.ch			[BCC] change file for common.w
+├── comm-borlandc.hch			[BCC] change file for common.h
+├── comm-extensions.ch			change file for common.w
+├── comm-extensions.hch			change file for common.h
+├── comm-i18n.ch			change file for common.w
+├── comm-i18n.hch			change file for common.h
+├── comm-memory.ch			[AMIGA,BCC] change file for common.w
+├── comm-memory.hch			[AMIGA,BCC] change file for common.h
+├── comm-newpage.ch			change file for common.w
+├── common.cxx				product of common.w and comm-foo.ch
+├── comm-output.ch			change file for common.w
+├── comm-output.hch			change file for common.h
+├── comm-patch.ch			change file for common.w
+├── comm-texlive.ch			change file for common.w
+├── comm-texlive.hch			change file for common.h
+├── comm-translation.ch			[AMIGA,BCC] change file for common.w
+├── comm-translation.hch		[AMIGA,BCC] change file for common.h
+├── ctang-ansi.ch			change file for ctangle.w
+├── ctang-borlandc.ch			[BCC] change file for ctangle.w
+├── ctang-extensions.ch			change file for ctangle.w
+├── ctang-i18n.ch			change file for ctangle.w
+├── ctangle.1				clone of cweb.1
+├── ctangle.cxx				product of ctangle.w and ctang-foo.ch
+├── ctangle.dsp				[MSVC] Developer Studio Project for CTANGLE
+├── ctang-memory.ch			[AMIGA,BCC] change file for ctangle.w
+├── ctang-newpage.ch			change file for ctangle.w
+├── ctang-output.ch			change file for ctangle.w
+├── ctang-patch.ch			change file for ctangle.w
+├── ctang-texlive.ch			change file for ctangle.w
+├── ctang-translation.ch		[AMIGA,BCC] change file for ctangle.w
+├── cweav-ansi.ch			change file for cweave.w
+├── cweav-borlandc.ch			[BCC] change file for cweave.w
+├── cweav-extensions.ch			change file for cweave.w
+├── cweav-i18n.ch			change file for cweave.w
+├── cweav-memory.ch			[AMIGA,BCC] change file for cweave.w
+├── cweav-newpage.ch			change file for cweave.w
+├── cweav-output.ch			change file for cweave.w
+├── cweav-patch.ch			change file for cweave.w
+├── cweav-texlive.ch			change file for cweave.w
+├── cweav-translation.ch		[AMIGA,BCC] change file for cweave.w
+├── cweave.1				clone of cweb.1
+├── cweave.dsp				[MSVC] Developer Studio Project for CWEAVE
+├── cwebbin.dsw				[MSVC] Developer Studio Workspace for all three
+├── cwebbin.spec			extended build recipe for debbuild
+├── cwebinputs
+│   ├── amiga_types.w			[AMIGA] keywords by Commodore and SAS
+│   ├── c++1xlib.w			Keywords for modern C++ standards
+│   ├── ecma94.w			Transliteration table for Latin-1
+│   ├── hp8.w				Transliteration table for HP Roman 8
+│   ├── iso_types.w			Keywords for ISO C/C++ standards
+│   ├── mac8.w				Transliteration table for Macintosh 8-bit font
+│   └── pc850.w				Transliteration table for Codepage 850
+├── cwebman.ch				change file for cwebman.tex
+├── examples
+│   ├── cct.w				program to translate between character tables
+│   ├── commonwords.w			program to count word frequencies in text files
+│   ├── extex-ansi.ch			change file for extex.w
+│   ├── Makefile.sas			[AMIGA] makefile for SAS/C compiler 6.0 and up
+│   ├── matrix.w			C++ program to invert complex 4x4 matrices
+│   ├── primes.ch			changes for the first 1000000 prime numbers
+│   ├── primes.w		     	program to print the first 1000 prime numbers
+│   ├── README.p11			extended description for the added examples
+│   ├── sample.w		     	program to produce random numbers
+│   ├── treeprint-ansi.ch		change file for treeprint.w
+│   ├── wc-ansi.ch			change file for wc.w
+│   └── wordtest-ansi.ch		change file for wordtest.w
+├── LICENSE				MIT license
+├── Makefile.bcc			[BCC] makefile for Borland C/C++
+├── Makefile.sas			[AMIGA] makefile for SAS/C compiler 6.0 and up
+├── Makefile.unix			makefile for cc, c89, gcc, ... on several machines
+├── po
+│   ├── cweb.pot			Portable Object Template for i18n
+│   ├── cweb-tl.pot			Portable Object Template for i18n
+│   ├── de
+│   │   ├── cweb.po			Portable Object for German t10n
+│   │   ├── cweb-tl.po			Portable Object for German t10n
+│   │   └── web2c-help.po		Portable Object for German t10n
+│   ├── it
+│   │   └── cweb.po			Portable Object for Italian t10n
+│   └── web2c-help.pot			Portable Object Template for i18n
+├── README.md				Github project description
+├── README.txt				the current file
+├── texinputs
+│   ├── dcwebmac.tex			German captions in addition to cwebmac.tex
+│   ├── ecma94.sty			Umlauts and special characters for Latin-1
+│   ├── fcwebmac.tex			French captions in addition to cwebmac.tex
+│   ├── hp8.sty				Umlauts and special characters for HP Roman 8
+│   ├── icwebmac.tex			Italian captions in addition to cwebmac.tex
+│   ├── mac8.sty			Umlauts and special characters for Macintosh
+│   ├── pc850.sty			Umlauts and special characters for IBM 850
+│   └── Xcwebmac.tex			beautifications for cwebmac.tex
+├── texlive.w				introduction to *-w2c.ch change files
+├── wmerg-ansi.ch			change file for wmerge.w
+├── wmerg-borlandc.ch			[BCC] change file for wmerge.w
+├── wmerge.dsp				[MSVC] Developer Studio Project for WMERGE
+├── wmerg-extensions.ch			change file for wmerge.w
+├── wmerg-memory.ch			[AMIGA,BCC] change file for wmerge.w
+├── wmerg-output.ch			change file for wmerge.w
+└── wmerg-patch.ch			change file for wmerge.w
 
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -447,7 +453,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-November 23, 2018.
+December 4, 2018.
 
 Andreas Scherer
 
