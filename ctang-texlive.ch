@@ -49,7 +49,9 @@ FIXME: Apply a more generic @VERSION@ scheme.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   textdomain("cweb-tl");
+@.cweb-tl.mo@>
   if (show_banner) printf("%s%s\n", banner, versionstring);
     /* print a ``banner line'' */
   textdomain("cweb");
+@.cweb.mo@>
 @z

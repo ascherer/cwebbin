@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 9, 2018.
+Changes for COMMON.W by Andreas Scherer, December 5, 2018.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests with the help of 'gettext'
@@ -13,11 +13,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
   @<Initialize pointers@>;
 @y
   @<Initialize pointers@>@;
-  setlocale(LC_ALL, "");
-  bindtextdomain("cweb", "/usr/share/locale/");
-  bindtextdomain("cweb-tl", "/usr/share/locale/");
-  bindtextdomain("web2c-help", "/usr/share/locale/");
-  textdomain("cweb");
+  @<Set locale and bind language catalogs@>@;
 @z
 
 @x l.184
@@ -268,24 +264,39 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 @** Index.
 @y
 @* Internationalization.  You may have noticed that almost all \.{"strings"}
-in the \.{CWEB} sources are placed in the context of the `|_|'~function.
+in the \.{CWEB} sources are placed in the context of the `|_|'~macro.
 This is just a shortcut for the `|gettext|' function from the ``GNU~gettext
 utilities.''
-
-If a translation catalog \.{cweb.mo} for your personal \.{LANGUAGE} is
-installed at the appropriate place (see ``|bindtextdomain|'' in the index),
-\.{ctangle} and \.{cweave} will talk to you in your favorite language.
-
-If such a translation is not available you may want to improve this system by
-checking out the sources and translating the strings in file \.{cweb.pot} and
-submitting the resulting \.{cweb.po} file to the maintainers at
-\.{tex-k@@tug.org}.
 
 @d _(STRING) gettext(STRING)
 
 @<Include files@>=
 #include <libintl.h>
 #include <locale.h>
+
+@ If translation catalogs for your personal \.{LANGUAGE} are installed at the
+appropriate place, \.{CTANGLE} and \.{CWEAVE} will talk to you in your favorite
+language.  Catalog \.{cweb} contains all strings from ``plain \.{CWEB},''
+catalog \.{cweb-tl} contains a few extra strings specific to the \TeX~Live
+interface, and catalog \.{web2c-help} contains the ``\.{--help}'' texts for
+\.{CTANGLE} and \.{CWEAVE}.
+@.cweb.mo@>
+@.cweb-tl.mo@>
+@.web2c-help.mo@>
+@.--help@>
+
+If such translation files are not available you may want to improve this system
+by checking out the sources and translating the strings in files \.{cweb.pot},
+\.{cweb-tl.pot}, and \.{web2c-help.pot} and submitting the resulting
+\.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
+
+@<Set locale...@>=
+setlocale(LC_ALL, "");
+bindtextdomain("cweb", "/usr/share/locale/");
+bindtextdomain("cweb-tl", "/usr/share/locale/");
+bindtextdomain("web2c-help", "/usr/share/locale/");
+textdomain("cweb"); /* the majority of |"strings"| come from ``plain \.{CWEB}'' */
+@.cweb.mo@>
 
 @** Index.
 @z

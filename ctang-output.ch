@@ -78,6 +78,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file:",check_file_name);
+@.Cannot open output file@>
 
   @<Compare the temporary output to the previous output@>@;
 

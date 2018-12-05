@@ -67,7 +67,7 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394+ and l.68 of COMM-I18N.CH
+@x l.394+ and l.64 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -83,7 +83,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
 }
 @z
 
-@x l.402+ and l.74 of COMM-I18N.CH
+@x l.402+ and l.70 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -100,7 +100,7 @@ Section 23.
 
 Revert change from COMM-EXTENSIONS.CH: @include file search is done with
 KPathSea, and COMM-TEXLIVE.CH doesn't change the description.  We restore
-the original wording from COMMON.W.  FIXME!
+and adapt the original wording from COMMON.W.
 
 @x l.457
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
@@ -119,11 +119,8 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
 double quotes.
-If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
-of the same name was defined at compile time,
-\.{CWEB} will look for include files in the directory thus named, if
-it cannot find them in the current directory.
-(Colon-separated paths are not supported.)
+The actual file lookup is done with the help of the \Kpathsea/ library;
+see section~\X90:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
 @z
 
@@ -248,8 +245,10 @@ Section 74.
 @ @<Handle flag...@>=
 {
   if (strcmp("-help",*argv)==0 || strcmp("--help",*argv)==0)
+@.--help@>
     @<Display help message and exit@>@;
   if (strcmp("-version",*argv)==0 || strcmp("--version",*argv)==0)
+@.--version@>
     @<Display version information and exit@>@;
 @z
 
@@ -286,10 +285,83 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
+@x l.283 of COMM-EXTENSIONS.CH
+static boolean set_path(char *,char *);@/
+@y
+@z
+
+@x l.289 of COMM-EXTENSIONS.CH and l.260 of COMM-I18N.CH
+@* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
+for include files along the path |CWEBINPUTS|.  By setting the environment
+variable of the same name to a different search path you can suit your
+personal needs.  If this variable is empty, some decent defaults are used
+internally.  The following procedure takes care that these internal entries
+are appended to any setting of the environmnt variable, so you don't have
+to repeat the defaults.
+@^system dependencies@>
+
+@c
+static boolean set_path(char *include_path,char *environment)
+{
+  char string[max_path_length+2];
+
+#ifdef CWEBINPUTS
+  strncpy(include_path,CWEBINPUTS,max_path_length);
+  include_path[max_path_length]='\0';
+#endif
+
+  if(environment) {
+    if(strlen(environment)+strlen(include_path) >= max_path_length) {
+      err_print(_("! Include path too long")); return(0);
+@.Include path too long@>
+    } else {
+      sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
+      strcpy(include_path,string);
+    }
+  }
+  return(1);
+}
+@y
+@z
+
+@x l.320 of COMM-EXTENSIONS.CH
+@ The path search algorithm defined in section |@<Try to open...@>|
+needs a few extra variables.
+
+@d max_path_length (BUFSIZ-2)
+
+@d PATH_SEPARATOR   separators[0]
+@d DIR_SEPARATOR    separators[1]
+@d DEVICE_SEPARATOR separators[2]
+
+@<Other...@>=
+char include_path[max_path_length+2];@/
+char *p, *path_prefix, *next_path_prefix;
+
+#ifdef SEPARATORS
+char separators[]=SEPARATORS;
+#else
+char separators[]="://";
+#endif
+@y
+@ The |scan_args| routine needs a few extra variables.
+
+@d PATH_SEPARATOR   separators[0]
+@d DIR_SEPARATOR    separators[1]
+@d DEVICE_SEPARATOR separators[2]
+
+@<Other...@>=
+#ifdef SEPARATORS
+char separators[]=SEPARATORS;
+#else
+char separators[]="://";
+#endif
+@z
+
 @x l.1418
 @** Index.
 @y
-@* File lookup with \Kpathsea/.  The \.{ctangle} and \.{cweave} programs from
+@* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from
 the original \.{CWEB} package use the compile-time default directory or the
 value of the environment variable \.{CWEBINPUTS} as an alternative place to be
 searched for files, if they could not be found in the current directory.
@@ -349,9 +421,12 @@ static void cb_usagehelp (const_string *message, const_string bug_email);@/
 static void cb_usage (const_string str)
 {
   textdomain("cweb-tl");
+@.cweb-tl.mo@>
   fprintf(stderr, _("%s: Need one to three file arguments.\n"), str);
   fprintf(stderr, _("Try `%s --help' for more information.\n"), str);
+@.--help@>
   textdomain("cweb");
+@.cweb.mo@>
   history=fatal_message; exit(wrap_up());
 }
 
@@ -360,13 +435,16 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   if (!bug_email)
     bug_email = "tex-k@@tug.org";
   textdomain("web2c-help");
+@.web2c-help.mo@>
   while (*message) {
     printf("%s\n", strcmp("", *message) ? _(*message) : *message);
     ++message;
   }
   textdomain("cweb-tl");
+@.cweb-tl.mo@>
   printf(_("\nEmail bug reports to %s.\n"), bug_email);
   textdomain("cweb");
+@.cweb.mo@>
   history=spotless; exit(wrap_up());
 }
 
