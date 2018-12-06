@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CWEBbin 2018\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 12:09+0100\n"
-"PO-Revision-Date: 2018-11-27 12:09+0100\n"
+"POT-Creation-Date: 2018-12-06 21:37+0100\n"
+"PO-Revision-Date: 2018-12-06 12:42+0100\n"
 "Last-Translator: Andreas Scherer <andreas_github@freenet.de>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ctang-i18n.ch:63 cweav-i18n.ch:323
-msgid "Done."
-msgstr "Fatto."
 
 #: comm-i18n.ch:150
 msgid ""
@@ -334,6 +330,10 @@ msgstr "! Input terminato all'interno del nome di una sezione"
 msgid "! Input line too long"
 msgstr "! Linea in input troppo lunga"
 
+#: ctang-i18n.ch:211
+msgid "! Misplaced @@h"
+msgstr "! Mal riposto @@h"
+
 #: cweav-i18n.ch:221
 msgid "! Missing '|' after C text"
 msgstr "! Omesso `|' dopo il testo in C"
@@ -536,6 +536,10 @@ msgid ""
 msgstr ""
 ">,\n"
 " che abbrevia <"
+
+#: ctang-i18n.ch:63 cweav-i18n.ch:323
+msgid "Done."
+msgstr "Fatto."
 
 #: cweav-i18n.ch:363
 msgid "Parsing:"

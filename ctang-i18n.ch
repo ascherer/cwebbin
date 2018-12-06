@@ -203,7 +203,7 @@ Section 75.
   if (text_ptr>text_info_end) overflow(_("text"));
 @z
 
-Section 78. FIXME.
+Section 78.
 
 @x l.1250
 case output_defs_code: if (t!=section_name) err_print("! Misplaced @@h");
