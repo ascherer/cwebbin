@@ -6,12 +6,16 @@ and the 'libintl' library.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
+Section 6 (of CTANGLE and CWEAVE).
+
 @x l.35
 @ @<Include files@>=
 @y
 @ @<Include files@>=
 #include <libintl.h>
 @z
+
+Section 10.
 
 @x l.120
 @d confusion(s) fatal("! This can't happen: ",s)

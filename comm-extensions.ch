@@ -9,17 +9,23 @@ This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
+Section 7.
+
 @x l.153
 @d buf_size 100 /* for \.{CWEAVE} and \.{CTANGLE} */
 @y
 @d buf_size 1000 /* for \.{CWEAVE} and \.{CTANGLE} */
 @z
 
+Section 10.
+
 @x l.207 - max_file_name_length is way too small.
 @d max_file_name_length 60
 @y
 @d max_file_name_length 1024
 @z
+
+Section 20.
 
 @x l.415
 @d max_sections 2000 /* number of identifiers, strings, section names;
@@ -28,6 +34,8 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 @d max_sections 10239 /* number of identifiers, strings, section names;
   must be less than 10240 */
 @z
+
+Section 22.
 
 @x l.457
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
@@ -53,6 +61,8 @@ the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@>
 @z
+
+Section 23.
 
 @x l.493
   kk=getenv("CWEBINPUTS");
@@ -103,6 +113,8 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   }
 @z
 
+Section 27.
+
 @x l.589
 @d max_bytes 90000 /* the number of bytes in identifiers,
   index entries, and section names; must be less than $2^{24}$ */
@@ -115,11 +127,15 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   must be less than 10240 */
 @z
 
+Section 53.
+
 @x l.642
 @d hash_size 353 /* should be prime */
 @y
 @d hash_size 8501 /* should be prime */
 @z
+
+Section 61.
 
 @x l.1144
 @ Some implementations may wish to pass the |history| value to the
@@ -154,6 +170,8 @@ made sensitive to these conditions.
   default: return(RETURN_OK);
   }
 @z
+
+Section 67.
 
 C and CWEB are `international' languages, so non-English speaking users may
 want to write program documentations in their native language instead of in
@@ -209,6 +227,8 @@ boolean flags[256]; /* an option for each 8-bit code */
 const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
+Section 68.
+
 @x l.1233
 @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>=
 show_banner=show_happiness=show_progress=1;
@@ -220,6 +240,8 @@ indent_param_decl=order_decl_stmt=true;@/
 use_language="";
 @z
 
+Section 69.
+
 @x l.1245
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
@@ -229,7 +251,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-@x l.441 of COMM-ANSI.CH
+Section 70.
+
+@x l.1265+ and l.214 of COMM-PATCH.CH
   strcpy(change_file_name,"/dev/null");
 @y
 #if defined DEV_NULL
@@ -260,7 +284,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @^system dependencies@>
 @z
 
-@x l.1348 and l.437 of COMM-ANSI.CH
+Section 74.
+
+@x l.1348 and l.518 of COMM-ANSI.CH
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     flags[(eight_bits)*dot_pos]=flag_change;
 @y
@@ -272,7 +298,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
     else flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
-@x l.491 of COMM-ANSI.CH
+Extended material after Section 82.
+
+@x l.576 of COMM-ANSI.CH
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
@@ -282,6 +310,8 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/
 @z
+
+Add even more material ...
 
 @x l.1418
 @** Index.

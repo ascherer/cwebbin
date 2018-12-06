@@ -7,9 +7,11 @@
 % comm-i18n.ch and comm-texlive.ch that get tie'd into comm-w2c.ch that
 % is used as a monolithic changefile for common.w in TeX Live.
 
+Material in limbo.
+
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.20 and l.175 of COMM-PATCH.CH
+@x l.20 and l.177 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
@@ -28,7 +30,7 @@ FIXME: Apply a more generic @VERSION@ scheme.
   \vfill}
 @z
 
-@x l.19 of COMM-ANSI.CH
+@x l.20 of COMM-ANSI.CH
 @i iso_types.w
 @y
 @s boolean int
@@ -36,14 +38,16 @@ FIXME: Apply a more generic @VERSION@ scheme.
 @s uint16_t int
 @z
 
-@x l.74 and l.25 of COMM-ANSI.CH
+Section 2.
+
+@x l.74 and l.28 of COMM-ANSI.CH
 typedef bool boolean;
 @y
 @z
 
 Section 4.
 
-@x l.93 and l.15 of COMM-I18N.CH
+@x l.93 and l.19 of COMM-I18N.CH
   @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
@@ -67,7 +71,7 @@ char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 
 Section 19.
 
-@x l.394+ and l.64 of COMM-I18N.CH
+@x l.394+ and l.82 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -83,7 +87,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
 }
 @z
 
-@x l.402+ and l.70 of COMM-I18N.CH
+@x l.402+ and l.88 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -96,13 +100,9 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
 }
 @z
 
-Section 23.
+Section 22.
 
-Revert change from COMM-EXTENSIONS.CH: @include file search is done with
-KPathSea, and COMM-TEXLIVE.CH doesn't change the description.  We restore
-and adapt the original wording from COMMON.W.
-
-@x l.457
+@x l.457 and l.52 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -123,6 +123,8 @@ The actual file lookup is done with the help of the \Kpathsea/ library;
 see section~\X90:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
 @z
+
+Section 23.
 
 @x l.475
   char temp_file_name[max_file_name_length];
@@ -147,8 +149,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @z
 
 Replaced by Kpathsea `kpse_find_file'
-
-@x l.493 and l.83 of COMM-EXTENSIONS.CH
+@x l.493 and l.93 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -175,7 +176,7 @@ Replaced by Kpathsea `kpse_find_file'
 
 Section 67.
 
-@x l.1212 and l.192 of COMM-EXTENSIONS.CH
+@x l.1212 and l.210 of COMM-EXTENSIONS.CH
 the names of those files. Most of the 256 flags are undefined but available
 for future extensions.
 @y
@@ -208,7 +209,9 @@ Debugging output is always written to |stderr|, and begins with the string
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @z
 
-@x l.1233+ and l.217 of COMM-EXTENSIONS.CH
+Section 68.
+
+@x l.1233+ and l.237 of COMM-EXTENSIONS.CH
 show_banner=show_happiness=show_progress=true;@/
 show_stats=false;@/
 @y
@@ -262,7 +265,7 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.235 of COMM-I18N.CH
+@x l.1354+ and l.277 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
@@ -285,12 +288,14 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
-@x l.283 of COMM-EXTENSIONS.CH
+Changes to former addenda.
+
+@x l.311 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.289 of COMM-EXTENSIONS.CH and l.260 of COMM-I18N.CH
+@x l.319 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -321,10 +326,11 @@ static boolean set_path(char *include_path,char *environment)
   }
   return(1);
 }
+
 @y
 @z
 
-@x l.320 of COMM-EXTENSIONS.CH
+@x l.350 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -357,6 +363,8 @@ char separators[]=SEPARATORS;
 char separators[]="://";
 #endif
 @z
+
+Material++
 
 @x l.1418
 @** Index.

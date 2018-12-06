@@ -7,9 +7,11 @@
 % ctang-i18n.ch and ctang-texlive.ch that get tie'd into ctang-w2c.ch that
 % is used as a monolithic changefile for ctangle.w in TeX Live.
 
+Material in limbo.
+
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.27 and l.162 of CTANG-PATCH.CH
+@x l.27 and l.164 of CTANG-PATCH.CH
 \def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
 \def\topofcontents{\null\vfill
   \centerline{\titlefont The {\ttitlefont CTANGLE} processor}
@@ -29,7 +31,7 @@ Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.62 and l.185 of CTANG-PATCH.CH and l.15 of CTANG-I18N.CH
+@x l.62 and l.189 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
 The ``banner line'' defined here should be changed whenever \.{CTANGLE}
 is modified.
 
@@ -45,7 +47,7 @@ Section 3.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.100 and l.54 of CTANG-ANSI.CH - Add Web2C version to banner.
+@x l.100 and l.62 of CTANG-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   textdomain("cweb-tl");

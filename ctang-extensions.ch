@@ -4,6 +4,8 @@ This set of changes adapts the buffer sizes to those in COMM-FOO.H
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
+Section 4.
+
 @x l.112
 @d max_bytes 90000 /* the number of bytes in identifiers,
 @y

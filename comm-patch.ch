@@ -3,9 +3,9 @@ This file, COMM-FOO.CH, is part of CWEBBIN (Version 3.64 [2018]).
 It is a changefile for COMMON.W, Version 3.64.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
-files by applying Klaus Guntermann's TIE processor.  Any comments (like
-this introduction) are removed from the final output, so COMM-PATCH.CH is
-the place to look up the development history.
+files by applying Klaus Guntermann's TIE processor.  Any comments (like this
+introduction) are removed from the final output, so COMM-PATCH.CH is the place
+to look up the development history.
 
 Authors and Contributors:
 (H2B) Hans-Hermann Bode, Universität Osnabrück,
@@ -68,8 +68,8 @@ p5c	30 Jul 1992	KG	removed comments used after #endif
 Version 2.7 --- Don Knuth, Silvio Levy, July 1992
 
 p6	06 Sep 1992	H2B	Updated for COMMON.W 2.7.
-p6a     15 Mar 1993     AS      adaptions for SAS/C 6.0 compiler
-p6b     28 Jul 1993     AS      path delimiters are `/' or `:' for AMIGA
+p6a	15 Mar 1993	AS	adaptions for SAS/C 6.0 compiler
+p6b	28 Jul 1993	AS	path delimiters are `/' or `:' for AMIGA
 	31 Aug 1993	AS	return codes extended to AMIGA values
 p6c	04 Sep 1993	AS	path searching with CWEBINCLUDE
 
@@ -169,6 +169,8 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
 ------------------------------------------------------------------------------
+Material in limbo.
+
 @x l.20
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
 @y
@@ -192,7 +194,7 @@ y
 \let\maybe=\iffalse % print only changed modules
 z
 
-Fix bug: Don't print empty line for '-ph'.
+Section 61. Fix bug: Don't print empty line for '-ph'.
 
 @x l.1151
 int wrap_up() {
@@ -202,9 +204,9 @@ int wrap_up() {
   if (show_progress) new_line;
 @z
 
-After 'boolean' was changed from 'short' to 'bool' it became obvious that '-1'
-is not really a useful value to designate special case '-' for the changefile
-argument. By flipping the detection logic all is fine again.
+Section 70. After 'boolean' was changed from 'short' to 'bool' it became
+obvious that '-1' is not really a useful value to designate special case '-'
+for the changefile argument. By flipping the detection logic all is fine again.
 
 @x l.1265
   while (--argc > 0) {
@@ -217,6 +219,8 @@ argument. By flipping the detection logic all is fine again.
   if (found_change<=0) strcpy(change_file_name,"/dev/null");
 @y
 @z
+
+Section 72.
 
 @x l.1312
   if (strcmp(*argv,"-")==0) found_change=-1;

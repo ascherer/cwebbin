@@ -11,6 +11,8 @@ CWEAV-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+Section 226.
+
 @x l.4300
 if (no_xref) {
   finish_line();
@@ -71,11 +73,15 @@ finish_line(); fclose(active_file); active_file=NULL;
 @<Update the result when it has changed@>@;
 @z
 
+Section 248.
+
 @x l.4614
 @ @<Output all the section names@>=section_print(root)
 @y
 @ @<Output all the section names@>=section_print(root);
 @z
+
+Additional material.
 
 @x l.4644
 @** Index.

@@ -6,6 +6,8 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
+Section 11 (of CTANGLE and CWEAVE).
+
 @x l.131
 @d max_file_name_length 60
 @y
@@ -18,6 +20,8 @@ extern int line[]; /* number of current line in the stacked files */
 extern int line[]; /* number of current line in the stacked files */
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @z
+
+Section 13.
 
 @x l.168
 @d show_happiness flags['h'] /* should lack of errors be announced? */

@@ -11,12 +11,16 @@ COMM-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
+Section 61.
+
 @x l.1155
   @<Print the job |history|@>;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
 @z
+
+Section 67.
 
 @x l.1226
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
@@ -25,12 +29,16 @@ char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
+Section 77.
+
 @x l.1374
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 FILE *check_file; /* temporary output file */
 @z
+
+Section 78.
 
 @x l.1377
 @ @<Scan arguments and open output files@>=
@@ -69,6 +77,8 @@ else {
     fatal("! Cannot open output file ", check_file_name);
 }
 @z
+
+New material after section 82.
 
 @x l.1418
 @** Index.

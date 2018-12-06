@@ -9,11 +9,15 @@ CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-@x l.62+ and l.185 of CTANG-PATCH.CH
+Section 1.
+
+@x l.62+ and l.164 of CTANG-PATCH.CH
 @d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @y
 @d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
 @z
+
+Section 26.
 
 @x l.265
   if (tok_ptr+2>tok_mem_end) overflow("token");
@@ -21,11 +25,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   if (tok_ptr+2>tok_mem_end) overflow(_("token"));
 @z
 
+Section 30.
+
 @x l.341
   if (stack_ptr==stack_end) overflow("stack");
 @y
   if (stack_ptr==stack_end) overflow(_("stack"));
 @z
+
+Section 34.
 
 @x l.428
     printf("\n! Not present: <");
@@ -33,11 +41,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
     fputs(_("\n! Not present: <"),stdout);
 @z
 
+Section 40.
+
 @x l.525
       overflow("output files");
 @y
       overflow(_("output files"));
 @z
+
+Section 42.
 
 @x l.544
     printf("\n! No program text was specified."); mark_harmless;
@@ -57,23 +69,29 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564+ and l.193 of CTANG-PATCH.CH
+@x l.564+ and l.199 of CTANG-PATCH.CH
       printf("Done.");
 @y
       fputs(_("Done."),stdout);
 @z
 
-@x l.572 and l.41 of CTANG-OUTPUT.CH
+Section 43.
+
+@x l.572 and l.43 of CTANG-OUTPUT.CH
       fatal("! Cannot open output file:",check_file_name);
 @y
       fatal(_("! Cannot open output file:"),check_file_name);
 @z
+
+Section 47.
 
 @x l.630
           else if (a<050000) { confusion("macro defs have strange char");}
 @y
           else if (a<050000) { confusion(_("macro defs have strange char"));}
 @z
+
+Section 60.
 
 @x l.858
           err_print("! Input ended in mid-comment");
@@ -86,6 +104,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @y
         err_print(_("! Section name ended in mid-comment")); loc--;
 @z
+
+Section 67.
 
 @x l.1016
         err_print("! String didn't end"); loc=limit; break;
@@ -111,11 +131,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
     case translit_code: err_print(_("! Use @@l in limbo only")); continue;
 @z
 
+Section 68.
+
 @x l.1059
         err_print("! Double @@ should be used in control text");
 @y
         err_print(_("! Double @@ should be used in control text"));
 @z
+
+Section 69.
 
 @x l.1085
         err_print("! Double @@ should be used in ASCII constant");
@@ -129,6 +153,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
         err_print(_("! String didn't end")); loc=limit-1; break;
 @z
 
+Section 72.
+
 @x l.1122
     err_print("! Input ended in section name");
 @y
@@ -140,6 +166,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @y
   fputs(_("\n! Section name too long: "),stdout);
 @z
+
+Section 73.
 
 @x l.1149
     err_print("! Section name didn't end"); break;
@@ -153,11 +181,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
     err_print(_("! Nesting of section names not allowed")); break;
 @z
 
+Section 74.
+
 @x l.1167
   if (loc>=limit) err_print("! Verbatim string didn't end");
 @y
   if (loc>=limit) err_print(_("! Verbatim string didn't end"));
 @z
+
+Section 75.
 
 @x l.1193
 @d app_repl(c)  {if (tok_ptr==tok_mem_end) overflow("token"); *tok_ptr++=c;}
@@ -171,11 +203,21 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   if (text_ptr>text_info_end) overflow(_("text"));
 @z
 
+Section 78. FIXME.
+
+@x l.1250
+case output_defs_code: if (t!=section_name) err_print("! Misplaced @@h");
+@y
+case output_defs_code: if (t!=section_name) err_print(_("! Misplaced @@h"));
+@z
+
 @x l.1266
     err_print("! @@d, @@f and @@c are ignored in C text"); continue;
 @y
     err_print(_("! @@d, @@f and @@c are ignored in C text")); continue;
 @z
+
+Section 79.
 
 @x l.1276
   if (*try_loc=='=') err_print ("! Missing `@@ ' before a named section");
@@ -183,11 +225,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   if (*try_loc=='=') err_print (_("! Missing `@@ ' before a named section"));
 @z
 
+Section 80.
+
 @x l.1287
       else err_print("! Double @@ should be used in string");
 @y
       else err_print(_("! Double @@ should be used in string"));
 @z
+
+Section 81.
 
 @x l.1334
     default: err_print("! Unrecognized escape sequence");
@@ -195,11 +241,15 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
     default: err_print(_("! Unrecognized escape sequence"));
 @z
 
+Section 85.
+
 @x l.1409
     err_print("! Definition flushed, must start with identifier");
 @y
     err_print(_("! Definition flushed, must start with identifier"));
 @z
+
+Section 93.
 
 @x l.1499
             err_print("! Double @@ should be used in control text");
@@ -213,6 +263,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
+Section 94.
+
 @x l.1515
     err_print("! Improper hex number following @@l");
 @y
@@ -224,6 +276,8 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 @y
       err_print(_("! Replacement string in @@l too long"));
 @z
+
+Section 95.
 
 @x l.1539
   printf("\nMemory usage statistics:\n");
@@ -245,7 +299,9 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
   printf(_("%ld tokens (out of %ld)\n"),
 @z
 
-@x l.80 of CTANG-OUTPUT.CH
+Addendum.
+
+@x l.84 of CTANG-OUTPUT.CH
     fatal("! Cannot open output file:",check_file_name);
 @y
     fatal(_("! Cannot open output file:"),check_file_name);

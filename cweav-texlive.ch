@@ -7,6 +7,8 @@
 % cweav-i18n.ch and cweav-texlive.ch that get tie'd into cweav-w2c.ch that
 % is used as a monolithic changefile for cweave.w in TeX Live.
 
+Material in limbo.
+
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.32 and l.177 of CWEAV-PATCH.CH
@@ -33,7 +35,7 @@ Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.65 and l.200 of CWEAV-PATCH.CH and l.15 of CWEAV-I18N.CH
+@x l.65 and l.204 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
@@ -49,7 +51,7 @@ Section 3.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.108 and l.54 of CWEAV-ANSI.CH - Add Web2C version to banner.
+@x l.108 and l.60 of CWEAV-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   textdomain("cweb-tl");

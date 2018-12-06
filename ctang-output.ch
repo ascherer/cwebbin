@@ -11,6 +11,8 @@ CTANG-EXTENSIONS.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
+Section 43.
+
 @x l.572
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
@@ -53,6 +55,8 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
 }
 strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @z
+
+Additional material.
 
 @x l.1550
 @** Index.

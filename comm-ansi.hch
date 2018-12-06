@@ -9,6 +9,8 @@ This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
+Material in limbo (not really).
+
 @x l.24
 First comes general stuff:
 @y
@@ -16,6 +18,8 @@ First comes general stuff:
 
 First comes general stuff:
 @z
+
+Section 5 (of CTANGLE and CWEAVE).
 
 @x l.30
 typedef short boolean;
@@ -26,6 +30,8 @@ typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;
 @z
 
+Section 6.
+
 @x l.35
 @ @<Include files@>=
 @y
@@ -34,11 +40,15 @@ typedef uint16_t sixteen_bits;
 #include <stdint.h>
 @z
 
+Section 7.
+
 @x l.47
 @d not_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @y
 @d non_eq 032 /* `\.{!=}'\,;  corresponds to MIT's {\tentex\char'32} */
 @z
+
+Section 8.
 
 @x l.65
 @d xisalpha(c) (isalpha(c)&&((eight_bits)c<0200))
@@ -55,6 +65,8 @@ typedef uint16_t sixteen_bits;
 @d xisupper(c) (isupper((eight_bits)c)&&((eight_bits)c<0200))
 @d xisxdigit(c) (isxdigit((eight_bits)c)&&((eight_bits)c<0200))
 @z
+
+Section 9.
 
 @x l.79
 @d length(c) (c+1)->byte_start-(c)->byte_start /* the length of a name */
@@ -85,6 +97,8 @@ extern void print_section_name(name_pointer);@/
 extern void sprint_section_name(char *,name_pointer);@/
 @z
 
+Section 10.
+
 @x l.123
 extern history; /* indicates how bad this run was */
 extern err_print(); /* print error message and context */
@@ -98,6 +112,8 @@ extern void err_print(const char *); /* print error message and context */
 extern void fatal(const char *,const char *); /* issue error message and die */
 extern void overflow(const char *); /* succumb because a table has overflowed */
 @z
+
+Section 11.
 
 @x l.138
 extern include_depth; /* current level of nesting */
@@ -125,10 +141,14 @@ extern void check_complete(void); /* checks that all changes were picked up */
 extern void reset_input(void); /* initialize to read the web file and change file */
 @z
 
+Section 12.
+
 @x l.160
 typedef unsigned short sixteen_bits;
 @y
 @z
+
+Section 15.
 
 @x l.193
 extern void common_init();

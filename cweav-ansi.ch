@@ -11,10 +11,14 @@ as well to bump the revision information.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+Material in limbo.
+
 @x l.54
 @s not_eq normal @q unreserve a C++ keyword @>
 @y
 @z
+
+Section 2.
 
 @x l.78
 @ We predeclare several standard system functions here instead of including
@@ -37,6 +41,8 @@ of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
 @<Include files@>=
 #include <string.h>
 @z
+
+Section 3.
 
 @x l.99
 int main (ac, av)
@@ -63,11 +69,15 @@ char **av@t\2\2@>) /* argument values */
   return wrap_up(); /* and exit gracefully */
 @z
 
+Sections 5--15.
+
 @x l.144
 @i common.h
 @y
 @i comm-foo.h
 @z
+
+Section 18.
 
 @x l.234
 typedef struct xref_info {
@@ -82,11 +92,15 @@ typedef struct xref_info {
 } xref_info;
 @z
 
+Section 20.
+
 @x l.255
 xref_ptr=xmem; name_dir->xref=(char*)xmem; xref_switch=0; section_xref_switch=0;
 @y
 xref_ptr=xmem; init_node(name_dir); xref_switch=0; section_xref_switch=0;
 @z
+
+Section 21.
 
 @x l.276
 void
@@ -104,6 +118,8 @@ name_pointer p)
   append_xref(m); xref_ptr->xlink=q; p->xref=(void *)xref_ptr;
 @z
 
+Section 22.
+
 @x l.307
 void
 new_section_xref(p)
@@ -119,6 +135,8 @@ name_pointer p)
 @y
   if (r==xmem) p->xref=(void *)xref_ptr;
 @z
+
+Section 23.
 
 @x l.327
 void
@@ -136,10 +154,14 @@ name_pointer p)
   p->xref = (void *)xref_ptr;
 @z
 
+Section 24.
+
 @x l.346
 typedef sixteen_bits token;
 @y
 @z
+
+Section 27.
 
 @x l.372
 int names_match(p,first,l,t)
@@ -154,6 +176,8 @@ const char *first, /* position of first character of string */
 size_t l, /* length of identifier */
 eight_bits t@t\2\2@>) /* desired |ilk| */
 @z
+
+Section 27.
 
 @x l.383
 void
@@ -189,11 +213,15 @@ name_pointer p)
   p->xref=(void *)xmem;
 @z
 
+Section 34.
+
 @x l.601
 void   skip_limbo();
 @y
 static void skip_limbo(void);@/
 @z
+
+Section 35.
 
 @x l.604
 void
@@ -203,6 +231,8 @@ static void
 skip_limbo(void) {
 @z
 
+Section 36.
+
 @x l.626
 unsigned
 skip_TeX() /* skip past pure \TEX/ code */
@@ -211,11 +241,15 @@ static eight_bits
 skip_TeX(void) /* skip past pure \TEX/ code */
 @z
 
+Section 39.
+
 @x l.697
 eight_bits get_next();
 @y
 static eight_bits get_next(void);@/
 @z
+
+Section 40.
 
 @x l.700
 eight_bits
@@ -227,6 +261,8 @@ get_next(void) /* produces the next input token */
 {
   eight_bits c; /* the current character */
 @z
+
+Section 46.
 
 @x l.781
     else if (*loc=='>') if (*(loc+1)=='*') {loc++; compress(minus_gt_ast);}
@@ -242,6 +278,8 @@ get_next(void) /* produces the next input token */
   case '!': if (*loc=='=') compress(non_eq); break;
 @z
 
+Section 47.
+
 @x l.801
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
@@ -249,11 +287,15 @@ get_next(void) /* produces the next input token */
       || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
 @z
 
+Section 48.
+
 @x l.836
     *id_loc++='$'; *id_loc++=toupper(*loc); loc++;
 @y
     *id_loc++='$'; *id_loc++=toupper((eight_bits)*loc); loc++;
 @z
+
+Section 49.
 
 @x l.871
     if (c=='\\') if (loc>=limit) continue;
@@ -267,11 +309,15 @@ get_next(void) /* produces the next input token */
       } } }
 @z
 
+Section 55.
+
 @x l.972
 void skip_restricted();
 @y
 void skip_restricted(void);@/
 @z
+
+Section 56.
 
 @x l.975
 void
@@ -281,11 +327,15 @@ void
 skip_restricted(void)
 @z
 
+Section 59.
+
 @x l.1025
 void phase_one();
 @y
 static void phase_one(void);@/
 @z
+
+Section 60.
 
 @x l.1028
 void
@@ -295,11 +345,15 @@ static void
 phase_one(void) {
 @z
 
+Section 62.
+
 @x l.1077
 void C_xref();
 @y
 static void C_xref(eight_bits);@/
 @z
+
+Section 63.
 
 @x l.1080
 void
@@ -311,11 +365,15 @@ C_xref(@t\1\1@> /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl@t\2\2@>)
 @z
 
+Section 64.
+
 @x l.1105
 void outer_xref();
 @y
 static void outer_xref(void);@/
 @z
+
+Section 65.
 
 @x l.1108
 void
@@ -325,17 +383,23 @@ static void
 outer_xref(void) /* extension of |C_xref| */
 @z
 
+Section 70.
+
 @x l.1208
             else lhs->xref=(char*)q->xlink;
 @y
             else lhs->xref=(void *)q->xlink;
 @z
 
+Section 74.
+
 @x l.1267
 void section_check();
 @y
 static void section_check(name_pointer);@/
 @z
+
+Section 75.
 
 @x l.1270
 void
@@ -347,7 +411,9 @@ section_check(
 name_pointer p) /* print anomalies in subtree |p| */
 @z
 
-@x l.1323 and l.208 of COMM-PATCH.CH
+Section 78.
+
+@x l.1323 and l.212 of CWEAV-PATCH.CH
 void
 flush_buffer(b,per_cent,carryover)
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
@@ -365,6 +431,8 @@ boolean per_cent,boolean carryover@t\2\2@>)
   if (b<out_ptr) strncpy(out_buf+1,b+1,(size_t)(out_ptr-b));
 @z
 
+Section 79.
+
 @x l.1352
 void
 finish_line() /* do this at the end of a line */
@@ -372,6 +440,8 @@ finish_line() /* do this at the end of a line */
 static void
 finish_line(void) /* do this at the end of a line */
 @z
+
+Section 81.
 
 @x l.1384
 void
@@ -383,11 +453,15 @@ out_str(@t\1\1@> /* output characters from |s| to end of string */
 const char*s@t\2\2@>)
 @z
 
+Section 83.
+
 @x l.1403
 void break_out();
 @y
 static void break_out(void);@/
 @z
+
+Section 84.
 
 @x l.1406
 void
@@ -396,6 +470,8 @@ break_out() /* finds a way to break the output line */
 static void
 break_out(void) /* finds a way to break the output line */
 @z
+
+Section 86.
 
 @x l.1441
 void
@@ -406,6 +482,8 @@ static void
 out_section(
 sixteen_bits n)
 @z
+
+Section 87.
 
 @x l.1455
 void
@@ -419,6 +497,8 @@ name_pointer p,
 boolean quote_xalpha)
 @z
 
+Section 88.
+
 @x l.1485
 void
 copy_limbo()
@@ -426,6 +506,8 @@ copy_limbo()
 static void
 copy_limbo(void)
 @z
+
+Section 90.
 
 @x l.1520
 eight_bits
@@ -435,11 +517,15 @@ static eight_bits
 copy_TeX(void)
 @z
 
+Section 91.
+
 @x l.1549
 int copy_comment();
 @y
 static int copy_comment(boolean,int);@/
 @z
+
+Section 92.
 
 @x l.1552
 int copy_comment(is_long_comment,bal) /* copies \TEX/ code in comments */
@@ -451,6 +537,8 @@ boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal@t\2\2@>) /* brace balance */
 @z
 
+Section 94.
+
 @x l.1608
 else if (c=='\\' && *loc!='@@')
   if (phase==2) app_tok(*(loc++))@; else loc++;
@@ -458,6 +546,8 @@ else if (c=='\\' && *loc!='@@')
 else { if (c=='\\' && *loc!='@@') {
   if (phase==2) app_tok(*(loc++))@; else loc++; } }
 @z
+
+Section 99.
 
 @x l.1784
 void
@@ -474,6 +564,8 @@ eight_bits c@t\2\2@>)
 @y
   fputs(cat_name[c],stdout);
 @z
+
+Section 106.
 
 @x l.2139
 void
@@ -495,6 +587,8 @@ text_pointer p@t\2\2@>)
 #endif /* |DEAD_CODE| */
 @z
 
+Section 108.
+
 @x l.2257
 @d app(a) *(tok_ptr++)=a
 @d app1(a) *(tok_ptr++)=tok_flag+(int)((a)->trans-tok_start)
@@ -502,6 +596,8 @@ text_pointer p@t\2\2@>)
 @d app(a) *(tok_ptr++)=(token)(a)
 @d app1(a) *(tok_ptr++)=(token)(tok_flag+(int)((a)->trans-tok_start))
 @z
+
+Section 109.
 
 @x l.2264
 void
@@ -533,6 +629,8 @@ big_app1(
 scrap_pointer a)
 @z
 
+Section 111.
+
 @x l.2415
 token_pointer
 find_first_ident(p)
@@ -543,6 +641,8 @@ find_first_ident(
 text_pointer p)
 @z
 
+Section 112.
+
 @x l.2447
 void
 make_reserved(p) /* make the first identifier in |p->trans| like |int| */
@@ -552,6 +652,8 @@ static void
 make_reserved(@t\1\1@> /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p@t\2\2@>)
 @z
+
+Section 113.
 
 @x l.2478
 void
@@ -565,11 +667,15 @@ make_underlined(@t\1\1@>
 scrap_pointer p@t\2\2@>)
 @z
 
+Section 11⅘.
+
 @x l.2496
 void  underline_xref();
 @y
 static void underline_xref(name_pointer);@/
 @z
+
+Section 115.
 
 @x l.2499
 void
@@ -581,11 +687,15 @@ underline_xref(
 name_pointer p)
 @z
 
+Section 116.
+
 @x l.2531
   p->xref=(char*)xref_ptr;
 @y
   p->xref=(void *)xref_ptr;
 @z
+
+Section 164.
 
 @x l.3004
 void
@@ -601,6 +711,8 @@ eight_bits c,
 short d, short n)
 @z
 
+Section 165.
+
 @x l.3030
 void
 squash(j,k,c,d,n)
@@ -614,6 +726,8 @@ scrap_pointer j, short k,
 eight_bits c,
 short d, short n)
 @z
+
+Section 169.
 
 @x l.3097 -- rename local var, not to shadow param
 { scrap_pointer k; /* pointer into |scrap_info| */
@@ -639,6 +753,8 @@ short d, short n)
       else if (k_l->mathness /4 ==  no_math) putchar('-');
 @z
 
+Section 170.
+
 @x l.3126
 text_pointer
 translate() /* converts a sequence of scraps */
@@ -646,6 +762,8 @@ translate() /* converts a sequence of scraps */
 static text_pointer
 translate(void) /* converts a sequence of scraps */
 @z
+
+Section 174.
 
 @x l.3191
 void
@@ -657,17 +775,23 @@ C_parse(@t\1\1@> /* creates scraps from \CEE/ tokens */
   eight_bits spec_ctrl@t\2\2@>)
 @z
 
+Section 178.
+
 @x l.3302
 case not_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
 @y
 case non_eq: app_str("\\I");@+app_scrap(binop,yes_math);@+break;
 @z
 
+Section 181.
+
 @x l.3422
 void app_cur_id();
 @y
 void app_cur_id(boolean);@/
 @z
+
+Section 182.
 
 @x l.3425
 void
@@ -679,6 +803,8 @@ app_cur_id(@t\1\1@>
 boolean scrapping@t\2\2@>) /* are we making this into a scrap? */
 @z
 
+Section 183.
+
 @x l.3450
 text_pointer
 C_translate()
@@ -687,6 +813,8 @@ static text_pointer
 C_translate(void)
 @z
 
+Section 184.
+
 @x l.3480
 void
 outer_parse() /* makes scraps from \CEE/ tokens and comments */
@@ -694,6 +822,8 @@ outer_parse() /* makes scraps from \CEE/ tokens and comments */
 static void
 outer_parse(void) /* makes scraps from \CEE/ tokens and comments */
 @z
+
+Section 189.
 
 @x l.3586
 void
@@ -705,6 +835,8 @@ push_level(@t\1\1@> /* suspends the current level */
 text_pointer p@t\2\2@>)
 @z
 
+Section 190.
+
 @x l.3606
 void
 pop_level()
@@ -712,6 +844,8 @@ pop_level()
 static void
 pop_level(void)
 @z
+
+Section 192.
 
 @x l.3628
 eight_bits
@@ -727,6 +861,8 @@ get_output(void) /* returns the next token of output */
   return((eight_bits)a);
 @z
 
+Section 193.
+
 @x l.3665
 void
 output_C() /* outputs the current token list */
@@ -735,11 +871,15 @@ static void
 output_C(void) /* outputs the current token list */
 @z
 
+Section 194.
+
 @x l.3688
 void make_output();
 @y
 static void make_output(void);@/
 @z
+
+Section 195.
 
 @x l.3691
 void
@@ -753,6 +893,8 @@ make_output(void) /* outputs the equivalents of tokens */
   eight_bits a=0, /* current output byte */
 @z
 
+Section 201.
+
 @x l.3894
   else if (b!='|') out(b)@;
 @y
@@ -765,6 +907,8 @@ make_output(void) /* outputs the equivalents of tokens */
   } }
 @z
 
+Section 203.
+
 @x l.3928
     if (b=='\'' || b=='"')
       if (delim==0) delim=b;
@@ -775,11 +919,15 @@ make_output(void) /* outputs the equivalents of tokens */
       else if (delim==b) delim=0; }
 @z
 
+Section 205.
+
 @x l.3952
 void phase_two();
 @y
 static void phase_two(void);@/
 @z
+
+Section 206.
 
 @x l.3955
 void
@@ -789,11 +937,15 @@ static void
 phase_two(void) {
 @z
 
+Section 212.
+
 @x l.4075
 void finish_C();
 @y
 static void finish_C(boolean);@/
 @z
+
+Section 213.
 
 @x l.4078
 void
@@ -825,11 +977,15 @@ finish_C(@t\1\1@> /* finishes a definition or a \Cee\ part */
     }
 @z
 
+Section 221.
+
 @x l.4246
 void footnote();
 @y
 static void footnote(sixteen_bits);@/
 @z
+
+Section 222.
 
 @x l.4249
 void
@@ -841,11 +997,15 @@ footnote(@t\1\1@> /* outputs section cross-references */
 sixteen_bits flag@t\2\2@>)
 @z
 
+Section 225.
+
 @x l.4295
 void phase_three();
 @y
 static void phase_three(void);@/
 @z
+
+Section 226.
 
 @x l.4298
 void
@@ -855,11 +1015,15 @@ static void
 phase_three(void) {
 @z
 
+Section 230.
+
 @x l.4386
     if (cur_name->xref!=(char*)xmem) {
 @y
     if (cur_name->xref!=(void *)xmem) {
 @z
+
+Section 236.
 
 @x l.4440
 collate[0]=0;
@@ -927,11 +1091,15 @@ strcpy((char *)collate+213,
 /* 16 characters + 213 = 229 */
 @z
 
+Section 237.
+
 @x l.4475
 void  unbucket();
 @y
 static void unbucket(eight_bits);@/
 @z
+
+Section 238.
 
 @x l.4478
 void
@@ -943,11 +1111,15 @@ unbucket(@t\1\1@> /* empties buckets having depth |d| */
 eight_bits d@t\2\2@>)
 @z
 
+Section 246.
+
 @x l.4595
 void section_print();
 @y
 static void section_print(name_pointer);@/
 @z
+
+Section 247.
 
 @x l.4598
 void
@@ -959,6 +1131,8 @@ section_print(@t\1\1@> /* print all section names in subtree |p| */
 name_pointer p@t\2\2@>)
 @z
 
+Section 249.
+
 @x l.4620
 void
 print_stats() {
@@ -966,6 +1140,8 @@ print_stats() {
 void
 print_stats(void) {
 @z
+
+Additional material.
 
 @x l.4644
 @** Index.

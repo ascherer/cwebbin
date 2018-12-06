@@ -8,12 +8,16 @@ previous results are not destroyed.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
+Section 11 (of CTANGLE and CWEAVE).
+
 @x l.144
 extern char scn_file_name[]; /* name of |scn_file| */
 @y
 extern char scn_file_name[]; /* name of |scn_file| */
 extern char check_file_name[]; /* name of |check_file| */
 @z
+
+Section 14.
 
 @x l.187
 extern FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */

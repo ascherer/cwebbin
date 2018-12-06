@@ -7,6 +7,8 @@
 % comm-texlive.hch that get tie'd into comm-foo.h that is used in modified
 % CTANGLE amd CWEAVE.
 
+Material in limbo.
+
 @x l.18
 % Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
 @y
@@ -16,7 +18,7 @@
 % Please send comments, suggestions, etc. to tex-k@@tug.org.
 @z
 
-@x l.15 of COMM-ANSI.HCH
+@x l.17 of COMM-ANSI.HCH
 @i iso_types.w
 @y
 @s boolean int
@@ -24,10 +26,14 @@
 @s uint16_t int
 @z
 
-@x l.30 and l.24 of COMM-ANSI.HCH
+Section 5 (of CTANGLE and CWEAVE).
+
+@x l.30 and l.28 of COMM-ANSI.HCH
 typedef bool boolean;
 @y
 @z
+
+Section 6.
 
 @x l.36
 #include <stdio.h>

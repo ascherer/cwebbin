@@ -73,10 +73,10 @@ p6	06 Sep 1992	H2B	Updated for CWEAVE.W 2.7, |dot_dot_dot| added,
 				proper typesetting of formatted macro
 				identifiers provided, bug in processing
 				short comments fixed.
-p6a     15 Mar 1993     AS      adaptions for SAS/C 6.0 and use of German
-                                macro file dcwebmac.tex
-p6b     28 Jul 1993     AS      new patch level due to minor changes
-        01 Aug 1993     AS      missing `ptrdiff_t' datatype included
+p6a	15 Mar 1993	AS	adaptions for SAS/C 6.0 and use of German
+				macro file dcwebmac.tex
+p6b	28 Jul 1993	AS	new patch level due to minor changes
+	01 Aug 1993	AS	missing `ptrdiff_t' datatype included
 p6c	04 Sep 1993	AS	new patch level in accordance with Common
 
 Version 2.8 --- Don Knuth, Silvio Levy, September 1992
@@ -171,6 +171,8 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
 ------------------------------------------------------------------------------
+Material in limbo.
+
 @x l.33
 \def\title{CWEAVE (Version 3.64)}
 @y
@@ -194,13 +196,15 @@ y
 \let\maybe=\iffalse % print only changed modules
 z
 
+Section 1.
+
 @x l.64
 @d banner "This is CWEAVE (Version 3.64)\n"
 @y
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
-Fix typo in comment.
+Section 78.  Fix typo in comment.
 
 @x l.1325
 char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
@@ -208,7 +212,7 @@ char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 @z
 
-Fix bug: Avoid empty line for '-bp'.
+Section 226.  Fix bug: Avoid empty line for '-bp'.
 
 @x l.4338
 if (show_happiness) printf("\nDone.");
@@ -218,6 +222,8 @@ if (show_happiness) {
   printf("Done.");
 }
 @z
+
+Addendum.
 
 @x l.4644
 @** Index.

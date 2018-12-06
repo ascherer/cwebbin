@@ -6,6 +6,8 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+Section 4.
+
 @x l.121
 @d max_bytes 90000 /* the number of bytes in identifiers,
 @y
@@ -48,7 +50,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 @d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
 @z
 
-Parse C++ string prefixes L, U, u, u8.
+Section 40.  Parse C++ string prefixes L, U, u, u8.
 
 @x l.708
     else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"'))@|
@@ -57,6 +59,8 @@ Parse C++ string prefixes L, U, u, u8.
            || ((c=='L' || c=='u' || c=='U')&&(*loc=='\'' || *loc=='"'))@|
            || ((c=='u' && *loc=='8')&&(*(loc+1)=='\'' || *(loc+1)=='"'))@|
 @z
+
+Section 49.
 
 @x l.852
   if (delim=='L') { /* wide character constant */
@@ -69,12 +73,16 @@ Parse C++ string prefixes L, U, u, u8.
   }
 @z
 
+Section 78.
+
 @x l.1320
 @d tex_printf(c) fprintf(active_file,c)
 @y
 @d tex_printf(c) fprintf(active_file,"%s",c)
 @d tex_puts(c) fputs(c,active_file)
 @z
+
+Section 80.
 
 @x l.1364
 @ In particular, the |finish_line| procedure is called near the very
@@ -102,9 +110,9 @@ tex_printf(use_language);
 tex_puts("cwebma");
 @z
 
-CWeave indents declarations after old-style function definitions.  With the
-`-i' option they will come out flush left.  You won't see any difference if
-you use the ANSI-style function definitions.
+Section 117.  CWeave indents declarations after old-style function definitions.
+With the `-i' option they will come out flush left.  You won't see any
+difference if you use the ANSI-style function definitions.
 
 @x l.2540
 @<Cases for |exp|@>=
@@ -122,6 +130,8 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
   reduce(pp,1,fn_decl,0,1);
 }
 @z
+
+Section 127.
 
 @x l.2640
 @ @<Cases for |decl_head|@>=
@@ -169,10 +179,10 @@ else if (cat1==lbrace || cat1==int_like || cat1==decl) {
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
 
-The original manual described the `-o' option for CWEAVE, but this was not
-yet present.  Here is a simple implementation.  The purpose is to suppress
-the extra space between local variable declarations and the first statement
-in a function block.
+Section 128.  The original manual described the `-o' option for CWEAVE, but
+this was not yet present.  Here is a simple implementation.  The purpose is to
+suppress the extra space between local variable declarations and the first
+statement in a function block.
 
 @x l.2665
 else if (cat1==stmt || cat1==function) {
@@ -187,6 +197,8 @@ else if (cat1==stmt || cat1==function) {
   big_app1(pp+1); reduce(pp,2,cat1,-1,41);
 }
 @z
+
+Section 132.
 
 @x l.2713
 @ @<Cases for |fn_decl|@>=
