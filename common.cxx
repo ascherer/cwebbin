@@ -1311,9 +1311,9 @@ remove(check_file_name);
 
 #line 712 "comm-foo.ch"
 switch(history){
-case harmless_message:return(RETURN_WARN);break;
-case error_message:return(RETURN_ERROR);break;
-case fatal_message:return(RETURN_FAIL);break;
+case harmless_message:return(RETURN_WARN);
+case error_message:return(RETURN_ERROR);
+case fatal_message:return(RETURN_FAIL);
 default:return(RETURN_OK);
 }
 #line 1158 "common.w"

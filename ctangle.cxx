@@ -234,8 +234,8 @@ extern char check_file_name[];
 extern char file_name[][max_file_name_length];
 
 extern char change_file_name[];
-extern int line[];
 extern const char*use_language;
+extern int line[];
 extern int change_line;
 extern int change_depth;
 extern boolean input_has_ended;

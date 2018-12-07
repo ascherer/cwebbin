@@ -17,8 +17,8 @@ Section 11 (of CTANGLE and CWEAVE).
 @x l.148
 extern int line[]; /* number of current line in the stacked files */
 @y
-extern int line[]; /* number of current line in the stacked files */
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+extern int line[]; /* number of current line in the stacked files */
 @z
 
 Section 13.

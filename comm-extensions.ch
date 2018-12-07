@@ -164,9 +164,9 @@ made sensitive to these conditions.
   else return(0);
 @y
   switch(history) {
-  case harmless_message: return(RETURN_WARN); break;
-  case error_message: return(RETURN_ERROR); break;
-  case fatal_message: return(RETURN_FAIL); break;
+  case harmless_message: return(RETURN_WARN);
+  case error_message: return(RETURN_ERROR);
+  case fatal_message: return(RETURN_FAIL);
   default: return(RETURN_OK);
   }
 @z
