@@ -115,7 +115,7 @@ name_pointer p)
 @x l.292
   append_xref(m); xref_ptr->xlink=q; p->xref=(char*)xref_ptr;
 @y
-  append_xref(m); xref_ptr->xlink=q; p->xref=(void *)xref_ptr;
+  append_xref(m); xref_ptr->xlink=q; update_node(p);
 @z
 
 Section 22.
@@ -133,7 +133,7 @@ name_pointer p)
 @x l.319
   if (r==xmem) p->xref=(char*)xref_ptr;
 @y
-  if (r==xmem) p->xref=(void *)xref_ptr;
+  if (r==xmem) update_node(p);
 @z
 
 Section 23.
@@ -151,7 +151,7 @@ name_pointer p)
 @x l.336
   p->xref = (char *)xref_ptr;
 @y
-  p->xref = (void *)xref_ptr;
+  update_node(p);
 @z
 
 Section 24.
@@ -209,8 +209,17 @@ name_pointer p)
 
 @x l.395
   p->xref=(char*)xmem;
+}
 @y
   p->xref=(void *)xmem;
+}
+
+static void
+update_node(
+name_pointer p)
+{
+  p->xref=(void *)xref_ptr;
+}
 @z
 
 Section 34.
@@ -692,7 +701,7 @@ Section 116.
 @x l.2531
   p->xref=(char*)xref_ptr;
 @y
-  p->xref=(void *)xref_ptr;
+  update_node(p);
 @z
 
 Section 164.
@@ -1183,6 +1192,7 @@ static void reduce(scrap_pointer,short,eight_bits,short,short);@/
 static void set_file_flag(name_pointer);@/
 static void skip_limbo(void);@/
 static void squash(scrap_pointer,short,eight_bits,short,short);@/
+static void update_node(name_pointer p);@/
 
 @** Index.
 @z
