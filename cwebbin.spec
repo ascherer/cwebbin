@@ -41,7 +41,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 14
+Release: 15
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -63,7 +63,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %else
 
-%{!?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge # fullmanual/" -i Makefile.unix}
+%{!?with_doc:%{__sed} -e "s/cweave fullmanual/cweave # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
 %{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
@@ -73,9 +73,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_doc:%{__sed} -e "s/wmerge fullmanual/wmerge docs/" -i Makefile.unix}
+%{?with_doc:%{__sed} -e "s/cweave fullmanual/cweave docs/" -i Makefile.unix}
 %{__sed} -i cweav-ansi.ch -e "s/, where/,where/"
-%{__sed} -i examples/wmerge.w -e "s/f caddr\_/f caddr\\\_/"
 %endif
 
 %endif

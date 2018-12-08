@@ -140,7 +140,7 @@ CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 # The following files come from the original CWEB distribution and
 # are left completely unmodified.
 
-SOURCES = cweave.w common.w ctangle.w examples/wmerge.w
+SOURCES = cweave.w common.w ctangle.w
 
 ORIGINAL = $(SOURCES) prod.w \
 	Makefile common.c common.h ctangle.c \
@@ -156,7 +156,7 @@ ORIGINAL = $(SOURCES) prod.w \
 	examples/oemacs.el examples/oemacs.w \
 	examples/treeprint.w \
 	examples/wc.w examples/wc-dos.ch \
-	examples/wmerg-pc.ch examples/wmer-os2.ch \
+	examples/wmerge.w examples/wmerg-pc.ch examples/wmer-os2.ch \
 	examples/wordtest.w \
 	examples/xlib_types.w examples/xview_types.w
 
@@ -233,10 +233,9 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
 	esac
 
-# The complete set of files contains the two programs `ctangle' and
-# `cweave' plus the program `wmerge', the manuals `cwebman' and `cwebmana'
-# and the source documentations.
-all: ctangle cweave wmerge fullmanual
+# The complete set of files contains the two programs `ctangle' and `cweave',
+# the manuals `cwebman' and `cwebmana', and the source documentations.
+all: ctangle cweave fullmanual
 
 cautiously: ctangle
 	$(MAKE) SAVEcommon.$(EXTENSION)
@@ -292,7 +291,7 @@ boot:
 # Take a good lecture for bedtime reading
 doc: $(SOURCES:.w=.pdf)
 
-docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf wmerge.pdf
+docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf
 
 cwebman.dvi: cwebman.tex
 cwebmana.dvi: cwebmana.tex
@@ -308,7 +307,6 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) common.w comm-doc.ch; $(MAKE) common.pdf
 	$(CWEAVE) ctangle.w ctang-doc.ch; $(MAKE) ctangle.pdf
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
-	$(CWEAVE) examples/wmerge.w $(MCHANGES); $(MAKE) wmerge.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m $@ $^
@@ -376,7 +374,6 @@ install: all
 
 	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)/$(DESTPREF)tangle
-	$(INSTALL) wmerge $(DESTDIR)$(BINDIR)/wmerge
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)

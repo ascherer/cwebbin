@@ -119,7 +119,13 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 ------------------------------------------------------------------------------
-One of the last long-standing bugs in CWEB; reported to DEK long ago.
+Two of the last long-standing bugs in CWEB; reported to DEK long ago.
+
+@x l.8
+file and and optional \.{.ch} file and sends the corresponding
+@y
+file and an optional \.{.ch} file and sends the corresponding
+@z
 
 @x l.88
 @:caddr_t}{\bf caddr_t@>

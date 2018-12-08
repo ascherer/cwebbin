@@ -4,8 +4,8 @@ changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
-Run WMERGE with masterfile CWEBMAN.TEX and changefile CWEBMAN.CH
-to produce CWEBMANA.TEX.
+Run TIE with masterfile CWEBMAN.TEX and changefile CWEBMAN.CH
+to produce output file CWEBMANA.TEX.
 
 This program is distributed WITHOUT ANY WARRANTY, express or implied.
 
