@@ -13,21 +13,15 @@ FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.20 and l.177 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
-\def\topofcontents{\null\vfill
-  \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
-    {\ttitlefont CWEAVE}}
-  \vskip 15pt
-  \centerline{(Version 3.64 [CWEBbin 2018])}
-  \vfill}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live 2019/dev)}
-\def\topofcontents{\null\vfill
-  \centerline{\titlefont Common code for {\ttitlefont CTANGLE} and
-    {\ttitlefont CWEAVE}}
-  \vskip 15pt
+@z
+
+@x l.25 and l.183 of COMM-PATCH.CH
+  \centerline{(Version 3.64 [CWEBbin 2018])}
+@y
   \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
-  \vfill}
 @z
 
 @x l.20 of COMM-ANSI.CH
@@ -148,7 +142,8 @@ Section 23.
     }
 @z
 
-Replaced by Kpathsea `kpse_find_file'
+Replaced by Kpathsea `kpse_find_file'.
+
 @x l.493 and l.93 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */

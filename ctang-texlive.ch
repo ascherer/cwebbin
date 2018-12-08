@@ -13,18 +13,14 @@ FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.27 and l.164 of CTANG-PATCH.CH
 \def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
-\def\topofcontents{\null\vfill
-  \centerline{\titlefont The {\ttitlefont CTANGLE} processor}
-  \vskip 15pt
-  \centerline{(Version 3.64 [CWEBbin 2018])}
-  \vfill}
 @y
 \def\title{CTANGLE (\TeX~Live 2019/dev)}
-\def\topofcontents{\null\vfill
-  \centerline{\titlefont The {\ttitlefont CTANGLE} processor}
-  \vskip 15pt
+@z
+
+@x l.31 and l.170 of CTANG-PATCH.CH
+  \centerline{(Version 3.64 [CWEBbin 2018])}
+@y
   \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
-  \vfill}
 @z
 
 Section 1.
@@ -32,14 +28,8 @@ Section 1.
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.62 and l.189 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
-The ``banner line'' defined here should be changed whenever \.{CTANGLE}
-is modified.
-
 @d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
 @y
-The ``banner line'' defined here should be changed whenever \.{CTANGLE}
-is modified.
-
 @d banner _("This is CTANGLE, Version 3.64")
 @z
 
