@@ -236,11 +236,11 @@ the other arrays for the argument.
 
 Section 74.
 
-@x l.1344
-@ @<Handle flag...@>=
+@x l.1344 and l.303 of COMM-EXTENSIONS.CH
+@<Handle flag...@>=
 {
 @y
-@ @<Handle flag...@>=
+@<Handle flag...@>=
 {
   if (strcmp("-help",*argv)==0 || strcmp("--help",*argv)==0)
 @.--help@>
@@ -250,12 +250,14 @@ Section 74.
     @<Display version information and exit@>@;
 @z
 
-@x l.1347
-  else flag_change=1;
+@x l.1348 and l.305 of COMM-EXTENSIONS.CH
+  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+    if(*dot_pos=='l') {
 @y
-  else flag_change=1;
-  if (*(*argv+1)=='d')
-    if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
+  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+    if (*dot_pos=='d') {
+      if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
+    } else if(*dot_pos=='l') {
 @z
 
 Section 75.
@@ -285,12 +287,12 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.311 of COMM-EXTENSIONS.CH
+@x l.323 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.319 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
+@x l.331 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -325,7 +327,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.350 of COMM-EXTENSIONS.CH
+@x l.362 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 

@@ -253,6 +253,11 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 70.
 
+@x l.1263
+  boolean flag_change;
+@y
+@z
+
 @x l.1265+ and l.214 of COMM-PATCH.CH
   strcpy(change_file_name,"/dev/null");
 @y
@@ -286,10 +291,17 @@ Section 70.
 
 Section 74.
 
-@x l.1348 and l.518 of COMM-ANSI.CH
+@x l.1344 and l.518 of COMM-ANSI.CH
+@ @<Handle flag...@>=
+{
+  if (**argv=='-') flag_change=0;
+  else flag_change=1;
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     flags[(eight_bits)*dot_pos]=flag_change;
 @y
+@ @d flag_change (**argv!='-')
+@<Handle flag...@>=
+{
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if(*dot_pos=='l') {
        use_language=++dot_pos;
