@@ -31,10 +31,21 @@
 #include <stdint.h>  
 
 /*:85*//*89:*/
-#line 1131 "comm-foo.ch"
+#line 1132 "comm-foo.ch"
 
-#include <libintl.h> 
 #include <locale.h> 
+
+#ifndef HAVE_GETTEXT
+#define HAVE_GETTEXT 0
+#endif
+
+#if HAVE_GETTEXT
+#include <libintl.h> 
+#else
+#define bindtextdomain(A,B)
+#define textdomain(A)
+#define gettext(A) A
+#endif
 
 /*:89*/
 #line 59 "common.w"
@@ -432,7 +443,7 @@ root= NULL;
 #line 38 "comm-foo.ch"
 
 /*90:*/
-#line 1151 "comm-foo.ch"
+#line 1163 "comm-foo.ch"
 
 setlocale(LC_ALL,"");
 bindtextdomain("cweb","/usr/share/locale/");

@@ -320,13 +320,25 @@ More new material.
 @* Internationalization.  You may have noticed that almost all \.{"strings"}
 in the \.{CWEB} sources are placed in the context of the `|_|'~macro.
 This is just a shortcut for the `|gettext|' function from the ``GNU~gettext
-utilities.''
+utilities.'' For systems that do not have this library installed, we wrap
+things for neutral behavior without \.{I18N}.
 
 @d _(STRING) gettext(STRING)
 
 @<Include files@>=
-#include <libintl.h>
 #include <locale.h>
+@#
+#ifndef HAVE_GETTEXT
+#define HAVE_GETTEXT 0
+#endif
+@#
+#if HAVE_GETTEXT
+#include <libintl.h>
+#else
+#define bindtextdomain(A,B)
+#define textdomain(A)
+#define gettext(A) A
+#endif
 
 @ If translation catalogs for your personal \.{LANGUAGE} are installed at the
 appropriate place, \.{CTANGLE} and \.{CWEAVE} will talk to you in your favorite

@@ -82,7 +82,7 @@ MCHANGES= wmerg-foo.ch
 EXTENSION= cxx
 
 # This list of options works for all UNIX compilers tested.
-OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -W -Wall
+OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 -W -Wall
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)

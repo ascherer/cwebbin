@@ -10,7 +10,16 @@
 /*:2*//*6:*/
 #line 38 "comm-foo.h"
 
+#ifndef HAVE_GETTEXT
+#define HAVE_GETTEXT 0
+#endif
+
+#if HAVE_GETTEXT
 #include <libintl.h> 
+#else
+#define textdomain(A)
+#define gettext(A) A
+#endif
 #include <stdbool.h> 
 #include <stdint.h> 
 #include <stdio.h> 
@@ -161,7 +170,7 @@ extern boolean program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 63 "comm-foo.h"
+#line 72 "comm-foo.h"
 
 char section_text[longest_name+1];
 char*section_text_end= section_text+longest_name;
@@ -169,7 +178,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 78 "comm-foo.h"
+#line 87 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -177,7 +186,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 93 "comm-foo.h"
+#line 102 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -212,7 +221,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:9*//*10:*/
-#line 136 "comm-foo.h"
+#line 145 "comm-foo.h"
 
 extern int history;
 extern int wrap_up(void);
@@ -221,7 +230,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:10*//*11:*/
-#line 151 "comm-foo.h"
+#line 160 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -246,7 +255,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*12:*/
-#line 175 "comm-foo.h"
+#line 184 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -254,14 +263,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 188 "comm-foo.h"
+#line 197 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 200 "comm-foo.h"
+#line 209 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -271,7 +280,7 @@ extern FILE*check_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 210 "comm-foo.h"
+#line 219 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
