@@ -157,7 +157,7 @@ ORIGINAL = $(SOURCES) prod.w \
 # The following files make the body of this patched distribution of CWEB.
 # Note that not all of these changefiles are actually used.
 
-COMMPATCH = comm-ansi.ch comm-ansi.hch comm-arexx.ch comm-arexx.hch \
+COMMPATCH = comm-ansi.ch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
@@ -327,7 +327,7 @@ common.tex: common.w $(CCHANGES)
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
+$(HCHANGES): common.h comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
