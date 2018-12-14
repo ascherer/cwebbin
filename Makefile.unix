@@ -54,12 +54,9 @@ DESTPREF= c
 # Set CCHANGES to comm-foo.ch if you need changes to common.w
 CCHANGES= comm-foo.ch
 
-# Set HCHANGES to comm-foo.hch if you need changes to common.h
-HCHANGES= comm-foo.hch
-
-# Set HPATCH to comm-foo.h if you apply changes to common.h
+# Set HCHANGES to comm-foo.h if you apply changes to common.h
 # default should be common.h
-HPATCH= comm-foo.h
+HCHANGES= comm-foo.h
 
 # Set TCHANGES to ctang-foo.ch if you need changes to ctangle.w
 TCHANGES= ctang-foo.ch
@@ -262,19 +259,19 @@ common.o: common.$(EXTENSION)
 ctangle: ctangle.o common.o
 	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o 
 
-ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HPATCH)
+ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HCHANGES)
 	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
 
-ctangle.o: ctangle.$(EXTENSION) $(HPATCH)
+ctangle.o: ctangle.$(EXTENSION) $(HCHANGES)
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 
 cweave: cweave.o common.o
 	$(CC) $(LINKFLAGS) -o cweave cweave.o common.o
 
-cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HPATCH)
+cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES)
 	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
 
-cweave.o: cweave.$(EXTENSION) $(HPATCH)
+cweave.o: cweave.$(EXTENSION) $(HCHANGES)
 	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
 
 wmerge: wmerge.$(EXTENSION)
@@ -303,7 +300,7 @@ wmerge.dvi: wmerge.tex
 usermanual: cwebmana.pdf
 
 fullmanual: usermanual $(SOURCES) \
-	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HPATCH) $(MCHANGES)
+	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HCHANGES) $(MCHANGES)
 	$(CWEAVE) common.w comm-doc.ch; $(MAKE) common.pdf
 	$(CWEAVE) ctangle.w ctang-doc.ch; $(MAKE) ctangle.pdf
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
@@ -323,10 +320,10 @@ cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^
 
 # for making the documentation we will have to include the change files
-ctangle.tex: ctangle.w $(TCHANGES) $(HPATCH)
+ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
 	$(CWEAVE) ctangle $(TCHANGES)
 
-cweave.tex: cweave.w $(WCHANGES) $(HPATCH)
+cweave.tex: cweave.w $(WCHANGES) $(HCHANGES)
 	$(CWEAVE) cweave $(WCHANGES)
 
 common.tex: common.w $(CCHANGES)
@@ -344,8 +341,6 @@ $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
-	$(TIE) -c $@ $^
-$(HPATCH): common.h $(HCHANGES)
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
@@ -358,7 +353,7 @@ $(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
 	$(TIE) -c $@ $^
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
-# and $(HPATCH) for bootstrapping
+# and $(HCHANGES) for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
 	cweave.w cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
