@@ -166,7 +166,7 @@ COMMPATCH = comm-ansi.ch comm-arexx.ch comm-arexx.hch \
 CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
 	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
-CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
+CWEAVPATCH = cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
@@ -332,7 +332,7 @@ $(HCHANGES): common.h comm-output.hch comm-i18n.hch # comm-texlive.hch
 $(TCHANGES): ctangle.w ctang-patch.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^
-$(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
+$(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^
 

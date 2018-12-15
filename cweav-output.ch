@@ -29,38 +29,6 @@ if (no_xref) {
 }
 @z
 
-@x l.4310 Use binary mode for output files
-  if ((idx_file=fopen(idx_file_name,"w"))==NULL)
-@y
-  if ((idx_file=fopen(idx_file_name,"wb"))==NULL)
-@z
-
-@x l.4314
-    @<Tell about changed sections@>; finish_line(); finish_line();
-@y
-    @<Tell about changed sections@>@; finish_line(); finish_line();
-@z
-
-@x l.4319
-  @<Do the first pass of sorting@>;
-  @<Sort and output the index@>;
-@y
-  @<Do the first pass of sorting@>@;
-  @<Sort and output the index@>@;
-@z
-
-@x l.4325 Use binary mode for output files
-  if ((scn_file=fopen(scn_file_name,"w"))==NULL)
-@y
-  if ((scn_file=fopen(scn_file_name,"wb"))==NULL)
-@z
-
-@x l.4329
-  @<Output all the section names@>;
-@y
-  @<Output all the section names@>@;
-@z
-
 @x l.4334
 @.\\end@>
   finish_line();
@@ -71,14 +39,6 @@ if (no_xref) {
 }
 finish_line(); fclose(active_file); active_file=NULL;
 @<Update the result when it has changed@>@;
-@z
-
-Section 248.
-
-@x l.4614
-@ @<Output all the section names@>=section_print(root)
-@y
-@ @<Output all the section names@>=section_print(root);
 @z
 
 Additional material.

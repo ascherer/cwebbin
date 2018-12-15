@@ -170,27 +170,25 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
+	15 December 2018 AS	Upgrade to CWEB 3.65.
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.33
-\def\title{CWEAVE (Version 3.64)}
+@x l.35
+\def\title{CWEAVE (Version 3.65)}
 @y
-\def\title{CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{CWEAVE (Version 3.65 [CWEBbin 2018])}
 @z
 
-@x l.37
-  \centerline{(Version 3.64)}
+@x l.39
+  \centerline{(Version 3.65)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.65 [CWEBbin 2018])}
 @z
 
 Activate this, if only the changed modules should be printed.
 
-This change cannot be applied when `tie' is used
-(TOC file can not be typeset).
-
-x l.54
+x l.56
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only changed modules
@@ -198,233 +196,18 @@ z
 
 Section 1.
 
-@x l.69
-@d banner "This is CWEAVE (Version 3.64)\n"
+@x l.71
+@d banner "This is CWEAVE (Version 3.65)"
 @y
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
+@d banner "This is CWEAVE (Version 3.65 [CWEBbin 2018])"
 @z
 
-Section 24.  Fix typography of type defined a moment later.
+Sections 5--15.
 
-@x l.342
-further details about them will be explained later. A |text_pointer| variable
-is an index into |tok_start|.
+@x l.144
+@i common.h
 @y
-further details about them will be explained later. A \&{text\_pointer}
-variable is an index into |tok_start|.
-@z
-
-Section 26.  Improve initialization logic.
-
-@x l.366
-tok_ptr=tok_mem+1; text_ptr=tok_start+1; tok_start[0]=tok_mem+1;
-tok_start[1]=tok_mem+1;
-max_tok_ptr=tok_mem+1; max_text_ptr=tok_start+1;
-@y
-tok_ptr=max_tok_ptr=tok_mem+1;@/
-tok_start[0]=tok_start[1]=tok_mem+1;@/
-text_ptr=max_text_ptr=tok_start+1;
-@z
-
-Section 78.
-
-@x l.1308 Add comma.
-If the |per_cent| parameter is 1 a |'%'| is appended to the line
-@y
-If the |per_cent| parameter is 1, a |'%'| is appended to the line
-@z
-
-@x l.1325 Fix typo in comment.
-char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
-@y
-char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
-@z
-
-Sections 97 and 98.  Initialize complete array 'cat_name'.
-
-@x l.1716
-eight_bits cat_index;
-
-@ @<Set in...@>=
-    for (cat_index=0;cat_index<255;cat_index++)
-      strcpy(cat_name[cat_index],"UNKNOWN");
-@y
-
-@ @<Set in...@>=
-{int c; for (c=0;c<256;c++) strcpy(cat_name[c],"UNKNOWN");}
-@z
-
-Section 110.  Nicer line breaks.
-
-@x l.2319
-        && pp->cat!=prerangle
-@y
-        && pp->cat!=prerangle @|
-@z
-
-@x l.2323
-        && pp->cat!=ftemplate
-@y
-        && pp->cat!=ftemplate @|
-@z
-
-Section 176.  Consistent format for big scrap switch
-
-@x l.3215
-switch (next_control) {
-  case section_name:
-    app(section_flag+(int)(cur_section-name_dir));
-    app_scrap(section_scrap,maybe_math);
-    app_scrap(exp,yes_math);@+break;
-  case string: case constant: case verbatim: @<Append a string or constant@>;
-   @+break;
-  case identifier: app_cur_id(1);@+break;
-  case TeX_string: @<Append a \TEX/ string, without forming a scrap@>;@+break;
-  case '/': case '.':
-    app(next_control); app_scrap(binop,yes_math);@+break;
-  case '<': app_str("\\langle");@+app_scrap(prelangle,yes_math);@+break;
-@.\\langle@>
-  case '>': app_str("\\rangle");@+app_scrap(prerangle,yes_math);@+break;
-@.\\rangle@>
-  case '=': app_str("\\K"); app_scrap(binop,yes_math);@+break;
-@.\\K@>
-  case '|': app_str("\\OR"); app_scrap(binop,yes_math);@+break;
-@.\\OR@>
-  case '^': app_str("\\XOR"); app_scrap(binop,yes_math);@+break;
-@.\\XOR@>
-  case '%': app_str("\\MOD"); app_scrap(binop,yes_math);@+break;
-@.\\MOD@>
-  case '!': app_str("\\R"); app_scrap(unop,yes_math);@+break;
-@.\\R@>
-  case '~': app_str("\\CM"); app_scrap(unop,yes_math);@+break;
-@.\\CM@>
-  case '+': case '-': app(next_control); app_scrap(ubinop,yes_math);@+break;
-  case '*': app(next_control); app_scrap(raw_ubin,yes_math);@+break;
-  case '&': app_str("\\AND"); app_scrap(raw_ubin,yes_math);@+break;
-@.\\AND@>
-  case '?': app_str("\\?"); app_scrap(question,yes_math);@+break;
-@.\\?@>
-  case '#': app_str("\\#"); app_scrap(ubinop,yes_math);@+break;
-@.\\\#@>
-  case ignore: case xref_roman: case xref_wildcard:
-  case xref_typewriter: case noop:@+break;
-  case '(': case '[': app(next_control); app_scrap(lpar,maybe_math);@+break;
-  case ')': case ']': app(next_control); app_scrap(rpar,maybe_math);@+break;
-  case '{': app_str("\\{"@q}@>); app_scrap(lbrace,yes_math);@+break;
-@.\\\{@>@q}@>
-  case '}': app_str(@q{@>"\\}"); app_scrap(rbrace,yes_math);@+break;
-@q{@>@.\\\}@>
-  case ',': app(','); app_scrap(comma,yes_math);@+break;
-  case ';': app(';'); app_scrap(semi,maybe_math);@+break;
-  case ':': app(':'); app_scrap(colon,no_math);@+break;@/
-  @t\4@>  @<Cases involving nonstandard characters@>@;
-  case thin_space: app_str("\\,"); app_scrap(insert,maybe_math);@+break;
-@.\\,@>
-  case math_break: app(opt); app_str("0");
-    app_scrap(insert,maybe_math);@+break;
-  case line_break: app(force); app_scrap(insert,no_math);@+break;
-  case left_preproc: app(force); app(preproc_line);
-    app_str("\\#"); app_scrap(lproc,no_math);@+break;
-@.\\\#@>
-  case right_preproc: app(force); app_scrap(rproc,no_math);@+break;
-  case big_line_break: app(big_force); app_scrap(insert,no_math);@+break;
-  case no_line_break: app(big_cancel); app(noop); app(break_space);
-    app(noop); app(big_cancel);
-    app_scrap(insert,no_math);@+break;
-  case pseudo_semi: app_scrap(semi,maybe_math);@+break;
-  case macro_arg_open: app_scrap(begin_arg,maybe_math);@+break;
-  case macro_arg_close: app_scrap(end_arg,maybe_math);@+break;
-  case join: app_str("\\J"); app_scrap(insert,no_math);@+break;
-@.\\J@>
-  case output_defs_code: app(force); app_str("\\ATH"); app(force);
-    app_scrap(insert,no_math);@+break;
-@.\\ATH@>
-  default: app(inserted); app(next_control);
-    app_scrap(insert,maybe_math);@+break;
-}
-@y
-switch (next_control) {
-  case section_name:
-    app(section_flag+(int)(cur_section-name_dir));
-    app_scrap(section_scrap,maybe_math);
-    app_scrap(exp,yes_math);@+break;
-  case string: case constant: case verbatim:
-    @<Append a string or constant@>;@+break;
-  case identifier: app_cur_id(1);@+break;
-  case TeX_string:
-    @<Append a \TEX/ string, without forming a scrap@>;@+break;
-  case '/': case '.':
-    app(next_control);@+app_scrap(binop,yes_math);@+break;
-  case '<': app_str("\\langle");@+app_scrap(prelangle,yes_math);@+break;
-@.\\langle@>
-  case '>': app_str("\\rangle");@+app_scrap(prerangle,yes_math);@+break;
-@.\\rangle@>
-  case '=': app_str("\\K");@+app_scrap(binop,yes_math);@+break;
-@.\\K@>
-  case '|': app_str("\\OR");@+app_scrap(binop,yes_math);@+break;
-@.\\OR@>
-  case '^': app_str("\\XOR");@+app_scrap(binop,yes_math);@+break;
-@.\\XOR@>
-  case '%': app_str("\\MOD");@+app_scrap(binop,yes_math);@+break;
-@.\\MOD@>
-  case '!': app_str("\\R");@+app_scrap(unop,yes_math);@+break;
-@.\\R@>
-  case '~': app_str("\\CM");@+app_scrap(unop,yes_math);@+break;
-@.\\CM@>
-  case '+': case '-': app(next_control);@+app_scrap(ubinop,yes_math);@+break;
-  case '*': app(next_control);@+app_scrap(raw_ubin,yes_math);@+break;
-  case '&': app_str("\\AND");@+app_scrap(raw_ubin,yes_math);@+break;
-@.\\AND@>
-  case '?': app_str("\\?");@+app_scrap(question,yes_math);@+break;
-@.\\?@>
-  case '#': app_str("\\#");@+app_scrap(ubinop,yes_math);@+break;
-@.\\\#@>
-  case ignore: case xref_roman: case xref_wildcard:
-  case xref_typewriter: case noop:@+break;
-  case '(': case '[': app(next_control);@+app_scrap(lpar,maybe_math);@+break;
-  case ')': case ']': app(next_control);@+app_scrap(rpar,maybe_math);@+break;
-  case '{': app_str("\\{"@q}@>);@+app_scrap(lbrace,yes_math);@+break;
-@.\\\{@>@q}@>
-  case '}': app_str(@q{@>"\\}");@+app_scrap(rbrace,yes_math);@+break;
-@q{@>@.\\\}@>
-  case ',': app(',');@+app_scrap(comma,yes_math);@+break;
-  case ';': app(';');@+app_scrap(semi,maybe_math);@+break;
-  case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
-  @t\4@>  @<Cases involving nonstandard characters@>@;
-  case thin_space: app_str("\\,");@+app_scrap(insert,maybe_math);@+break;
-@.\\,@>
-  case math_break: app(opt);@+app_str("0");@+
-    app_scrap(insert,maybe_math);@+break;
-  case line_break: app(force);@+app_scrap(insert,no_math);@+break;
-  case left_preproc: app(force);@+app(preproc_line);@+app_str("\\#");
-    app_scrap(lproc,no_math);@+break;
-@.\\\#@>
-  case right_preproc: app(force);@+app_scrap(rproc,no_math);@+break;
-  case big_line_break: app(big_force);@+app_scrap(insert,no_math);@+break;
-  case no_line_break: app(big_cancel);@+app(noop);@+app(break_space);@+
-    app(noop);@+app(big_cancel); app_scrap(insert,no_math);@+break;
-  case pseudo_semi: app_scrap(semi,maybe_math);@+break;
-  case macro_arg_open: app_scrap(begin_arg,maybe_math);@+break;
-  case macro_arg_close: app_scrap(end_arg,maybe_math);@+break;
-  case join: app_str("\\J");@+app_scrap(insert,no_math);@+break;
-@.\\J@>
-  case output_defs_code: app(force);@+app_str("\\ATH");@+app(force);
-    app_scrap(insert,no_math);@+break;
-@.\\ATH@>
-  default: app(inserted);@+app(next_control);
-    app_scrap(insert,maybe_math);@+break;
-}
-@z
-
-Section 226.  Fix bug: Avoid empty line for '-bp'.
-
-@x l.4338
-if (show_happiness) printf("\nDone.");
-@y
-if (show_happiness) {
-  if (show_progress) new_line;
-  printf("Done.");
-}
+@i comm-foo.h
 @z
 
 Section 230.  Use strict upper bound.
@@ -437,7 +220,7 @@ for (c=0; c<256; c++) bucket[c]=NULL;
 
 Addendum.
 
-@x l.4644
+@x l.4649
 @** Index.
 @y
 @** Extensions for modern \.{CWEB}.
