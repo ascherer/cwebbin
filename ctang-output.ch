@@ -13,7 +13,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 43.
 
-@x l.572
+@x l.573
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;

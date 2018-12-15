@@ -329,7 +329,7 @@ $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	$(TIE) -c $@ $^
 $(HCHANGES): common.h comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
+$(TCHANGES): ctangle.w ctang-patch.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \

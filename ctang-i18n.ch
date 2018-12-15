@@ -1,25 +1,24 @@
-Changes for CTANGLE.W by Andreas Scherer, NOVEMBER 9, 2018.
+Changes for CTANGLE.W by Andreas Scherer, DECEMBER 15, 2018.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests with the help of 'gettext'
 and the 'libintl' library.
 
-This change file requires CTANG-PATCH.CH, CTANG-ANSI.ch,
-CTANG-EXTENSIONS.CH, CTANG-OUTPUT.CH to be applied as well.
+This change file requires CTANG-PATCH.CH and CTANG-OUTPUT.CH to be applied.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 1.
 
-@x l.62+ and l.164 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
+@x l.64+ and l.165 of CTANG-PATCH.CH
+@d banner "This is CTANGLE (Version 3.65 [CWEBbin 2018])"
 @y
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
+@d banner _("This is CTANGLE (Version 3.65 [CWEBbin 2018])")
 @z
 
 Section 26.
 
-@x l.265
+@x l.263
   if (tok_ptr+2>tok_mem_end) overflow("token");
 @y
   if (tok_ptr+2>tok_mem_end) overflow(_("token"));
@@ -27,7 +26,7 @@ Section 26.
 
 Section 30.
 
-@x l.341
+@x l.339
   if (stack_ptr==stack_end) overflow("stack");
 @y
   if (stack_ptr==stack_end) overflow(_("stack"));
@@ -35,15 +34,15 @@ Section 30.
 
 Section 34.
 
-@x l.428
-    printf("\n! Not present: <");
+@x l.426
+    fputs("\n! Not present: <",stdout);
 @y
     fputs(_("\n! Not present: <"),stdout);
 @z
 
 Section 40.
 
-@x l.525
+@x l.523
       overflow("output files");
 @y
       overflow(_("output files"));
@@ -51,26 +50,26 @@ Section 40.
 
 Section 42.
 
-@x l.544
-    printf("\n! No program text was specified."); mark_harmless;
+@x l.542
+    fputs("\n! No program text was specified.",stdout); mark_harmless;
 @y
     fputs(_("\n! No program text was specified."),stdout); mark_harmless;
 @z
 
-@x l.550
+@x l.548
         printf("\nWriting the output file (%s):",C_file_name);
 @y
         printf(_("\nWriting the output file (%s):"),C_file_name);
 @z
 
-@x l.554
-        printf("\nWriting the output files:");
+@x l.552
+        fputs("\nWriting the output files:",stdout);
 @y
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564+ and l.205 of CTANG-PATCH.CH
-      printf("Done.");
+@x l.564
+      fputs("Done.",stdout);
 @y
       fputs(_("Done."),stdout);
 @z
@@ -85,7 +84,7 @@ Section 43.
 
 Section 47.
 
-@x l.630
+@x l.631
           else if (a<050000) { confusion("macro defs have strange char");}
 @y
           else if (a<050000) { confusion(_("macro defs have strange char"));}
@@ -93,13 +92,13 @@ Section 47.
 
 Section 60.
 
-@x l.858
+@x l.859
           err_print("! Input ended in mid-comment");
 @y
           err_print(_("! Input ended in mid-comment"));
 @z
 
-@x l.871
+@x l.872
         err_print("! Section name ended in mid-comment"); loc--;
 @y
         err_print(_("! Section name ended in mid-comment")); loc--;
@@ -107,25 +106,25 @@ Section 60.
 
 Section 67.
 
-@x l.1016
+@x l.1018
         err_print("! String didn't end"); loc=limit; break;
 @y
         err_print(_("! String didn't end")); loc=limit; break;
 @z
 
-@x l.1020
+@x l.1022
         err_print("! Input ended in middle of string"); loc=buffer; break;
 @y
         err_print(_("! Input ended in middle of string")); loc=buffer; break;
 @z
 
-@x l.1038
-    printf("\n! String too long: ");
+@x l.1040
+    fputs("\n! String too long: ",stdout);
 @y
     fputs(_("\n! String too long: "),stdout);
 @z
 
-@x l.1054
+@x l.1056
     case translit_code: err_print("! Use @@l in limbo only"); continue;
 @y
     case translit_code: err_print(_("! Use @@l in limbo only")); continue;
@@ -133,7 +132,7 @@ Section 67.
 
 Section 68.
 
-@x l.1059
+@x l.1061
         err_print("! Double @@ should be used in control text");
 @y
         err_print(_("! Double @@ should be used in control text"));
@@ -141,13 +140,13 @@ Section 68.
 
 Section 69.
 
-@x l.1085
+@x l.1087
         err_print("! Double @@ should be used in ASCII constant");
 @y
         err_print(_("! Double @@ should be used in ASCII constant"));
 @z
 
-@x l.1091
+@x l.1093
         err_print("! String didn't end"); loc=limit-1; break;
 @y
         err_print(_("! String didn't end")); loc=limit-1; break;
@@ -155,27 +154,27 @@ Section 69.
 
 Section 72.
 
-@x l.1122
+@x l.1124
     err_print("! Input ended in section name");
 @y
     err_print(_("! Input ended in section name"));
 @z
 
-@x l.1135
-  printf("\n! Section name too long: ");
+@x l.1137
+  fputs("\n! Section name too long: ",stdout);
 @y
   fputs(_("\n! Section name too long: "),stdout);
 @z
 
 Section 73.
 
-@x l.1149
+@x l.1151
     err_print("! Section name didn't end"); break;
 @y
     err_print(_("! Section name didn't end")); break;
 @z
 
-@x l.1153
+@x l.1155
     err_print("! Nesting of section names not allowed"); break;
 @y
     err_print(_("! Nesting of section names not allowed")); break;
@@ -183,7 +182,7 @@ Section 73.
 
 Section 74.
 
-@x l.1167
+@x l.1169
   if (loc>=limit) err_print("! Verbatim string didn't end");
 @y
   if (loc>=limit) err_print(_("! Verbatim string didn't end"));
@@ -191,13 +190,13 @@ Section 74.
 
 Section 75.
 
-@x l.1193
+@x l.1195
 @d app_repl(c)  {if (tok_ptr==tok_mem_end) overflow("token"); *tok_ptr++=c;}
 @y
 @d app_repl(c) {if (tok_ptr==tok_mem_end) overflow(_("token")); *tok_ptr++=c;}
 @z
 
-@x l.1217
+@x l.1219
   if (text_ptr>text_info_end) overflow("text");
 @y
   if (text_ptr>text_info_end) overflow(_("text"));
@@ -205,13 +204,13 @@ Section 75.
 
 Section 78.
 
-@x l.1250
+@x l.1252
 case output_defs_code: if (t!=section_name) err_print("! Misplaced @@h");
 @y
 case output_defs_code: if (t!=section_name) err_print(_("! Misplaced @@h"));
 @z
 
-@x l.1266
+@x l.1268
     err_print("! @@d, @@f and @@c are ignored in C text"); continue;
 @y
     err_print(_("! @@d, @@f and @@c are ignored in C text")); continue;
@@ -219,7 +218,7 @@ case output_defs_code: if (t!=section_name) err_print(_("! Misplaced @@h"));
 
 Section 79.
 
-@x l.1276
+@x l.1278
   if (*try_loc=='=') err_print ("! Missing `@@ ' before a named section");
 @y
   if (*try_loc=='=') err_print (_("! Missing `@@ ' before a named section"));
@@ -227,7 +226,7 @@ Section 79.
 
 Section 80.
 
-@x l.1287
+@x l.1289
       else err_print("! Double @@ should be used in string");
 @y
       else err_print(_("! Double @@ should be used in string"));
@@ -235,7 +234,7 @@ Section 80.
 
 Section 81.
 
-@x l.1334
+@x l.1336
     default: err_print("! Unrecognized escape sequence");
 @y
     default: err_print(_("! Unrecognized escape sequence"));
@@ -243,7 +242,7 @@ Section 81.
 
 Section 85.
 
-@x l.1409
+@x l.1411
     err_print("! Definition flushed, must start with identifier");
 @y
     err_print(_("! Definition flushed, must start with identifier"));
@@ -251,13 +250,13 @@ Section 85.
 
 Section 93.
 
-@x l.1499
+@x l.1501
             err_print("! Double @@ should be used in control text");
 @y
             err_print(_("! Double @@ should be used in control text"));
 @z
 
-@x l.1503
+@x l.1505
         default: err_print("! Double @@ should be used in limbo");
 @y
         default: err_print(_("! Double @@ should be used in limbo"));
@@ -265,13 +264,13 @@ Section 93.
 
 Section 94.
 
-@x l.1515
+@x l.1517
     err_print("! Improper hex number following @@l");
 @y
     err_print(_("! Improper hex number following @@l"));
 @z
 
-@x l.1525
+@x l.1527
       err_print("! Replacement string in @@l too long");
 @y
       err_print(_("! Replacement string in @@l too long"));
@@ -279,8 +278,8 @@ Section 94.
 
 Section 95.
 
-@x l.1539
-  printf("\nMemory usage statistics:\n");
+@x l.1541
+  puts("\nMemory usage statistics:");
   printf("%ld names (out of %ld)\n",
           (long)(name_ptr-name_dir),(long)max_names);
   printf("%ld replacement texts (out of %ld)\n",

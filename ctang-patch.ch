@@ -155,27 +155,25 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
+	15 December 2018 AS	Update to CWEB 3.65.
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.27
-\def\title{CTANGLE (Version 3.64)}
+@x l.30
+\def\title{CTANGLE (Version 3.65)}
 @y
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
+\def\title{CTANGLE (Version 3.65 [CWEBbin 2018])}
 @z
 
-@x l.31
-  \centerline{(Version 3.64)}
+@x l.34
+  \centerline{(Version 3.65)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.65 [CWEBbin 2018])}
 @z
 
 Activate this, if only the changed modules should be printed.
 
-This change can not be applied when `tie' is used
-(TOC file can not be typeset).
-
-x l.48
+x l.51
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only sections that change
@@ -183,76 +181,23 @@ z
 
 Section 1.
 
-@x l.62
-@d banner "This is CTANGLE (Version 3.64)\n"
+@x l.64
+@d banner "This is CTANGLE (Version 3.65)"
 @y
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
+@d banner "This is CTANGLE (Version 3.65 [CWEBbin 2018])"
 @z
 
-Section 16.  Typographic improvement.
+Sections 5--15.
 
-@x l.140
-the array |text_info|, and we use a |text_pointer| variable to refer
+@x l.124
+@i common.h
 @y
-the array |text_info|, and we use a \&{text\_pointer} variable to refer
-@z
-
-Section 42.  Fix bug: Don't print empty line for '-bp'.
-
-@x l.564
-    if(show_happiness) printf("\nDone.");
-@y
-    if (show_happiness) {
-      if (show_progress) new_line;
-      printf("Done.");
-    }
-@z
-
-Section 50.  Typographic improvement.
-
-@x l.681
-@ @<Cases like \.{!=}@>=
-case plus_plus: C_putc('+'); C_putc('+'); out_state=normal; break;
-case minus_minus: C_putc('-'); C_putc('-'); out_state=normal; break;
-case minus_gt: C_putc('-'); C_putc('>'); out_state=normal; break;
-case gt_gt: C_putc('>'); C_putc('>'); out_state=normal; break;
-case eq_eq: C_putc('='); C_putc('='); out_state=normal; break;
-case lt_lt: C_putc('<'); C_putc('<'); out_state=normal; break;
-case gt_eq: C_putc('>'); C_putc('='); out_state=normal; break;
-case lt_eq: C_putc('<'); C_putc('='); out_state=normal; break;
-case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
-case and_and: C_putc('&'); C_putc('&'); out_state=normal; break;
-case or_or: C_putc('|'); C_putc('|'); out_state=normal; break;
-case dot_dot_dot: C_putc('.'); C_putc('.'); C_putc('.'); out_state=normal;
-    break;
-case colon_colon: C_putc(':'); C_putc(':'); out_state=normal; break;
-case period_ast: C_putc('.'); C_putc('*'); out_state=normal; break;
-case minus_gt_ast: C_putc('-'); C_putc('>'); C_putc('*'); out_state=normal;
-    break;
-@y
-@ @<Cases like \.{!=}@>=
-case plus_plus: C_putc('+');@+C_putc('+'); out_state=normal; break;
-case minus_minus: C_putc('-');@+C_putc('-'); out_state=normal; break;
-case minus_gt: C_putc('-');@+C_putc('>'); out_state=normal; break;
-case gt_gt: C_putc('>');@+C_putc('>'); out_state=normal; break;
-case eq_eq: C_putc('=');@+C_putc('='); out_state=normal; break;
-case lt_lt: C_putc('<');@+C_putc('<'); out_state=normal; break;
-case gt_eq: C_putc('>');@+C_putc('='); out_state=normal; break;
-case lt_eq: C_putc('<');@+C_putc('='); out_state=normal; break;
-case not_eq: C_putc('!');@+C_putc('='); out_state=normal; break;
-case and_and: C_putc('&');@+C_putc('&'); out_state=normal; break;
-case or_or: C_putc('|');@+C_putc('|'); out_state=normal; break;
-case dot_dot_dot: C_putc('.');@+C_putc('.');@+C_putc('.'); out_state=normal;
-    break;
-case colon_colon: C_putc(':');@+C_putc(':'); out_state=normal; break;
-case period_ast: C_putc('.');@+C_putc('*'); out_state=normal; break;
-case minus_gt_ast: C_putc('-');@+C_putc('>');@+C_putc('*'); out_state=normal;
-    break;
+@i comm-foo.h
 @z
 
 Addendum.
 
-@x l.1550
+@x l.1568
 @** Index.
 @y
 @** Extensions for modern \.{CWEB}.
