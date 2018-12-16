@@ -191,3 +191,18 @@ x l.48
 y
 \let\maybe=\iffalse % print only changed modules
 z
+
+@x l.1452
+@** Index.
+@y
+@** Extensions for modern \.{CWEB}.
+
+The following sections introduce code changes and extensions that have been
+created by numerous contributors over the course of a quarter century.
+
+Care has been taken to keep the original section numbering intact, so this
+new section should have the same number as the original ``\&{84.~Index},''
+and additional material follows below.
+
+@** Index.
+@z
