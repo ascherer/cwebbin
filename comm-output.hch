@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, October 30, 2018.
+Changes for COMMON.H by Andreas Scherer, December 16, 2018.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -10,7 +10,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 11 (of CTANGLE and CWEAVE).
 
-@x l.144
+@x l.161
 extern char scn_file_name[]; /* name of |scn_file| */
 @y
 extern char scn_file_name[]; /* name of |scn_file| */
@@ -19,7 +19,7 @@ extern char check_file_name[]; /* name of |check_file| */
 
 Section 14.
 
-@x l.187
+@x l.203
 extern FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 extern FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */

@@ -1,44 +1,18 @@
 % Original Kpathsea changes for CWEB by Wlodek Bzyl and Olaf Weber
 % This file is in the Public Domain.
 
-% Most of the original changes were merged with the set of change files
-% of the CWEBbin project.  This stripped change file is last in line of
-% comm-ansi.hch, comm-extensions.hch, comm-output.hch, comm-i18n.hch and
-% comm-texlive.hch that get tie'd into comm-foo.h that is used in modified
-% CTANGLE amd CWEAVE.
-
-Material in limbo.
-
-@x l.18
-% Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
-@y
-% Amendments to 'common.h' resulting in an extended 'comm-foo.h' were created
-% by numerous collaborators over the course of many years.
-
-% Please send comments, suggestions, etc. to tex-k@@tug.org.
-@z
-
-@x l.17 of COMM-ANSI.HCH
-@i iso_types.w
-@y
-@s boolean int
-@s uint8_t int
-@s uint16_t int
-@z
-
-Section 5 (of CTANGLE and CWEAVE).
-
-@x l.30 and l.28 of COMM-ANSI.HCH
-typedef bool boolean;
-@y
-@z
+% Most of the original changes were merged with the set of change
+% files of the CWEBbin project.  This stripped change file is last
+% in line of comm-extensions.hch, comm-output.hch, comm-i18n.hch,
+% and comm-texlive.hch that get tie'd into comm-foo.h that is used
+% in modified CTANGLE amd CWEAVE.
 
 Section 6.
 
-@x l.36
-#include <stdio.h>
+@x l.46
+#include <stdint.h>
 @y
-#include <stdio.h>
+#include <stdint.h>
 @#
 typedef bool boolean;
 #define HAVE_BOOLEAN

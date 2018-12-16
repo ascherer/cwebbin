@@ -1,17 +1,17 @@
-Changes for COMMON.W by Andreas Scherer, November 10, 2018.
+Changes for COMMON.W by Andreas Scherer, December 16, 2018.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
 well as an extended path search mechanism for lookup of `@i'input files.
 See `cwebmana.ch' for details about these new features.
 
-This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
+This change file requires COMM-PATCH.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
 Section 22.
 
-@x l.457
+@x l.469
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -38,7 +38,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 23.
 
-@x l.493
+@x l.505
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -89,7 +89,7 @@ Section 23.
 
 Section 61.
 
-@x l.1144
+@x l.1158
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -111,7 +111,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1156
+@x l.1170
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -142,7 +142,7 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1227
+@x l.1242
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[128]; /* an option for each 7-bit code */
@@ -151,7 +151,7 @@ const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 
 Section 69.
 
-@x l.1245
+@x l.1260
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -162,12 +162,12 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 70.
 
-@x l.1263
+@x l.1278
   boolean flag_change;
 @y
 @z
 
-@x l.1265+ and l.214 of COMM-PATCH.CH
+@x l.1280
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -183,7 +183,7 @@ Section 70.
 @^system dependencies@>
 @z
 
-@x l.1269
+@x l.1285
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -211,7 +211,7 @@ Section 74.
     } else
 @z
 
-Section NN.
+Section 83.
 
 @x l.1442
 @ The following functions are private to |"common.w"|.

@@ -11,37 +11,29 @@ Material in limbo.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.20 and l.177 of COMM-PATCH.CH
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
+@x l.25 and l.178 of COMM-PATCH.CH
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.65 [CWEBbin 2018])}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live 2019/dev)}
 @z
 
-@x l.25 and l.183 of COMM-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+@x l.30 and l.184 of COMM-PATCH.CH
+  \centerline{(Version 3.65 [CWEBbin 2018])}
 @y
-  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
-@z
-
-@x l.20 of COMM-ANSI.CH
-@i iso_types.w
-@y
-@s boolean int
-@s uint8_t int
-@s uint16_t int
+  \centerline{(Version 3.65 [\TeX~Live 2019/dev])}
 @z
 
 Section 2.
 
-@x l.74 and l.28 of COMM-ANSI.CH
+@x l.82
 typedef bool boolean;
 @y
 @z
 
 Section 4.
 
-@x l.93 and l.19 of COMM-I18N.CH
+@x l.101
   @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
@@ -50,7 +42,7 @@ Section 4.
 
 Section 9.
 
-@x l.181
+@x l.192
     if ((*(k++) = c) != ' ') limit = k;
 @y
     if ((*(k++) = c) != ' ' && c != '\r') limit = k;
@@ -58,14 +50,14 @@ Section 9.
 
 Section 10.
 
-@x l.221 - no alt_web_file_name needed.
+@x l.232 - no alt_web_file_name needed.
 char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
 @z
 
 Section 19.
 
-@x l.394+ and l.82 of COMM-I18N.CH
+@x l.405 and l.78 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -81,7 +73,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-@x l.402+ and l.88 of COMM-I18N.CH
+@x l.413 and l.84 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -96,7 +88,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 
 Section 22.
 
-@x l.457 and l.52 of COMM-EXTENSIONS.CH
+@x l.469 and l.26 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -120,7 +112,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 
 Section 23.
 
-@x l.475
+@x l.487
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *k=cur_file_name, *kk;
@@ -130,7 +122,7 @@ Section 23.
   char *k=cur_file_name;
 @z
 
-@x l.489
+@x l.501
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
   if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL && @|
@@ -144,7 +136,7 @@ Section 23.
 
 Replaced by Kpathsea `kpse_find_file'.
 
-@x l.493 and l.93 of COMM-EXTENSIONS.CH
+@x l.505 and l.67 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -171,7 +163,7 @@ Replaced by Kpathsea `kpse_find_file'.
 
 Section 67.
 
-@x l.1212
+@x l.1227
 the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 @y
@@ -195,7 +187,7 @@ Debugging output is always written to |stderr|, and begins with the string
 `\.{kdebug:}'.
 @z
 
-@x l.1218
+@x l.1233
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @y
 @d show_happiness flags['h'] /* should lack of errors be announced? */
@@ -212,7 +204,7 @@ show_banner=show_happiness=show_progress=1;
 
 Section 71.
 
-@x l.1285
+@x l.1301
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
 |alt_web_file_name| by adding |"web"| after the dot.
@@ -226,14 +218,14 @@ after the dot.  We must check that there is enough room in |web_file_name| and
 the other arrays for the argument.
 @z
 
-@x l.1302 - no alt_web_file_name
+@x l.1318 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y
 @z
 
 Section 74.
 
-@x l.1344 and l.260 of COMM-EXTENSIONS.CH
+@x l.1360
 @<Handle flag...@>=
 {
 @y
@@ -247,7 +239,7 @@ Section 74.
     @<Display version information and exit@>@;
 @z
 
-@x l.1348
+@x l.1362 and l.243 of COMM-EXTENSIONS.CH
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -258,7 +250,7 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.277 of COMM-I18N.CH
+@x l.1368 and l.273 of COMM-I18N.CH
 if (program==ctangle)
   fatal(
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
@@ -274,7 +266,7 @@ cb_usage(program==ctangle ? "ctangle" : "cweave");
 
 Section 77.
 
-@x l.1375
+@x l.1389
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
@@ -283,12 +275,12 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.279 of COMM-EXTENSIONS.CH
+@x l.259 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.287 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
+@x l.267 of COMM-EXTENSIONS.CH and l.308 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -323,7 +315,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.318 of COMM-EXTENSIONS.CH
+@x l.298 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -349,7 +341,7 @@ char *p, *path_prefix, *next_path_prefix;
 
 Material++
 
-@x l.1418
+@x l.1452
 @** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from
