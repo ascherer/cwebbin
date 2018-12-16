@@ -162,11 +162,6 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 70.
 
-@x l.1278
-  boolean flag_change;
-@y
-@z
-
 @x l.1280
   strcpy(change_file_name,"/dev/null");
 @y
