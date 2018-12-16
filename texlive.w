@@ -7,10 +7,10 @@
 
 @q This stripped change file {comm,ctang,cweav}-w2c.ch has been created @>
 @q from the stacked set of change files {comm,ctang,cweav}-patch.ch, @>
-@q {comm,ctang,cweav}-ansi.ch, {comm,ctang,cweav}-extensions.ch, @>
-@q {comm,ctang,cweav}-output.ch, {comm,ctang,cweav}-i18n.ch, and @>
-@q {comm,ctang,cweav}-texlive.ch with the 'tie' processor and is used @>
-@q as a monolithic changefile for {common,ctangle,cweave}.w in TeX Live. @>
+@q {comm,cweav}-extensions.ch, {comm,ctang,cweav}-output.ch, @>
+@q {comm,ctang,cweav}-i18n.ch, and {comm,ctang,cweav}-texlive.ch with @>
+@q the 'tie' processor and is used as a monolithic changefile for @>
+@q {common,ctangle,cweave}.w in TeX Live. @>
 
 @q Please send comments, suggestions, etc. to tex-k@@tug.org. @>
 
