@@ -4,8 +4,6 @@
 # By default CWEB and CWEBBIN are compiled and linked with optimization
 # switched on. Use '--with debuginfo' to switch debugging on.
 %bcond_with debuginfo
-# Apply only the set of ANSI changes.
-%bcond_with ansi_only
 # Prepare CWEBbin as base for TeXLive.
 %bcond_with texlive
 
@@ -31,18 +29,13 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
+Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.65.tar.gz
 Source1: %{name}-2018.tar.gz
 
 Patch: 0001-Update-CWEBbin-manpage.patch
 
-%if %{with ansi_only}
-Version: 3.64c
-Release: ansi
-%else
 Version: 2018
-Release: 15
-%endif
+Release: 16
 
 %define texmf /opt/texlive/texmf-local
 
@@ -68,14 +61,6 @@ and Donald Knuth for Literate Programming in C/C++.
 %if ! %{with debuginfo}
 %{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
 %{__sed} -e "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
-%endif
-
-%if %{with ansi_only}
-%{__sed} -i Makefile.unix -e \
-"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_doc:%{__sed} -e "s/cweave fullmanual/cweave docs/" -i Makefile.unix}
-%{__sed} -i ctang-ansi.ch -e "/case not_eq/ s/@+/ /"
-%{__sed} -i cweav-ansi.ch -e "0,/char \*b/ s/, where/,where/"
 %endif
 
 %endif
