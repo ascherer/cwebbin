@@ -32,8 +32,6 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.65.tar.gz
 Source1: %{name}-2018.tar.gz
 
-Patch: 0001-Update-CWEBbin-manpage.patch
-
 Version: 2018
 Release: 16
 
