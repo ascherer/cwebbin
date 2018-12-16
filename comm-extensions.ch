@@ -9,32 +9,6 @@ This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 7.
-
-@x l.153
-@d buf_size 100 /* for \.{CWEAVE} and \.{CTANGLE} */
-@y
-@d buf_size 1000 /* for \.{CWEAVE} and \.{CTANGLE} */
-@z
-
-Section 10.
-
-@x l.207 - max_file_name_length is way too small.
-@d max_file_name_length 60
-@y
-@d max_file_name_length 1024
-@z
-
-Section 20.
-
-@x l.415
-@d max_sections 2000 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@y
-@d max_sections 10239 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@z
-
 Section 22.
 
 @x l.457
@@ -111,28 +85,6 @@ Section 23.
       path_prefix = next_path_prefix+1;
     else break; /* no more paths to search; no file found */
   }
-@z
-
-Section 27.
-
-@x l.589
-@d max_bytes 90000 /* the number of bytes in identifiers,
-  index entries, and section names; must be less than $2^{24}$ */
-@d max_names 4000 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@y
-@d max_bytes 1000000 /* the number of bytes in identifiers,
-  index entries, and section names; must be less than $2^{24}$ */
-@d max_names 10239 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@z
-
-Section 53.
-
-@x l.642
-@d hash_size 353 /* should be prime */
-@y
-@d hash_size 8501 /* should be prime */
 @z
 
 Section 61.
@@ -249,16 +201,9 @@ Section 70.
 
 Section 74.
 
-@x l.1344
-@ @<Handle flag...@>=
-{
-  if (**argv=='-') flag_change=0;
-  else flag_change=1;
+@x l.1361
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
-@ @d flag_change (**argv!='-')
-@<Handle flag...@>=
-{
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if(*dot_pos=='l') {
        use_language=++dot_pos;
@@ -266,9 +211,9 @@ Section 74.
     } else
 @z
 
-Extended material after Section 82.
+Section NN.
 
-@x l.576 of COMM-ANSI.CH
+@x l.1442
 @ The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
@@ -281,7 +226,7 @@ static boolean set_path(char *,char *);@/
 
 Add even more material ...
 
-@x l.1418
+@x l.1452
 @** Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking

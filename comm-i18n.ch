@@ -12,14 +12,10 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 Section 4.
 
 @x l.93
-  @<Initialize pointers@>;
-  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>;
-  @<Scan arguments and open output files@>;
+  @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
   @<Set locale and bind language catalogs@>@;
-  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
-  @<Scan arguments and open output files@>@;
 @z
 
 Section 9.
@@ -177,13 +173,13 @@ Section 48.
 Section 50.
 
 @x l.945
-      printf("\n! Ambiguous prefix: matches <");
+      fputs("\n! Ambiguous prefix: matches <",stdout);
 @y
       fputs(_("\n! Ambiguous prefix: matches <"),stdout);
 @z
 
 @x l.948
-      printf(">\n and <");
+      fputs(">\n and <",stdout);
 @y
       fputs(_(">\n and <"),stdout);
 @z
@@ -191,25 +187,25 @@ Section 50.
 Section 52.
 
 @x l.974
-      printf("\n! New name is a prefix of <");
+      fputs("\n! New name is a prefix of <",stdout);
 @y
       fputs(_("\n! New name is a prefix of <"),stdout);
 @z
 
 @x l.986
-      printf("\n! New name extends <");
+      fputs("\n! New name extends <",stdout);
 @y
       fputs(_("\n! New name extends <"),stdout);
 @z
 
 @x l.992
-    printf("\n! Section name incompatible with <");
+    fputs("\n! Section name incompatible with <",stdout);
 @y
     fputs(_("\n! Section name incompatible with <"),stdout);
 @z
 
 @x l.995
-    printf(">,\n which abbreviates <");
+    fputs(">,\n which abbreviates <",stdout);
 @y
     fputs(_(">,\n which abbreviates <"),stdout);
 @z
@@ -229,12 +225,12 @@ else if (include_depth==0) printf(_(". (l. %d)\n"), cur_line);
 Section 62.
 
 @x l.1162
-case spotless: if (show_happiness) printf("(No errors were found.)\n"); break;
+case spotless: if (show_happiness) puts("(No errors were found.)"); break;
 case harmless_message:
-  printf("(Did you see the warning message above?)\n"); break;
+  puts("(Did you see the warning message above?)"); break;
 case error_message:
-  printf("(Pardon me, but I think I spotted something wrong.)\n"); break;
-case fatal_message: printf("(That was a fatal error, my friend.)\n");
+  puts("(Pardon me, but I think I spotted something wrong.)"); break;
+case fatal_message: puts("(That was a fatal error, my friend.)");
 @y
 case spotless:
   if (show_happiness) puts(_("(No errors were found.)")); break;

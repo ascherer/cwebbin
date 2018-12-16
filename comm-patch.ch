@@ -1,6 +1,6 @@
 								-*-Web-*-
-This file, COMM-FOO.CH, is part of CWEBBIN (Version 3.64 [2018]).
-It is a changefile for COMMON.W, Version 3.64.
+This file, COMM-FOO.CH, is part of CWEBBIN (Version 3.65 [2018]).
+It is a changefile for COMMON.W, Version 3.65.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -168,71 +168,26 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
+	16 December 2018 AS	Upgrade to CWEB 3.65.
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.20
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
+@x l.25
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.65)}
 @y
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.65 [CWEBbin 2018])}
 @z
 
-@x l.25
-  \centerline{(Version 3.64)}
+@x l.30
+  \centerline{(Version 3.65)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.65 [CWEBbin 2018])}
 @z
 
 Activate this, if only the changed modules should be printed.
 
-This change can not be applied when `tie' is used
-(TOC file can not be typeset).
-
-x l.43
+x l.48
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only changed modules
 z
-
-Section 61. Fix bug: Don't print empty line for '-ph'.
-
-@x l.1151
-int wrap_up() {
-  putchar('\n');
-@y
-int wrap_up() {
-  if (show_progress) new_line;
-@z
-
-Section 70. After 'boolean' was changed from 'short' to 'bool' it became
-obvious that '-1' is not really a useful value to designate special case '-'
-for the changefile argument. By flipping the detection logic all is fine again.
-
-@x l.1265
-  while (--argc > 0) {
-@y
-  strcpy(change_file_name,"/dev/null");
-  while (--argc > 0) {
-@z
-
-@x l.1282
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-@y
-@z
-
-Section 72.
-
-@x l.1312
-  if (strcmp(*argv,"-")==0) found_change=-1;
-  else {
-@y
-  if (strcmp(*argv,"-")!=0) {
-@z
-
-@x l.1319
-    found_change=1;
-  }
-@y
-  }
-  found_change=1;
-@z

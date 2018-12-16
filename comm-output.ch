@@ -14,7 +14,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 Section 61.
 
 @x l.1155
-  @<Print the job |history|@>;
+  @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
