@@ -1,6 +1,6 @@
 								-*-Web-*-
-This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.64 [2018]).
-It is a changefile for CTANGLE.W, Version 3.64.
+This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.65 [2018]).
+It is a changefile for CTANGLE.W, Version 3.65.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -208,7 +208,7 @@ make \.{CWEB} adhere to modern coding standards and introduce new or improved
 features.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{96.~Index},'' and
+section should have the same number as the original ``\&{97.~Index},'' and
 additional material follows below.
 
 @** Index.
