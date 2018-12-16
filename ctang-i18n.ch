@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, DECEMBER 15, 2018.
+Changes for CTANGLE.W by Andreas Scherer, DECEMBER 16, 2018.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests with the help of 'gettext'
@@ -10,7 +10,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 1.
 
-@x l.64+ and l.165 of CTANG-PATCH.CH
+@x l.64+ and l.187 of CTANG-PATCH.CH
 @d banner "This is CTANGLE (Version 3.65 [CWEBbin 2018])"
 @y
 @d banner _("This is CTANGLE (Version 3.65 [CWEBbin 2018])")

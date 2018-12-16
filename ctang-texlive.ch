@@ -3,34 +3,34 @@
 
 % Most of the original changes were merged with the set of change files
 % of the CWEBbin project.  This stripped change file is last in line of
-% ctang-patch.ch, ctang-ansi.ch, ctang-extensions.ch, ctang-output.ch,
-% ctang-i18n.ch and ctang-texlive.ch that get tie'd into ctang-w2c.ch that
-% is used as a monolithic changefile for ctangle.w in TeX Live.
+% ctang-patch.ch, ctang-output.ch, ctang-i18n.ch, and ctang-texlive.ch
+% that get tie'd into ctang-w2c.ch that is used as a monolithic changefile
+% for ctangle.w in TeX Live.
 
 Material in limbo.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.27 and l.164 of CTANG-PATCH.CH
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
+@x l.30 and l.165 of CTANG-PATCH.CH
+\def\title{CTANGLE (Version 3.65 [CWEBbin 2018])}
 @y
 \def\title{CTANGLE (\TeX~Live 2019/dev)}
 @z
 
-@x l.31 and l.170 of CTANG-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+@x l.34 and l.171 of CTANG-PATCH.CH
+  \centerline{(Version 3.65 [CWEBbin 2018])}
 @y
-  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
+  \centerline{(Version 3.65 [\TeX~Live 2019/dev])}
 @z
 
 Section 1.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.62 and l.189 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
+@x l.64 and l.187 of CTANG-PATCH.CH and l.16 of CTANG-I18N.CH
+@d banner _("This is CTANGLE (Version 3.65 [CWEBbin 2018])")
 @y
-@d banner _("This is CTANGLE, Version 3.64")
+@d banner _("This is CTANGLE, Version 3.65")
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
@@ -38,7 +38,7 @@ Section 3.
 
 FIXME: Apply a more generic @VERSION@ scheme.
 
-@x l.100 and l.62 of CTANG-ANSI.CH - Add Web2C version to banner.
+@x l.97 - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   textdomain("cweb-tl");
