@@ -50,6 +50,7 @@ a20	02 Jan 2001	AS	Updated for CWEB 3.63.
 a21	09 Mar 2002	AS	Updated for CWEB 3.64.
 a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2018	24 Nov 2018	AS	Update for CWEBbin 2018.
+2018	16 Dec 2018	AS	Upgrade for CWEB 3.65.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -60,15 +61,15 @@ Use the already changed macro file.  Also we will need special characters.
 @z
 ------------------------------------------------------------------------------
 @x l.37
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.65)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [CWEBbin 2018])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.65 [CWEBbin 2018])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
-\vskip 18pt\centerline{(Version 3.64 --- February 2002)}
+\vskip 18pt\centerline{(Version 3.65 --- December 2018)}
 @y
-\vskip 18pt\centerline{(Version 3.64 [CWEBbin 2018] --- October 2018)}
+\vskip 18pt\centerline{(Version 3.65 [CWEBbin 2018] --- December 2018)}
 @z
 ------------------------------------------------------------------------------
 @x l.106
@@ -270,8 +271,8 @@ et soutient l'output de \.{CWEAVE}.
 @z
 ------------------------------------------------------------------------------
 @x l.1505
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.65)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [CWEBbin 2018])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.65 [CWEBbin 2018])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
