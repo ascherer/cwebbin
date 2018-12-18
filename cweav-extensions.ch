@@ -110,9 +110,7 @@ tex_printf(use_language);
 tex_puts("cwebma");
 @z
 
-Section 117.  CWeave indents declarations after old-style function definitions.
-With the `-i' option they will come out flush left.  You won't see any
-difference if you use the ANSI-style function definitions.
+Section 117.
 
 @x l.2540
 @<Cases for |exp|@>=
@@ -121,6 +119,10 @@ if (cat1==lbrace || cat1==int_like || cat1==decl) {
   reduce(pp,1,fn_decl,0,1);
 }
 @y
+\.{CWEAVE} indents declarations after old-style function definitions.
+With the \.{-i} option they will come out flush left.  You won't see
+any difference if you use ANSI-style function definitions.
+
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp);
@@ -179,17 +181,29 @@ else if (cat1==lbrace || cat1==int_like || cat1==decl) {
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
 
-Section 128.  The original manual described the `-o' option for CWEAVE, but
-this was not yet present.  Here is a simple implementation.  The purpose is to
-suppress the extra space between local variable declarations and the first
-statement in a function block.
+Section 128.
 
-@x l.2665
+@x l.2660
+@ @<Cases for |decl|@>=
+if (cat1==decl) {
+  big_app1(pp); big_app(force); big_app1(pp+1);
+  reduce(pp,2,decl,-1,40);
+}
 else if (cat1==stmt || cat1==function) {
   big_app1(pp); big_app(big_force);
   big_app1(pp+1); reduce(pp,2,cat1,-1,41);
 }
 @y
+@ The original manual described the \.{-o} option for \.{CWEAVE}, but this was
+not yet present.  Here is a simple implementation.  The purpose is to suppress
+the extra space between local variable declarations and the first statement in
+a function block.
+
+@<Cases for |decl|@>=
+if (cat1==decl) {
+  big_app1(pp); big_app(force); big_app1(pp+1);
+  reduce(pp,2,decl,-1,40);
+}
 else if (cat1==stmt || cat1==function) {
   big_app1(pp);
   if(order_decl_stmt) big_app(big_force);
@@ -210,7 +224,9 @@ else if (cat1==stmt) {
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
 @y
-@ @<Cases for |fn_decl|@>=
+@ Outdent after parameter declarationsi with option \.{-i}.
+
+@<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
 }
