@@ -224,7 +224,7 @@ boolean flags[128]; /* an option for each 7-bit code */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 boolean flags[256]; /* an option for each 8-bit code */
-const char *use_language; /* prefix of \.{cwebmac.tex} in \TEX/ output */
+const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
 Section 68.
@@ -237,7 +237,6 @@ show_banner=show_happiness=show_progress=1;
 show_banner=show_happiness=show_progress=true;@/
 show_stats=false;@/
 indent_param_decl=order_decl_stmt=true;@/
-use_language="";
 @z
 
 Section 69.
