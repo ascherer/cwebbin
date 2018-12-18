@@ -252,12 +252,11 @@ Section 74.
 
 @x l.1348 and l.305 of COMM-EXTENSIONS.CH
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    if(*dot_pos=='l') {
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if (*dot_pos=='d') {
       if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
-    } else if(*dot_pos=='l') {
+    } else
 @z
 
 Section 75.

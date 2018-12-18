@@ -297,7 +297,6 @@ Section 74.
   if (**argv=='-') flag_change=0;
   else flag_change=1;
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    flags[(eight_bits)*dot_pos]=flag_change;
 @y
 @ @d flag_change (**argv!='-')
 @<Handle flag...@>=
@@ -306,8 +305,7 @@ Section 74.
     if(*dot_pos=='l') {
        use_language=++dot_pos;
        break;
-    }
-    else flags[(eight_bits)*dot_pos]=flag_change;
+    } else
 @z
 
 Extended material after Section 82.
