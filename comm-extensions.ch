@@ -372,11 +372,10 @@ needs a few extra variables.
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://";
+#ifndef SEPARATORS
+#define SEPARATORS "://"
 #endif
+char separators[]=SEPARATORS;
 
 @** Index.
 @z

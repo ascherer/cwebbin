@@ -341,11 +341,6 @@ needs a few extra variables.
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://";
-#endif
 @y
 @ The |scan_args| routine needs a few extra variables.
 
@@ -354,11 +349,6 @@ char separators[]="://";
 @d DEVICE_SEPARATOR separators[2]
 
 @<Other...@>=
-#ifdef SEPARATORS
-char separators[]=SEPARATORS;
-#else
-char separators[]="://";
-#endif
 @z
 
 Material++
