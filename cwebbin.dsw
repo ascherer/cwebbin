@@ -27,7 +27,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "wmerge"=".\wmerge.dsp" - Package Owner=<4>
+Project: "wmerge"=".\examples\wmerge.dsp" - Package Owner=<4>
 
 Package=<5>
 {{{

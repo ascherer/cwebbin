@@ -64,9 +64,6 @@ TCHANGES= ctang-foo.ch
 # Set WCHANGES to cweav-foo.ch if you need changes to cweave.w
 WCHANGES= cweav-foo.ch
 
-# Set MCHANGES to wmerg-foo.ch if you need changes to wmerge.w
-MCHANGES= wmerg-foo.ch
-
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
 # if you want to treat CWEB as a system of C++ programs.  Your
@@ -172,17 +169,18 @@ CTANGPATCH = ctang-ansi.ch ctang-borlandc.ch ctang-extensions.ch \
 CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
-WMERGPATCH = wmerg-ansi.ch wmerg-borlandc.ch wmerg-extensions.ch \
-	wmerg-memory.ch wmerg-output.ch wmerg-patch.ch
-PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) wmerge.$(EXTENSION) \
+PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
-	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp wmerge.dsp \
+	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
 	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
 	examples/primes.w examples/README.p11 examples/sample.w \
 	examples/treeprint-ansi.ch examples/wc-ansi.ch \
+	examples/wmerg-ansi.ch examples/wmerg-borlandc.ch \
+	examples/wmerg-extensions.ch examples/wmerg-memory.ch \
+	examples/wmerg-output.ch examples/wmerg-patch.ch \
 	examples/wordtest-ansi.ch
 
 AREXX = arexx
@@ -274,12 +272,6 @@ cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES)
 cweave.o: cweave.$(EXTENSION) $(HCHANGES)
 	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
 
-wmerge: wmerge.$(EXTENSION)
-	$(CC) $(CFLAGS) -o wmerge wmerge.$(EXTENSION) $(LINKFLAGS)
-
-wmerge.$(EXTENSION): examples/wmerge.w $(MCHANGES)
-	$(CTANGLE) examples/wmerge $(MCHANGES) wmerge.$(EXTENSION)
-
 boot:
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
 	$(CC) $(CFLAGS) -c common.$(EXTENSION)
@@ -295,7 +287,6 @@ cwebmana.dvi: cwebmana.tex
 common.dvi: common.tex
 ctangle.dvi: ctangle.tex
 cweave.dvi: cweave.tex
-wmerge.dvi: wmerge.tex
 
 usermanual: cwebmana.pdf
 
@@ -329,9 +320,6 @@ cweave.tex: cweave.w $(WCHANGES) $(HCHANGES)
 common.tex: common.w $(CCHANGES)
 	$(CWEAVE) common $(CCHANGES)
 
-wmerge.tex: examples/wmerge.w $(MCHANGES)
-	$(CWEAVE) examples/wmerge $(MCHANGES)
-
 # the master change files are created automatically by the TIE processor
 # from a set of separate change files.  note that not all change files
 # listed above are actually used here, so you should not try to re-port
@@ -348,15 +336,12 @@ $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^
-$(MCHANGES): examples/wmerge.w wmerg-patch.ch wmerg-ansi.ch \
-	wmerg-extensions.ch wmerg-output.ch
-	$(TIE) -c $@ $^
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
-# and $(HCHANGES) for bootstrapping
+# for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
-	cweave.w cwebmana.tex wmerge.$(EXTENSION) wmerge.tex wmerge \
+	cweave.w cwebmana.tex \
 	  *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
