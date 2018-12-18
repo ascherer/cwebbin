@@ -239,14 +239,5 @@ Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index}'', and 
 additional material follows below.
 
-@* Version information.  The {\mc AMIGA} operating system provides the
-`\.{version}' command and good programs answer with some informations about
-their creation date and their current version.  This might be useful for
-other operating systems as well.
-
-@<Glob...@>=
-const char Version[] = "$VER: CWeave 3.64 [CWEBbin 2018] ("@|
-  __DATE__@= @>", "@= @>__TIME__@= @>")\n";
-
 @** Index.
 @z

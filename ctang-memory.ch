@@ -121,3 +121,18 @@ eight_bits *ccode; /* meaning of a char following \.{@@} */
   int c; /* must be |int| so the |for| loop will end */
   alloc_object(ccode,256,eight_bits);
 @z
+
+@x l.1546
+@** Index.
+@y
+@* Version information.  The {\mc AMIGA} operating system provides the
+`\.{version}' command and good programs answer with some informations about
+their creation date and their current version.  This might be useful for
+other operating systems as well.
+
+@<Glob...@>=
+const char Version[] = "$VER: CTangle 3.64 [CWEBbin 2018] ("@|
+  __DATE__@= @>", "@= @>__TIME__@= @>")\n";
+
+@** Index.
+@z

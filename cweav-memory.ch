@@ -168,3 +168,18 @@ collate[0]=0;
 alloc_object(collate,102+128,eight_bits);
 collate[0]=0;
 @z
+
+@x l.4644
+@** Index.
+@y
+@* Version information.  The {\mc AMIGA} operating system provides the
+`\.{version}' command and good programs answer with some informations about
+their creation date and their current version.  This might be useful for
+other operating systems as well.
+
+@<Glob...@>=
+const char Version[] = "$VER: CWeave 3.64 [CWEBbin 2018] ("@|
+  __DATE__@= @>", "@= @>__TIME__@= @>")\n";
+
+@** Index.
+@z
