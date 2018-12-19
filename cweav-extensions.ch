@@ -6,6 +6,22 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
+Section 3.
+
+@x l.103
+  argc=ac; argv=av;
+@y
+  extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+  argc=ac; argv=av;
+@z
+
+@x l.105
+  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
+@y
+  make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
+    /* controlled by command-line options */
+@z
+
 Section 4.
 
 @x l.121
@@ -123,6 +139,8 @@ if (cat1==lbrace || cat1==int_like || cat1==decl) {
 With the \.{-i} option they will come out flush left.  You won't see
 any difference if you use ANSI-style function definitions.
 
+@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
+
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp);
@@ -198,6 +216,8 @@ else if (cat1==stmt || cat1==function) {
 not yet present.  Here is a simple implementation.  The purpose is to suppress
 the extra space between local variable declarations and the first statement in
 a function block.
+
+@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
 
 @<Cases for |decl|@>=
 if (cat1==decl) {

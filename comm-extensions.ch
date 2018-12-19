@@ -182,14 +182,6 @@ the string ``cwebmac'' in the first line of the TeX output, so you can call
 CWEAVE with the option ``+ldeutsch'' to yield ``\input deutschcwebmac'' in
 the first line.
 
-The original CWEAVE indents parameter declarations in old-style function
-heads.  If you don't like this, you can typeset them flush left with \.{-i}.
-
-The original CWEAVE puts extra white space after variable declarations and
-before the first statement in a function block.  If you don't like this,
-you can use the \.{-o} option.  This feature was already mentioned in the
-original documentation, but it was not implemented.
-
 These changes by Andreas Scherer are based on ideas by Carsten Steger
 provided in his `CWeb 2.0' port from ><> 551 and his `CWeb 2.8' port
 from the electronic nets and on suggestions by Giuseppe Ghibò.  The string
@@ -198,45 +190,11 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1212
-the names of those files. Most of the 128 flags are undefined but available
-for future extensions.
-
-@d show_banner flags['b'] /* should the banner line be printed? */
-@d show_progress flags['p'] /* should progress reports be printed? */
-@d show_stats flags['s'] /* should statistics be printed at end of run? */
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-the names of those files. Most of the 256 flags are undefined but available
-for future extensions.
-
-@d show_banner flags['b'] /* should the banner line be printed? */
-@d show_progress flags['p'] /* should progress reports be printed? */
-@d show_stats flags['s'] /* should statistics be printed at end of run? */
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
-@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
-@z
-
 @x l.1226
-char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 boolean flags[128]; /* an option for each 7-bit code */
 @y
-char scn_file_name[max_file_name_length]; /* name of |scn_file| */
-boolean flags[256]; /* an option for each 8-bit code */
+boolean flags[128]; /* an option for each 7-bit code */
 const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
-@z
-
-Section 68.
-
-@x l.1233
-@<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>=
-show_banner=show_happiness=show_progress=1;
-@y
-@<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>=
-show_banner=show_happiness=show_progress=true;@/
-show_stats=false;@/
-indent_param_decl=order_decl_stmt=true;@/
 @z
 
 Section 69.

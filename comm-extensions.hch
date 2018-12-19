@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, November 4, 2018.
+Changes for COMMON.H by Andreas Scherer, December 19, 2018.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
@@ -12,27 +12,4 @@ Section 11 (of CTANGLE and CWEAVE).
 @d max_file_name_length 60
 @y
 @d max_file_name_length 1024
-@z
-
-@x l.148
-extern int line[]; /* number of current line in the stacked files */
-@y
-extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
-extern int line[]; /* number of current line in the stacked files */
-@z
-
-Section 13.
-
-@x l.168
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
-@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
-@z
-
-@x l.173
-extern boolean flags[]; /* an option for each 7-bit code */
-@y
-extern boolean flags[]; /* an option for each 8-bit code */
 @z
