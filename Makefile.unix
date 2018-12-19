@@ -159,7 +159,7 @@ ORIGINAL = $(SOURCES) prod.w \
 
 COMMPATCH = comm-ansi.ch comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
-	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
+	comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
 	comm-patch.ch comm-translation.ch comm-translation.hch \
 	comm-texlive.ch comm-texlive.hch
@@ -327,8 +327,7 @@ common.tex: common.w $(CCHANGES)
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^
-$(HCHANGES): common.h comm-extensions.hch \
-	comm-output.hch comm-i18n.hch # comm-texlive.hch
+$(HCHANGES): common.h comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
