@@ -206,11 +206,10 @@ Debugging output is always written to |stderr|, and begins with the string
 
 Section 68.
 
-@x l.1233+ and l.237 of COMM-EXTENSIONS.CH
-show_banner=show_happiness=show_progress=true;@/
-show_stats=false;@/
+@x l.1234
+show_banner=show_happiness=show_progress=1;
 @y
-show_banner=show_happiness=show_progress=show_stats=false;@/
+show_banner=show_happiness=show_progress=0;
 @z
 
 Section 71.
