@@ -172,10 +172,10 @@ Replaced by Kpathsea `kpse_find_file'.
 Section 67.
 
 @x l.1212 and l.210 of COMM-EXTENSIONS.CH
-the names of those files. Most of the 256 flags are undefined but available
+the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 @y
-the names of those files. Most of the 256 flags are undefined but available
+the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 
 We use `kpathsea' library functions to find literate sources and
