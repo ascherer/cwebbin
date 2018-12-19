@@ -335,8 +335,8 @@ things for neutral behavior without \.{I18N}.
 #if HAVE_GETTEXT
 #include <libintl.h>
 #else
-#define bindtextdomain(A,B)
-#define textdomain(A)
+#define bindtextdomain(A,B) ""
+#define textdomain(A) ""
 #define gettext(A) A
 #endif
 

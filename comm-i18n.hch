@@ -19,7 +19,7 @@ Section 6 (of CTANGLE and CWEAVE).
 #if HAVE_GETTEXT
 #include <libintl.h>
 #else
-#define textdomain(A)
+#define textdomain(A) ""
 #define gettext(A) A
 #endif
 @z
