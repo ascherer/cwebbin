@@ -60,15 +60,6 @@ char **av@t\2\2@>) /* argument values */
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @z
 
-@x l.113 - 'use' print_text(), used nowhere else
-  return wrap_up(); /* and exit gracefully */
-@y
-#ifdef DEAD_CODE
-  if (0) print_text(text_ptr);
-#endif
-  return wrap_up(); /* and exit gracefully */
-@z
-
 Sections 5--15.
 
 @x l.144
