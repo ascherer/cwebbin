@@ -443,7 +443,7 @@ root= NULL;
 /*90:*/
 #line 1139 "comm-foo.ch"
 
-setlocale(LC_ALL,"");
+setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
 bindtextdomain("cweb-tl","/usr/share/locale/");
 bindtextdomain("web2c-help","/usr/share/locale/");

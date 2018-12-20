@@ -321,7 +321,7 @@ More new material.
 in the \.{CWEB} sources are placed in the context of the `|_|'~macro.
 This is just a shortcut for the `|gettext|' function from the ``GNU~gettext
 utilities.'' For systems that do not have this library installed, we wrap
-things for neutral behavior without \.{I18N}.
+things for neutral behavior without internationalization.
 
 @d _(STRING) gettext(STRING)
 
@@ -353,11 +353,11 @@ interface, and catalog \.{web2c-help} contains the ``\.{--help}'' texts for
 
 If such translation files are not available you may want to improve this system
 by checking out the sources and translating the strings in files \.{cweb.pot},
-\.{cweb-tl.pot}, and \.{web2c-help.pot} and submitting the resulting
-\.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
+\.{cweb-tl.pot}, and \.{web2c-help.pot}, and submitting the resulting \.{*.po}
+files to the maintainers at \.{tex-k@@tug.org}.
 
 @<Set locale...@>=
-setlocale(LC_ALL, "");
+setlocale(LC_MESSAGES, setlocale(LC_CTYPE, ""));
 bindtextdomain("cweb", "/usr/share/locale/");
 bindtextdomain("cweb-tl", "/usr/share/locale/");
 bindtextdomain("web2c-help", "/usr/share/locale/");

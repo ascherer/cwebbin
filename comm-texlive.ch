@@ -72,26 +72,26 @@ if ((web_file=fopen(web_file_name,"r"))==NULL) {
        fatal(_("! Cannot open input file "), web_file_name);
 }
 @y
-if ((found_filename=kpse_find_cweb(web_file_name))==NULL ||
+if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
     (web_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open input file "), web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(web_file_name, found_filename);
   free(found_filename);
-}
+} else fatal(_("! Filename too long\n"), found_filename);
 @z
 
 @x l.402+ and l.88 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
-if ((found_filename=kpse_find_cweb(change_file_name))==NULL ||
+if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
     (change_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open change file "), change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   strcpy(change_file_name, found_filename);
   free(found_filename);
-}
+} else fatal(_("! Filename too long\n"), found_filename);
 @z
 
 Section 22.
@@ -178,12 +178,11 @@ for future extensions.
 the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 
-We use `kpathsea' library functions to find literate sources and
-NLS configuration files. When the files you expect are not
-being found, the thing to do is to enable `kpathsea' runtime
-debugging by assigning to |kpathsea_debug| variable a small number
-via `\.{-d}' option. The meaning of number is shown below. To set
-more than one debugging options sum the corresponding numbers.
+We use `kpathsea' library functions to find literate sources.  When the files
+you expect are not found, the thing to do is to enable `kpathsea' runtime
+debugging by assigning to the |kpathsea_debug| variable a small number via the
+`\.{-d}' option. The meaning of this number is shown below. To set more than
+one debugging option, simply sum the corresponding numbers.
 $$\halign{\hskip5em\tt\hfil#&&\qquad\tt#\cr
  1&report `\.{stat}' calls\cr
  2&report lookups in all hash tables\cr
@@ -199,9 +198,9 @@ Debugging output is always written to |stderr|, and begins with the string
 @x l.1218
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @y
+@d show_happiness flags['h'] /* should lack of errors be announced? */
 @d show_kpathsea_debug flags['d']
   /* should results of file searching be shown? */
-@d show_happiness flags['h'] /* should lack of errors be announced? */
 @z
 
 Section 68.
