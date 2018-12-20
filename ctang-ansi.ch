@@ -70,6 +70,15 @@ Sections 5--15.
 @i comm-foo.h
 @z
 
+Section 16.
+
+@x l.148
+If your machine does not support |unsigned char| you should change
+the definition of \&{eight\_bits} to |unsigned short|.
+@^system dependencies@>
+@y
+@z
+
 Section 20.
 
 @x l.178

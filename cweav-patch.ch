@@ -204,6 +204,18 @@ Section 1.
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
+Section 26.  Improve initialization logic.
+
+@x l.366
+tok_ptr=tok_mem+1; text_ptr=tok_start+1; tok_start[0]=tok_mem+1;
+tok_start[1]=tok_mem+1;
+max_tok_ptr=tok_mem+1; max_text_ptr=tok_start+1;
+@y
+tok_ptr=max_tok_ptr=tok_mem+1;@/
+tok_start[0]=tok_start[1]=tok_mem+1;@/
+text_ptr=max_text_ptr=tok_start+1;
+@z
+
 Section 78.  Fix typo in comment.
 
 @x l.1325
