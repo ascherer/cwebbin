@@ -133,13 +133,13 @@ Section 23.
 @x l.489
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
-  if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL &&
+  if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL && @|
       (cur_file=fopen(found_filename,"r"))!=NULL) {
     /* Copy name for |#line| directives. */
     if (strlen(found_filename) < max_file_name_length) {
       strcpy(cur_file_name, found_filename);
       free(found_filename);
-    }
+    } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
 Replaced by Kpathsea `kpse_find_file'.
