@@ -198,7 +198,7 @@ Debugging output is always written to |stderr|, and begins with the string
 Section 68.
 
 @x l.1234
-show_banner=show_happiness=show_progress=1;
+show_banner=show_happiness=show_progress=true;@/
 @y
 @z
 
