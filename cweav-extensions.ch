@@ -244,7 +244,7 @@ else if (cat1==stmt) {
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
 @y
-@ Outdent after parameter declarationsi with option \.{-i}.
+@ Outdent after parameter declarations with option \.{-i}.
 
 @<Cases for |fn_decl|@>=
 if (cat1==decl) {
