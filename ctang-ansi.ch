@@ -255,9 +255,9 @@ eight_bits cur_char)
 Section 50.
 
 @x l.690
-case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
+case not_eq: C_putc('!');@+C_putc('='); out_state=normal; break;
 @y
-case non_eq: C_putc('!'); C_putc('='); out_state=normal; break;
+case non_eq: C_putc('!');@+C_putc('='); out_state=normal; break;
 @z
 
 Section 58.

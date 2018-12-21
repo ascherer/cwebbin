@@ -189,6 +189,14 @@ Section 1.
 @d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
 @z
 
+Section 16.  Typographic improvement.
+
+@x l.140
+the array |text_info|, and we use a |text_pointer| variable to refer
+@y
+the array |text_info|, and we use a \&{text\_pointer} variable to refer
+@z
+
 Section 42.  Fix bug: Don't print empty line for '-bp'.
 
 @x l.564
@@ -198,6 +206,48 @@ Section 42.  Fix bug: Don't print empty line for '-bp'.
       if (show_progress) new_line;
       printf("Done.");
     }
+@z
+
+Section 50.  Typographic improvement.
+
+@x l.681
+@ @<Cases like \.{!=}@>=
+case plus_plus: C_putc('+'); C_putc('+'); out_state=normal; break;
+case minus_minus: C_putc('-'); C_putc('-'); out_state=normal; break;
+case minus_gt: C_putc('-'); C_putc('>'); out_state=normal; break;
+case gt_gt: C_putc('>'); C_putc('>'); out_state=normal; break;
+case eq_eq: C_putc('='); C_putc('='); out_state=normal; break;
+case lt_lt: C_putc('<'); C_putc('<'); out_state=normal; break;
+case gt_eq: C_putc('>'); C_putc('='); out_state=normal; break;
+case lt_eq: C_putc('<'); C_putc('='); out_state=normal; break;
+case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
+case and_and: C_putc('&'); C_putc('&'); out_state=normal; break;
+case or_or: C_putc('|'); C_putc('|'); out_state=normal; break;
+case dot_dot_dot: C_putc('.'); C_putc('.'); C_putc('.'); out_state=normal;
+    break;
+case colon_colon: C_putc(':'); C_putc(':'); out_state=normal; break;
+case period_ast: C_putc('.'); C_putc('*'); out_state=normal; break;
+case minus_gt_ast: C_putc('-'); C_putc('>'); C_putc('*'); out_state=normal;
+    break;
+@y
+@ @<Cases like \.{!=}@>=
+case plus_plus: C_putc('+');@+C_putc('+'); out_state=normal; break;
+case minus_minus: C_putc('-');@+C_putc('-'); out_state=normal; break;
+case minus_gt: C_putc('-');@+C_putc('>'); out_state=normal; break;
+case gt_gt: C_putc('>');@+C_putc('>'); out_state=normal; break;
+case eq_eq: C_putc('=');@+C_putc('='); out_state=normal; break;
+case lt_lt: C_putc('<');@+C_putc('<'); out_state=normal; break;
+case gt_eq: C_putc('>');@+C_putc('='); out_state=normal; break;
+case lt_eq: C_putc('<');@+C_putc('='); out_state=normal; break;
+case not_eq: C_putc('!');@+C_putc('='); out_state=normal; break;
+case and_and: C_putc('&');@+C_putc('&'); out_state=normal; break;
+case or_or: C_putc('|');@+C_putc('|'); out_state=normal; break;
+case dot_dot_dot: C_putc('.');@+C_putc('.');@+C_putc('.'); out_state=normal;
+    break;
+case colon_colon: C_putc(':');@+C_putc(':'); out_state=normal; break;
+case period_ast: C_putc('.');@+C_putc('*'); out_state=normal; break;
+case minus_gt_ast: C_putc('-');@+C_putc('>');@+C_putc('*'); out_state=normal;
+    break;
 @z
 
 Addendum.
