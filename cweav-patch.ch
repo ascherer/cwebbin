@@ -226,9 +226,15 @@ tok_start[0]=tok_start[1]=tok_mem+1;@/
 text_ptr=max_text_ptr=tok_start+1;
 @z
 
-Section 78.  Fix typo in comment.
+Section 78.
 
-@x l.1325
+@x l.1308 Add comma.
+If the |per_cent| parameter is 1 a |'%'| is appended to the line
+@y
+If the |per_cent| parameter is 1, a |'%'| is appended to the line
+@z
+
+@x l.1325 Fix typo in comment.
 char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 @y
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
