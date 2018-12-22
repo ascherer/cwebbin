@@ -204,6 +204,16 @@ Section 1.
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
+Section 24.  Fix typography of type defined a moment later.
+
+@x l.342
+further details about them will be explained later. A |text_pointer| variable
+is an index into |tok_start|.
+@y
+further details about them will be explained later. A \&{text\_pointer}
+variable is an index into |tok_start|.
+@z
+
 Section 26.  Improve initialization logic.
 
 @x l.366
