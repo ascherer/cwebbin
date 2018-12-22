@@ -22,6 +22,7 @@ Section 6 (of CTANGLE and CWEAVE).
 #define textdomain(A) ""
 #define gettext(A) A
 #endif
+@#
 @z
 
 Section 10.
