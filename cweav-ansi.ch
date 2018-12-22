@@ -68,21 +68,6 @@ Sections 5--15.
 @i comm-foo.h
 @z
 
-Section 18.
-
-@x l.234
-typedef struct xref_info {
-  sixteen_bits num; /* section number plus zero or |def_flag| */
-  struct xref_info *xlink; /* pointer to the previous cross-reference */
-} xref_info;
-@y
-typedef sixteen_bits token;
-typedef struct xref_info {
-  sixteen_bits num; /* section number plus zero or |def_flag| */
-  struct xref_info *xlink; /* pointer to the previous cross-reference */
-} xref_info;
-@z
-
 Section 20.
 
 @x l.255
@@ -143,13 +128,6 @@ name_pointer p)
   p->xref = (char *)xref_ptr;
 @y
   update_node(p);
-@z
-
-Section 24.
-
-@x l.346
-typedef sixteen_bits token;
-@y
 @z
 
 Section 27.
