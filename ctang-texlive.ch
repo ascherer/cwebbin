@@ -31,6 +31,7 @@ FIXME: Apply a more generic @VERSION@ scheme.
 @d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
 @y
 @d banner _("This is CTANGLE, Version 3.64")
+  /* will be extended by the \TeX~Live |versionstring| */
 @z
 
 Section 3.
