@@ -311,7 +311,7 @@ Section 65.
 @x l.974
   while (isalpha(*++loc) || isdigit(*loc) || isxalpha(*loc) || ishigh(*loc));
 @y
-  while (isalpha((eight_bits)*++loc) || isdigit((eight_bits)*loc)
+  while (isalpha((eight_bits)*++loc) || isdigit((eight_bits)*loc) @|
       || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
 @z
 
