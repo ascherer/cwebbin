@@ -74,7 +74,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__sed} -i Makefile.unix -e \
 "/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %{?with_doc:%{__sed} -e "s/cweave fullmanual/cweave docs/" -i Makefile.unix}
-%{__sed} -i cweav-ansi.ch -e "s/, where/,where/"
+%{__sed} -i ctang-ansi.ch -e "/case not_eq/ s/@+/ /"
+%{__sed} -i cweav-ansi.ch -e "0,/char \*b/ s/, where/,where/"
 %endif
 
 %endif
