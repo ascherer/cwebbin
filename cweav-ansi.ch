@@ -287,6 +287,16 @@ Section 49.
       } } }
 @z
 
+Section 50.
+
+@x l.
+    case xref_roman: case xref_wildcard: case xref_typewriter:
+    case noop: case TeX_string: c=ccode[c]; skip_restricted(); return(c);
+@y
+    case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
+    case TeX_string: c=ccode[(eight_bits)c]; skip_restricted(); return(c);
+@z
+
 Section 55.
 
 @x l.972
