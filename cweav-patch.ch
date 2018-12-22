@@ -240,6 +240,20 @@ char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 @z
 
+Section 110.
+
+@x l.2319
+        && pp->cat!=prerangle
+@y
+        && pp->cat!=prerangle @|
+@z
+
+@x l.2323
+        && pp->cat!=ftemplate
+@y
+        && pp->cat!=ftemplate @|
+@z
+
 Section 226.  Fix bug: Avoid empty line for '-bp'.
 
 @x l.4338
