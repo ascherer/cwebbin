@@ -2,13 +2,12 @@
 
 *cwebbin* is the ansi-c/c++ implementation of silvio levy's and donald ervin
 knuth's [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html). it
-requires the contents of [the original source
-drop](http://mirrors.ctan.org/web/c_cpp/cweb/cweb.tar.gz), to
-which it applies a set of change files to fix warnings issued by modern c/c++
-compilers and to introduce advanced features. see the extensive
-[readme](README.txt) for the full story.
+requires the contents of [the 3.65 source
+drop](https://github.com/ascherer/cwebbin/tree/cweb-3.65), to which it adds
+some advanced features. see the extensive [readme](README.txt) for the full
+story.
 
-extract *cwebbin-2018.tar.gz* and add the contents of *cweb-3.64c.tar.gz* for
+extract *cwebbin-2018.tar.gz* and add the contents of *cweb-3.65.tar.gz* for
 the full set of source files.  unix/linux users should work with
 [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
@@ -20,7 +19,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-3.64c.tar.gz cweb-3.64c
+git archive -o cweb-3.65.tar.gz cweb-3.65
 git archive -o cwebbin-2018.tar.gz cwebbin-2018
 ```
 respectively, put these two tarballs in the *SOURCES* directory and
@@ -30,16 +29,6 @@ rpmbuild -ba SPECS/cwebbin.spec
 debbuild -ba SPECS/cwebbin.spec
 ```
 depending on your preferences.
-
-## plain vanilla cweb
-
-if all you want is the original cweb without any add-ons but minus heaps of
-compiler warnings, use the special option `--with ansi_only` to include only
-the minimal changes required for a clean compilation.
-```
-rpmbuild -ba SPECS/cwebbin.spec --with ansi_only
-debbuild -ba SPECS/cwebbin.spec --with ansi_only
-```
 
 ## cweb for texlive
 
