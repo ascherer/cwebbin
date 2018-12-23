@@ -208,19 +208,16 @@ msgstr "! Non posso aprire il file include"
 
 #: cweav-i18n.ch:311
 msgid "! Cannot open index file "
-msgstr "! Non posso aprire il file per l'indice"
+msgstr "! Non posso aprire il file per l'indice "
 
 #: comm-i18n.ch:68
 msgid "! Cannot open input file "
 msgstr "! Non posso aprire il file di input "
 
-#: comm-i18n.ch:252 comm-i18n.ch:258 cweav-i18n.ch:381
+#: comm-i18n.ch:252 comm-i18n.ch:258 ctang-i18n.ch:69 ctang-i18n.ch:251
+#: cweav-i18n.ch:381
 msgid "! Cannot open output file "
 msgstr "! Non posso aprire il file di output "
-
-#: ctang-i18n.ch:69 ctang-i18n.ch:251
-msgid "! Cannot open output file:"
-msgstr "! Non posso aprire il file di output:"
 
 #: cweav-i18n.ch:317
 msgid "! Cannot open section file "

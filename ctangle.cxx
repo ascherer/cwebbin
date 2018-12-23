@@ -752,7 +752,7 @@ char x[BUFSIZ],y[BUFSIZ];
 int x_size,y_size,comparison;
 
 if((check_file= fopen(check_file_name,"r"))==NULL)
-fatal(_("! Cannot open output file:"),check_file_name);
+fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*100:*/
@@ -798,7 +798,7 @@ for(an_output_file= end_output_files;an_output_file> cur_out_file;){
 an_output_file--;
 sprint_section_name(output_file_name,*an_output_file);
 if((C_file= fopen(check_file_name,"wb"))==NULL)
-fatal(_("! Cannot open output file:"),check_file_name);
+fatal(_("! Cannot open output file "),check_file_name);
 
 printf("\n(%s)",output_file_name);update_terminal;
 cur_line= 1;
@@ -820,7 +820,7 @@ char x[BUFSIZ],y[BUFSIZ];
 int x_size,y_size,comparison;
 
 if((check_file= fopen(check_file_name,"r"))==NULL)
-fatal(_("! Cannot open output file:"),check_file_name);
+fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*100:*/

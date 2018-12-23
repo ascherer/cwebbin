@@ -214,17 +214,14 @@ msgstr "! Kann die Indexdatei nicht öffnen: "
 msgid "! Cannot open input file "
 msgstr "! Kann Eingabedatei nicht öffnen: "
 
-#: comm-i18n.ch:252 comm-i18n.ch:258 cweav-i18n.ch:381
+#: comm-i18n.ch:252 comm-i18n.ch:258 ctang-i18n.ch:69 ctang-i18n.ch:251
+#: cweav-i18n.ch:381
 msgid "! Cannot open output file "
-msgstr "! Kann Ausgabedatei nicht öffnen "
-
-#: ctang-i18n.ch:69 ctang-i18n.ch:251
-msgid "! Cannot open output file:"
-msgstr "! Kann Ausgabedatei nicht öffnen:"
+msgstr "! Kann Ausgabedatei nicht öffnen: "
 
 #: cweav-i18n.ch:317
 msgid "! Cannot open section file "
-msgstr "! Kann die Abschnittdatei nicht öffnen "
+msgstr "! Kann die Abschnittdatei nicht öffnen: "
 
 #: comm-i18n.ch:38
 msgid "! Change file ended after @x"

@@ -172,12 +172,9 @@ msgstr ""
 msgid "! Cannot open input file "
 msgstr ""
 
-#: comm-i18n.ch:252 comm-i18n.ch:258 cweav-i18n.ch:381
+#: comm-i18n.ch:252 comm-i18n.ch:258 ctang-i18n.ch:69 ctang-i18n.ch:251
+#: cweav-i18n.ch:381
 msgid "! Cannot open output file "
-msgstr ""
-
-#: ctang-i18n.ch:69 ctang-i18n.ch:251
-msgid "! Cannot open output file:"
 msgstr ""
 
 #: cweav-i18n.ch:317

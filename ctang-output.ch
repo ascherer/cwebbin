@@ -40,7 +40,7 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     if((C_file=fopen(check_file_name,"wb"))==NULL)
-      fatal("! Cannot open output file:",check_file_name);
+      fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
     printf("\n(%s)",output_file_name); update_terminal;
     cur_line=1;
@@ -81,7 +81,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
   int x_size,y_size,comparison;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal("! Cannot open output file:",check_file_name);
+    fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
   @<Compare the temporary output to the previous output@>@;
