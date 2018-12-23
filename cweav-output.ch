@@ -1,6 +1,6 @@
 Changes for CWEAVE.W by Andreas Scherer, November 1, 2018.
 
-This set of chagnes modifies the output behaviour of the CWEB system.
+This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
 manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
@@ -87,10 +87,10 @@ Additional material.
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a
-\.{Makefile} which automatically takes care of the temporal dependecies
+\.{Makefile} that automatically takes care of the temporal dependecies
 between the different source modules.  It is suitable that \.{CWEB} doesn't
 create new output for all existing files, when there are only changes to
-some of them.  Thus the \.{make} process will only recompile those modules
+some of them. Thus the \.{make} process will only recompile those modules
 where necessary. The idea and basic implementation of this mechanism can
 be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
