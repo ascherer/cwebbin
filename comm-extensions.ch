@@ -149,8 +149,8 @@ know a little bit more about the reasons why a program failed.  The four
 levels of return indicated by the |history| value are very suitable for
 this purpose.  Here, for instance, we pass the operating system a status
 of~0 if and only if the run was a complete success.  Any warning or error
-message will result in a higher return value, so {\mc AREXX} scripts can be
-made sensitive to these conditions.
+message will result in a higher return value, so that {\mc AREXX} scripts
+can be made sensitive to these conditions.
 @^system dependencies@>
 
 @d RETURN_OK     0 /* No problems, success */
@@ -164,10 +164,10 @@ made sensitive to these conditions.
   else return(0);
 @y
   switch(history) {
-  case harmless_message: return(RETURN_WARN);
-  case error_message: return(RETURN_ERROR);
-  case fatal_message: return(RETURN_FAIL);
-  default: return(RETURN_OK);
+  case harmless_message: return RETURN_WARN;
+  case error_message: return RETURN_ERROR;
+  case fatal_message: return RETURN_FAIL;
+  default: return RETURN_OK;
   }
 @z
 
@@ -190,7 +190,7 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1226
+@x l.1227
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[128]; /* an option for each 7-bit code */
@@ -218,6 +218,7 @@ Section 70.
 @x l.1265+ and l.214 of COMM-PATCH.CH
   strcpy(change_file_name,"/dev/null");
 @y
+@#
 #if defined DEV_NULL
   strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
   change_file_name[max_file_name_length-2]='\0';
@@ -248,7 +249,7 @@ Section 70.
 
 Section 74.
 
-@x l.1344 and l.518 of COMM-ANSI.CH
+@x l.1344
 @ @<Handle flag...@>=
 {
   if (**argv=='-') flag_change=0;
@@ -296,7 +297,7 @@ to repeat the defaults.
 static boolean set_path(char *include_path,char *environment)
 {
   char string[max_path_length+2];
-
+@#
 #ifdef CWEBINPUTS
   strncpy(include_path,CWEBINPUTS,max_path_length);
   include_path[max_path_length]='\0';

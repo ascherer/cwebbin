@@ -171,7 +171,7 @@ Replaced by Kpathsea `kpse_find_file'.
 
 Section 67.
 
-@x l.1212 and l.210 of COMM-EXTENSIONS.CH
+@x l.1212
 the names of those files. Most of the 128 flags are undefined but available
 for future extensions.
 @y
@@ -208,7 +208,6 @@ Section 68.
 @x l.1234
 show_banner=show_happiness=show_progress=1;
 @y
-show_banner=show_happiness=show_progress=0;
 @z
 
 Section 71.
@@ -234,7 +233,7 @@ the other arrays for the argument.
 
 Section 74.
 
-@x l.1344 and l.303 of COMM-EXTENSIONS.CH
+@x l.1344 and l.260 of COMM-EXTENSIONS.CH
 @<Handle flag...@>=
 {
 @y
@@ -248,7 +247,7 @@ Section 74.
     @<Display version information and exit@>@;
 @z
 
-@x l.1348 and l.305 of COMM-EXTENSIONS.CH
+@x l.1348
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -284,12 +283,12 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.323 of COMM-EXTENSIONS.CH
+@x l.279 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.331 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
+@x l.287 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -303,7 +302,7 @@ to repeat the defaults.
 static boolean set_path(char *include_path,char *environment)
 {
   char string[max_path_length+2];
-
+@#
 #ifdef CWEBINPUTS
   strncpy(include_path,CWEBINPUTS,max_path_length);
   include_path[max_path_length]='\0';
@@ -324,7 +323,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.362 of COMM-EXTENSIONS.CH
+@x l.318 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 

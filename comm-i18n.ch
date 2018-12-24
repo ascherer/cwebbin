@@ -306,7 +306,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1418 and l.352 of COMM-EXTENSIONS.CH
+@x l.1418 and l.308 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print(_("! Include path too long")); return(0);

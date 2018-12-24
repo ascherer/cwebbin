@@ -175,7 +175,7 @@ Activate this, if only the changed modules should be printed.
 This change can not be applied when `tie' is used
 (TOC file can not be typeset).
 
-x l.46
+x l.48
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only sections that change
@@ -252,7 +252,7 @@ case minus_gt_ast: C_putc('-');@+C_putc('>');@+C_putc('*'); out_state=normal;
 
 Addendum.
 
-@x l.1546
+@x l.1550
 @** Index.
 @y
 @** Extensions for modern \.{CWEB}.
@@ -263,7 +263,7 @@ make \.{CWEB} adhere to modern coding standards and introduce new or improved
 features.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{96.~Index}'', and
+section should have the same number as the original ``\&{96.~Index},'' and
 additional material follows below.
 
 @** Index.

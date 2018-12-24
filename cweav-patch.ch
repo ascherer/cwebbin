@@ -190,7 +190,7 @@ Activate this, if only the changed modules should be printed.
 This change cannot be applied when `tie' is used
 (TOC file can not be typeset).
 
-x l.51
+x l.54
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only changed modules
@@ -198,7 +198,7 @@ z
 
 Section 1.
 
-@x l.64
+@x l.69
 @d banner "This is CWEAVE (Version 3.64)\n"
 @y
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
@@ -254,7 +254,7 @@ eight_bits cat_index;
 {int c; for (c=0;c<256;c++) strcpy(cat_name[c],"UNKNOWN");}
 @z
 
-Section 110.
+Section 110.  Nicer line breaks.
 
 @x l.2319
         && pp->cat!=prerangle
@@ -427,7 +427,7 @@ if (show_happiness) {
 }
 @z
 
-Section 230.
+Section 230.  Use strict upper bound.
 
 @x l.4381
 for (c=0; c<=255; c++) bucket[c]=NULL;
@@ -448,7 +448,7 @@ make \.{CWEB} adhere to modern coding standards and introduce new or improved
 features.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{250.~Index}'', and 
+section should have the same number as the original ``\&{250.~Index},'' and
 additional material follows below.
 
 @** Index.

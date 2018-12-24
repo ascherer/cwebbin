@@ -325,7 +325,7 @@ int ispref@t\2\2@>) /* are we adding a prefix or a full name? */
 
 Section 48.
 
-@x l.887
+@x l.885
 void
 extend_section_name(p,first,last,ispref)
 name_pointer p; /* name to be extended */
@@ -555,12 +555,12 @@ make \.{CWEB} adhere to modern coding standards and introduce new or improved
 features.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{82.~Index}'', and 
+section should have the same number as the original ``\&{82.~Index},'' and
 additional material follows below.
 
-@* Function declarations. Here are declarations, conforming to {\mc
-ANSI~C}, of all functions in this code that appear in |"common.h"| and
-thus should agree with \.{CTANGLE} and \.{CWEAVE}.
+@* Function declarations. Here are declarations---conforming to
+{\mc ANSI~C}---of all functions in this code that appear in |"common.h"|
+and thus should agree with \.{CTANGLE} and \.{CWEAVE}.
 
 @<Predecl...@>=
 boolean get_line(void);@/

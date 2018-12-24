@@ -13,7 +13,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Material in limbo.
 
-@x l.54
+@x l.55
 @s not_eq normal @q unreserve a C++ keyword @>
 @y
 @z
@@ -289,7 +289,7 @@ Section 49.
 
 Section 50.
 
-@x l.
+@x l.897
     case xref_roman: case xref_wildcard: case xref_typewriter:
     case noop: case TeX_string: c=ccode[c]; skip_restricted(); return(c);
 @y
@@ -401,7 +401,7 @@ name_pointer p) /* print anomalies in subtree |p| */
 
 Section 78.
 
-@x l.1323 and l.212 of CWEAV-PATCH.CH
+@x l.1323 and l.240 of CWEAV-PATCH.CH
 void
 flush_buffer(b,per_cent,carryover)
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
@@ -655,7 +655,7 @@ make_underlined(@t\1\1@>
 scrap_pointer p@t\2\2@>)
 @z
 
-Section 11⅘.
+Section 114.
 
 @x l.2496
 void  underline_xref();

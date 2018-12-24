@@ -34,6 +34,8 @@ Section 4.
 @d buf_size 1000 /* for \.{CWEAVE} and \.{CTANGLE} */
 @z
 
+Section 63.  Parse C++ wide character strings.
+
 @x l.925
     else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"')))
 @y
@@ -41,6 +43,8 @@ Section 4.
            || ((c=='L' || c=='u' || c=='U')&&(*loc=='\'' || *loc=='"'))@|
            || ((c=='u' && *loc=='8')&&(*(loc+1)=='\'' || *(loc+1)=='"')))
 @z
+
+Section 67.  Parse C++ wide character strings.
 
 @x l.1010
   if (delim=='L') { /* wide character constant */

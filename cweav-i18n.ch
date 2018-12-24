@@ -389,7 +389,7 @@ Section 226.
     fatal(_("! Cannot open section file "),scn_file_name);
 @z
 
-@x l.4338+ and l.222 of CWEAV-PATCH.CH
+@x l.4338+ and l.426 of CWEAV-PATCH.CH
   printf("Done.");
 @y
   fputs(_("Done."),stdout);

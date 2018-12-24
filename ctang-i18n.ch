@@ -69,7 +69,7 @@ Section 42.
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564+ and l.199 of CTANG-PATCH.CH
+@x l.564+ and l.205 of CTANG-PATCH.CH
       printf("Done.");
 @y
       fputs(_("Done."),stdout);
