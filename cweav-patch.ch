@@ -240,6 +240,20 @@ char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
 @z
 
+Sections 97 and 98.  Initialize complete array 'cat_name'.
+
+@x l.1716
+eight_bits cat_index;
+
+@ @<Set in...@>=
+    for (cat_index=0;cat_index<255;cat_index++)
+      strcpy(cat_name[cat_index],"UNKNOWN");
+@y
+
+@ @<Set in...@>=
+{int c; for (c=0;c<256;c++) strcpy(cat_name[c],"UNKNOWN");}
+@z
+
 Section 110.
 
 @x l.2319
@@ -411,6 +425,14 @@ if (show_happiness) {
   if (show_progress) new_line;
   printf("Done.");
 }
+@z
+
+Section 230.
+
+@x l.4381
+for (c=0; c<=255; c++) bucket[c]=NULL;
+@y
+for (c=0; c<256; c++) bucket[c]=NULL;
 @z
 
 Addendum.
