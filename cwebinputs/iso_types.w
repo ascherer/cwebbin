@@ -73,12 +73,10 @@
 @s constexpr int
 @s decltype int
 @s false int
-@s noexcept int
-@s static_assert int
-@s thread_local int
-@s true int
-@s override int
 @s final int
+@s noexcept int
+@s override int
+@s true int
 
 @q Fundamental types of C++99 and C++11, see @>
 @q http://en.cppreference.com/w/cpp/language/types @>
