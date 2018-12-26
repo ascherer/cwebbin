@@ -1017,7 +1017,7 @@ if (include_depth) { /* at least one new file was opened */
   if (include_depth) err_print("! Only @@$ is allowed in aux and bux files");
   finish_line(); loc=buffer; /* now reading beginning of line 1 */
 }
-if ((aux_file=fopen(tex_file_name,"w"))==NULL)
+if ((aux_file=fopen(tex_file_name,"wb"))==NULL)
   fatal("! Cannot open aux output file ",tex_file_name);
 
 @z
@@ -1258,7 +1258,7 @@ name_done:
 
 @x
   if (change_exists) {
-    @<Tell about changed sections@>; finish_line(); finish_line();
+    @<Tell about changed sections@>@; finish_line(); finish_line();
   }
 @y
 @z
