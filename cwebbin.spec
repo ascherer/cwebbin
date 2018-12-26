@@ -8,6 +8,8 @@
 %bcond_with ansi_only
 # Prepare CWEBbin as base for TeXLive.
 %bcond_with texlive
+# Mogrify CWEAVE into its evil twin CTWILL.
+%bcond_with ctwill
 
 Name: cwebbin
 Summary: The CWEBbin extension of the CWEB package
@@ -51,6 +53,8 @@ Release: 15
 	-e TEXMFDIR=%{texmf} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
+%{!?__tie:%global __tie %(which tie)}
+
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
@@ -78,6 +82,10 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__sed} -i cweav-ansi.ch -e "0,/char \*b/ s/, where/,where/"
 %endif
 
+%endif
+
+%if %{with ctwill}
+%{__tie} -m ctwill.w cweave.w cweav-twill.ch
 %endif
 
 %build
