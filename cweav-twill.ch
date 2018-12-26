@@ -22,9 +22,9 @@
 @z
 
 @x
-\def\title{CWEAVE (Version 3.64)}
+\def\title{CWEAVE (Version 3.64 [CWEBbin 2018])}
 @y
-\def\title{CTWILL (Version 3.64)}
+\def\title{CTWILL (Version 3.64 [CWEBbin 2018])}
 @z
 
 @x
@@ -45,7 +45,7 @@ Crusius, and others who have contributed improvements.
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
-@d banner "This is CWEAVE (Version 3.64)\n"
+@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @y
 This is the \.{CTWILL} program by D. E. Knuth, based
 on \.{CWEAVE} by Silvio Levy and D.~E. Knuth. It is also based on
@@ -64,7 +64,7 @@ reprinted in {\sl Digital Typography\/} (1999), 225--245.
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 modified. The version number parallels the corresponding version of \.{CWEAVE}.
 
-@d banner "This is CTWILL (Version 3.64)\n"
+@d banner "This is CTWILL (Version 3.64 [CWEBbin 2018])"
 @z
 
 @x
@@ -599,13 +599,15 @@ skip_restricted()
 `\.{\\input ctwimac}'. Or, if the user has specified proofing by
 saying \.{+P} on the command line, it's `\.{\\input proofmac}',
 a set of macros used when debugging mini-index entries.
+
+@d proofing flags['P']
 @z
 
 @x
 *out_ptr='c'; tex_printf("\\input cwebma");
 @y
 *out_ptr='c';
-if (flags['P']) tex_printf("\\input proofma");
+if (proofing) tex_printf("\\input proofma");
 else tex_printf("\\input ctwima");
 @z
 
@@ -1251,12 +1253,6 @@ name_done:
 @z
 
 @x
-If the user has set the |no_xref| flag (the \.{-x} option on the command line),
-@y
-If the user has set the |no_xref| flag (the |-x| option on the command line),
-@z
-
-@x
   if (change_exists) {
     @<Tell about changed sections@>; finish_line(); finish_line();
   }
@@ -1326,7 +1322,7 @@ not_an_identifier: out_name(cur_name,0); goto name_done;
 @x
 out_name(cur_name,1);
 @y
-if (flags['P']) out_name(cur_name,1);
+if (proofing) out_name(cur_name,1);
 else {
   out('{');
   {char *j;
