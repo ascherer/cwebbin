@@ -606,11 +606,10 @@ a set of macros used when debugging mini-index entries.
 @z
 
 @x
-*out_ptr='c'; tex_printf("\\input cwebma");
+tex_puts("cwebma");
 @y
-*out_ptr='c';
-if (proofing) tex_printf("\\input proofma");
-else tex_printf("\\input ctwima");
+if (proofing) tex_puts("proofma");
+else tex_puts("ctwima");
 @z
 
 @x
@@ -838,11 +837,17 @@ while (ast_count) {
 @z
 
 @x
-  make_underlined(pp); big_app1(pp); big_app(indent); app(indent);
+  make_underlined(pp); big_app1(pp);
+  if (indent_param_decl) {
+    big_app(indent); app(indent);
+  }
 @y
   make_underlined(pp);
   make_ministring(0);
-  big_app1(pp); big_app(indent); app(indent);
+  big_app1(pp);
+  if (indent_param_decl) {
+    big_app(indent); app(indent);
+  }
 @z
 
 @x
