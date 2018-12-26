@@ -68,9 +68,9 @@ modified. The version number parallels the corresponding version of \.{CWEAVE}.
 @z
 
 @x
-extern char* strncpy(); /* copy up to $n$ string characters */
+#include <string.h>
 @y
-extern char* strncpy(); /* copy up to $n$ string characters */
+#include <string.h>
 
 @ Here is a sort of user manual for \.{CTWILL}---which is exactly like
 \.{CWEAVE} except that it produces much better documentation, for which you
@@ -200,6 +200,8 @@ can also be replaced by a string. For example,
 $$\.{@@\$printf "<stdio.h>" \\zip@@>}$$
 will generate a mini-index entry like `\\{printf}, \.{<stdio.h>}.'.
 
+\vfill\eject
+
 A special ``proofmode'' is provided so that you can check \.{CTWILL}'s
 conclusions about cross-references. Run \.{CTWILL} with the
 flag \.{+P}, and \TeX\ will produce a specially formatted document
@@ -288,7 +290,7 @@ ms_mode=0;
 into an internal number for the |prog_no| field of a meaning.
 It advances |loc| past the title found.
 
-@c sixteen_bits title_lookup()
+@c static sixteen_bits title_lookup(void)
 {
   char *first,*last; /* boundaries */
   int balance; /* excess of left over right */
@@ -329,9 +331,9 @@ when an identifier is redeclared. It gets the |tex_part| from
 |ministring_buf|.
 
 @c
-void
-new_meaning(p)
-  name_pointer p;
+static void
+new_meaning(
+  name_pointer p)
 {
   struct perm_meaning *q=p-name_dir+cur_meaning;
   ms_mode=0;
@@ -351,8 +353,8 @@ new_meaning(p)
 @ @<Write the new meaning to the \.{.aux} file@>=
 {@+int n=q->perm.prog_no;
   fprintf(aux_file,"@@$%.*s %.*s",@|
-     (p+1)->byte_start-p->byte_start,p->byte_start,@|
-      (title_code[n]+1)->byte_start-title_code[n]->byte_start,
+     (int)((p+1)->byte_start-p->byte_start),p->byte_start,@|
+      (int)((title_code[n]+1)->byte_start-title_code[n]->byte_start),
          title_code[n]->byte_start);
   if (*(title_code[n]->byte_start)=='{') fprintf(aux_file,"%d",q->perm.sec_no);
   fprintf(aux_file," %s@@>\n",q->perm.tex_part);
@@ -360,10 +362,10 @@ new_meaning(p)
 @z
 
 @x
-  p->ilk=t; p->xref=(char*)xmem;
+  p->ilk=t; init_node(p);
 @y
   struct perm_meaning *q=p-name_dir+cur_meaning;
-  p->ilk=t; p->xref=(char*)xmem;
+  p->ilk=t; init_node(p);
   q->stamp=0;
   q->link=NULL;
   q->perm.id=p;
@@ -445,11 +447,11 @@ ccode['r']=ccode['R']=right_start;
 @z
 
 @x
-void   skip_limbo();
+static void skip_limbo(void);@/
 
 @ @c
 @y
-void   skip_limbo();
+static void skip_limbo(void);@/
 
 @ We look for a clue about the program's title, because this will become
 part of all meanings.
@@ -489,17 +491,17 @@ part of all meanings.
 @z
 
 @x
-    case noop: case TeX_string: c=ccode[c]; skip_restricted(); return(c);
+    case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
 @y
+    case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
     case meaning: case suppress:
-    case noop: case TeX_string: c=ccode[(eight_bits)c]; skip_restricted(); return(c);
 @z
 
 @x
-skip_restricted()
+skip_restricted(void)
 {
 @y
-skip_restricted()
+skip_restricted(void)
 { int c=ccode[(eight_bits)*(loc-1)];
 @z
 
@@ -673,14 +675,14 @@ null_scrap.trans=&tok_start[0];
 @z
 
 @x
-  fflush(stdout);
+  update_terminal;
 }
 @y
-  printf("|\n"); fflush(stdout);
+  printf("|\n"); update_terminal;
 }
 @#
-void pr_txt(k)
-  int k;
+static void pr_txt(
+  int k)
 { print_text(&tok_start[k]); }
 @z
 
@@ -688,8 +690,6 @@ void pr_txt(k)
 the |for| loop below.
 
 @c
-void
-make_reserved(p) /* make the first identifier in |p->trans| like |int| */
 @y
 the |for| loop below.
 
@@ -697,9 +697,8 @@ We use the fact that |make_underlined| has been called immediately preceding
 |make_reserved|, hence |tok_loc| has been set.
 
 @c
-token_pointer tok_loc; /* where the first identifier appears */
-void
-make_reserved(p) /* make the first identifier in |p->trans| like |int| */
+static token_pointer tok_loc; /* where the first identifier appears */
+@#
 @z
 
 @x
@@ -726,8 +725,8 @@ appear between parentheses or brackets. The calling routine should set
 |ident_seen=0| first. (This is admittedly tricky.)
 
 @c boolean ident_seen;
-boolean app_supp(p)
-  text_pointer p;
+static boolean app_supp(
+  text_pointer p)
 { token_pointer j;
   text_pointer q;
   if (ident_seen && **p>=tok_flag) {
@@ -759,9 +758,9 @@ existing productions, which force the translated texts to have a
 structure that's decodable even though the underlying |cat| and |mathness|
 codes have disappeared.
 
-@c void
-make_ministring(l)
-  int l; /* 0, 1, or 2 */
+@c static void
+make_ministring(
+  int l) /* 0, 1, or 2 */
 {
   text_pointer q,r;
   name_pointer cn;
@@ -1199,11 +1198,11 @@ placed on the list, unless they are reserved and their current
 }
 
 @ @<Predec...@>=
-void   out_mini();
+static void out_mini(meaning_struct *);@/
 
-@ @c void
-out_mini(m)
-  meaning_struct *m;
+@ @c static void
+out_mini(
+  meaning_struct *m)
 { char s[60];
   name_pointer cur_name=m->id;
   if (m->prog_no==0) { /* reference within current program */
@@ -1211,9 +1210,9 @@ out_mini(m)
     sprintf(s,"\\[%d",m->sec_no);
   } else { name_pointer n=title_code[m->prog_no];
     if (*(n->byte_start)=='{')
-      sprintf(s,"\\]%.*s%d",(n+1)->byte_start-n->byte_start,n->byte_start,
+      sprintf(s,"\\]%.*s%d",(int)((n+1)->byte_start-n->byte_start),n->byte_start,
              m->sec_no);
-    else sprintf(s,"\\]%.*s",(n+1)->byte_start-n->byte_start,n->byte_start);
+    else sprintf(s,"\\]%.*s",(int)((n+1)->byte_start-n->byte_start),n->byte_start);
   }
   out_str(s); out(' ');
   @<Mini-output the name at |cur_name|@>;
