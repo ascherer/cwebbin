@@ -469,6 +469,14 @@ part of all meanings.
     }
 @z
 
+CTWILL hickups on comment and produces unmatched '$' in mini-index.
+
+@x l.627 and l.219 of CWEAV-ANSI.CH
+skip_TeX(void) /* skip past pure \TEX/ code */
+@y
+skip_TeX(void)
+@z
+
 @x
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
 @y
