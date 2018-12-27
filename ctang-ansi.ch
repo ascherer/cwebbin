@@ -67,6 +67,8 @@ Sections 5--15.
 @x l.127
 @i common.h
 @y
+First comes general stuff:
+
 @i comm-foo.h
 @z
 
