@@ -1,0 +1,7 @@
+@$argc {{\sc COMMON.W}}67 \&{int}@>
+@$argv {{\sc COMMON.W}}67 \&{char} ${**}$@>
+@$common_init {{\sc COMMON.W}}4 \&{void} (\,)@>
+@$phase {{\sc COMMON.W}}3 \&{int}@>
+@$program {{\sc COMMON.W}}2 \&{boolean}@>
+@$wrap_up {{\sc COMMON.W}}60 \&{int} (\,)@>
+@$use_language {{\sc COMMON.W}}67 \&{const char} ${*}$@>
