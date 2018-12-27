@@ -19,6 +19,7 @@
 % Here is TeX material that gets inserted after \input cwebmac
 @y
 % Here is TeX material that gets inserted after \input ctwimac
+\def\contentspagenumber{0} % default page number for table of contents
 @z
 
 @x
