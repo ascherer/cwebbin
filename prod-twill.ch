@@ -48,7 +48,7 @@ or |cast|.
 Rule 123: The mathness of the |colon| or |base| changes to `yes'.
 @y
 Rule 123: The mathness of the |colon| or |base| changes to `yes'.
- 
+
 Rule 200: The |exp| must not be immediately followed by |lpar| or~|exp|.
 
 Rule 202: The |raw_int| must be immediately followed by |semi| or |comma|.
