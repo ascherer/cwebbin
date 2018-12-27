@@ -1,0 +1,37 @@
+@$memcmp "<string.h>" \&{int} (\,)@>
+@$strcmp "<string.h>" \&{int} (\,)@>
+@$strcpy "<string.h>" \&{char} ${*}$ (\,)@>
+@$strlen "<string.h>" \&{size\_t} (\,)@>
+@$strncmp "<string.h>" \&{int} (\,)@>
+@$strncpy "<string.h>" \&{char} ${*}$ (\,)@>
+
+@$BUFSIZ "<stdio.h>" =macro@>
+@$fclose "<stdio.h>" \&{int} (\,)@>
+@$feof "<stdio.h>" \&{int} (\,)@>
+@$fflush "<stdio.h>" \&{int} (\,)@>
+@$fopen "<stdio.h>" \&{FILE} ${*}$@>
+@$fprintf "<stdio.h>" \&{int} (\,)@>
+@$fread "<stdio.h>" \&{size\_t} (\,)@>
+@$fwrite "<stdio.h>" \&{size\_t} (\,)@>
+@$printf "<stdio.h>" \&{int} (\,)@>
+@$putc "<stdio.h>" \&{int} (\,)@>
+@$putchar "<stdio.h>" \&{int} (\,)@>
+@$puts "<stdio.h>" \&{int} (\,)@>
+@$rename "<stdio.h>" \&{int} (\,)@>
+@$remove "<stdio.h>" \&{int} (\,)@>
+@$sprintf "<stdio.h>" \&{int} (\,)@>
+@$stdout "<stdio.h>" \&{FILE} ${*}$@>
+
+@$exit "<stdlib.h>" \&{void} (\,)@>
+
+@$isalpha "<ctype.h>" \&{int} (\,)@>
+@$isdigit "<ctype.h>" \&{int} (\,)@>
+@$islower "<ctype.h>" \&{int} (\,)@>
+@$isspace "<ctype.h>" \&{int} (\,)@>
+@$isupper "<ctype.h>" \&{int} (\,)@>
+@$isxdigit "<ctype.h>" \&{int} (\,)@>
+@$tolower "<ctype.h>" \&{int} (\,)@>
+@$toupper "<ctype.h>" \&{int} (\,)@>
+
+@$gettext "<libintl.h>" \&{char} ${*}$ (\,)@>
+@$textdomain "<libintl.h>" \&{char} ${*}$ (\,)@>
