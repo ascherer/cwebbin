@@ -87,6 +87,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with ctwill}
 %{__tie} -m ctwill.w cweave.w cweav-patch.ch cweav-ansi.ch \
 	cweav-extensions.ch cweav-output.ch cweav-twill.ch
+%{__tie} -m prod-twill.w prod.w prod-twill.ch
 %endif
 
 %build
