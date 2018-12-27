@@ -994,20 +994,16 @@ while (!input_has_ended) @<Translate the current section@>;
 
 @ @<Glob...@>=
 FILE *aux_file;
+char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
-@ We clobber |tex_file_name| to make the name of the \.{.aux} and
-\.{.bux} files. Too bad if the user has specified an output file that
-doesn't end with `\.{.tex}'.  I would have used |alt_web_file_name|,
-if \.{common.w} had make that public; but I resisted the temptation to
-change \.{common.w}.
-
-@<Read the \.{.aux} file, if present; then open it for output@>=
-strcpy(tex_file_name+strlen(tex_file_name)-4,".bux");
+@ @<Read the \.{.aux} file, if present; then open it for output@>=
+strncpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
+strcat(aux_file_name,".bux");
 include_depth=1; /* we simulate \.{@@i} */
-strcpy(cur_file_name,tex_file_name); /* first in, third out */
+strcpy(cur_file_name,aux_file_name); /* first in, third out */
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
-strcpy(tex_file_name+strlen(tex_file_name)-4,".aux");
-strcpy(cur_file_name,tex_file_name); /* second in, second out */
+strcpy(aux_file_name+strlen(aux_file_name)-4,".aux");
+strcpy(cur_file_name,aux_file_name); /* second in, second out */
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
 strcpy(cur_file_name,"system.bux"); /* third in, first out */
 if ((cur_file=fopen(cur_file_name,"r"))) cur_line=0;
@@ -1017,8 +1013,8 @@ if (include_depth) { /* at least one new file was opened */
   if (include_depth) err_print("! Only @@$ is allowed in aux and bux files");
   finish_line(); loc=buffer; /* now reading beginning of line 1 */
 }
-if ((aux_file=fopen(tex_file_name,"wb"))==NULL)
-  fatal("! Cannot open aux output file ",tex_file_name);
+if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
+  fatal("! Cannot open aux output file ",aux_file_name);
 
 @z
 
