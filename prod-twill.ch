@@ -4,6 +4,14 @@
 % This file is part of CTWILL, a modification of CWEB.
 @z
 
+TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
+
+@x
+\fi \newcount\prodno \newdimen\midcol \let\+\relax \ifon
+@y
+\newcount\prodno \newdimen\midcol \let\+\relax
+@z
+
 @x
 \advance\midcol-8pt
 \+& |typedef_like| \alt|int_like| |cast| \alt|comma| |semi| &
