@@ -46,7 +46,7 @@ Crusius, and others who have contributed improvements.
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
+@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])")
 @y
 This is the \.{CTWILL} program by D. E. Knuth, based
 on \.{CWEAVE} by Silvio Levy and D.~E. Knuth. It is also based on
@@ -65,7 +65,7 @@ reprinted in {\sl Digital Typography\/} (1999), 225--245.
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 modified. The version number parallels the corresponding version of \.{CWEAVE}.
 
-@d banner "This is CTWILL (Version 3.64 [CWEBbin 2018])"
+@d banner _("This is CTWILL (Version 3.64 [CWEBbin 2018])")
 @z
 
 @x
@@ -649,10 +649,10 @@ the section is changed, we output `\.{\\*}' just after the number.
 @z
 
 @x
-        default: err_print("! Double @@ should be used in limbo");
+        default: err_print(_("! Double @@ should be used in limbo"));
 @y
         case right_start: right_start_switch=1; break;
-        default: err_print("! Double @@ should be used in limbo");
+        default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
 @x
@@ -1342,14 +1342,14 @@ else {
 @z
 
 @x
-  printf("%ld bytes (out of %ld)\n",
+  printf(_("%ld bytes (out of %ld)\n"),
             (long)(byte_ptr-byte_mem),(long)max_bytes);
 @y
-  printf("%ld bytes (out of %ld)\n",
+  printf(_("%ld bytes (out of %ld)\n"),
             (long)(byte_ptr-byte_mem),(long)max_bytes);
-  printf("%ld temp meanings (out of %ld)\n",
+  printf(_("%ld temp meanings (out of %ld)\n"),
             (long)(max_temp_meaning_ptr-temp_meaning_stack),
             (long)max_meanings);
-  printf("%ld titles (out of %ld)\n",
+  printf(_("%ld titles (out of %ld)\n"),
             (long)(title_code_ptr-title_code),(long)max_titles);
 @z
