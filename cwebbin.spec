@@ -89,6 +89,7 @@ and Donald Knuth for Literate Programming in C/C++.
 	cweav-extensions.ch cweav-output.ch cweav-i18n.ch \
 	cweav-twill.ch
 %{__tie} -m prod-twill.w prod.w prod-twill.ch
+%{__msgfmt} po/de/ctwill.po -o po/de/ctwill.mo
 %endif
 
 %build
