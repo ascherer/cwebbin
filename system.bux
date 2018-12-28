@@ -1,4 +1,5 @@
 @$memcmp "<string.h>" \&{int} (\,)@>
+@$strcat "<string.h>" \&{char} ${*}$ (\,)@>
 @$strcmp "<string.h>" \&{int} (\,)@>
 @$strcpy "<string.h>" \&{char} ${*}$ (\,)@>
 @$strlen "<string.h>" \&{size\_t} (\,)@>
@@ -11,6 +12,7 @@
 @$fflush "<stdio.h>" \&{int} (\,)@>
 @$fopen "<stdio.h>" \&{FILE} ${*}$@>
 @$fprintf "<stdio.h>" \&{int} (\,)@>
+@$fputs "<stdio.h>" \&{int} (\,)@>
 @$fread "<stdio.h>" \&{size\_t} (\,)@>
 @$fwrite "<stdio.h>" \&{size\_t} (\,)@>
 @$printf "<stdio.h>" \&{int} (\,)@>
