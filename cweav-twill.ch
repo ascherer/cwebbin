@@ -305,10 +305,10 @@ It advances |loc| past the title found.
       if (*loc=='}' && --balance==0) break;
       if (*loc=='{') balance++;
     }
-  } else err_print("! Title should be enclosed in braces or doublequotes");
+  } else err_print(_("! Title should be enclosed in braces or doublequotes"));
   last=++loc;
-  if (last>limit) err_print("! Title name didn't end");
-  if (title_code_ptr==&title_code[max_titles]) overflow("titles");
+  if (last>limit) err_print(_("! Title name didn't end"));
+  if (title_code_ptr==&title_code[max_titles]) overflow(_("titles"));
   *title_code_ptr=id_lookup(first,last,title);
   for (p=title_code;;p++) if (*p==*title_code_ptr) break;
   if (p==title_code_ptr) title_code_ptr++;
@@ -539,14 +539,14 @@ skip_restricted(void)
   loc=first;
   while (xisalpha(*loc)||xisdigit(*loc)||*loc=='_') loc++;
   if (*loc++!=' ')
-    err_print("! Identifier in meaning should be followed by space");
+    err_print(_("! Identifier in meaning should be followed by space"));
   else { name_pointer p=id_lookup(first,loc-1,normal);
     sixteen_bits t; int n=0;
     t=title_lookup();
     if (*(loc-1)=='}')
       while (xisdigit(*loc)) n=10*n+(*loc++)-'0';
     if (*loc++!=' ')
-      err_print("! Location in meaning should be followed by space");
+      err_print(_("! Location in meaning should be followed by space"));
     else @<Digest the meaning of |p|, |t|, |n|@>;
   }
   loc=id_loc+2;
@@ -559,7 +559,7 @@ skip_restricted(void)
     m=temp_meaning_ptr++;
     if (temp_meaning_ptr>max_temp_meaning_ptr) {
       if (temp_meaning_ptr>&temp_meaning_stack[max_meanings])
-        overflow("temp meanings");
+        overflow(_("temp meanings"));
       max_temp_meaning_ptr=temp_meaning_ptr;
     }
   } else m=&(q->perm);
@@ -751,7 +751,7 @@ static boolean app_supp(
       if (*j==inserted) return 0;
       if (j==tok_loc) ident_seen=1;
       else app(*j);
-    } else if (*j>=inner_tok_flag) confusion("inner");
+    } else if (*j>=inner_tok_flag) confusion(_("inner"));
     else if (app_supp(*j-tok_flag+tok_start)) goto catch14;;
   }
   return 0;
@@ -812,7 +812,7 @@ else {
     if (*(q+1)==*q+1) {
       r=q;@+break; /* e.g. \&{struct}; we're doing production 45 or 46 */
     }
-    if (**q<tok_flag) confusion("find type");
+    if (**q<tok_flag) confusion(_("find type"));
     r=**q-tok_flag+tok_start;
     if ((t=*(*(q+1)-2))>=tok_flag && **(t-tok_flag+tok_start)=='*') {
            /* production 34 */
@@ -1019,11 +1019,11 @@ if ((cur_file=fopen(cur_file_name,"r"))) cur_line=0;
 else include_depth--;
 if (include_depth) { /* at least one new file was opened */
   while (get_next()==meaning) ; /* new meaning is digested */
-  if (include_depth) err_print("! Only @@$ is allowed in aux and bux files");
+  if (include_depth) err_print(_("! Only @@$ is allowed in aux and bux files"));
   finish_line(); loc=buffer; /* now reading beginning of line 1 */
 }
 if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
-  fatal("! Cannot open aux output file ",aux_file_name);
+  fatal(_("! Cannot open aux output file "),aux_file_name);
 
 @z
 
