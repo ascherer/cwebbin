@@ -1353,3 +1353,15 @@ else {
   printf(_("%ld titles (out of %ld)\n"),
             (long)(title_code_ptr-title_code),(long)max_titles);
 @z
+
+@x l.451 of CWEAV-PATCH.CH
+section should have the same number as the original ``\&{250.~Index},'' and
+@y
+section should have the same number as the original ``\&{275.~Index},'' and
+@z
+
+@x l.1141
+not already in |"common.h"|.  These are private to \.{CWEAVE}.
+@y
+not already in |"common.h"|.  These are private to \.{CWEAVE} and \.{CTWILL}.
+@z
