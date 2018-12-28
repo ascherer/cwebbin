@@ -85,9 +85,10 @@ and Donald Knuth for Literate Programming in C/C++.
 %endif
 
 %if %{with ctwill}
-%{__tie} -m ctwill.w cweave.w cweav-patch.ch cweav-ansi.ch \
-	cweav-extensions.ch cweav-output.ch cweav-i18n.ch \
-	cweav-twill.ch %{?with_texlive:ctwill-texlive.ch}
+%{__tie} %{!?with_texlive:-m ctwill.w}%{?with_texlive:-c ctwill-w2c.ch} \
+	cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
+	cweav-output.ch cweav-i18n.ch cweav-twill.ch \
+	%{?with_texlive:ctwill-texlive.ch}
 %{__tie} -m prod-twill.w prod.w prod-twill.ch
 %endif
 
