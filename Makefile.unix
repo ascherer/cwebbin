@@ -238,7 +238,7 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 # The complete set of files contains the two programs `ctangle' and `cweave',
 # the mogrified twin 'ctwill' and its utility programs 'refsort' and 'twinx',
 # the manuals `cwebman' and `cwebmana', and the source documentations.
-all: ctangle cweave fullmanual # ctwill refsort twinx
+all: ctangle cweave ctwill refsort twinx fullmanual
 
 cautiously: ctangle
 	$(MAKE) SAVEcommon.$(EXTENSION)
@@ -384,14 +384,15 @@ install: all
 	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)/$(DESTPREF)tangle
 	$(INSTALL) ctwill $(DESTDIR)$(BINDIR)/$(DESTPREF)twill
+	$(INSTALL) refsort $(DESTDIR)$(BINDIR)/refsort
+	$(INSTALL) twinx $(DESTDIR)$(BINDIR)/twinx
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
 	$(INSTALL) -m 644 cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
 
 	$(INSTALL) -m 644 cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
-	$(INSTALL) -m 644 ctwimac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
-	$(INSTALL) -m 644 proofmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
+	$(INSTALL) -m 644 ctwimac.tex proofmac.tex $(DESTDIR)$(MACROSDIR)
 	$(INSTALL) -m 644 cweb.el $(DESTDIR)$(EMACSDIR)
 	$(INSTALL) -m 644 c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
 
