@@ -341,8 +341,7 @@ $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 # for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex cweave.tex cweave.$(EXTENSION) ctangle.tex \
-	cweave.w cwebmana.tex \
-	  *-foo.* *-doc.ch *.orig *.rej \
+	cwebmana.tex *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
 
 install: all
