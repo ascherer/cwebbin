@@ -8,7 +8,7 @@
 #line 83 "ctangle.w"
 
 /*:2*//*6:*/
-#line 38 "comm-foo.h"
+#line 39 "comm-foo.h"
 
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
@@ -48,7 +48,8 @@
 #define buf_size 1000 \
 
 #define ctangle 0
-#define cweave 1 \
+#define cweave 1
+#define ctwill 2 \
 
 #define and_and 04
 #define lt_lt 020
@@ -160,16 +161,16 @@
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 31 "comm-foo.h"
+#line 32 "comm-foo.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;
-extern boolean program;
+extern int program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 73 "comm-foo.h"
+#line 74 "comm-foo.h"
 
 char section_text[longest_name+1];
 char*section_text_end= section_text+longest_name;
@@ -177,7 +178,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 88 "comm-foo.h"
+#line 89 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -185,7 +186,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 103 "comm-foo.h"
+#line 104 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -219,7 +220,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:9*//*10:*/
-#line 145 "comm-foo.h"
+#line 146 "comm-foo.h"
 
 extern int history;
 extern int wrap_up(void);
@@ -228,7 +229,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:10*//*11:*/
-#line 160 "comm-foo.h"
+#line 161 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -252,7 +253,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*12:*/
-#line 183 "comm-foo.h"
+#line 184 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -260,14 +261,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 194 "comm-foo.h"
+#line 195 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 206 "comm-foo.h"
+#line 207 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -277,7 +278,7 @@ extern FILE*check_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 216 "comm-foo.h"
+#line 217 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
