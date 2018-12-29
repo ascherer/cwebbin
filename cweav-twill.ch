@@ -236,6 +236,12 @@ outbursts of new code.)
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 @z
 
+@x l.104
+  program=cweave;
+@y
+  program=ctwill;
+@z
+
 @x
 turned on during the first phase.
 

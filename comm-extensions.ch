@@ -9,6 +9,27 @@ This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
+Section 2.  Add CTWILL.
+
+@x l.68
+|program|.
+
+@d ctangle 0
+@d cweave 1
+@y
+|program|. And \.{CTWILL} adds some extra twists.
+
+@d ctangle 0
+@d cweave 1
+@d ctwill 2
+@z
+
+@x l.75
+boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
+@y
+int program; /* \.{CWEAVE} or \.{CTANGLE}i or \.{CTWILL}? */
+@z
+
 Section 7.
 
 @x l.153
@@ -127,12 +148,20 @@ Section 27.
   must be less than 10240 */
 @z
 
-Section 53.
+Section 32.
 
 @x l.642
 @d hash_size 353 /* should be prime */
 @y
 @d hash_size 8501 /* should be prime */
+@z
+
+Section 39.
+
+@x l.711
+  if (program==cweave) init_p(p,t);
+@y
+  if (program!=ctangle) init_p(p,t);
 @z
 
 Section 61.
@@ -264,6 +293,32 @@ Section 74.
        use_language=++dot_pos;
        break;
     } else
+@z
+
+Section 75.
+
+@x
+if (program==ctangle)
+  fatal(
+"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+   ,"");
+@.Usage:@>
+else fatal(
+"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
+@y
+if (program==ctangle)
+  fatal(
+"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+   ,"");
+@.Usage:@>
+else if (program==cweave)
+  fatal(
+"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
+else fatal(
+"! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
 @z
 
 Extended material after Section 82.

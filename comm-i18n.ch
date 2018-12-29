@@ -270,8 +270,12 @@ if (program==ctangle)
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
-else fatal(
+else if (program==cweave)
+  fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
+else fatal(
+"! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 @y
 if (program==ctangle)
@@ -279,8 +283,12 @@ if (program==ctangle)
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
    ,"");
 @.Usage:@>
-else fatal(
+else if (program==cweave)
+  fatal(
 _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+   ,"");
+else fatal(
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 @z
 
