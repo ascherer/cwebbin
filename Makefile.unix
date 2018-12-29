@@ -157,6 +157,9 @@ ORIGINAL = $(SOURCES) prod.w \
 	examples/wordtest.w \
 	examples/xlib_types.w examples/xview_types.w
 
+CTWILLSRC = ctwill.diffs ctwill.w ctwimac.tex prod.diffs proofmac.tex \
+	refsort.w twinxmac.tex twinx.w
+
 # The following files make the body of this patched distribution of CWEB.
 # Note that not all of these changefiles are actually used.
 
@@ -176,7 +179,9 @@ CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
-	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1
+	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1 \
+	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
+	README.md system.bux texlive.w ctwill.bux ctwill-mini.ch LICENSE
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
@@ -197,8 +202,9 @@ INCLUDE = cwebinputs
 
 MACROS = texinputs
 
-ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
-	$(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
+ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
+      $(CTWILLPATCH) $(WMERGPATCH) $(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) \
+      $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf .ref .sref
 
@@ -414,13 +420,14 @@ tarball:
 
 # Remove the original distribution completely.
 remove-orig:
-	- $(RM) $(ORIGINAL)
+	- $(RM) $(ORIGINAL) $(CTWILLSRC)
 
 # Remove the patch completely
 remove:
 	- $(RM) $(COMMPATCH)
 	- $(RM) $(CTANGPATCH)
 	- $(RM) $(CWEAVPATCH)
+	- $(RM) $(CTWILLPATCH)
 	- $(RM) $(WMERGPATCH)
 	- $(RM) $(PATCH)
 	- $(RM) $(EXAMPLES)
