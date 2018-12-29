@@ -8,8 +8,6 @@
 %bcond_with ansi_only
 # Prepare CWEBbin as base for TeXLive.
 %bcond_with texlive
-# Mogrify CWEAVE into its evil twin CTWILL.
-%bcond_with ctwill
 
 Name: cwebbin
 Summary: The CWEBbin extension of the CWEB package
@@ -54,8 +52,6 @@ Release: 16
 	-e TEXMFDIR=%{texmf} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
-%{!?__tie:%global __tie %(which tie)}
-
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
@@ -85,26 +81,21 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %endif
 
-%if %{with ctwill}
-%{__tie} %{!?with_texlive:-m ctwill.w}%{?with_texlive:-c ctwill-w2c.ch} \
-	cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
-	cweav-output.ch cweav-i18n.ch cweav-twill.ch \
-	%{?with_texlive:ctwill-texlive.ch}
-%{__tie} -m prod-twill.w prod.w prod-twill.ch
-%endif
-
 %build
 %if %{with texlive}
 
 %{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
+%{__make} -e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch
 
 %{__sed} -e "1r texlive.w" -e "1d" -i comm-w2c.ch
 %{__sed} -e "1r texlive.w" -e "1d" -i ctang-w2c.ch
 %{__sed} -e "1r texlive.w" -e "1d" -i cweav-w2c.ch
+%{__sed} -e "1r texlive.w" -e "1d" -i ctwill-w2c.ch
 
 %{__make} comm-foo.h
+%{__make} prod-twill.w
 
 # Use system CWEB, most likely from TeXLive
 %{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
@@ -125,7 +116,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %install
 %if %{with texlive}
 
-%{__pax} *-w2c.ch comm-foo.h po cwebinputs texinputs \
+%{__pax} *-w2c.ch comm-foo.h prod-twill.w ctwimac.tex proofmac.tex \
+	po cwebinputs texinputs \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
