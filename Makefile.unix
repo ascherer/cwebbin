@@ -370,9 +370,10 @@ $(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 # for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
-	cweave.$(EXTENSION) ctwill.$(EXTENSION) \
+	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-twill.w \
 	cwebmana.tex *-foo.* *-doc.ch *.orig *.rej \
-	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle
+	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
+	ctwill refsort twinx refsort.c twinx.c
 
 install: all
 	$(INSTALL) -d $(DESTDIR)$(BINDIR) \
