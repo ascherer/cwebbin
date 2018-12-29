@@ -200,7 +200,7 @@ MACROS = texinputs
 ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 	$(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
 
-.SUFFIXES: .dvi .tex .w .pdf .$(EXTENSION) .ref .sref
+.SUFFIXES: .dvi .tex .w .pdf .ref .sref
 
 .w.tex:
 	$(CWEAVE) $*
@@ -212,11 +212,11 @@ ALL = $(ORIGINAL) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) $(WMERGPATCH) \
 	$(MAKE) $*.tex
 	$(MAKE) $*.dvi
 
-.w.$(EXTENSION):
-	$(CTANGLE) $* - $*.$(EXTENSION)
+.w.c:
+	$(CTANGLE) $*
 
 .w.o:
-	$(MAKE) $*.$(EXTENSION)
+	$(MAKE) $*.c
 	$(MAKE) $*.o
 
 .$(EXTENSION).o:
