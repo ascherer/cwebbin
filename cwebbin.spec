@@ -35,7 +35,9 @@ Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
 Source2: %{name}-2018.tar.gz
 
-Patch: 0001-Update-CWEBbin-manpage.patch
+Patch1: 0001-Update-CWEBbin-manpage.patch
+Patch2: 0001-Make-clean-twinx.patch
+Patch3: 0002-Make-clean-refsort.patch
 
 %if %{with ansi_only}
 Version: 3.64c
