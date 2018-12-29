@@ -307,18 +307,18 @@ else fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 @y
-if (program==ctangle)
-  fatal(
+switch (program) {
+case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
-else if (program==cweave)
-  fatal(
+case cweave: fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
-else fatal(
+default: fatal(
 "! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
+}
 @z
 
 Extended material after Section 82.

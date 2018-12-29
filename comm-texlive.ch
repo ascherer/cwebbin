@@ -258,19 +258,16 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.277 of COMM-I18N.CH
-if (program==ctangle)
-  fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-   ,"");
+@x l.1354+ and l.281 of COMM-I18N.CH
+switch (program) {
+case ctangle: fatal(
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"),"");
 @.Usage:@>
-else if (program==cweave)
-  fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
-else fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
+case cweave: fatal(
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+default: fatal(
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+}
 @y
 cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 @.Usage:@>

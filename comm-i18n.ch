@@ -265,31 +265,28 @@ Section 66.
 Section 75.
 
 @x l.1354
-if (program==ctangle)
-  fatal(
+switch (program) {
+case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
-else if (program==cweave)
-  fatal(
+case cweave: fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
-else fatal(
+default: fatal(
 "! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
+}
 @y
-if (program==ctangle)
-  fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-   ,"");
+switch (program) {
+case ctangle: fatal(
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"),"");
 @.Usage:@>
-else if (program==cweave)
-  fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
-else fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
+case cweave: fatal(
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+default: fatal(
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+}
 @z
 
 Section 76.
