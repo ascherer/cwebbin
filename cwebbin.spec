@@ -33,8 +33,9 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
-Source1: %{name}-2018.tar.gz
+Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
+Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
+Source2: %{name}-2018.tar.gz
 
 Patch: 0001-Update-CWEBbin-manpage.patch
 
@@ -43,7 +44,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 15
+Release: 16
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -60,7 +61,7 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
-%autosetup -c -a1
+%autosetup -c -a1 -a2
 
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
