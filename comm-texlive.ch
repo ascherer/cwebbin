@@ -258,17 +258,18 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.277 of COMM-I18N.CH
-if (program==ctangle)
-  fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-   ,"");
+@x l.1354+ and l.281 of COMM-I18N.CH
+switch (program) {
+case ctangle: fatal(
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"),"");
 @.Usage:@>
-else fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
+case cweave: fatal(
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+default: fatal(
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+}
 @y
-cb_usage(program==ctangle ? "ctangle" : "cweave");
+cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 @.Usage:@>
 @z
 
@@ -397,7 +398,8 @@ kpse_set_program_name(argv[0], "cweb");
 @ Modules for dealing with help messages and version info.
 
 @<Display help message and exit@>=
-cb_usagehelp(program==ctangle ? CTANGLEHELP : CWEAVEHELP, NULL);
+cb_usagehelp(program==ctangle ? CTANGLEHELP :
+  program==cweave ? CWEAVEHELP : CTWILLHELP, NULL);
 @.--help@>
 
 @ Special variants from \Kpathsea/ for i18n/t10n.
@@ -443,9 +445,11 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
 
 @d ctangle_banner "CTANGLE (CWEBBIN, TeX Live 2019/dev) 3.64"
 @d cweave_banner "CWEAVE (CWEBBIN, TeX Live 2019/dev) 3.64"
+@d ctwill_banner "CTWILL (CWEBBIN, TeX Live 2019/dev) 3.64"
 
 @<Display version information and exit@>={
-  puts(program==ctangle ? ctangle_banner : cweave_banner);
+  puts(program==ctangle ? ctangle_banner :
+    program==cweave ? cweave_banner : ctwill_banner);
 @.--version@>
   puts("Copyright 2019 Silvio Levy and Donald E. Knuth");
   history=spotless; exit(wrap_up());

@@ -31,17 +31,20 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Source0: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
-Source1: %{name}-2018.tar.gz
+Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
+Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
+Source2: %{name}-2018.tar.gz
 
-Patch: 0001-Update-CWEBbin-manpage.patch
+Patch1: 0001-Update-CWEBbin-manpage.patch
+Patch2: 0001-Make-clean-twinx.patch
+Patch3: 0002-Make-clean-refsort.patch
 
 %if %{with ansi_only}
 Version: 3.64c
 Release: ansi
 %else
 Version: 2018
-Release: 15
+Release: 16
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -56,7 +59,7 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
-%autosetup -c -a1
+%autosetup -c -a1 -a2
 
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
@@ -86,12 +89,15 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
+%{__make} -e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch
 
 %{__sed} -e "1r texlive.w" -e "1d" -i comm-w2c.ch
 %{__sed} -e "1r texlive.w" -e "1d" -i ctang-w2c.ch
 %{__sed} -e "1r texlive.w" -e "1d" -i cweav-w2c.ch
+%{__sed} -e "1r texlive.w" -e "1d" -i ctwill-w2c.ch
 
 %{__make} comm-foo.h
+%{__make} prod-twill.w
 
 # Use system CWEB, most likely from TeXLive
 %{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
@@ -112,7 +118,8 @@ and Donald Knuth for Literate Programming in C/C++.
 %install
 %if %{with texlive}
 
-%{__pax} *-w2c.ch comm-foo.h po cwebinputs texinputs \
+%{__pax} *-w2c.ch comm-foo.h prod-twill.w ctwimac.tex proofmac.tex \
+	po cwebinputs texinputs refsort.w twinx.w \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
@@ -149,6 +156,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__texhash}
 
 %changelog
+* Sun Dec 30 2018 Andreas Scherer <https://ascherer.github.io>
+- Add CTWILL and its utiliy programs and macros
+
 * Fri Nov 09 2018 Andreas Scherer <https://ascherer.github.io>
 - Add internationalization (i18n)
 

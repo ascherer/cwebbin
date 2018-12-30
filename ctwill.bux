@@ -1,0 +1,81 @@
+@$program {{\sc COMMON.W}}2 \&{boolean}@>
+@$phase {{\sc COMMON.W}}3 \&{int}@>
+@$common_init {{\sc COMMON.W}}4 \&{void} (\,)@>
+@$buffer {{\sc COMMON.W}}7 \&{char} [\,]@>
+@$buffer_end {{\sc COMMON.W}}7 \&{char} ${*}$@>
+@$limit {{\sc COMMON.W}}7 \&{char} ${*}$@>
+@$loc {{\sc COMMON.W}}7 \&{char} ${*}$@>
+
+@$include_depth {{\sc COMMON.W}}10 \&{int}@>
+@$file {{\sc COMMON.W}}10 \&{FILE} ${*}$ [\,]@>
+@$change_file {{\sc COMMON.W}}10 \&{FILE} ${*}$@>
+@$file_name {{\sc COMMON.W}}10 \&{char} [\,][\,]@>
+@$change_file_name {{\sc COMMON.W}}10 \&{char} [\,]@>
+@$alt_file_name {{\sc COMMON.W}}10 \&{char} [\,]@>
+@$line {{\sc COMMON.W}}10 \&{int} [\,]@>
+@$change_line {{\sc COMMON.W}}10 \&{int}@>
+@$change_depth {{\sc COMMON.W}}10 \&{int}@>
+@$input_has_ended {{\sc COMMON.W}}10 \&{boolean}@>
+@$changing {{\sc COMMON.W}}10 \&{boolean}@>
+@$web_file_open {{\sc COMMON.W}}10 \&{boolean}@>
+
+@$reset_input {{\sc COMMON.W}}18 \&{void} (\,)@>
+
+@$section_count {{\sc COMMON.W}}20 \&{sixteen\_bits}@>
+@$changed_section {{\sc COMMON.W}}20 \&{boolean} [\,]@>
+@$change_pending {{\sc COMMON.W}}20 \&{boolean}@>
+@$print_where {{\sc COMMON.W}}20 \&{boolean}@>
+@$get_line {{\sc COMMON.W}}21 \&{boolean} (\,)@>
+
+@$check_complete {{\sc COMMON.W}}26 \&{void} (\,)@>
+@$byte_mem {{\sc COMMON.W}}27 \&{char} [\,]@>
+@$byte_mem_end {{\sc COMMON.W}}27 \&{char} ${*}$@>
+@$name_dir {{\sc COMMON.W}}27 \&{name\_info} [\,]@>
+@$name_dir_end {{\sc COMMON.W}}27 \&{name\_pointer}@>
+
+@$byte_ptr {{\sc COMMON.W}}29 \&{char} ${*}$@>
+@$name_ptr {{\sc COMMON.W}}29 \&{name\_pointer}@>
+
+@$h {{\sc COMMON.W}}32 \&{hash\_pointer}@>
+@$hash {{\sc COMMON.W}}32 \&{name\_pointer} [\,]@>
+@$hash_end {{\sc COMMON.W}}32 \&{hash\_pointer}@>
+
+@$id_lookup {{\sc COMMON.W}}35 \&{name\_pointer} (\,)@>
+
+@$print_section_name {{\sc COMMON.W}}42 \&{void} (\,)@>
+@$sprint_section_name {{\sc COMMON.W}}43 \&{void} (\,)@>
+@$print_prefix_name {{\sc COMMON.W}}44 \&{void} (\,)@>
+
+@$section_lookup {{\sc COMMON.W}}49 \&{name\_pointer} (\,)@>
+
+@$history {{\sc COMMON.W}}56 \&{int}@>
+
+@$err_print {{\sc COMMON.W}}58 \&{void} (\,)@>
+
+@$wrap_up {{\sc COMMON.W}}60 \&{int} (\,)@>
+
+@$fatal {{\sc COMMON.W}}64 \&{void} (\,)@>
+@$overflow {{\sc COMMON.W}}65 \&{void} (\,)@>
+
+@$argc {{\sc COMMON.W}}67 \&{int}@>
+@$argv {{\sc COMMON.W}}67 \&{char} ${**}$@>
+@$C_file_name {{\sc COMMON.W}}67 \&{char} [\,]@>
+@$tex_file_name {{\sc COMMON.W}}67 \&{char} [\,]@>
+@$idx_file_name {{\sc COMMON.W}}67 \&{char} [\,]@>
+@$scn_file_name {{\sc COMMON.W}}67 \&{char} [\,]@>
+@$check_file_name {{\sc COMMON.W}}67 \&{char} [\,]@>
+@$flags {{\sc COMMON.W}}67 \&{boolean} [\,]@>
+@$use_language {{\sc COMMON.W}}67 \&{const char} ${*}$@>
+
+@$C_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+@$tex_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+@$idx_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+@$scn_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+@$check_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+@$active_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
+
+@$A {}7 =macro arg@>
+@$HAVE_GETTEXT {}7 =macro@>
+@$STRING {}11 =macro arg@>
+@$skip_comment {}104 =\\{copy\_comment}@>
+@$DEAD_CODE {}118 =macro@>
