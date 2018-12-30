@@ -119,7 +119,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with texlive}
 
 %{__pax} *-w2c.ch comm-foo.h prod-twill.w ctwimac.tex proofmac.tex \
-	po cwebinputs texinputs \
+	po cwebinputs texinputs refsort.w twinx.w \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
@@ -156,6 +156,9 @@ and Donald Knuth for Literate Programming in C/C++.
 %{__texhash}
 
 %changelog
+* Sun Dec 30 2018 Andreas Scherer <https://ascherer.github.io>
+- Add CTWILL and its utiliy programs and macros
+
 * Fri Nov 09 2018 Andreas Scherer <https://ascherer.github.io>
 - Add internationalization (i18n)
 
