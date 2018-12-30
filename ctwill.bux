@@ -1,4 +1,4 @@
-@$program {{\sc COMMON.W}}2 \&{boolean}@>
+@$program {{\sc COMMON.W}}2 \&{int}@>
 @$phase {{\sc COMMON.W}}3 \&{int}@>
 @$common_init {{\sc COMMON.W}}4 \&{void} (\,)@>
 @$buffer {{\sc COMMON.W}}7 \&{char} [\,]@>
