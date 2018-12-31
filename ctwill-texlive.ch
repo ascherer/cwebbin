@@ -56,3 +56,17 @@ Sections 5--15.
 @y
 @i comm-w2c.h
 @z
+
+Section 80.
+
+@x l.1367 and l.616 of CWEAV-TWILL.CH
+saying \.{+P} on the command line, it's `\.{\\input proofmac}',
+@y
+saying \.{+P} on the command line, it's `\.{\\input ctproofmac}',
+@z
+
+@x l.626 of CWEAV-TWILL.CH
+if (proofing) tex_puts("proofma");
+@y
+if (proofing) tex_puts("ctproofma");
+@z

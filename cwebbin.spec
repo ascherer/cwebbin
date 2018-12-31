@@ -116,7 +116,10 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 %install
 %if %{with texlive}
 
-%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ctwimac.tex proofmac.tex \
+for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
+%{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
+
+%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
 	po cwebinputs texinputs refsort.w twinx.w \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
