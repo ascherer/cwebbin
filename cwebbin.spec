@@ -87,17 +87,15 @@ and Donald Knuth for Literate Programming in C/C++.
 %if %{with texlive}
 
 %{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
+%{__make} -e HCHANGES=comm-w2c.h comm-w2c.h
 %{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
 %{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
 %{__make} -e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch
 
-%{__sed} -e "1r texlive.w" -e "1d" -i comm-w2c.ch
-%{__sed} -e "1r texlive.w" -e "1d" -i ctang-w2c.ch
-%{__sed} -e "1r texlive.w" -e "1d" -i cweav-w2c.ch
-%{__sed} -e "1r texlive.w" -e "1d" -i ctwill-w2c.ch
-
-%{__make} comm-foo.h
 %{__make} prod-twill.w
+
+for m in comm ctang cweav ctwill
+do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 
 # Use system CWEB, most likely from TeXLive
 %{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
@@ -118,7 +116,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %install
 %if %{with texlive}
 
-%{__pax} *-w2c.ch comm-foo.h prod-twill.w ctwimac.tex proofmac.tex \
+%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ctwimac.tex proofmac.tex \
 	po cwebinputs texinputs refsort.w twinx.w \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 

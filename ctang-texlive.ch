@@ -48,3 +48,11 @@ FIXME: Apply a more generic @VERSION@ scheme.
   textdomain("cweb");
 @.cweb.mo@>
 @z
+
+Sections 5--15.
+
+@x l.127 and l.72 of CTANG-ANSI.CH
+@i comm-foo.h
+@y
+@i comm-w2c.h
+@z
