@@ -9,23 +9,19 @@
 
 Material in limbo.
 
-FIXME: Apply a more generic @VERSION@ scheme.
-
 @x l.28 of CWEAV-TWILL.CH
 \def\title{CTWILL (Version 3.64 [CWEBbin 2018])}
 @y
-\def\title{CTWILL (\TeX~Live 2019/dev)}
+\def\title{CTWILL (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.37 and l.185 of CWEAV-PATCH.CH
   \centerline{(Version 3.64 [CWEBbin 2018])}
 @y
-  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
+  \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
 Section 1.
-
-FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.68 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (Version 3.64 [CWEBbin 2018])")
@@ -36,17 +32,17 @@ FIXME: Apply a more generic @VERSION@ scheme.
 
 Section 3.
 
-FIXME: Apply a more generic @VERSION@ scheme.
+@x l.104 and l.242 of CWEAV-TWILL.CH
+  program=ctwill;
+@y
+  program=ctwill;
+  strncpy(cb_banner,banner,max_banner-1);
+@z
 
 @x l.108 and l.60 of CWEAV-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
-  textdomain("cweb-tl");
-@.cweb-tl.mo@>
-  if (show_banner) printf("%s%s\n", banner, versionstring);
-    /* print a ``banner line'' */
-  textdomain("cweb");
-@.cweb.mo@>
+  if (show_banner) cb_show_banner(); /* print a ``banner line'' */
 @z
 
 Sections 5--15.

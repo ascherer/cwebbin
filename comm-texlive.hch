@@ -26,22 +26,16 @@ Material in limbo.
 @s uint16_t int
 @z
 
-Section 5 (of CTANGLE and CWEAVE).
-
-@x l.30 and l.28 of COMM-ANSI.HCH
-typedef bool boolean;
-@y
-@z
-
 Section 6.
 
-@x l.36
-#include <stdio.h>
+@x l. 156 of COMM-ANSI.CH
+extern void print_stats(void);@/
 @y
-#include <stdio.h>
-@#
-typedef bool boolean;
-#define HAVE_BOOLEAN
-#include <w2c/config.h> /* \&{integer} */
-#include <lib/lib.h> /* |versionstring| */
+extern void print_stats(void);@/
+extern void cb_show_banner(void);@/
+
+@ @d max_banner 50
+
+@<Common code...@>=
+extern char cb_banner[];
 @z

@@ -15,13 +15,13 @@ FIXME: Apply a more generic @VERSION@ scheme.
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\title{Common code for CTANGLE and CWEAVE (\TeX~Live 2019/dev)}
+\def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
 @x l.25 and l.183 of COMM-PATCH.CH
   \centerline{(Version 3.64 [CWEBbin 2018])}
 @y
-  \centerline{(Version 3.64 [\TeX~Live 2019/dev])}
+  \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
 @x l.20 of COMM-ANSI.CH
@@ -339,13 +339,16 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 @y
-@ The |scan_args| routine needs a few extra variables.
+@ The |scan_args| and |cb_show_banner| routines need a few extra variables.
 
 @d PATH_SEPARATOR   separators[0]
 @d DIR_SEPARATOR    separators[1]
 @d DEVICE_SEPARATOR separators[2]
 
+@d max_banner 50
+
 @<Other...@>=
+char cb_banner[max_banner];
 @z
 
 Material++
@@ -375,6 +378,8 @@ The directories to be searched for come from three sources:
 typedef bool boolean;
 #define HAVE_BOOLEAN
 #include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header */
+#include <w2c/config.h> /* \&{integer} */
+#include <lib/lib.h> /* |versionstring| */
 @#
 #define CWEB
 #include "help.h"
@@ -405,12 +410,22 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP :
 @ Special variants from \Kpathsea/ for i18n/t10n.
 
 @<Predecl...@>=
+void cb_show_banner (void); /* |extern| for option \.{+b} */
 static void cb_usage (const_string str);@/
 static void cb_usagehelp (const_string *message, const_string bug_email);@/
 
 @ We simply filter the strings through the catalog (if available).
 
 @c
+void cb_show_banner (void)
+{
+  textdomain("cweb-tl");
+@.cweb-tl.mo@>
+  printf("%s%s\n", cb_banner, versionstring);
+  textdomain("cweb");
+@.cweb.mo@>
+}
+
 static void cb_usage (const_string str)
 {
   textdomain("cweb-tl");
@@ -441,19 +456,13 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   history=spotless; exit(wrap_up());
 }
 
-@ Will have to change these if the version numbers change (ouch).
+@ The version information will not be translated.
 
-@d ctangle_banner "CTANGLE (CWEBBIN, TeX Live 2019/dev) 3.64"
-@d cweave_banner "CWEAVE (CWEBBIN, TeX Live 2019/dev) 3.64"
-@d ctwill_banner "CTWILL (CWEBBIN, TeX Live 2019/dev) 3.64"
-
-@<Display version information and exit@>={
-  puts(program==ctangle ? ctangle_banner :
-    program==cweave ? cweave_banner : ctwill_banner);
+@<Display version information and exit@>=
+printversionandexit(cb_banner,
+  program == ctwill ? "Donald E. Knuth" : "Silvio Levy and Donald E. Knuth",
+  NULL, NULL);
 @.--version@>
-  puts("Copyright 2019 Silvio Levy and Donald E. Knuth");
-  history=spotless; exit(wrap_up());
-}
 
 @** Index.
 @z
