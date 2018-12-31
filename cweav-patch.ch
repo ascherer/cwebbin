@@ -204,6 +204,18 @@ Section 1.
 @d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
 @z
 
+Section 3.
+
+@x l.
+  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
+  common_init();
+  @<Set initial values@>;
+@y
+  @<Set initial values@>;
+  common_init();
+  @<Start \TEX/ output@>;
+@z
+
 Section 24.  Fix typography of type defined a moment later.
 
 @x l.342
@@ -238,6 +250,14 @@ If the |per_cent| parameter is 1, a |'%'| is appended to the line
 char *b; /* outputs from |out_buf+1| to |b|,where |b<=out_ptr| */
 @y
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */
+@z
+
+Section 80.
+
+@x l.1369
+@<Set init...@>=
+@y
+@<Start \TEX/...@>=
 @z
 
 Sections 97 and 98.  Initialize complete array 'cat_name'.
@@ -450,6 +470,11 @@ features.
 Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index},'' and
 additional material follows below.
+
+@* Set \.{CWEAVE} flags.  At least one of these is already used in \.{COMMON}.
+
+@<Set init...@>=
+  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
 
 @** Index.
 @z

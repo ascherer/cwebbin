@@ -15,13 +15,6 @@ Section 3.
   argc=ac; argv=av;
 @z
 
-@x l.105
-  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
-@y
-  make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
-    /* controlled by command-line options */
-@z
-
 Section 4.
 
 @x l.121
@@ -109,13 +102,13 @@ Section 78.
 
 Section 80.
 
-@x l.1364
+@x l.1364 and l.261 of CWEAV-PATCH.CH
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
 `\.{\\input cwebmac}'.
 
-@<Set init...@>=
+@<Start \TEX/...@>=
 out_ptr=out_buf+1; out_line=1; active_file=tex_file;
 *out_ptr='c'; tex_printf("\\input cwebma");
 @y
@@ -130,7 +123,7 @@ prepended to `\.{cwebmac.tex}', e.g., if you call \.{CWEAVE} with
 Without this option the first line of the output file will be
 `\.{\\input cwebmac}'.
 
-@<Set init...@>=
+@<Start \TEX/...@>=
 out_ptr=out_buf+1; out_line=1; active_file=tex_file; *out_ptr='c';
 tex_puts("\\input ");
 tex_printf(use_language);
@@ -269,4 +262,11 @@ else if (cat1==stmt) {
   big_app(force);
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
+@z
+
+@x l.105 and l.477 of CWEAV-PATCH.CH
+  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
+@y
+  make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
+    /* controlled by command-line options */
 @z
