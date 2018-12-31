@@ -32,13 +32,6 @@ Section 1.
 
 Section 3.
 
-@x l.104 and l.242 of CWEAV-TWILL.CH
-  program=ctwill;
-@y
-  program=ctwill;
-  strncpy(cb_banner,banner,max_banner-1);
-@z
-
 @x l.108 and l.60 of CWEAV-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
@@ -65,4 +58,22 @@ saying \.{+P} on the command line, it's `\.{\\input ctproofmac}',
 if (proofing) tex_puts("proofma");
 @y
 if (proofing) tex_puts("ctproofma");
+@z
+
+@x l.4644
+@** Index.
+@y
+@* Put ``version'' information in a single spot.
+Don't do this at home, kids! Push our local macro to variable in \.{COMMON}
+for printing the |banner| and the |versionstring|.
+
+@d max_banner 50
+
+@<Common code...@>=
+extern char cb_banner[];
+
+@ @<Set init...@>=
+  strncpy(cb_banner,banner,max_banner-1);
+
+@** Index.
 @z

@@ -34,13 +34,6 @@ Section 1.
 
 Section 3.
 
-@x l.97
-  program=ctangle;
-@y
-  program=ctangle;
-  strncpy(cb_banner,banner,max_banner-1);
-@z
-
 @x l.100 and l.62 of CTANG-ANSI.CH - Add Web2C version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
@@ -53,4 +46,22 @@ Sections 5--15.
 @i comm-foo.h
 @y
 @i comm-w2c.h
+@z
+
+@x l.1550
+@** Index.
+@y
+@* Put ``version'' information in a single spot.
+Don't do this at home, kids! Push our local macro to variable in \.{COMMON}
+for printing the |banner| and the |versionstring|.
+
+@d max_banner 50
+
+@<Common code...@>=
+extern char cb_banner[];
+
+@ @<Set init...@>=
+  strncpy(cb_banner,banner,max_banner-1);
+
+@** Index.
 @z
