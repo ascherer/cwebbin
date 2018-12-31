@@ -201,7 +201,7 @@ can be made sensitive to these conditions.
   }
 @z
 
-Section 67.
+Section 67.  Cross-over CWEAVE flag back into COMMON.
 
 C and CWEB are `international' languages, so non-English speaking users may
 want to write program documentations in their native language instead of in
@@ -219,6 +219,13 @@ argument to the `-l' option was suggested by Carsten Steger in a private
 communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
+
+@x l.1218
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@y
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@d make_xrefs flags['x'] /* should cross references be output? */
+@z
 
 @x l.1227
 boolean flags[128]; /* an option for each 7-bit code */
@@ -275,6 +282,14 @@ Section 70.
         else s++;
       }
 @^system dependencies@>
+@z
+
+Section 73.
+
+@x l.1335
+    if (flags['x']) { /* indexes will be generated */
+@y
+    if (make_xrefs) { /* indexes will be generated */
 @z
 
 Section 74.

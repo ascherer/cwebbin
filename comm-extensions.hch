@@ -28,3 +28,10 @@ Section 11 (of CTANGLE and CWEAVE).
 @y
 @d max_file_name_length 1024
 @z
+
+@x l.169
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@y
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@d make_xrefs flags['x'] /* should cross references be output? */
+@z

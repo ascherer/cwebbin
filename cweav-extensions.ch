@@ -66,6 +66,15 @@ Section 4.
 @d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
 @z
 
+Section 21.  Cross-over from CWEAVE to COMMON.
+
+@x l.269
+@d no_xref (flags['x']==0)
+@d make_xrefs flags['x'] /* should cross references be output? */
+@y
+@d no_xref (!make_xrefs) /* should cross references be suppressed? */
+@z
+
 Section 40.  Parse C++ string prefixes L, U, u, u8.
 
 @x l.708
