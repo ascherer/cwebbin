@@ -59,7 +59,13 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
+%if %{_vendor} == "debbuild"
 %autosetup -c -a1 -a2
+%else
+%autosetup -c -T -a 0 -N
+%autosetup -D -T -a 1 -N
+%autosetup -D -T -a 2
+%endif
 
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
