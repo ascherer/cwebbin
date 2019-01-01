@@ -34,7 +34,7 @@
 /*:62*/
 #line 65 "ctangle.w"
 
-#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")  \
+#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2019])")  \
 
 #define max_bytes 1000000 \
 
@@ -99,7 +99,8 @@
 
 #define show_banner flags['b']
 #define show_progress flags['p']
-#define show_happiness flags['h'] \
+#define show_happiness flags['h']
+#define make_xrefs flags['x'] \
 
 #define update_terminal fflush(stdout) 
 #define new_line putchar('\n') 
@@ -261,14 +262,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 195 "comm-foo.h"
+#line 196 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 207 "comm-foo.h"
+#line 208 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -278,7 +279,7 @@ extern FILE*check_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 217 "comm-foo.h"
+#line 218 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
