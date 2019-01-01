@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, November 9, 2018.
+Changes for COMMON.H by Andreas Scherer, January 1, 2019.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.H in case of errors or information requests with the help of 'gettext'
@@ -19,7 +19,6 @@ Section 6 (of CTANGLE and CWEAVE).
 #if HAVE_GETTEXT
 #include <libintl.h>
 #else
-#define textdomain(A) ""
 #define gettext(A) A
 #endif
 @#
