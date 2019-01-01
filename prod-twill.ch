@@ -1,4 +1,4 @@
-@x
+@x l.1
 % This file is part of CWEB.
 @y
 % This file is part of CTWILL, a modification of CWEB.
@@ -6,13 +6,13 @@
 
 TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 
-@x
+@x l.14
 \fi \newcount\prodno \newdimen\midcol \let\+\relax \ifon
 @y
 \newcount\prodno \newdimen\midcol \let\+\relax
 @z
 
-@x
+@x l.251
 \advance\midcol-8pt
 \+& |typedef_like| \alt|int_like| |cast| \alt|comma| |semi| &
     |typedef_like| |exp| \alt|comma| |semi| & \&{typedef} \&{int} \&I,\cr
@@ -41,7 +41,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \global\prodno=121
 @z
 
-@x
+@x l.302
 Rule 117: The |exp| must not be immediately followed by |lpar|, |exp|,
 or |cast|.
 

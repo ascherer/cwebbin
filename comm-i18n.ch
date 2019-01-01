@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, December 5, 2018.
+Changes for COMMON.W by Andreas Scherer, January 1, 2019.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests with the help of 'gettext'
@@ -264,7 +264,7 @@ Section 66.
 
 Section 75.
 
-@x l.1354
+@x l.1354 and l.326 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -280,12 +280,15 @@ default: fatal(
 @y
 switch (program) {
 case ctangle: fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"),"");
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
+   ,"");
 @.Usage:@>
 case cweave: fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+   ,"");
 default: fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+   ,"");
 }
 @z
 
@@ -311,7 +314,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1418 and l.308 of COMM-EXTENSIONS.CH
+@x l.1418 and l.379 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print(_("! Include path too long")); return(0);

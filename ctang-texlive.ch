@@ -12,21 +12,21 @@ Material in limbo.
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.27 and l.164 of CTANG-PATCH.CH
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
+\def\title{CTANGLE (Version 3.64 [CWEBbin 2019])}
 @y
 \def\title{CTANGLE (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.31 and l.170 of CTANG-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.64 [CWEBbin 2019])}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
 Section 1.
 
-@x l.62 and l.189 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2018])")
+@x l.62 and l.186 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
+@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2019])")
 @y
 @d banner _("This is CTANGLE, Version 3.64")
   /* will be extended by the \TeX~Live |versionstring| */
@@ -52,8 +52,8 @@ Sections 5--15.
 @** Index.
 @y
 @* Put ``version'' information in a single spot.
-Don't do this at home, kids! Push our local macro to variable in \.{COMMON}
-for printing the |banner| and the |versionstring|.
+Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
+for printing the |banner| and the |versionstring| from there.
 
 @d max_banner 50
 

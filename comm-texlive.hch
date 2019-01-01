@@ -12,8 +12,8 @@ Material in limbo.
 @x l.18
 % Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
 @y
-% Amendments to 'common.h' resulting in an extended 'comm-foo.h' were created
-% by numerous collaborators over the course of many years.
+% Amendments to 'common.h' resulting in this extended 'comm-foo.h' were
+% created by numerous collaborators over the course of many years.
 
 % Please send comments, suggestions, etc. to tex-k@@tug.org.
 @z
@@ -28,7 +28,7 @@ Material in limbo.
 
 Section 6.
 
-@x l. 156 of COMM-ANSI.CH
+@x l. 156 of COMM-ANSI.HCH
 extern void print_stats(void);@/
 @y
 extern void print_stats(void);@/

@@ -1,6 +1,6 @@
 # This file, Makefile.unix, is part of CWEBBIN.
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [2018] --- December 2018
+# Version 3.64 [2019] --- January 2019
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -11,7 +11,7 @@
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2019 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -179,7 +179,7 @@ CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
-	0001-Update-CWEBbin-manpage.patch ctangle.1 cweave.1 \
+	0001-Update-CWEBbin-manpage.patch ctangle.1 ctwill.1 cweave.1 \
 	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
 	README.md system.bux texlive.w ctwill.bux ctwill-mini.ch LICENSE
 
@@ -396,10 +396,13 @@ install: all
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
+	$(INSTALL) -m 644 ctwill.1 $(DESTDIR)$(MANDIR)/ctwill.$(MANEXT)
 	$(INSTALL) -m 644 cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
 
 	$(INSTALL) -m 644 cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
-	$(INSTALL) -m 644 ctwimac.tex proofmac.tex $(DESTDIR)$(MACROSDIR)
+	$(INSTALL) -m 644 ctwimac.tex $(DESTDIR)$(MACROSDIR)
+	$(INSTALL) -m 644 proofmac.tex $(DESTDIR)$(MACROSDIR)
+	$(INSTALL) -m 644 twinxmac.tex $(DESTDIR)$(MACROSDIR)
 	$(INSTALL) -m 644 cweb.el $(DESTDIR)$(EMACSDIR)
 	$(INSTALL) -m 644 c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
 

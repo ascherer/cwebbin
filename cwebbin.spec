@@ -33,7 +33,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
-Source2: %{name}-2018.tar.gz
+Source2: %{name}-2019.tar.gz
 
 Patch1: 0001-Update-CWEBbin-manpage.patch
 Patch2: 0001-Make-clean-twinx.patch
@@ -43,7 +43,7 @@ Patch3: 0002-Make-clean-refsort.patch
 Version: 3.64c
 Release: ansi
 %else
-Version: 2018
+Version: 2019
 Release: 16
 %endif
 
@@ -158,6 +158,9 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__texhash}
 
 %changelog
+* Mon Jan 01 2019 Andreas Scherer <https://ascherer.github.io>
+- Prepare new release
+
 * Sun Dec 30 2018 Andreas Scherer <https://ascherer.github.io>
 - Add CTWILL and its utiliy programs and macros
 

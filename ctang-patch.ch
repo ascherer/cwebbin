@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.64 [2018]).
+This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.64 [2019]).
 It is a changefile for CTANGLE.W, Version 3.64.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
@@ -161,19 +161,16 @@ Material in limbo.
 @x l.27
 \def\title{CTANGLE (Version 3.64)}
 @y
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2018])}
+\def\title{CTANGLE (Version 3.64 [CWEBbin 2019])}
 @z
 
 @x l.31
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.64 [CWEBbin 2019])}
 @z
 
 Activate this, if only the changed modules should be printed.
-
-This change can not be applied when `tie' is used
-(TOC file can not be typeset).
 
 x l.48
 \let\maybe=\iftrue
@@ -186,7 +183,7 @@ Section 1.
 @x l.62
 @d banner "This is CTANGLE (Version 3.64)\n"
 @y
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
+@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2019])"
 @z
 
 Section 16.  Typographic improvement.

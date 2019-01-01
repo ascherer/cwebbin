@@ -10,13 +10,13 @@
 Material in limbo.
 
 @x l.33 and l.179 of CWEAV-PATCH.CH
-\def\title{CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{CWEAVE (Version 3.64 [CWEBbin 2019])}
 @y
 \def\title{CWEAVE (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.37 and l.185 of CWEAV-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.64 [CWEBbin 2019])}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
@@ -24,7 +24,7 @@ Material in limbo.
 Section 1.
 
 @x l.69 and l.204 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
-@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])")
+@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2019])")
 @y
 @d banner _("This is CWEAVE, Version 3.64")
   /* will be extended by the \TeX~Live |versionstring| */
@@ -50,8 +50,8 @@ Sections 5--15.
 @** Index.
 @y
 @* Put ``version'' information in a single spot.
-Don't do this at home, kids! Push our local macro to variable in \.{COMMON}
-for printing the |banner| and the |versionstring|.
+Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
+for printing the |banner| and the |versionstring| from there.
 
 @d max_banner 50
 

@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, December 30, 2018.
+Changes for COMMON.W by Andreas Scherer, January 1, 2019.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -252,7 +252,7 @@ Section 70.
 @y
 @z
 
-@x l.1265+ and l.214 of COMM-PATCH.CH
+@x l.1265+ and l.211 of COMM-PATCH.CH
   strcpy(change_file_name,"/dev/null");
 @y
 @#

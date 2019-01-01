@@ -10,13 +10,13 @@
 Material in limbo.
 
 @x l.28 of CWEAV-TWILL.CH
-\def\title{CTWILL (Version 3.64 [CWEBbin 2018])}
+\def\title{CTWILL (Version 3.64 [CWEBbin 2019])}
 @y
 \def\title{CTWILL (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.37 and l.185 of CWEAV-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.64 [CWEBbin 2019])}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
@@ -24,7 +24,7 @@ Material in limbo.
 Section 1.
 
 @x l.68 of CWEAV-TWILL.CH
-@d banner _("This is CTWILL (Version 3.64 [CWEBbin 2018])")
+@d banner _("This is CTWILL (Version 3.64 [CWEBbin 2019])")
 @y
 @d banner _("This is CTWILL, Version 3.64")
   /* will be extended by the \TeX~Live |versionstring| */
@@ -48,24 +48,24 @@ Sections 5--15.
 
 Section 80.
 
-@x l.1367 and l.616 of CWEAV-TWILL.CH
+@x l.1367 and l.621 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}',
 @y
 saying \.{+P} on the command line, it's `\.{\\input ctproofmac}',
 @z
 
-@x l.626 of CWEAV-TWILL.CH
-if (proofing) tex_puts("proofma");
+@x l.630 of CWEAV-TWILL.CH
+tex_puts(proofing?"proofma":"ctwima");
 @y
-if (proofing) tex_puts("ctproofma");
+tex_puts(proofing?"ctproofma":"ctwima");
 @z
 
 @x l.4644
 @** Index.
 @y
 @* Put ``version'' information in a single spot.
-Don't do this at home, kids! Push our local macro to variable in \.{COMMON}
-for printing the |banner| and the |versionstring|.
+Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
+for printing the |banner| and the |versionstring| from there.
 
 @d max_banner 50
 

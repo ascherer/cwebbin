@@ -12,14 +12,14 @@ Material in limbo.
 FIXME: Apply a more generic @VERSION@ scheme.
 
 @x l.20 and l.177 of COMM-PATCH.CH
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2018])}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2019])}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
 @x l.25 and l.183 of COMM-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2018])}
+  \centerline{(Version 3.64 [CWEBbin 2019])}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
@@ -96,7 +96,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 
 Section 22.
 
-@x l.457 and l.52 of COMM-EXTENSIONS.CH
+@x l.457 and l.99 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -144,7 +144,7 @@ Section 23.
 
 Replaced by Kpathsea `kpse_find_file'.
 
-@x l.493 and l.93 of COMM-EXTENSIONS.CH
+@x l.493 and l.115 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -233,7 +233,7 @@ the other arrays for the argument.
 
 Section 74.
 
-@x l.1344 and l.260 of COMM-EXTENSIONS.CH
+@x l.1344 and l.305 of COMM-EXTENSIONS.CH
 @<Handle flag...@>=
 {
 @y
@@ -261,12 +261,15 @@ Section 75.
 @x l.1354+ and l.281 of COMM-I18N.CH
 switch (program) {
 case ctangle: fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"),"");
+_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
+   ,"");
 @.Usage:@>
 case cweave: fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+   ,"");
 default: fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"),"");
+_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+   ,"");
 }
 @y
 cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
@@ -284,12 +287,12 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.279 of COMM-EXTENSIONS.CH
+@x l.350 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.287 of COMM-EXTENSIONS.CH and l.312 of COMM-I18N.CH
+@x l.358 of COMM-EXTENSIONS.CH and l.320 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -324,7 +327,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.318 of COMM-EXTENSIONS.CH
+@x l.389 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 

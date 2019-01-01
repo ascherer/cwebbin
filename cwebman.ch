@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [2018]).  It is a
+This file, CWEBMAN.CH, is part of CWEBBIN (Version 3.64 [2019]).  It is a
 changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
@@ -50,6 +50,7 @@ a20	02 Jan 2001	AS	Updated for CWEB 3.63.
 a21	09 Mar 2002	AS	Updated for CWEB 3.64.
 a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2018	24 Nov 2018	AS	Update for CWEBbin 2018.
+2019	01 Jan 2019	AS	Update for CWEBbin 2019.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -62,13 +63,13 @@ Use the already changed macro file.  Also we will need special characters.
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [CWEBbin 2018])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64 [CWEBbin 2019])}
 @z
 ------------------------------------------------------------------------------
 @x l.51
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(Version 3.64 [CWEBbin 2018] --- October 2018)}
+\vskip 18pt\centerline{(Version 3.64 [CWEBbin 2019] --- January 2019)}
 @z
 ------------------------------------------------------------------------------
 @x l.106
@@ -77,13 +78,13 @@ should be sent to Levy (\.{levy@math.berkeley.edu}).
 should be sent to \.{tex-k@tug.org}.
 @z
 ------------------------------------------------------------------------------
-@x l.106
+@x l.524
 email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}).
 @y
 email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
 @z
 ------------------------------------------------------------------------------
-@x l.913
+@x l.914
 \more On \UNIX/ systems (and others that support environment variables),
 if the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
 of the same name was defined at compile time,
@@ -105,7 +106,7 @@ There are additional command line switches available:
           browser of the SAS/C development system via ARexx.
     - 'o' to separate parameter declarations and statements.
 
-@x l.995
+@x l.1036
 \option b Print a banner line at the beginning of execution. (On
 by default.)
 
@@ -176,7 +177,7 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @z
 ------------------------------------------------------------------------------
 Also relate to this changed macro file and to the German version.
-@x l.1491
+@x l.1492
 \def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
 \section Appendix B: The \.{cwebmac.tex} file.
 This is the file that extends ``plain \TEX/'' format in order to support the
@@ -269,9 +270,9 @@ et soutient l'output de \.{CWEAVE}.
 \vfill\eject
 @z
 ------------------------------------------------------------------------------
-@x l.1505
+@x l.1582
   \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [CWEBbin 2018])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64 [CWEBbin 2019])\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

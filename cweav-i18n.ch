@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, November 1, 2018.
+Changes for CWEAVE.W by Andreas Scherer, January 1, 2019.
 
 This set of changes translates all string values written by the CWEB module
 CWEAVE.W in case of errors or information requests with the help of 'gettext'
@@ -12,9 +12,9 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 Section 1.
 
 @x l.69+ and 204 of CWEAV-PATCH.CH
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2018])"
+@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2019])"
 @y
-@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2018])")
+@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2019])")
 @z
 
 Section 21.
@@ -389,7 +389,7 @@ Section 226.
     fatal(_("! Cannot open section file "),scn_file_name);
 @z
 
-@x l.4338+ and l.426 of CWEAV-PATCH.CH
+@x l.4338+ and l.446 of CWEAV-PATCH.CH
   printf("Done.");
 @y
   fputs(_("Done."),stdout);

@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64c [2018]).
+% This file is part of CWEBbin (Version 3.64c [2019]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated December 4, 2018 by Andreas Scherer.
+% This README file was last updated January 1, 2019 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2018 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018,2019 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -81,7 +81,9 @@ The following files were added to this distribution by various contributors:
 
 GENERAL CONTRIBUTION:
 .
+├── 0001-Make-clean-twinx.patch		Patch for twinx.w
 ├── 0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
+├── 0002-Make-clean-refsort.patch	Patch for refsort.w
 ├── arexx				[AMIGA]
 │   ├── catalogs
 │   │   ├── cweb_arexx.cd		[AMIGA] catalog description for German defaults
@@ -137,8 +139,13 @@ GENERAL CONTRIBUTION:
 ├── ctang-patch.ch			change file for ctangle.w
 ├── ctang-texlive.ch			change file for ctangle.w
 ├── ctang-translation.ch		[AMIGA,BCC] change file for ctangle.w
+├── ctwill.bux				auxiliary file for CTWILL
+├── ctwill-mini.ch			auxiliary file for CTWILL
+├── ctwill-texlive.ch			change file for cweave.w/ctwill.w
 ├── cweav-ansi.ch			change file for cweave.w
 ├── cweav-borlandc.ch			[BCC] change file for cweave.w
+├── cweave.1				clone of cweb.1
+├── cweave.dsp				[MSVC] Developer Studio Project for CWEAVE
 ├── cweav-extensions.ch			change file for cweave.w
 ├── cweav-i18n.ch			change file for cweave.w
 ├── cweav-memory.ch			[AMIGA,BCC] change file for cweave.w
@@ -147,8 +154,7 @@ GENERAL CONTRIBUTION:
 ├── cweav-patch.ch			change file for cweave.w
 ├── cweav-texlive.ch			change file for cweave.w
 ├── cweav-translation.ch		[AMIGA,BCC] change file for cweave.w
-├── cweave.1				clone of cweb.1
-├── cweave.dsp				[MSVC] Developer Studio Project for CWEAVE
+├── cweav-twill.ch			change file for cweave.w
 ├── cwebbin.dsw				[MSVC] Developer Studio Workspace for all three
 ├── cwebbin.spec			extended build recipe for debbuild
 ├── cwebinputs
@@ -172,6 +178,13 @@ GENERAL CONTRIBUTION:
 │   ├── sample.w		     	program to produce random numbers
 │   ├── treeprint-ansi.ch		change file for treeprint.w
 │   ├── wc-ansi.ch			change file for wc.w
+│   ├── wmerg-ansi.ch			change file for wmerge.w
+│   ├── wmerg-borlandc.ch		[BCC] change file for wmerge.w
+│   ├── wmerge.dsp			[MSVC] Developer Studio Project for WMERGE
+│   ├── wmerg-extensions.ch		change file for wmerge.w
+│   ├── wmerg-memory.ch			[AMIGA,BCC] change file for wmerge.w
+│   ├── wmerg-output.ch			change file for wmerge.w
+│   ├── wmerg-patch.ch			change file for wmerge.w
 │   └── wordtest-ansi.ch		change file for wordtest.w
 ├── LICENSE				MIT license
 ├── Makefile.bcc			[BCC] makefile for Borland C/C++
@@ -187,10 +200,14 @@ GENERAL CONTRIBUTION:
 │   ├── it
 │   │   └── cweb.po			Portable Object for Italian t10n
 │   └── web2c-help.pot			Portable Object Template for i18n
+├── prod-twill.ch			change file for prod.w/CTWILL
 ├── README.md				Github project description
 ├── README.txt				the current file
+├── system.bux				auxiliary file for CTWILL
 ├── texinputs
+│   ├── dctwimac.tex			German captions in addition to ctwimac.tex
 │   ├── dcwebmac.tex			German captions in addition to cwebmac.tex
+│   ├── dproofmac.tex			German captions in addition to proofmac.tex
 │   ├── ecma94.sty			Umlauts and special characters for Latin-1
 │   ├── fcwebmac.tex			French captions in addition to cwebmac.tex
 │   ├── hp8.sty				Umlauts and special characters for HP Roman 8
@@ -198,14 +215,7 @@ GENERAL CONTRIBUTION:
 │   ├── mac8.sty			Umlauts and special characters for Macintosh
 │   ├── pc850.sty			Umlauts and special characters for IBM 850
 │   └── Xcwebmac.tex			beautifications for cwebmac.tex
-├── texlive.w				introduction to *-w2c.ch change files
-├── wmerg-ansi.ch			change file for wmerge.w
-├── wmerg-borlandc.ch			[BCC] change file for wmerge.w
-├── wmerge.dsp				[MSVC] Developer Studio Project for WMERGE
-├── wmerg-extensions.ch			change file for wmerge.w
-├── wmerg-memory.ch			[AMIGA,BCC] change file for wmerge.w
-├── wmerg-output.ch			change file for wmerge.w
-└── wmerg-patch.ch			change file for wmerge.w
+└── texlive.w				introduction to *-w2c.ch change files
 
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -376,6 +386,10 @@ So here are some words about the `special features':
      an extended comm-foo.h @include file.  These files are drop-in
      replacements for the hand-coded files used in the TL ecosystem.
 
+   - [GENERAL] The latest latest release of CWEBbin includes CWEAVE's
+     'evil twin' CTWILL, together with its utility programs 'refsort' and
+     'twinx', and the associated TeX macros.
+
    - [AMIGA] Two AREXX scripts for use with the CygnusEd Professional Editor
      were added to this package, one for CTANGLE and CWEAVE, localized with
      the help of language catalogs under AmigaOS version 2.1 or 3.0, the other
@@ -453,7 +467,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-December 4, 2018.
+January 1, 2019.
 
 Andreas Scherer
 

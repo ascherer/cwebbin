@@ -1,16 +1,18 @@
 # literate programming in ansi-c/c++
 
-*cwebbin* is the ansi-c/c++ implementation of silvio levy's and donald ervin
-knuth's [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html). it
+*cwebbin* is the ansi-c/c++ implementation of silvio levy's and donald e.
+knuth's [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html) and
+donald e. knuth's [ctwill program](ftp://ftp.cs.stanford.edu/pub/ctwill). it
 requires the contents of [the original source
-drop](http://mirrors.ctan.org/web/c_cpp/cweb/cweb.tar.gz), to
-which it applies a set of change files to fix warnings issued by modern c/c++
-compilers and to introduce advanced features. see the extensive
-[readme](README.txt) for the full story.
+drop](http://mirrors.ctan.org/web/c_cpp/cweb/cweb.tar.gz) and [the secondary
+source drop](ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it
+applies a set of change files to fix warnings issued by modern c/c++ compilers
+and to introduce advanced features. see the extensive [readme](README.txt) for
+the full story.
 
-extract *cwebbin-2018.tar.gz* and add the contents of *cweb-3.64c.tar.gz* for
-the full set of source files.  unix/linux users should work with
-[make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
+extract *cwebbin-2019.tar.gz* and add the contents of *cweb-3.64c.tar.gz* and
+*ctwill.tar.gz* for the full set of source files.  unix/linux users should work
+with [make -f Makefile.unix](Makefile.unix) exclusively (targets ‘boot,’
 ‘cautiously,’ and ‘all’).
 
 ## advanced packaging
@@ -21,10 +23,11 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
 git archive -o cweb-3.64c.tar.gz cweb-3.64c
-git archive -o cwebbin-2018.tar.gz cwebbin-2018
+git archive -o cwebbin-2019.tar.gz cwebbin-2019
 ```
-respectively, put these two tarballs in the *SOURCES* directory and
-*cwebbin.spec* in the *SPECS* directory of your build arena, and run
+respectively, put these two tarballs and the original *ctwill.tar.gz* in the
+*SOURCES* directory and *cwebbin.spec* in the *SPECS* directory of your build
+arena, and run
 ```
 rpmbuild -ba SPECS/cwebbin.spec
 debbuild -ba SPECS/cwebbin.spec
@@ -54,4 +57,6 @@ you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
 texlive's source directory `texk/web2c/cwebdir`. this tarball contains
 `*-w2c.ch` files that modify the original cweb sources for the texlive
 ecosystem.  additionally, it contains language catalogs, tex macros, and cweb
-include files.
+include files. additional modifications for the tl build ecosystem can be found
+in [this
+branch](https://github.com/ascherer/texlive-source/tree/integrate-cwebbin-in-texlive).
