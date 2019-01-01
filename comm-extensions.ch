@@ -157,12 +157,12 @@ Section 32.
 @d hash_size 8501 /* should be prime */
 @z
 
-Section 39.
+Section 39.  'init_p' is a NOOP for CTANGLE anyway.
 
 @x l.711
   if (program==cweave) init_p(p,t);
 @y
-  if (program!=ctangle) init_p(p,t);
+  init_p(p,t);
 @z
 
 Section 61.
