@@ -240,14 +240,18 @@ case fatal_message:
 @z
 
 @x l.1354
-if (program==ctangle)
-  fatal(
+switch (program) {
+case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
-else fatal(
+case cweave: fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
+default: fatal(
+"! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+   ,"");
+}
 @y
 if (program==ctangle) fatal(get_string(MSG_FATAL_CO75_2),"");
 else fatal(get_string(MSG_FATAL_CO75_4),"");

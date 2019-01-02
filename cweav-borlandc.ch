@@ -39,24 +39,6 @@ alloc_object(xmem,max_refs,xref_info);
 #endif
 @z
 
-@x l.63 of CWEAV-ANSI.CH
-  append_xref(m); xref_ptr->xlink=q; p->xref=(void *)xref_ptr;
-@y
-  append_xref(m); xref_ptr->xlink=q; p->xref=(void HUGE*)xref_ptr;
-@z
-
-@x l.77
-  if (r==xmem) p->xref=(void *)xref_ptr;
-@y
-  if (r==xmem) p->xref=(void HUGE*)xref_ptr;
-@z
-
-@x l.91
-  p->xref = (void *)xref_ptr;
-@y
-  p->xref = (void HUGE*)xref_ptr;
-@z
-
 @x l.334
 typedef token *token_pointer;
 typedef token_pointer *text_pointer;
@@ -93,12 +75,6 @@ alloc_object(tok_mem,max_toks,token);
 @y
   char HUGE *k;
   char HUGE *k_end=(p+1)->byte_start; /* pointers into |byte_mem| */
-@z
-
-@x l.446 of CWEAV-ANSI.CH
-  p->xref=(void *)xref_ptr;
-@y
-  p->xref=(void HUGE*)xref_ptr;
 @z
 
 @x l.3554

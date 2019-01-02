@@ -138,9 +138,9 @@ void HUGE *equiv_or_xref; /* info corresponding to names */
 @z
 
 @x l.125 of COMM-EXTENSIONS.CH
-made sensitive to these conditions.
+can be made sensitive to these conditions.
 @y
-made sensitive to these conditions.
+can be made sensitive to these conditions.
 
 |__TURBOC__| has another shitty ``feature'' that has to be fixed.
 |return|ing from several |case|s is not possible.  Either always the
@@ -150,10 +150,10 @@ first case is used, or the system is crashed completely.  Really funny.
 
 @x l.140 of COMM-EXTENSIONS.CH
   switch(history) {
-  case harmless_message: return(RETURN_WARN); break;
-  case error_message: return(RETURN_ERROR); break;
-  case fatal_message: return(RETURN_FAIL); break;
-  default: return(RETURN_OK);
+  case harmless_message: return RETURN_WARN;
+  case error_message: return RETURN_ERROR;
+  case fatal_message: return RETURN_FAIL;
+  default: return RETURN_OK;
   }
 @y
 #ifdef __TURBOC__
@@ -166,14 +166,14 @@ first case is used, or the system is crashed completely.  Really funny.
   case fatal_message: return_val=RETURN_FAIL; break;
   default: return_val=RETURN_OK;
   }
-  return(return_val);
+  return return_val;
 }
 #else
   switch(history) {
-  case harmless_message: return(RETURN_WARN); break;
-  case error_message: return(RETURN_ERROR); break;
-  case fatal_message: return(RETURN_FAIL); break;
-  default: return(RETURN_OK);
+  case harmless_message: return RETURN_WARN;
+  case error_message: return RETURN_ERROR;
+  case fatal_message: return RETURN_FAIL;
+  default: return RETURN_OK;
   }
 #endif
 @z

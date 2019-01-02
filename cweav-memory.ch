@@ -46,13 +46,17 @@ text_pointer text_ptr; /* first unused position in |tok_start| */
 @z
 
 @x l.366
-tok_ptr=tok_mem+1; text_ptr=tok_start+1; tok_start[0]=tok_mem+1;
+tok_ptr=max_tok_ptr=tok_mem+1;@/
+tok_start[0]=tok_start[1]=tok_mem+1;@/
+text_ptr=max_text_ptr=tok_start+1;
 @y
 alloc_object(tok_mem,max_toks,token);
 tok_mem_end = tok_mem + max_toks - 1;
 alloc_object(tok_start,max_texts,token_pointer);
 tok_start_end = tok_start + max_texts - 1;
-tok_ptr=tok_mem+1; text_ptr=tok_start+1; tok_start[0]=tok_mem+1;
+tok_ptr=max_tok_ptr=tok_mem+1;@/
+tok_start[0]=tok_start[1]=tok_mem+1;@/
+text_ptr=max_text_ptr=tok_start+1;
 @z
 
 @x l.560
@@ -89,17 +93,16 @@ out_ptr=out_buf+1; out_line=1; active_file=tex_file; *out_ptr='c';
 
 @x l.1715
 char cat_name[256][12];
-eight_bits cat_index;
 
 @ @<Set in...@>=
+{int c; for (c=0;c<256;c++) strcpy(cat_name[c],"UNKNOWN");}
 @y
 char **cat_name;
-eight_bits cat_index;
 
 @ @<Set in...@>=
 alloc_object(cat_name,256,char *);
-for(cat_index=0; cat_index<255; cat_index++)
-  alloc_object(cat_name[cat_index],12,char);
+{int c; for (c=0;c<256;c++) {
+  alloc_object(cat_name[c],12,char); strcpy(cat_name[c],"UNKNOWN");}}
 @z
 
 @x l.2102

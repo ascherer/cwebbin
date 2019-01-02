@@ -16,9 +16,11 @@ COMM-MEMORY.HCH, COMM-TRANSLATION.HCH to be applied as well.
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 @x l.24
-First comes general stuff:
+% First comes general stuff:
+%
 @y
-First comes general stuff.
+% First comes general stuff.
+%
 In {\mc TURBO} \CEE/, we use |huge| pointers instead of large arrays.
 @^system dependencies@>
 

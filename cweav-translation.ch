@@ -28,6 +28,8 @@ be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"comm-foo.h"|, which needs to be updated when |"common.w"| or any of
 the added changefiles change.
 
+First comes general stuff:
+
 @i comm-foo.h
 @z
 
@@ -35,6 +37,8 @@ the added changefiles change.
 @ The next few sections contain stuff from the file |"common.w"| that must
 be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"common.h"|, which needs to be updated when |"common.w"| changes.
+
+First comes general stuff:
 
 @i comm-foo.h
 
