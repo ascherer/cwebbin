@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, December 4, 2018.
+Changes for CWEAVE.W by Andreas Scherer.
 
 This set of changes translates all string values written by the CWEB module
 CWEAVE.W in case of errors or information requests.  By editing the
@@ -10,7 +10,7 @@ CWEAV-OUTPUT.CH, and CWEAV-MEMORY.CH to be applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-@x l.200 of CWEAV-PATCH.CH
+@x l.204 of CWEAV-PATCH.CH
 @d banner "This is CWEAVE (@VERSION@)"
 @y
 @d banner get_string(MSG_BANNER_CW1)
@@ -18,7 +18,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 We have to move "comm-foo.h" up before the first use, i.e., banner output.
 
-@x l.36 of CWEAV-ANSI.CH
+@x l.42 of CWEAV-ANSI.CH
 #include <string.h>
 @y
 #include <string.h>
@@ -33,7 +33,7 @@ First comes general stuff:
 @i comm-foo.h
 @z
 
-@x l.140 and l.67 of CWEAV-ANSI.CH
+@x l.140 and l.68 of CWEAV-ANSI.CH
 @ The next few sections contain stuff from the file |"common.w"| that must
 be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"common.h"|, which needs to be updated when |"common.w"| changes.
@@ -351,7 +351,7 @@ reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
     fatal(get_string(MSG_FATAL_CW225_2),scn_file_name);
 @z
 
-@x l.4338 and l.218 of CWEAV-PATCH.CH
+@x l.4338 and l.446 of CWEAV-PATCH.CH
   printf("Done.");
 @y
   fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
@@ -409,7 +409,7 @@ reset_input(); if (show_progress) fputs(get_string(MSG_PROGRESS_CW204),stdout);
 }
 @z
 
-@x l.85 of CWEAV-OUTPUT.CH
+@x l.103 of CWEAV-OUTPUT.CH
     fatal("! Cannot open output file ",check_file_name);
 @y
     fatal(get_string(MSG_FATAL_CO78),check_file_name);

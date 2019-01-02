@@ -18,7 +18,7 @@ Material in limbo.
 % Please send comments, suggestions, etc. to tex-k@@tug.org.
 @z
 
-@x l.17 of COMM-ANSI.HCH
+@x l.19 of COMM-ANSI.HCH
 @i iso_types.w
 @y
 @s boolean int
@@ -28,7 +28,7 @@ Material in limbo.
 
 Section 6.
 
-@x l. 156 of COMM-ANSI.HCH
+@x l. 150 of COMM-ANSI.HCH
 extern void print_stats(void);@/
 @y
 extern void print_stats(void);@/

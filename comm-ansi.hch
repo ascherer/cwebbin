@@ -9,22 +9,16 @@ This is a standalone change file.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Material in limbo (not really).
-
-@x l.24
-First comes general stuff:
-@y
-% First comes general stuff:
-%
-@i iso_types.w
-@z
-
 Section 5 (of CTANGLE and CWEAVE).
 
-@x l.30
+@x l.29
+@<Common code for \.{CWEAVE} and \.{CTANGLE}@>=
 typedef short boolean;
 typedef char unsigned eight_bits;
 @y
+@i iso_types.w
+
+@<Common code for \.{CWEAVE} and \.{CTANGLE}@>=
 typedef bool boolean;
 typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;

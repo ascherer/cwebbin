@@ -40,7 +40,7 @@ Section 3.
 
 Sections 5--15.
 
-@x l.144 and l.70 of CWEAV-ANSI.CH
+@x l.144 and l.68 of CWEAV-ANSI.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
@@ -48,13 +48,13 @@ Sections 5--15.
 
 Section 80.
 
-@x l.1367 and l.621 of CWEAV-TWILL.CH
+@x l.1367 and l.619 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}',
 @y
 saying \.{+P} on the command line, it's `\.{\\input ctproofmac}',
 @z
 
-@x l.630 of CWEAV-TWILL.CH
+@x l.628 of CWEAV-TWILL.CH
 tex_puts(proofing?"proofma":"ctwima");
 @y
 tex_puts(proofing?"ctproofma":"ctwima");

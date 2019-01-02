@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, January 1, 2019.
+Changes for CWEAVE.W by Andreas Scherer et al.
 
 This set of changes converts the CWEAVE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -65,8 +65,6 @@ Sections 5--15.
 @x l.144
 @i common.h
 @y
-First comes general stuff:
-
 @i comm-foo.h
 @z
 
@@ -403,7 +401,7 @@ name_pointer p) /* print anomalies in subtree |p| */
 
 Section 78.
 
-@x l.1323 and l.252 of CWEAV-PATCH.CH
+@x l.1323 and l.249 of CWEAV-PATCH.CH
 void
 flush_buffer(b,per_cent,carryover)
 char *b; /* outputs from |out_buf+1| to |b|, where |b<=out_ptr| */

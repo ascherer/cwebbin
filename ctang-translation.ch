@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, December 4, 2018.
+Changes for CTANGLE.W by Andreas Scherer.
 
 This set of changes translates all string values written by the CWEB module
 CTANGLE.W in case of errors or information requests.  By editing the
@@ -10,7 +10,7 @@ CTANG-OUTPUT.CH, and CTANG-MEMORY.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-@x l.185 of CTANG-PATCH.CH
+@x l.186 of CTANG-PATCH.CH
 @d banner "This is CTANGLE (@VERSION@)"
 @y
 @d banner get_string(MSG_BANNER_CT1)
@@ -33,7 +33,7 @@ First comes general stuff:
 @i comm-foo.h
 @z
 
-@x l.124 and l.58 of CTANG-ANSI.CH
+@x l.124 and l.70 of CTANG-ANSI.CH
 @ The next few sections contain stuff from the file |"common.w"| that must
 be included in both |"ctangle.w"| and |"cweave.w"|. It appears in
 file |"common.h"|, which needs to be updated when |"common.w"| changes.
@@ -93,7 +93,7 @@ First comes general stuff:
       fputs(get_string(MSG_PROGRESS_CT42_3),stdout);
 @z
 
-@x l.41 of CTANG-OUTPUT.CH
+@x l.43 of CTANG-OUTPUT.CH
       fatal("! Cannot open output file ",check_file_name);
 @y
       fatal(get_string(MSG_FATAL_CO78),check_file_name);

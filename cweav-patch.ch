@@ -187,9 +187,6 @@ Material in limbo.
 
 Activate this, if only the changed modules should be printed.
 
-This change cannot be applied when `tie' is used
-(TOC file can not be typeset).
-
 x l.54
 \let\maybe=\iftrue
 y

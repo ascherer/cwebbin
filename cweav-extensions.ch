@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, January 1, 2019.
+Changes for CWEAVE.W by Andreas Scherer et al.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
@@ -102,7 +102,7 @@ Section 78.
 
 Section 80.
 
-@x l.1364 and l.260 of CWEAV-PATCH.CH
+@x l.1364 and l.257 of CWEAV-PATCH.CH
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -264,7 +264,7 @@ else if (cat1==stmt) {
 }
 @z
 
-@x l.105 and l.477 of CWEAV-PATCH.CH
+@x l.105 and l.474 of CWEAV-PATCH.CH
   make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
 @y
   make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;

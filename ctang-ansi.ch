@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, November 6, 2018.
+Changes for CTANGLE.W by Andreas Scherer et al.
 
 This set of changes converts the CTANGLE.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -67,8 +67,6 @@ Sections 5--15.
 @x l.127
 @i common.h
 @y
-First comes general stuff:
-
 @i comm-foo.h
 @z
 

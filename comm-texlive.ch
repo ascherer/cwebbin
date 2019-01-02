@@ -94,7 +94,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 
 Section 22.
 
-@x l.457 and l.99 of COMM-EXTENSIONS.CH
+@x l.457 and l.74 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without

@@ -40,7 +40,7 @@ Section 3.
 
 Sections 5--15.
 
-@x l.127 and l.72 of CTANG-ANSI.CH
+@x l.127 and l.70 of CTANG-ANSI.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h

@@ -23,7 +23,7 @@ Material in limbo.
 
 Section 1.
 
-@x l.69 and l.204 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
+@x l.69 and l.201 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 @d banner _("This is CWEAVE (@VERSION@)")
 @y
 @d banner _("This is CWEAVE, Version 3.64")
@@ -40,7 +40,7 @@ Section 3.
 
 Sections 5--15.
 
-@x l.144 and l.70 of CWEAV-ANSI.CH
+@x l.144 and l.68 of CWEAV-ANSI.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
