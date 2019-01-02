@@ -1,6 +1,5 @@
-# This file, Makefile.unix, is part of CWEBBIN.
+# This file, Makefile.unix, is part of CWEBBIN (@@VERSION@@).
 # It is distributed WITHOUT ANY WARRANTY, express or implied.
-# Version 3.64 [2019] --- January 2019
 
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
@@ -330,6 +329,7 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
@@ -337,10 +337,13 @@ cwebmana.tex: cwebman.tex cwebman.ch
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
@@ -359,18 +362,23 @@ common.tex: common.w $(CCHANGES)
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 $(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-twill.ch # ctwill-texlive.ch
 	$(TIE) -c $@ $^
+	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # for bootstrapping

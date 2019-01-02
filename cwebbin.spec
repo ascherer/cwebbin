@@ -72,6 +72,7 @@ and Donald Knuth for Literate Programming in C/C++.
 
 %else
 
+%{__sed} -e "s/@@VERSION@@/Version 3.64 \[CWEBbin 2019\]/" -i Makefile.unix
 %{!?with_doc:%{__sed} -e "s/cweave fullmanual/cweave # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
