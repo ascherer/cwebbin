@@ -23,9 +23,9 @@
 @z
 
 @x l.33 and l.179 of CWEAV-I18N.CH
-\def\title{CWEAVE (Version 3.64 [CWEBbin 2019])}
+\def\title{CWEAVE (@VERSION@)}
 @y
-\def\title{CTWILL (Version 3.64 [CWEBbin 2019])}
+\def\title{CTWILL (@VERSION@)}
 @z
 
 @x l.35
@@ -46,7 +46,7 @@ Crusius, and others who have contributed improvements.
 The ``banner line'' defined here should be changed whenever \.{CWEAVE}
 is modified.
 
-@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CWEAVE (@VERSION@)")
 @y
 This is the \.{CTWILL} program by D. E. Knuth, based
 on \.{CWEAVE} by Silvio Levy and D.~E. Knuth. It is also based on
@@ -65,7 +65,7 @@ reprinted in {\sl Digital Typography\/} (1999), 225--245.
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 modified. The version number parallels the corresponding version of \.{CWEAVE}.
 
-@d banner _("This is CTWILL (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CTWILL (@VERSION@)")
 @z
 
 @x l.42 of CWEAV-ANSI.CH

@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, COMM-FOO.CH, is part of CWEBBIN (Version 3.64 [2019]).
+This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
 It is a changefile for COMMON.W, Version 3.64.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
@@ -174,13 +174,13 @@ Material in limbo.
 @x l.20
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
 @y
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2019])}
+\def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
 @x l.25
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @z
 
 Activate this, if only the changed modules should be printed.

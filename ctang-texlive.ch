@@ -9,16 +9,14 @@
 
 Material in limbo.
 
-FIXME: Apply a more generic @VERSION@ scheme.
-
 @x l.27 and l.164 of CTANG-PATCH.CH
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2019])}
+\def\title{CTANGLE (@VERSION@)}
 @y
 \def\title{CTANGLE (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.31 and l.170 of CTANG-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
@@ -26,7 +24,7 @@ FIXME: Apply a more generic @VERSION@ scheme.
 Section 1.
 
 @x l.62 and l.186 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CTANGLE (@VERSION@)")
 @y
 @d banner _("This is CTANGLE, Version 3.64")
   /* will be extended by the \TeX~Live |versionstring| */

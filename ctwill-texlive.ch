@@ -10,13 +10,13 @@
 Material in limbo.
 
 @x l.28 of CWEAV-TWILL.CH
-\def\title{CTWILL (Version 3.64 [CWEBbin 2019])}
+\def\title{CTWILL (@VERSION@)}
 @y
 \def\title{CTWILL (Version 3.64 [\TeX~Live])}
 @z
 
 @x l.37 and l.185 of CWEAV-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
@@ -24,7 +24,7 @@ Material in limbo.
 Section 1.
 
 @x l.68 of CWEAV-TWILL.CH
-@d banner _("This is CTWILL (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CTWILL (@VERSION@)")
 @y
 @d banner _("This is CTWILL, Version 3.64")
   /* will be extended by the \TeX~Live |versionstring| */

@@ -11,7 +11,7 @@ CTANG-OUTPUT.CH, and CTANG-MEMORY.CH to be applied as well.
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 @x l.185 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2018])"
+@d banner "This is CTANGLE (@VERSION@)"
 @y
 @d banner get_string(MSG_BANNER_CT1)
 @z

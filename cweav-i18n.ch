@@ -12,9 +12,9 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 Section 1.
 
 @x l.69+ and 204 of CWEAV-PATCH.CH
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2019])"
+@d banner "This is CWEAVE (@VERSION@)"
 @y
-@d banner _("This is CWEAVE (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CWEAVE (@VERSION@)")
 @z
 
 Section 21.

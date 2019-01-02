@@ -594,16 +594,16 @@ msgid "Sorting:"
 msgstr "Sortieren:"
 
 #: ctang-i18n.ch:17
-msgid "This is CTANGLE (Version 3.64 [CWEBbin 2019])"
-msgstr "Dies ist CTANGLE (Version 3.64 [CWEBbin 2019])"
+msgid "This is CTANGLE (@VERSION@)"
+msgstr "Dies ist CTANGLE (@VERSION@)"
 
 #: cweav-i18n.ch:17
-msgid "This is CWEAVE (Version 3.64 [CWEBbin 2019])"
-msgstr "Dies ist CWEAVE (Version 3.64 [CWEBbin 2019])"
+msgid "This is CWEAVE (@VERSION@)"
+msgstr "Dies ist CWEAVE (@VERSION@)"
 
 #: cweav-twill.ch:49
-msgid "This is CTWILL (Version 3.64 [CWEBbin 2019])"
-msgstr "Dies ist CTWILL (Version 3.64 [CWEBbin 2019])"
+msgid "This is CTWILL (@VERSION@)"
+msgstr "Dies ist CTWILL (@VERSION@)"
 
 #: cweav-i18n.ch:301 cweav-i18n.ch:309
 msgid "buffer"

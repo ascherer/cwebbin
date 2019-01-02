@@ -12,9 +12,9 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 Section 1.
 
 @x l.62+ and l.164 of CTANG-PATCH.CH
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2019])"
+@d banner "This is CTANGLE (@VERSION@)"
 @y
-@d banner _("This is CTANGLE (Version 3.64 [CWEBbin 2019])")
+@d banner _("This is CTANGLE (@VERSION@)")
 @z
 
 Section 26.

@@ -9,17 +9,15 @@
 
 Material in limbo.
 
-FIXME: Apply a more generic @VERSION@ scheme.
-
 @x l.20 and l.177 of COMM-PATCH.CH
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64 [CWEBbin 2019])}
+\def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
 @x l.25 and l.183 of COMM-PATCH.CH
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z

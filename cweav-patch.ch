@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CWEAV-FOO.CH, is part of CWEBBIN (Version 3.64 [2019]).
+This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
 It is a changefile for CWEAVE.W, Version 3.64.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
@@ -176,13 +176,13 @@ Material in limbo.
 @x l.33
 \def\title{CWEAVE (Version 3.64)}
 @y
-\def\title{CWEAVE (Version 3.64 [CWEBbin 2019])}
+\def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.37
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -201,7 +201,7 @@ Section 1.
 @x l.69
 @d banner "This is CWEAVE (Version 3.64)\n"
 @y
-@d banner "This is CWEAVE (Version 3.64 [CWEBbin 2019])"
+@d banner "This is CWEAVE (@VERSION@)"
 @z
 
 Section 3.  Clean up |main|.

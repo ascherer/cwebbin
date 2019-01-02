@@ -1,5 +1,5 @@
 								-*-Web-*-
-This file, CTANG-FOO.CH, is part of CWEBBIN (Version 3.64 [2019]).
+This file, CTANG-FOO.CH, is part of CWEBBIN (@VERSION@).
 It is a changefile for CTANGLE.W, Version 3.64.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
@@ -31,7 +31,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CTANGLE.W.
 
-Copyright (C) 1993-1995,1998,2000,2005,2011 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2011,2019 Andreas Scherer
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
 Permission is granted to make and distribute verbatim copies of this
@@ -161,13 +161,13 @@ Material in limbo.
 @x l.27
 \def\title{CTANGLE (Version 3.64)}
 @y
-\def\title{CTANGLE (Version 3.64 [CWEBbin 2019])}
+\def\title{CTANGLE (@VERSION@)}
 @z
 
 @x l.31
   \centerline{(Version 3.64)}
 @y
-  \centerline{(Version 3.64 [CWEBbin 2019])}
+  \centerline{(@VERSION@)}
 @z
 
 Activate this, if only the changed modules should be printed.
@@ -183,7 +183,7 @@ Section 1.
 @x l.62
 @d banner "This is CTANGLE (Version 3.64)\n"
 @y
-@d banner "This is CTANGLE (Version 3.64 [CWEBbin 2019])"
+@d banner "This is CTANGLE (@VERSION@)"
 @z
 
 Section 16.  Typographic improvement.
