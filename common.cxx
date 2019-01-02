@@ -927,7 +927,7 @@ if(name_ptr>=name_dir_end)overflow(_("name"));
 strncpy(byte_ptr,first,l);
 (++name_ptr)->byte_start= byte_ptr+= l;
 #line 431 "comm-foo.ch"
-if(program!=ctangle)init_p(p,t);
+init_p(p,t);
 #line 712 "common.w"
 }
 
