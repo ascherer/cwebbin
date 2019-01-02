@@ -517,15 +517,15 @@ msgid "Sorting:"
 msgstr ""
 
 #: ctang-i18n.ch:17
-msgid "This is CTANGLE (@VERSION@)"
+msgid "This is CTANGLE (@@VERSION@@)"
 msgstr ""
 
 #: cweav-i18n.ch:17
-msgid "This is CWEAVE (@VERSION@)"
+msgid "This is CWEAVE (@@VERSION@@)"
 msgstr ""
 
 #: cweav-twill.ch:49
-msgid "This is CTWILL (@VERSION@)"
+msgid "This is CTWILL (@@VERSION@@)"
 msgstr ""
 
 #: cweav-i18n.ch:301 cweav-i18n.ch:309

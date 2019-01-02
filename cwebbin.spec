@@ -67,12 +67,14 @@ and Donald Knuth for Literate Programming in C/C++.
 %autosetup -D -T -a 2
 %endif
 
+for f in Makefile.unix po/cweb.pot po/*/cweb.po
+do %{__sed} -e "s/@@VERSION@@/Version 3.64 \[CWEBbin 2019\]/" -i $f; done
+
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
 
 %else
 
-%{__sed} -e "s/@@VERSION@@/Version 3.64 \[CWEBbin 2019\]/" -i Makefile.unix
 %{!?with_doc:%{__sed} -e "s/cweave fullmanual/cweave # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
