@@ -117,6 +117,9 @@ MAKE = make -f Makefile.unix
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
 
+# Replace @VERSION@ placeholder in tie'd change files
+SUBVER = sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+
 # What C compiler are you using?
 CC = g++ # gcc cc
 
@@ -328,22 +331,18 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
-	$(TIE) -m $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -m $@ $^; $(SUBVER)
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
 # change files listed above are actually used here, so you won't see
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
@@ -361,24 +360,19 @@ common.tex: common.w $(CCHANGES)
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 $(HCHANGES): common.h comm-ansi.hch comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
-	$(TIE) -m $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -m $@ $^; $(SUBVER)
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 $(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-twill.ch # ctwill-texlive.ch
-	$(TIE) -c $@ $^
-	sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+	$(TIE) -c $@ $^; $(SUBVER)
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # for bootstrapping
