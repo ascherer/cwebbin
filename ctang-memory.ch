@@ -131,7 +131,7 @@ their creation date and their current version.  This might be useful for
 other operating systems as well.
 
 @<Glob...@>=
-const char Version[] = "$VER: CTangle 3.64 [CWEBbin 2018] ("@|
+const char Version[] = "$VER: CTANGLE @VERSION@ ("@|
   __DATE__@= @>", "@= @>__TIME__@= @>")\n";
 
 @** Index.
