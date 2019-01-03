@@ -74,6 +74,12 @@
 @$check_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
 @$active_file {{\sc COMMON.W}}77 \&{FILE} ${*}$@>
 
+@$cb_banner {{\sc COMMON.W}}86 \&{char} [\,]@>
+
+@$cb_show_banner {{\sc COMMON.W}}95 \&{void} (\,)@>
+
+@$versionstring "<lib/lib.h>" \&{const char} ${*}$@>
+
 @$A {}7 =macro arg@>
 @$HAVE_GETTEXT {}7 =macro@>
 @$STRING {}11 =macro arg@>

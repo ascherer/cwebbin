@@ -23,18 +23,14 @@ give it the necessary hints in other places via your change file.
 @z
 
 @x
-@i comm-foo.h
+@i prod-twill.w
 @y
-@-A@>
+@i prod-twill.w
 @-any@>
 @-any_other@>
-@-c@>
-@-DEAD_CODE@>
 @-g@>
 @-in@>
 @-z@>
-
-@i comm-foo.h
 @z
 
 @x
