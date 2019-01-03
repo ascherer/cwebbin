@@ -32,9 +32,3 @@ give it the necessary hints in other places via your change file.
 @-in@>
 @-z@>
 @z
-
-@x
-@** Extensions for modern \.{CWEB}.
-@y
-@** Extensions for modern CWEB.
-@z

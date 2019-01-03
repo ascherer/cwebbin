@@ -457,7 +457,7 @@ Addendum.
 @x l.4644
 @** Index.
 @y
-@** Extensions for modern \.{CWEB}.
+@** Extensions for modern {\tt CWEB}.
 
 The following sections introduce code changes and extensions that have been
 created by numerous contributors over the course of a quarter century. They
@@ -468,7 +468,8 @@ Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index},'' and
 additional material follows below.
 
-@* Set \.{CWEAVE} flags.  At least one of these is already used in \.{COMMON}.
+@* Set {\tt CWEAVE} flags.
+At least one of these is already used in \.{COMMON}.
 
 @<Set init...@>=
   make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
