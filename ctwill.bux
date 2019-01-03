@@ -78,7 +78,7 @@
 
 @$cb_show_banner {COMMON.W}95 \&{void} (\,)@>
 
-@$versionstring "<lib/lib.h>" \&{const char} ${*}$@>
+@$versionstring "<lib/lib.h>" \zip@>
 
 @$A {}7 =macro arg@>
 @$HAVE_GETTEXT {}7 =macro@>
