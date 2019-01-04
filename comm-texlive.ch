@@ -74,7 +74,9 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
     (web_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open input file "), web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
-  strcpy(web_file_name, found_filename);
+  if (strcmp(web_file_name, found_filename))
+    strcpy(web_file_name, found_filename +
+      ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
   free(found_filename);
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
@@ -87,7 +89,9 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
     (change_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open change file "), change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
-  strcpy(change_file_name, found_filename);
+  if (strcmp(change_file_name, found_filename))
+    strcpy(change_file_name, found_filename +
+      ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
   free(found_filename);
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
