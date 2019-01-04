@@ -139,7 +139,9 @@ Section 23.
       (cur_file=fopen(found_filename,"r"))!=NULL) {
     /* Copy name for |#line| directives. */
     if (strlen(found_filename) < max_file_name_length) {
-      strcpy(cur_file_name, found_filename);
+      if (strcmp(cur_file_name, found_filename))
+        strcpy(cur_file_name, found_filename +
+          ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
       free(found_filename);
     } else fatal(_("! Filename too long\n"), found_filename);
 @z
