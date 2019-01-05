@@ -262,7 +262,8 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.281 of COMM-I18N.CH
+@x l.1354+ and l.326 of COMM-EXTENSIONS.CH and l.281 of COMM-I18N.CH
+{
 switch (program) {
 case ctangle: fatal(
 _("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
@@ -274,6 +275,7 @@ _("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 default: fatal(
 _("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
+}
 }
 @y
 cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
