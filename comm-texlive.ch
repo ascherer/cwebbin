@@ -76,7 +76,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
 } else if (strlen(found_filename) < max_file_name_length) {
   if (strcmp(web_file_name, found_filename))
     strcpy(web_file_name, found_filename +
-      ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
+      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
   free(found_filename);
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
@@ -91,7 +91,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 } else if (strlen(found_filename) < max_file_name_length) {
   if (strcmp(change_file_name, found_filename))
     strcpy(change_file_name, found_filename +
-      ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
+      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
   free(found_filename);
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
@@ -141,7 +141,7 @@ Section 23.
     if (strlen(found_filename) < max_file_name_length) {
       if (strcmp(cur_file_name, found_filename))
         strcpy(cur_file_name, found_filename +
-          ((found_filename[0]=='.' && found_filename[1]=='/') ? 2 : 0));
+          ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
       free(found_filename);
     } else fatal(_("! Filename too long\n"), found_filename);
 @z
@@ -426,6 +426,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email);@/
 @c
 void cb_show_banner (void)
 {
+  assert(cb_banner[0]!='\0');
   textdomain("cweb-tl");
 @.cweb-tl.mo@>
   printf("%s%s\n", cb_banner, versionstring);
