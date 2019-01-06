@@ -584,11 +584,11 @@ static void check_change(void);@/
 static void prime_the_change_buffer(void);@/
 
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
-standard C types for pointers, boolean values, and objects with fixed sizes.
+standard C types for boolean values, pointers, and objects with fixed sizes.
 
 @<Include files@>=
-#include <stddef.h> /* type definition of |ptrdiff_t| */
 #include <stdbool.h> /* type definition of |bool| */
+#include <stddef.h> /* type definition of |ptrdiff_t| */
 #include <stdint.h> /* type definition of |uint8_t| et al. */
 
 @** Index.
