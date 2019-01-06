@@ -187,14 +187,16 @@ you expect are not found, the thing to do is to enable `kpathsea' runtime
 debugging by assigning to the |kpathsea_debug| variable a small number via the
 `\.{-d}' option. The meaning of this number is shown below. To set more than
 one debugging option, simply sum the corresponding numbers.
-$$\halign{\hskip5em\tt\hfil#&&\qquad\tt#\cr
+\medskip
+\halign{\hskip5em\tt\hfil#&&\qquad\rm#\hfil\cr
  1&report `\.{stat}' calls\cr
  2&report lookups in all hash tables\cr
  4&report file openings and closings\cr
  8&report path information\cr
 16&report directory list\cr
 32&report on each file search\cr
-64&report values of variables being looked up\cr}$$
+64&report values of variables being looked up\cr}
+\medskip
 Debugging output is always written to |stderr|, and begins with the string
 `\.{kdebug:}'.
 @z
@@ -372,14 +374,15 @@ searched for files, if they could not be found in the current directory.
 
 This version uses the \Kpathsea/ mechanism for searching files.
 The directories to be searched for come from three sources:
-
- (a)~a user-set environment variable \.{CWEBINPUTS}
-    (overriden by \.{CWEBINPUTS\_cweb});\par
- (b)~a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
+\smallskip
+{\parindent5em
+\item{(a)} a user-set environment variable \.{CWEBINPUTS}
+    (overriden by \.{CWEBINPUTS\_cweb});
+\item{(b)} a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
     e.g. \.{CWEBINPUTS=.:\$TEXMF/texmf/cweb//}
-    or \.{CWEBINPUTS.cweb=.:\$TEXMF/texmf/cweb//};\hangindent=2\parindent\par
- (c)~compile-time default directories \.{.:\$TEXMF/texmf/cweb//}
-    (specified in \.{texmf.in}).
+    or \.{CWEBINPUTS.cweb=.:\$TEXMF/texmf/cweb//};
+\item{(c)} compile-time default directories \.{.:\$TEXMF/texmf/cweb//}
+    (specified in \.{texmf.in}).}
 
 @d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
 
