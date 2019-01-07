@@ -46,10 +46,8 @@ debbuild -ba SPECS/cwebbin.spec --with ansi_only
 
 ## cweb for texlive
 
-in a [recent
-effort](https://github.com/ascherer/texlive-source/tree/integrate-cwebbin-in-texlive),
 the extended sources and the build system were modified to smoothly integrate
-with the texlive build system. by invoking
+with the [texlive build system](https://github.com/TeX-Live/texlive-source). by invoking
 ```
 debbuild -bi SPECS/cwebbin.spec --with texlive
 ```
@@ -57,6 +55,4 @@ you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
 texlive's source directory `texk/web2c/cwebdir`. this tarball contains
 `*-w2c.ch` files that modify the original cweb sources for the texlive
 ecosystem.  additionally, it contains language catalogs, tex macros, and cweb
-include files. additional modifications for the tl build ecosystem can be found
-in [this
-branch](https://github.com/ascherer/texlive-source/tree/integrate-cwebbin-in-texlive).
+include files.
