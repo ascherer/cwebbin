@@ -251,12 +251,12 @@ Section 74.
   if (strcmp("-version",*argv)==0 || strcmp("--version",*argv)==0)
 @.--version@>
     @<Display version information and exit@>@;
-  if (strcmp("-v",*argv)==0 || @|
-      strcmp("-verbose",*argv)==0 || strcmp("--verbose",*argv)==0)
-    show_banner=show_progress=show_happiness=1;
-  if (strcmp("-q",*argv)==0 || @|
-      strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
-    show_banner=show_progress=show_happiness=0;
+  if (strcmp("-verbose",*argv)==0 || strcmp("--verbose",*argv)==0)
+@.--verbose@>
+  { show_banner=show_progress=show_happiness=1; continue; }
+  if (strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
+@.--quiet@>
+  { show_banner=show_progress=show_happiness=0; continue; }
 @z
 
 @x l.1348
