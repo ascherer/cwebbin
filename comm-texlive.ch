@@ -175,43 +175,7 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
-Section 67.
-
-@x l.1212
-the names of those files. Most of the 128 flags are undefined but available
-for future extensions.
-@y
-the names of those files. Most of the 128 flags are undefined but available
-for future extensions.
-
-We use `kpathsea' library functions to find literate sources.  When the files
-you expect are not found, the thing to do is to enable `kpathsea' runtime
-debugging by assigning to the |kpathsea_debug| variable a small number via the
-`\.{-d}' option. The meaning of this number is shown below. To set more than
-one debugging option, simply sum the corresponding numbers.
-\medskip
-\halign{\hskip5em\tt\hfil#&&\qquad\rm#\hfil\cr
- 1&report `\.{stat}' calls\cr
- 2&report lookups in all hash tables\cr
- 4&report file openings and closings\cr
- 8&report path information\cr
-16&report directory list\cr
-32&report on each file search\cr
-64&report values of variables being looked up\cr}
-\medskip
-Debugging output is always written to |stderr|, and begins with the string
-`\.{kdebug:}'.
-@z
-
-@x l.1218
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d show_kpathsea_debug flags['d']
-  /* should results of file searching be shown? */
-@z
-
-Section 68.
+Section 68.  CWEB in TeX Live runs quietly by default.
 
 @x l.1234
 show_banner=show_happiness=show_progress=1;
@@ -423,6 +387,27 @@ different search paths.
 
 @<Set up |PROGNAME| feature and initialize the search path mechanism@>=
 kpse_set_program_name(argv[0], "cweb");
+
+@ When the files you expect are not found, the thing to do is to enable
+`kpathsea' runtime debugging by assigning to the |kpathsea_debug| variable a
+small number via the `\.{-d}' option. The meaning of this number is shown
+below. To set more than one debugging option, simply sum the corresponding
+numbers.
+\medskip
+\halign{\hskip5em\tt\hfil#&&\qquad\rm#\hfil\cr
+ 1&report `\.{stat}' calls\cr
+ 2&report lookups in all hash tables\cr
+ 4&report file openings and closings\cr
+ 8&report path information\cr
+16&report directory list\cr
+32&report on each file search\cr
+64&report values of variables being looked up\cr}
+\medskip
+Debugging output is always written to |stderr|, and begins with the string
+`\.{kdebug:}'.
+
+@d show_kpathsea_debug flags['d']
+  /* should results of file searching be shown? */
 
 @* System dependent changes. The most volatile stuff comes at the very end.
 
