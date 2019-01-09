@@ -74,6 +74,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
     (web_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open input file "), web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
+  /* Copy name for |#line| directives. */
   if (strcmp(web_file_name, found_filename))
     strcpy(web_file_name, found_filename +
       ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
@@ -89,6 +90,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
     (change_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open change file "), change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
+  /* Copy name for |#line| directives. */
   if (strcmp(change_file_name, found_filename))
     strcpy(change_file_name, found_filename +
       ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
@@ -247,10 +249,10 @@ Section 74.
 {
   if (strcmp("-help",*argv)==0 || strcmp("--help",*argv)==0)
 @.--help@>
-    @<Display help message and exit@>@;
+    @<Display help message and |exit|@>@;
   if (strcmp("-version",*argv)==0 || strcmp("--version",*argv)==0)
 @.--version@>
-    @<Display version information and exit@>@;
+    @<Display version information and |exit|@>@;
   if (strcmp("-verbose",*argv)==0 || strcmp("--verbose",*argv)==0)
 @.--verbose@>
   { show_banner=show_progress=show_happiness=1; continue; }
@@ -263,6 +265,12 @@ Section 74.
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+    if (*dot_pos=='v') {
+      show_banner=show_progress=show_happiness=1;
+    } else
+    if (*dot_pos=='q') {
+      show_banner=show_progress=show_happiness=0;
+    } else
     if (*dot_pos=='d') {
       if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
     } else
@@ -420,7 +428,7 @@ kpse_set_program_name(argv[0], "cweb");
 
 @ Modules for dealing with help messages and version info.
 
-@<Display help message and exit@>=
+@<Display help message and |exit|@>=
 cb_usagehelp(program==ctangle ? CTANGLEHELP :
   program==cweave ? CWEAVEHELP : CTWILLHELP, NULL);
 @.--help@>
@@ -477,7 +485,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
 
 @ The version information will not be translated.
 
-@<Display version information and exit@>=
+@<Display version information and |exit|@>=
 printversionandexit(cb_banner,
   program == ctwill ? "Donald E. Knuth" : "Silvio Levy and Donald E. Knuth",
   NULL, NULL);
