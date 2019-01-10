@@ -117,16 +117,17 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 %{__msgfmt} po/de/web2c-help.po -o po/de/web2c-help.mo
 %{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
 
+%{__ronn} -r ctwill.md \
+	--manual="General Commands Manual" \
+	--organization="Web2C @VERSION@"
+
 %else
 
 %{__touch} *.cxx
 %{__make} boot cautiously all
+%{__ronn} -r ctwill.md
 
 %endif
-
-%{__ronn} -r ctwill.md \
-	--manual="General Commands Manual" \
-	--organization="Web2C @VERSION@"
 
 %install
 %if %{with texlive}
@@ -135,8 +136,10 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 
+for m in refsort twinx; do %{__mv} $m.1 ctwill-$m.1; done
+
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w \
+	po cwebinputs texinputs refsort.w twinx.w ctwill*.1 \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
