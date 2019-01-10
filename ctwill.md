@@ -28,6 +28,43 @@ directory) with the extension `.tex`.
 If you just want to change the output file name, but don't have a change file
 to apply, you can use '`-`' as the second argument.
 
+`ctwill` is exactly like `cweave` except that it produces much better
+documentation, for which you must work harder.  You should run `ctwill`
+twice, once to prime the pump and once to get decent answers.  Moreover, you
+must run the output twice through TeX.
+
+After `tex foo` you will have output that looks like final pages except that
+the entries of mini-indexes won't be alphabetized.  The first run produces a
+weird file called `foo.ref`.  Say `refsort < foo.ref > foo.sref` and then
+another `tex foo` will produce alphabetized output.
+
+The mini-indexes list identifiers that are used but not defined on each
+two-page spread.  At the end of each section, `ctwill` gives TeX a list of
+identifiers used in that section and information about where they are defined.
+
+The current meaning of every identifier is initially `\uninitialized`.
+Then `ctwill` reads the `.aux` file for your job, if any.
+
+Before reading the `.aux` file, `ctwill` actually looks for a file called
+`system.bux`, which will be read if present.  And after `foo.aux`, a third
+possibility is `foo.bux`.  The general convention is to put definitions of
+system procedures such as _printf_ into `system.bux`, and to put definitions
+found in specifically foo-ish header files into `foo.bux`. Like the `.aux`
+files, `.bux` files should contain only `@$` specifications.
+
+The meaning specified by `@$...@>` generally has four components:
+an identifier (followed by space), a program name (enclosed in braces),
+a section number (followed by space), and a TeX part.
+
+A special _proofmode_ is provided so that you can check `ctwill`'s conclusions
+about cross-references. Run `ctwill` with the flag `+P`, and TeX will produce a
+specially formatted document (_without_ mini-indexes) in which you can check
+that your specifications are correct.
+
+More details how to use `ctwill` can be found in the first sections of its
+source code, respectively the change file `cweav-twill.ch` applicable to the
+`cweave.w` source.
+
 ## OPTIONS
 
 Options on the command line may be either turned off with '`-`' (if they are
