@@ -136,10 +136,10 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 
-for m in refsort twinx; do %{__mv} $m.1 ctwill-$m.1; done
+%{__mv} ctwill.1 ctwill.man
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w ctwill*.1 \
+	po cwebinputs texinputs refsort.w twinx.w ctwill.man \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
