@@ -181,8 +181,9 @@ CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
-	0001-Update-CWEBbin-manpage.patch ctangle.1 ctwill.1 cweave.1 \
+	0001-Update-CWEBbin-manpage.patch \
 	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
+	ctangle.1 cweave.1 ctwill.md refsort.1 twinx.1 \
 	README.md system.bux texlive.w ctwill.bux ctwill-mini.ch LICENSE
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
@@ -390,16 +391,18 @@ install: all
 		$(DESTDIR)$(EMACSDIR) \
 		$(DESTDIR)$(CWEBINPUTS)
 
-	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctangle $(DESTDIR)$(BINDIR)/$(DESTPREF)tangle
+	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctwill $(DESTDIR)$(BINDIR)/$(DESTPREF)twill
 	$(INSTALL) refsort $(DESTDIR)$(BINDIR)/refsort
 	$(INSTALL) twinx $(DESTDIR)$(BINDIR)/twinx
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)
 	$(INSTALL) -m 644 ctangle.1 $(DESTDIR)$(MANDIR)/ctangle.$(MANEXT)
-	$(INSTALL) -m 644 ctwill.1 $(DESTDIR)$(MANDIR)/ctwill.$(MANEXT)
 	$(INSTALL) -m 644 cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
+	$(INSTALL) -m 644 ctwill.1 $(DESTDIR)$(MANDIR)/ctwill.$(MANEXT)
+	$(INSTALL) -m 644 refsort.1 $(DESTDIR)$(MANDIR)/refsort.$(MANEXT)
+	$(INSTALL) -m 644 twinx.1 $(DESTDIR)$(MANDIR)/twinx.$(MANEXT)
 
 	$(INSTALL) -m 644 cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
 	$(INSTALL) -m 644 ctwimac.tex $(DESTDIR)$(MACROSDIR)

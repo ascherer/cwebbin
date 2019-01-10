@@ -54,6 +54,8 @@ Release: 16
 	-e TEXMFDIR=%{texmf} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
+%global __ronn /usr/bin/ronn
+
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
@@ -121,6 +123,10 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 %{__make} boot cautiously all
 
 %endif
+
+%{__ronn} -r ctwill.md \
+	--manual="General Commands Manual" \
+	--organization="Web2C @VERSION@"
 
 %install
 %if %{with texlive}
