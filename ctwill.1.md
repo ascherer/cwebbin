@@ -4,14 +4,13 @@
 
 # NAME
 
-ctwill, refsort, twinx -- translate CWEB to TeX with mini-indexes
+ctwill, refsort, twinx -- translate CWEB to TeX \
+with mini-indexes per spread or per section
 
 # SYNOPSIS
 
-**ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]]
-
-**refsort** < _indexfile_.ref > _indexfile_.sref
-
+**ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]] \
+**refsort** < _indexfile_.ref > _indexfile_.sref \
 **twinx** _outfile_.tex [_outfile_.tex ...] > index.tex
 
 # DESCRIPTION
@@ -154,11 +153,11 @@ Other **aux**iliary files with references are created automatically by
 # SEE ALSO
 
 * The CWEB System of Structured Documentation:
-  by Donald E. Knuth and Silvio Levy (hardcopy version of **cwebman.tex**
+  by Donald E.\ Knuth and Silvio Levy (hardcopy version of **cwebman.tex**
   and the source code listings of **common.w**, **ctangle.w**, and
   **cweave.w**).
 * Literate Programming:
-  by D. E. Knuth.
+  by D.\ E.\ Knuth.
 * Weaving a Program:
   by Wayne Sewell.
 
@@ -166,4 +165,4 @@ cweb(1), tex(1), cc(1)
 
 As of 2019, **ctwill** and its utilities **refsort** and **twinx** have been
 fully integrated with the extended CWEBbin system that serves as the basis for
-CWEB in TeX Live; see https://github.com/ascherer/cwebbin.
+CWEB in TeX Live; see [the project page](https://github.com/ascherer/cwebbin).
