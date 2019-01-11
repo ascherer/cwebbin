@@ -109,7 +109,7 @@ In fact, the options are processed from left to right, so a sequence like
 * **+P**:
   **\input proofmac.tex** instead of **ctwimac.tex**
 * **+lX**/**-lX**:
-  use macros for language _X_ as of _X_**ct**{**wi**|**proof**}**mac.tex**
+  use macros for language _X_ as of _X_{**ctwimac**|**proofmac**}**.tex**
 * **+s**:
   print usage statistics
 * **--help**:
@@ -130,13 +130,13 @@ Use the **kpsewhich** utility to find their locations.
 
 * **ctwimac.tex**:
   The default TeX macros **\\input** in the first line of the output file.
-* **ctproofmac.tex**:
+* **proofmac.tex**:
   If **ctwill** is invoked with the **+P** option, it will change the first
-  line of the output file to **\\input ctproofmac.tex**.
+  line of the output file to **\\input proofmac.tex**.
 
 In both cases you can request some prefix _X_ with the **+lX** option,
 e.g., **+ld** will **\input dctwimac.tex** and **+Pld** will
-**\input dctproofmac.tex**.
+**\input dproofmac.tex**.
 
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
