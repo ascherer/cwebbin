@@ -134,6 +134,9 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 
 %{__mv} ctwill.1 ctwill.man
+%{__sed} -i ctwill.man -e "s/refsort/ctwill-refsort/g"
+%{__sed} -i ctwill.man -e "s/twinx/ctwill-twinx/g"
+%{__sed} -i ctwill.man -e "/Web2c/ s/\\[at]/@/g"
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
 	po cwebinputs texinputs refsort.w twinx.w ctwill.man \

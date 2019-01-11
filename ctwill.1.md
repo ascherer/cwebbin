@@ -1,18 +1,18 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 % Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth
-% 2019-01-11
+% January 11, 2019
 
 # NAME
 
-ctwill, ctwill-refsort, ctwill-twinx -- translate CWEB to TeX with mini-indexes
+ctwill, refsort, twinx -- translate CWEB to TeX with mini-indexes
 
 # SYNOPSIS
 
 **ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]]
 
-**ctwill-refsort** < _indexfile_.ref > _indexfile_.sref
+**refsort** < _indexfile_.ref > _indexfile_.sref
 
-**ctwill-twinx** _indexfile_.ref [_indexfile_.ref ...] > _totalindex_.ref
+**twinx** _outfile_.tex [_outfile_.tex ...] > index.tex
 
 # DESCRIPTION
 
@@ -45,8 +45,12 @@ must run the output twice through TeX.
 
 After **tex foo** you will have output that looks like final pages except that
 the entries of mini-indexes won't be alphabetized.  The first run produces a
-weird file called **foo.ref**.  Say **ctwill-refsort < foo.ref > foo.sref** and
-then another **tex foo** will produce alphabetized output.
+weird file called **foo.ref**.  Say **refsort < foo.ref > foo.sref** and then
+another **tex foo** will produce alphabetized output.
+
+The **twinx** program compiles a master index for a set of related programs
+that have been processed by **ctwill**.  The individual programs should define
+their names with a line of the form **\\def\\title{NAME}**.
 
 The mini-indexes list identifiers that are used but not defined on each
 two-page spread.  At the end of each section, **ctwill** gives TeX a list of
@@ -160,7 +164,6 @@ Other **aux**iliary files with references are created automatically by
 
 cweb(1), tex(1), cc(1)
 
-As of 2019, **ctwill** and its utilities **ctwill-refsort** and
-**ctwill-twinx** have been fully integrated with the extended CWEBbin
-system that serves as the basis for CWEB in TeX Live; see
-https://github.com/ascherer/cwebbin.
+As of 2019, **ctwill** and its utilities **refsort** and **twinx** have been
+fully integrated with the extended CWEBbin system that serves as the basis for
+CWEB in TeX Live; see https://github.com/ascherer/cwebbin.
