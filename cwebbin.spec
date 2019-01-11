@@ -54,7 +54,7 @@ Release: 16
 	-e TEXMFDIR=%{texmf} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
-%global __ronn /usr/bin/ronn
+%global __md2man /usr/bin/md2man
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
@@ -117,17 +117,14 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 %{__msgfmt} po/de/web2c-help.po -o po/de/web2c-help.mo
 %{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
 
-%{__ronn} -r ctwill.md \
-	--manual="General Commands Manual" \
-	--organization="Web2C @VERSION@"
-
 %else
 
 %{__touch} *.cxx
 %{__make} boot cautiously all
-%{__ronn} -r ctwill.md
 
 %endif
+
+%{__md2man} ctwill.1.md
 
 %install
 %if %{with texlive}

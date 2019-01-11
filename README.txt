@@ -140,7 +140,7 @@ GENERAL CONTRIBUTION:
 ├── ctang-texlive.ch			change file for ctangle.w
 ├── ctang-translation.ch		[AMIGA,BCC] change file for ctangle.w
 ├── ctwill.bux				auxiliary file for CTWILL
-├── ctwill.md				manpage for CTWILL in markdown
+├── ctwill.1.md				manpage for CTWILL in markdown
 ├── ctwill-mini.ch			auxiliary file for CTWILL
 ├── ctwill-refsort.1			manpage link to ctwill.1
 ├── ctwill-texlive.ch			change file for cweave.w/ctwill.w
