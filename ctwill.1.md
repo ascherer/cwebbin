@@ -1,12 +1,18 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
+% Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth
+% 2019-01-11
 
 # NAME
 
-ctwill(1) -- translate CWEB to TeX with mini-indexes
+ctwill, ctwill-refsort, ctwill-twinx -- translate CWEB to TeX with mini-indexes
 
 # SYNOPSIS
 
 **ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]]
+
+**ctwill-refsort** < _indexfile_.ref > _indexfile_.sref
+
+**ctwill-twinx** _indexfile_.ref [_indexfile_.ref ...] > _totalindex_.ref
 
 # DESCRIPTION
 
@@ -154,10 +160,7 @@ Other **aux**iliary files with references are created automatically by
 
 cweb(1), tex(1), cc(1)
 
-# AUTHOR
-
-Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth.
 As of 2019, **ctwill** and its utilities **ctwill-refsort** and
 **ctwill-twinx** have been fully integrated with the extended CWEBbin
-system that serves as the basis for CWEB in TeX Live; see [project
-page](https://github.com/ascherer/cwebbin).
+system that serves as the basis for CWEB in TeX Live; see
+https://github.com/ascherer/cwebbin.
