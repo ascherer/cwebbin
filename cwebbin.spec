@@ -18,16 +18,19 @@ Packager: Andreas Scherer <https://ascherer.github.io>
 %if %{_vendor} == "debbuild"
 Group: tex
 Distribution: Kubuntu 16.04 (x86_64)
-Requires: texlive
+Requires: texlive, pandoc, gettext
+%if %{with texlive}
+Requires: pax
+%endif
 %if %{with doc}
 BuildRequires: texlive
 %endif
 %else
 Group: Productivity/Publishing/TeX/Base
 Distribution: openSUSE 42 (x86_64)
-%define __msgfmt /usr/bin/msgfmt
-%define __pax /bin/pax
-%define __touch /usr/bin/touch
+%global __msgfmt %{_bindir}/msgfmt
+%global __pax /bin/pax
+%global __touch %{_bindir}/touch
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
@@ -44,7 +47,7 @@ Version: 3.64c
 Release: ansi
 %else
 Version: 2019
-Release: 16
+Release: 17
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -54,7 +57,8 @@ Release: 16
 	-e TEXMFDIR=%{texmf} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
-%global __md2man /usr/bin/md2man
+%global __pandoc %{_bindir}/pandoc \\\
+	--standalone --from markdown+all_symbols_escapable --to man
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
@@ -124,7 +128,7 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 
 %endif
 
-%{__md2man} ctwill.1.md
+%{__pandoc} ctwill.md --output ctwill.1
 
 %install
 %if %{with texlive}
