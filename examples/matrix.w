@@ -1,5 +1,5 @@
 %
-% CWEB $VER: matrix.w 1.5 (09.06.2000)
+% CWEB $VER: matrix.w 1.6 (13.01.2019)
 %
 % BESCHREIBUNG:
 %    Dieses CWEB Programm soll als Beispiel für einige Erweiterungen
@@ -41,6 +41,7 @@
 %    16.03.1995: Kleinere Korrekturen (V1.3)
 %    08.06.2000: Include-Struktur verbessert (V1.4)
 %    09.06.2000: `Matrix' läßt sich mit g++ übersetzen (V1.5)
+%    13.01.2019: Use non-generic file names (V1.6)
 
 % Spezielle Fonts für Teile der Dokumentation.
 %
@@ -56,7 +57,7 @@
 %
 \nocon
 
-@i ../cwebinputs/ecma94.w % For the sake of CWEB and TeX
+@i cb_ecma94.w % For the sake of CWEB and TeX
 
 \input german.sty \originalthree % Redefine `\3' from `dcwebmac.tex'.
 

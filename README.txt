@@ -161,13 +161,13 @@ GENERAL CONTRIBUTION:
 ├── cwebbin.dsw				[MSVC] Developer Studio Workspace for all three
 ├── cwebbin.spec			extended build recipe for debbuild
 ├── cwebinputs
-│   ├── amiga_types.w			[AMIGA] keywords by Commodore and SAS
+│   ├── amiga_types.w			keywords by Commodore and SAS
 │   ├── c++1xlib.w			Keywords for modern C++ standards
-│   ├── ecma94.w			Transliteration table for Latin-1
-│   ├── hp8.w				Transliteration table for HP Roman 8
+│   ├── cb_ecma94.w			Transliteration table for Latin-1
+│   ├── cb_hp8.w			Transliteration table for HP Roman 8
+│   ├── cb_mac8.w			Transliteration table for Mac 8-bit
+│   └── cb_pc850.w			Transliteration table for Codepage 850
 │   ├── iso_types.w			Keywords for ISO C/C++ standards
-│   ├── mac8.w				Transliteration table for Macintosh 8-bit font
-│   └── pc850.w				Transliteration table for Codepage 850
 ├── cwebman.ch				change file for cwebman.tex
 ├── examples
 │   ├── cct.w				program to translate between character tables
@@ -208,15 +208,16 @@ GENERAL CONTRIBUTION:
 ├── README.txt				the current file
 ├── system.bux				auxiliary file for CTWILL
 ├── texinputs
+│   ├── cb_ecma94.sty			Umlauts and special characters for Latin-1
+│   ├── cb_hp8.sty			Umlauts and special characters for HP Roman 8
+│   ├── cb_mac8.sty			Umlauts and special characters for Macintosh
+│   ├── cb_pc850.sty			Umlauts and special characters for IBM 850
 │   ├── dctwimac.tex			German captions in addition to ctwimac.tex
 │   ├── dcwebmac.tex			German captions in addition to cwebmac.tex
+│   ├── dcwebstrings.tex		Common German captions
 │   ├── dproofmac.tex			German captions in addition to proofmac.tex
-│   ├── ecma94.sty			Umlauts and special characters for Latin-1
 │   ├── fcwebmac.tex			French captions in addition to cwebmac.tex
-│   ├── hp8.sty				Umlauts and special characters for HP Roman 8
 │   ├── icwebmac.tex			Italian captions in addition to cwebmac.tex
-│   ├── mac8.sty			Umlauts and special characters for Macintosh
-│   ├── pc850.sty			Umlauts and special characters for IBM 850
 │   └── Xcwebmac.tex			beautifications for cwebmac.tex
 └── texlive.w				introduction to *-w2c.ch change files
 
@@ -335,14 +336,15 @@ So here are some words about the `special features':
      generic macros, i.e., `cwebmac.tex' can be used with "plain TeX," "plain
      TeX + dvipdfm," and "pdftex."
 
-   - [GENERAL] There are transliteration tables `ecma94.w', `hp8.w', `mac8.w',
-     and `pc850.w' for @inclusion in limbo.  These files \input the associated
-     TeX macro files `ecma94.sty', `hp8.sty', `mac8.sty', and `pc850.sty' with
-     i18n support of extended code tables.  These macros can, of course, also
-     be used independently of the CWEB files and have been set up to work as
-     `packages' for LaTeX as well.  The option `+a' of former versions of the
-     AMIGA installation is now replaced by the file `amiga_types.w' that can
-     be `@i'ncluded in the source files where needed.
+   - [GENERAL] There are transliteration tables `cb_ecma94.w', `cb_hp8.w',
+     `cb_mac8.w', and `cb_pc850.w' for @inclusion in limbo.  These files
+     \input the associated TeX macro files `cb_ecma94.sty', `cb_hp8.sty',
+     `cb_mac8.sty', and `cb_pc850.sty' with i18n support of extended code
+     tables.  These macros can, of course, also be used independently of
+     the CWEB files and have been set up to work as `packages' for LaTeX
+     as well.  The option `+a' of former versions of the AMIGA installation
+     is now replaced by the file `amiga_types.w' that can be `@i'ncluded in
+     the source files where needed.
 
    - [GENERAL] Both CTANGLE and CWEAVE are fully localized for other natural
      languages than the English default.  See the 'po/' directory for the

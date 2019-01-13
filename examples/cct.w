@@ -1,5 +1,5 @@
 %
-% CWEB $VER: cct.w 1.5 (09.06.2000)
+% CWEB $VER: cct.w 1.6 (13.01.2019)
 %
 % SYNOPSIS:
 %    This CWEB file contains two programs!  The first program `cct' is a
@@ -34,6 +34,7 @@
 %    24.08.1994: Portability bug fixed.
 %    16.03.1995: Minor corrections.
 %    09.06.2000: `main' returns int.
+%    13.01.2019: Use non-generic file names.
 %
 % macros for font tables
 \def\Toct#1{\hbox{$^\circ$\kern-.1em\it#1\/\kern.05em}} % octal constant
@@ -77,7 +78,7 @@
 files' from one computer system to another, because of the different code
 tables in use.  For example, on the Amiga there is {\mc ECMA}~94, also known
 as {\mc ISO}~Latin~1 or {\mc ISO}~8859-1\nobreak
-{\catcode`^=7\input ecma94.sty
+{\catcode`^=7\input cb_ecma94.sty
 \beginchart{\global\chartcount='200\tenrm}%
 &\Toct{20x}&& && && && && && && && &&\oddline8
 &\Toct{21x}&& && && && && && && && &\evenline
@@ -99,7 +100,7 @@ as {\mc ISO}~Latin~1 or {\mc ISO}~8859-1\nobreak
 
 \noindent{\mc MSDOS} nowadays has {\mc IBM}'s International
 Codepage~850\nobreak
-{\catcode`^=7\input pc850.sty
+{\catcode`^=7\input cb_pc850.sty
 \beginchart{\global\chartcount='200\tenrm}%
 &\Toct{20x}&&^^80&&^^81&&^^82&&^^83&&^^84&&^^85&&^^86&&^^87&&\oddline8
 &\Toct{21x}&&^^88&&^^89&&^^8a&&^^8b&&^^8c&&^^8d&&^^8e&&^^8f&\evenline
@@ -120,7 +121,7 @@ Codepage~850\nobreak
 \endchart\par}
 
 \noindent Macintosh users also know a 8-bit font\nobreak
-{\catcode`^=7\input mac8.sty
+{\catcode`^=7\input cb_mac8.sty
 \beginchart{\global\chartcount='200\tenrm}%
 &\Toct{20x}&&^^80&&^^81&&^^82&&^^83&&^^84&&^^85&&^^86&&^^87&&\oddline8
 &\Toct{21x}&&^^88&&^^89&&^^8a&&^^8b&&^^8c&&^^8d&&^^8e&&^^8f&\evenline
@@ -141,7 +142,7 @@ Codepage~850\nobreak
 \endchart\par}
 
 \noindent And on some \UNIX/ systems there is {\mc HP}~8\nobreak
-{\catcode`^=7\input hp8.sty
+{\catcode`^=7\input cb_hp8.sty
 \beginchart{\global\chartcount='200\tenrm}%
 &\Toct{20x}&& && && && && && && && &&\oddline8
 &\Toct{21x}&& && && && && && && && &\evenline
@@ -182,15 +183,14 @@ All of these code tables are extensions to the {\mc ASCII} table\nobreak
 &\Toct{17x}&&\:&&\:&&\:&&\:&&\:&&\:&&\:&&DEL&\evenline
 \endchart\par}
 
-\noindent i.e., they provide additional symbols and characters with
-codes from~128 to~255, while they agree in positions~0 to~127.  The
-tables shown above represent the set of characters provided by the
-\TEX/ macro files \.{ecma94.sty}, \.{hp8.sty}, \.{mac8.sty}, and
-\.{pc850.sty} in the \.{macros} subdirectory of \.{CWEB}.  There may
-(or may not) be additional characters in the empty `slots' of the font
-tables.  Either there is no simple representation for these characters
-in \TEX/nical form or they are not useful for programming, so they
-were left out.
+\noindent i.e., they provide additional symbols and characters with codes
+from~128 to~255, while they agree in positions~0 to~127.  The tables shown
+above represent the set of characters provided by the \TEX/ macro files
+\.{cb_ecma94.sty}, \.{cb_hp8.sty}, \.{cb_mac8.sty}, and \.{cb_pc850.sty} in the
+\.{macros} subdirectory of \.{CWEB}.  There may (or may not) be additional
+characters in the empty `slots' of the font tables.  Either there is no simple
+representation for these characters in \TEX/nical form or they are not useful
+for programming, so they were left out.
 
 Most of the relevant characters appear in all of these code tables, so
 switching between character representations is quite logical.  For example,
@@ -271,7 +271,7 @@ of the input and the output files are required.
 
 The ``translation table'' is an array of strings, which replace the
 characters with codes between~128 and~255 inclusive.  Not all characters
-are supported, just as in \.{ecma94.sty}.
+are supported, just as in \.{cb_ecma94.sty}.
 
 @d copy_tex flags['m']
 
@@ -386,16 +386,16 @@ according to the rules given in |trans_file|.  Here are two examples:
 If you want to translate one of your {\mc ASCII} files for use on another
 system, e.g., from Amiga to {\mc MSDOS}, use something like
 
-\.{ct pc850.cct {\it$\langle$Amiga file$\rangle$}
+\.{ct cb_pc850.cct {\it$\langle$Amiga file$\rangle$}
 -t {\it$\langle$MSDOS file$\rangle$}}
 
 If you want to translate a file from another system to make it usable on
 your own system, e.g., from {\mc MSDOS} to Amiga, use something like
 
-\.{ct pc850.cct -f {\it$\langle$MSDOS file$\rangle$
+\.{ct cb_pc850.cct -f {\it$\langle$MSDOS file$\rangle$
 $\langle$Amiga file$\rangle$}}
 
-Note that in both cases \.{pc850.cct} is used as the |trans_file|, but
+Note that in both cases \.{cb_pc850.cct} is used as the |trans_file|, but
 the direction of translation is determined by the appropriate option.  There
 is no sense in setting both the `\.{-f}' and the `\.{-t}' option, the
 results would get fouled up.
@@ -429,11 +429,11 @@ to suppress access to the |trans_file|, which is not needed here.
    return(EXIT_SUCCESS);
 
 @* Setting up the translation tables.  We still have to deal with the
-problem of creating appropriate translation files like \.{pc850.cct}.
+problem of creating appropriate translation files like \.{cb_pc850.cct}.
 This is a somewhat tedious task if done by hand, because of the many
 possible `directions' between the systems.  The following program
-initializes three external files \.{hp8.cct}, \.{mac8.cct}, and
-\.{pc850.cct}.  These tables can be used for translation between
+initializes three external files \.{cb_hp8.cct}, \.{cb_mac8.cct}, and
+\.{cb_pc850.cct}.  These tables can be used for translation between
 systems with {\mc ECMA}~94 and one of the target systems.
 
 To begin with we represent the tables in the form of \CEE/ strings in octal
@@ -582,28 +582,28 @@ int main(void)
    {
    FILE *fp;
 
-   @<Write \.{hp8.cct}@>@;
-   @<Write \.{mac8.cct}@>@;
-   @<Write \.{pc850.cct}@>@;
+   @<Write \.{cb_hp8.cct}@>@;
+   @<Write \.{cb_mac8.cct}@>@;
+   @<Write \.{cb_pc850.cct}@>@;
    return(EXIT_SUCCESS);
    }
 
-@ @<Write \.{hp8.cct}@>=
-if(fp=fopen("hp8.cct","wb")) {
+@ @<Write \.{cb_hp8.cct}@>=
+if(fp=fopen("cb_hp8.cct","wb")) {
    fwrite(ecma_to_hp,256,1,fp);
    fwrite(hp_to_ecma,256,1,fp);
    fclose(fp);
    }
 
-@ @<Write \.{mac8.cct}@>=
-if(fp=fopen("mac8.cct","wb")) {
+@ @<Write \.{cb_mac8.cct}@>=
+if(fp=fopen("cb_mac8.cct","wb")) {
    fwrite(ecma_to_mac,256,1,fp);
    fwrite(mac_to_ecma,256,1,fp);
    fclose(fp);
    }
 
-@ @<Write \.{pc850.cct}@>=
-if(fp=fopen("pc850.cct","wb")) {
+@ @<Write \.{cb_pc850.cct}@>=
+if(fp=fopen("cb_pc850.cct","wb")) {
    fwrite(ecma_to_pc,256,1,fp);
    fwrite(pc_to_ecma,256,1,fp);
    fclose(fp);
