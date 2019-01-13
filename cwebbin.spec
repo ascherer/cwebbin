@@ -116,11 +116,6 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 %{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
 %{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
 
-%{__msgfmt} po/de/cweb.po -o po/de/cweb.mo
-%{__msgfmt} po/de/cweb-tl.po -o po/de/cweb-tl.mo
-%{__msgfmt} po/de/web2c-help.po -o po/de/web2c-help.mo
-%{__msgfmt} po/it/cweb.po -o po/it/cweb.mo
-
 %else
 
 %{__touch} *.cxx
