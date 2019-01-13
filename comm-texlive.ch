@@ -328,19 +328,40 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 @y
-@ The |scan_args| and |cb_show_banner| routines need a few extra variables.
+@ The |scan_args| and |cb_show_banner| routines and the |bindtextdomain|
+argument string need a few extra variables.
+
+@d max_banner 50
+@d max_path_length (BUFSIZ-2)
 
 @d PATH_SEPARATOR   separators[0]
 @d DIR_SEPARATOR    separators[1]
 @d DEVICE_SEPARATOR separators[2]
 
-@d max_banner 50
-
 @<Other...@>=
-char cb_banner[max_banner];
+char cb_banner[max_banner];@/
+char locale_path[max_path_length+2]="/usr/share/locale/";@/
+string selfautoparent;@/
 @z
 
 Material++
+
+@x l.369 of COMM-I18N.CH
+bindtextdomain("cweb", "/usr/share/locale/");
+bindtextdomain("cweb-tl", "/usr/share/locale/");
+bindtextdomain("web2c-help", "/usr/share/locale/");
+@y
+selfautoparent = kpse_var_expand ("$SELFAUTOPARENT");
+if (selfautoparent) {
+  if (strlen(selfautoparent) < max_path_length-20)
+    sprintf(locale_path,"%s/texmf-dist/locale/",selfautoparent);
+  else err_print("! Include file name too long");
+  free(selfautoparent);
+}
+bindtextdomain("cweb", locale_path);
+bindtextdomain("cweb-tl", locale_path);
+bindtextdomain("web2c-help", locale_path);
+@z
 
 @x l.1418
 @** Index.
