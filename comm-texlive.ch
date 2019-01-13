@@ -355,7 +355,8 @@ selfautoparent = kpse_var_expand ("$SELFAUTOPARENT");
 if (selfautoparent) {
   if (strlen(selfautoparent) < max_path_length-20)
     sprintf(locale_path,"%s/texmf-dist/locale/",selfautoparent);
-  else err_print("! Include file name too long");
+  else err_print("! Include path too long");
+@.Include path too long@>
   free(selfautoparent);
 }
 bindtextdomain("cweb", locale_path);
