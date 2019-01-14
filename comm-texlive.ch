@@ -376,7 +376,7 @@ system by checking out the sources and translating the strings in files
 resulting \.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
 @z
 
-@x l.369 of COMM-I18N.CH
+@x l.363 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
 texmf_locale = kpse_var_expand ("$TEXMFLOCALEFILES");
