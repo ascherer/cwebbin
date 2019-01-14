@@ -1,5 +1,5 @@
 %
-% CWEB/INCLUDE $VER: CB_HP8.W 1.6 (13.01.2019)
+% CWEB/INCLUDE $VER: CWEB_HP8.W 1.6 (13.01.2019)
 %
 % SYNOPSIS:
 %    Transliteration table for umlauts and special characters
@@ -24,7 +24,7 @@
 %    July 10, 2017: Complete overhaul.  (V1.5)
 %    January 13, 2019: Non-generic names.  (V1.6)
 
-\input cb_hp8.sty
+\input cweb_hp8.sty
 \noatl
 
 @q a0 @>   @l a1 A    @l a2 A    @l a3 E    @l a4 E    @l a5 Ee

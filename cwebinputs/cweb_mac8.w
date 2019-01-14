@@ -1,5 +1,5 @@
 %
-% CWEB/INCLUDE $VER: CB_MAC8.W 1.6 (13.01.2019)
+% CWEB/INCLUDE $VER: CWEB_MAC8.W 1.6 (13.01.2019)
 %
 % SYNOPSIS:
 %   Transliteration table for umlauts and special characters
@@ -24,7 +24,7 @@
 %    July 10, 2017: Complete overhaul.  (V1.5)
 %    January 10, 2019: Non-generic names.  (V1.6)
 
-\input cb_mac8.sty
+\input cweb_mac8.sty
 \noatl
 
 @l 80 Ae   @l 81 A    @l 82 C    @l 83 E    @l 84 N    @l 85 Oe

@@ -57,7 +57,7 @@ Use the already changed macro file.  Also we will need special characters.
 \input cwebmac
 @y
 \input Xcwebmac.tex
-\input cb_ecma94.sty
+\input cweb_ecma94.sty
 @z
 ------------------------------------------------------------------------------
 @x l.37

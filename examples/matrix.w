@@ -57,7 +57,7 @@
 %
 \nocon
 
-@i cb_ecma94.w % For the sake of CWEB and TeX
+@i cweb_ecma94.w % For the sake of CWEB and TeX
 
 \input german.sty \originalthree % Redefine `\3' from `dcwebmac.tex'.
 

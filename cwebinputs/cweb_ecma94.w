@@ -1,5 +1,5 @@
 %
-% CWEB/INCLUDE $VER: CB_ECMA94.W 1.6 (13.01.2019)
+% CWEB/INCLUDE $VER: CWEB_ECMA94.W 1.6 (13.01.2019)
 %
 % SYNOPSIS:
 %    Transliteration table for umlauts and special characters
@@ -24,7 +24,7 @@
 %    July 10, 2017: Complete overhaul.  (V1.5)
 %    January 13, 2019: Non-generic names.  (V1.6)
 
-\input cb_ecma94.sty
+\input cweb_ecma94.sty
 \noatl
 
 @q b0 @>   @q b1 @>   @q b2 @>   @q b3 @>   @q b4 @>   @l b5 mu

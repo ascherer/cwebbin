@@ -163,10 +163,10 @@ GENERAL CONTRIBUTION:
 ├── cwebinputs
 │   ├── amiga_types.w			keywords by Commodore and SAS
 │   ├── c++1xlib.w			Keywords for modern C++ standards
-│   ├── cb_ecma94.w			Transliteration table for Latin-1
-│   ├── cb_hp8.w			Transliteration table for HP Roman 8
-│   ├── cb_mac8.w			Transliteration table for Mac 8-bit
-│   └── cb_pc850.w			Transliteration table for Codepage 850
+│   ├── cweb_ecma94.w			Transliteration table for Latin-1
+│   ├── cweb_hp8.w			Transliteration table for HP Roman 8
+│   ├── cweb_mac8.w			Transliteration table for Mac 8-bit
+│   └── cweb_pc850.w			Transliteration table for Codepage 850
 │   ├── iso_types.w			Keywords for ISO C/C++ standards
 ├── cwebman.ch				change file for cwebman.tex
 ├── examples
@@ -208,10 +208,10 @@ GENERAL CONTRIBUTION:
 ├── README.txt				the current file
 ├── system.bux				auxiliary file for CTWILL
 ├── texinputs
-│   ├── cb_ecma94.sty			Umlauts and special characters for Latin-1
-│   ├── cb_hp8.sty			Umlauts and special characters for HP Roman 8
-│   ├── cb_mac8.sty			Umlauts and special characters for Macintosh
-│   ├── cb_pc850.sty			Umlauts and special characters for IBM 850
+│   ├── cweb_ecma94.sty			Umlauts and special characters for Latin-1
+│   ├── cweb_hp8.sty			Umlauts and special characters for HP Roman 8
+│   ├── cweb_mac8.sty			Umlauts and special characters for Macintosh
+│   ├── cweb_pc850.sty			Umlauts and special characters for IBM 850
 │   ├── dctwimac.tex			German captions in addition to ctwimac.tex
 │   ├── dcwebmac.tex			German captions in addition to cwebmac.tex
 │   ├── dcwebstrings.tex		Common German captions
@@ -336,10 +336,10 @@ So here are some words about the `special features':
      generic macros, i.e., `cwebmac.tex' can be used with "plain TeX," "plain
      TeX + dvipdfm," and "pdftex."
 
-   - [GENERAL] There are transliteration tables `cb_ecma94.w', `cb_hp8.w',
-     `cb_mac8.w', and `cb_pc850.w' for @inclusion in limbo.  These files
-     \input the associated TeX macro files `cb_ecma94.sty', `cb_hp8.sty',
-     `cb_mac8.sty', and `cb_pc850.sty' with i18n support of extended code
+   - [GENERAL] There are transliteration tables `cweb_ecma94.w', `cweb_hp8.w',
+     `cweb_mac8.w', and `cweb_pc850.w' for @inclusion in limbo.  These files
+     \input the associated TeX macro files `cweb_ecma94.sty', `cweb_hp8.sty',
+     `cweb_mac8.sty', and `cweb_pc850.sty' with i18n support of extended code
      tables.  These macros can, of course, also be used independently of
      the CWEB files and have been set up to work as `packages' for LaTeX
      as well.  The option `+a' of former versions of the AMIGA installation
