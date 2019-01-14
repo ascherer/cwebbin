@@ -131,6 +131,7 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
+%{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
 %{__mv} ctwill.1 ctwill.man
 %{__sed} -i ctwill.man -e "s/refsort/ctwill-refsort/g"
