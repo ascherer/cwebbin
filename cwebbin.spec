@@ -134,7 +134,7 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
 %{__mv} ctwill.1 ctwill.man
-%{__sed} -i ctwill.man
+%{__sed} -i ctwill.man \
 	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
 	-e "s/proofmac/ctproofmac/g" -e "/Web2c/ s/\\\\\[at\]/@/g"
 
@@ -151,7 +151,7 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 for l in de it
 do
 	%{__install} -d %{buildroot}%{_datadir}/locale/$l/LC_MESSAGES
-	%{__msgfmt} po/$l/cweb.po
+	%{__msgfmt} po/$l/cweb.po \
 		-o %{buildroot}%{_datadir}/locale/$l/LC_MESSAGES/cweb.mo
 done
 
