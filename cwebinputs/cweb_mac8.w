@@ -22,7 +22,7 @@
 %    August 13, 1998: New e-mail address.  (V1.3)
 %    June 11, 2000: Include matching TeX macros.  (V1.4)
 %    July 10, 2017: Complete overhaul.  (V1.5)
-%    January 10, 2019: Non-generic names.  (V1.6)
+%    January 13, 2019: Non-generic names.  (V1.6)
 
 \input cweb_mac8.sty
 \noatl
