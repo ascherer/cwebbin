@@ -331,6 +331,8 @@ char *p, *path_prefix, *next_path_prefix;
 @ The |scan_args| and |cb_show_banner| routines and the |bindtextdomain|
 argument string need a few extra variables.
 
+@s string int
+
 @d max_banner 50
 @d max_path_length (BUFSIZ-2)
 
@@ -340,8 +342,8 @@ argument string need a few extra variables.
 
 @<Other...@>=
 char cb_banner[max_banner];@/
-char locale_path[max_path_length+2]="/usr/share/locale/";@/
-string texmflocalefiles;@/
+char locale_path[max_path_length]="/usr/share/locale/";@/
+string texmf_locale;@/
 @z
 
 Material++
@@ -351,13 +353,13 @@ bindtextdomain("cweb", "/usr/share/locale/");
 bindtextdomain("cweb-tl", "/usr/share/locale/");
 bindtextdomain("web2c-help", "/usr/share/locale/");
 @y
-texmflocalefiles = kpse_var_expand ("$TEXMFLOCALEFILES");
-if (texmflocalefiles) {
-  if (strlen(texmflocalefiles) < max_path_length-20)
-    sprintf(locale_path,"%s/texmf-dist/locale/",texmflocalefiles);
+texmf_locale = kpse_var_expand ("$TEXMFLOCALEFILES");
+if (texmf_locale) {
+  if (strlen(texmf_locale) < max_path_length)
+    sprintf(locale_path,"%s",texmf_locale);
   else err_print("! Include path too long");
 @.Include path too long@>
-  free(texmflocalefiles);
+  free(texmf_locale);
 }
 bindtextdomain("cweb", locale_path);
 bindtextdomain("cweb-tl", locale_path);
