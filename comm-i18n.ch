@@ -348,21 +348,15 @@ things for neutral behavior without internationalization.
 #define gettext(A) A
 #endif
 
-@ If translation catalogs for your personal \.{LANGUAGE} are installed at the
+@ If a translation catalog for your personal \.{LANGUAGE} is installed at the
 appropriate place, \.{CTANGLE} and \.{CWEAVE} will talk to you in your favorite
-language.  Catalog \.{cweb} contains all strings from ``plain \.{CWEB},''
-catalog \.{cweb-tl} contains a few extra strings specific to the \TeX~Live
-interface, and catalog \.{web2c-help} contains the ``\.{--help}'' texts for
-\.{CTANGLE} and \.{CWEAVE}.
+language.  Catalog \.{cweb} contains all strings from ``plain \.{CWEB}.''
 @.cweb.mo@>
-@.cweb-tl.mo@>
-@.web2c-help.mo@>
-@.--help@>
 
-If such translation files are not available you may want to improve this system
-by checking out the sources and translating the strings in files \.{cweb.pot},
-\.{cweb-tl.pot}, and \.{web2c-help.pot}, and submitting the resulting \.{*.po}
-files to the maintainers at \.{tex-k@@tug.org}.
+If such a translation file is not available, you may want to improve this
+system by checking out the sources and translating the strings in file
+\.{cweb.pot}, and submitting the resulting \.{*.po} file(s) to the maintainer
+at \.{https://github.com/ascherer/cwebbin}.
 
 @<Set locale...@>=
 setlocale(LC_MESSAGES, setlocale(LC_CTYPE, ""));
