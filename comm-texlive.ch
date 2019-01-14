@@ -341,7 +341,7 @@ argument string need a few extra variables.
 @<Other...@>=
 char cb_banner[max_banner];@/
 char locale_path[max_path_length+2]="/usr/share/locale/";@/
-string selfautoparent;@/
+string texmflocalefiles;@/
 @z
 
 Material++
@@ -351,13 +351,13 @@ bindtextdomain("cweb", "/usr/share/locale/");
 bindtextdomain("cweb-tl", "/usr/share/locale/");
 bindtextdomain("web2c-help", "/usr/share/locale/");
 @y
-selfautoparent = kpse_var_expand ("$SELFAUTOPARENT");
-if (selfautoparent) {
-  if (strlen(selfautoparent) < max_path_length-20)
-    sprintf(locale_path,"%s/texmf-dist/locale/",selfautoparent);
+texmflocalefiles = kpse_var_expand ("$TEXMFLOCALEFILES");
+if (texmflocalefiles) {
+  if (strlen(texmflocalefiles) < max_path_length-20)
+    sprintf(locale_path,"%s/texmf-dist/locale/",texmflocalefiles);
   else err_print("! Include path too long");
 @.Include path too long@>
-  free(selfautoparent);
+  free(texmflocalefiles);
 }
 bindtextdomain("cweb", locale_path);
 bindtextdomain("cweb-tl", locale_path);
