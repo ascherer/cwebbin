@@ -90,7 +90,7 @@ do %{__sed} -e "s/@@VERSION@@/Version 3.64 \[CWEBbin 2019\]/" -i $f; done
 
 %if %{with ansi_only}
 %{__sed} -i Makefile.unix -e \
-"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
+	"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
 %{?with_doc:%{__sed} -e "s/cweave fullmanual/cweave docs/" -i Makefile.unix}
 %{__sed} -i ctang-ansi.ch -e "/case not_eq/ s/@+/ /"
 %{__sed} -i cweav-ansi.ch -e "0,/char \*b/ s/, where/,where/"
@@ -134,10 +134,9 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
 %{__mv} ctwill.1 ctwill.man
-%{__sed} -i ctwill.man -e "s/refsort/ctwill-refsort/g"
-%{__sed} -i ctwill.man -e "s/twinx/ctwill-twinx/g"
-%{__sed} -i ctwill.man -e "s/proofmac/ctproofmac/g"
-%{__sed} -i ctwill.man -e "/Web2c/ s/\\\\\[at\]/@/g"
+%{__sed} -i ctwill.man
+	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
+	-e "s/proofmac/ctproofmac/g" -e "/Web2c/ s/\\\\\[at\]/@/g"
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
 	po cwebinputs texinputs refsort.w twinx.w ctwill.man \
@@ -149,12 +148,12 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 
 %make_install
 
-%{__install} -d %{buildroot}%{_datadir}/locale/de/LC_MESSAGES \
-	%{buildroot}%{_datadir}/locale/it/LC_MESSAGES
-%{__msgfmt} po/de/cweb.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb.mo
-%{__msgfmt} po/de/cweb-tl.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/cweb-tl.mo
-%{__msgfmt} po/de/web2c-help.po -o %{buildroot}%{_datadir}/locale/de/LC_MESSAGES/web2c-help.mo
-%{__msgfmt} po/it/cweb.po -o %{buildroot}%{_datadir}/locale/it/LC_MESSAGES/cweb.mo
+for l in de it
+do
+	%{__install} -d %{buildroot}%{_datadir}/locale/$l/LC_MESSAGES
+	%{__msgfmt} po/$l/cweb.po
+		-o %{buildroot}%{_datadir}/locale/$l/LC_MESSAGES/cweb.mo
+done
 
 %endif
 
@@ -166,8 +165,6 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{_mandir}/man1/*
 %{texmf}/tex/plain/cweb/*
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
-%{_datadir}/locale/de/LC_MESSAGES/cweb-tl.mo
-%{_datadir}/locale/de/LC_MESSAGES/web2c-help.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 
 %post

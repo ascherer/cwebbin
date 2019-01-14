@@ -367,8 +367,6 @@ files to the maintainers at \.{tex-k@@tug.org}.
 @<Set locale...@>=
 setlocale(LC_MESSAGES, setlocale(LC_CTYPE, ""));
 bindtextdomain("cweb", "/usr/share/locale/");
-bindtextdomain("cweb-tl", "/usr/share/locale/");
-bindtextdomain("web2c-help", "/usr/share/locale/");
 textdomain("cweb"); /* the majority of |"strings"| come from ``plain \.{CWEB}'' */
 @.cweb.mo@>
 

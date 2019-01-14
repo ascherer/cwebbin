@@ -350,8 +350,6 @@ Material++
 
 @x l.369 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
-bindtextdomain("cweb-tl", "/usr/share/locale/");
-bindtextdomain("web2c-help", "/usr/share/locale/");
 @y
 texmf_locale = kpse_var_expand ("$TEXMFLOCALEFILES");
 if (texmf_locale) {
