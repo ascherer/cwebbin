@@ -381,10 +381,11 @@ The directories to be searched for come from three sources:
 \item{(a)} a user-set environment variable \.{CWEBINPUTS}
     (overriden by \.{CWEBINPUTS\_cweb});
 \item{(b)} a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
-    e.g. \.{CWEBINPUTS=.:\$TEXMF/texmf/cweb//}
-    or \.{CWEBINPUTS.cweb=.:\$TEXMF/texmf/cweb//};
-\item{(c)} compile-time default directories \.{.:\$TEXMF/texmf/cweb//}
-    (specified in \.{texmf.in}).}
+    e.g., \.{CWEBINPUTS=\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//}\hfil\break
+    or \.{CWEBINPUTS.cweb=\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//};
+\item{(c)} compile-time default directories (specified in
+    \.{texmf.in}),\hfil\break
+    i.e., \.{\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//}.\par}
 
 @d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
 
