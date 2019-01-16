@@ -333,7 +333,7 @@ char *p, *path_prefix, *next_path_prefix;
 @ The |scan_args| and |cb_show_banner| routines and the |bindtextdomain|
 argument string need a few extra variables.
 
-@s const_string int
+@s string int
 
 @d max_banner 50
 
@@ -343,7 +343,7 @@ argument string need a few extra variables.
 
 @<Other...@>=
 char cb_banner[max_banner];@/
-const_string texmf_locale;@/
+string texmf_locale;@/
 @z
 
 Material++
@@ -374,17 +374,20 @@ If such translation files are not available, you may want to improve this
 system by checking out the sources and translating the strings in files
 \.{cweb.pot}, \.{cweb-tl.pot}, and \.{web2c-help.pot}, and submitting the
 resulting \.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
+
+@d TEXMF_LOCALE "$TEXMFLOCALEFILES"
 @z
 
 @x l.363 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
-texmf_locale = kpse_var_expand ("$TEXMFLOCALEFILES");
+texmf_locale = kpse_var_expand (TEXMF_LOCALE);
 bindtextdomain("cweb",
   bindtextdomain("cweb-tl",
     bindtextdomain("web2c-help",
-      texmf_locale ? texmf_locale : "/usr/share/locale")));
-if (texmf_locale) free(texmf_locale);
+      strcmp(texmf_locale, TEXMF_LOCALE) ?
+        texmf_locale : "/usr/share/locale")));
+free(texmf_locale);
 @z
 
 @x l.1418
