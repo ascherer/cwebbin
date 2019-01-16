@@ -26,8 +26,8 @@
 /*:81*//*85:*/
 #line 1079 "comm-foo.ch"
 
-#include <stddef.h>  
 #include <stdbool.h>  
+#include <stddef.h>  
 #include <stdint.h>  
 
 /*:85*//*89:*/
@@ -444,12 +444,10 @@ root= NULL;
 #line 57 "comm-foo.ch"
 
 /*90:*/
-#line 1182 "comm-foo.ch"
+#line 1176 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
-bindtextdomain("cweb-tl","/usr/share/locale/");
-bindtextdomain("web2c-help","/usr/share/locale/");
 textdomain("cweb");
 
 
