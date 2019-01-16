@@ -236,7 +236,9 @@ Section 74.
       show_banner=show_progress=show_happiness=0;
     } else
     if (*dot_pos=='d') {
-      if (sscanf(*argv+2,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
+      if (sscanf(++dot_pos,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
+      while (isdigit(*dot_pos)) dot_pos++; /* skip numeric part */
+      dot_pos--; /* reset to final digit */
     } else
 @z
 
