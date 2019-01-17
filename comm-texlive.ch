@@ -423,16 +423,16 @@ typedef bool boolean;
 #define CWEB
 #include "help.h"
 
-@ The simple file searching is replaced by the ``path searching'' mechanism
-that the \Kpathsea/ library provides.
+@q The simple file searching is replaced by the ``path searching'' mechanism @>
+@q that the \Kpathsea/ library provides.@>
 
-We set |kpse_program_name| to `\.{cweb}'.  This means if the variable
+@ We set |kpse_program_name| to `\.{cweb}'.  This means if the variable
 \.{CWEBINPUTS.cweb} is present in \.{texmf.cnf} (or \.{CWEBINPUTS\_cweb}
 in the environment) its value will be used as the search path for
 filenames.  This allows different flavors of \.{CWEB} to have
 different search paths.
 
-\&{FIXME}: Not sure this is the best way to go about this.
+@q \&{FIXME}: Not sure this is the best way to go about this. @>
 
 @<Set up |PROGNAME| feature and initialize the search path mechanism@>=
 kpse_set_program_name(argv[0], "cweb");
