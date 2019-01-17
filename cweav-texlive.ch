@@ -26,7 +26,7 @@ Section 1.
 @x l.69 and l.201 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 @d banner _("This is CWEAVE (@VERSION@)")
 @y
-@d banner _("This is CWEAVE, Version 3.64")
+@d banner "This is CWEAVE, Version 3.64"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 

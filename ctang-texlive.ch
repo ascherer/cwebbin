@@ -26,7 +26,7 @@ Section 1.
 @x l.62 and l.186 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
 @d banner _("This is CTANGLE (@VERSION@)")
 @y
-@d banner _("This is CTANGLE, Version 3.64")
+@d banner "This is CTANGLE, Version 3.64"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 

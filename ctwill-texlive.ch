@@ -26,7 +26,7 @@ Section 1.
 @x l.68 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (@VERSION@)")
 @y
-@d banner _("This is CTWILL, Version 3.64")
+@d banner "This is CTWILL, Version 3.64"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
