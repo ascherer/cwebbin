@@ -384,7 +384,7 @@ bindtextdomain("cweb", "/usr/share/locale/");
 texmf_locale = kpse_var_expand (TEXMF_LOCALE);
 bindtextdomain("cweb",
   bindtextdomain("cweb-tl",
-    bindtextdomain("web2c-help",
+    bindtextdomain("web2c-help", @|
       strcmp(texmf_locale, TEXMF_LOCALE) ?
         texmf_locale : "/usr/share/locale")));
 free(texmf_locale);
