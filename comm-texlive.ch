@@ -474,9 +474,6 @@ numbers.
 Debugging output is always written to |stderr|, and begins with the string
 `\.{kdebug:}'.
 
-@d show_kpathsea_debug flags['d']
-  /* should results of file searching be shown? */
-
 @* System dependent changes. The most volatile stuff comes at the very end.
 
 @ Modules for dealing with help messages and version info.
@@ -487,25 +484,9 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP :
 @.--help@>
 
 @ Special variants from \Kpathsea/ for i18n/t10n.
-
-@<Predecl...@>=
-void cb_show_banner (void); /* |extern| for option \.{+b} */
-static void cb_usage (const_string str);@/
-static void cb_usagehelp (const_string *message, const_string bug_email);@/
-
-@ We simply filter the strings through the catalog (if available).
+We simply filter the strings through the catalogs (if available).
 
 @c
-void cb_show_banner (void)
-{
-  assert(cb_banner[0]!='\0');
-  textdomain("cweb-tl");
-@.cweb-tl.mo@>
-  printf("%s%s\n", _(cb_banner), versionstring);
-  textdomain("cweb");
-@.cweb.mo@>
-}
-
 static void cb_usage (const_string str)
 {
   textdomain("cweb-tl");
@@ -536,13 +517,32 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   history=spotless; exit(wrap_up());
 }
 
-@ The version information will not be translated.
+@ The version information will not be translated, it uses a generic text
+template in English.
 
 @<Display version information and |exit|@>=
 printversionandexit(cb_banner,
   program == ctwill ? "Donald E. Knuth" : "Silvio Levy and Donald E. Knuth",
   NULL, NULL);
 @.--version@>
+
+@ But the ``banner'' is, at least the first part.
+
+@c
+void cb_show_banner (void)
+{
+  assert(cb_banner[0]!='\0');
+  textdomain("cweb-tl");
+@.cweb-tl.mo@>
+  printf("%s%s\n", _(cb_banner), versionstring);
+  textdomain("cweb");
+@.cweb.mo@>
+}
+
+@ @<Predecl...@>=
+static void cb_usage (const_string str);@/
+static void cb_usagehelp (const_string *message, const_string bug_email);@/
+void cb_show_banner (void); /* |extern| for option \.{+b} */
 
 @** Index.
 @z
