@@ -375,6 +375,31 @@ system by checking out the sources and translating the strings in files
 \.{cweb.pot}, \.{cweb-tl.pot}, and \.{web2c-help.pot}, and submitting the
 resulting \.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
 
+\medskip \noindent \&{Note to maintainers:} \.{CWEB} in \TeX~Live generally
+does \\{not} set |HAVE_GETTEXT| at build-time, so \.{i18n} is ``off'' by
+default.  If you want to create \.{CWEB} executables with NLS support, you
+have to recompile the \TeX~Live sources with a positive value for
+|HAVE_GETTEXT| both in \.{"comm-w2c.h"} and \.{"comm-w2c.h"}.  Also you
+have to ``compile'' the NLS catalogs provided for \.{CWEB} in the source
+tree with \.{msgfmt} and store the resulting \.{.mo} files at an appropriate
+place in the file system.
+
+Plans for \TeX~Live are to store NLS catalogs inside the ``\TeX\ Directory
+Structure'' (TDS) and look them up with the help of the configuration variable
+``|TEXMFLOCALEFILES|'' (subject to change in the final setup).  Below we use
+the \Kpathsea/ function |kpse_var_expand| to evaluate this variable from
+various origins and redirect the ``GNU~gettext utilities'' to a possibly
+different location than the canonical \.{/usr/share/locale}.
+
+There are several ways to set |TEXMFLOCALEFILES|:
+\smallskip
+{\parindent5em
+\item{(a)} a user-set environment variable \.{TEXMFLOCALEFILES}\hfil\break
+    (overridden by \.{TEXMFLOCALEFILES\_cweb});
+\item{(b)} a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
+    e.g., \.{TEXMFLOCALEFILES=\$TEXMFDIST/locale}\hfil\break
+    or \.{TEXMFLOCALEFILES.cweb=\$TEXMFDIST/locale}.\par}
+
 @d TEXMF_LOCALE "$TEXMFLOCALEFILES"
 @z
 
@@ -403,7 +428,7 @@ The directories to be searched for come from three sources:
 \smallskip
 {\parindent5em
 \item{(a)} a user-set environment variable \.{CWEBINPUTS}
-    (overriden by \.{CWEBINPUTS\_cweb});
+    (overridden by \.{CWEBINPUTS\_cweb});
 \item{(b)} a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
     e.g., \.{CWEBINPUTS=\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//}\hfil\break
     or \.{CWEBINPUTS.cweb=\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//};
@@ -423,16 +448,10 @@ typedef bool boolean;
 #define CWEB
 #include "help.h"
 
-@q The simple file searching is replaced by the ``path searching'' mechanism @>
-@q that the \Kpathsea/ library provides.@>
-
 @ We set |kpse_program_name| to `\.{cweb}'.  This means if the variable
 \.{CWEBINPUTS.cweb} is present in \.{texmf.cnf} (or \.{CWEBINPUTS\_cweb}
-in the environment) its value will be used as the search path for
-filenames.  This allows different flavors of \.{CWEB} to have
-different search paths.
-
-@q \&{FIXME}: Not sure this is the best way to go about this. @>
+in the environment) its value will be used as the search path for filenames.
+This allows different flavors of \.{CWEB} to have different search paths.
 
 @<Set up |PROGNAME| feature and initialize the search path mechanism@>=
 kpse_set_program_name(argv[0], "cweb");
