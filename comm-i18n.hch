@@ -11,7 +11,8 @@ Section 6 (of CTANGLE and CWEAVE).
 @x l.35
 @ @<Include files@>=
 @y
-@ @<Include files@>=
+@ @d _(STRING) gettext(STRING)
+@<Include files@>=
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
@@ -29,6 +30,5 @@ Section 10.
 @x l.120
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
-@d _(STRING) gettext(STRING)
 @d confusion(s) fatal(_("! This can't happen: "),s)
 @z

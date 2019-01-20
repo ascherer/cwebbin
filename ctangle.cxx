@@ -8,7 +8,7 @@
 #line 83 "ctangle.w"
 
 /*:2*//*6:*/
-#line 39 "comm-foo.h"
+#line 40 "comm-foo.h"
 
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
@@ -55,6 +55,7 @@
  \
  \
 
+#define _(STRING) gettext(STRING) 
 #define and_and 04
 #define lt_lt 020
 #define gt_gt 021
@@ -92,7 +93,6 @@
 #define fatal_message 3
 #define mark_harmless {if(history==spotless) history= harmless_message;}
 #define mark_error history= error_message
-#define _(STRING) gettext(STRING) 
 #define confusion(s) fatal(_("! This can't happen: ") ,s)  \
 
 #define max_file_name_length 1024
@@ -175,7 +175,7 @@ extern int program;
 extern int phase;
 
 /*:5*//*7:*/
-#line 73 "comm-foo.h"
+#line 74 "comm-foo.h"
 
 char section_text[longest_name+1];
 char*section_text_end= section_text+longest_name;
@@ -183,7 +183,7 @@ char*id_first;
 char*id_loc;
 
 /*:7*//*8:*/
-#line 88 "comm-foo.h"
+#line 89 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -191,7 +191,7 @@ extern char*loc;
 extern char*limit;
 
 /*:8*//*9:*/
-#line 103 "comm-foo.h"
+#line 104 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
