@@ -612,12 +612,23 @@ skip_restricted(void)
     case meaning: case suppress:
 @z
 
-@x l.1367
+@x l.1367 and l.119 of CWEAV-EXTENSIONS.CH
+\.{CWEAVE} with `\.{+lX}' (or `\.{-lX}' as well), where `\.X' is the
+(possibly empty) string of characters to the right of~`\.l', `\.X'~will be
+prepended to `\.{cwebmac.tex}', e.g., if you call \.{CWEAVE} with
+`\.{+ldeutsch}', you will receive the line `\.{\\input deutschcwebmac}'.
+Without this option the first line of the output file will be
 `\.{\\input cwebmac}'.
 @y
+\.{CTWILL} with `\.{+lX}' (or `\.{-lX}' as well), where `\.X' is the
+(possibly empty) string of characters to the right of~`\.l', `\.X'~will
+be prepended to `\.{ctwimac.tex}', e.g., if you call \.{CTWILL} with
+`\.{+ldeutsch}', you will receive the line `\.{\\input deutschctwimac}'.
+Without this option the first line of the output file will be
 `\.{\\input ctwimac}'. Or, if the user has specified proofing by
-saying \.{+P} on the command line, it's `\.{\\input proofmac}',
-a set of macros used when debugging mini-index entries.
+saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
+\.{\\input Xproofmac} with option \.{+lX}), a set of macros used when
+debugging mini-index entries.
 
 @d proofing flags['P']
 @z
