@@ -399,19 +399,19 @@ There are several ways to set |TEXMFLOCALEDIR|:
 \item{(b)} a line in \Kpathsea/ configuration file \.{texmf.cnf},\hfil\break
     e.g., \.{TEXMFLOCALEDIR=\$TEXMFMAIN/locale}\hfil\break
     or \.{TEXMFLOCALEDIR.cweb=\$TEXMFMAIN/locale}.\par}
-
-@d TEXMF_LOCALE "$TEXMFLOCALEDIR"
 @z
 
 @x l.363 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
-texmf_locale = kpse_var_expand (TEXMF_LOCALE);
+texmf_locale = kpse_var_expand ("${TEXMFLOCALEDIR}");
+
 bindtextdomain("cweb",
   bindtextdomain("cweb-tl",
     bindtextdomain("web2c-help", @|
-      strcmp(texmf_locale, TEXMF_LOCALE) ?
+      strcmp(texmf_locale, "") ?
         texmf_locale : "/usr/share/locale")));
+
 free(texmf_locale);
 @z
 
