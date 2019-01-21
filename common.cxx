@@ -33,15 +33,15 @@
 /*:85*//*89:*/
 #line 1151 "comm-foo.ch"
 
-#include <locale.h> 
-
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
 
 #if HAVE_GETTEXT
+#include <locale.h> 
 #include <libintl.h> 
 #else
+#define setlocale(A,B) ""
 #define bindtextdomain(A,B) ""
 #define textdomain(A) ""
 #define gettext(A) A
