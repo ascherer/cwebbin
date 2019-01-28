@@ -82,7 +82,6 @@ The following files were added to this distribution by various contributors:
 GENERAL CONTRIBUTION:
 .
 ├── 0001-Make-clean-twinx.patch		Patch for twinx.w
-├── 0001-Update-CWEBbin-manpage.patch	Patch for cweb.1
 ├── 0002-Make-clean-refsort.patch	Patch for refsort.w
 ├── arexx				[AMIGA]
 │   ├── catalogs

@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
-% Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth
-% January 11, 2019
+%
+% January 27, 2019
 
 # NAME
 
@@ -15,16 +15,18 @@ with mini-indexes per spread or per section
 
 # DESCRIPTION
 
-The **ctwill** program converts a CWEB source document into a TeX file that may
-be formatted and printed in the usual way.  It takes appropriate care of
+The **ctwill** program converts a CWEB source document into a TeX\ file that
+may be formatted and printed in the usual way.  It takes appropriate care of
 typographic details like page layout and the use of indentation, _italics_,
 **boldface**, etc., and it supplies extensive cross-index information that it
 gathers automatically.
 
 CWEB allows you to prepare a single document containing all the information
-that is needed both to produce a compilable C program and to produce a
+that is needed both to produce a compilable C/C++\ program and to produce a
 well-formatted document describing the program in as much detail as the writer
-may desire.  The user of CWEB ought to be familiar with TeX as well as C.
+may desire.  The user of CWEB ought to be familiar with TeX as well as C/C++\.
+
+# USAGE
 
 The command line should have one, two, or three names on it.  The first is
 taken as the CWEB input file (and **.w** is added if there is no extension).
@@ -67,7 +69,7 @@ files, **.bux** files should contain only **@$** specifications.
 
 The meaning specified by **@$...@>** generally has four components:
 an identifier (followed by space), a program name (enclosed in braces),
-a section number (followed by space), and a TeX part.
+a section number (followed by space), and a TeX\ part.
 
 A special _proofmode_ is provided so that you can check **ctwill**'s
 conclusions about cross-references. Run **ctwill** with the flag **+P**, and
@@ -78,12 +80,32 @@ More details how to use **ctwill** can be found in the first sections of its
 source code, respectively the change file **cweav-twill.ch** applicable to the
 **cweave.w** source.
 
+# DIFFERENCES TO ORIGINAL CTWILL
+
+The present incarnation of **ctwill** and its utilities tries hard to be a
+drop-in replacement for the original package.  There are, however, a few
+differences worth noting:
+
+* This version is based on the most recent version of CWEB (3.64c).
+* In TeX\ Live the utility programs are prefixed with **ctwill-** and
+  the macro files with **ct** for technical reasons.
+* Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
+  flags **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+* Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
+  and **proofmac.tex** with translated captions for German (**+ld**).
+* **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
+  option to get the original behavior.
+* File lookup with the environment variable CWEBINPUTS is extended to permit
+  several, colon-separated, paths.
+* If properly configured, the main program **ctwill** is localized with the
+  "GNU gettext utilities".
+
 # OPTIONS
 
 Options on the command line may be either turned off with '**-**' (if they
 are on by default) or turned on with '**+**' (if they are off by default).
 In fact, the options are processed from left to right, so a sequence like
-**--verbose -h** will only show the **banner line** (**+b**) and the
+**\-\-verbose -h** will only show the **banner line** (**+b**) and the
 **progress report** (**+p**), but leave out the **happy message** (**-h**).
 
 * **+b**:
@@ -93,13 +115,13 @@ In fact, the options are processed from left to right, so a sequence like
 * **+p**:
   print progress report messages
 * **+q**/**-q**:
-  shortcut for **-bhp**; also **--quiet** (default)
+  shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
-  shortcut for **+bhp**; also **--verbose**
+  shortcut for **+bhp**; also **\-\-verbose**
 * **-e**:
-  do not enclose C material in **\PB{...}**
+  do not enclose C/C++\ material in **\PB{...}**
 * **-f**:
-  do not force a newline after every C statement in output
+  do not force a newline after every C/C++\ statement in output
 * **-i**:
   suppress indentation of parameter declarations
 * **-o**:
@@ -112,9 +134,9 @@ In fact, the options are processed from left to right, so a sequence like
   use macros for language _X_ as of _X_{**ctwimac**|**proofmac**}**.tex**
 * **+s**:
   print usage statistics
-* **--help**:
+* **\-\-help**:
   display help message and exit
-* **--version**:
+* **\-\-version**:
   output version information and exit
 
 # ENVIRONMENT
@@ -123,13 +145,19 @@ The environment variable CWEBINPUTS is used to search for the input files,
 or the system default if CWEBINPUTS is not set.  See tex(1) for the details
 of the searching.
 
+If prepared for NLS support, **ctwill** like **ctangle** and **cweave**
+uses the environment variable TEXMFLOCALEDIR to configure the parent directory
+where the "GNU gettext utilities" search for translation catalogs.
+
+These variables are preconfigured in TeX\ Live's **texmf.cnf**.
+
 # FILES
 
 The location of the files mentioned below varies from system to system.
 Use the **kpsewhich** utility to find their locations.
 
 * **ctwimac.tex**:
-  The default TeX macros **\\input** in the first line of the output file.
+  The default TeX\ macros **\\input** in the first line of the output file.
 * **proofmac.tex**:
   If **ctwill** is invoked with the **+P** option, it will change the first
   line of the output file to **\\input proofmac.tex**.
@@ -141,14 +169,15 @@ e.g., **+ld** will **\input dctwimac.tex** and **+Pld** will
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
 * **system.bux**:
-  Reference definitions to resolve from C standard library header files like
-  **<stdio.h>**.
+  Reference definitions to resolve from C/C++\ standard library header
+  files like **<stdio.h>**.
 
 Other **aux**iliary files with references are created automatically by
 **ctwill** and the actual index files are created by TeX.
 
 * **cwebman.tex**:
-  The CWEB user manual.
+  The CWEB user manual, available in PDF from
+  [CTAN](https://ctan.org/pkg/cweb).
 
 # SEE ALSO
 
@@ -163,6 +192,9 @@ Other **aux**iliary files with references are created automatically by
 
 cweb(1), tex(1), cc(1)
 
+# AUTHORS
+
+Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth. \
 As of 2019, **ctwill** and its utilities **refsort** and **twinx** have been
 fully integrated with the extended CWEBbin system that serves as the basis for
-CWEB in TeX Live; see [the project page](https://github.com/ascherer/cwebbin).
+CWEB in TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).

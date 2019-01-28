@@ -38,7 +38,6 @@ Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
 Source2: %{name}-2019.tar.gz
 
-Patch1: 0001-Update-CWEBbin-manpage.patch
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
 
@@ -123,7 +122,7 @@ do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 
 %endif
 
-%{__pandoc} ctwill.md --output ctwill.1
+for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 
 %install
 %if %{with texlive}
@@ -133,13 +132,14 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 %{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
-%{__mv} ctwill.1 ctwill.man
+for m in ctwill cweb
+do %{__mv} $m.1 $m.man; %{__sed} -i $m.man -e "/Web2c/ s/\\\\\[at\]/@/g"; done
 %{__sed} -i ctwill.man \
 	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
-	-e "s/proofmac/ctproofmac/g" -e "/Web2c/ s/\\\\\[at\]/@/g"
+	-e "s/proofmac/ctproofmac/g"
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w ctwill.man \
+	po cwebinputs texinputs refsort.w twinx.w ctwill.man cweb.man \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
 
 %else
