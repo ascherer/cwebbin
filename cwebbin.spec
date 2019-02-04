@@ -73,7 +73,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %endif
 
 for f in Makefile.unix po/cweb.pot po/*/cweb.po
-do %{__sed} -e "s/@@VERSION@@/Version 3.64 \[CWEBbin 2019\]/" -i $f; done
+do %{__sed} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" -i $f; done
 
 %if %{with texlive}
 %{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
@@ -154,6 +154,9 @@ do
 	%{__msgfmt} po/$l/cweb.po \
 		-o %{buildroot}%{_datadir}/locale/$l/LC_MESSAGES/cweb.mo
 done
+
+for m in ctwill cweb
+do %{__sed} -i $m.1 -e "s/Web2c .*\[at\]/CWEBbin %{version}/"; done
 
 %endif
 
