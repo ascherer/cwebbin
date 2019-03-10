@@ -24,7 +24,7 @@ gathers automatically.
 CWEB allows you to prepare a single document containing all the information
 that is needed both to produce a compilable C/C++\ program and to produce a
 well-formatted document describing the program in as much detail as the writer
-may desire.  The user of CWEB ought to be familiar with TeX as well as C/C++\.
+may desire.  The user of CWEB ought to be familiar with TeX as well as C/C++.
 
 # USAGE
 
@@ -78,7 +78,9 @@ which you can check that your specifications are correct.
 
 More details how to use **ctwill** can be found in the first sections of its
 source code, respectively the change file **cweav-twill.ch** applicable to the
-**cweave.w** source.
+**cweave.w** source.  A complete example with all bells and whistles is
+described in **Mini-Indexes for Literate Programs**, pages 225–245 of Knuth's
+**Digital Typography**.
 
 # DIFFERENCES TO ORIGINAL CTWILL
 
@@ -129,7 +131,7 @@ In fact, the options are processed from left to right, so a sequence like
 * **-x**:
   omit indices, section names, table of contents
 * **+P**:
-  **\input proofmac.tex** instead of **ctwimac.tex**
+  **\\input proofmac.tex** instead of **ctwimac.tex**
 * **+lX**/**-lX**:
   use macros for language _X_ as of _X_{**ctwimac**|**proofmac**}**.tex**
 * **+s**:
@@ -163,8 +165,8 @@ Use the **kpsewhich** utility to find their locations.
   line of the output file to **\\input proofmac.tex**.
 
 In both cases you can request some prefix _X_ with the **+lX** option,
-e.g., **+ld** will **\input dctwimac.tex** and **+Pld** will
-**\input dproofmac.tex**.
+e.g., **+ld** will **\\input dctwimac.tex** and **+Pld** will
+**\\input dproofmac.tex**.
 
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
@@ -185,6 +187,8 @@ Other **aux**iliary files with references are created automatically by
   by Donald E.\ Knuth and Silvio Levy (hardcopy version of **cwebman.tex**
   and the source code listings of **common.w**, **ctangle.w**, and
   **cweave.w**).
+* Digital Typography:
+  by D.\ E.\ Knuth.
 * Literate Programming:
   by D.\ E.\ Knuth.
 * Weaving a Program:
