@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% January 27, 2019
+% March 10, 2019
 
 # NAME
 
@@ -119,7 +119,7 @@ In fact, the options are processed from left to right, so a sequence like
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
 * **-e**:
-  do not enclose C/C++\ material in **\PB{...}**
+  do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
   do not force a newline after every C/C++\ statement in output
 * **-i**:
