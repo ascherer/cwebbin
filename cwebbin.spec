@@ -132,14 +132,14 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 %{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
-%{__sed} -i ctwill.1 \
-	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
-	-e "s/proofmac/ctproofmac/g"
-
 %{__mkdir} ../man # Dirty trick! ;o)
 
 for m in ctwill cweb
 do %{__sed} $m.1 -e "/Web2c/ s/\\\\\[at\]/@/g" > ../man/$m.man; done
+
+%{__sed} -i ../man/ctwill.man \
+	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
+	-e "s/proofmac/ctproofmac/g"
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
 	po cwebinputs texinputs refsort.w twinx.w ../man \
