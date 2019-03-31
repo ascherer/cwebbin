@@ -35,7 +35,7 @@ Distribution: openSUSE 42 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
-Source1: https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64c.tar.gz
+Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz
 Source2: %{name}-2019.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
@@ -100,20 +100,20 @@ do %{__sed} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" -i $f; done
 %build
 %if %{with texlive}
 
-%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch
-%{__make} -e HCHANGES=comm-w2c.h comm-w2c.h
-%{__make} -e TCHANGES=ctang-w2c.ch ctang-w2c.ch
-%{__make} -e WCHANGES=cweav-w2c.ch cweav-w2c.ch
-%{__make} -e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch
-
-%{__make} prod-twill.w
+%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch \
+	-e HCHANGES=comm-w2c.h comm-w2c.h \
+	-e TCHANGES=ctang-w2c.ch ctang-w2c.ch \
+	-e WCHANGES=cweav-w2c.ch cweav-w2c.ch \
+	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch \
+	prod-twill.w
 
 for m in comm ctang cweav ctwill
 do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
 
 # Use system CWEB, most likely from TeXLive
-%{__make} -e CTANGLE=ctangle -e CCHANGES=comm-w2c.ch common.cxx
-%{__make} -e CTANGLE=ctangle -e TCHANGES=ctang-w2c.ch ctangle.cxx
+%{__make} -e CTANGLE=ctangle \
+	-e CCHANGES=comm-w2c.ch common.cxx \
+	-e TCHANGES=ctang-w2c.ch ctangle.cxx
 
 %else
 
@@ -132,15 +132,23 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
 %{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
 
-for m in ctwill cweb
-do %{__mv} $m.1 $m.man; %{__sed} -i $m.man -e "/Web2c/ s/\\\\\[at\]/@/g"; done
-%{__sed} -i ctwill.man \
+%{__sed} -i ctwill.1 \
 	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
 	-e "s/proofmac/ctproofmac/g"
 
+%{__mkdir} ../man # Dirty trick! ;o)
+
+for m in ctwill cweb
+do
+	%{__sed} -i $m.1 -e "/Web2c/ s/\\\\\[at\]/@/g"
+	%{__mv} $m.1 ../man/$m.man
+done
+
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w ctwill.man cweb.man \
+	po cwebinputs texinputs refsort.w twinx.w ../man \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz
+
+%{__rm} -rf ../man # This is _outside_ our BUILD domain. Duh!
 
 %else
 
