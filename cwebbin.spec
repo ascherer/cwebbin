@@ -83,8 +83,10 @@ do %{__sed} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" -i $f; done
 %{!?with_doc:%{__sed} -e "s/cweave fullmanual/cweave # fullmanual/" -i Makefile.unix}
 
 %if ! %{with debuginfo}
-%{__sed} -e "s/CFLAGS = -g/CFLAGS = -O/" -i Makefile.unix
-%{__sed} -e "s/LINKFLAGS = -g/LINKFLAGS = -s/" -i Makefile.unix
+%{__sed} -e "s/CFLAGS = -g/#CFLAGS = -g/" -i Makefile.unix
+%{__sed} -e "s/#CFLAGS = -O/CFLAGS = -O/" -i Makefile.unix
+%{__sed} -e "s/LINKFLAGS = -g/#LINKFLAGS = -g/" -i Makefile.unix
+%{__sed} -e "s/#LINKFLAGS = -s/LINKFLAGS = -s/" -i Makefile.unix
 %endif
 
 %if %{with ansi_only}
