@@ -4,7 +4,7 @@
 % Most of the original changes were merged with the set of change files
 % of the CWEBbin project.  This stripped change file is last in line of
 % comm-ansi.hch, comm-extensions.hch, comm-output.hch, comm-i18n.hch and
-% comm-texlive.hch that get tie'd into comm-foo.h that is used in modified
+% comm-texlive.hch that get tie'd into comm-w2c.h that is used in modified
 % CTANGLE amd CWEAVE.
 
 Material in limbo.
@@ -12,7 +12,7 @@ Material in limbo.
 @x l.18
 % Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
 @y
-% Amendments to 'common.h' resulting in this extended 'comm-foo.h' were
+% Amendments to 'common.h' resulting in this extended 'comm-w2c.h' were
 % created by numerous collaborators over the course of many years.
 
 % Please send comments, suggestions, etc. to tex-k@@tug.org.
