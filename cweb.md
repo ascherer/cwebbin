@@ -1,10 +1,10 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% January 27, 2019
+% June 20, 2019
 
 # NAME
 
-ctangle, cweave -- translate CWEB to TeX
+ctangle, cweave -- translate CWEB to C/C++ and/or TeX
 
 # SYNOPSIS
 
