@@ -4,7 +4,7 @@
 
 # NAME
 
-ctwill, refsort, twinx -- translate CWEB to TeX \
+ctwill, refsort, twinx -- translate CWEB to \TeX \
 with mini-indexes per spread or per section
 
 # SYNOPSIS
@@ -15,7 +15,7 @@ with mini-indexes per spread or per section
 
 # DESCRIPTION
 
-The **ctwill** program converts a CWEB source document into a TeX\ file that
+The **ctwill** program converts a CWEB source document into a \TeX\ file that
 may be formatted and printed in the usual way.  It takes appropriate care of
 typographic details like page layout and the use of indentation, _italics_,
 **boldface**, etc., and it supplies extensive cross-index information that it
@@ -24,7 +24,7 @@ gathers automatically.
 CWEB allows you to prepare a single document containing all the information
 that is needed both to produce a compilable C/C++\ program and to produce a
 well-formatted document describing the program in as much detail as the writer
-may desire.  The user of CWEB ought to be familiar with TeX as well as C/C++.
+may desire.  The user of CWEB ought to be familiar with \TeX\ as well as C/C++.
 
 # USAGE
 
@@ -42,7 +42,7 @@ to apply, you can use '**-**' as the second argument.
 **ctwill** is exactly like **cweave** except that it produces much better
 documentation, for which you must work harder.  You should run **ctwill**
 twice, once to prime the pump and once to get decent answers.  Moreover, you
-must run the output twice through TeX.
+must run the output twice through \TeX.
 
 After **tex foo** you will have output that looks like final pages except that
 the entries of mini-indexes won't be alphabetized.  The first run produces a
@@ -54,7 +54,7 @@ that have been processed by **ctwill**.  The individual programs should define
 their names with a line of the form **\\def\\title{NAME}**.
 
 The mini-indexes list identifiers that are used but not defined on each
-two-page spread.  At the end of each section, **ctwill** gives TeX a list of
+two-page spread.  At the end of each section, **ctwill** gives \TeX\ a list of
 identifiers used in that section and information about where they are defined.
 
 The current meaning of every identifier is initially **\\uninitialized**.
@@ -69,11 +69,11 @@ files, **.bux** files should contain only **@$** specifications.
 
 The meaning specified by **@$...@>** generally has four components:
 an identifier (followed by space), a program name (enclosed in braces),
-a section number (followed by space), and a TeX\ part.
+a section number (followed by space), and a \TeX\ part.
 
 A special _proofmode_ is provided so that you can check **ctwill**'s
 conclusions about cross-references. Run **ctwill** with the flag **+P**, and
-TeX will produce a specially formatted document (_without_ mini-indexes) in
+\TeX\ will produce a specially formatted document (_without_ mini-indexes) in
 which you can check that your specifications are correct.
 
 More details how to use **ctwill** can be found in the first sections of its
@@ -89,15 +89,15 @@ drop-in replacement for the original package.  There are, however, a few
 differences worth noting:
 
 * This version is based on the most recent version of CWEB (3.64c).
-* In TeX\ Live the utility programs are prefixed with **ctwill-** and
+* In \TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-i**, **-o**, and **+lX** are new in CWEBbin and \TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
-* **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
+* **ctwill** in \TeX\ Live operates silently by default; use the **\-\-verbose**
   option to get the original behavior.
-* File lookup with the environment variable CWEBINPUTS is extended to permit
+* File lookup with the environment variable `CWEBINPUTS` is extended to permit
   several, colon-separated, paths.
 * If properly configured, the main program **ctwill** is localized with the
   "GNU gettext utilities".
@@ -143,15 +143,15 @@ In fact, the options are processed from left to right, so a sequence like
 
 # ENVIRONMENT
 
-The environment variable CWEBINPUTS is used to search for the input files,
-or the system default if CWEBINPUTS is not set.  See tex(1) for the details
+The environment variable `CWEBINPUTS` is used to search for the input files,
+or the system default if `CWEBINPUTS` is not set.  See tex(1) for the details
 of the searching.
 
 If prepared for NLS support, **ctwill** like **ctangle** and **cweave**
-uses the environment variable TEXMFLOCALEDIR to configure the parent directory
+uses the environment variable `TEXMFLOCALEDIR` to configure the parent directory
 where the "GNU gettext utilities" search for translation catalogs.
 
-These variables are preconfigured in TeX\ Live's **texmf.cnf**.
+These variables are preconfigured in \TeX\ Live's **texmf.cnf**.
 
 # FILES
 
@@ -159,7 +159,7 @@ The location of the files mentioned below varies from system to system.
 Use the **kpsewhich** utility to find their locations.
 
 * **ctwimac.tex**:
-  The default TeX\ macros **\\input** in the first line of the output file.
+  The default \TeX\ macros **\\input** in the first line of the output file.
 * **proofmac.tex**:
   If **ctwill** is invoked with the **+P** option, it will change the first
   line of the output file to **\\input proofmac.tex**.
@@ -175,7 +175,7 @@ e.g., **+ld** will **\\input dctwimac.tex** and **+Pld** will
   files like **<stdio.h>**.
 
 Other **aux**iliary files with references are created automatically by
-**ctwill** and the actual index files are created by TeX.
+**ctwill** and the actual index files are created by \TeX.
 
 * **cwebman.tex**:
   The CWEB user manual, available in PDF from
@@ -201,4 +201,4 @@ cweb(1), tex(1), cc(1)
 Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth. \
 As of 2019, **ctwill** and its utilities **refsort** and **twinx** have been
 fully integrated with the extended CWEBbin system that serves as the basis for
-CWEB in TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).
+CWEB in \TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).
