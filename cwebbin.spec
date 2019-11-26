@@ -184,7 +184,7 @@ do %{__sed} -i $m.1 -e "s/Web2c .*\[at\]/CWEBbin %{version}/"; done
 %{__texhash}
 
 %changelog
-* Mon Jan 01 2019 Andreas Scherer <https://ascherer.github.io>
+* Tue Jan 01 2019 Andreas Scherer <https://ascherer.github.io>
 - Prepare new release
 
 * Sun Dec 30 2018 Andreas Scherer <https://ascherer.github.io>
