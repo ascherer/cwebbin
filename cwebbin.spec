@@ -36,7 +36,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz
-Source2: %{name}-2019.tar.gz
+Source2: %{name}-2020.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
@@ -45,8 +45,8 @@ Patch3: 0002-Make-clean-refsort.patch
 Version: 3.64c
 Release: ansi
 %else
-Version: 2019
-Release: 17
+Version: 2020
+Release: 18
 %endif
 
 %define texmf /opt/texlive/texmf-local
@@ -188,6 +188,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sun Sep 22 2019 Andreas Scherer <https://ascherer.github.io>
+- Prepare new release
+
 * Tue Jan 01 2019 Andreas Scherer <https://ascherer.github.io>
 - Prepare new release
 

@@ -12,11 +12,11 @@ compilers and to introduce advanced features. see the extensive
 
 **NOTE:** the link to the *ctwill* tarball on the stanford cs server seems to
 be broken at this time; luckily, the [source package for
-cwebbin](https://github.com/ascherer/cwebbin/releases/download/cwebbin-2019/cwebbin-2019-17.sdeb)
+cwebbin](https://github.com/ascherer/cwebbin/releases/download/cwebbin-2020/cwebbin-2020-18.sdeb)
 contains the original 2000 `ctwill.tar.gz` (among other things). you can
-extract the contents of this package with `pax -rzf cwebbin-2019-17.sdeb`.
+extract the contents of this package with `pax -rzf cwebbin-2020-18.sdeb`.
 
-extract `cwebbin-2019.tar.gz` and add the contents of `cweb-3.64c.tar.gz` and
+extract `cwebbin-2020.tar.gz` and add the contents of `cweb-3.64c.tar.gz` and
 `ctwill.tar.gz` for the full set of source files.  unix/linux users should work
 with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 `cautiously`, and `all`).
@@ -29,7 +29,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
 git archive -o cweb-3.64c.tar.gz cweb-3.64c
-git archive -o cwebbin-2019.tar.gz cwebbin-2019
+git archive -o cwebbin-2020.tar.gz cwebbin-2020
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` (see
 **note** above) in the *SOURCES* directory and `cwebbin.spec` in the *SPECS*
@@ -40,17 +40,7 @@ debbuild -ba SPECS/cwebbin.spec
 ```
 depending on your preferences.
 
-## plain vanilla cweb (deprecated)
-
-if all you want is the original cweb without any add-ons but minus heaps of
-compiler warnings, use the special option `--with ansi_only` to include only
-the minimal changes required for a clean compilation.
-```
-rpmbuild -ba SPECS/cwebbin.spec --with ansi_only
-debbuild -ba SPECS/cwebbin.spec --with ansi_only
-```
-
-## cweb for texlive (new!)
+## cweb for texlive
 
 the extended sources and the build system were modified to smoothly integrate
 with the [texlive build system](https://github.com/TeX-Live/texlive-source).

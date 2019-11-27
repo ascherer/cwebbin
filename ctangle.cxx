@@ -33,7 +33,7 @@
 /*:62*/
 #line 65 "ctangle.w"
 
-#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2019])")  \
+#define banner _("This is CTANGLE (Version 3.64 [CWEBbin 2020])")  \
 
 #define max_bytes 1000000 \
 
