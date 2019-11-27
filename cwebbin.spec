@@ -51,6 +51,8 @@ Release: 17
 
 %define texmf /opt/texlive/texmf-local
 
+%global __sed_i %{__sed} -i
+
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{texmf} \\\
@@ -73,28 +75,29 @@ and Donald Knuth for Literate Programming in C/C++.
 %endif
 
 for f in Makefile.unix po/cweb.pot po/*/cweb.po
-do %{__sed} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" -i $f; done
+do %{__sed_i} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" $f; done
 
 %if %{with texlive}
-%{__sed} -e "s/# \(.*-texlive\)/\1/" -i Makefile.unix
+%{__sed_i} -e "s/# \(.*-texlive\)/\1/" Makefile.unix
 
 %else
 
-%{!?with_doc:%{__sed} -e "s/cweave fullmanual/cweave # fullmanual/" -i Makefile.unix}
+%{!?with_doc:%{__sed_i} -e "s/cweave fullmanual/cweave # fullmanual/" Makefile.unix}
 
 %if ! %{with debuginfo}
-%{__sed} -e "s/CFLAGS = -g/#CFLAGS = -g/" -i Makefile.unix
-%{__sed} -e "s/#CFLAGS = -O/CFLAGS = -O/" -i Makefile.unix
-%{__sed} -e "s/LINKFLAGS = -g/#LINKFLAGS = -g/" -i Makefile.unix
-%{__sed} -e "s/#LINKFLAGS = -s/LINKFLAGS = -s/" -i Makefile.unix
+%{__sed_i} -e "s/CFLAGS = -g/#CFLAGS = -g/" \
+	-e "s/#CFLAGS = -O/CFLAGS = -O/" \
+	-e "s/LINKFLAGS = -g/#LINKFLAGS = -g/" \
+	-e "s/#LINKFLAGS = -s/LINKFLAGS = -s/" \
+	Makefile.unix
 %endif
 
 %if %{with ansi_only}
-%{__sed} -i Makefile.unix -e \
+%{__sed_i} Makefile.unix -e \
 	"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_doc:%{__sed} -e "s/cweave fullmanual/cweave docs/" -i Makefile.unix}
-%{__sed} -i ctang-ansi.ch -e "/case not_eq/ s/@+/ /"
-%{__sed} -i cweav-ansi.ch -e "0,/char \*b/ s/, where/,where/"
+%{?with_doc:%{__sed_i} -e "s/cweave fullmanual/cweave docs/" Makefile.unix}
+%{__sed_i} -e "/case not_eq/ s/@+/ /" ctang-ansi.ch
+%{__sed_i} -e "0,/char \*b/ s/, where/,where/" cweav-ansi.ch
 %endif
 
 %endif
@@ -110,7 +113,7 @@ do %{__sed} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" -i $f; done
 	prod-twill.w
 
 for m in comm ctang cweav ctwill
-do %{__sed} -e "1r texlive.w" -e "1d" -i $m-w2c.ch; done
+do %{__sed_i} -e "1r texlive.w" -e "1d" $m-w2c.ch; done
 
 # Use system CWEB, most likely from TeXLive
 %{__make} -e CTANGLE=ctangle \
@@ -131,17 +134,18 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
-%{__sed} -i texinputs/dctproofmac.tex -e "s/proofmac/ctproofmac/"
-%{__sed} -i twinx.w -e "s/twinxmac/cttwinxmac/"
+%{__sed_i} -e "s/proofmac/ctproofmac/" texinputs/dctproofmac.tex
+%{__sed_i} -e "s/twinxmac/cttwinxmac/" twinx.w
 
 %{__mkdir} ../man # Dirty trick! ;o)
 
 for m in ctwill cweb
-do %{__sed} $m.1 -e "/Web2c/ s/\\\\\[at\]/@/g" > ../man/$m.man; done
+do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > ../man/$m.man; done
 
-%{__sed} -i ../man/ctwill.man \
-	-e "s/refsort/ctwill-refsort/g" -e "s/twinx/ctwill-twinx/g" \
-	-e "s/proofmac/ctproofmac/g"
+%{__sed_i} -e "s/proofmac/ctproofmac/g" \
+	-e "s/refsort/ctwill-refsort/g" \
+	-e "s/twinx/ctwill-twinx/g" \
+	../man/ctwill.man
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
 	po cwebinputs texinputs refsort.w twinx.w ../man \
@@ -163,7 +167,7 @@ do
 done
 
 for m in ctwill cweb
-do %{__sed} -i $m.1 -e "s/Web2c .*\[at\]/CWEBbin %{version}/"; done
+do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 
 %endif
 
