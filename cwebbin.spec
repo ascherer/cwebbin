@@ -49,13 +49,11 @@ Version: 2020
 Release: 18
 %endif
 
-%define texmf /opt/texlive/texmf-local
-
 %global __sed_i %{__sed} -i
 
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
-	-e TEXMFDIR=%{texmf} \\\
+	-e TEXMFDIR=%{__texlive_local} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
 %global __pandoc %{_bindir}/pandoc \\\
@@ -177,9 +175,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{_datadir}/emacs/site-lisp/cweb.el
 %{_libdir}/cweb/*
 %{_mandir}/man1/*
-%{texmf}/tex/plain/cweb/*
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
+%{__texlive_local}/tex/plain/cweb/*
 
 %post
 %{__texhash}
