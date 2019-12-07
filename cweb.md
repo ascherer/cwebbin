@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% June 20, 2019
+% December 7, 2019
 
 # NAME
 
@@ -146,6 +146,5 @@ Silvio Levy designed and developed CWEB by adapting the WEB conventions to C
 and by recoding everything in CWEB.
 Knuth began using CWEB and made further refinements.
 Many other helpers are acknowledged in the CWEB manual. \
-As of 2019, the CWEB system in TeX\ Live is based on the CWEBbin extension
-that collects ideas and improvements from numerous  contributors; see
+CWEB in TeX\ Live is based on the CWEBbin extension; see
 [the project page](https://github.com/ascherer/cwebbin).

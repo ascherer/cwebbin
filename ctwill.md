@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 10, 2019
+% December 7, 2019
 
 # NAME
 
@@ -199,6 +199,6 @@ cweb(1), tex(1), cc(1)
 # AUTHORS
 
 Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth. \
-As of 2019, **ctwill** and its utilities **refsort** and **twinx** have been
-fully integrated with the extended CWEBbin system that serves as the basis for
-CWEB in TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).
+**ctwill** and its utilities **refsort** and **twinx** have been fully
+integrated with the CWEBbin extension that serves as the basis for CWEB
+in TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).
