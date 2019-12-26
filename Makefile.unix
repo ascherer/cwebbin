@@ -300,7 +300,7 @@ ctwill.o: ctwill.$(EXTENSION)
 	$(CC) $(CFLAGS) -c ctwill.$(EXTENSION)
 
 prod-twill.w: prod.w prod-twill.ch
-	tie -m $@ $^
+	$(TIE) -m $@ $^
 
 refsort: refsort.o
 	$(CC) $(CFLAGS) -o refsort refsort.o
