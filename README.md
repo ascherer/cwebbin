@@ -49,7 +49,7 @@ by invoking
 debbuild -bi SPECS/cwebbin.spec --with texlive
 ```
 you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
-texlive's source directory `texk/web2c/cwebdir`. this tarball contains
-`*-w2c.ch` files that modify the original cweb sources for the texlive
-ecosystem.  additionally, it contains language catalogs, tex macros, and cweb
-include files.
+texlive's source directory `texlive-source` (or the subversion equivalent).
+this tarball contains `*-w2c.ch` files that modify the original cweb sources
+for the texlive ecosystem.  additionally, it contains language catalogs, tex
+macros, and cweb include files.
