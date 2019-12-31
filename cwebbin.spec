@@ -31,6 +31,7 @@ Distribution: openSUSE 42 (x86_64)
 %global __msgfmt %{_bindir}/msgfmt
 %global __pax /bin/pax
 %global __touch %{_bindir}/touch
+%global __texlive_local %(kpsewhich --var-value=TEXMFLOCAL)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
