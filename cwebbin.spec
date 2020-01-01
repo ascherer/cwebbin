@@ -172,7 +172,7 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %endif
 
 %files
-%defattr(-,root,root,-)
+%if ! %{with texlive}
 %{_bindir}/*
 %{_datadir}/emacs/site-lisp/cweb.el
 %{_libdir}/cweb/*
@@ -180,6 +180,7 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 %{__texlive_local}/tex/plain/cweb/*
+%endif
 
 %post
 %{__texhash}
