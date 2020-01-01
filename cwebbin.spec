@@ -136,22 +136,20 @@ for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__sed_i} -e "s/proofmac/ctproofmac/" texinputs/dctproofmac.tex
 %{__sed_i} -e "s/twinxmac/cttwinxmac/" twinx.w
 
-%{__mkdir} ../man # Dirty trick! ;o)
+%{__mkdir} man
 
 for m in ctwill cweb
-do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > ../man/$m.man; done
+do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > man/$m.man; done
 
 %{__sed_i} -e "s/proofmac/ctproofmac/g" \
 	-e "s/refsort/ctwill-refsort/g" \
 	-e "s/twinx/ctwill-twinx/g" \
-	../man/ctwill.man
+	man/ctwill.man
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w ../man \
+	po cwebinputs texinputs refsort.w twinx.w man \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
-	-s ,\\.\\./,texk/web2c/, -s ,^,texk/web2c/cwebdir/,
-
-%{__rm} -rf ../man # This is _outside_ our BUILD domain. Duh!
+	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 
 %else
 
