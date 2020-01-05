@@ -35,8 +35,7 @@ respectively, put these two tarballs and the original `ctwill.tar.gz` (see
 **note** above) in the *SOURCES* directory and `cwebbin.spec` in the *SPECS*
 directory of your build arena, and run
 ```
-rpmbuild -ba SPECS/cwebbin.spec
-debbuild -ba SPECS/cwebbin.spec
+{deb|rpm}build -ba SPECS/cwebbin.spec
 ```
 depending on your preferences.
 
@@ -46,10 +45,12 @@ the extended sources and the build system were modified to smoothly integrate
 with the [texlive build system](https://github.com/TeX-Live/texlive-source).
 by invoking
 ```
-debbuild -bi SPECS/cwebbin.spec --with texlive
+{deb|rpm}build -bi SPECS/cwebbin.spec --with texlive
 ```
 you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
-texlive's source directory `texlive-source` (or the subversion equivalent).
+texlive's source directory
+[`texlive-source`](https://github.com/TeX-Live/texlive-source) (or the
+[subversion equivalent](https://tug.org/svn/texlive/trunk/Build/source)).
 this tarball contains `*-w2c.ch` files that modify the original cweb sources
 for the texlive ecosystem.  additionally, it contains language catalogs, tex
 macros, and cweb include files.
