@@ -114,11 +114,6 @@ do %{__sed_i} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" $f; done
 for m in comm ctang cweav ctwill
 do %{__sed_i} -e "1r texlive.w" -e "1d" $m-w2c.ch; done
 
-# Use system CWEB, most likely from TeXLive
-%{__make} -e CTANGLE=ctangle \
-	-e CCHANGES=comm-w2c.ch common.cxx \
-	-e TCHANGES=ctang-w2c.ch ctangle.cxx
-
 %else
 
 %{__touch} *.cxx
@@ -127,6 +122,16 @@ do %{__sed_i} -e "1r texlive.w" -e "1d" $m-w2c.ch; done
 %endif
 
 for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
+
+%if %{with texlive}
+%check
+# Use system CWEB, most likely from TeXLive
+%{__make} -e CTANGLE=ctangle -e HCHANGES=comm-w2c.h \
+	-e CCHANGES=comm-w2c.ch common.cxx \
+	-e TCHANGES=ctang-w2c.ch ctangle.cxx \
+	-e WCHANGES=cweav-w2c.ch cweave.cxx \
+	-e LCHANGES=ctwill-w2c.ch ctwill.cxx
+%endif
 
 %install
 %if %{with texlive}
