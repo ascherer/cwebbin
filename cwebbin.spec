@@ -9,7 +9,7 @@
 # Prepare CWEBbin as base for TeXLive.
 %bcond_with texlive
 
-Name: cwebbin
+Name: cwebbin%{?with_texlive:-texlive}
 Summary: The CWEBbin extension of the CWEB package
 License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
@@ -35,9 +35,12 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
+# Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
+# Overwrite 'prod.w' with CWEB original
 Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz
-Source2: %{name}-2020.tar.gz
+# Add CWEBbin stuff on top
+Source2: cwebbin-2020.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
