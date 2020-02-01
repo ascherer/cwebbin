@@ -205,6 +205,14 @@ Section 42.  Fix bug: Don't print empty line for '-bp'.
     }
 @z
 
+Section 43.  Fix bug: Don't print secondary output files for '-p'.
+
+@x l.580
+    printf("\n(%s)",output_file_name); update_terminal;
+@y
+    if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }
+@z
+
 Section 50.  Typographic improvement.
 
 @x l.681
