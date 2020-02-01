@@ -186,8 +186,8 @@ All of these code tables are extensions to the {\mc ASCII} table\nobreak
 \noindent i.e., they provide additional symbols and characters with codes
 from~128 to~255, while they agree in positions~0 to~127.  The tables shown
 above represent the set of characters provided by the \TEX/ macro files
-\.{cweb_ecma94.sty}, \.{cweb_hp8.sty}, \.{cweb_mac8.sty}, and
-\.{cweb_pc850.sty} in the \.{macros} subdirectory of \.{CWEB}.  There may (or
+\.{cweb\_ecma94.sty}, \.{cweb\_hp8.sty}, \.{cweb\_mac8.sty}, and
+\.{cweb\_pc850.sty} in the \.{macros} subdirectory of \.{CWEB}.  There may (or
 may not) be additional characters in the empty `slots' of the font tables.
 Either there is no simple representation for these characters in \TEX/nical
 form or they are not useful for programming, so they were left out.
@@ -271,7 +271,7 @@ of the input and the output files are required.
 
 The ``translation table'' is an array of strings, which replace the
 characters with codes between~128 and~255 inclusive.  Not all characters
-are supported, just as in \.{cweb_ecma94.sty}.
+are supported, just as in \.{cweb\_ecma94.sty}.
 
 @d copy_tex flags['m']
 
@@ -386,16 +386,16 @@ according to the rules given in |trans_file|.  Here are two examples:
 If you want to translate one of your {\mc ASCII} files for use on another
 system, e.g., from Amiga to {\mc MSDOS}, use something like
 
-\.{ct cweb_pc850.cct {\it$\langle$Amiga file$\rangle$}
+\.{ct cweb\_pc850.cct {\it$\langle$Amiga file$\rangle$}
 -t {\it$\langle$MSDOS file$\rangle$}}
 
 If you want to translate a file from another system to make it usable on
 your own system, e.g., from {\mc MSDOS} to Amiga, use something like
 
-\.{ct cweb_pc850.cct -f {\it$\langle$MSDOS file$\rangle$
+\.{ct cweb\_pc850.cct -f {\it$\langle$MSDOS file$\rangle$
 $\langle$Amiga file$\rangle$}}
 
-Note that in both cases \.{cweb_pc850.cct} is used as the |trans_file|, but
+Note that in both cases \.{cweb\_pc850.cct} is used as the |trans_file|, but
 the direction of translation is determined by the appropriate option.  There
 is no sense in setting both the `\.{-f}' and the `\.{-t}' option, the
 results would get fouled up.
@@ -429,11 +429,11 @@ to suppress access to the |trans_file|, which is not needed here.
    return(EXIT_SUCCESS);
 
 @* Setting up the translation tables.  We still have to deal with the
-problem of creating appropriate translation files like \.{cweb_pc850.cct}.
+problem of creating appropriate translation files like \.{cweb\_pc850.cct}.
 This is a somewhat tedious task if done by hand, because of the many
 possible `directions' between the systems.  The following program
-initializes three external files \.{cweb_hp8.cct}, \.{cweb_mac8.cct}, and
-\.{cweb_pc850.cct}.  These tables can be used for translation between
+initializes three external files \.{cweb\_hp8.cct}, \.{cweb\_mac8.cct}, and
+\.{cweb\_pc850.cct}.  These tables can be used for translation between
 systems with {\mc ECMA}~94 and one of the target systems.
 
 To begin with we represent the tables in the form of \CEE/ strings in octal
@@ -582,27 +582,27 @@ int main(void)
    {
    FILE *fp;
 
-   @<Write \.{cweb_hp8.cct}@>@;
-   @<Write \.{cweb_mac8.cct}@>@;
-   @<Write \.{cweb_pc850.cct}@>@;
+   @<Write \.{cweb\_hp8.cct}@>@;
+   @<Write \.{cweb\_mac8.cct}@>@;
+   @<Write \.{cweb\_pc850.cct}@>@;
    return(EXIT_SUCCESS);
    }
 
-@ @<Write \.{cweb_hp8.cct}@>=
+@ @<Write \.{cweb\_hp8.cct}@>=
 if(fp=fopen("cweb_hp8.cct","wb")) {
    fwrite(ecma_to_hp,256,1,fp);
    fwrite(hp_to_ecma,256,1,fp);
    fclose(fp);
    }
 
-@ @<Write \.{cweb_mac8.cct}@>=
+@ @<Write \.{cweb\_mac8.cct}@>=
 if(fp=fopen("cweb_mac8.cct","wb")) {
    fwrite(ecma_to_mac,256,1,fp);
    fwrite(mac_to_ecma,256,1,fp);
    fclose(fp);
    }
 
-@ @<Write \.{cweb_pc850.cct}@>=
+@ @<Write \.{cweb\_pc850.cct}@>=
 if(fp=fopen("cweb_pc850.cct","wb")) {
    fwrite(ecma_to_pc,256,1,fp);
    fwrite(pc_to_ecma,256,1,fp);
