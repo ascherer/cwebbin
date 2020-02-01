@@ -343,19 +343,19 @@ open for writing.
 
 @<Make |trans_file_name| and open |trans_file|@>={
    strcpy(trans_file_name,*argv);
-   if(trans_file=fopen(trans_file_name,"rb"))
+   if((trans_file=fopen(trans_file_name,"rb")))
       found_trans=1;
    }
 
 @ @<Make |in_file_name| and open |in_file|@>={
    strcpy(in_file_name,*argv);
-   if(in_file=fopen(in_file_name,"rb"))
+   if((in_file=fopen(in_file_name,"rb")))
       found_in=1;
    }
 
 @ @<Make |out_file_name| and open |out_file|@>={
    strcpy(out_file_name,*argv);
-   if(out_file=fopen(out_file_name,"wb"))
+   if((out_file=fopen(out_file_name,"wb")))
       found_out=1;
    }
 
@@ -589,21 +589,21 @@ int main(void)
    }
 
 @ @<Write \.{cweb\_hp8.cct}@>=
-if(fp=fopen("cweb_hp8.cct","wb")) {
+if((fp=fopen("cweb_hp8.cct","wb"))) {
    fwrite(ecma_to_hp,256,1,fp);
    fwrite(hp_to_ecma,256,1,fp);
    fclose(fp);
    }
 
 @ @<Write \.{cweb\_mac8.cct}@>=
-if(fp=fopen("cweb_mac8.cct","wb")) {
+if((fp=fopen("cweb_mac8.cct","wb"))) {
    fwrite(ecma_to_mac,256,1,fp);
    fwrite(mac_to_ecma,256,1,fp);
    fclose(fp);
    }
 
 @ @<Write \.{cweb\_pc850.cct}@>=
-if(fp=fopen("cweb_pc850.cct","wb")) {
+if((fp=fopen("cweb_pc850.cct","wb"))) {
    fwrite(ecma_to_pc,256,1,fp);
    fwrite(pc_to_ecma,256,1,fp);
    fclose(fp);
