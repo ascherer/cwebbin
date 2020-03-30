@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CWEBbin 2019\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-19 23:24+0100\n"
+"POT-Creation-Date: 2020-03-30 12:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,6 +101,10 @@ msgstr ""
 
 #: help.h:86 help.h:111
 msgid "-o          suppress separation of declarations and statements"
+msgstr ""
+
+#: help.h:65 help.h:91 help.h:118
+msgid "-t          ignore tempoaray output irrespective of changes"
 msgstr ""
 
 #: help.h:87 help.h:112
