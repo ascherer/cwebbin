@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% December 7, 2019
+% March 30, 2020
 
 # NAME
 
@@ -92,7 +92,7 @@ differences worth noting:
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
 * **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
@@ -128,6 +128,8 @@ In fact, the options are processed from left to right, so a sequence like
   suppress indentation of parameter declarations
 * **-o**:
   suppress separation of declarations and statements
+* **-t**:
+  ignore temporary output irrespective of changes
 * **-x**:
   omit indices, section names, table of contents
 * **+P**:

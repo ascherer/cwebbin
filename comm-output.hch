@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, October 30, 2018.
+Changes for COMMON.H by Andreas Scherer, March 30, 2020.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -15,6 +15,15 @@ extern char scn_file_name[]; /* name of |scn_file| */
 @y
 extern char scn_file_name[]; /* name of |scn_file| */
 extern char check_file_name[]; /* name of |check_file| */
+@z
+
+Section 13.
+
+@x l.36 of COMM-EXTENSIONS.HCH
+@d make_xrefs flags['x'] /* should cross references be output? */
+@y
+@d temporary_output flags['t'] /* should temporary output take precedence? */
+@d make_xrefs flags['x'] /* should cross references be output? */
 @z
 
 Section 14.

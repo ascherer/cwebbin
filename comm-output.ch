@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 3, 2018.
+Changes for COMMON.W by Andreas Scherer, March 30, 2020.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -22,11 +22,27 @@ Section 61.
 
 Section 67.
 
+@x l.1218
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@y
+@d show_happiness flags['h'] /* should lack of errors be announced? */
+@d temporary_output flags['t'] /* should temporary output take precedence? */
+@z
+
 @x l.1226
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
+@z
+
+Section 68.
+
+@x l.1234
+show_banner=show_happiness=show_progress=1;
+@y
+show_banner=show_happiness=show_progress=1;
+temporary_output=1; /* Check temporary output for changes */
 @z
 
 Section 77.

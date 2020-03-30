@@ -104,6 +104,7 @@
 #define show_banner flags['b']
 #define show_progress flags['p']
 #define show_happiness flags['h']
+#define temporary_output flags['t']
 #define make_xrefs flags['x'] \
 
 #define update_terminal fflush(stdout) 
@@ -266,14 +267,14 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:12*//*13:*/
-#line 195 "comm-foo.h"
+#line 196 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
 extern boolean flags[];
 
 /*:13*//*14:*/
-#line 207 "comm-foo.h"
+#line 208 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -283,7 +284,7 @@ extern FILE*check_file;
 extern FILE*active_file;
 
 /*:14*//*15:*/
-#line 217 "comm-foo.h"
+#line 218 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
@@ -754,13 +755,13 @@ if((C_file= fopen(C_file_name,"r"))!=NULL){
 #line 761 "ctang-foo.ch"
 
 char x[BUFSIZ],y[BUFSIZ];
-int x_size,y_size,comparison;
+int x_size,y_size,comparison= false;
 
 if((check_file= fopen(check_file_name,"r"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
 
 
-/*100:*/
+if(temporary_output)/*100:*/
 #line 776 "ctang-foo.ch"
 
 do{
@@ -822,13 +823,13 @@ if((C_file= fopen(output_file_name,"r"))!=NULL){
 #line 761 "ctang-foo.ch"
 
 char x[BUFSIZ],y[BUFSIZ];
-int x_size,y_size,comparison;
+int x_size,y_size,comparison= false;
 
 if((check_file= fopen(check_file_name,"r"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
 
 
-/*100:*/
+if(temporary_output)/*100:*/
 #line 776 "ctang-foo.ch"
 
 do{

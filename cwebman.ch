@@ -51,6 +51,7 @@ a21	09 Mar 2002	AS	Updated for CWEB 3.64.
 a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2018	24 Nov 2018	AS	Update for CWEBbin 2018.
 2019	01 Jan 2019	AS	Update for CWEBbin 2019.
+2020	30 Mar 2020	AS	New option '-t' re temporary output.
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -105,6 +106,7 @@ There are additional command line switches available:
     - `m' to activate communication between CWEB and the message
           browser of the SAS/C development system via ARexx.
     - 'o' to separate parameter declarations and statements.
+    - 't' to use temporary output to apply changes only.
 
 @x l.1036
 \option b Print a banner line at the beginning of execution. (On
@@ -171,6 +173,9 @@ AMIGA} system.)
 runs to completion. (Off by default.)
 If you have large \.{CWEB} files or sections, you may need to see
 how close you come to exceeding the capacity of \.{CTANGLE} and/or \.{CWEAVE}.
+
+\option t Overwrite output files with temporary output only if changes occur.
+(On by default.)
 
 \option x Include indexes and a table of contents in the \TEX/ file
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
