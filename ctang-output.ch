@@ -78,7 +78,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
 
 @ @<Set up the comparison of temporary output@>=
   char x[BUFSIZ],y[BUFSIZ];
-  int x_size,y_size,comparison;
+  int x_size,y_size,comparison=false;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file ",check_file_name);
