@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, November 1, 2018.
+Changes for CTANGLE.W by Andreas Scherer, March 30, 2020.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -84,14 +84,14 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
     fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  @<Compare the temporary output to the previous output@>@;
+  if (temporary_output) @<Compare the temporary output...@>@;
 
   fclose(C_file); C_file=NULL;
   fclose(check_file); check_file=NULL;
 
 @ We hope that this runs fast on most systems.
 
-@<Compare the temp...@>=
+@<Compare the temporary output to the previous output@>=
 do {
   x_size = fread(x,1,BUFSIZ,C_file);
   y_size = fread(y,1,BUFSIZ,check_file);
