@@ -178,10 +178,10 @@ extern int phase;
 /*:5*//*7:*/
 #line 74 "comm-foo.h"
 
-char section_text[longest_name+1];
-char*section_text_end= section_text+longest_name;
-char*id_first;
-char*id_loc;
+extern char section_text[];
+extern char*section_text_end;
+extern char*id_first;
+extern char*id_loc;
 
 /*:7*//*8:*/
 #line 89 "comm-foo.h"
