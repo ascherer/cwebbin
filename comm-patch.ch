@@ -34,7 +34,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile COMMON.W.
 
-Copyright (C) 1993-1995,1998,2000,2005 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2020 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -168,6 +168,8 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
+
+2020	11 March 2020	AS	Externalize common variables.
 ------------------------------------------------------------------------------
 Material in limbo.
 
@@ -190,6 +192,20 @@ x l.43
 y
 \let\maybe=\iffalse % print only changed modules
 z
+
+Section 6. Externalize common variables.
+
+@x l.137
+@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
+@y
+@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
+
+@<Definitions...@>=
+char section_text[longest_name+1]; /* name being sought for */
+char *section_text_end = section_text+longest_name; /* end of |section_text| */
+char *id_first; /* where the current identifier begins in the buffer */
+char *id_loc; /* just after the current identifier in the buffer */
+@z
 
 Section 61. Fix bug: Don't print empty line for '-ph'.
 
