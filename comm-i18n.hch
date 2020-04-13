@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, January 1, 2019.
+Changes for COMMON.H by Andreas Scherer, April 13, 2019.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.H in case of errors or information requests with the help of 'gettext'
@@ -11,7 +11,14 @@ Section 6 (of CTANGLE and CWEAVE).
 @x l.35
 @ @<Include files@>=
 @y
-@ @d _(STRING) gettext(STRING)
+@ You may have noticed that almost all \.{"strings"} in the \.{CWEB} sources
+are placed in the context of the `|_|'~macro.  This is just a shortcut for the
+`|gettext|' function from the ``GNU~gettext utilities.'' For systems that do
+not have this library installed, we wrap things for neutral behavior without
+internationalization.
+
+@d _(STRING) gettext(STRING)
+
 @<Include files@>=
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
