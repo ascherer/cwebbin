@@ -52,6 +52,7 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2018	24 Nov 2018	AS	Update for CWEBbin 2018.
 2019	01 Jan 2019	AS	Update for CWEBbin 2019.
 2020	30 Mar 2020	AS	New option '-t' re temporary output.
+2020	13 Apr 2020	AS	New Appendix G (CTWILL source)
 ------------------------------------------------------------------------------
 Use the already changed macro file.  Also we will need special characters.
 @x l.4
@@ -179,6 +180,15 @@ how close you come to exceeding the capacity of \.{CTANGLE} and/or \.{CWEAVE}.
 
 \option x Include indexes and a table of contents in the \TEX/ file
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
+@z
+------------------------------------------------------------------------------
+Add Appendix G, the CTWILL source code.
+@x l.1177
+appendices D, E, and~F, which exhibit the complete source code for
+\.{CTANGLE} and \.{CWEAVE}.
+@y
+appendices D, E, F, and~G, which exhibit the complete source code for
+\.{COMMON}, \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL}.
 @z
 ------------------------------------------------------------------------------
 Also relate to this changed macro file and to the German version.
