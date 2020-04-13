@@ -6,15 +6,6 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 3.
-
-@x l.103
-  argc=ac; argv=av;
-@y
-  extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
-  argc=ac; argv=av;
-@z
-
 Section 4.
 
 @x l.121
@@ -270,3 +261,16 @@ else if (cat1==stmt) {
   make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
     /* controlled by command-line options */
 @z
+
+Addendum.
+
+@x l.4644
+@** Index.
+@y
+@* Language setting.  This global variable is defined and set in \.{common} by
+the `\.{+l}' (or `\.{-l}') commandline option.
+
+@<Global var...@>=
+extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+
+@** Index.
