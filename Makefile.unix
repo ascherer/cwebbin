@@ -316,21 +316,24 @@ boot:
 # Take a good lecture for bedtime reading
 doc: $(SOURCES:.w=.pdf)
 
-docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf
+docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf ctwill.pdf
 
 cwebman.dvi: cwebman.tex
 cwebmana.dvi: cwebmana.tex
 common.dvi: common.tex
 ctangle.dvi: ctangle.tex
 cweave.dvi: cweave.tex
+ctwill.dvi: ctwill.tex
 
 usermanual: cwebmana.pdf
 
 fullmanual: usermanual $(SOURCES) \
-	comm-doc.ch ctang-doc.ch cweav-doc.ch $(HCHANGES) $(MCHANGES)
+	comm-doc.ch ctang-doc.ch cweav-doc.ch ctwill-doc.ch \
+	$(HCHANGES) $(MCHANGES)
 	$(CWEAVE) common.w comm-doc.ch; $(MAKE) common.pdf
 	$(CWEAVE) ctangle.w ctang-doc.ch; $(MAKE) ctangle.pdf
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
+	$(CWEAVE) cweave.w ctwill-doc.ch ctwill; $(MAKE) ctwill.pdf
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m $@ $^; $(SUBVER)
@@ -345,6 +348,8 @@ ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
+ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
+	$(TIE) -c $@ $^; $(SUBVER)
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
@@ -352,6 +357,9 @@ ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
 
 cweave.tex: cweave.w $(WCHANGES) $(HCHANGES)
 	$(CWEAVE) cweave $(WCHANGES)
+
+ctwill.tex: cweave.w $(LCHANGES) $(HCHANGES)
+	$(CWEAVE) cweave $(LCHANGES) ctwill
 
 common.tex: common.w $(CCHANGES)
 	$(CWEAVE) common $(CCHANGES)
