@@ -267,7 +267,7 @@ Addendum.
 @x l.4644
 @** Index.
 @y
-@* Language setting.  This global variable is defined and set in \.{common} by
+@* Language setting.  This global variable is defined and set in \.{COMMON} by
 the `\.{+l}' (or `\.{-l}') commandline option.
 
 @<Global var...@>=
