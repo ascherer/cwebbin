@@ -268,7 +268,7 @@ Addendum.
 @** Index.
 @y
 @* Language setting.  This global variable is defined and set in \.{COMMON} by
-the `\.{+l}' (or `\.{-l}') commandline option.
+the `\.{+l}' (or `\.{-l}') command-line option.
 
 @<Global var...@>=
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
