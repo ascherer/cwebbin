@@ -107,12 +107,12 @@ do %{__sed_i} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" $f; done
 %build
 %if %{with texlive}
 
-%{__make} -e CCHANGES=comm-w2c.ch comm-w2c.ch \
+%{__make} SUBVER="" prod-twill.w \
+	-e CCHANGES=comm-w2c.ch comm-w2c.ch \
 	-e HCHANGES=comm-w2c.h comm-w2c.h \
 	-e TCHANGES=ctang-w2c.ch ctang-w2c.ch \
 	-e WCHANGES=cweav-w2c.ch cweav-w2c.ch \
-	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch \
-	prod-twill.w
+	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch
 
 for m in comm ctang cweav ctwill
 do %{__sed_i} -e "1r texlive.w" -e "1d" $m-w2c.ch; done
