@@ -373,7 +373,7 @@ $(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
 	$(TIE) -c $@ $^; $(SUBVER)
 $(HCHANGES): common.h comm-patch.hch comm-ansi.hch comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
-	$(TIE) -m $@ $^; $(SUBVER)
+	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang-ansi.ch ctang-extensions.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
