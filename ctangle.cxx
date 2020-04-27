@@ -46,15 +46,6 @@
 #define stack_size 50
 #define buf_size 1000 \
 
-#define ctangle 0
-#define cweave 1
-#define ctwill 2 \
- \
- \
- \
- \
- \
-
 #define _(STRING) gettext(STRING)  \
 
 #define and_and 04
@@ -168,12 +159,15 @@
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 32 "comm-foo.h"
+#line 29 "comm-foo.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;
-extern int program;
+typedef enum{
+ctangle,cweave,ctwill
+}cweb;
+extern cweb program;
 extern int phase;
 
 /*:5*//*7:*/

@@ -50,10 +50,6 @@
 /*:89*/
 #line 59 "common.w"
 
-#define ctangle 0
-#define cweave 1
-#define ctwill 2 \
-
 #define and_and 04
 #define lt_lt 020
 #define gt_gt 021
@@ -174,10 +170,13 @@ err_print(_("! Include file name too long") ) ;goto restart;} \
 /*2:*/
 #line 73 "common.w"
 
-#line 35 "comm-foo.ch"
+#line 32 "comm-foo.ch"
 typedef bool boolean;
-#line 41 "comm-foo.ch"
-int program;
+#line 38 "comm-foo.ch"
+typedef enum{
+ctangle,cweave,ctwill
+}cweb;
+cweb program;
 #line 76 "common.w"
 
 /*:2*//*6:*/
