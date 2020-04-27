@@ -19,7 +19,6 @@ Section 2.  Add CTWILL.
 @d cweave 1
 @y
 |program|. And \.{CTWILL} adds some extra twists.
-
 @z
 
 @x l.75
