@@ -8,17 +8,19 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 5.  Add CTWILL.
 
-@x l.27
+@x l.26
+@d ctangle 0
 @d cweave 1
 @y
-@d cweave 1
-@d ctwill 2
 @z
 
 @x l.32
 extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
-extern int program; /* \.{CWEAVE} or \.{CTANGLE} or \.{CTWILL}? */
+typedef enum {
+  ctangle, cweave, ctwill
+} cweb;
+extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
 Section 11 (of CTANGLE and CWEAVE).

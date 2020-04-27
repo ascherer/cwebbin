@@ -20,15 +20,15 @@ Section 2.  Add CTWILL.
 @y
 |program|. And \.{CTWILL} adds some extra twists.
 
-@d ctangle 0
-@d cweave 1
-@d ctwill 2
 @z
 
 @x l.75
 boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
-int program; /* \.{CWEAVE} or \.{CTANGLE} or \.{CTWILL}? */
+typedef enum {
+  ctangle, cweave, ctwill
+} cweb;
+cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
 Section 7.
