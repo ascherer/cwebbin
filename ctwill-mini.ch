@@ -23,6 +23,14 @@ give it the necessary hints in other places via your change file.
 @z
 
 @x
+A special ``proofmode'' is provided so that you can check \.{CTWILL}'s
+@y
+\vfill\eject
+
+A special ``proofmode'' is provided so that you can check \.{CTWILL}'s
+@z
+
+@x
 @i prod-twill.w
 @y
 @i prod-twill.w
