@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, January 1, 2019.
+Changes for COMMON.W by Andreas Scherer, April 28, 2020.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -339,11 +339,11 @@ default: fatal(
 Extended material after Section 82.
 
 @x l.576 of COMM-ANSI.CH
-@ The following functions are private to |"common.w"|.
+@ The following functions are private to \.{common.w}.
 
 @<Predecl...@>=
 @y
-@ The following functions are private to |"common.w"|.
+@ The following functions are private to \.{common.w}.
 
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/

@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, November 3, 2018.
+Changes for COMMON.W by Andreas Scherer, April 28, 2020.
 
 This set of changes converts the COMMON.W module into ANSI-C and C++ code.
 All functions are both declared and defined in prototypical form, while
@@ -559,7 +559,7 @@ section should have the same number as the original ``\&{82.~Index},'' and
 additional material follows below.
 
 @* Function declarations. Here are declarations---conforming to
-{\mc ANSI~C}---of all functions in this code that appear in |"common.h"|
+{\mc ANSI~C}---of all functions in this code that appear in \.{common.h}
 and thus should agree with \.{CTANGLE} and \.{CWEAVE}.
 
 @<Predecl...@>=
@@ -573,7 +573,7 @@ void print_section_name(name_pointer);@/
 void reset_input(void);@/
 void sprint_section_name(char *,name_pointer);@/
 
-@ The following functions are private to |"common.w"|.
+@ The following functions are private to \.{common.w}.
 
 @<Predecl...@>=
 static boolean input_ln(FILE *);@/
