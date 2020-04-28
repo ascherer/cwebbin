@@ -46,6 +46,26 @@ Section 4.
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
 @z
 
+Section 5.
+
+@x l.100
+\.{ctype.h} header file.
+
+@<Include files@>=
+#include <ctype.h>
+@y
+\.{ctype.h} header file, included through the \Kpathsea/ interface.
+@z
+
+Section 8.
+
+@x
+@ @<Include files@>=
+#include <stdio.h>
+@y
+@ Most of the standard \CEE/ interface comes from \Kpathsea/.
+@z
+
 Section 9.
 
 @x l.181
@@ -120,6 +140,12 @@ double quotes.
 The actual file lookup is done with the help of the \Kpathsea/ library;
 see section~\X90:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
+@z
+
+@x l.471
+@<Include...@>=
+#include <stdlib.h> /* declaration of |getenv| and |exit| */
+@y
 @z
 
 Section 23.
@@ -268,11 +294,46 @@ FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
+Section 81.
+
+@x l.1406 and l.541 of COMM-ANSI.CH
+@ For string handling we include the {\mc ANSI C} system header file instead
+of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
+|strncmp|, and |strncpy|.
+@^system dependencies@>
+
+@<Include...@>=
+#include <string.h>
+@y
+@ For string handling we include the {\mc ANSI C} system header file---through
+the \Kpathsea/ interface---instead of predeclaring the standard system
+functions |strlen|, |strcmp|, |strcpy|, |strncmp|, and |strncpy|.
+@^system dependencies@>
+@z
+
 Changes to former addenda.
 
 @x l.350 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
+@z
+
+@x l.586 of COMM-ANSI.CH
+@* Standard C library interfaces.  This updated version of \.{CWEB} uses
+standard C types for boolean values, pointers, and objects with fixed sizes.
+
+@<Include files@>=
+#include <stdbool.h> /* type definition of |bool| */
+#include <stddef.h> /* type definition of |ptrdiff_t| */
+#include <stdint.h> /* type definition of |uint8_t| et al. */
+@y
+@* Standard C library interfaces.  This updated version of \.{CWEB} uses
+standard C types for boolean values, pointers, and objects with fixed sizes
+(already in \Kpathsea/).
+
+@<Include files@>=
+#include <stdbool.h> /* type definition of |bool| */
+#include <stddef.h> /* type definition of |ptrdiff_t| */
 @z
 
 @x l.358 of COMM-EXTENSIONS.CH and l.320 of COMM-I18N.CH
