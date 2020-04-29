@@ -210,6 +210,14 @@ show_banner=show_happiness=show_progress=1;
 
 Section 71.
 
+@x l.1238
+file.  It may have an extension, or it may omit the extension to get |".w"| or
+|".web"| added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
+@y
+file.  It may have an extension, or it may omit the extension to get |".w"|.
+The \TEX/ output file name is formed by replacing the \.{CWEB}
+@z
+
 @x l.1285
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
