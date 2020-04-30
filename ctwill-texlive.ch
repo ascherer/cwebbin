@@ -32,7 +32,7 @@ Section 1.
 
 Section 3.
 
-@x l.108 and l.60 of CWEAV-ANSI.CH - Add Web2C version to banner.
+@x l.108 and l.60 of CWEAV-ANSI.CH - Add Web2c version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   if (show_banner) cb_show_banner(); /* print a ``banner line'' */

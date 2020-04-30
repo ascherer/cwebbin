@@ -32,7 +32,7 @@ Section 1.
 
 Section 3.
 
-@x l.100 and l.62 of CTANG-ANSI.CH - Add Web2C version to banner.
+@x l.100 and l.62 of CTANG-ANSI.CH - Add Web2c version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   if (show_banner) cb_show_banner(); /* print a ``banner line'' */
