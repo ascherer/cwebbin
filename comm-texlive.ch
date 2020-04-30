@@ -549,7 +549,7 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP :
 
 @ Special variants from Web2c's `\.{lib/usage.c}', adapted for \.{i18n}/\.{t10n}.
 We simply filter the strings through the catalogs (if available).
-
+@s const_string int
 @c
 static void cb_usage (const_string str)
 {
