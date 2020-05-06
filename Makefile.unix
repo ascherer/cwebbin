@@ -241,8 +241,10 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 .tex.pdf:
 	case "$(PDFTEX)" in \
 	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
-	  xetex ) TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
-	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
+	  xetex ) TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ; \
+	  	TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
+	  pdftex ) TEXINPUTS=.//: pdftex $* ; \
+	  	TEXINPUTS=.//: pdftex $* ;; \
 	esac
 
 .ref.sref: refsort
