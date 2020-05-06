@@ -1,4 +1,4 @@
-# 'make fullmanual' requires TeX (pdflatex).
+# 'make fullmanual' requires TeX (pdftex or xetex).
 # use '--without doc' to exclude this step; default is 'with'.
 %bcond_without doc
 # By default CWEB and CWEBBIN are compiled and linked with optimization
@@ -56,7 +56,7 @@ Release: 18
 %global __sed_i %{__sed} -i
 
 %global __make %{__make} -f Makefile.unix \\\
-	-e PDFTEX=pdftex \\\
+	-e PDFTEX=xetex \\\
 	-e TEXMFDIR=%{__texlive_local} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 

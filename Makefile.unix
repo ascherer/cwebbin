@@ -128,8 +128,10 @@ CC = g++ # gcc cc
 RM= /bin/rm
 CP= /bin/cp
 
-# uncomment the second line if you use pdftex to bypass .dvi files
+# uncomment the second line if you use xetex to mogrify .dvi files into .pdf
+# uncomment the third line if you use pdftex to bypass .dvi files altogether
 PDFTEX = dvipdfm
+#PDFTEX = xetex
 #PDFTEX = pdftex
 
 ##########  You shouldn't have to change anything after this point #######
@@ -239,6 +241,7 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 .tex.pdf:
 	case "$(PDFTEX)" in \
 	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
+	  xetex ) TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
 	  pdftex ) TEXINPUTS=.//: pdftex $* ;; \
 	esac
 

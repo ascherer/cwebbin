@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64c [2020]).
+% This file is part of CWEBbin (Version 3.64c [2021]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated September 22, 2019 by Andreas Scherer.
+% This README file was last updated May 6, 2020 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -333,7 +333,7 @@ So here are some words about the `special features':
      to include the respective macro file in the TeX output, before running
      "pdftex". </Obsolete>  As of July 2000 these macros are united with the
      generic macros, i.e., `cwebmac.tex' can be used with "plain TeX," "plain
-     TeX + dvipdfm," and "pdftex."
+     TeX + dvipdfm," "xetex" (which uses xdvipdfmx), and "pdftex."
 
    - [GENERAL] There are transliteration tables `cweb_ecma94.w', `cweb_hp8.w',
      `cweb_mac8.w', and `cweb_pc850.w' for @inclusion in limbo.  These files
@@ -471,7 +471,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-January 1, 2020.
+May 6, 2020.
 
 Andreas Scherer
 
