@@ -25,8 +25,9 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 git archive -o cweb-3.64c.tar.gz cweb-3.64c
 git archive -o cwebbin-2020.tar.gz cwebbin-2020
 ```
-respectively, put these two tarballs and the original `ctwill.tar.gz` in the *SOURCES* directory and `cwebbin.spec` in the *SPECS*
-directory of your build arena, and run
+respectively, put these two tarballs and the original `ctwill.tar.gz` in the
+*SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build
+arena, and run
 ```
 {deb|rpm}build -ba SPECS/cwebbin.spec
 ```
