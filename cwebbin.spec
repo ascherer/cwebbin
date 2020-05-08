@@ -56,7 +56,7 @@ Release: 18
 %global __sed_i %{__sed} -i
 
 %global __make %{__make} -f Makefile.unix \\\
-	-e PDFTEX=xetex \\\
+	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{__texlive_local} \\\
 	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
 
