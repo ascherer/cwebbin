@@ -23,6 +23,8 @@
 \let\:=\. % preserve a way to get the dot accent
  % (all other accents will still work as usual)
 
+\def\contentspagenumber{0} % default page number for table of contents
+
 \newdimen\em \em=10pt % this "em" will not change with font size
 \parskip 0pt plus .1pt % almost no stretch between paragraphs
 \parindent 1\em % for paragraphs and for the first line of C text
@@ -426,12 +428,19 @@
 \let\K== % assignment operator
 %\let\K=\leftarrow % "honest" alternative to standard assignment operator
 % \L is Polish letter suppressed-L
-\outer\def\M#1{\def\secno{#1}\startsection\ignorespaces}
+\outer\def\M#1{\def\secno{#1}%
+  \ifpdftex\expandafter\xdef\csname curr#1\endcsname{\secno}
+    \ifnum#1>0\countB=#1 \advance\countB by-1
+      \advancenumber{chunk\the\countB.\expnumber{curr\the\countB}}\fi\fi
+  \ifpdf\special{pdf: outline #1 << /Title (\the\toksE) /Dest
+    [ @thispage /FitH @ypos ] >>}\fi
+  \startsection\ignorespaces}
 \outer\def\N{\ifvoid\partialpage\lefttrue
   \else\ifdim\ht\partialpage<\pageht \leftfalse\else\lefttrue\fi\fi\NNN}
 \outer\def\NN{\ifvoid\partialpage\leftfalse
   \else\ifdim\ht\partialpage<\pageht \lefttrue\else\leftfalse\fi\fi\NNN}
 \outer\def\NNN#1#2#3.{\gdepth=#1\gtitle={#3}\def\secno{#2}% starred section
+  \xdef\secstar{#2}
   \ifacro{\toksF={}\makeoutlinetoks#3\outlinedone\outlinedone}\fi
   \ifleft \flushout
     \gdef\rlhead{\let\i=I\uppercase{\ignorespaces#3}} % running left headline
@@ -440,10 +449,10 @@
           \vbox to\pageht{\unvbox\partialpage\vfill}\break}
       \gdef\rrhead{\let\i=I\uppercase{\ignorespaces#3}}
   \fi
-  \def\stripprefix##1>{}\def\gtitletoks{#3}%
-  \edef\gtitletoks{\expandafter\stripprefix\meaning\gtitletoks}%
-  \edef\next{\write\cont{\ZZ{\gtitletoks}{#1}{\secno}% write to contents file
-   {\noexpand\the\pageno}{\the\toksE}}}\next % \ZZ{title}{depth}{sec}{page}{ss}
+  %\def\stripprefix##1>{}\def\gtitletoks{#3}%
+  %\edef\gtitletoks{\expandafter\stripprefix\meaning\gtitletoks}%
+  %\edef\next{\write\cont{\ZZ{\gtitletoks}{#1}{\secno}% write to contents file
+   %{\noexpand\the\pageno}{\the\toksE}}}\next % \ZZ{title}{depth}{sec}{page}{ss}
   \ifpdftex\expandafter\xdef\csname curr#1\endcsname{\secno}
     \ifnum#1>0\countB=#1 \advance\countB by-1
       \advancenumber{chunk\the\countB.\expnumber{curr\the\countB}}\fi\fi
@@ -658,3 +667,7 @@
  \else\ifnum\pageno=\nextpage\getnextpage\let\next=\Shipout
   \else\let\next=\Tosspage\fi\fi \next}
 \newbox\garbage \def\Tosspage{\deadcycles=0\setbox\garbage=}
+\def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
+  \else \csname#1\endcsname \fi} % Petr Olsak's macros from texinfo.tex
+\def\advancenumber#1{\countA=\expnumber{#1}\relax \advance\countA by1
+  \expandafter\xdef\csname#1\endcsname{\the\countA}}
