@@ -107,9 +107,8 @@ LINKFLAGS = -g
 #CFLAGS = $(OPT)
 
 # The `f' flag is turned off to save paper
-# The `lX' flag includes Xcwebmac.tex
 # The `s' flag displays some statistics
-WFLAGS = -f +lX +s
+WFLAGS = -f +s
 TFLAGS = +s
 
 # Always use this extended Makefile
