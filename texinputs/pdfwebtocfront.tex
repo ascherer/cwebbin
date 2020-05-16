@@ -12,6 +12,7 @@
   \let\ORGcon\con
   \def\con{%
     \ifnum\pageno=1 \global\titletrue\fi
+    \def\:{\par\hangindent 2em}
     \begingroup
       \let\end\relax
       \ORGcon
