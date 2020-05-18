@@ -291,6 +291,12 @@ et soutient l'output de \.{CWEAVE}.
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
+@x l.1697
+if you have a duplex printer. Appendices D, E, and F of the complete
+@y
+if you have a duplex printer. Appendices D, E, F, and G of the complete
+@z
+------------------------------------------------------------------------------
 @x l.1707
  \\pdfURL\{the author\}\{mailto:andreas.scherer@@pobox.com\}\cr
 or visit \\pdfURL\{his home page\}\{http://www.pobox.com/%
