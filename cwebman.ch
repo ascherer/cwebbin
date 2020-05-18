@@ -296,7 +296,7 @@ et soutient l'output de \.{CWEAVE}.
 or visit \\pdfURL\{his home page\}\{http://www.pobox.com/%
        \\TILDE/scherer\}.\cr}}$$
 @y
- \\pdfURL\{the author\}\{mailto:andreas\UNDER/github@@freenet.de\}\cr
+ \\pdfURL\{the author\}\{mailto:andreas\\UNDER/github@@freenet.de\}\cr
 or visit \\pdfURL\{his home page\}\{https://github.com/%
        ascherer\}.\cr}}$$
 @z
