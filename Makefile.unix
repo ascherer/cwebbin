@@ -341,6 +341,7 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebmana.tex: cwebman.tex cwebman.ch
 	$(TIE) -m $@ $^; $(SUBVER)
+	sed -i -e "1,90 s/\(CWEBbin\)/{\\\\tentt \1}/" $@
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
