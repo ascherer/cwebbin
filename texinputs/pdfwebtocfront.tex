@@ -9,13 +9,14 @@
 \openin\testread=\contentsfile\relax
 \ifeof\testread % First run
 \else % Second run
-  \let\ORGcon\con
+  \let\ORGcon\con \let\ORGtoc\topofcontents
+  \ifx\undefined\grouptitle % \global\titletrue % WEB
+  \else\def\topofcontents{\ORGtoc\gtitle={\the\grouptitle}}\fi % CWEB
   \def\con{%
-    \ifnum\pageno=1 \global\titletrue\fi
     \def\:{\par\hangindent 2em}
     \begingroup
       \let\end\relax
-      \ORGcon
+      \ORGcon\eject
     \endgroup
     \let\con\end
   }%
@@ -23,7 +24,6 @@
                   \csname N\endcsname
   \expandafter\outer\expandafter\def\csname N\endcsname{%
     \con
-    \advance\pageno by -1\relax
     \expandafter\let\csname N\expandafter\endcsname
                     \csname ORGN\endcsname
     \csname N\endcsname
