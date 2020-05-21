@@ -10,7 +10,7 @@
 \ifeof\testread % First run
 \else % Second run
   \let\ORGcon\con \let\ORGtoc\topofcontents
-  \ifx\undefined\grouptitle % \global\titletrue % WEB
+  \ifx\undefined\grouptitle \mark{1} % WEB: let's start with section '1'.
   \else\def\topofcontents{\ORGtoc\gtitle={\the\grouptitle}}\fi % CWEB
   \def\con{%
     \def\:{\par\hangindent 2em}
