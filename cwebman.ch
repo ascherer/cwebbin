@@ -12,7 +12,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000,2005,2011,2018 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005,2011,2018,2020 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -52,15 +52,8 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2018	24 Nov 2018	AS	Update for CWEBbin 2018.
 2019	01 Jan 2019	AS	Update for CWEBbin 2019.
 2020	30 Mar 2020	AS	New option '-t' re temporary output.
-2020	13 Apr 2020	AS	New Appendix G (CTWILL source)
-------------------------------------------------------------------------------
-Use the already changed macro file.  Also we will need special characters.
-@x l.4
-\input cwebmac
-@y
-\input Xcwebmac.tex
-\input cweb_ecma94.sty
-@z
+2020	13 Apr 2020	AS	New Appendix G (CTWILL source).
+2020	24 May 2020	AS	Remove macro translations.
 ------------------------------------------------------------------------------
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
@@ -189,100 +182,6 @@ appendices D, E, and~F, which exhibit the complete source code for
 @y
 appendices D, E, F, and~G, which exhibit the complete source code for
 \.{COMMON}, \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL}.
-@z
-------------------------------------------------------------------------------
-Also relate to this changed macro file and to the German version.
-@x l.1492
-\def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
-\section Appendix B: The \.{cwebmac.tex} file.
-This is the file that extends ``plain \TEX/'' format in order to support the
-features needed by the output of \.{CWEAVE}.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input cwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
-@y
-\def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
-\section Appendix B: The \.{cwebmac.tex} file.
-This is the file that extends ``plain \TEX/'' format in order to support the
-features needed by the output of \.{CWEAVE}.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input cwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
-\def\runninghead{APPENDIX B --- MACROS FOR FORMATTING}
-\section Appendix B: The \.{Xcwebmac.tex} file.
-Some of the macros in \.{cwebmac.tex} are changed to give better results.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input Xcwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
-\def\runninghead{ANHANG B --- MACROS F\"UR DIE FORMATIERUNG}
-\section Anhang B: Die \.{dcwebmac.tex} Datei.
-Diese Datei erweitert das ``plain \TEX/''-Format um Eigenschaften
-zur Unterst\"utzung der Ausgabe von \.{CWEAVE}.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input dcwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
-\def\runninghead{APPENDICE B --- MACRO PER IL FORMATTING}
-\section Appendice B: Il file \.{icwebmac.tex}.
-Questo \`e il file che estende il ``plain \TEX/'' per supportare le
-caratteristiche richieste dall'output generato da \.{CWEAVE}.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input icwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
-\def\runninghead{APPENDICE B --- MACROS POUR LE FORMATTING}
-\section Appendice B: Le text \.{fcwebmac.tex}.
-Voici le text qui \'elargit le format ``plain \TEX/''
-et soutient l'output de \.{CWEAVE}.
-
-\vskip6pt
-\begingroup \def\tt{\eighttt} \baselineskip9pt
-\def\printmacs{\begingroup
-  \def\do##1{\catcode`##1=12 } \dospecials
-  \parskip 0pt \parindent 0pt
-  \catcode`\ =13 \catcode`\^^M=13
-  \tt \verbatimdefs \input fcwebmac \endgroup}
-\printmacs
-\endgroup
-\vfill\eject
 @z
 ------------------------------------------------------------------------------
 @x l.1582
