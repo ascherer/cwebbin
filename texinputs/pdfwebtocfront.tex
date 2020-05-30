@@ -12,6 +12,7 @@
 %
 \ifx\detokenize\undefined\endinput\fi
 \def\contentsfile{\jobname.toc} % file that gets table of contents info
+\newif\iftexmf\texmffalse % special toc treatment for TeX, Metafont, etc.
 \newread\testread
 \openin\testread=\contentsfile\relax
 \ifeof\testread % First run
@@ -49,17 +50,16 @@
   % Special variant of the above for 'mf.web' and 'tex.web'.  They put
   % their tables-of-contents on a sparce 'page 2' and start on page '3'.
   \begingroup
-    \newif\iftex\texfalse
     \edef\x{\jobname}%
     \edef\y{\detokenize{tex}}%
-    \ifx\x\y \textrue\else
+    \ifx\x\y \texmftrue\else
     \edef\y{\detokenize{mf}}%
-    \ifx\x\y \textrue\else
+    \ifx\x\y \texmftrue\else
     \edef\y{\detokenize{pdftex}}%
-    \ifx\x\y \textrue\else
+    \ifx\x\y \texmftrue\else
     \edef\y{\detokenize{xetex}}%
-    \ifx\x\y \textrue\fi\fi\fi\fi
-  \expandafter\endgroup\iftex %
+    \ifx\x\y \texmftrue\fi\fi\fi\fi
+  \expandafter\endgroup\iftexmf %
     \def\contentspagenumber{2}%
     \let\ORGpageno\pageno
     \def\pageno{%
