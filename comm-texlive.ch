@@ -12,7 +12,7 @@ Material in limbo.
 @x l.20 and l.177 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
-\def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \sanitizecommand\Kpathsea{KPATHSEA}
+\def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
