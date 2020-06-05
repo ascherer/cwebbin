@@ -1293,7 +1293,7 @@ update_terminal;mark_error;
 
 #line 733 "comm-foo.ch"
 int wrap_up(void){
-if(show_progress)new_line;
+if(show_progress||show_happiness||(history> spotless))new_line;
 #line 1153 "common.w"
 if(show_stats)
 print_stats();

@@ -214,7 +214,7 @@ int wrap_up() {
   putchar('\n');
 @y
 int wrap_up() {
-  if (show_progress) new_line;
+  if (show_progress || show_happiness || (history > spotless)) new_line;
 @z
 
 Section 70. After 'boolean' was changed from 'short' to 'bool' it became
