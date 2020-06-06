@@ -80,10 +80,16 @@ environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
 delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
 the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
-@^system dependencies@>
+@^system dependencies@> @.CWEBINPUTS@>
 @z
 
 Section 23.
+
+@x l.474
+@ @<Try to open...@>= {
+@y
+@ @.CWEBINPUTS@>@<Try to open...@>= {
+@z
 
 @x l.493
   kk=getenv("CWEBINPUTS");
@@ -361,7 +367,7 @@ personal needs.  If this variable is empty, some decent defaults are used
 internally.  The following procedure takes care that these internal entries
 are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
-@^system dependencies@>
+@^system dependencies@> @.CWEBINPUTS@>
 
 @c
 static boolean set_path(char *include_path,char *environment)

@@ -120,7 +120,7 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 
 Section 22.
 
-@x l.457 and l.74 of COMM-EXTENSIONS.CH
+@x l.457 and l.73 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -131,7 +131,7 @@ environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
 delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
 the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
-@^system dependencies@>
+@^system dependencies@> @.CWEBINPUTS@>
 @y
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
@@ -140,6 +140,7 @@ double quotes.
 The actual file lookup is done with the help of the \Kpathsea/ library;
 see section~\X90:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
+@^system dependencies@> @.CWEBINPUTS@>
 @z
 
 @x l.471
@@ -176,7 +177,7 @@ Section 23.
 
 Replaced by Kpathsea `kpse_find_file'.
 
-@x l.493 and l.115 of COMM-EXTENSIONS.CH
+@x l.493 and l.120 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -344,7 +345,7 @@ standard C types for boolean values, pointers, and objects with fixed sizes
 #include <stddef.h> /* type definition of |ptrdiff_t| */
 @z
 
-@x l.358 of COMM-EXTENSIONS.CH and l.320 of COMM-I18N.CH
+@x l.363 of COMM-EXTENSIONS.CH and l.320 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -352,7 +353,7 @@ personal needs.  If this variable is empty, some decent defaults are used
 internally.  The following procedure takes care that these internal entries
 are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
-@^system dependencies@>
+@^system dependencies@> @.CWEBINPUTS@>
 
 @c
 static boolean set_path(char *include_path,char *environment)
@@ -499,6 +500,7 @@ The directories to be searched for come from three sources:
 \item{(c)} compile-time default directories (specified in
     \.{texmf.in}),\hfil\break
     i.e., \.{\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//}.\par}
+@.CWEBINPUTS@>
 
 @d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
 
@@ -516,6 +518,7 @@ typedef bool boolean;
 \.{CWEBINPUTS.cweb} is present in \.{texmf.cnf} (or \.{CWEBINPUTS\_cweb}
 in the environment) its value will be used as the search path for filenames.
 This allows different flavors of \.{CWEB} to have different search paths.
+@.CWEBINPUTS@>
 
 @<Set up |PROGNAME| feature and initialize the search path mechanism@>=
 kpse_set_program_name(argv[0], "cweb");
