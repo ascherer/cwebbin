@@ -21,6 +21,19 @@ Material in limbo.
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
+@x l.39
+\def\botofcontents{\vfill
+@y
+\def\covernote{\vbox{
+@z
+
+@x l.52
+}
+@y
+}}
+\datecontentspage
+@z
+
 Section 1.
 
 @x l.69 and l.201 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH

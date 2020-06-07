@@ -22,6 +22,19 @@ Material in limbo.
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
+@x l.27
+\def\botofcontents{\vfill
+@y
+\def\covernote{\vbox{
+@z
+
+@x l.40
+}
+@y
+}}
+\datecontentspage
+@z
+
 @x l.20 of COMM-ANSI.CH
 @i iso_types.w
 @y

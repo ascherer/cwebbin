@@ -21,6 +21,19 @@ Material in limbo.
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
+@x l.33
+\def\botofcontents{\vfill
+@y
+\def\covernote{\vbox{
+@z
+
+@x l.46
+}
+@y
+}}
+\datecontentspage
+@z
+
 Section 1.
 
 @x l.62 and l.186 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
