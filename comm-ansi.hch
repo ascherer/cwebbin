@@ -30,8 +30,8 @@ Section 6.
 @ @<Include files@>=
 @y
 @ @<Include files@>=
-#include <stdbool.h>
-#include <stdint.h>
+#include <stdbool.h> /* |@!bool|, |@!true|, |@!false| */
+#include <stdint.h> /* |@!uint8_t|, |@!uint16_t| */
 @z
 
 Section 7.

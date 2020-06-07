@@ -20,8 +20,8 @@
 #define gettext(A) A
 #endif
 
-#include <stdbool.h> 
-#include <stdint.h> 
+#include <stdbool.h>  
+#include <stdint.h>  
 #include <stdio.h> 
 
 /*:6*//*62:*/

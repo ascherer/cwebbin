@@ -307,8 +307,8 @@ Section 81.
 
 @x l.1406 and l.541 of COMM-ANSI.CH
 @ For string handling we include the {\mc ANSI C} system header file instead
-of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
-|strncmp|, and |strncpy|.
+of predeclaring the standard system functions |@!strlen|, |@!strcmp|,
+|@!strcpy|, |@!strncmp|, and |@!strncpy|.
 @^system dependencies@>
 
 @<Include...@>=
@@ -332,9 +332,9 @@ static boolean set_path(char *,char *);@/
 standard C types for boolean values, pointers, and objects with fixed sizes.
 
 @<Include files@>=
-#include <stdbool.h> /* type definition of |bool| */
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdint.h> /* type definition of |uint8_t| et al. */
+#include <stdbool.h> /* type definition of |@!bool| */
+#include <stddef.h> /* type definition of |@!ptrdiff_t| */
+#include <stdint.h> /* type definition of |@!uint8_t| et al. */
 @y
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
 standard C types for boolean values, pointers, and objects with fixed sizes

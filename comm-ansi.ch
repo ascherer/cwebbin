@@ -534,8 +534,8 @@ extern int strncmp(); /* compare up to $n$ string characters */
 extern char* strncpy(); /* copy up to $n$ string characters */
 @y
 @ For string handling we include the {\mc ANSI C} system header file instead
-of predeclaring the standard system functions |strlen|, |strcmp|, |strcpy|,
-|strncmp|, and |strncpy|.
+of predeclaring the standard system functions |@!strlen|, |@!strcmp|,
+|@!strcpy|, |@!strncmp|, and |@!strncpy|.
 @^system dependencies@>
 
 @<Include...@>=
@@ -587,9 +587,9 @@ static void prime_the_change_buffer(void);@/
 standard C types for boolean values, pointers, and objects with fixed sizes.
 
 @<Include files@>=
-#include <stdbool.h> /* type definition of |bool| */
-#include <stddef.h> /* type definition of |ptrdiff_t| */
-#include <stdint.h> /* type definition of |uint8_t| et al. */
+#include <stdbool.h> /* type definition of |@!bool| */
+#include <stddef.h> /* type definition of |@!ptrdiff_t| */
+#include <stdint.h> /* type definition of |@!uint8_t| et al. */
 
 @** Index.
 @z
