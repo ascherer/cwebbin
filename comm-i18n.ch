@@ -302,13 +302,25 @@ Section 76.
 
 Section 77.
 
-@x l.1377+ and l.66 of COMM-OUTPUT.CH
+@x l.1377+ and l.76 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", C_file_name);
+@y
+    fatal(_("! Cannot open output file "), C_file_name);
+@z
+
+@x l.86 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
 @x l.1377+ and l.77 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", tex_file_name);
+@y
+    fatal(_("! Cannot open output file "), tex_file_name);
+@z
+
+@x l.100 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", check_file_name);
 @y
     fatal(_("! Cannot open output file "), check_file_name);

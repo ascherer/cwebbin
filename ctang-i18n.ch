@@ -78,6 +78,12 @@ Section 42.
 Section 43.
 
 @x l.572 and l.43 of CTANG-OUTPUT.CH
+      fatal("! Cannot open output file ",output_file_name);
+@y
+      fatal(_("! Cannot open output file "),output_file_name);
+@z
+
+@x l.47 of CTANG-OUTPUT.CH
       fatal("! Cannot open output file ",check_file_name);
 @y
       fatal(_("! Cannot open output file "),check_file_name);
@@ -301,7 +307,7 @@ Section 95.
 
 Addendum.
 
-@x l.84 of CTANG-OUTPUT.CH
+@x l.87 of CTANG-OUTPUT.CH
     fatal("! Cannot open output file ",check_file_name);
 @y
     fatal(_("! Cannot open output file "),check_file_name);

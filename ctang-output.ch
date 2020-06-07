@@ -13,14 +13,14 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 43.
 
-@x l.572
+@x l.572 and  l.213 in CTANG-PATCH.CH
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     fclose(C_file);
     C_file=fopen(output_file_name,"w");
-    if (C_file ==0) fatal("! Cannot open output file:",output_file_name);
+    if (C_file ==0) fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
     if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }
     cur_line=1;
@@ -40,7 +40,7 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     if ((C_file=fopen(output_file_name,"a"))==NULL)
-      fatal("! Cannot open output file:",output_file_name);
+      fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
     else fclose(C_file); /* Test accessability */
     if((C_file=fopen(check_file_name,"wb"))==NULL)

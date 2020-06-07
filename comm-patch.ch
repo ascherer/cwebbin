@@ -170,6 +170,7 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 	06 November 2018 AS	Integration with TeXLive.
 
 2020	11 March 2020	AS	Externalize common variables.
+2020	07 June 2020	AS	Fix two message errors.
 ------------------------------------------------------------------------------
 Material in limbo.
 
@@ -215,6 +216,12 @@ int wrap_up() {
 @y
 int wrap_up() {
   if (show_progress || show_happiness || (history > spotless)) new_line;
+@z
+
+@x l.1183
+  if (*s) printf(s);
+@y
+  if (*s) err_print(s);
 @z
 
 Section 70. After 'boolean' was changed from 'short' to 'bool' it became

@@ -474,12 +474,6 @@ fatal(
   const char *s,const char *t)
 @z
 
-@x l.1183
-  if (*s) printf(s);
-@y
-  if (*s) fputs(s,stdout);
-@z
-
 Section 65.
 
 @x l.1190

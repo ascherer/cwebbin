@@ -480,7 +480,7 @@ temporary_output= 1;
 scan_args();
 if(program==ctangle){
 if((C_file= fopen(C_file_name,"a"))==NULL)
-fatal("! Cannot open output file ",C_file_name);
+fatal(_("! Cannot open output file "),C_file_name);
 
 else fclose(C_file);
 strcpy(check_file_name,C_file_name);
@@ -495,7 +495,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 }
 else{
 if((tex_file= fopen(tex_file_name,"a"))==NULL)
-fatal("! Cannot open output file ",tex_file_name);
+fatal(_("! Cannot open output file "),tex_file_name);
 else fclose(tex_file);
 strcpy(check_file_name,tex_file_name);
 if(check_file_name[0]!='\0'){
@@ -1356,7 +1356,7 @@ const char*s,const char*t)
 #line 1182 "common.w"
 {
 #line 800 "comm-foo.ch"
-if(*s)fputs(s,stdout);
+if(*s)err_print(s);
 #line 1184 "common.w"
 err_print(t);
 history= fatal_message;exit(wrap_up());

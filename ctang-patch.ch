@@ -205,7 +205,17 @@ Section 42.  Fix bug: Don't print empty line for '-bp'.
     }
 @z
 
-Section 43.  Fix bug: Don't print secondary output files for '-p'.
+Section 43.
+
+Fix big: Replace colon with space.  See 'common.w' line 1381.
+
+@x l.578
+    if (C_file ==0) fatal("! Cannot open output file:",output_file_name);
+@y
+    if (C_file ==0) fatal("! Cannot open output file ",output_file_name);
+@z
+
+Fix bug: Don't print secondary output files for '-p'.
 
 @x l.580
     printf("\n(%s)",output_file_name); update_terminal;

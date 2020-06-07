@@ -799,7 +799,7 @@ for(an_output_file= end_output_files;an_output_file> cur_out_file;){
 an_output_file--;
 sprint_section_name(output_file_name,*an_output_file);
 if((C_file= fopen(output_file_name,"a"))==NULL)
-fatal("! Cannot open output file:",output_file_name);
+fatal(_("! Cannot open output file "),output_file_name);
 
 else fclose(C_file);
 if((C_file= fopen(check_file_name,"wb"))==NULL)
