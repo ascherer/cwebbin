@@ -46,8 +46,10 @@ Section 4.
 
 @x l.137
 @d max_scraps 2000 /* number of tokens in \CEE/ texts being parsed */
+@d stack_size 400 /* number of simultaneous output levels */
 @y
 @d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
+@d stack_size 2000 /* number of simultaneous output levels */
 @z
 
 Section 21.  Cross-over from CWEAVE to COMMON.
