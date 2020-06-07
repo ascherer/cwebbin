@@ -18,7 +18,7 @@ Section 5.  Add CTWILL.
 extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
-  ctangle, cweave, ctwill
+  @!ctangle, @!cweave, @!ctwill
 } cweb;
 extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
