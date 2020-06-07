@@ -18,21 +18,21 @@
 
 #line 281 "comm-foo.ch"
 /*:22*//*81:*/
-#line 1057 "comm-foo.ch"
+#line 1064 "comm-foo.ch"
 
 #include <string.h> 
 #line 1417 "common.w"
 
-#line 1064 "comm-foo.ch"
+#line 1071 "comm-foo.ch"
 /*:81*//*85:*/
-#line 1104 "comm-foo.ch"
+#line 1111 "comm-foo.ch"
 
 #include <stdbool.h>  
 #include <stddef.h>  
 #include <stdint.h>  
 
 /*:85*//*89:*/
-#line 1176 "comm-foo.ch"
+#line 1183 "comm-foo.ch"
 
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
@@ -323,7 +323,7 @@ char change_buffer[buf_size];
 char*change_limit;
 
 /*:11*//*87:*/
-#line 1149 "comm-foo.ch"
+#line 1156 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -396,7 +396,7 @@ static void scan_args(void);
 #line 1253 "common.w"
 
 /*:69*//*83:*/
-#line 1079 "comm-foo.ch"
+#line 1086 "comm-foo.ch"
 
 boolean get_line(void);
 name_pointer id_lookup(const char*,const char*,char);
@@ -409,7 +409,7 @@ void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
 /*:83*//*84:*/
-#line 1092 "comm-foo.ch"
+#line 1099 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 static boolean input_ln(FILE*);
@@ -453,7 +453,7 @@ root= NULL;
 #line 58 "comm-foo.ch"
 
 /*90:*/
-#line 1201 "comm-foo.ch"
+#line 1208 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
@@ -479,6 +479,10 @@ temporary_output= 1;
 
 scan_args();
 if(program==ctangle){
+if((C_file= fopen(C_file_name,"a"))==NULL)
+fatal("! Cannot open output file ",C_file_name);
+
+else fclose(C_file);
 strcpy(check_file_name,C_file_name);
 if(check_file_name[0]!='\0'){
 char*dot_pos= strrchr(check_file_name,'.');
@@ -490,6 +494,9 @@ fatal(_("! Cannot open output file "),check_file_name);
 
 }
 else{
+if((tex_file= fopen(tex_file_name,"a"))==NULL)
+fatal("! Cannot open output file ",tex_file_name);
+else fclose(tex_file);
 strcpy(check_file_name,tex_file_name);
 if(check_file_name[0]!='\0'){
 char*dot_pos= strrchr(check_file_name,'.');
@@ -1320,7 +1327,7 @@ puts(_("(That was a fatal error, my friend.)"));
 #line 746 "comm-foo.ch"
 
 /*88:*/
-#line 1161 "comm-foo.ch"
+#line 1168 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1576,7 +1583,7 @@ _("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 }
 
 /*:70*//*86:*/
-#line 1118 "comm-foo.ch"
+#line 1125 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {

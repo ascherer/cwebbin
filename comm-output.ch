@@ -72,6 +72,10 @@ else {
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
+  if ((C_file=fopen(C_file_name,"a"))==NULL)
+    fatal("! Cannot open output file ", C_file_name);
+@.Cannot open output file@>
+  else fclose(C_file); /* Test accessability */
   strcpy(check_file_name,C_file_name);
   if(check_file_name[0]!='\0') {
     char *dot_pos=strrchr(check_file_name,'.');
@@ -83,6 +87,9 @@ if (program==ctangle) {
 @.Cannot open output file@>
 }
 else {
+  if ((tex_file=fopen(tex_file_name,"a"))==NULL)
+    fatal("! Cannot open output file ", tex_file_name);
+  else fclose(tex_file); /* Test accessability */
   strcpy(check_file_name,tex_file_name);
   if(check_file_name[0]!='\0') {
     char *dot_pos=strrchr(check_file_name,'.');
