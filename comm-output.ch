@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, March 30, 2020.
+Changes for COMMON.W by Andreas Scherer, June 07, 2020.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
