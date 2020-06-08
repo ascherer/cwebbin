@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 30, 2020
+% June 08, 2020
 
 # NAME
 
@@ -98,7 +98,7 @@ differences worth noting:
 * **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
   option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
-  several, colon-separated, paths.
+  several, colon-separated, paths; see [ENVIRONMENT](#environment) below.
 * If properly configured, the main program **ctwill** is localized with the
   "GNU gettext utilities".
 
@@ -147,7 +147,9 @@ In fact, the options are processed from left to right, so a sequence like
 
 The environment variable CWEBINPUTS is used to search for the input files,
 or the system default if CWEBINPUTS is not set.  See tex(1) for the details
-of the searching.
+of the searching.  To avoid conflicts with other programs that also use the
+CWEBINPUTS environment, you can be more specific and use CWEBINPUTS\_cweb
+for special requirements in CWEB.
 
 If prepared for NLS support, **ctwill** like **ctangle** and **cweave**
 uses the environment variable TEXMFLOCALEDIR to configure the parent directory

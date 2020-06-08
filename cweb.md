@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 30, 2020
+% June 08, 2020
 
 # NAME
 
@@ -55,7 +55,7 @@ resulting output.  There are, however, a few differences worth noting:
 * CWEB in TeX\ Live operates silently by default (as of 2019); use the
   **\-\-verbose** option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
-  several, colon-separated, paths.
+  several, colon-separated, paths; see [ENVIRONMENT](#environment) below.
 * If properly configured, the main programs **ctangle** and **cweave** are
   localized with the "GNU gettext utilities".
 
@@ -107,7 +107,9 @@ There are six other options applicable to **cweave** only:
 
 The environment variable CWEBINPUTS is used to search for the input files,
 or the system default if CWEBINPUTS is not set.  See tex(1) for the details
-of the searching.
+of the searching.  To avoid conflicts with other programs that also use the
+CWEBINPUTS environment, you can be more specific and use CWEBINPUTS\_cweb
+for special requirements in CWEB.
 
 If prepared for NLS support, **ctangle** and **cweave** use the environment
 variable TEXMFLOCALEDIR to configure the parent directory where the "GNU
