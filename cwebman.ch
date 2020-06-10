@@ -55,6 +55,12 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2020	13 Apr 2020	AS	New Appendix G (CTWILL source).
 2020	24 May 2020	AS	Remove macro translations.
 ------------------------------------------------------------------------------
+@x l.7 See comment in cwebmac.tex
+\def\page{\box255 } \normalbottom
+@y
+\let\page=\pagebody \raggedbottom
+@z
+------------------------------------------------------------------------------
 @x l.37
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
@@ -64,19 +70,23 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @x l.51
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
-\vskip 18pt\centerline{(@VERSION@)}
+\vskip 18pt\centerline{(Version 3.64 --- February 2002)%
+\footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
 @x l.106
 should be sent to Levy (\.{levy@math.berkeley.edu}).
 @y
-should be sent to \.{tex-k@tug.org}.
+should be sent to Levy (\.{levy@math.berkeley.edu}).%
+\footnote{$^1$}{Or rather to the ``\TeX~Live''-related mailing list
+\.{tex-k@tug.org}.}
 @z
 ------------------------------------------------------------------------------
 @x l.524
 email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}).
 @y
-email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
+email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
+\footnote{$^2$}{Or rather \.{tex-k@@tug.org}.}).
 @z
 ------------------------------------------------------------------------------
 @x l.914
@@ -86,11 +96,17 @@ of the same name was defined at compile time,
 \.{CWEB} will look for include files in the directory thus named, if
 it cannot find them in the current directory.
 @y
-\more If an \.{@i}nclude file can not be found in the current directory
-\.{CWEB} will look in standard directories like the \CEE/ preprocessor.
-Multiple search paths may be specified in the environment variable
-\.{CWEBINPUTS}, concatenated with \.{PATH\_SEPARATOR}s.  If the environment
-variable is not set, some decent default paths are used instead.
+\more On \UNIX/ systems (and others that support environment variables),
+if the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
+of the same name was defined at compile time,
+\.{CWEB} will look for include files in the directory thus named, if
+it cannot find them in the current directory.\footnote{$^3$}{In this extended
+implementation, if an \.{@i}nclude file can not be found in the current
+directory, \.{CWEB} will look in standard directories like the \CEE/
+preprocessor.  Multiple search paths may be specified in the environment
+variable \.{CWEBINPUTS}, concatenated with \.{PATH\_SEPARATOR}s (on \UNIX/
+commonly known as~`\.:').  If the environment variable is not set, some decent
+default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
 There are additional command line switches available:
@@ -102,41 +118,12 @@ There are additional command line switches available:
     - 'o' to separate parameter declarations and statements.
     - 't' to use temporary output to apply changes only.
 
-@x l.1036
-\option b Print a banner line at the beginning of execution. (On
-by default.)
-
-\option e Enclose \CEE/ material formatted by \.{CWEAVE} in
-brackets \.{\\PB\{...\}}, so that special hooks can be used.
-(Off by default; has no effect on \.{CTANGLE}.)
-
-\option f Force line breaks after each \CEE/ statement formatted
-by \.{CWEAVE}. (On by default; \.{-f} saves paper but looks less \CEE/-like
-to some people.) (Has no effect on \.{CTANGLE}.)
-
-\option h Print a happy message at the conclusion of a successful
-run. (On by default.)
-
-\option p Give progress reports as the program runs. (On by default.)
-
-\option s Show statistics about memory usage after the program
-runs to completion. (Off by default.)
-If you
-have large \.{CWEB} files or sections, you may need to see
-how close you come to exceeding the capacity of \.{CTANGLE} and/or \.{CWEAVE}.
-
-\option x Include indexes and a table of contents in the \TEX/ file
+@x l.1059
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @y
-\option b Print a banner line at the beginning of execution. (On
-by default.)
-
-\option f Force line breaks after each \CEE/ statement formatted
-by \.{CWEAVE}. (On by default; \.{-f} saves paper but looks less \CEE/-like
-to some people.) (Has no effect on \.{CTANGLE}.)
-
-\option h Print a happy message at the conclusion of a successful
-run. (On by default.)
+output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)%
+\footnote{$^4$}{This extended version of
+\.{CWEB} adds the following options to the list:
 
 \option i Indent parameters in function declarations.  This causes the
 formal parameter declarations in function heads to be indented.  (On by
@@ -161,27 +148,23 @@ AMIGA} system.)
 \.{CWEAVE} automatically inserts a bit of extra space.  (On by default.)
 (Has no effect on \.{CTANGLE}.)
 
-\option p Give progress reports as the program runs. (On by default.)
-
-\option s Show statistics about memory usage after the program
-runs to completion. (Off by default.)
-If you have large \.{CWEB} files or sections, you may need to see
-how close you come to exceeding the capacity of \.{CTANGLE} and/or \.{CWEAVE}.
-
 \option t Overwrite output files with temporary output only if changes occur.
-(On by default.)
-
-\option x Include indexes and a table of contents in the \TEX/ file
-output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
+(On by default.)}
 @z
 ------------------------------------------------------------------------------
 Add Appendix G, the CTWILL source code.
 @x l.1177
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
+
+\vfil\eject\titletrue
 @y
-appendices D, E, F, and~G, which exhibit the complete source code for
-\.{COMMON}, \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL}.
+appendices D, E, and~F, which exhibit the complete source code for
+\.{CTANGLE} and \.{CWEAVE}.\footnote{$^5$}{Actually, appendix~D contains the
+source code for \.{COMMON}, and the additional appendix~G exhibits the
+source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
+
+\eject\titletrue
 @z
 ------------------------------------------------------------------------------
 @x l.1582
@@ -193,16 +176,19 @@ appendices D, E, F, and~G, which exhibit the complete source code for
 @x l.1697
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
-if you have a duplex printer. Appendices D, E, F, and G of the complete
+if you have a duplex printer. Appendices D, E, and F\footnote{$^6$}{And
+Appendix~G.} of the complete
 @z
 ------------------------------------------------------------------------------
-@x l.1707
- \\pdfURL\{the author\}\{mailto:andreas.scherer@@pobox.com\}\cr
-or visit \\pdfURL\{his home page\}\{http://www.pobox.com/%
-       \\TILDE/scherer\}.\cr}}$$
+@x l.1704
+or the \CEE/ comments of a \.{CWEB} file:
 @y
+or the \CEE/ comments of a \.{CWEB} file:\footnote{$^7$}{Be careful to make
+that $$\vbox{\halign{\.{#}\hfil\cr
+You can send email to
  \\pdfURL\{the author\}\{mailto:andreas\\UNDER/github@@freenet.de\}\cr
-or visit \\pdfURL\{his home page\}\{https://github.com/%
-       ascherer\}.\cr}}$$
+or visit
+ \\pdfURL\{his home page\}\{https://github.com/ascherer\}\cr}}$$ in
+the $21^{\rm st}$ century.}
 @z
 ------------------------------------------------------------------------------
