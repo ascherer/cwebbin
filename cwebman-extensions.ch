@@ -5,7 +5,7 @@ the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.914
+@x l.918
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -50,16 +50,29 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 (On by default.)}
 @z
 ------------------------------------------------------------------------------
-@x l.1177 Add Appendix G, the CTWILL source code.
-appendices D, E, and~F, which exhibit the complete source code for
+@x l.1153
+saying `\.{pdftex}~\.{cob}'.
+@y
+saying `\.{pdftex}~\.{cob}'.%
+\footnote{$^5$}{A third way to create PDF output from \.{CWEB} input is the
+use of \.{XeTeX}, which uses \.{[x]dvipdfm[x]} in the background, but the
+``plain \TeX'' macros from \.{cwebmac.tex} otherwise.  The process works with
+a small trick in the first step:
+$$\vbox{\halign{\.{#}\hfil\cr
+cweave -lp+ cob\cr
+xetex cob\cr
+acroread cob.pdf\cr}}$$}
+@z
+------------------------------------------------------------------------------
+@x l.1178 Add Appendix G, the CTWILL source code.
 \.{CTANGLE} and \.{CWEAVE}.
 
 \vfil\eject\titletrue
 @y
-appendices D, E, and~F, which exhibit the complete source code for
-\.{CTANGLE} and \.{CWEAVE}.\footnote{$^5$}{Actually, appendix~D contains the
-source code for \.{COMMON}, and the additional appendix~G exhibits the
-source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
+\.{CTANGLE} and \.{CWEAVE}.%
+\footnote{$^6$}{Actually, appendix~D contains the source code for \.{COMMON},
+and the additional appendix~G exhibits the source code for \.{CTWILL}, which
+is based on \.{CWEAVE}.}
 
 \eject\titletrue
 @z
@@ -67,7 +80,7 @@ source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 @x l.1697
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
-if you have a duplex printer. Appendices D, E, and F\footnote{$^6$}{And
+if you have a duplex printer. Appendices D, E, and F\footnote{$^7$}{And
 Appendix~G.} of the complete
 @z
 ------------------------------------------------------------------------------

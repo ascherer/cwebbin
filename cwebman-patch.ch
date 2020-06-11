@@ -102,7 +102,7 @@ email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
 or the \CEE/ comments of a \.{CWEB} file:
 @y
 or the \CEE/ comments of a \.{CWEB} file:%
-\footnote{$^7$}{Be careful to make that $$\vbox{\halign{\.{#}\hfil\cr
+\footnote{$^8$}{Be careful to make that $$\vbox{\halign{\.{#}\hfil\cr
 You can send email to
  \\pdfURL\{the author\}\{mailto:andreas\\UNDER/github@@freenet.de\}\cr
 or visit
