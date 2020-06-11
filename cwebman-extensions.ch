@@ -1,3 +1,9 @@
+CHANGES for CWEBMAN.TEX by Andreas Scherer, June 11, 2020.
+
+This set of changes describes several extensions to the standard behavior of
+the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
+
+For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
 @x l.914
 it cannot find them in the current directory.
