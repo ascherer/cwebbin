@@ -55,7 +55,7 @@ saying `\.{pdftex}~\.{cob}'.
 @y
 saying `\.{pdftex}~\.{cob}'.%
 \footnote{$^5$}{A third way to create PDF output from \.{CWEB} input is the
-use of \.{XeTeX}, which uses \.{[x]dvipdfm[x]} in the background, but the
+use of \.{XeTeX}, which uses `\.{[x]dvipdfm[x]}' in the background, but the
 ``plain \TeX'' macros from \.{cwebmac.tex} otherwise.  The process works with
 a small trick in the first step:
 $$\vbox{\halign{\.{#}\hfil\cr

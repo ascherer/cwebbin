@@ -29,7 +29,8 @@ variable is not set, some decent default paths are used instead.}
 \footnote{$^3$}{In this extended implementation, if an \.{@i}nclude file can
 not be found in the current directory, \.{CWEB} will use the conventions of
 the \Kpathsea/ library as outlined in section~\X90:File lookup with
-\Kpathsea/\X~of appendix~D.}% FIXME
+\Kpathsea/\X~of appendix~D to look for it.  (This is true for any other input
+or change file lookup.)}% FIXME
 @z
 ------------------------------------------------------------------------------
 @x
