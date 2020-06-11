@@ -65,6 +65,9 @@ WCHANGES= cweav-foo.ch
 # Set LCHANGES to ctwill-foo.ch to mogrify cweave.w into ctwill.w
 LCHANGES= ctwill-foo.ch
 
+# Set DCHANGES to cwebman-foo.ch to mogrify cwebman.tex into cwebbin.tex
+DCHANGES= cwebman-foo.ch
+
 # Set EXTENSION to either `c' if you want to treat CWEB as a system
 # of ordinary ANSI-C programs, or to `cc', `cxx', `cpp' or similar
 # if you want to treat CWEB as a system of C++ programs.  Your
@@ -179,7 +182,7 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
-CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch # cwebman-texlive.ch
+CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
@@ -388,6 +391,9 @@ $(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	$(TIE) -c $@ $^; $(SUBVER)
 $(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-twill.ch # ctwill-texlive.ch
+	$(TIE) -c $@ $^; $(SUBVER)
+$(DCHANGES): cwebman.tex cwebman-patch.ch \
+	cwebman-extensions.ch # cwebman-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)

@@ -113,6 +113,7 @@ do %{__sed_i} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" $f; done
 	-e TCHANGES=ctang-w2c.ch ctang-w2c.ch \
 	-e WCHANGES=cweav-w2c.ch cweav-w2c.ch \
 	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch \
+	-e DCHANGES=cwebman-w2c.ch cwebman-w2c.ch \
 	prod-twill.w
 
 %else
@@ -131,7 +132,8 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 	-e CCHANGES=comm-w2c.ch common.cxx \
 	-e TCHANGES=ctang-w2c.ch ctangle.cxx \
 	-e WCHANGES=cweav-w2c.ch cweave.cxx \
-	-e LCHANGES=ctwill-w2c.ch ctwill.cxx
+	-e LCHANGES=ctwill-w2c.ch ctwill.cxx \
+	-e DCHANGES=cwebman-w2c.ch cwebbin.tex
 %endif
 
 %install
