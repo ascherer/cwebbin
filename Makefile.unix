@@ -342,7 +342,7 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
 	$(CWEAVE) cweave.w ctwill-doc.ch ctwill; $(MAKE) ctwill.pdf
 
-cwebbin.tex: cwebman.tex $(CWEBMANPATCH)
+cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^; $(SUBVER)
 	sed -i -e "1,90 s/\(CWEBbin\)/{\\\\tentt \1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\{\\\\\\\\tentt \1\\\\}/" $@
