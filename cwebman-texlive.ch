@@ -1,7 +1,7 @@
 CHANGES for CWEBMAN.TEX by Andreas Scherer, June 11, 2020.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
-chamge files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
+change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
