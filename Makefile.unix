@@ -179,7 +179,7 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
-CWEBMANPATCH = cwebman.ch
+CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch # cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
 	README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
@@ -239,11 +239,11 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 
 .tex.pdf:
 	case "$(PDFTEX)" in \
-	  dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
-	  xetex ) TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ; \
-	  	TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
-	  pdftex ) TEXINPUTS=.//: pdftex $* ; \
-	  	TEXINPUTS=.//: pdftex $* ;; \
+		dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
+		xetex ) TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ; \
+			TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
+		pdftex ) TEXINPUTS=.//: pdftex $* ; \
+			TEXINPUTS=.//: pdftex $* ;; \
 	esac
 
 .ref.sref: refsort
