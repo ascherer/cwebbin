@@ -4,13 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, October 29, 2005.
-# Revised by Andreas Scherer, September 29, 2015.
+# Last updated by Andreas Scherer, June 11, 2020.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2019 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2020 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -180,8 +179,9 @@ CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
+CWEBMANPATCH = cwebman.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
-	cwebman.ch README.txt Makefile.bcc Makefile.sas Makefile.unix \
+	README.txt Makefile.bcc Makefile.sas Makefile.unix \
 	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
 	0001-Update-CWEBbin-manpage.patch \
 	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
@@ -208,8 +208,8 @@ INCLUDE = cwebinputs
 MACROS = texinputs
 
 ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
-      $(CTWILLPATCH) $(WMERGPATCH) $(PATCH) $(EXAMPLES) $(AREXX) $(CATALOGS) \
-      $(I18N) $(INCLUDE) $(MACROS)
+      $(CTWILLPATCH) $(CWEBMANPATCH) $(PATCH) $(EXAMPLES) $(AREXX) \
+      $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
 
 .SUFFIXES: .dvi .tex .w .pdf .ref .sref
 
@@ -251,7 +251,7 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 
 # The complete set of files contains the two programs `ctangle' and `cweave',
 # the mogrified twin 'ctwill' and its utility programs 'refsort' and 'twinx',
-# the manuals `cwebman' and `cwebmana', and the source documentations.
+# the manuals `cwebman' and `cwebbin', and the source documentations.
 all: ctangle cweave ctwill refsort twinx fullmanual
 
 cautiously: ctangle
@@ -320,16 +320,16 @@ boot:
 # Take a good lecture for bedtime reading
 doc: $(SOURCES:.w=.pdf)
 
-docs: cwebman.pdf cwebmana.pdf common.pdf ctangle.pdf cweave.pdf ctwill.pdf
+docs: cwebman.pdf cwebbin.pdf common.pdf ctangle.pdf cweave.pdf ctwill.pdf
 
 cwebman.dvi: cwebman.tex
-cwebmana.dvi: cwebmana.tex
+cwebbin.dvi: cwebbin.tex
 common.dvi: common.tex
 ctangle.dvi: ctangle.tex
 cweave.dvi: cweave.tex
 ctwill.dvi: ctwill.tex
 
-usermanual: cwebmana.pdf
+usermanual: cwebbin.pdf
 
 fullmanual: usermanual $(SOURCES) \
 	comm-doc.ch ctang-doc.ch cweav-doc.ch ctwill-doc.ch \
@@ -339,7 +339,7 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) cweave.w cweav-doc.ch; $(MAKE) cweave.pdf
 	$(CWEAVE) cweave.w ctwill-doc.ch ctwill; $(MAKE) ctwill.pdf
 
-cwebmana.tex: cwebman.tex cwebman.ch
+cwebbin.tex: cwebman.tex $(CWEBMANPATCH)
 	$(TIE) -m $@ $^; $(SUBVER)
 	sed -i -e "1,90 s/\(CWEBbin\)/{\\\\tentt \1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\{\\\\\\\\tentt \1\\\\}/" $@
@@ -395,7 +395,7 @@ $(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
 clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
 	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-twill.w \
-	cwebmana.tex *-foo.* *-doc.ch *.orig *.rej \
+	cwebbin.tex *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
 	ctwill refsort twinx refsort.c twinx.c
 
@@ -451,7 +451,7 @@ remove:
 	- $(RM) $(CTANGPATCH)
 	- $(RM) $(CWEAVPATCH)
 	- $(RM) $(CTWILLPATCH)
-	- $(RM) $(WMERGPATCH)
+	- $(RM) $(CWEBMANPATCH)
 	- $(RM) $(PATCH)
 	- $(RM) $(EXAMPLES)
 	- $(RM) -r $(AREXX)
