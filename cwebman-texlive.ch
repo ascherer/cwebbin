@@ -44,6 +44,6 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 @x
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(3.64 [\\TeX~Live])\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
