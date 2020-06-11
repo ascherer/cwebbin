@@ -264,7 +264,7 @@ Section 66.
 
 Section 75.
 
-@x l.1354 and l.326 of COMM-EXTENSIONS.CH
+@x l.1354 and l.331 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -302,7 +302,7 @@ Section 76.
 
 Section 77.
 
-@x l.1377+ and l.76 of COMM-OUTPUT.CH
+@x l.1381 and l.76 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", C_file_name);
 @y
     fatal(_("! Cannot open output file "), C_file_name);
@@ -314,7 +314,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1377+ and l.77 of COMM-OUTPUT.CH
+@x l.1386 and l.91 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", tex_file_name);
 @y
     fatal(_("! Cannot open output file "), tex_file_name);
@@ -326,7 +326,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1418 and l.379 of COMM-EXTENSIONS.CH
+@x l.384 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print(_("! Include path too long")); return(0);

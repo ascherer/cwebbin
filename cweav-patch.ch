@@ -203,7 +203,7 @@ Section 1.
 
 Section 3.  Clean up |main|.
 
-@x l.
+@x l.105
   make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
   common_init();
   @<Set initial values@>;

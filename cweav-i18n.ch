@@ -11,7 +11,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 1.
 
-@x l.69+ and 201 of CWEAV-PATCH.CH
+@x l.69 and 201 of CWEAV-PATCH.CH
 @d banner "This is CWEAVE (@VERSION@)"
 @y
 @d banner _("This is CWEAVE (@VERSION@)")
@@ -389,7 +389,7 @@ Section 226.
     fatal(_("! Cannot open section file "),scn_file_name);
 @z
 
-@x l.4338+ and l.443 of CWEAV-PATCH.CH
+@x l.4338 and l.443 of CWEAV-PATCH.CH
   printf("Done.");
 @y
   fputs(_("Done."),stdout);
@@ -451,7 +451,7 @@ Section 249.
 }
 @z
 
-@x l.4644+ and l.103 of CWEAV-OUTPUT.CH
+@x l.103 of CWEAV-OUTPUT.CH
     fatal("! Cannot open output file ",check_file_name);
 @y
     fatal(_("! Cannot open output file "),check_file_name);

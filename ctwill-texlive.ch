@@ -61,7 +61,7 @@ Sections 5--15.
 
 Section 80.
 
-@x l.1367 and l.629 of CWEAV-TWILL.CH
+@x l.1364 and l.627 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
 \.{\\input Xproofmac} with option \.{+lX}), a set of macros used when
 @y
@@ -69,7 +69,7 @@ saying \.{+P} on the command line, it's `\.{\\input ctproofmac}' (resp.\
 \.{\\input Xctproofmac} with option \.{+lX}), a set of macros used when
 @z
 
-@x l.628 of CWEAV-TWILL.CH
+@x l.637 of CWEAV-TWILL.CH
 tex_puts(proofing?"proofma":"ctwima");
 @y
 tex_puts(proofing?"ctproofma":"ctwima");

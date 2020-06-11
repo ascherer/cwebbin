@@ -9,14 +9,14 @@
 
 Material in limbo.
 
-@x l.20 and l.177 of COMM-PATCH.CH
+@x l.20 and l.180 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
-@x l.25 and l.183 of COMM-PATCH.CH
+@x l.25 and l.186 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
@@ -72,7 +72,7 @@ Section 5.
 
 Section 8.
 
-@x
+@x l.165
 @ @<Include files@>=
 #include <stdio.h>
 @y
@@ -248,7 +248,7 @@ otherwise we add |".w"|.
 
 Section 74.
 
-@x l.1344 and l.305 of COMM-EXTENSIONS.CH
+@x l.1344 and l.310 of COMM-EXTENSIONS.CH
 @<Handle flag...@>=
 {
 @y
@@ -287,7 +287,7 @@ Section 74.
 
 Section 75.
 
-@x l.1354+ and l.326 of COMM-EXTENSIONS.CH and l.281 of COMM-I18N.CH
+@x l.1353 and l.331 of COMM-EXTENSIONS.CH and l.281 of COMM-I18N.CH
 {
 switch (program) {
 case ctangle: fatal(
@@ -318,7 +318,7 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Section 81.
 
-@x l.1406 and l.541 of COMM-ANSI.CH
+@x l.1406 and l.530 of COMM-ANSI.CH
 @ For string handling we include the {\mc ANSI C} system header file instead
 of predeclaring the standard system functions |@!strlen|, |@!strcmp|,
 |@!strcpy|, |@!strncmp|, and |@!strncpy|.
@@ -335,12 +335,12 @@ functions |strlen|, |strcmp|, |strcpy|, |strncmp|, and |strncpy|.
 
 Changes to former addenda.
 
-@x l.350 of COMM-EXTENSIONS.CH
+@x l.355 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.586 of COMM-ANSI.CH
+@x l.580 of COMM-ANSI.CH
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
 standard C types for boolean values, pointers, and objects with fixed sizes.
 
@@ -393,7 +393,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.389 of COMM-EXTENSIONS.CH
+@x l.394 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -426,7 +426,7 @@ string texmf_locale;@/
 
 Material++
 
-@x l.351 of COMM-I18N.CH
+@x l.363 of COMM-I18N.CH
 @ If a translation catalog for your personal \.{LANGUAGE} is installed at the
 appropriate place, \.{CTANGLE} and \.{CWEAVE} will talk to you in your favorite
 language.  Catalog \.{cweb} contains all strings from ``plain \.{CWEB}.''
@@ -479,7 +479,7 @@ There are several ways to set |TEXMFLOCALEDIR|:
     or \.{TEXMFLOCALEDIR.cweb=\$TEXMFMAIN/locale}.\par}
 @z
 
-@x l.363 of COMM-I18N.CH
+@x l.375 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
 texmf_locale = kpse_var_expand ("${TEXMFLOCALEDIR}");

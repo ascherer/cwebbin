@@ -257,7 +257,7 @@ Section 70.
 @y
 @z
 
-@x l.1265+ and l.211 of COMM-PATCH.CH
+@x l.1265+ and l.231 of COMM-PATCH.CH
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -318,7 +318,7 @@ Section 74.
 
 Section 75.
 
-@x
+@x l.1354
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -344,7 +344,7 @@ default: fatal(
 
 Extended material after Section 82.
 
-@x l.576 of COMM-ANSI.CH
+@x l.570 of COMM-ANSI.CH
 @ The following functions are private to \.{common.w}.
 
 @<Predecl...@>=

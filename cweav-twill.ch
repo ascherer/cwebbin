@@ -610,7 +610,7 @@ skip_restricted(void)
     case meaning: case suppress:
 @z
 
-@x l.1367 and l.119 of CWEAV-EXTENSIONS.CH
+@x l.1367 and l.112 of CWEAV-EXTENSIONS.CH
 \.{CWEAVE} with `\.{+lX}' (or `\.{-lX}' as well), where `\.X' is the
 (possibly empty) string of characters to the right of~`\.l', `\.X'~will be
 prepended to `\.{cwebmac.tex}', e.g., if you call \.{CWEAVE} with

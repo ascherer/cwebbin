@@ -19,7 +19,7 @@ extern char check_file_name[]; /* name of |check_file| */
 
 Section 13.
 
-@x l.36 of COMM-EXTENSIONS.HCH
+@x l.38 of COMM-EXTENSIONS.HCH
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
 @d temporary_output flags['t'] /* should temporary output take precedence? */

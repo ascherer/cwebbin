@@ -11,7 +11,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 1.
 
-@x l.62+ and l.186 of CTANG-PATCH.CH
+@x l.62 and l.186 of CTANG-PATCH.CH
 @d banner "This is CTANGLE (@VERSION@)"
 @y
 @d banner _("This is CTANGLE (@VERSION@)")
@@ -69,7 +69,7 @@ Section 42.
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564+ and l.204 of CTANG-PATCH.CH
+@x l.564 and l.204 of CTANG-PATCH.CH
       printf("Done.");
 @y
       fputs(_("Done."),stdout);
@@ -77,7 +77,7 @@ Section 42.
 
 Section 43.
 
-@x l.572 and l.43 of CTANG-OUTPUT.CH
+@x l.578 and l.43 of CTANG-OUTPUT.CH
       fatal("! Cannot open output file ",output_file_name);
 @y
       fatal(_("! Cannot open output file "),output_file_name);
