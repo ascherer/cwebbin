@@ -62,6 +62,9 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 \def\page{\box255 } \normalbottom
 @y
 \let\page=\pagebody \raggedbottom
+\newcount\footnotecount \footnotecount 1\relax
+\def\cwebfootnote#1{\footnote{${}^{\the\footnotecount}$}{#1}%
+  \advance\footnotecount by 1\relax}
 @z
 ------------------------------------------------------------------------------
 @x l.37
@@ -81,7 +84,7 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 should be sent to Levy (\.{levy@math.berkeley.edu}).
 @y
 should be sent to Levy (\.{levy@math.berkeley.edu}).%
-\footnote{$^1$}{Or rather to the ``\TeX~Live''-related mailing list
+\cwebfootnote{Or rather to the ``\TeX~Live''-related mailing list
 \.{tex-k@tug.org}.}
 @z
 ------------------------------------------------------------------------------
@@ -89,7 +92,7 @@ should be sent to Levy (\.{levy@math.berkeley.edu}).%
 email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}).
 @y
 email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
-\footnote{$^2$}{Or rather \.{tex-k@@tug.org}.}).
+\cwebfootnote{Or rather \.{tex-k@@tug.org}.}).
 @z
 ------------------------------------------------------------------------------
 @x l.1582
@@ -102,7 +105,7 @@ email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
 or the \CEE/ comments of a \.{CWEB} file:
 @y
 or the \CEE/ comments of a \.{CWEB} file:%
-\footnote{$^8$}{Be careful to make that $$\vbox{\halign{\.{#}\hfil\cr
+\cwebfootnote{Be careful to make that $$\vbox{\halign{\.{#}\hfil\cr
 You can send email to
  \\pdfURL\{the author\}\{mailto:andreas\\UNDER/github@@freenet.de\}\cr
 or visit

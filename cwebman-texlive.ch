@@ -19,14 +19,14 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 @z
 ------------------------------------------------------------------------------
 @x
-\footnote{$^3$}{In this extended implementation, if an \.{@i}nclude file can
+\cwebfootnote{In this extended implementation, if an \.{@i}nclude file can
 not be found in the current directory, \.{CWEB} will look in standard
 directories like the \CEE/ preprocessor.  Multiple search paths may be
 specified in the environment variable \.{CWEBINPUTS}, concatenated with
 \.{PATH\_SEPARATOR}s (on \UNIX/ commonly known as~`\.:').  If the environment
 variable is not set, some decent default paths are used instead.}
 @y
-\footnote{$^3$}{In this extended implementation, if an \.{@i}nclude file can
+\cwebfootnote{In this extended implementation, if an \.{@i}nclude file can
 not be found in the current directory, \.{CWEB} will use the conventions of
 the \Kpathsea/ library as outlined in section~\X90:File lookup with
 \Kpathsea/\X~of appendix~D to look for it.  (This is true for any other input
@@ -38,7 +38,7 @@ or change file lookup.)}% FIXME
 the {\mc SAS/C} development system.  Set the external environment variable
 \.{SCMSGOPT} to any legal command line option described in the documentation
 by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
-
+\hfil\vskip\normallineskip
 @y
 @z
 ------------------------------------------------------------------------------
