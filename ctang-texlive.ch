@@ -24,7 +24,7 @@ Material in limbo.
 @x l.33
 \def\botofcontents{\vfill
 @y
-\def\covernote{\vbox{
+\def\covernote{\vbox{%
 @z
 
 @x l.46
