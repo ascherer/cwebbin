@@ -174,7 +174,7 @@ In both cases you can request some prefix _X_ with the **+lX** option,
 e.g., **+ld** will **\\input dctwimac.tex** and **+Pld** will
 **\\input dproofmac.tex**.  A special application is the use of option
 **+lpdf** that will **\\input pdfctwimac.tex** for production of PDF output
-with active hypewrlinks.
+with active hyperlinks.
 
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
