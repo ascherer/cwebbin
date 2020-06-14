@@ -42,6 +42,12 @@ A special ``proofmode'' is provided so that you can check \.{CTWILL}'s
 @z
 
 @x
+extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+@y
+extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
+@z
+
+@x
 @** Index.
 If you have read and understood the code for Phase III above, you know what
 is in this index and how it got here. All sections in which an identifier is
