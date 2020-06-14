@@ -607,8 +607,8 @@
 \else \def\lmda#1{#1\global\let#1\relax} \fi
 {\obeylines\gdef\makeinref#1 #2 #3
   {\ifsorted\else\ttoks={\[#1 #2 #3}\immediate\write\reffile{+ \the\ttoks}\fi %
-  \hangindent=1em \noindent #2\miniform#3, \S\ifacro{\pdfnote#1.}\else
-  {#1}\fi.\par}}
+  \hangindent=1em \noindent #2\miniform#3, %<== space!
+    \S\ifacro{\pdfnote#1.}\else{#1}\fi.\par}}
 {\obeylines\gdef\makeoutref#1 #2 #3
   {\ifsorted\else\ttoks={\]#1 #2 #3}\immediate\write\reffile{+ \the\ttoks}\fi %
   \hangindent=1em \noindent #2\miniform#3, \extref#1.\par}}
