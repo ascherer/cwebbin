@@ -1,4 +1,7 @@
 @$program {COMMON.W}2 \&{int}@>
+@$ctangle {COMMON.W}2 \&{int}@>
+@$ctwill {COMMON.W}2 \&{int}@>
+@$cweave {COMMON.W}2 \&{int}@>
 @$phase {COMMON.W}3 \&{int}@>
 @$common_init {COMMON.W}4 \&{void} (\,)@>
 @$buffer {COMMON.W}7 \&{char} [\,]@>
