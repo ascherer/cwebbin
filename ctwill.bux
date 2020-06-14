@@ -4,6 +4,10 @@
 @$cweave {COMMON.W}2 \&{int}@>
 @$phase {COMMON.W}3 \&{int}@>
 @$common_init {COMMON.W}4 \&{void} (\,)@>
+@$id_first {COMMON.W}6 \&{char} ${*}$@>
+@$id_loc {COMMON.W}6 \&{char} ${*}$@>
+@$section_text {COMMON.W}6 \&{char} [\,][\,]@>
+@$section_text_end {COMMON.W}6 \&{char} ${*}$@>
 @$buffer {COMMON.W}7 \&{char} [\,]@>
 @$buffer_end {COMMON.W}7 \&{char} ${*}$@>
 @$limit {COMMON.W}7 \&{char} ${*}$@>
