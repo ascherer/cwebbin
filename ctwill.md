@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% June 08, 2020
+% June 14, 2020
 
 # NAME
 
@@ -95,6 +95,8 @@ differences worth noting:
   flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
+* Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
+  production of PDF output with active hyperlinks (**+lpdf**).
 * **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
   option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
@@ -170,7 +172,9 @@ Use the **kpsewhich** utility to find their locations.
 
 In both cases you can request some prefix _X_ with the **+lX** option,
 e.g., **+ld** will **\\input dctwimac.tex** and **+Pld** will
-**\\input dproofmac.tex**.
+**\\input dproofmac.tex**.  A special application is the use of option
+**+lpdf** that will **\\input pdfctwimac.tex** for production of PDF output
+with active hypewrlinks.
 
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
