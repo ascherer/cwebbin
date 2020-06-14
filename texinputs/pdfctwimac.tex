@@ -637,9 +637,11 @@
 
 \hsize=\pagewd \vsize=\maxdimen \output={\twillout}
 
-\def\inx{\flushout\end}
+\let\inx=\flushout % No full index at the end
 \def\fin{\parfillskip 0pt plus 1fil
-  \let\topsecno=\nullsec
+  \ifpdftex \makebookmarks \fi
+  \gtitle={NAMES OF THE SECTIONS}
+  \let\topsecno=\nullsec \let\next=\relax
   \message{Section names:}
   \def\note##1##2.{\quad{\eightrm##1~\ifacro{\pdfnote##2.}\else{##2}\fi.}}
   \def\Q{\note{Cited in section}} % crossref for mention of a section
@@ -647,8 +649,31 @@
   \def\U{\note{Used in section}} % crossref for use of a section
   \def\Us{\note{Used in sections}} % crossref for uses of a section
   \def\I{\par\hangindent 2em}\let\*=*
+  %\ifacro \def\outsecname{Names of the sections} \let\Xpdf\X
+  %\ifpdftex \pdfdest name {NOS} fith
+    %\pdfoutline goto name {NOS} count -\secno {\outsecname}
+    %\def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      %{\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      %\pdfoutline goto num \the\toksA \expandafter{\the\toksE}}
+  %\else\ifpdf
+    %\special{pdf: outline -1 << /Title (\outsecname)
+      %/Dest [ @thispage /FitH @ypos ] >>}
+    %\def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+      %{\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
+      %\special{pdf: outline 0 << /Title (\the\toksE)
+        %/A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
+  %\fi\fi\fi
   \readsections}
-\def\readsections{\input \jobname.sscn}
+\def\readsections{\relax}%\input \jobname.scn}
+\def\makebookmarks{\relax}%\let\ZZ=\writebookmarkline \readcontents\relax}
+\def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
+  \else \csname#1\endcsname \fi} % Petr Olsak's macros from texinfo.tex
+\def\advancenumber#1{\countA=\expnumber{#1}\relax \advance\countA by1
+  \expandafter\xdef\csname#1\endcsname{\the\countA}}
+\def\writebookmarkline#1#2#3#4#5{{%
+  \let\(=\let \let\)=\let \let\[=\let \let\]=\let \let\/=\let
+  \pdfoutline goto num #3 count -\expnumber{chunk#2.#3} {#5}}}
+\let\con=\end % no table of contents
 \def\datethis{}
 
 % To produce only a subset of pages, put the page numbers on separate
