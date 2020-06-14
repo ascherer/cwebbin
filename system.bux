@@ -39,6 +39,8 @@
 @$textdomain "<libintl.h>" \zip@>
 
 @$bool "<stdbool.h>" \zip@>
+@$false "<stdbool.h>" \zip@>
+@$true "<stdbool.h>" \zip@>
 @$ptrdiff_t "<stddef.h>" \zip@>
 @$size_t "<stddef.h>" \zip@>
 @$uint8_t "<stdint.h>" \zip@>
