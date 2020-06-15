@@ -397,8 +397,8 @@
   \noindent\strut{\let\*=\lapstar\bf\secno.\quad}%
   \ifacro \smash{\raise\baselineskip\hbox to0pt{\let\*=\empty
     \ifpdftex \pdfdest num \secstar fith%
-    \else\ifpdf \special{pdf: dest (\romannumeral\secstar)
-      [ @thispage /FitH @ypos ]}\fi\fi}}\fi}
+    \else \special{pdf: dest (\romannumeral\secstar)
+      [ @thispage /FitH @ypos ]}\fi}}\fi}
 \def\startsection{\titletrue
   \line{\smash{\titlefont\title}\quad\hrulefill}\bigskip
   \let\startsection=\stsec\stsec}
@@ -660,14 +660,13 @@
     %\def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
       %{\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
       %\pdfoutline goto num \the\toksA \expandafter{\the\toksE}}
-  %\else\ifpdf
-    %\special{pdf: outline -1 << /Title (\outsecname)
+  %\else \special{pdf: outline -1 << /Title (\outsecname)
       %/Dest [ @thispage /FitH @ypos ] >>}
     %\def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
       %{\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
       %\special{pdf: outline 0 << /Title (\the\toksE)
         %/A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
-  %\fi\fi\fi
+  %\fi\fi
   \readsections}
 \def\readsections{\relax}%\input \jobname.scn}
 \let\con=\end % no table of contents
