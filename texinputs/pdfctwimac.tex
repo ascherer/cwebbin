@@ -237,8 +237,8 @@
 \let\yskip=\smallskip
 \def\?{\mathrel?}
 \def\note#1#2.{\par\penalty5000
-  \Y\noindent{\hangindent2\em
-    \baselineskip10pt\eightrm#1~\ifacro{\pdfnote#2.}\else#2\fi.\par}}
+  \Y\noindent{\hangindent2\em\baselineskip10pt
+    \eightrm#1~\ifacro{\pdfnote#2.}\else#2\fi.\par}}
 
 \newtoks\toksA \newtoks\toksB \newtoks\toksC \newtoks\toksD
 \newtoks\toksE \newtoks\toksF \newtoks\usersanitizer
@@ -395,11 +395,10 @@
 \def\stsec{\tenpoint\rightskip=0pt % get out of C mode (cf. \B)
   \sfcode`;=1500 \pretolerance 200 \hyphenpenalty 50 \exhyphenpenalty 50
   \noindent\strut{\let\*=\lapstar\bf\secno.\quad}%
-  \ifpdftex\smash{\raise\baselineskip\hbox to0pt{%
-     \let\*=\empty\pdfdest num \secstar fith}}%
-  \else\ifpdf\smash{\raise\baselineskip\hbox to0pt{%
-     \let\*=\empty\special{%
-       pdf: dest (\romannumeral\secstar) [ @thispage /FitH @ypos ]}}}\fi\fi}
+  \ifacro \smash{\raise\baselineskip\hbox to0pt{\let\*=\empty
+    \ifpdftex \pdfdest num \secstar fith%
+    \else\ifpdf \special{pdf: dest (\romannumeral\secstar)
+      [ @thispage /FitH @ypos ]}\fi\fi}}\fi}
 \def\startsection{\titletrue
   \line{\smash{\titlefont\title}\quad\hrulefill}\bigskip
   \let\startsection=\stsec\stsec}
@@ -460,6 +459,10 @@
   \else\ifpdf\special{pdf: outline #1 << /Title (\the\toksE) /Dest
     [ @thispage /FitH @ypos ] >>}\fi\fi
   \startsection{\bf\ignorespaces#3.\quad}\ignorespaces}
+\def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
+  \else \csname#1\endcsname \fi} % Petr Olsak's macros from texinfo.tex
+\def\advancenumber#1{\countA=\expnumber{#1}\relax \advance\countA by1
+  \expandafter\xdef\csname#1\endcsname{\the\countA}}
 % \O is Scandinavian letter O-with-slash
 % \P is paragraph sign
 \def\Q{\note{This code is cited in section}} % xref for mention of a section
@@ -468,7 +471,7 @@
 % \S is section sign
 \def\T#1{\leavevmode % octal, hex or decimal constant
   \hbox{$\def\?{\kern.2em}%$%
-    \def\$##1{\egroup_{\rm##1}\bgroup}% suffix to constant
+    \def\$##1{\egroup_{\,\rm##1}\bgroup}% suffix to constant
     \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
     \let\~=\oct \let\^=\hex {#1}$}}%$%
 \def\U{\note{This code is used in section}} % xref for use of a section
@@ -642,9 +645,8 @@
 
 \let\inx=\flushout % No full index at the end
 \def\fin{\parfillskip 0pt plus 1fil
-  \ifpdftex \makebookmarks \fi
   \gtitle={NAMES OF THE SECTIONS}
-  \let\topsecno=\nullsec \let\next=\relax
+  \let\topsecno=\nullsec
   \message{Section names:}
   \def\note##1##2.{\quad{\eightrm##1~\ifacro{\pdfnote##2.}\else{##2}\fi.}}
   \def\Q{\note{Cited in section}} % crossref for mention of a section
@@ -668,14 +670,6 @@
   %\fi\fi\fi
   \readsections}
 \def\readsections{\relax}%\input \jobname.scn}
-\def\makebookmarks{\relax}%\let\ZZ=\writebookmarkline \readcontents\relax}
-\def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
-  \else \csname#1\endcsname \fi} % Petr Olsak's macros from texinfo.tex
-\def\advancenumber#1{\countA=\expnumber{#1}\relax \advance\countA by1
-  \expandafter\xdef\csname#1\endcsname{\the\countA}}
-\def\writebookmarkline#1#2#3#4#5{{%
-  \let\(=\let \let\)=\let \let\[=\let \let\]=\let \let\/=\let
-  \pdfoutline goto num #3 count -\expnumber{chunk#2.#3} {#5}}}
 \let\con=\end % no table of contents
 \def\datethis{} \def\datecontentspage{}
 
@@ -693,7 +687,3 @@
  \else\ifnum\pageno=\nextpage\getnextpage\let\next=\Shipout
   \else\let\next=\Tosspage\fi\fi \next}
 \newbox\garbage \def\Tosspage{\deadcycles=0\setbox\garbage=}
-\def\expnumber#1{\expandafter\ifx\csname#1\endcsname\relax 0%
-  \else \csname#1\endcsname \fi} % Petr Olsak's macros from texinfo.tex
-\def\advancenumber#1{\countA=\expnumber{#1}\relax \advance\countA by1
-  \expandafter\xdef\csname#1\endcsname{\the\countA}}
