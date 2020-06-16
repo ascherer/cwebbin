@@ -1,4 +1,17 @@
 @x
+@** Introduction.
+@y
+\ifacro
+  \pdfpagewidth=\pagewd  \advance\pdfpagewidth by 2cm
+  \pdfpageheight=\pageht \advance\pdfpageheight by 4cm
+  \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
+  \else \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
+\fi
+
+@** Introduction.
+@z
+
+@x
 The information that \.{CTWILL} concocts from \.{foo.w} is not always
 correct. Sometimes you'll use an identifier that you don't want
 indexed; for example, your exposition might talk about |f(x)| when you
