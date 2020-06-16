@@ -119,9 +119,9 @@ The raw input is converted into scraps according to the following table,
 @z
 
 @x
-\.{@@h}&|insert|: |force| \.{\\ATH} |force|&no\cr
+\.{xor\_eq}&|alfop|: \stars&yes\cr
 @y
-\.{@@h}&|insert|: |force| \.{\\ATH} |force|&no\cr
+\.{xor\_eq}&|alfop|: \stars&yes\cr
 }
 
 \vfill\eject

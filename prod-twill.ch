@@ -31,16 +31,16 @@ y
 z
 
 @x
-\+\dagit& |decl_head| |exp| & |decl_head| \hfill $DE^*$ & |int x|\cr
+\+& |decl_head| |cast| & |decl_head| & |int f(int)|\cr
 @y
-\+\dagit& |decl_head| |exp| & |decl_head| \hfill $DE^*$ & |int x|\cr
+\+& |decl_head| |cast| & |decl_head| & |int f(int)|\cr
 \vfill\eject
 @z
 
 @x
-\+& |langle| |prerangle| & |cast| \hfill $L\.{\\,}P$ & $\langle\,\rangle$\cr
+\+& |insert| |any| & |any| & \.{\v\#include\v}\cr
 @y
-\+& |langle| |prerangle| & |cast| \hfill $L\.{\\,}P$ & $\langle\,\rangle$\cr
+\+& |insert| |any| & |any| & \.{\v\#include\v}\cr
 \vfill\eject
 @z
 
