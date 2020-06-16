@@ -12,6 +12,38 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \newcount\prodno \newdimen\midcol \let\+\relax
 @z
 
+x
+\begingroup \lineskip=4pt
+y
+\begingroup \lineskip=4pt \eightpoint
+z
+
+x
+ \line{\hbox to 2em{\hss
+y
+ \line{\hskip-2em\hbox to 2em{\hss
+z
+
+x
+  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
+y
+  \ignorespaces#3\hfil}\quad \hbox to1.25in{\ignorespaces#4\hfil}}}
+z
+
+@x
+\+\dagit& |decl_head| |exp| & |decl_head| \hfill $DE^*$ & |int x|\cr
+@y
+\+\dagit& |decl_head| |exp| & |decl_head| \hfill $DE^*$ & |int x|\cr
+\vfill\eject
+@z
+
+@x
+\+& |langle| |prerangle| & |cast| \hfill $L\.{\\,}P$ & $\langle\,\rangle$\cr
+@y
+\+& |langle| |prerangle| & |cast| \hfill $L\.{\\,}P$ & $\langle\,\rangle$\cr
+\vfill\eject
+@z
+
 @x l.251
 \advance\midcol-8pt
 \+& |typedef_like| \alt|int_like| |cast| \alt|comma| |semi| &
@@ -29,7 +61,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
     \alt $C=\.\{U\.\}C$ $U_2=\.\{U_1\.\}U_2$ \unskip &
     \&{typedef} |*|{}|*|(\&{CPtr})\cr
 @y
-\advance\midcol-3pt
+\vfill\eject \advance\midcol-3pt
 \+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
       |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
           \&{typedef} \&{char} \&{ch};\cr
