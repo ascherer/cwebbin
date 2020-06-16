@@ -78,7 +78,7 @@ tex_puts(proofing?"ctproofma":"ctwima");
 @x l.4644
 @** Index.
 @y
-@* Put ``version'' information in a single spot.
+@* Put ``version'' information in \.{COMMON}.
 Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
 for printing the |banner| and the |versionstring| from there.
 
