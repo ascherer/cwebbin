@@ -312,3 +312,9 @@ Addendum.
 @y
     fatal(_("! Cannot open output file "),check_file_name);
 @z
+
+@x l.183 of CTANG-OUTPUT.CH
+  fatal("! Cannot open output file ",check_file_name);
+@y
+  fatal(_("! Cannot open output file "),check_file_name);
+@z
