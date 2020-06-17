@@ -1,12 +1,12 @@
 @x
 @** Introduction.
 @y
-\ifacro
+\ifacro \ifx\undefined\pdfpagewidth\else
   \pdfpagewidth=\pagewd  \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageht \advance\pdfpageheight by 4cm
   \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
   \else \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
-\fi
+\fi\fi
 
 @** Introduction.
 @z
@@ -116,7 +116,8 @@ code is followed by an integer \\{n}, and the break will occur with penalty
 @x
 @ The raw input is converted into scraps according to the following table,
 @y
-@  \advance \hsize by 4cm \advance \pdfpagewidth by 4cm
+@  \advance \hsize by 4cm
+\ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by 4cm \fi
 The raw input is converted into scraps according to the following table,
 @z
 
@@ -163,7 +164,8 @@ the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @ Token lists in |@!tok_mem| are composed of the following kinds of
 items for \TEX/ output.
 @y
-@ \eject \advance \hsize by -4cm \advance \pdfpagewidth by -4cm
+@ \eject \advance \hsize by -4cm
+\ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by -4cm \fi
 Token lists in |@!tok_mem| are composed of the following kinds of
 items for \TEX/ output.
 @z
