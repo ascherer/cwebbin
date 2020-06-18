@@ -657,9 +657,9 @@
     \immediate\closeout\cont % the contents information has been fully gathered
   \fi
 }
-\def\fin{\message{Section names:}
+\def\fin{\ifacro message{Section names:}
   \def\U##1.{} \def\Us##1.{} \let\I=\relax \let\*=*
-  \ifacro \def\outsecname{Names of the sections}
+  \def\outsecname{Names of the sections}
   \ifpdftex \makebookmarks
     \pdfoutline goto num 1 count -\secno {\outsecname}
     \def\X##1:##2\X{\firstsecno##1.%
@@ -670,8 +670,7 @@
       {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
       \special{pdf: outline 0 << /Title (\the\toksE)
         /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
-  \fi\fi
-  \readsections}
+  \fi \readsections \fi}
 \def\makebookmarks{\let\ZZ=\writebookmarkline \readcontents\relax}
 \def\writebookmarkline#1#2#3#4#5{{%
   \let\(=\let \let\)=\let \let\[=\let \let\]=\let \let\/=\let
