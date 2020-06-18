@@ -40,7 +40,7 @@ must have fewer than 50 characters. If the \TeX\ part starts
 @y
 must have fewer than 50 characters.
 
-\vfill\eject
+\penalty-10000
 
 If the \TeX\ part starts
 @z
@@ -48,7 +48,7 @@ If the \TeX\ part starts
 @x
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 @y
-\vfill\eject
+\penalty-10000
 @z
 
 @x
@@ -62,6 +62,12 @@ to \.{CTANGLE} and \.{CWEAVE}, before proceeding further.
 you have to change them also in the file |"common.w"|.
 @y
 you have to change them also in file |"common.w"|.
+@z
+
+@x
+@f TeX_string TeX
+@y
+@s TeX_string TeX
 @z
 
 @x
@@ -127,7 +133,7 @@ The raw input is converted into scraps according to the following table,
 \.{extern}&|int_like|: \stars&maybe\cr
 }
 
-\vfill\eject
+\penalty-10000
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
@@ -138,7 +144,7 @@ The raw input is converted into scraps according to the following table,
 \.{xor\_eq}&|alfop|: \stars&yes\cr
 }
 
-\vfill\eject
+\penalty-10000
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
