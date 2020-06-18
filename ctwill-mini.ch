@@ -116,7 +116,7 @@ code is followed by an integer \\{n}, and the break will occur with penalty
 @x
 @ The raw input is converted into scraps according to the following table,
 @y
-@  \advance \hsize by 4cm
+@* From raw input to scraps.  \advance \hsize by 4cm
 \ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by 4cm \fi
 The raw input is converted into scraps according to the following table,
 @z
@@ -155,19 +155,16 @@ The raw input is converted into scraps according to the following table,
 @z
 
 @x
-the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
+@* Implementing the productions.
 @y
-the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
+@* Implementing the productions.  \advance \hsize by -4cm
+\ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by -4cm \fi
 @z
 
 @x
-@ Token lists in |@!tok_mem| are composed of the following kinds of
-items for \TEX/ output.
+the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 @y
-@ \eject \advance \hsize by -4cm
-\ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by -4cm \fi
-Token lists in |@!tok_mem| are composed of the following kinds of
-items for \TEX/ output.
+the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
 @x

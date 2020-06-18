@@ -4,6 +4,12 @@
 % This file is part of CTWILL, a modification of CWEB.
 @z
 
+@x
+@ Here is a table of all the productions.  Each production that
+@y
+@* Table of all productions.  Each production that
+@z
+
 TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 
 @x l.14
