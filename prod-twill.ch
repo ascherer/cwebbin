@@ -18,36 +18,18 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \newcount\prodno \newdimen\midcol \let\+\relax
 @z
 
-x
-\begingroup \lineskip=4pt
-y
-\begingroup \lineskip=4pt \eightpoint
-z
-
-x
- \line{\hbox to 2em{\hss
-y
- \line{\hskip-2em\hbox to 2em{\hss
-z
-
-x
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-y
-  \ignorespaces#3\hfil}\quad \hbox to1.25in{\ignorespaces#4\hfil}}}
-z
-
 @x
 \+& |decl_head| |cast| & |decl_head| & |int f(int)|\cr
 @y
 \+& |decl_head| |cast| & |decl_head| & |int f(int)|\cr
-\vfill\eject
+\penalty-10000
 @z
 
 @x
 \+& |insert| |any| & |any| & \.{\v\#include\v}\cr
 @y
 \+& |insert| |any| & |any| & \.{\v\#include\v}\cr
-\vfill\eject
+\penalty-10000
 @z
 
 @x l.251
@@ -67,7 +49,7 @@ z
     \alt $C=\.\{U\.\}C$ $U_2=\.\{U_1\.\}U_2$ \unskip &
     \&{typedef} |*|{}|*|(\&{CPtr})\cr
 @y
-\vfill\eject \advance\midcol-3pt
+\penalty-10000 \advance\midcol-3pt
 \+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
       |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
           \&{typedef} \&{char} \&{ch};\cr
