@@ -128,6 +128,12 @@ The raw input is converted into scraps according to the following table,
 @z
 
 @x
+\yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
+@y
+\yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
+@z
+
+@x
 \.{extern}&|int_like|: \stars&maybe\cr
 @y
 \.{extern}&|int_like|: \stars&maybe\cr
@@ -135,7 +141,7 @@ The raw input is converted into scraps according to the following table,
 
 \penalty-10000
 
-\yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
+\yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
 @z
 
 @x
@@ -146,7 +152,7 @@ The raw input is converted into scraps according to the following table,
 
 \penalty-10000
 
-\yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
+\yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
 @z
 
 @x
