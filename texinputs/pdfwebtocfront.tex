@@ -61,7 +61,7 @@
     % In fact, '\con' will be invoked _inside_ the first '\N' right _after_
     % '\MN', but _before_ '\eject'.  And '\topofcontents' gets in the twist
     % as well.
-    \let\ORGtopofcontents\topofcontents
+    \let\ORGtopofcontents\topofcontents \let\ORGrheader\rheader
     \def\topofcontents{%
       \def\:{\par\hangindent 2em} % Fix for 'bibtex.web'; from '\def\fin'.
       \ORGtopofcontents
@@ -81,7 +81,8 @@
                       \csname ORGvfil\endcsname
       \expandafter\let\csname eject\expandafter\endcsname
                       \csname ORGeject\endcsname
-      \vfil
+      \vfil\eject
+      \let\rheader\ORGrheader
     }%
   \fi
 \fi
