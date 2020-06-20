@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, April 28, 2020.
+Changes for COMMON.W by Andreas Scherer, June 20, 2020.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -9,6 +9,21 @@ It also incorporates the basis for CTWILL, CWEAVE's evil twin.
 This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
+
+Section 1.  Add CTWILL.
+
+@x l.47
+to both \.{CTANGLE} and \.{CWEAVE}, which roughly concerns the following
+@y
+to \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL},
+which roughly concerns the following
+@z
+
+@x l.53
+sometimes use \.{CWEB} to refer to either of the two component
+@y
+sometimes use \.{CWEB} to refer to either of the three component
+@z
 
 Section 2.  Add CTWILL.
 
