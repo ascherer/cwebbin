@@ -188,6 +188,7 @@ Thus, it
 @ The raw input is converted into scraps according to the following table,
 @y
 @* From raw input to scraps.
+@-c@>
 \advance \hsize by 4cm
 \ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by 4cm \fi
 The raw input is converted into scraps according to the following table,

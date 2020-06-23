@@ -17,7 +17,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @y
 \+& |lpar| |rpar| & |exp| \hfill $L\.{\\,}R$ & functions, declarations\cr
 \endgroup
-@-in@>
+@-in@>@-f@>@-x@>@-y@>
 
 @r @ Cont.
 \begingroup \lineskip=4pt
@@ -32,7 +32,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \def\maltt #1 #2 #3
 {$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
-\yskip@-in@>
+\yskip@-in@>@-x@>@-y@>
 \prodno=13 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
@@ -122,7 +122,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \def\maltt #1 #2 #3
 {$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
-\yskip@-any@>@-z@>@-g@>
+\yskip@-any@>@-z@>@-g@>@-a@>@-x@>@-y@>@-f@>
 \prodno=61 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
@@ -153,7 +153,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \def\maltt #1 #2 #3
 {$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
-\yskip@-any@>@-z@>@-g@>
+\yskip@-any@>@-z@>@-g@>@-a@>
 \prodno=86 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
@@ -183,7 +183,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \def\maltt #1 #2 #3
 {$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
-\yskip@-any_other@>@-z@>
+\yskip@-any_other@>@-z@>@-f@>@-x@>@-p@>
 \prodno=100 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
