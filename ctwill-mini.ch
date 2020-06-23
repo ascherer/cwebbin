@@ -274,6 +274,15 @@ the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
 @x
+#ifdef DEAD_CODE /* not used in |main| */
+@y
+@ Debugging routine, use at your own risk.
+
+@c
+#ifdef DEAD_CODE /* not used in |main| */
+@z
+
+@x
 @ @<Print token |r|...@>=
 @y
 @r @ @<Print token |r|...@>=
