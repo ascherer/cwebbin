@@ -576,6 +576,12 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 @z
 
 @x
+section should have the same number as the original ``\&{275.~Index},'' and
+@y
+section should have the same number as the original ``\&{293.~Index},'' and
+@z
+
+@x
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @y
 extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
