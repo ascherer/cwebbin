@@ -194,6 +194,19 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \advance\midcol20pt
 @z
 
+@x
+\advance\midcol-3pt
+\+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
+      |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
+          \&{typedef} \&{char} \&{ch};\cr
+\advance\midcol+3pt
+\+201\enspace& |typedef_like| |decl_head| |semi| & |decl| \hfill $T\.\ D$ &
+                                             \&{typedef} \&{int} $\&x,\&y$;\cr
+\+\dag202\enspace& |typedef_like| |int_like| |raw_int| & |typedef_like| |int_like| |exp| &
+  \&{typedef} \&{int} \&{foo}\cr
+@y
+@z
+
 @x l.272
 \+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
 \yskip
@@ -203,6 +216,15 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \dag{\bf Notes}
 @y
 \+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
+\advance\midcol-3pt
+\+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
+      |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
+          \&{typedef} \&{char} \&{ch};\cr
+\advance\midcol+3pt
+\+201\enspace& |typedef_like| |decl_head| |semi| & |decl| \hfill $T\.\ D$ &
+                                             \&{typedef} \&{int} $\&x,\&y$;\cr
+\+\dag202\enspace& |typedef_like| |int_like| |raw_int| & |typedef_like| |int_like| |exp| &
+  \&{typedef} \&{int} \&{foo}\cr
 \endgroup
 
 @r @ \begingroup\dag{\bf Notes}
