@@ -194,6 +194,14 @@ the array |text_info|, and we use a |text_pointer| variable to refer
 the array |text_info|, and we use a \&{text\_pointer} variable to refer
 @z
 
+Section 20.
+
+x
+@ @<Set init...@>=
+y
+@<Set init...@>=
+z
+
 Section 42.  Fix bug: Don't print empty line for '-bp'.
 
 @x l.564

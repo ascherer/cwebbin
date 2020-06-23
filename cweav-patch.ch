@@ -257,6 +257,14 @@ Section 80.
 @<Start \TEX/...@>=
 @z
 
+Section 89.
+
+x l.1518
+@ @f copy_TeX TeX
+y
+@f copy_TeX TeX
+z
+
 Sections 97 and 98.  Initialize complete array 'cat_name'.
 
 @x l.1716
@@ -451,6 +459,14 @@ for (c=0; c<=255; c++) bucket[c]=NULL;
 @y
 for (c=0; c<256; c++) bucket[c]=NULL;
 @z
+
+Section 231.
+
+x l.4404
+@ @<Rest of |trans_plus| union@>=
+y
+@<Rest of |trans_plus| union@>=
+z
 
 Addendum.
 

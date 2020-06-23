@@ -530,6 +530,12 @@ else {@<Look ahead for strongest line break, |goto reswitch|@>}
 @z
 
 @x
+@ @<Flag the usage of this identifier, for the mini-index@>=
+@y
+@<Flag the usage of this identifier, for the mini-index@>=
+@z
+
+@x
 @ @<Output information about usage of id's defined in other sections@>=
 @y
 @r @ @<Output information about usage of id's defined in other sections@>=
