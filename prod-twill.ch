@@ -1,220 +1,39 @@
-@x l.1
+@x
 % This file is part of CWEB.
 @y
 % This file is part of CTWILL, a modification of CWEB.
 @z
 
 @x
-@ Here is a table of all the productions.  Each production that
+\advance\midcol-8pt
+\+& |typedef_like| \alt|int_like| |cast| \alt|comma| |semi| &
+    |typedef_like| |exp| \alt|comma| |semi| & \&{typedef} \&{int} \&I,\cr
+\advance\midcol+8pt
+\+& |typedef_like| |int_like| & |typedef_like| \hfill $T\.\ I$ &
+    \&{typedef} \&{char}\cr
+\+\dagit& |typedef_like| |exp| & |typedef_like| \hfill $T\.\ E^{**}$ &
+    \&{typedef} \&I \.{@@[@@]} (|*|\&P)\cr
+\+& |typedef_like| |comma| & |typedef_like| \hfill $TC\.\ $ &
+    \&{typedef} \&{int} \&x,\cr
+\+& |typedef_like| |semi| & |decl| & \&{typedef} \&{int} $\&x,\&y$;\cr
+\+& |typedef_like| |ubinop| \alt |cast| |ubinop| & 
+    |typedef_like| \alt |cast| |ubinop| \hfill
+    \alt $C=\.\{U\.\}C$ $U_2=\.\{U_1\.\}U_2$ \unskip &
+    \&{typedef} |*|{}|*|(\&{CPtr})\cr
 @y
-@* Table of all productions.  Each production that
-@z
-
-TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
-
-@x l.14
-\fi \newcount\prodno \newdimen\midcol \let\+\relax \ifon
-@y
-\newcount\prodno \newdimen\midcol \let\+\relax
-@z
-
-@x
-\+& |lpar| |rpar| & |exp| \hfill $L\.{\\,}R$ & functions, declarations\cr
-@y
-\+& |lpar| |rpar| & |exp| \hfill $L\.{\\,}R$ & functions, declarations\cr
-\endgroup
-
-@r @ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=13 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
+\advance\midcol-3pt
+\+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
+      |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
+          \&{typedef} \&{char} \&{ch};\cr
+\advance\midcol+3pt
+\+201\enspace& |typedef_like| |decl_head| |semi| & |decl| \hfill $T\.\ D$ &
+                                             \&{typedef} \&{int} $\&x,\&y$;\cr
+\+\dag202\enspace& |typedef_like| |int_like| |raw_int| & |typedef_like| |int_like| |exp| &
+  \&{typedef} \&{int} \&{foo}\cr
+\global\prodno=121
 @z
 
 @x
-         |int_like| \alt|raw_int| |struct_like| & |extern "Ada" int|\cr
-@y
-         |int_like| \alt|raw_int| |struct_like| & |extern "Ada" int|\cr
-\endgroup
-
-@ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=27 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-@z
-
-@x
-              \&{struct} \&{name\_info} $\{$\cr
-@y
-              \&{struct} \&{name\_info} $\{$\cr
-\endgroup
-
-@r @ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=47 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-@z
-
-@x
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & |else x=0;|\cr
-@y
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & |else x=0;|\cr
-\endgroup
-
-@ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=61 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-\advance\midcol20pt
-@z
-
-@x
-\+& |prerangle| & |binop| \hfill \.> & $>$ not in template\cr
-@y
-\+& |prerangle| & |binop| \hfill \.> & $>$ not in template\cr
-\endgroup
-
-@r @ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=86 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-@z
-
-@x
-\+\dagit& |new_exp| & |exp| & |new int;|\cr
-@y
-\+\dagit& |new_exp| & |exp| & |new int;|\cr
-\endgroup
-
-@ Cont.
-\begingroup \lineskip=4pt
-\def\alt #1 #2
-{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
-   \strut\hbox{#2}\cr}\!\Bigr\}$ }
-\def\altt #1 #2 #3
-{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
-   \strut\hbox{#3}\cr}\!\Biggr\}$ }
-\def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
-\def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
-   \strut\hbox{#3}\hfill\cr}$}
-\yskip
-\prodno=100 \midcol=2.5in
-\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
-\def\dagit{\dag\theprodno}
-\def\+#1&#2&#3&#4\cr{\def\next{#1}%
- \line{\hbox to 2em{\hss
-  \ifx\next\empty\theprodno\else\next\fi}\strut
-  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
-  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
-\advance\midcol20pt
-@z
-
-@x
-\+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
-\yskip
-\yskip
-\yskip
-\parindent=0pt
-\dag{\bf Notes}
-@y
-\+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
-\endgroup
-
-@r @ \begingroup\dag{\bf Notes}
-@z
-
-@x l.302
 Rule 117: The |exp| must not be immediately followed by |lpar|, |exp|,
 or |cast|.
 
