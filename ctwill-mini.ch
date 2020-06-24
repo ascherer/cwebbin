@@ -60,9 +60,63 @@ you have to change them also in file |"common.w"|.
 @z
 
 @x
+internationalization.
+@y
+internationalization.
+@-A@>
+@-HAVE_GETTEXT@>
+@-STRING@>
+@z
+
+@x
+@ Code related to input routines:
+@y
+@ Code related to input routines:
+@-c@>
+@z
+
+@x
+@ Code related to identifier and section name storage:
+@y
+@ Code related to identifier and section name storage:
+@-c@>
+@z
+
+@x
+@ Code related to error handling:
+@y
+@ Code related to error handling:
+@-s@>
+@z
+
+@x
 @ Code related to section numbers:
 @y
 @r @ Code related to section numbers:
+@z
+
+@x
+@ Code relating to output:
+@y
+@ Code relating to output:
+@-a@>
+@-b@>
+@-c@>
+@z
+
+@x
+@* Data structures exclusive to {\tt CWEAVE}.
+@y
+@* Data structures exclusive to {\tt CWEAVE}.
+@-a@>
+@z
+
+@x
+@ The other large memory area in \.{CWEAVE} keeps the cross-reference data.
+@y
+@ The other large memory area in \.{CWEAVE} keeps the cross-reference data.
+@-p@>
+@-x@>
 @z
 
 @x
@@ -75,6 +129,14 @@ you have to change them also in file |"common.w"|.
 @ The |new_meaning| routine changes the current ``permanent meaning''
 @y
 @r @ The |new_meaning| routine changes the current ``permanent meaning''
+@z
+
+@x
+@ A new cross-reference for an identifier is formed by calling |new_xref|,
+@y
+@ A new cross-reference for an identifier is formed by calling |new_xref|,
+@-a@>
+@-c@>
 @z
 
 @x
@@ -121,6 +183,20 @@ preceded by \.{@@(} instead of \.{@@<}.\par}
 @z
 
 @x
+@ As one might expect, |get_next| consists mostly of a big switch
+@y
+@ As one might expect, |get_next| consists mostly of a big switch
+@-c@>
+@z
+
+@x
+@ The following code assigns values to the combinations \.{++},
+@y
+@ The following code assigns values to the combinations \.{++},
+@-c@>
+@z
+
+@x
 @ @<Put section name...@>=
 @y
 @r @ @<Put section name...@>=
@@ -142,15 +218,36 @@ Thus, it
 @z
 
 @x
+@ The |flush_buffer| routine empties the buffer up to a given breakpoint,
+@y
+@ The |flush_buffer| routine empties the buffer up to a given breakpoint,
+@-c@>
+@z
+
+@x
 @ When we are copying \TEX/ source material, we retain line breaks
 @y
 @r @ When we are copying \TEX/ source material, we retain line breaks
 @z
 
 @x
+@ When we wish to append one character |c| to the output buffer, we write
+@y
+@ When we wish to append one character |c| to the output buffer, we write
+@-c@>
+@z
+
+@x
 @ We get to this section only in the unusual case that the entire output line
 @y
 @r @ We get to this section only in the unusual case that the entire output line
+@z
+
+@x
+@ The |copy_comment| function issues a warning if more braces are opened than
+@y
+@ The |copy_comment| function issues a warning if more braces are opened than
+@-t@>
 @z
 
 @x
@@ -169,6 +266,7 @@ Thus, it
 @ The token lists for translated \TEX/ output contain some special control
 @y
 @r @ The token lists for translated \TEX/ output contain some special control
+@-n@>
 @z
 
 @x
@@ -275,9 +373,17 @@ the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
 @x
+@ Token lists in |@!tok_mem| are composed of the following kinds of
+@y
+@ Token lists in |@!tok_mem| are composed of the following kinds of
+@-p@>
+@z
+
+@x
 #ifdef DEAD_CODE /* not used in |main| */
 @y
 @ Debugging routine, use at your own risk.
+@-DEAD_CODE@>
 
 @c
 #ifdef DEAD_CODE /* not used in |main| */
@@ -290,9 +396,23 @@ the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
 @x
+@ The production rules listed above are embedded directly into \.{CWEAVE},
+@y
+@ The production rules listed above are embedded directly into \.{CWEAVE},
+@-a@>
+@-c@>
+@-d@>
+@-j@>
+@-k@>
+@-n@>
+@-pp@>
+@z
+
+@x
 The code below is an exact translation of the production rules into
 @y
 @r @ The code below is an exact translation of the production rules into
+@-a@>
 @z
 
 @x
@@ -432,6 +552,13 @@ If the first identifier is the keyword `\&{operator}', we give up;
 @z
 
 @x
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@y
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@-b@>
+@z
+
+@x
 @ @<Cases for |lpar|@>=
 @y
 @r @ @<Cases for |lpar|@>=
@@ -447,6 +574,14 @@ If the first identifier is the keyword `\&{operator}', we give up;
 @ Here's the |squash| procedure, which
 @y
 @r @ Here's the |squash| procedure, which
+@z
+
+@x
+@ The following macro is used to append a scrap whose tokens have just
+@y
+@ The following macro is used to append a scrap whose tokens have just
+@-b@>
+@-c@>
 @z
 
 @x
@@ -551,10 +686,25 @@ the index section itself---NOT!
 @z
 
 @x
+@ A left-to-right radix sorting method is used, since this makes it easy to
+@y
+@ A left-to-right radix sorting method is used, since this makes it easy to
+@-c@>
+@z
+
+@x
 name_pointer blink[max_names]; /* links in the buckets */
 @y
 name_pointer blink[max_names]; /* links in the buckets */
 sixteen_bits k_section; /* runs through the sections */
+@z
+
+@x
+@ During the sorting phase we shall use the |cat| and |trans| arrays from
+@y
+@ During the sorting phase we shall use the |cat| and |trans| arrays from
+@-j@>
+@-k@>
 @z
 
 @x
@@ -579,6 +729,13 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 section should have the same number as the original ``\&{275.~Index},'' and
 @y
 section should have the same number as the original ``\&{293.~Index},'' and
+@z
+
+@x
+@* Function declarations.  Here are declarations---conforming to
+@y
+@* Function declarations.  Here are declarations---conforming to
+@-DEAD_CODE@>
 @z
 
 @x

@@ -87,8 +87,4 @@
 
 @$versionstring "<lib/lib.h>" \zip@>
 
-@$A {}7 =macro arg@>
-@$HAVE_GETTEXT {}7 =macro@>
-@$STRING {}11 =macro arg@>
-@$skip_comment {}104 =\\{copy\_comment}@>
-@$DEAD_CODE {}118 =macro@>
+@$skip_comment {}108 =\\{copy\_comment}@>
