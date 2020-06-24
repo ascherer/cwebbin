@@ -671,6 +671,12 @@ the section is changed, we output `\.{\\*}' just after the number.
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
+@x
+@ @f copy_TeX TeX
+@y
+@f copy_TeX TeX
+@z
+
 @x l.1712
 @d end_arg 62 /* \.{@@]} */
 @y
@@ -1297,6 +1303,12 @@ the index section itself---NOT!
 @y
 @z
 
+@x
+@ @<Rest of |trans_plus| union@>=
+@y
+@<Rest of |trans_plus| union@>=
+@z
+
 @x l.4532
 @ @<Output the name...@>=
 @y
@@ -1359,10 +1371,16 @@ else {
             (long)(title_code_ptr-title_code),(long)max_titles);
 @z
 
-@x l.471 of CWEAV-PATCH.CH
+@x l.483 of CWEAV-PATCH.CH
+Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index},'' and
+additional material follows below.
 @y
-section should have the same number as the original ``\&{275.~Index},'' and
+\bigskip
+\font\itt=cmitt10
+{\noindent \it Although \.{\itt CTWILL} is based on \.{\itt cweave.w}, new and
+modified material is incorporated all over the place, without taking special
+care for keeping the original section numbering intact.}
 @z
 
 @x l.1141 of CWEAV-ANSI.CH

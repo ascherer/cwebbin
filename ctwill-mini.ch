@@ -15,7 +15,7 @@
 @ Here is a sort of user manual for \.{CTWILL}---which is exactly like
 @y
 @* \.{CTWILL} user manual.
- Here is a sort of user manual for \.{CTWILL}---which is exactly like
+Here is a sort of user manual for \.{CTWILL}---which is exactly like
 @z
 
 @x
@@ -726,9 +726,23 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 @z
 
 @x
-section should have the same number as the original ``\&{275.~Index},'' and
+care for keeping the original section numbering intact.}
 @y
-section should have the same number as the original ``\&{293.~Index},'' and
+care for keeping the original section numbering intact.
+\smallskip
+\noindent Moreover, this heavily redacted version of \.{\itt ctwill.pdf} had to
+meddle with the section numbering even more, spreading tabular material over
+several sections and splitting long sections into smaller chunks in order to
+fix overful pages---both horizontally and vertically---, to make the overall
+appearance of the \.{\itt CTWILL} documentation most pleasing to the
+reader's~eye.
+
+Please do not try to compare this \.{\itt ctwill.pdf} to the one created by
+\.{\itt CWEAVE} instead of \.{\itt CTWILL}; the section numbering will be
+even more ``off'' from \.{\itt cweave.w}.  Care has been taken to give a
+faithful overall rendering of \.{\itt CTWILL}'s code, though.
+\bigskip
+\noindent Enjoy!}
 @z
 
 @x
