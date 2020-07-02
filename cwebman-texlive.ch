@@ -18,6 +18,14 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
         \centerline{\sectionfont\def\.##1{{\twelvett##1}} #1}\nobreak\vskip 6pt
         \everypar{\hskip-\parindent\everypar{}}}
 @y
+\ifacro
+  \pdfpagewidth=\pagewidth \advance\pdfpagewidth by 2cm
+  \pdfpageheight=\pageheight \advance\pdfpageheight by 3cm
+  \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
+  \else \advance\pdfpageheight by 1cm \global\pageshift=-1.54cm
+    \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
+\fi
+
 \newcount\destcount \destcount=1\relax
 
 \def\bkminfo{}
