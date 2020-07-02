@@ -1,6 +1,9 @@
 @x
+\input cwebmac
 \acrofalse\pdffalse\pdftexfalse
 @y
+\ifx\undefined\XeTeXrevision\else\let\pdf+\fi % XeTeX produces PDF output
+\input cwebmac
 @z
 
 @x
