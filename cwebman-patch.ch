@@ -67,13 +67,13 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
   \advance\footnotecount by 1\relax}
 @z
 ------------------------------------------------------------------------------
-@x l.37
+@x l.39
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
-@x l.51
+@x l.53
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)}
 @y
 \vskip 18pt\centerline{(Version 3.64 --- February 2002)%
