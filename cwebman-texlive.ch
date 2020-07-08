@@ -97,7 +97,8 @@ variable is not set, some decent default paths are used instead.}
 \cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
 file can not be found in the current directory, \.{CWEB} will use the
 conventions of the \Kpathsea/ library as outlined in section~\X90:File lookup
-with \Kpathsea/\X~of \pdfURL{appendix~D}{common.pdf} to look for it.  % FIXME
+with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
+% FIXME
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
