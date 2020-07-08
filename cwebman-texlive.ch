@@ -102,6 +102,16 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
+@x l.27 of CWEBMAN-EXTENSIONS.CH
+\option i Indent parameters in function declarations.  This causes the
+@y
+\option d Set the debugging variable \\{kpathsea\_debug} to the numeric
+value $N\in[0,127)$ of this option.  See section~92 % FIXME
+of \pdfURL{appendix~D}{common-changes.pdf} for details.
+\hfil\vskip\normallineskip
+\option i Indent parameters in function declarations.  This causes the
+@z
+------------------------------------------------------------------------------
 @x l.40 of CWEBMAN-EXTENSIONS.CH
 \option m Install communication between \.{CWEB} and the message browser of
 the {\mc SAS/C} development system.  Set the external environment variable
