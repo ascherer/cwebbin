@@ -94,11 +94,11 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 \.{PATH\_SEPARATOR}s (on \UNIX/ commonly known as~`\.:').  If the environment
 variable is not set, some decent default paths are used instead.}
 @y
-\cwebfootnote{In this extended implementation, if an \.{@i}nclude file can
-not be found in the current directory, \.{CWEB} will use the conventions of
-the \Kpathsea/ library as outlined in section~\X90:File lookup with
-\Kpathsea/\X~of appendix~D to look for it.  (This is true for any other input
-or change file lookup.)}% FIXME
+\cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
+file can not be found in the current directory, \.{CWEB} will use the
+conventions of the \Kpathsea/ library as outlined in section~\X90:File lookup
+with \Kpathsea/\X~of \pdfURL{appendix~D}{common.pdf} to look for it.  % FIXME
+(This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
 @x l.40 of CWEBMAN-EXTENSIONS.CH

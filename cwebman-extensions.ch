@@ -64,15 +64,18 @@ xetex cob\cr
 acroread cob.pdf\cr}}$$}
 @z
 ------------------------------------------------------------------------------
-@x l.1178 Add Appendix G, the CTWILL source code.
+@x l.1177 Add Appendix G, the CTWILL source code.
+appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
 \vfil\eject\titletrue
 @y
+appendices \pdfURL{D}{common.pdf}, \pdfURL{E}{ctangle.pdf},
+and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.%
-\cwebfootnote{Actually, appendix~D contains the source code for \.{COMMON},
-and the additional appendix~G exhibits the source code for \.{CTWILL}, which
-is based on \.{CWEAVE}.}
+\cwebfootnote{Actually, \pdfURL{appendix~D}{common.pdf} contains the source
+code for \.{COMMON}, and the additional \pdfURL{appendix~G}{ctwill.pdf}
+exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 
 \eject\titletrue
 @z
@@ -80,7 +83,8 @@ is based on \.{CWEAVE}.}
 @x l.1697
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
-if you have a duplex printer. Appendices D, E, and F\cwebfootnote{And
-Appendix~G.} of the complete
+if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
+\pdfURL{E}{ctangle.pdf}, and \pdfURL{F}{cweave.pdf}\cwebfootnote{And
+\pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
 @z
 ------------------------------------------------------------------------------
