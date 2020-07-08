@@ -106,7 +106,7 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 \option i Indent parameters in function declarations.  This causes the
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
-value $N\in[0,127)$ of this option.  See section~92 % FIXME
+value $N\in[0,127]$ of this option.  See section~92 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  This causes the
