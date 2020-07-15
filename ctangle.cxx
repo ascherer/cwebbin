@@ -46,7 +46,7 @@
 #define stack_size 50
 #define buf_size 1000 \
 
-#define _(STRING) gettext(STRING)  \
+#define _(S) gettext(S)  \
 
 #define and_and 04
 #define lt_lt 020

@@ -163,7 +163,7 @@ err_print(_("! Include file name too long") ) ;goto restart;} \
 #define DIR_SEPARATOR separators[1]
 #define DEVICE_SEPARATOR separators[2] \
 
-#define _(STRING) gettext(STRING)  \
+#define _(S) gettext(S)  \
 
 
 #line 60 "common.w"
