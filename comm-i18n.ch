@@ -351,7 +351,7 @@ things for neutral behavior without internationalization.
 #endif
 @#
 #if HAVE_GETTEXT
-#include <locale.h>
+#include <locale.h> /* |@!LC_MESSAGES|, |@!LC_CTYPE| */
 #include <libintl.h>
 #else
 #define setlocale(A,B) ""

@@ -559,7 +559,7 @@ Modules for dealing with help messages and version info.
 
 @<Include files@>=
 #define CWEB
-#include "help.h"
+#include "help.h" /* |@!CTANGLEHELP|, |@!CWEAVEHELP|, |@!CTWILLHELP| */
 
 @ @<Display help message and |exit|@>=
 cb_usagehelp(program==ctangle ? CTANGLEHELP :

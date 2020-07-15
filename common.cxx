@@ -39,7 +39,7 @@
 #endif
 
 #if HAVE_GETTEXT
-#include <locale.h> 
+#include <locale.h>  
 #include <libintl.h> 
 #else
 #define setlocale(A,B) ""
