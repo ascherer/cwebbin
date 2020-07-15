@@ -525,9 +525,6 @@ typedef bool boolean;
   |@!kpathsea_debug|, |@!const_string|, |@!string| */
 #include <w2c/config.h> /* \&{integer} */
 #include <lib/lib.h> /* |@!versionstring| */
-@#
-#define CWEB
-#include "help.h"
 
 @ We set |kpse_program_name| to `\.{cweb}'.  This means if the variable
 \.{CWEBINPUTS.cweb} is present in \.{texmf.cnf} (or \.{CWEBINPUTS\_cweb}
@@ -558,15 +555,20 @@ Debugging output is always written to |stderr|, and begins with the string
 
 @* System dependent changes. The most volatile stuff comes at the very end.
 
-@ Modules for dealing with help messages and version info.
+Modules for dealing with help messages and version info.
 
-@<Display help message and |exit|@>=
+@<Include files@>=
+#define CWEB
+#include "help.h"
+
+@ @<Display help message and |exit|@>=
 cb_usagehelp(program==ctangle ? CTANGLEHELP :
   program==cweave ? CWEAVEHELP : CTWILLHELP, NULL);
 @.--help@>
 
-@ Special variants from Web2c's `\.{lib/usage.c}', adapted for \.{i18n}/\.{t10n}.
-We simply filter the strings through the catalogs (if available).
+@ Special variants from Web2c's `\.{lib/usage.c}', adapted for
+\.{i18n}/\.{t10n}.  We simply filter the strings through the catalogs
+(if available).
 
 @c
 static void cb_usage (const_string str)
