@@ -351,7 +351,7 @@ standard C types for boolean values, pointers, and objects with fixed sizes.
 @y
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
 standard C types for boolean values, pointers, and objects with fixed sizes
-(already in \Kpathsea/).
+(|@!uint8_t|, |@!uint16_t|; already in \Kpathsea/).
 
 @<Include files@>=
 #include <stdbool.h> /* type definition of |bool| */
@@ -410,8 +410,6 @@ char *p, *path_prefix, *next_path_prefix;
 @y
 @ The |scan_args| and |cb_show_banner| routines and the |bindtextdomain|
 argument string need a few extra variables.
-
-@s string int
 
 @d max_banner 50
 
@@ -515,13 +513,16 @@ The directories to be searched for come from three sources:
     i.e., \.{\$TEXMFDOTDIR:\$TEXMF/texmf/cweb//}.\par}
 @.CWEBINPUTS@>
 
+@s const_string int
+@s string int
+
 @d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
 
 @<Include files@>=
 typedef bool boolean;
 #define HAVE_BOOLEAN
-#include <kpathsea/kpathsea.h>
-    /* include every \Kpathsea/ header; |@!kpathsea_debug| */
+#include <kpathsea/kpathsea.h> /* include every \Kpathsea/ header;
+  |@!kpathsea_debug|, |@!const_string|, |@!string| */
 #include <w2c/config.h> /* \&{integer} */
 #include <lib/lib.h> /* |@!versionstring| */
 @#
@@ -566,7 +567,7 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP :
 
 @ Special variants from Web2c's `\.{lib/usage.c}', adapted for \.{i18n}/\.{t10n}.
 We simply filter the strings through the catalogs (if available).
-@s const_string int
+
 @c
 static void cb_usage (const_string str)
 {
