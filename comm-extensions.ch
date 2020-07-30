@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, June 20, 2020.
+Changes for COMMON.W by Andreas Scherer, July 30, 2020.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -22,7 +22,7 @@ which roughly concerns the following
 @x l.53
 sometimes use \.{CWEB} to refer to either of the two component
 @y
-sometimes use \.{CWEB} to refer to either of the three component
+sometimes use \.{CWEB} to refer to any of the three component
 @z
 
 Section 2.  Add CTWILL.
