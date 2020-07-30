@@ -25,14 +25,14 @@
 
 #line 1084 "comm-foo.ch"
 /*:81*//*85:*/
-#line 1124 "comm-foo.ch"
+#line 1122 "comm-foo.ch"
 
 #include <stdbool.h>  
 #include <stddef.h>  
 #include <stdint.h>  
 
 /*:85*//*89:*/
-#line 1196 "comm-foo.ch"
+#line 1194 "comm-foo.ch"
 
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
@@ -323,7 +323,7 @@ char change_buffer[buf_size];
 char*change_limit;
 
 /*:11*//*87:*/
-#line 1169 "comm-foo.ch"
+#line 1167 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -396,7 +396,7 @@ static void scan_args(void);
 #line 1253 "common.w"
 
 /*:69*//*83:*/
-#line 1099 "comm-foo.ch"
+#line 1097 "comm-foo.ch"
 
 boolean get_line(void);
 name_pointer id_lookup(const char*,const char*,char);
@@ -409,7 +409,7 @@ void reset_input(void);
 void sprint_section_name(char*,name_pointer);
 
 /*:83*//*84:*/
-#line 1112 "comm-foo.ch"
+#line 1110 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 static boolean input_ln(FILE*);
@@ -453,7 +453,7 @@ root= NULL;
 #line 71 "comm-foo.ch"
 
 /*90:*/
-#line 1221 "comm-foo.ch"
+#line 1219 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
@@ -1327,7 +1327,7 @@ puts(_("(That was a fatal error, my friend.)"));
 #line 759 "comm-foo.ch"
 
 /*88:*/
-#line 1181 "comm-foo.ch"
+#line 1179 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1583,7 +1583,7 @@ _("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 }
 
 /*:70*//*86:*/
-#line 1138 "comm-foo.ch"
+#line 1136 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
