@@ -1,11 +1,10 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% June 14, 2020
+% September 23, 2020
 
 # NAME
 
-ctwill, refsort, twinx -- translate CWEB to TeX \
-with mini-indexes per spread or per section
+ctwill, refsort, twinx - translate CWEB to TeX with mini-indexes
 
 # SYNOPSIS
 
