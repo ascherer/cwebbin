@@ -4,7 +4,7 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, June 11, 2020.
+# Last updated by Andreas Scherer, October 11, 2020.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
@@ -81,7 +81,8 @@ EXTENSION= cxx
 
 # This list of options works for all UNIX compilers tested.
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
-	-Wall -Wextra -Wno-implicit-fallthrough
+	-Wall -Wextra -Wno-implicit-fallthrough \
+	-Wno-format-overflow -Wno-stringop-truncation
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
