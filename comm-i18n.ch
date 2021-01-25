@@ -230,7 +230,7 @@ case harmless_message:
   puts("(Did you see the warning message above?)"); break;
 case error_message:
   puts("(Pardon me, but I think I spotted something wrong.)"); break;
-case fatal_message: puts("(That was a fatal error, my friend.)")
+case fatal_message: puts("(That was a fatal error, my friend.)");
 @y
 case spotless:
   if (show_happiness) puts(_("(No errors were found.)")); break;
@@ -252,11 +252,11 @@ Section 65.
 
 Section 66.
 
-@x l.1203
+x l.1203
 @d confusion(s) fatal("! This can't happen: ",s)
-@y
+y
 @d confusion(s) fatal(_("! This can't happen: "),s)
-@z
+z
 
 Section 75.
 
