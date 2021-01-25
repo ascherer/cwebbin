@@ -12,7 +12,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 Section 4.
 
 @x l.93
-  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>;
+  @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
 @y
   @<Set locale and bind language catalogs@>@;
   @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
