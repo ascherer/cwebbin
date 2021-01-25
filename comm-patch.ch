@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for COMMON.W, Version 3.64.
+It is a changefile for COMMON.W, Version 3.65.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -34,7 +34,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile COMMON.W.
 
-Copyright (C) 1993-1995,1998,2000,2005,2020 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2020,2021 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -171,17 +171,19 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 
 2020	11 March 2020	AS	Externalize common variables.
 2020	07 June 2020	AS	Fix two message errors.
+
+2021	25 January 2021	AS	Tuneup for CWEB 3.65 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.20
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
+\def\title{Common code for CTANGLE and CWEAVE (Version 3.65)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
 @x l.25
-  \centerline{(Version 3.64)}
+  \centerline{(Version 3.65)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -193,66 +195,3 @@ x l.43
 y
 \let\maybe=\iffalse % print only changed modules
 z
-
-Section 6. Externalize common variables.
-
-@x l.137
-@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
-@y
-@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
-
-@<Definitions...@>=
-char section_text[longest_name+1]; /* name being sought for */
-char *section_text_end = section_text+longest_name; /* end of |section_text| */
-char *id_first; /* where the current identifier begins in the buffer */
-char *id_loc; /* just after the current identifier in the buffer */
-@z
-
-Section 61. Fix bug: Don't print empty line for '-ph'.
-
-@x l.1151
-int wrap_up() {
-  putchar('\n');
-@y
-int wrap_up() {
-  if (show_progress || show_happiness || (history > spotless)) new_line;
-@z
-
-@x l.1183
-  if (*s) printf(s);
-@y
-  if (*s) err_print(s);
-@z
-
-Section 70. After 'boolean' was changed from 'short' to 'bool' it became
-obvious that '-1' is not really a useful value to designate special case '-'
-for the changefile argument. By flipping the detection logic all is fine again.
-
-@x l.1265
-  while (--argc > 0) {
-@y
-  strcpy(change_file_name,"/dev/null");
-  while (--argc > 0) {
-@z
-
-@x l.1282
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-@y
-@z
-
-Section 72.
-
-@x l.1312
-  if (strcmp(*argv,"-")==0) found_change=-1;
-  else {
-@y
-  if (strcmp(*argv,"-")!=0) {
-@z
-
-@x l.1319
-    found_change=1;
-  }
-@y
-  }
-  found_change=1;
-@z
