@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, July 30, 2020.
+Changes for COMMON.W by Andreas Scherer, January 25, 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -12,14 +12,14 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
 Section 1.  Add CTWILL.
 
-@x l.47
+@x l.55
 to both \.{CTANGLE} and \.{CWEAVE}, which roughly concerns the following
 @y
 to \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL},
 which roughly concerns the following
 @z
 
-@x l.53
+@x l.61
 sometimes use \.{CWEB} to refer to either of the two component
 @y
 sometimes use \.{CWEB} to refer to any of the three component
@@ -27,16 +27,16 @@ sometimes use \.{CWEB} to refer to any of the three component
 
 Section 2.  Add CTWILL.
 
-@x l.68
+x l.68
 |program|.
 
 @d ctangle 0
 @d cweave 1
-@y
+y
 |program|. And \.{CTWILL} adds some extra twists.
-@z
+z
 
-@x l.75
+@x l.84
 boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -47,7 +47,7 @@ cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 
 Section 22.
 
-@x l.457
+@x l.446
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -74,13 +74,13 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 23.
 
-@x l.474
+@x l.463
 @ @<Try to open...@>= {
 @y
 @ @.CWEBINPUTS@>@<Try to open...@>= {
 @z
 
-@x l.493
+@x l.482
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -131,7 +131,7 @@ Section 23.
 
 Section 61.
 
-@x l.1144
+@x l.1073
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -153,7 +153,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1156
+@x l.1085
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -184,14 +184,14 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1218
+x l.1218
 @d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
+y
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @d make_xrefs flags['x'] /* should cross references be output? */
-@z
+z
 
-@x l.1227
+@x l.1149
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[128]; /* an option for each 7-bit code */
@@ -200,7 +200,7 @@ const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 
 Section 69.
 
-@x l.1245
+@x l.1168
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -211,12 +211,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 70.
 
-@x l.1263
-  boolean flag_change;
-@y
-@z
-
-@x l.1265+ and l.231 of COMM-PATCH.CH
+@x l.1187
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -232,7 +227,7 @@ Section 70.
 @^system dependencies@>
 @z
 
-@x l.1269
+@x l.1192
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -258,14 +253,11 @@ Section 73.
 
 Section 74.
 
-@x l.1344
-@ @<Handle flag...@>=
+@x l.1266
+@<Handle flag...@>=
 {
-  if (**argv=='-') flag_change=0;
-  else flag_change=1;
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
-@ @d flag_change (**argv!='-')
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -277,7 +269,7 @@ Section 74.
 
 Section 75.
 
-@x l.1354
+@x l.1274
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -301,22 +293,9 @@ default: fatal(
 }
 @z
 
-Extended material after Section 82.
-
-@x l.570 of COMM-ANSI.CH
-@ The following functions are private to \.{common.w}.
-
-@<Predecl...@>=
-@y
-@ The following functions are private to \.{common.w}.
-
-@<Predecl...@>=
-static boolean set_path(char *,char *);@/
-@z
-
 Add even more material ...
 
-@x l.1418
+@x l.1319
 @** Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
