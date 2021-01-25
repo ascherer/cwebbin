@@ -129,36 +129,6 @@ Section 23.
   }
 @z
 
-Section 27.
-
-@x l.589
-@d max_bytes 90000 /* the number of bytes in identifiers,
-  index entries, and section names; must be less than $2^{24}$ */
-@d max_names 4000 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@y
-@d max_bytes 1000000 /* the number of bytes in identifiers,
-  index entries, and section names; must be less than $2^{24}$ */
-@d max_names 10239 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@z
-
-Section 32.
-
-@x l.642
-@d hash_size 353 /* should be prime */
-@y
-@d hash_size 8501 /* should be prime */
-@z
-
-Section 39.  'init_p' is a NOOP for CTANGLE anyway.
-
-@x l.711
-  if (program==cweave) init_p(p,t);
-@y
-  init_p(p,t);
-@z
-
 Section 61.
 
 @x l.1144
