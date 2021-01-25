@@ -45,32 +45,6 @@ typedef enum {
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 7.
-
-@x l.153
-@d buf_size 100 /* for \.{CWEAVE} and \.{CTANGLE} */
-@y
-@d buf_size 1000 /* for \.{CWEAVE} and \.{CTANGLE} */
-@z
-
-Section 10.
-
-@x l.207 - max_file_name_length is way too small.
-@d max_file_name_length 60
-@y
-@d max_file_name_length 1024
-@z
-
-Section 20.
-
-@x l.415
-@d max_sections 2000 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@y
-@d max_sections 10239 /* number of identifiers, strings, section names;
-  must be less than 10240 */
-@z
-
 Section 22.
 
 @x l.457
