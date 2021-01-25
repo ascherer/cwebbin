@@ -170,7 +170,7 @@ CTWILLSRC = ctwill.diffs ctwill.w ctwimac.tex prod.diffs proofmac.tex \
 # The following files make the body of this patched distribution of CWEB.
 # Note that not all of these changefiles are actually used.
 
-COMMPATCH = comm-ansi.ch comm-arexx.ch comm-arexx.hch \
+COMMPATCH = comm-arexx.ch comm-arexx.hch \
 	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
 	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
 	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
@@ -378,7 +378,7 @@ common.tex: common.w $(CCHANGES)
 # from a set of separate change files.  note that not all change files
 # listed above are actually used here, so you should not try to re-port
 # the resulting sources to Amiga (or MS/DOS).
-$(CCHANGES): common.w comm-patch.ch comm-ansi.ch comm-extensions.ch \
+$(CCHANGES): common.w comm-patch.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(HCHANGES): common.h comm-extensions.hch \
