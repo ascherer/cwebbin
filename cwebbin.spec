@@ -38,19 +38,19 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 # Overwrite 'prod.w' with CWEB original
-Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz
+Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.65.tar.gz
 # Add CWEBbin stuff on top
-Source2: cwebbin-2020.tar.gz
+Source2: cwebbin-3.65.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
 
 %if %{with ansi_only}
-Version: 3.64c
+Version: 3.65
 Release: ansi
 %else
-Version: 2020
-Release: 18
+Version: 2021
+Release: 19
 %endif
 
 %global __sed_i %{__sed} -i
