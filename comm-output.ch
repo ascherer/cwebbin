@@ -14,7 +14,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 Section 61.
 
 @x l.1155
-  @<Print the job |history|@>;
+  @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
@@ -22,12 +22,12 @@ Section 61.
 
 Section 67.
 
-@x l.1218
+x l.1218
 @d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
+y
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @d temporary_output flags['t'] /* should temporary output take precedence? */
-@z
+z
 
 @x l.1226
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
@@ -39,9 +39,9 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 Section 68.
 
 @x l.1234
-show_banner=show_happiness=show_progress=1;
+show_banner=show_happiness=show_progress=true;@/
 @y
-show_banner=show_happiness=show_progress=1;
+show_banner=show_happiness=show_progress=true;@/
 temporary_output=1; /* Check temporary output for changes */
 @z
 
@@ -60,12 +60,12 @@ Section 78.
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
-  if ((C_file=fopen(C_file_name,"w"))==NULL)
+  if ((C_file=fopen(C_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", C_file_name);
 @.Cannot open output file@>
 }
 else {
-  if ((tex_file=fopen(tex_file_name,"w"))==NULL)
+  if ((tex_file=fopen(tex_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", tex_file_name);
 }
 @y
