@@ -12,14 +12,10 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 Section 4.
 
 @x l.93
-  @<Initialize pointers@>;
   @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>;
-  @<Scan arguments and open output files@>;
 @y
-  @<Initialize pointers@>@;
   @<Set locale and bind language catalogs@>@;
   @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
-  @<Scan arguments and open output files@>@;
 @z
 
 Section 9.
