@@ -188,6 +188,14 @@ Section 1.
 @d banner "This is CTANGLE (@VERSION@)"
 @z
 
+Section 5.
+
+@x l.127
+@i common.h
+@y
+@i comm-foo.h
+@z
+
 Addendum.
 
 @x l.1543
