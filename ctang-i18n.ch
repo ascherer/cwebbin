@@ -36,7 +36,7 @@ Section 30.
 Section 34.
 
 @x l.428
-    printf("\n! Not present: <");
+    fputs("\n! Not present: <",stdout);
 @y
     fputs(_("\n! Not present: <"),stdout);
 @z
@@ -52,7 +52,7 @@ Section 40.
 Section 42.
 
 @x l.544
-    printf("\n! No program text was specified."); mark_harmless;
+    fputs("\n! No program text was specified.",stdout); mark_harmless;
 @y
     fputs(_("\n! No program text was specified."),stdout); mark_harmless;
 @z
@@ -64,13 +64,13 @@ Section 42.
 @z
 
 @x l.554
-        printf("\nWriting the output files:");
+        fputs("\nWriting the output files:",stdout);
 @y
         fputs(_("\nWriting the output files:"),stdout);
 @z
 
-@x l.564 and l.204 of CTANG-PATCH.CH
-      printf("Done.");
+@x l.564
+      fputs("Done.",stdout);
 @y
       fputs(_("Done."),stdout);
 @z
@@ -126,7 +126,7 @@ Section 67.
 @z
 
 @x l.1038
-    printf("\n! String too long: ");
+    fputs("\n! String too long: ",stdout);
 @y
     fputs(_("\n! String too long: "),stdout);
 @z
@@ -168,7 +168,7 @@ Section 72.
 @z
 
 @x l.1135
-  printf("\n! Section name too long: ");
+  fputs("\n! Section name too long: ",stdout);
 @y
   fputs(_("\n! Section name too long: "),stdout);
 @z
@@ -286,7 +286,7 @@ Section 94.
 Section 95.
 
 @x l.1539
-  printf("\nMemory usage statistics:\n");
+  puts("\nMemory usage statistics:");
   printf("%ld names (out of %ld)\n",
           (long)(name_ptr-name_dir),(long)max_names);
   printf("%ld replacement texts (out of %ld)\n",
