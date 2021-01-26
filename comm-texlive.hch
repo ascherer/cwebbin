@@ -7,28 +7,9 @@
 % comm-texlive.hch that get tie'd into comm-w2c.h that is used in modified
 % CTANGLE amd CWEAVE.
 
-Material in limbo.
+Section 15.
 
-@x l.18
-% Please send comments, suggestions, etc. to levy@@math.berkeley.edu.
-@y
-% Amendments to 'common.h' resulting in this extended 'comm-w2c.h' were
-% created by numerous collaborators over the course of many years.
-
-% Please send comments, suggestions, etc. to tex-k@@tug.org.
-@z
-
-@x l.19 of COMM-ANSI.HCH
-@i iso_types.w
-@y
-@s boolean int
-@s uint8_t int
-@s uint16_t int
-@z
-
-Section 6.
-
-@x l. 150 of COMM-ANSI.HCH
+@x l.218
 extern void print_stats(void);@/
 @y
 extern void print_stats(void);@/

@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, April 13, 2019.
+Changes for COMMON.H by Andreas Scherer, January 2021.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.H in case of errors or information requests with the help of 'gettext'
@@ -6,9 +6,9 @@ and the 'libintl' library.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Section 6 (of CTANGLE and CWEAVE).
+Section 3.
 
-@x l.35
+@x l.44
 @ @<Include files@>=
 @y
 @ You may have noticed that almost all \.{"strings"} in the \.{CWEB} sources
@@ -32,9 +32,9 @@ internationalization.
 @#
 @z
 
-Section 10.
+Section 8.
 
-@x l.120
+@x l.140
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
 @d confusion(s) fatal(_("! This can't happen: "),s)
