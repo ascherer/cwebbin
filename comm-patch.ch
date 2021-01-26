@@ -176,13 +176,13 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.20
+@x l.25
 \def\title{Common code for CTANGLE and CWEAVE (Version 3.65)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
-@x l.25
+@x l.30
   \centerline{(Version 3.65)}
 @y
   \centerline{(@VERSION@)}
@@ -190,13 +190,21 @@ Material in limbo.
 
 Activate this, if only the changed modules should be printed.
 
-x l.43
+x l.48
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only changed modules
 z
 
-Section 82.
+Section 2.
+
+@x l.78
+@i common.h
+@y
+@i comm-foo.h
+@z
+
+Section 94.
 
 @x l.1319
 @** Index.

@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, December 19, 2018.
+Changes for COMMON.H by Andreas Scherer, January 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
@@ -6,15 +6,15 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Section 5.  Add CTWILL.
+Section 2.  Add CTWILL.
 
-@x l.26
+@x l.34
 @d ctangle 0
 @d cweave 1
 @y
 @z
 
-@x l.32
+@x l.41
 extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -23,9 +23,9 @@ typedef enum {
 extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 11 (of CTANGLE and CWEAVE).
+Section 13 (of CTANGLE and CWEAVE).
 
-@x l.169
+@x l.194
 @d show_happiness flags['h'] /* should lack of errors be announced? */
 @y
 @d show_happiness flags['h'] /* should lack of errors be announced? */

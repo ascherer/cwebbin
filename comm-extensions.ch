@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, January 25, 2021.
+Changes for COMMON.W by Andreas Scherer, January 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -25,18 +25,15 @@ sometimes use \.{CWEB} to refer to either of the two component
 sometimes use \.{CWEB} to refer to any of the three component
 @z
 
-Section 2.  Add CTWILL.
+Section 18.  Add CTWILL.
 
-x l.68
+@x l.83
 |program|.
-
-@d ctangle 0
-@d cweave 1
-y
+@y
 |program|. And \.{CTWILL} adds some extra twists.
-z
+@z
 
-@x l.84
+@x l.86
 boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -45,9 +42,9 @@ typedef enum {
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 22.
+Section 38.
 
-@x l.446
+@x l.448
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -72,15 +69,15 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-Section 23.
+Section 39.
 
-@x l.463
+@x l.465
 @ @<Try to open...@>= {
 @y
 @ @.CWEBINPUTS@>@<Try to open...@>= {
 @z
 
-@x l.482
+@x l.484
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -129,9 +126,9 @@ Section 23.
   }
 @z
 
-Section 61.
+Section 75.
 
-@x l.1073
+@x l.1075
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -153,7 +150,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1085
+@x l.1087
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -165,7 +162,7 @@ can be made sensitive to these conditions.
   }
 @z
 
-Section 67.  Cross-over CWEAVE flag back into COMMON.
+Section 81.  Cross-over CWEAVE flag back into COMMON.
 
 C and CWEB are `international' languages, so non-English speaking users may
 want to write program documentations in their native language instead of in
@@ -184,23 +181,16 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-x l.1218
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d make_xrefs flags['x'] /* should cross references be output? */
-z
-
-@x l.1149
+@x l.1151
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[128]; /* an option for each 7-bit code */
 const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
-Section 69.
+Section 83.
 
-@x l.1168
+@x l.1170
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -209,9 +199,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 70.
+Section 84.
 
-@x l.1187
+@x l.1189
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -227,7 +217,7 @@ Section 70.
 @^system dependencies@>
 @z
 
-@x l.1192
+@x l.1194
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -243,17 +233,17 @@ Section 70.
 @^system dependencies@>
 @z
 
-Section 73.
+Section 87.
 
-@x l.1335
+@x l.1258
     if (flags['x']) { /* indexes will be generated */
 @y
     if (make_xrefs) { /* indexes will be generated */
 @z
 
-Section 74.
+Section 88.
 
-@x l.1266
+@x l.1268
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -267,9 +257,9 @@ Section 74.
     } else
 @z
 
-Section 75.
+Section 89.
 
-@x l.1274
+@x l.1276
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -295,7 +285,7 @@ default: fatal(
 
 Add even more material ...
 
-@x l.1319
+@x l.1321
 @** Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
