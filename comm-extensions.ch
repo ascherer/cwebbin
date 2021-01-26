@@ -282,6 +282,17 @@ default: fatal(
 
 Add even more material ...
 
+@x l.1311
+@** Addendum.  The following functions are private to |"common.w"|.
+
+@<Predecl...@>=
+@y
+@** Addendum.  The following functions are private to |"common.w"|.
+
+@<Predecl...@>=
+static boolean set_path(char *,char *);@/
+@z
+
 @x l.1321
 @** Index.
 @y
