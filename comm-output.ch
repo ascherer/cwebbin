@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, June 07, 2020.
+Changes for COMMON.W by Andreas Scherer, January 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,14 +6,14 @@ manual, the current run is documented in a temporary output file which
 is copied to the expected file in the last moment.  In case of an user
 abort, previous results are not destroyed.
 
-This change file requires COMM-PATCH.CH, COMM-ANSI.CH, and
-COMM-EXTENSIONS.CH to be applied as well.
+This change file requires COMM-PATCH.CH and COMM-EXTENSIONS.CH to be
+applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 61.
+Section 75.
 
-@x l.1155
+@x l.1086
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
@@ -29,34 +29,34 @@ y
 @d temporary_output flags['t'] /* should temporary output take precedence? */
 z
 
-@x l.1226
+@x l.1150
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
-Section 68.
+Section 83.
 
-@x l.1234
+@x l.1158
 show_banner=show_happiness=show_progress=true;@/
 @y
 show_banner=show_happiness=show_progress=true;@/
 temporary_output=1; /* Check temporary output for changes */
 @z
 
-Section 77.
+Section 91.
 
-@x l.1374
+@x l.1296
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 FILE *check_file; /* temporary output file */
 @z
 
-Section 78.
+Section 92.
 
-@x l.1377
+@x l.1299
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -101,9 +101,9 @@ else {
 }
 @z
 
-New material after section 82.
+New material after section 93.
 
-@x l.1418
+@x l.1319
 @** Index.
 @y
 @* Temporary file output.  Before we leave the program we have to make

@@ -1,144 +1,144 @@
-Changes for COMMON.W by Andreas Scherer, January 1, 2019.
+Changes for COMMON.W by Andreas Scherer, January  2021.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests with the help of 'gettext'
 and the 'libintl' library.
 
-This change file requires COMM-PATCH.CH, COMM-ANSI.CH, COMM-EXTENSIONS.CH,
-and COMM-OUTPUT.CH to be applied as well.
+This change file requires COMM-PATCH.CH, COMM-EXTENSIONS.CH, and COMM-OUTPUT.CH
+to be applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 4.
+Section 20.
 
-@x l.93
+@x l.105
   @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
 @y
   @<Set locale and bind language catalogs@>@;
   @<Set the default options common to \.{CTANGLE} and \.{CWEAVE}@>@;
 @z
 
-Section 9.
+Section 25.
 
-@x l.184
+@x l.181
       ungetc(c,fp); loc=buffer; err_print("! Input line too long");
 @y
       ungetc(c,fp); loc=buffer; err_print(_("! Input line too long"));
 @z
 
-Section 13.
+Section 29.
 
-@x l.275
+@x l.267
     err_print("! Missing @@x in change file");
 @y
     err_print(_("! Missing @@x in change file"));
 @z
 
-Section 14.
+Section 30.
 
-@x l.286
+@x l.278
     err_print("! Change file ended after @@x");
 @y
     err_print(_("! Change file ended after @@x"));
 @z
 
-Serction 16.
+Serction 32.
 
-@x l.334
+@x l.326
       err_print("! Change file ended before @@y");
 @y
       err_print(_("! Change file ended before @@y"));
 @z
 
-@x l.348
+@x l.340
         err_print("! CWEB file ended during a change");
 @y
         err_print(_("! CWEB file ended during a change"));
 @z
 
-Section 17.
+Section 33.
 
-@x l.360
+@x l.352
   loc=buffer+2; err_print("! Where is the matching @@y?");
 @y
   loc=buffer+2; err_print(_("! Where is the matching @@y?"));
 @z
 
-@x l.367
+@x l.359
     err_print("of the preceding lines failed to match");
 @y
     err_print(_("of the preceding lines failed to match"));
 @z
 
-Section 19.
+Section 35.
 
-@x l.397
+@x l.389
        fatal("! Cannot open input file ", web_file_name);
 @y
        fatal(_("! Cannot open input file "), web_file_name);
 @z
 
-@x l.403
+@x l.395
        fatal("! Cannot open change file ", change_file_name);
 @y
        fatal(_("! Cannot open change file "), change_file_name);
 @z
 
-Section 21.
+Section 37.
 
-@x l.442
+@x l.433
       err_print("! Include file name not given");
 @y
       err_print(_("! Include file name not given"));
 @z
 
-@x l.447
+@x l.438
       err_print("! Too many nested includes");
 @y
       err_print(_("! Too many nested includes"));
 @z
 
-Section 22.
+Section 38.
 
-@x l.469
+@x l.460
         err_print("! Include file name too long"); goto restart;}
 @y
         err_print(_("! Include file name too long")); goto restart;}
 @z
 
-Section 23.
+Section 39.
 
-@x l.517
+@x l.508
   include_depth--; err_print("! Cannot open include file"); goto restart;
 @y
   include_depth--; err_print(_("! Cannot open include file")); goto restart;
 @z
 
-Section 25.
+Section 41.
 
-@x l.540
+@x l.531
     err_print("! Change file ended without @@z");
 @y
     err_print(_("! Change file ended without @@z"));
 @z
 
-@x l.556
+@x l.547
         err_print("! Where is the matching @@z?");
 @y
         err_print(_("! Where is the matching @@z?"));
 @z
 
-Section 26.
+Section 42.
 
-@x l.576
+@x l.567
     err_print("! Change file entry did not match");
 @y
     err_print(_("! Change file entry did not match"));
 @z
 
-Section 39.
+Section 53.
 
-@x l.707
+@x l.668
   if (byte_ptr+l>byte_mem_end) overflow("byte memory");
   if (name_ptr>=name_dir_end) overflow("name");
 @y
@@ -146,9 +146,9 @@ Section 39.
   if (name_ptr>=name_dir_end) overflow(_("name"));
 @z
 
-Section 47.
+Section 61.
 
-@x l.867
+@x l.815
   if (s+name_len>byte_mem_end) overflow("byte memory");
   if (name_ptr+1>=name_dir_end) overflow("name");
 @y
@@ -156,63 +156,63 @@ Section 47.
   if (name_ptr+1>=name_dir_end) overflow(_("name"));
 @z
 
-Section 48.
+Section 62.
 
-@x l.895
+@x l.843
   if (name_ptr>=name_dir_end) overflow("name");
 @y
   if (name_ptr>=name_dir_end) overflow(_("name"));
 @z
 
-@x l.900
+@x l.848
   if (s+name_len>byte_mem_end) overflow("byte memory");
 @y
   if (s+name_len>byte_mem_end) overflow(_("byte memory"));
 @z
 
-Section 50.
+Section 64.
 
-@x l.945
+@x l.893
       fputs("\n! Ambiguous prefix: matches <",stdout);
 @y
       fputs(_("\n! Ambiguous prefix: matches <"),stdout);
 @z
 
-@x l.948
+@x l.896
       fputs(">\n and <",stdout);
 @y
       fputs(_(">\n and <"),stdout);
 @z
 
-Section 52.
+Section 66.
 
-@x l.974
+@x l.922
       fputs("\n! New name is a prefix of <",stdout);
 @y
       fputs(_("\n! New name is a prefix of <"),stdout);
 @z
 
-@x l.986
+@x l.934
       fputs("\n! New name extends <",stdout);
 @y
       fputs(_("\n! New name extends <"),stdout);
 @z
 
-@x l.992
+@x l.940
     fputs("\n! Section name incompatible with <",stdout);
 @y
     fputs(_("\n! Section name incompatible with <"),stdout);
 @z
 
-@x l.995
+@x l.943
     fputs(">,\n which abbreviates <",stdout);
 @y
     fputs(_(">,\n which abbreviates <"),stdout);
 @z
 
-Section 59.
+Section 73.
 
-@x l.1117
+@x l.1052
   printf(". (l. %d of change file)\n", change_line);
 else if (include_depth==0) printf(". (l. %d)\n", cur_line);
   else printf(". (l. %d of include file %s)\n", cur_line, cur_file_name);
@@ -222,9 +222,9 @@ else if (include_depth==0) printf(_(". (l. %d)\n"), cur_line);
   else printf(_(". (l. %d of include file %s)\n"), cur_line, cur_file_name);
 @z
 
-Section 62.
+Section 76.
 
-@x l.1162
+@x l.1093
 case spotless: if (show_happiness) puts("(No errors were found.)"); break;
 case harmless_message:
   puts("(Did you see the warning message above?)"); break;
@@ -242,25 +242,17 @@ case fatal_message:
   puts(_("(That was a fatal error, my friend.)"));
 @z
 
-Section 65.
+Section 79.
 
-@x l.1194
+@x l.1126
   printf("\n! Sorry, %s capacity exceeded",t); fatal("","");
 @y
   printf(_("\n! Sorry, %s capacity exceeded"),t); fatal("","");
 @z
 
-Section 66.
+Section 89.
 
-x l.1203
-@d confusion(s) fatal("! This can't happen: ",s)
-y
-@d confusion(s) fatal(_("! This can't happen: "),s)
-z
-
-Section 75.
-
-@x l.1354 and l.331 of COMM-EXTENSIONS.CH
+@x l.1276 and l.269 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -288,17 +280,17 @@ _("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n
 }
 @z
 
-Section 76.
+Section 90.
 
-@x l.1364
+@x l.1286
 @ @<Complain about arg...@>= fatal("! Filename too long\n", *argv);
 @y
 @ @<Complain about arg...@>= fatal(_("! Filename too long\n"), *argv);
 @z
 
-Section 77.
+Section 92.
 
-@x l.1381 and l.76 of COMM-OUTPUT.CH
+@x l.1303 and l.76 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", C_file_name);
 @y
     fatal(_("! Cannot open output file "), C_file_name);
@@ -310,7 +302,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1386 and l.91 of COMM-OUTPUT.CH
+@x l.1308 and l.91 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", tex_file_name);
 @y
     fatal(_("! Cannot open output file "), tex_file_name);
@@ -322,7 +314,7 @@ Section 77.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.384 of COMM-EXTENSIONS.CH
+@x l.320 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(0);
 @y
       err_print(_("! Include path too long")); return(0);
@@ -330,7 +322,7 @@ Section 77.
 
 More new material.
 
-@x l.1418
+@x l.1312
 @** Index.
 @y
 @* Internationalization.  You may have noticed that almost all \.{"strings"}

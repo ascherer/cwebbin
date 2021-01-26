@@ -6,7 +6,7 @@ well as an extended path search mechanism for lookup of `@i'input files.
 See `cwebmana.ch' for details about these new features.
 It also incorporates the basis for CTWILL, CWEAVE's evil twin.
 
-This change file requires COMM-PATCH.CH and COMM-ANSI.CH to be applied.
+This change file requires COMM-PATCH.CH to be applied first.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
@@ -287,7 +287,7 @@ Add even more material ...
 
 @<Predecl...@>=
 @y
-@** Addendum.  The following functions are private to |"common.w"|.
+@* Function prototypes.  The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/

@@ -9,59 +9,44 @@
 
 Material in limbo.
 
-@x l.20 and l.180 of COMM-PATCH.CH
+@x l.25 and l.180 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
 \def\title{Common code for CTANGLE and CWEAVE (\TeX~Live)}
 @z
 
-@x l.25 and l.186 of COMM-PATCH.CH
+@x l.30 and l.186 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
   \centerline{(Version 3.64 [\TeX~Live])}
 @z
 
-@x l.27
+@x l.32
 \def\botofcontents{\vfill
 @y
 \def\covernote{\vbox{%
 @z
 
-@x l.40
+@x l.45
 }
 @y
 }}
 \datecontentspage
 @z
 
-@x l.20 of COMM-ANSI.CH
-@i iso_types.w
-@y
-@s boolean int
-@s uint8_t int
-@s uint16_t int
-@z
+Section 20.
 
-Section 2.
-
-@x l.74 and l.28 of COMM-ANSI.CH
-typedef bool boolean;
-@y
-@z
-
-Section 4.
-
-@x l.93 and l.19 of COMM-I18N.CH
+@x l.104
   @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
 @z
 
-Section 5.
+Section 21.
 
-@x l.100
+@x l.111
 \.{ctype.h} header file.
 
 @<Include files@>=
@@ -70,33 +55,24 @@ Section 5.
 \.{ctype.h} header file, included through the \Kpathsea/ interface.
 @z
 
-Section 8.
+Section 25.
 
-@x l.165
-@ @<Include files@>=
-#include <stdio.h>
-@y
-@ Most of the standard \CEE/ interface comes from \Kpathsea/.
-@z
-
-Section 9.
-
-@x l.181
+@x l.178
     if ((*(k++) = c) != ' ') limit = k;
 @y
     if ((*(k++) = c) != ' ' && c != '\r') limit = k;
 @z
 
-Section 10.
+Section 26.
 
-@x l.221 - no alt_web_file_name needed.
+@x l.213 - no alt_web_file_name needed.
 char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
 @z
 
-Section 19.
+Section 35.
 
-@x l.394+ and l.82 of COMM-I18N.CH
+@x l.386 and l.78 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -115,7 +91,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-@x l.402+ and l.88 of COMM-I18N.CH
+@x l.394 and l.84 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -131,9 +107,9 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-Section 22.
+Section382.
 
-@x l.457 and l.73 of COMM-EXTENSIONS.CH
+@x l.448 and l.56 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -156,15 +132,15 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-@x l.471
+@x l.462
 @<Include...@>=
 #include <stdlib.h> /* declaration of |getenv| and |exit| */
 @y
 @z
 
-Section 23.
+Section 39.
 
-@x l.475
+@x l.466
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *k=cur_file_name, *kk;
@@ -174,7 +150,7 @@ Section 23.
   char *k=cur_file_name;
 @z
 
-@x l.489
+@x l.480
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
   if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL && @|
@@ -190,7 +166,7 @@ Section 23.
 
 Replaced by Kpathsea `kpse_find_file'.
 
-@x l.493 and l.120 of COMM-EXTENSIONS.CH
+@x l.484 and l.103 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -215,16 +191,16 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
-Section 68.  CWEB in TeX Live runs quietly by default.
+Section 82.  CWEB in TeX Live runs quietly by default.
 
-@x l.1234
+@x l.1158
 show_banner=show_happiness=show_progress=1;
 @y
 @z
 
-Section 71.
+Section 85.
 
-@x l.1238
+@x l.1163
 file.  It may have an extension, or it may omit the extension to get |".w"| or
 |".web"| added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @y
@@ -232,7 +208,9 @@ file.  It may have an extension, or it may omit the extension to get |".w"|
 added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @z
 
-@x l.1285
+Section 85.
+
+@x l.1209
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
 |alt_web_file_name| by adding |"web"| after the dot.
@@ -241,14 +219,14 @@ otherwise we add |".w"|. If this file can't be opened, we prepare an
 otherwise we add |".w"|.
 @z
 
-@x l.1302 - no alt_web_file_name
+@x l.1226 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y
 @z
 
-Section 74.
+Section 88.
 
-@x l.1344 and l.310 of COMM-EXTENSIONS.CH
+@x l.1268
 @<Handle flag...@>=
 {
 @y
@@ -268,7 +246,7 @@ Section 74.
   { show_banner=show_progress=show_happiness=0; continue; }
 @z
 
-@x l.1348
+@x l.1270
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -285,9 +263,9 @@ Section 74.
     } else
 @z
 
-Section 75.
+Section 89.
 
-@x l.1353 and l.331 of COMM-EXTENSIONS.CH and l.281 of COMM-I18N.CH
+@x l.1275 and l.269 of COMM-EXTENSIONS.CH and l.269 of COMM-I18N.CH
 {
 switch (program) {
 case ctangle: fatal(
@@ -307,35 +285,18 @@ cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 @.Usage:@>
 @z
 
-Section 77.
+Section 91.
 
-@x l.1375
+@x l.1297
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
-Section 81.
-
-@x l.1406 and l.530 of COMM-ANSI.CH
-@ For string handling we include the {\mc ANSI C} system header file instead
-of predeclaring the standard system functions |@!strlen|, |@!strcmp|,
-|@!strcpy|, |@!strncmp|, and |@!strncpy|.
-@^system dependencies@>
-
-@<Include...@>=
-#include <string.h>
-@y
-@ For string handling we include the {\mc ANSI C} system header file---through
-the \Kpathsea/ interface---instead of predeclaring the standard system
-functions |strlen|, |strcmp|, |strcpy|, |strncmp|, and |strncpy|.
-@^system dependencies@>
-@z
-
 Changes to former addenda.
 
-@x l.355 of COMM-EXTENSIONS.CH
+@x l.293 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
 @z
