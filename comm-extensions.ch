@@ -36,9 +36,6 @@ Section 18.  Add CTWILL.
 @x l.86
 boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
-typedef enum {
-  @!ctangle, @!cweave, @!ctwill
-} cweb;
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
