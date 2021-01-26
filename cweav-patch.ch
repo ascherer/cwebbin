@@ -203,7 +203,7 @@ Section 1.
 @d banner "This is CWEAVE (@VERSION@)"
 @z
 
-Section 3.  Clean up |main|.
+Section 2.  Clean up |main|.
 
 @x l.94
   make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
@@ -213,6 +213,14 @@ Section 3.  Clean up |main|.
   @<Set initial values@>@;
   common_init();
   @<Start \TEX/ output@>@;
+@z
+
+Sections 3--18.
+
+@x l.144
+@i common.h
+@y
+@i comm-foo.h
 @z
 
 Section 84.

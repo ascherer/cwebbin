@@ -179,7 +179,7 @@ COMMPATCH = comm-arexx.ch comm-arexx.hch \
 CTANGPATCH = ctang-borlandc.ch \
 	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
-CWEAVPATCH = cweav-ansi.ch cweav-borlandc.ch cweav-extensions.ch \
+CWEAVPATCH = cweav-borlandc.ch cweav-extensions.ch \
 	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
 	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
@@ -387,10 +387,10 @@ $(HCHANGES): common.h comm-extensions.hch \
 $(TCHANGES): ctangle.w ctang-patch.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-$(WCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
+$(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-$(LCHANGES): cweave.w cweav-patch.ch cweav-ansi.ch cweav-extensions.ch \
+$(LCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch cweav-twill.ch # ctwill-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(DCHANGES): cwebman.tex cwebman-patch.ch \
