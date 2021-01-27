@@ -96,7 +96,7 @@ email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
 @z
 ------------------------------------------------------------------------------
 @x l.1582
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.65)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z
