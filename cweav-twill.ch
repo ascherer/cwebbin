@@ -1290,12 +1290,6 @@ the index section itself---NOT!
 @y
 @z
 
-@x
-@ @<Rest of |trans_plus| union@>=
-@y
-@<Rest of |trans_plus| union@>=
-@z
-
 @x l.4532
 @ @<Output the name...@>=
 @y
