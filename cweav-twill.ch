@@ -1003,11 +1003,11 @@ section_count=0; format_visible=1; right_start_switch=0; copy_limbo();
 @z
 
 @x l.3961
-while (!input_has_ended) @<Translate the current section@>;
+while (!input_has_ended) @<Translate the current section@>@;
 }
 
 @y
-while (!input_has_ended) @<Translate the current section@>;
+while (!input_has_ended) @<Translate the current section@>@;
 }
 
 @ @<Glob...@>=
