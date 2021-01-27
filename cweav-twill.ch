@@ -1365,7 +1365,8 @@ care for keeping the original section numbering intact.}
 @z
 
 @x l.1141 of CWEAV-ANSI.CH
-not already in |"common.h"|.  These are private to \.{CWEAVE}.
+they are not already in |"common.h"|.  These are private to \.{CWEAVE}.
 @y
-not already in |"common.h"|.  These are private to \.{CWEAVE} and \.{CTWILL}.
+they are not already in |"common.h"|.  These are private to \.{CWEAVE}
+and \.{CTWILL}.
 @z
