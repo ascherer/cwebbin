@@ -664,12 +664,6 @@ the section is changed, we output `\.{\\*}' just after the number.
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
-@x
-@ @f copy_TeX TeX
-@y
-@f copy_TeX TeX
-@z
-
 @x l.1712
 @d end_arg 62 /* \.{@@]} */
 @y
