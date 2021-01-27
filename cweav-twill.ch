@@ -62,9 +62,9 @@ modified. The version number parallels the corresponding version of \.{CWEAVE}.
 @z
 
 @x l.42 of CWEAV-ANSI.CH
-#include <string.h>
+@<Predeclaration of procedures@>
 @y
-#include <string.h>
+@<Predeclaration of procedures@>
 
 @ Here is a sort of user manual for \.{CTWILL}---which is exactly like
 \.{CWEAVE} except that it produces much better documentation, for which you
