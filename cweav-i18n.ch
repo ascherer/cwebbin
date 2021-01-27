@@ -40,7 +40,7 @@ Section 49.
 @z
 
 @x l.878
-    printf("\n! String too long: ");
+    fputs("\n! String too long: ",stdout);
 @y
     fputs(_("\n! String too long: "),stdout);
 @z
@@ -62,7 +62,7 @@ Section 53.
 @z
 
 @x l.945
-  printf("\n! Section name too long: ");
+  fputs("\n! Section name too long: ",stdout);
 @y
   fputs(_("\n! Section name too long: "),stdout);
 @z
@@ -136,14 +136,16 @@ Section 71.
 Section 75.
 
 @x l.1280
-      printf("\n! Never defined: <"); print_section_name(p); putchar('>'); mark_harmless;
+      fputs("\n! Never defined: <",stdout);
+      print_section_name(p); putchar('>'); mark_harmless;
 @y
       fputs(_("\n! Never defined: <"),stdout);
       print_section_name(p); putchar('>'); mark_harmless;
 @z
 
 @x l.1285
-      printf("\n! Never used: <"); print_section_name(p); putchar('>'); mark_harmless;
+      fputs("\n! Never used: <",stdout);
+      print_section_name(p); putchar('>'); mark_harmless;
 @y
       fputs(_("\n! Never used: <"),stdout);
       print_section_name(p); putchar('>'); mark_harmless;
@@ -282,7 +284,7 @@ Section 189.
 Section 202.
 
 @x l.3905
-  printf("\n! Illegal control code in section name: <");
+  fputs("\n! Illegal control code in section name: <",stdout);
 @y
   fputs(_("\n! Illegal control code in section name: <"),stdout);
 @z
@@ -290,7 +292,7 @@ Section 202.
 Section 203.
 
 @x l.3920
-    printf("\n! C text in section name didn't end: <");
+    fputs("\n! C text in section name didn't end: <",stdout);
 @y
     fputs(_("\n! C text in section name didn't end: <"),stdout);
 @z
@@ -312,7 +314,7 @@ Section 204.
 Section 206.
 
 @x l.3957
-reset_input(); if (show_progress) printf("\nWriting the output file...");
+reset_input(); if (show_progress) fputs("\nWriting the output file...",stdout);
 @y
 reset_input(); if (show_progress) fputs(_("\nWriting the output file..."),stdout);
 @z
@@ -372,7 +374,7 @@ Section 219.
 Section 226.
 
 @x l.4307
-  phase=3; if (show_progress) printf("\nWriting the index...");
+  phase=3; if (show_progress) fputs("\nWriting the index...",stdout);
 @y
   phase=3; if (show_progress) fputs(_("\nWriting the index..."),stdout);
 @z
@@ -390,7 +392,7 @@ Section 226.
 @z
 
 @x l.4338 and l.443 of CWEAV-PATCH.CH
-  printf("Done.");
+  fputs("Done.",stdout);
 @y
   fputs(_("Done."),stdout);
 @z
@@ -406,7 +408,7 @@ Section 238.
 Section 249.
 
 @x l.4622
-  printf("\nMemory usage statistics:\n");
+  puts("\nMemory usage statistics:");
 @.Memory usage statistics:@>
   printf("%ld names (out of %ld)\n",
             (long)(name_ptr-name_dir),(long)max_names);
@@ -414,7 +416,7 @@ Section 249.
             (long)(xref_ptr-xmem),(long)max_refs);
   printf("%ld bytes (out of %ld)\n",
             (long)(byte_ptr-byte_mem),(long)max_bytes);
-  printf("Parsing:\n");
+  puts("Parsing:");
   printf("%ld scraps (out of %ld)\n",
             (long)(max_scr_ptr-scrap_info),(long)max_scraps);
   printf("%ld texts (out of %ld)\n",
@@ -423,10 +425,9 @@ Section 249.
             (long)(max_tok_ptr-tok_mem),(long)max_toks);
   printf("%ld levels (out of %ld)\n",
             (long)(max_stack_ptr-stack),(long)stack_size);
-  printf("Sorting:\n");
+  puts("Sorting:");
   printf("%ld levels (out of %ld)\n",
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
-}
 @y
   puts(_("\nMemory usage statistics:"));
 @.Memory usage statistics:@>
@@ -448,7 +449,6 @@ Section 249.
   puts(_("Sorting:"));
   printf(_("%ld levels (out of %ld)\n"),
             (long)(max_sort_ptr-scrap_info),(long)max_scraps);
-}
 @z
 
 @x l.103 of CWEAV-OUTPUT.CH
