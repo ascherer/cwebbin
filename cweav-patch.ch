@@ -225,7 +225,7 @@ Sections 3--18.
 
 Section 84.
 
-@x l.1364
+@x l.1361
 `\.{\\input cwebmac}'.
 
 @<Set init...@>=
@@ -248,6 +248,12 @@ standards and introduce new or improved features.
 Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index},'' and
 additional material follows below.
+
+@* Set {\tt CWEAVE} flags.
+At least one of these is already used in \.{COMMON}.
+
+@<Set init...@>=
+  force_lines=make_pb=true; /* controlled by command-line options */
 
 @** Index.
 @z

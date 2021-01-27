@@ -170,7 +170,7 @@ else if (cat1==stmt) {
 }
 @z
 
-@x l.105 and l.474 of CWEAV-PATCH.CH
+@x l.94 and l.474 of CWEAV-PATCH.CH
   force_lines=make_pb=true; /* controlled by command-line options */
 @y
   force_lines=make_pb=indent_param_decl=order_decl_stmt=true;
