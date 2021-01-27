@@ -206,7 +206,7 @@ Section 1.
 Section 2.  Clean up |main|.
 
 @x l.94
-  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
+  force_lines=make_pb=true; /* controlled by command-line options */
   common_init();
   @<Set initial values@>@;
 @y
@@ -244,12 +244,6 @@ standards and introduce new or improved features.
 Care has been taken to keep the original section numbering intact, so this new
 section should have the same number as the original ``\&{250.~Index},'' and
 additional material follows below.
-
-@* Set {\tt CWEAVE} flags.
-At least one of these is already used in \.{COMMON}.
-
-@<Set init...@>=
-  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
 
 @** Index.
 @z

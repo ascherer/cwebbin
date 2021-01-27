@@ -6,15 +6,6 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 78.
-
-@x l.1320
-@d tex_printf(c) fprintf(active_file,c)
-@y
-@d tex_printf(c) fprintf(active_file,"%s",c)
-@d tex_puts(c) fputs(c,active_file)
-@z
-
 Section 80.
 
 @x l.1364 and l.257 of CWEAV-PATCH.CH
