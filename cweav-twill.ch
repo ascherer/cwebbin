@@ -8,13 +8,6 @@
 % It's somewhat flaky, so you probably shouldn't try to use it.
 @z
 
-@x l.6
-% (essentially the same as version 3.6, which added
-%  recently introduced features of standard C++ to version 3.4)
-% (In November 2016 I made minor adjustments but changed no code -- DEK)
-@y
-@z
-
 @x l.21
 % Here is TeX material that gets inserted after \input cwebmac
 @y
