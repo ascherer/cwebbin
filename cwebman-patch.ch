@@ -68,15 +68,15 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.39
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.65)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
 @x l.53
-\vskip 18pt\centerline{(Version 3.64 --- February 2002)}
+\vskip 18pt\centerline{(Version 3.65 --- December 2018)}
 @y
-\vskip 18pt\centerline{(Version 3.64 --- February 2002)%
+\vskip 18pt\centerline{(Version 3.65 --- December 2018)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
