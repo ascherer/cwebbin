@@ -6,84 +6,6 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 4.
-
-@x l.121
-@d max_bytes 90000 /* the number of bytes in identifiers,
-@y
-@d max_bytes 1000000 /* the number of bytes in identifiers,
-@z
-
-@x l.123
-@d max_names 4000 /* number of identifiers, strings, section names;
-@y
-@d max_names 10239 /* number of identifiers, strings, section names;
-@z
-
-@x l.125
-@d max_sections 2000 /* greater than the total number of sections */
-@d hash_size 353 /* should be prime */
-@d buf_size 100 /* maximum length of input line, plus one */
-@y
-@d max_sections 10239 /* greater than the total number of sections */
-@d hash_size 8501 /* should be prime */
-@d buf_size 1000 /* maximum length of input line, plus one */
-@z
-
-@x l.132
-@d max_refs 20000 /* number of cross-references; must be less than 65536 */
-@d max_toks 20000 /* number of symbols in \CEE/ texts being parsed;
-@y
-@d max_refs 65535 /* number of cross-references; must be less than 65536 */
-@d max_toks 65535 /* number of symbols in \CEE/ texts being parsed;
-@z
-
-@x l.135
-@d max_texts 4000 /* number of phrases in \CEE/ texts being parsed;
-@y
-@d max_texts 10239 /* number of phrases in \CEE/ texts being parsed;
-@z
-
-@x l.137
-@d max_scraps 2000 /* number of tokens in \CEE/ texts being parsed */
-@d stack_size 400 /* number of simultaneous output levels */
-@y
-@d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
-@d stack_size 2000 /* number of simultaneous output levels */
-@z
-
-Section 21.  Cross-over from CWEAVE to COMMON.
-
-@x l.269
-@d no_xref (flags['x']==0)
-@d make_xrefs flags['x'] /* should cross references be output? */
-@y
-@d no_xref (!make_xrefs) /* should cross references be suppressed? */
-@z
-
-Section 40.  Parse C++ string prefixes L, U, u, u8.
-
-@x l.708
-    else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"'))@|
-@y
-    else if (c=='\'' || c=='"'@|
-           || ((c=='L' || c=='u' || c=='U')&&(*loc=='\'' || *loc=='"'))@|
-           || ((c=='u' && *loc=='8')&&(*(loc+1)=='\'' || *(loc+1)=='"'))@|
-@z
-
-Section 49.
-
-@x l.852
-  if (delim=='L') { /* wide character constant */
-    delim=*loc++; *++id_loc=delim;
-  }
-@y
-  if (delim=='L' || delim=='u' || delim=='U') { /* wide character constant */
-    if (delim=='u' && *loc=='8') { *++id_loc=*loc++; }
-    delim=*loc++; *++id_loc=delim;
-  }
-@z
-
 Section 78.
 
 @x l.1320
@@ -258,9 +180,9 @@ else if (cat1==stmt) {
 @z
 
 @x l.105 and l.474 of CWEAV-PATCH.CH
-  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
+  force_lines=make_pb=true; /* controlled by command-line options */
 @y
-  make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
+  force_lines=make_pb=indent_param_decl=order_decl_stmt=true;
     /* controlled by command-line options */
 @z
 

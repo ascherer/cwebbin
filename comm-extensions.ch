@@ -230,14 +230,6 @@ Section 84.
 @^system dependencies@>
 @z
 
-Section 87.
-
-@x l.1258
-    if (flags['x']) { /* indexes will be generated */
-@y
-    if (make_xrefs) { /* indexes will be generated */
-@z
-
 Section 88.
 
 @x l.1268
