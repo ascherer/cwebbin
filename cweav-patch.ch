@@ -226,8 +226,12 @@ Sections 3--18.
 Section 84.
 
 @x l.1364
+`\.{\\input cwebmac}'.
+
 @<Set init...@>=
 @y
+`\.{\\input cwebmac}'.
+
 @<Start \TEX/...@>=
 @z
 
