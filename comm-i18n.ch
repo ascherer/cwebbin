@@ -325,7 +325,16 @@ More new material.
 @x l.1312
 @** Index.
 @y
-@* Internationalization.
+@* Internationalization.  If a translation catalog for your personal
+\.{LANGUAGE} is installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
+will talk to you in your favorite language.  Catalog \.{cweb} contains all
+strings from ``plain \.{CWEB}.''
+@.cweb.mo@>
+
+If such a translation file is not available, you may want to improve this
+system by checking out the sources and translating the strings in file
+\.{cweb.pot}, and submitting the resulting \.{*.po} file(s) to the maintainer
+at \.{https://github.com/ascherer/cwebbin}.
 
 @<Include files@>=
 #if HAVE_GETTEXT
@@ -336,17 +345,7 @@ More new material.
 #define textdomain(A) ""
 #endif
 
-@ If a translation catalog for your personal \.{LANGUAGE} is installed at the
-appropriate place, \.{CTANGLE} and \.{CWEAVE} will talk to you in your favorite
-language.  Catalog \.{cweb} contains all strings from ``plain \.{CWEB}.''
-@.cweb.mo@>
-
-If such a translation file is not available, you may want to improve this
-system by checking out the sources and translating the strings in file
-\.{cweb.pot}, and submitting the resulting \.{*.po} file(s) to the maintainer
-at \.{https://github.com/ascherer/cwebbin}.
-
-@<Set locale...@>=
+@ @<Set locale...@>=
 setlocale(LC_MESSAGES, setlocale(LC_CTYPE, ""));
 bindtextdomain("cweb", "/usr/share/locale/");
 textdomain("cweb"); /* the majority of |"strings"| come from ``plain \.{CWEB}'' */
