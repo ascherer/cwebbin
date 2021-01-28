@@ -22,12 +22,3 @@ typedef enum {
 } cweb;
 extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
-
-Section 13 (of CTANGLE and CWEAVE).
-
-@x l.194
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d make_xrefs flags['x'] /* should cross references be output? */
-@z

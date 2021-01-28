@@ -34,7 +34,7 @@ internationalization.
 
 Section 8.
 
-@x l.140
+@x l.151
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
 @d confusion(s) fatal(_("! This can't happen: "),s)

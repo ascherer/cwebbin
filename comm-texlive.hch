@@ -3,13 +3,12 @@
 
 % Most of the original changes were merged with the set of change files
 % of the CWEBbin project.  This stripped change file is last in line of
-% comm-ansi.hch, comm-extensions.hch, comm-output.hch, comm-i18n.hch and
-% comm-texlive.hch that get tie'd into comm-w2c.h that is used in modified
-% CTANGLE amd CWEAVE.
+% comm-extensions.hch, comm-output.hch, comm-i18n.hch, and comm-texlive.hch
+% that get tie'd into comm-w2c.h that is used in CWEB for TeX Live.
 
 Section 15.
 
-@x l.218
+@x l.230
 extern void print_stats(void);@/
 @y
 extern void print_stats(void);@/
