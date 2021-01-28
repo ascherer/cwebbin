@@ -328,7 +328,7 @@ needs a few extra variables.
 @d DIR_SEPARATOR    separators[1]
 @d DEVICE_SEPARATOR separators[2]
 
-@<Other...@>=
+@<Global var...@>=
 char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
