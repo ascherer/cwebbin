@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, July 3, 2020.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, Januar 2021.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -77,13 +77,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (3.64 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (3.65 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (3.64 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (3.65 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.12 of CWEBMAN-EXTENSIONS.CH
@@ -96,7 +96,7 @@ variable is not set, some decent default paths are used instead.}
 @y
 \cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
 file can not be found in the current directory, \.{CWEB} will use the
-conventions of the \Kpathsea/ library as outlined in section~\X90:File lookup
+conventions of the \Kpathsea/ library as outlined in section~\X98:File lookup
 with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 % FIXME
 (This is true for any other input or change file lookup.)}
@@ -106,7 +106,7 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 \option i Indent parameters in function declarations.  This causes the
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
-value $N\in[0,127]$ of this option.  See section~92 % FIXME
+value $N\in[0,127]$ of this option.  See section~100 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  This causes the
@@ -199,6 +199,6 @@ And here's what the same excerpt looks like when typeset.
 @x l.101 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 3.65)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
