@@ -1361,7 +1361,7 @@ and \.{CTWILL}.
 
 @x l.483 of CWEAV-PATCH.CH
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{250.~Index},'' and
+section should have the same number as the original ``\&{253.~Index},'' and
 additional material follows below.
 @y
 \bigskip
