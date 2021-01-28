@@ -255,27 +255,33 @@ Section 89.
 @x l.1276 and l.269 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
-"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+"! Usage: ctangle [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
 case cweave: fatal(
-"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+"! Usage: cweave [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 default: fatal(
-"! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+"! Usage: ctwill [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 }
 @y
 switch (program) {
 case ctangle: fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
+_("! Usage: ctangle [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
    ,"");
 @.Usage:@>
 case cweave: fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+_("! Usage: cweave [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 default: fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+_("! Usage: ctwill [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 }
 @z

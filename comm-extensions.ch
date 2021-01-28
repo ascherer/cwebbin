@@ -41,7 +41,7 @@ cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 
 Section 38.
 
-@x l.448
+@x l.446
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -68,13 +68,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 39.
 
-@x l.465
-@ @<Try to open...@>= {
-@y
-@ @.CWEBINPUTS@>@<Try to open...@>= {
-@z
-
-@x l.484
+@x l.482
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -123,9 +117,9 @@ Section 39.
   }
 @z
 
-Section 75.
+Section 74.
 
-@x l.1075
+@x l.1063
 @ Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -147,7 +141,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1087
+@x l.1075
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -159,7 +153,7 @@ can be made sensitive to these conditions.
   }
 @z
 
-Section 81.  Cross-over CWEAVE flag back into COMMON.
+Section 81.
 
 C and CWEB are `international' languages, so non-English speaking users may
 want to write program documentations in their native language instead of in
@@ -178,16 +172,16 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1151
+@x l.1139
 boolean flags[128]; /* an option for each 7-bit code */
 @y
 boolean flags[128]; /* an option for each 7-bit code */
 const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 @z
 
-Section 83.
+Section 82.
 
-@x l.1170
+@x l.1158
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -196,9 +190,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 84.
+Section 83.
 
-@x l.1189
+@x l.1177
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -214,7 +208,7 @@ Section 84.
 @^system dependencies@>
 @z
 
-@x l.1194
+@x l.1182
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -230,9 +224,9 @@ Section 84.
 @^system dependencies@>
 @z
 
-Section 88.
+Section 87.
 
-@x l.1268
+@x l.1256
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -246,9 +240,9 @@ Section 88.
     } else
 @z
 
-Section 89.
+Section 88.
 
-@x l.1276
+@x l.1264
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -260,14 +254,17 @@ else fatal(
 @y
 switch (program) {
 case ctangle: fatal(
-"! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
+"! Usage: ctangle [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
    ,"");
 @.Usage:@>
 case cweave: fatal(
-"! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+"! Usage: cweave [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 default: fatal(
-"! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
+"! Usage: ctwill [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
 }
 @z
