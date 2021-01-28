@@ -302,7 +302,7 @@ static boolean set_path(char *,char *);@/
 @y
 @z
 
-@x l.580 of COMM-ANSI.CH
+x l.580 of COMM-ANSI.CH
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
 standard C types for boolean values, pointers, and objects with fixed sizes.
 
@@ -310,7 +310,7 @@ standard C types for boolean values, pointers, and objects with fixed sizes.
 #include <stdbool.h> /* type definition of |@!bool| */
 #include <stddef.h> /* type definition of |@!ptrdiff_t| */
 #include <stdint.h> /* type definition of |@!uint8_t| et al. */
-@y
+y
 @* Standard C library interfaces.  This updated version of \.{CWEB} uses
 standard C types for boolean values, pointers, and objects with fixed sizes
 (|@!uint8_t|, |@!uint16_t|; already in \Kpathsea/).
@@ -318,7 +318,7 @@ standard C types for boolean values, pointers, and objects with fixed sizes
 @<Include files@>=
 #include <stdbool.h> /* type definition of |bool| */
 #include <stddef.h> /* type definition of |ptrdiff_t| */
-@z
+z
 
 @x l.363 of COMM-EXTENSIONS.CH and l.320 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
