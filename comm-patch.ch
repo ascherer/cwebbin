@@ -204,9 +204,9 @@ Section 2.
 @i comm-foo.h
 @z
 
-Section 94.
+Section 92.
 
-@x l.1319
+@x l.1299
 @** Addendum.  The following functions are private to |"common.w"|.
 @y
 @** Extensions to \.{CWEB}.  The following sections introduce new or improved

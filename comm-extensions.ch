@@ -271,7 +271,7 @@ default: fatal(
 
 Add even more material ...
 
-@x l.1311
+@x l.1299 and l.219 of COMM-PATCH.CH
 @* Function prototypes.  The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
@@ -282,7 +282,7 @@ Add even more material ...
 static boolean set_path(char *,char *);@/
 @z
 
-@x l.1321
+@x l.1309
 @** Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking

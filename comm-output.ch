@@ -11,52 +11,45 @@ applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 75.
+Section 74.
 
-@x l.1086
+@x l.1074
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
 @z
 
-Section 67.
+Section 80.
 
-x l.1218
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d temporary_output flags['t'] /* should temporary output take precedence? */
-z
-
-@x l.1150
+@x l.1138
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
-Section 83.
+Section 81.
 
-@x l.1158
+@x l.1146
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 temporary_output=true; /* Check temporary output for changes */
 @z
 
-Section 91.
+Section 90.
 
-@x l.1296
+@x l.1284
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 FILE *check_file; /* temporary output file */
 @z
 
-Section 92.
+Section 91.
 
-@x l.1299
+@x l.1287
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -101,9 +94,9 @@ else {
 }
 @z
 
-New material after section 93.
+New material after section 92.
 
-@x l.1319
+@x l.1309
 @** Index.
 @y
 @* Temporary file output.  Before we leave the program we have to make
