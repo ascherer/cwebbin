@@ -246,7 +246,7 @@ the course of a quarter century. They make \.{CWEB} adhere to modern coding
 standards and introduce new or improved features.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{250.~Index},'' and
+section should have the same number as the original ``\&{253.~Index},'' and
 additional material follows below.
 
 @* Set {\tt CWEAVE} flags.
