@@ -325,27 +325,15 @@ More new material.
 @x l.1312
 @** Index.
 @y
-@* Internationalization.  You may have noticed that almost all \.{"strings"}
-in the \.{CWEB} sources are placed in the context of the `|_|'~macro.
-This is just a shortcut for the `|@!gettext|' function from the ``GNU~gettext
-utilities.'' For systems that do not have this library installed, we wrap
-things for neutral behavior without internationalization.
-
-@d _(S) gettext(S)
+@* Internationalization.
 
 @<Include files@>=
-#ifndef HAVE_GETTEXT
-#define HAVE_GETTEXT 0
-#endif
-@#
 #if HAVE_GETTEXT
 #include <locale.h> /* |@!LC_MESSAGES|, |@!LC_CTYPE| */
-#include <libintl.h>
 #else
 #define setlocale(A,B) ""
 #define bindtextdomain(A,B) ""
 #define textdomain(A) ""
-#define gettext(A) A
 #endif
 
 @ If a translation catalog for your personal \.{LANGUAGE} is installed at the
