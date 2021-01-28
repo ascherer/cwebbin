@@ -311,6 +311,9 @@ Changes to former addenda.
 @x l.282 of COMM-EXTENSIONS.CH
 static boolean set_path(char *,char *);@/
 @y
+static void cb_usage (const_string str);@/
+static void cb_usagehelp (const_string *message, const_string bug_email);@/
+void cb_show_banner (void); /* |extern| for option \.{+b} */
 @z
 
 @x l.288 of COMM-EXTENSIONS.CH and l.326 of COMM-I18N.CH
@@ -578,11 +581,6 @@ void cb_show_banner (void)
   textdomain("cweb");
 @.cweb.mo@>
 }
-
-@ @<Predecl...@>=
-static void cb_usage (const_string str);@/
-static void cb_usagehelp (const_string *message, const_string bug_email);@/
-void cb_show_banner (void); /* |extern| for option \.{+b} */
 
 @** Index.
 @z
