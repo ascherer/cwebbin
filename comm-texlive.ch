@@ -35,6 +35,12 @@ Material in limbo.
 \datecontentspage
 @z
 
+@x
+@i comm-foo.h
+@y
+@i comm-w2c.h
+@z
+
 Section 20.
 
 @x l.104
