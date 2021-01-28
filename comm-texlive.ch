@@ -194,8 +194,9 @@ Replaced by Kpathsea `kpse_find_file'.
 Section 82.  CWEB in TeX Live runs quietly by default.
 
 @x l.1158
-show_banner=show_happiness=show_progress=1;
+show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
+make_xrefs=true;@/
 @z
 
 Section 85.
