@@ -272,19 +272,22 @@ Section 87.
 
 Section 88.
 
-@x l.1262 and l.255 of COMM-EXTENSIONS.CH and l.256 of COMM-I18N.CH
+@x l.1262 and l.255 of COMM-EXTENSIONS.CH and l.274 of COMM-I18N.CH
 @ @<Print usage error message and quit@>=
 {
 switch (program) {
 case ctangle: fatal(
-_("! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
+_("! Usage: ctangle [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
    ,"");
 @.Usage:@>
 case cweave: fatal(
-_("! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+_("! Usage: cweave [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 default: fatal(
-_("! Usage: ctwill [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
+_("! Usage: ctwill [options] "@|
+"webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
 }
 }
