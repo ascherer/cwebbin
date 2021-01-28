@@ -372,7 +372,7 @@ argument string need a few extra variables.
 @d DIR_SEPARATOR    separators[1]
 @d DEVICE_SEPARATOR separators[2]
 
-@<Other...@>=
+@<Global var...@>=
 char cb_banner[max_banner];@/
 string texmf_locale;@/
 @z
