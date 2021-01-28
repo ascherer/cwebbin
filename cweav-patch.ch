@@ -238,22 +238,23 @@ Section 84.
 Addendum.
 
 @x l.4644
-@** Index.
+@** Addendum.  Here are declarations of all functions in this code, as far as
+they are not already in |"common.h"|.  These are private to \.{CWEAVE}.
 @y
-@** Extensions for modern {\tt CWEB}.  The following sections introduce changes
-and extensions to the code that have been created by numerous contributors over
-the course of a quarter century. They make \.{CWEB} adhere to modern coding
-standards and introduce new or improved features.
+@** Extensions to \.{CWEB}.  The following sections introduce new or improved
+features that have been created by numerous contributors over the course of a
+quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{253.~Index},'' and
-additional material follows below.
+material should nicely integrate with the original ``\&{252.~Addendum}.''
 
-@* Set {\tt CWEAVE} flags.
+@* Set \.{CWEAVE} flags.
 At least one of these is already used in \.{COMMON}.
 
 @<Set init...@>=
   force_lines=make_pb=true; /* controlled by command-line options */
 
-@** Index.
+@* Function declarations.  Here are declarations of all functions in this code,
+as far as they are not already in |"common.h"|.  These are private to
+\.{CWEAVE}.
 @z

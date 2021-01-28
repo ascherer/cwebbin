@@ -275,7 +275,7 @@ default: fatal(
 Add even more material ...
 
 @x l.1311
-@** Addendum.  The following functions are private to |"common.w"|.
+@* Function prototypes.  The following functions are private to |"common.w"|.
 
 @<Predecl...@>=
 @y

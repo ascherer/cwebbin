@@ -1352,21 +1352,21 @@ else {
             (long)(title_code_ptr-title_code),(long)max_titles);
 @z
 
-@x l.1141 of CWEAV-ANSI.CH
-they are not already in |"common.h"|.  These are private to \.{CWEAVE}.
-@y
-they are not already in |"common.h"|.  These are private to \.{CWEAVE}
-and \.{CTWILL}.
-@z
-
 @x l.483 of CWEAV-PATCH.CH
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{253.~Index},'' and
-additional material follows below.
+material should nicely integrate with the original ``\&{252.~Addendum}.''
 @y
 \bigskip
 \font\itt=cmitt10
 {\noindent \it Although \.{\itt CTWILL} is based on \.{\itt cweave.w}, new and
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
+@z
+
+@x l.1141 of CWEAV-ANSI.CH
+as far as they are not already in |"common.h"|.  These are private to
+\.{CWEAVE}.
+@y
+as far as they are not already in |"common.h"|.  These are private to
+\.{CWEAVE} and \.{CTWILL}.
 @z

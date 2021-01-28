@@ -207,16 +207,14 @@ Section 2.
 Section 94.
 
 @x l.1319
-@** Index.
+@** Addendum.  The following functions are private to |"common.w"|.
 @y
-@** Extensions for modern \.{CWEB}.  The following sections introduce changes
-and extensions to the code that have been created by numerous contributors over
-the course of a quarter century. They make \.{CWEB} adhere to modern coding
-standards and introduce new or improved features.
+@** Extensions to \.{CWEB}.  The following sections introduce new or improved
+features that have been created by numerous contributors over the course of a
+quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{93.~Index},'' and
-additional material follows below.
+material should nicely integrate with the original ``\&{92.~Addendum}.''
 
-@** Index.
+@* Function prototypes.  The following functions are private to |"common.w"|.
 @z
