@@ -4,12 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, October 11, 2020.
+# Last updated by Andreas Scherer, January 2021.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2020 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2021 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -170,23 +170,18 @@ CTWILLSRC = ctwill.diffs ctwill.w ctwimac.tex prod.diffs proofmac.tex \
 # The following files make the body of this patched distribution of CWEB.
 # Note that not all of these changefiles are actually used.
 
-COMMPATCH = comm-arexx.ch comm-arexx.hch \
-	comm-borlandc.ch comm-borlandc.hch comm-extensions.ch \
-	comm-extensions.hch comm-i18n.ch comm-i18n.hch comm-memory.ch \
-	comm-memory.hch comm-newpage.ch comm-output.ch comm-output.hch \
-	comm-patch.ch comm-translation.ch comm-translation.hch \
-	comm-texlive.ch comm-texlive.hch
-CTANGPATCH = ctang-borlandc.ch \
-	ctang-i18n.ch ctang-memory.ch ctang-newpage.ch ctang-output.ch \
-	ctang-patch.ch ctang-translation.ch ctang-texlive.ch
-CWEAVPATCH = cweav-borlandc.ch cweav-extensions.ch \
-	cweav-i18n.ch cweav-memory.ch cweav-newpage.ch cweav-output.ch \
-	cweav-patch.ch cweav-translation.ch cweav-texlive.ch
+COMMPATCH = comm-extensions.ch comm-extensions.hch \
+	comm-i18n.ch comm-i18n.hch comm-newpage.ch \
+	comm-output.ch comm-output.hch \
+	comm-patch.ch comm-texlive.ch comm-texlive.hch
+CTANGPATCH = ctang-i18n.ch ctang-newpage.ch ctang-output.ch \
+	ctang-patch.ch ctang-texlive.ch
+CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
+	cweav-output.ch cweav-patch.ch cweav-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
-PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) \
-	README.txt Makefile.bcc Makefile.sas Makefile.unix \
-	cwebbin.spec cwebbin.dsw ctangle.dsp cweave.dsp examples/wmerge.dsp \
+PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
+	cwebbin.spec examples/wmerge.dsp \
 	0001-Update-CWEBbin-manpage.patch \
 	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
 	ctangle.1 cweave.1 ctwill.md refsort.1 twinx.1 \
@@ -201,19 +196,17 @@ EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/wmerg-output.ch examples/wmerg-patch.ch \
 	examples/wordtest-ansi.ch
 
-AREXX = arexx
-
-CATALOGS = catalogs
-
 I18N = po
 
 INCLUDE = cwebinputs
 
 MACROS = texinputs
 
+VAULT = vault
+
 ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
-      $(CTWILLPATCH) $(CWEBMANPATCH) $(PATCH) $(EXAMPLES) $(AREXX) \
-      $(CATALOGS) $(I18N) $(INCLUDE) $(MACROS)
+      $(CTWILLPATCH) $(CWEBMANPATCH) $(PATCH) $(EXAMPLES) $(I18N) \
+      $(INCLUDE) $(MACROS) $(VAULT)
 
 .SUFFIXES: .dvi .tex .w .pdf .ref .sref
 
@@ -461,10 +454,9 @@ remove:
 	- $(RM) $(CWEBMANPATCH)
 	- $(RM) $(PATCH)
 	- $(RM) $(EXAMPLES)
-	- $(RM) -r $(AREXX)
-	- $(RM) -r $(CATALOGS)
 	- $(RM) -r $(I18N)
 	- $(RM) -r $(INCLUDE)
 	- $(RM) -r $(MACROS)
+	- $(RM) -r $(VAULT)
 
 # End of Makefile.unix
