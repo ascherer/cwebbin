@@ -50,17 +50,6 @@ Section 20.
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
 @z
 
-Section 21.
-
-@x l.111
-\.{ctype.h} header file.
-
-@<Include files@>=
-#include <ctype.h>
-@y
-\.{ctype.h} header file, included through the \Kpathsea/ interface.
-@z
-
 Section 25.
 
 @x l.176
@@ -136,12 +125,6 @@ The actual file lookup is done with the help of the \Kpathsea/ library;
 see section~\X98:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
 @^system dependencies@> @.CWEBINPUTS@>
-@z
-
-@x l.460
-@<Include...@>=
-#include <stdlib.h> /* declaration of |getenv| and |exit| */
-@y
 @z
 
 Section 39.
@@ -308,14 +291,6 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.282 of COMM-EXTENSIONS.CH
-static boolean set_path(char *,char *);@/
-@y
-static void cb_usage (const_string str);@/
-static void cb_usagehelp (const_string *message, const_string bug_email);@/
-void cb_show_banner (void); /* |extern| for option \.{+b} */
-@z
-
 @x l.288 of COMM-EXTENSIONS.CH and l.326 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
@@ -326,7 +301,10 @@ are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
 @^system dependencies@> @.CWEBINPUTS@>
 
-@c
+@<Predecl...@>=
+static boolean set_path(char *,char *);@/
+
+@ @c
 static boolean set_path(char *include_path,char *environment)
 {
   char string[max_path_length+2];
@@ -349,6 +327,10 @@ static boolean set_path(char *include_path,char *environment)
 }
 
 @y
+@ @<Predecl...@>=
+static void cb_usage (const_string str);@/
+static void cb_usagehelp (const_string *message, const_string bug_email);@/
+void cb_show_banner (void); /* |extern| for option \.{+b} */
 @z
 
 @x l.319 of COMM-EXTENSIONS.CH
