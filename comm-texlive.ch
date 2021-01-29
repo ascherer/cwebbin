@@ -19,7 +19,7 @@ Material in limbo.
 @x l.30 and l.188 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 3.64 [\TeX~Live])}
+  \centerline{(Version 3.65 [\TeX~Live])}
 @z
 
 @x l.32
