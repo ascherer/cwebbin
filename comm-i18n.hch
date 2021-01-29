@@ -9,9 +9,11 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 Section 3.
 
 @x l.44
+@ Interface to the standard \CEE/ library:
+
 @<Include files@>=
 @y
-You may have noticed that almost all \.{"strings"} in the \.{CWEB} sources
+@ You may have noticed that almost all \.{"strings"} in the \.{CWEB} sources
 are placed in the context of the `|_|'~macro.  This is just a shortcut for the
 `|@!gettext|' function from the ``GNU~gettext utilities.'' For systems that do
 not have this library installed, we wrap things for neutral behavior without
