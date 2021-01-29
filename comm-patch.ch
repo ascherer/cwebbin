@@ -206,15 +206,15 @@ Section 2.
 
 Section 92.
 
-@x l.1299
-@** Addendum.  The following functions are private to |"common.w"|.
+@x l.1306
+@** Index.
 @y
 @** Extensions to \.{CWEB}.  The following sections introduce new or improved
 features that have been created by numerous contributors over the course of a
 quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{92.~Addendum}.''
+material should nicely integrate with the original ``\&{85.~Index}.''
 
-@* Function prototypes.  The following functions are private to |"common.w"|.
+@** Index.
 @z

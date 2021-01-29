@@ -198,18 +198,15 @@ Section 5.
 
 Addendum.
 
-@x l.1543
-@** Addendum.  Here are declarations of all functions in this code, as far as
-they are not already in |"common.h"|.  These are private to \.{CTANGLE}.
+@x l.1550
+@** Index.
 @y
 @** Extensions to \.{CWEB}.  The following sections introduce new or improved
 features that have been created by numerous contributors over the course of a
 quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{99.~Addendum}.''
+material should nicely integrate with the original ``\&{105.~Index}.''
 
-@* Function declarations.  Here are declarations of all functions in this code,
-as far as they are not already in |"common.h"|.  These are private to
-\.{CTANGLE}.
+@** Index.
 @z

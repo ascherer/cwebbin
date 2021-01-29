@@ -120,7 +120,7 @@ Section 39.
 Section 74.
 
 @x l.1063
-@ Some implementations may wish to pass the |history| value to the
+Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
 a status of 0 if and only if only harmless messages were printed.
@@ -271,17 +271,6 @@ default: fatal(
 
 Add even more material ...
 
-@x l.1299 and l.219 of COMM-PATCH.CH
-@* Function prototypes.  The following functions are private to |"common.w"|.
-
-@<Predecl...@>=
-@y
-@* Function prototypes.  The following functions are private to |"common.w"|.
-
-@<Predecl...@>=
-static boolean set_path(char *,char *);@/
-@z
-
 @x l.1309
 @** Index.
 @y
@@ -294,7 +283,10 @@ are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
 @^system dependencies@> @.CWEBINPUTS@>
 
-@c
+@<Predecl...@>=
+static boolean set_path(char *,char *);@/
+
+@ @c
 static boolean set_path(char *include_path,char *environment)
 {
   char string[max_path_length+2];

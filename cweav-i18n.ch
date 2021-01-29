@@ -411,44 +411,44 @@ Section 249.
   puts("\nMemory usage statistics:");
 @.Memory usage statistics:@>
   printf("%ld names (out of %ld)\n",
-            (long)(name_ptr-name_dir),(long)max_names);
+            (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
   printf("%ld cross-references (out of %ld)\n",
-            (long)(xref_ptr-xmem),(long)max_refs);
+            (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
   printf("%ld bytes (out of %ld)\n",
-            (long)(byte_ptr-byte_mem),(long)max_bytes);
+            (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
   puts("Parsing:");
   printf("%ld scraps (out of %ld)\n",
-            (long)(max_scr_ptr-scrap_info),(long)max_scraps);
+            (ptrdiff_t)(max_scr_ptr-scrap_info),(long)max_scraps);
   printf("%ld texts (out of %ld)\n",
-            (long)(max_text_ptr-tok_start),(long)max_texts);
+            (ptrdiff_t)(max_text_ptr-tok_start),(long)max_texts);
   printf("%ld tokens (out of %ld)\n",
-            (long)(max_tok_ptr-tok_mem),(long)max_toks);
+            (ptrdiff_t)(max_tok_ptr-tok_mem),(long)max_toks);
   printf("%ld levels (out of %ld)\n",
-            (long)(max_stack_ptr-stack),(long)stack_size);
+            (ptrdiff_t)(max_stack_ptr-stack),(long)stack_size);
   puts("Sorting:");
   printf("%ld levels (out of %ld)\n",
-            (long)(max_sort_ptr-scrap_info),(long)max_scraps);
+            (ptrdiff_t)(max_sort_ptr-scrap_info),(long)max_scraps);
 @y
   puts(_("\nMemory usage statistics:"));
 @.Memory usage statistics:@>
   printf(_("%ld names (out of %ld)\n"),
-            (long)(name_ptr-name_dir),(long)max_names);
+            (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
   printf(_("%ld cross-references (out of %ld)\n"),
-            (long)(xref_ptr-xmem),(long)max_refs);
+            (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
   printf(_("%ld bytes (out of %ld)\n"),
-            (long)(byte_ptr-byte_mem),(long)max_bytes);
+            (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
   puts(_("Parsing:"));
   printf(_("%ld scraps (out of %ld)\n"),
-            (long)(max_scr_ptr-scrap_info),(long)max_scraps);
+            (ptrdiff_t)(max_scr_ptr-scrap_info),(long)max_scraps);
   printf(_("%ld texts (out of %ld)\n"),
-            (long)(max_text_ptr-tok_start),(long)max_texts);
+            (ptrdiff_t)(max_text_ptr-tok_start),(long)max_texts);
   printf(_("%ld tokens (out of %ld)\n"),
-            (long)(max_tok_ptr-tok_mem),(long)max_toks);
+            (ptrdiff_t)(max_tok_ptr-tok_mem),(long)max_toks);
   printf(_("%ld levels (out of %ld)\n"),
-            (long)(max_stack_ptr-stack),(long)stack_size);
+            (ptrdiff_t)(max_stack_ptr-stack),(long)stack_size);
   puts(_("Sorting:"));
   printf(_("%ld levels (out of %ld)\n"),
-            (long)(max_sort_ptr-scrap_info),(long)max_scraps);
+            (ptrdiff_t)(max_sort_ptr-scrap_info),(long)max_scraps);
 @z
 
 @x l.103 of CWEAV-OUTPUT.CH

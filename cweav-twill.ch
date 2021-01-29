@@ -445,11 +445,11 @@ ccode['r']=ccode['R']=right_start;
 @z
 
 @x l.601 and l.201 of CWEAV-ANSI.CH
-static void skip_limbo(void);@/
+static eight_bits skip_TeX(void);@/
 
 @ @c
 @y
-static void skip_limbo(void);@/
+static eight_bits skip_TeX(void);@/
 
 @ We look for a clue about the program's title, because this will become
 part of all meanings.
@@ -504,11 +504,11 @@ skip_TeX(void)
 @z
 
 @x l.975 and l.317 of CWEAV-ANSI.CH
-void
+static void
 skip_restricted(void)
 {
 @y
-void
+static void
 skip_restricted(void)
 { int c=ccode[(eight_bits)*(loc-1)];
 @z
@@ -1341,32 +1341,24 @@ else {
 
 @x l.4628
   printf(_("%ld bytes (out of %ld)\n"),
-            (long)(byte_ptr-byte_mem),(long)max_bytes);
+            (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
 @y
   printf(_("%ld bytes (out of %ld)\n"),
-            (long)(byte_ptr-byte_mem),(long)max_bytes);
+            (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
   printf(_("%ld temp meanings (out of %ld)\n"),
-            (long)(max_temp_meaning_ptr-temp_meaning_stack),
+            (ptrdiff_t)(max_temp_meaning_ptr-temp_meaning_stack),
             (long)max_meanings);
   printf(_("%ld titles (out of %ld)\n"),
-            (long)(title_code_ptr-title_code),(long)max_titles);
+            (ptrdiff_t)(title_code_ptr-title_code),(long)max_titles);
 @z
 
 @x l.483 of CWEAV-PATCH.CH
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{252.~Addendum}.''
+material should nicely integrate with the original ``\&{261.~Index}.''
 @y
 \bigskip
 \font\itt=cmitt10
 {\noindent \it Although \.{\itt CTWILL} is based on \.{\itt cweave.w}, new and
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
-@z
-
-@x l.1141 of CWEAV-ANSI.CH
-as far as they are not already in |"common.h"|.  These are private to
-\.{CWEAVE}.
-@y
-as far as they are not already in |"common.h"|.  These are private to
-\.{CWEAVE} and \.{CTWILL}.
 @z
