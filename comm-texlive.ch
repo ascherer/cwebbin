@@ -327,10 +327,7 @@ static boolean set_path(char *include_path,char *environment)
 }
 
 @y
-@ @<Predecl...@>=
-static void cb_usage (const_string str);@/
-static void cb_usagehelp (const_string *message, const_string bug_email);@/
-void cb_show_banner (void); /* |extern| for option \.{+b} */
+
 @z
 
 @x l.319 of COMM-EXTENSIONS.CH
@@ -511,7 +508,11 @@ cb_usagehelp(program==ctangle ? CTANGLEHELP :
 \.{i18n}/\.{t10n}.  We simply filter the strings through the catalogs
 (if available).
 
-@c
+@<Predecl...@>=
+static void cb_usage (const_string str);@/
+static void cb_usagehelp (const_string *message, const_string bug_email);@/
+
+@ @c
 static void cb_usage (const_string str)
 {
   textdomain("cweb-tl");
@@ -553,7 +554,10 @@ printversionandexit(cb_banner,
 
 @ But the ``banner'' is, at least the first part.
 
-@c
+@<Predecl...@>=
+void cb_show_banner (void); /* |extern| for option \.{+b} */
+
+@ @c
 void cb_show_banner (void)
 {
   assert(cb_banner[0]!='\0');
