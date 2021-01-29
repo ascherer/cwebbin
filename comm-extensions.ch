@@ -126,7 +126,7 @@ programs are started. Here, for instance, we pass the operating system
 a status of 0 if and only if only harmless messages were printed.
 @^system dependencies@>
 @y
-@ On multi-tasking systems like the {\mc AMIGA} it is very convenient to
+On multi-tasking systems like the {\mc AMIGA} it is very convenient to
 know a little bit more about the reasons why a program failed.  The four
 levels of return indicated by the |history| value are very suitable for
 this purpose.  Here, for instance, we pass the operating system a status
