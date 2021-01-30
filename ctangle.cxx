@@ -251,9 +251,10 @@ extern boolean print_where;
 extern int argc;
 extern char**argv;
 extern boolean flags[];
+extern const char*use_language;
 
 /*:14*//*15:*/
-#line 235 "comm-foo.h"
+#line 236 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -401,7 +402,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:12*//*16:*/
-#line 244 "comm-foo.h"
+#line 245 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);

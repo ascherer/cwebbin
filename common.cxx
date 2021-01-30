@@ -22,8 +22,8 @@
 #include <stdio.h>  
 #include <string.h>  
 
-/*:3*//*90:*/
-#line 604 "comm-foo.ch"
+/*:3*//*91:*/
+#line 603 "comm-foo.ch"
 
 #if HAVE_GETTEXT
 #include <locale.h>  
@@ -33,7 +33,7 @@
 #define textdomain(A) ""
 #endif
 
-/*:90*/
+/*:91*/
 #line 67 "common.w"
 
 #define _(S) gettext(S)  \
@@ -249,9 +249,10 @@ extern boolean print_where;
 extern int argc;
 extern char**argv;
 extern boolean flags[];
+extern const char*use_language;
 
 /*:13*//*14:*/
-#line 235 "comm-foo.h"
+#line 236 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -337,19 +338,19 @@ name_pointer name_ptr;
 char*byte_ptr;
 
 /*:44*//*46:*/
-#line 630 "common.w"
+#line 629 "common.w"
 
 name_pointer hash[hash_size];
 hash_pointer hash_end= hash+hash_size-1;
 hash_pointer h;
 
 /*:46*//*65:*/
-#line 1018 "common.w"
+#line 1017 "common.w"
 
 int history= spotless;
 
 /*:65*//*73:*/
-#line 1139 "common.w"
+#line 1138 "common.w"
 
 int argc;
 char**argv;
@@ -359,26 +360,29 @@ char idx_file_name[max_file_name_length];
 #line 363 "comm-foo.ch"
 char scn_file_name[max_file_name_length];
 char check_file_name[max_file_name_length];
-#line 370 "comm-foo.ch"
+#line 1145 "common.w"
 boolean flags[128];
-const char*use_language= "";
-#line 1147 "common.w"
 
 /*:73*//*83:*/
-#line 1287 "common.w"
+#line 1286 "common.w"
 
 FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
-#line 472 "comm-foo.ch"
+#line 465 "comm-foo.ch"
 FILE*scn_file;
 FILE*check_file;
-#line 1292 "common.w"
+#line 1291 "common.w"
 FILE*active_file;
 
-#line 489 "comm-foo.ch"
-/*:83*//*88:*/
-#line 574 "comm-foo.ch"
+#line 482 "comm-foo.ch"
+/*:83*//*86:*/
+#line 527 "comm-foo.ch"
+
+const char*use_language= "";
+
+/*:86*//*89:*/
+#line 573 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -388,7 +392,7 @@ char*p,*path_prefix,*next_path_prefix;
 #endif
 char separators[]= SEPARATORS;
 
-/*:88*/
+/*:89*/
 #line 70 "common.w"
 
 /*7:*/
@@ -420,7 +424,7 @@ extern void check_complete(void);
 extern void reset_input(void);
 
 /*:11*//*15:*/
-#line 244 "comm-foo.h"
+#line 245 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
@@ -441,28 +445,28 @@ static void prime_the_change_buffer(void);
 static void check_change(void);
 
 /*:32*//*55:*/
-#line 777 "common.w"
+#line 776 "common.w"
 
 static int web_strcmp(char*,int,char*,int);
 static name_pointer add_section_name(name_pointer,int,char*,char*,int);
 static void extend_section_name(name_pointer,char*,char*,int);
 
 /*:55*//*63:*/
-#line 973 "common.w"
+#line 972 "common.w"
 
 static int section_name_cmp(char**,int,name_pointer);
 
 /*:63*//*75:*/
-#line 1171 "common.w"
+#line 1170 "common.w"
 
 static void scan_args(void);
 
-/*:75*//*86:*/
-#line 540 "comm-foo.ch"
+/*:75*//*87:*/
+#line 539 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 
-/*:86*/
+/*:87*/
 #line 71 "common.w"
 
 
@@ -480,9 +484,8 @@ name_ptr= name_dir+1;
 name_ptr->byte_start= byte_mem;
 root= NULL;
 
-
 /*:45*//*47:*/
-#line 637 "common.w"
+#line 636 "common.w"
 
 for(h= hash;h<=hash_end;*h++= NULL);
 
@@ -490,24 +493,24 @@ for(h= hash;h<=hash_end;*h++= NULL);
 #line 104 "common.w"
 
 #line 47 "comm-foo.ch"
-/*91:*/
-#line 613 "comm-foo.ch"
+/*92:*/
+#line 612 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
 textdomain("cweb");
 
 
-/*:91*/
+/*:92*/
 #line 47 "comm-foo.ch"
 
 /*74:*/
-#line 1152 "common.w"
+#line 1151 "common.w"
 
-#line 377 "comm-foo.ch"
+#line 370 "comm-foo.ch"
 show_banner= show_happiness= show_progress= make_xrefs= true;
 temporary_output= true;
-#line 1154 "common.w"
+#line 1153 "common.w"
 show_stats= false;
 
 /*:74*/
@@ -515,7 +518,7 @@ show_stats= false;
 
 #line 106 "common.w"
 /*84:*/
-#line 489 "comm-foo.ch"
+#line 482 "comm-foo.ch"
 
 scan_args();
 if(program==ctangle){
@@ -546,9 +549,9 @@ else strcpy(dot_pos,".wtp");
 if((tex_file= fopen(check_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
 }
-#line 1305 "common.w"
+#line 1304 "common.w"
 
-#line 524 "comm-foo.ch"
+#line 517 "comm-foo.ch"
 /*:84*/
 #line 106 "common.w"
 
@@ -911,7 +914,7 @@ err_print(_("! Change file entry did not match"));
 }
 
 /*:42*//*48:*/
-#line 642 "common.w"
+#line 641 "common.w"
 
 name_pointer
 id_lookup(
@@ -926,17 +929,17 @@ name_pointer p;
 if(last==NULL)for(last= first;*last!='\0';last++);
 l= (int)(last-first);
 /*49:*/
-#line 665 "common.w"
+#line 664 "common.w"
 
 h= (eight_bits)*i;
 while(++i<last)h= (h+h+(int)((eight_bits)*i))%hash_size;
 
 
 /*:49*/
-#line 655 "common.w"
+#line 654 "common.w"
 
 /*50:*/
-#line 673 "common.w"
+#line 672 "common.w"
 
 p= hash[h];
 while(p&&!names_match(p,first,l,t))p= p->link;
@@ -946,28 +949,28 @@ p->link= hash[h];hash[h]= p;
 }
 
 /*:50*/
-#line 656 "common.w"
+#line 655 "common.w"
 
 if(p==name_ptr)/*51:*/
-#line 684 "common.w"
+#line 683 "common.w"
 {
 #line 225 "comm-foo.ch"
 if(byte_ptr+l> byte_mem_end)overflow(_("byte memory"));
 if(name_ptr>=name_dir_end)overflow(_("name"));
-#line 687 "common.w"
+#line 686 "common.w"
 strncpy(byte_ptr,first,l);
 (++name_ptr)->byte_start= byte_ptr+= l;
 init_p(p,t);
 }
 
 /*:51*/
-#line 657 "common.w"
+#line 656 "common.w"
 
 return(p);
 }
 
 /*:48*//*52:*/
-#line 716 "common.w"
+#line 715 "common.w"
 
 void
 print_section_name(
@@ -988,7 +991,7 @@ if(q)term_write("...",3);
 }
 
 /*:52*//*53:*/
-#line 735 "common.w"
+#line 734 "common.w"
 
 void
 sprint_section_name(
@@ -1011,7 +1014,7 @@ s= p->byte_start;
 }
 
 /*:53*//*54:*/
-#line 756 "common.w"
+#line 755 "common.w"
 
 void
 print_prefix_name(
@@ -1024,7 +1027,7 @@ if(s+l<(p+1)->byte_start)term_write("...",3);
 }
 
 /*:54*//*56:*/
-#line 782 "common.w"
+#line 781 "common.w"
 
 static int web_strcmp(
 char*j,
@@ -1042,7 +1045,7 @@ else return greater;
 }
 
 /*:56*//*57:*/
-#line 811 "common.w"
+#line 810 "common.w"
 
 static name_pointer
 add_section_name(
@@ -1058,7 +1061,7 @@ int name_len= (int)(last-first)+ispref;
 #line 233 "comm-foo.ch"
 if(s+name_len> byte_mem_end)overflow(_("byte memory"));
 if(name_ptr+1>=name_dir_end)overflow(_("name"));
-#line 825 "common.w"
+#line 824 "common.w"
 (++name_ptr)->byte_start= byte_ptr= s+name_len;
 if(ispref){
 *(byte_ptr-1)= ' ';
@@ -1075,7 +1078,7 @@ return par==NULL?(root= p):c==less?(par->llink= p):(par->rlink= p);
 }
 
 /*:57*//*58:*/
-#line 840 "common.w"
+#line 839 "common.w"
 
 static void
 extend_section_name(
@@ -1089,21 +1092,21 @@ name_pointer q= p+1;
 int name_len= (int)(last-first)+ispref;
 #line 240 "comm-foo.ch"
 if(name_ptr>=name_dir_end)overflow(_("name"));
-#line 852 "common.w"
+#line 851 "common.w"
 while(q->link!=name_dir)q= q->link;
 q->link= name_ptr;
 s= name_ptr->byte_start;
 name_ptr->link= name_dir;
 #line 246 "comm-foo.ch"
 if(s+name_len> byte_mem_end)overflow(_("byte memory"));
-#line 857 "common.w"
+#line 856 "common.w"
 (++name_ptr)->byte_start= byte_ptr= s+name_len;
 strncpy(s,first,name_len);
 if(ispref)*(byte_ptr-1)= ' ';
 }
 
 /*:58*//*59:*/
-#line 868 "common.w"
+#line 867 "common.w"
 
 name_pointer
 section_lookup(
@@ -1118,7 +1121,7 @@ name_pointer par= NULL;
 
 int name_len= (int)(last-first)+1;
 /*60:*/
-#line 892 "common.w"
+#line 891 "common.w"
 
 while(p){
 c= web_strcmp(first,name_len,first_chunk(p),prefix_length(p));
@@ -1130,12 +1133,12 @@ p= (c==less?p->llink:p->rlink);
 if(r!=NULL){
 #line 252 "comm-foo.ch"
 fputs(_("\n! Ambiguous prefix: matches <"),stdout);
-#line 902 "common.w"
+#line 901 "common.w"
 
 print_prefix_name(p);
 #line 258 "comm-foo.ch"
 fputs(_(">\n and <"),stdout);
-#line 905 "common.w"
+#line 904 "common.w"
 print_prefix_name(r);
 err_print(">");
 return name_dir;
@@ -1149,19 +1152,19 @@ p= q,q= NULL;
 }
 
 /*:60*/
-#line 882 "common.w"
+#line 881 "common.w"
 
 /*61:*/
-#line 917 "common.w"
+#line 916 "common.w"
 
 if(r==NULL)
 return add_section_name(par,c,first,last+1,ispref);
 
 /*:61*/
-#line 883 "common.w"
+#line 882 "common.w"
 
 /*62:*/
-#line 925 "common.w"
+#line 924 "common.w"
 
 switch(section_name_cmp(&first,name_len,r)){
 
@@ -1169,7 +1172,7 @@ case prefix:
 if(!ispref){
 #line 264 "comm-foo.ch"
 fputs(_("\n! New name is a prefix of <"),stdout);
-#line 931 "common.w"
+#line 930 "common.w"
 
 print_section_name(r);
 err_print(">");
@@ -1183,7 +1186,7 @@ return r;
 case bad_extension:
 #line 270 "comm-foo.ch"
 fputs(_("\n! New name extends <"),stdout);
-#line 943 "common.w"
+#line 942 "common.w"
 
 print_section_name(r);
 err_print(">");
@@ -1191,24 +1194,24 @@ return r;
 default:
 #line 276 "comm-foo.ch"
 fputs(_("\n! Section name incompatible with <"),stdout);
-#line 949 "common.w"
+#line 948 "common.w"
 
 print_prefix_name(r);
 #line 282 "comm-foo.ch"
 fputs(_(">,\n which abbreviates <"),stdout);
-#line 952 "common.w"
+#line 951 "common.w"
 print_section_name(r);
 err_print(">");
 return r;
 }
 
 /*:62*/
-#line 884 "common.w"
+#line 883 "common.w"
 
 }
 
 /*:59*//*64:*/
-#line 976 "common.w"
+#line 975 "common.w"
 
 static int section_name_cmp(
 char**pfirst,
@@ -1242,7 +1245,7 @@ default:return c;
 }
 
 /*:64*//*66:*/
-#line 1028 "common.w"
+#line 1027 "common.w"
 
 void
 err_print(
@@ -1251,14 +1254,14 @@ const char*s)
 char*k,*l;
 printf(*s=='!'?"\n%s":"%s",s);
 if(web_file_open)/*67:*/
-#line 1048 "common.w"
+#line 1047 "common.w"
 
 {if(changing&&include_depth==change_depth)
 #line 290 "comm-foo.ch"
 printf(_(". (l. %d of change file)\n"),change_line);
 else if(include_depth==0)printf(_(". (l. %d)\n"),cur_line);
 else printf(_(". (l. %d of include file %s)\n"),cur_line,cur_file_name);
-#line 1053 "common.w"
+#line 1052 "common.w"
 l= (loc>=limit?limit:loc);
 if(l> buffer){
 for(k= buffer;k<l;k++)
@@ -1273,13 +1276,13 @@ putchar(' ');
 }
 
 /*:67*/
-#line 1035 "common.w"
+#line 1034 "common.w"
 
 update_terminal;mark_error;
 }
 
 /*:66*//*68:*/
-#line 1080 "common.w"
+#line 1079 "common.w"
 
 int wrap_up(void){
 if(show_progress)new_line;
@@ -1287,7 +1290,7 @@ if(show_stats)
 print_stats();
 #line 320 "comm-foo.ch"
 /*69:*/
-#line 1090 "common.w"
+#line 1089 "common.w"
 
 switch(history){
 #line 344 "comm-foo.ch"
@@ -1299,14 +1302,14 @@ case error_message:
 puts(_("(Pardon me, but I think I spotted something wrong.)"));break;
 case fatal_message:
 puts(_("(That was a fatal error, my friend.)"));
-#line 1098 "common.w"
+#line 1097 "common.w"
 }
 
 /*:69*/
 #line 320 "comm-foo.ch"
 
-/*89:*/
-#line 586 "comm-foo.ch"
+/*90:*/
+#line 585 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1314,7 +1317,7 @@ if(check_file)fclose(check_file);
 if(strlen(check_file_name))
 remove(check_file_name);
 
-/*:89*/
+/*:90*/
 #line 321 "comm-foo.ch"
 
 #line 328 "comm-foo.ch"
@@ -1324,11 +1327,11 @@ case error_message:return RETURN_ERROR;
 case fatal_message:return RETURN_FAIL;
 default:return RETURN_OK;
 }
-#line 1088 "common.w"
+#line 1087 "common.w"
 }
 
 /*:68*//*70:*/
-#line 1106 "common.w"
+#line 1105 "common.w"
 void
 fatal(
 const char*s,const char*t)
@@ -1339,19 +1342,19 @@ history= fatal_message;exit(wrap_up());
 }
 
 /*:70*//*71:*/
-#line 1117 "common.w"
+#line 1116 "common.w"
 void
 overflow(
 const char*t)
 {
 #line 357 "comm-foo.ch"
 printf(_("\n! Sorry, %s capacity exceeded"),t);fatal("","");
-#line 1122 "common.w"
+#line 1121 "common.w"
 }
 
 
 /*:71*//*76:*/
-#line 1174 "common.w"
+#line 1173 "common.w"
 
 static void
 scan_args(void)
@@ -1362,7 +1365,7 @@ register char*s;
 boolean found_web= 0,found_change= 0,found_out= 0;
 
 
-#line 393 "comm-foo.ch"
+#line 386 "comm-foo.ch"
 
 #if defined DEV_NULL
 strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
@@ -1374,10 +1377,10 @@ change_file_name[max_file_name_length-2]= '\0';
 strcpy(change_file_name,"/dev/null");
 #endif
 
-#line 1185 "common.w"
+#line 1184 "common.w"
 while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
-#line 427 "comm-foo.ch"
+#line 420 "comm-foo.ch"
 
 {
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
@@ -1385,16 +1388,16 @@ if(*dot_pos=='l'){
 use_language= ++dot_pos;
 break;
 }else
-#line 1266 "common.w"
+#line 1265 "common.w"
  flags[(eight_bits)*dot_pos]= flag_change;
 }
 
 /*:80*/
-#line 1186 "common.w"
+#line 1185 "common.w"
 
 else{
 s= name_pos= *argv;dot_pos= NULL;
-#line 413 "comm-foo.ch"
+#line 406 "comm-foo.ch"
 while(*s){
 if(*s=='.')dot_pos= s++;
 else if(*s==DIR_SEPARATOR||*s==DEVICE_SEPARATOR||*s=='/')
@@ -1402,20 +1405,20 @@ dot_pos= NULL,name_pos= ++s;
 else s++;
 }
 
-#line 1194 "common.w"
+#line 1193 "common.w"
 if(!found_web)/*77:*/
-#line 1211 "common.w"
+#line 1210 "common.w"
 
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 466 "comm-foo.ch"
+#line 459 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1282 "common.w"
+#line 1281 "common.w"
 
 
 /*:82*/
-#line 1214 "common.w"
+#line 1213 "common.w"
 
 if(dot_pos==NULL)
 sprintf(web_file_name,"%s.w",*argv);
@@ -1432,22 +1435,22 @@ found_web= 1;
 }
 
 /*:77*/
-#line 1195 "common.w"
+#line 1194 "common.w"
 
 else if(!found_change)/*78:*/
-#line 1229 "common.w"
+#line 1228 "common.w"
 
 {
 if(strcmp(*argv,"-")!=0){
 if(s-*argv> max_file_name_length-4)
 /*82:*/
-#line 466 "comm-foo.ch"
+#line 459 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1282 "common.w"
+#line 1281 "common.w"
 
 
 /*:82*/
-#line 1233 "common.w"
+#line 1232 "common.w"
 
 if(dot_pos==NULL)
 sprintf(change_file_name,"%s.ch",*argv);
@@ -1457,21 +1460,21 @@ found_change= 1;
 }
 
 /*:78*/
-#line 1196 "common.w"
+#line 1195 "common.w"
 
 else if(!found_out)/*79:*/
-#line 1241 "common.w"
+#line 1240 "common.w"
 
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 466 "comm-foo.ch"
+#line 459 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1282 "common.w"
+#line 1281 "common.w"
 
 
 /*:82*/
-#line 1244 "common.w"
+#line 1243 "common.w"
 
 if(dot_pos==NULL){
 sprintf(tex_file_name,"%s.tex",*argv);
@@ -1491,13 +1494,13 @@ found_out= 1;
 }
 
 /*:79*/
-#line 1197 "common.w"
+#line 1196 "common.w"
 
 else/*81:*/
-#line 1269 "common.w"
+#line 1268 "common.w"
 
 {
-#line 446 "comm-foo.ch"
+#line 439 "comm-foo.ch"
 switch(program){
 case ctangle:fatal(
 _("! Usage: ctangle [options] "
@@ -1513,20 +1516,20 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1279 "common.w"
+#line 1278 "common.w"
 }
 
-#line 466 "comm-foo.ch"
+#line 459 "comm-foo.ch"
 /*:81*/
-#line 1198 "common.w"
+#line 1197 "common.w"
 
 }
 }
 if(!found_web)/*81:*/
-#line 1269 "common.w"
+#line 1268 "common.w"
 
 {
-#line 446 "comm-foo.ch"
+#line 439 "comm-foo.ch"
 switch(program){
 case ctangle:fatal(
 _("! Usage: ctangle [options] "
@@ -1542,17 +1545,17 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1279 "common.w"
+#line 1278 "common.w"
 }
 
-#line 466 "comm-foo.ch"
+#line 459 "comm-foo.ch"
 /*:81*/
-#line 1201 "common.w"
+#line 1200 "common.w"
 
 }
 
-/*:76*//*87:*/
-#line 543 "comm-foo.ch"
+/*:76*//*88:*/
+#line 542 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
@@ -1575,4 +1578,4 @@ strcpy(include_path,string);
 return(1);
 }
 
-/*:87*/
+/*:88*/
