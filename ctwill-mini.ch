@@ -902,9 +902,9 @@ Section 160.
 Section 174.
 
 @x
-@ Outdent after parameter declarations with option \.{-i}.
+@ @<Cases for |decl_head|@>=
 @y
-@r @ Outdent after parameter declarations with option \.{-i}.
+@r @ @<Cases for |decl_head|@>=
 @z
 
 Section 208.
