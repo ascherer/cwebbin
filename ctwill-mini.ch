@@ -726,32 +726,6 @@ Section 133.
 @-p@>
 @z
 
-Section 134.
-
-@x
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
-
-@<Predecl...@>=
-#if DEAD_CODE
-@y
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
-
-@<Predecl...@>=
-@-DEAD_CODE@>
-#if DEAD_CODE
-@z
-
-@x
-@ @c
-@-DEAD_CODE@>
-#if DEAD_CODE
-@y
-@ Debugging routine, use at your own risk.
-
-@c
-#if DEAD_CODE
-@z
-
 Section 135.
 
 @x
