@@ -14,7 +14,7 @@ Section 1.
 @z
 
 @x
-@d banner "This is CTWILL, Version 3.64"
+@d banner "This is CTWILL, Version 3.65"
 @y
 \bigskip
 {\font\itt=cmitt10 \font\bit=cmbxti10
@@ -35,7 +35,7 @@ be even more ``off'' from {\itt cweave.w}.  Care has been taken to give a
 faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 ---Enjoy!\bigskip}
 
-@d banner "This is CTWILL, Version 3.64"
+@d banner "This is CTWILL, Version 3.65"
 @z
 
 Section 3.
@@ -78,14 +78,6 @@ Section 5.
 @x
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 @y
-@z
-
-Section 7.
-
-@x
-you have to change them also in the file |"common.w"|.
-@y
-you have to change them also in file |"common.w"|.
 @z
 
 Section 8.
@@ -731,13 +723,14 @@ Section 133.
 Section 134.
 
 @x
-#ifdef DEAD_CODE /* not used in |main| */
+@ @c
+#if DEAD_CODE
 @y
 @ Debugging routine, use at your own risk.
 @-DEAD_CODE@>
 
 @c
-#ifdef DEAD_CODE /* not used in |main| */
+#if DEAD_CODE
 @z
 
 Section 135.
@@ -784,53 +777,53 @@ Section 140.
 
 @x
   switch (pp->cat) {
-    case exp: @<Cases for |exp|@>; @+break;
-    case lpar: @<Cases for |lpar|@>; @+break;
-    case unop: @<Cases for |unop|@>; @+break;
-    case ubinop: @<Cases for |ubinop|@>; @+break;
-    case binop: @<Cases for |binop|@>; @+break;
-    case cast: @<Cases for |cast|@>; @+break;
-    case sizeof_like: @<Cases for |sizeof_like|@>; @+break;
-    case int_like: @<Cases for |int_like|@>; @+break;
-    case public_like: @<Cases for |public_like|@>; @+break;
-    case colcol: @<Cases for |colcol|@>; @+break;
-    case decl_head: @<Cases for |decl_head|@>; @+break;
-    case decl: @<Cases for |decl|@>; @+break;
-    case base: @<Cases for |base|@>; @+break;
-    case struct_like: @<Cases for |struct_like|@>; @+break;
-    case struct_head: @<Cases for |struct_head|@>; @+break;
-    case fn_decl: @<Cases for |fn_decl|@>; @+break;
-    case function: @<Cases for |function|@>; @+break;
-    case lbrace: @<Cases for |lbrace|@>; @+break;
-    case if_like: @<Cases for |if_like|@>; @+break;
-    case else_like: @<Cases for |else_like|@>; @+break;
-    case else_head: @<Cases for |else_head|@>; @+break;
-    case if_clause: @<Cases for |if_clause|@>; @+break;
-    case if_head: @<Cases for |if_head|@>; @+break;
-    case do_like: @<Cases for |do_like|@>; @+break;
-    case case_like: @<Cases for |case_like|@>; @+break;
-    case catch_like: @<Cases for |catch_like|@>; @+break;
-    case tag: @<Cases for |tag|@>; @+break;
-    case stmt: @<Cases for |stmt|@>; @+break;
-    case semi: @<Cases for |semi|@>; @+break;
-    case lproc: @<Cases for |lproc|@>; @+break;
-    case section_scrap: @<Cases for |section_scrap|@>; @+break;
-    case insert: @<Cases for |insert|@>; @+break;
-    case prelangle: @<Cases for |prelangle|@>; @+break;
-    case prerangle: @<Cases for |prerangle|@>; @+break;
-    case langle: @<Cases for |langle|@>; @+break;
-    case template_like: @<Cases for |template_like|@>; @+break;
-    case new_like: @<Cases for |new_like|@>; @+break;
-    case new_exp: @<Cases for |new_exp|@>; @+break;
-    case ftemplate: @<Cases for |ftemplate|@>; @+break;
-    case for_like: @<Cases for |for_like|@>; @+break;
-    case raw_ubin: @<Cases for |raw_ubin|@>; @+break;
-    case const_like: @<Cases for |const_like|@>; @+break;
-    case raw_int: @<Cases for |raw_int|@>; @+break;
-    case operator_like: @<Cases for |operator_like|@>; @+break;
-    case typedef_like: @<Cases for |typedef_like|@>; @+break;
-    case delete_like: @<Cases for |delete_like|@>; @+break;
-    case question: @<Cases for |question|@>; @+break;
+    case exp: @<Cases for |exp|@>@; @+break;
+    case lpar: @<Cases for |lpar|@>@; @+break;
+    case unop: @<Cases for |unop|@>@; @+break;
+    case ubinop: @<Cases for |ubinop|@>@; @+break;
+    case binop: @<Cases for |binop|@>@; @+break;
+    case cast: @<Cases for |cast|@>@; @+break;
+    case sizeof_like: @<Cases for |sizeof_like|@>@; @+break;
+    case int_like: @<Cases for |int_like|@>@; @+break;
+    case public_like: @<Cases for |public_like|@>@; @+break;
+    case colcol: @<Cases for |colcol|@>@; @+break;
+    case decl_head: @<Cases for |decl_head|@>@; @+break;
+    case decl: @<Cases for |decl|@>@; @+break;
+    case base: @<Cases for |base|@>@; @+break;
+    case struct_like: @<Cases for |struct_like|@>@; @+break;
+    case struct_head: @<Cases for |struct_head|@>@; @+break;
+    case fn_decl: @<Cases for |fn_decl|@>@; @+break;
+    case function: @<Cases for |function|@>@; @+break;
+    case lbrace: @<Cases for |lbrace|@>@; @+break;
+    case if_like: @<Cases for |if_like|@>@; @+break;
+    case else_like: @<Cases for |else_like|@>@; @+break;
+    case else_head: @<Cases for |else_head|@>@; @+break;
+    case if_clause: @<Cases for |if_clause|@>@; @+break;
+    case if_head: @<Cases for |if_head|@>@; @+break;
+    case do_like: @<Cases for |do_like|@>@; @+break;
+    case case_like: @<Cases for |case_like|@>@; @+break;
+    case catch_like: @<Cases for |catch_like|@>@; @+break;
+    case tag: @<Cases for |tag|@>@; @+break;
+    case stmt: @<Cases for |stmt|@>@; @+break;
+    case semi: @<Cases for |semi|@>@; @+break;
+    case lproc: @<Cases for |lproc|@>@; @+break;
+    case section_scrap: @<Cases for |section_scrap|@>@; @+break;
+    case insert: @<Cases for |insert|@>@; @+break;
+    case prelangle: @<Cases for |prelangle|@>@; @+break;
+    case prerangle: @<Cases for |prerangle|@>@; @+break;
+    case langle: @<Cases for |langle|@>@; @+break;
+    case template_like: @<Cases for |template_like|@>@; @+break;
+    case new_like: @<Cases for |new_like|@>@; @+break;
+    case new_exp: @<Cases for |new_exp|@>@; @+break;
+    case ftemplate: @<Cases for |ftemplate|@>@; @+break;
+    case for_like: @<Cases for |for_like|@>@; @+break;
+    case raw_ubin: @<Cases for |raw_ubin|@>@; @+break;
+    case const_like: @<Cases for |const_like|@>@; @+break;
+    case raw_int: @<Cases for |raw_int|@>@; @+break;
+    case operator_like: @<Cases for |operator_like|@>@; @+break;
+    case typedef_like: @<Cases for |typedef_like|@>@; @+break;
+    case delete_like: @<Cases for |delete_like|@>@; @+break;
+    case question: @<Cases for |question|@>@; @+break;
   }
   pp++; /* if no match was found, we move to the right */
 }
@@ -842,53 +835,53 @@ Section 140.
 }
 
 @ @<Cases for |pp->cat|@>=
-    case exp: @<Cases for |exp|@>; @+break;
-    case lpar: @<Cases for |lpar|@>; @+break;
-    case unop: @<Cases for |unop|@>; @+break;
-    case ubinop: @<Cases for |ubinop|@>; @+break;
-    case binop: @<Cases for |binop|@>; @+break;
-    case cast: @<Cases for |cast|@>; @+break;
-    case sizeof_like: @<Cases for |sizeof_like|@>; @+break;
-    case int_like: @<Cases for |int_like|@>; @+break;
-    case public_like: @<Cases for |public_like|@>; @+break;
-    case colcol: @<Cases for |colcol|@>; @+break;
-    case decl_head: @<Cases for |decl_head|@>; @+break;
-    case decl: @<Cases for |decl|@>; @+break;
-    case base: @<Cases for |base|@>; @+break;
-    case struct_like: @<Cases for |struct_like|@>; @+break;
-    case struct_head: @<Cases for |struct_head|@>; @+break;
-    case fn_decl: @<Cases for |fn_decl|@>; @+break;
-    case function: @<Cases for |function|@>; @+break;
-    case lbrace: @<Cases for |lbrace|@>; @+break;
-    case if_like: @<Cases for |if_like|@>; @+break;
-    case else_like: @<Cases for |else_like|@>; @+break;
-    case else_head: @<Cases for |else_head|@>; @+break;
-    case if_clause: @<Cases for |if_clause|@>; @+break;
-    case if_head: @<Cases for |if_head|@>; @+break;
-    case do_like: @<Cases for |do_like|@>; @+break;
-    case case_like: @<Cases for |case_like|@>; @+break;
-    case catch_like: @<Cases for |catch_like|@>; @+break;
-    case tag: @<Cases for |tag|@>; @+break;
-    case stmt: @<Cases for |stmt|@>; @+break;
-    case semi: @<Cases for |semi|@>; @+break;
-    case lproc: @<Cases for |lproc|@>; @+break;
-    case section_scrap: @<Cases for |section_scrap|@>; @+break;
-    case insert: @<Cases for |insert|@>; @+break;
-    case prelangle: @<Cases for |prelangle|@>; @+break;
-    case prerangle: @<Cases for |prerangle|@>; @+break;
-    case langle: @<Cases for |langle|@>; @+break;
-    case template_like: @<Cases for |template_like|@>; @+break;
-    case new_like: @<Cases for |new_like|@>; @+break;
-    case new_exp: @<Cases for |new_exp|@>; @+break;
-    case ftemplate: @<Cases for |ftemplate|@>; @+break;
-    case for_like: @<Cases for |for_like|@>; @+break;
-    case raw_ubin: @<Cases for |raw_ubin|@>; @+break;
-    case const_like: @<Cases for |const_like|@>; @+break;
-    case raw_int: @<Cases for |raw_int|@>; @+break;
-    case operator_like: @<Cases for |operator_like|@>; @+break;
-    case typedef_like: @<Cases for |typedef_like|@>; @+break;
-    case delete_like: @<Cases for |delete_like|@>; @+break;
-    case question: @<Cases for |question|@>; @+break;
+    case exp: @<Cases for |exp|@>@; @+break;
+    case lpar: @<Cases for |lpar|@>@; @+break;
+    case unop: @<Cases for |unop|@>@; @+break;
+    case ubinop: @<Cases for |ubinop|@>@; @+break;
+    case binop: @<Cases for |binop|@>@; @+break;
+    case cast: @<Cases for |cast|@>@; @+break;
+    case sizeof_like: @<Cases for |sizeof_like|@>@; @+break;
+    case int_like: @<Cases for |int_like|@>@; @+break;
+    case public_like: @<Cases for |public_like|@>@; @+break;
+    case colcol: @<Cases for |colcol|@>@; @+break;
+    case decl_head: @<Cases for |decl_head|@>@; @+break;
+    case decl: @<Cases for |decl|@>@; @+break;
+    case base: @<Cases for |base|@>@; @+break;
+    case struct_like: @<Cases for |struct_like|@>@; @+break;
+    case struct_head: @<Cases for |struct_head|@>@; @+break;
+    case fn_decl: @<Cases for |fn_decl|@>@; @+break;
+    case function: @<Cases for |function|@>@; @+break;
+    case lbrace: @<Cases for |lbrace|@>@; @+break;
+    case if_like: @<Cases for |if_like|@>@; @+break;
+    case else_like: @<Cases for |else_like|@>@; @+break;
+    case else_head: @<Cases for |else_head|@>@; @+break;
+    case if_clause: @<Cases for |if_clause|@>@; @+break;
+    case if_head: @<Cases for |if_head|@>@; @+break;
+    case do_like: @<Cases for |do_like|@>@; @+break;
+    case case_like: @<Cases for |case_like|@>@; @+break;
+    case catch_like: @<Cases for |catch_like|@>@; @+break;
+    case tag: @<Cases for |tag|@>@; @+break;
+    case stmt: @<Cases for |stmt|@>@; @+break;
+    case semi: @<Cases for |semi|@>@; @+break;
+    case lproc: @<Cases for |lproc|@>@; @+break;
+    case section_scrap: @<Cases for |section_scrap|@>@; @+break;
+    case insert: @<Cases for |insert|@>@; @+break;
+    case prelangle: @<Cases for |prelangle|@>@; @+break;
+    case prerangle: @<Cases for |prerangle|@>@; @+break;
+    case langle: @<Cases for |langle|@>@; @+break;
+    case template_like: @<Cases for |template_like|@>@; @+break;
+    case new_like: @<Cases for |new_like|@>@; @+break;
+    case new_exp: @<Cases for |new_exp|@>@; @+break;
+    case ftemplate: @<Cases for |ftemplate|@>@; @+break;
+    case for_like: @<Cases for |for_like|@>@; @+break;
+    case raw_ubin: @<Cases for |raw_ubin|@>@; @+break;
+    case const_like: @<Cases for |const_like|@>@; @+break;
+    case raw_int: @<Cases for |raw_int|@>@; @+break;
+    case operator_like: @<Cases for |operator_like|@>@; @+break;
+    case typedef_like: @<Cases for |typedef_like|@>@; @+break;
+    case delete_like: @<Cases for |delete_like|@>@; @+break;
+    case question: @<Cases for |question|@>@; @+break;
 @z
 
 Section 141.
@@ -1151,9 +1144,11 @@ Section 283.
 Section 290.
 
 @x
-@ Because on some systems the difference between two pointers is a |long|
+@ Because on some systems the difference between two pointers is a |ptrdiff_t|
+rather than an |int|, we use \.{\%ld} to print these quantities.
 @y
-@r @ Because on some systems the difference between two pointers is a |long|
+@r @ Because on some systems the difference between two pointers is a
+|ptrdiff_t| rather than an |int|, we use \.{\%ld} to print these quantities.
 @z
 
 Section 291.
@@ -1165,15 +1160,6 @@ Section 291.
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
 @y
-@z
-
-Section 293.
-
-@x
-@* Function declarations.  Here are declarations---conforming to
-@y
-@* Function declarations.  Here are declarations---conforming to
-@-DEAD_CODE@>
 @z
 
 Section 294.
