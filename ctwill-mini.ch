@@ -80,14 +80,6 @@ Section 4.
 @y
 @z
 
-Section 6.
-
-@x
-@ The next few sections contain stuff from the file |"common.w"| that must
-@y
-@ The next few sections contain stuff from the file |"common.w"| that must
-@z
-
 Section 7.
 
 @x
