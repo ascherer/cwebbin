@@ -153,32 +153,6 @@ can be made sensitive to these conditions.
   }
 @z
 
-Section 81.
-
-C and CWEB are `international' languages, so non-English speaking users may
-want to write program documentations in their native language instead of in
-English.  With the \.{+lX} (or \.{-lX} as well) option CWEAVE includes TeX
-macros `Xcwebmac.tex'.  This option works differently than all the others,
-because it takes the rest of the command line argument and prepends it to
-the string ``cwebmac'' in the first line of the TeX output, so you can call
-CWEAVE with the option ``+ldeutsch'' to yield ``\input deutschcwebmac'' in
-the first line.
-
-These changes by Andreas Scherer are based on ideas by Carsten Steger
-provided in his `CWeb 2.0' port from ><> 551 and his `CWeb 2.8' port
-from the electronic nets and on suggestions by Giuseppe Ghibò.  The string
-argument to the `-l' option was suggested by Carsten Steger in a private
-communication in 1994.  Originally this was meant to be the single
-character following `l', but there would have been collisions between
-``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
-
-@x l.1139
-boolean flags[128]; /* an option for each 7-bit code */
-@y
-boolean flags[128]; /* an option for each 7-bit code */
-const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
-@z
-
 Section 82.
 
 @x l.1158
@@ -271,9 +245,32 @@ default: fatal(
 
 Add even more material ...
 
+C and CWEB are `international' languages, so non-English speaking users may
+want to write program documentations in their native language instead of in
+English.  With the \.{+lX} (or \.{-lX} as well) option CWEAVE includes TeX
+macros `Xcwebmac.tex'.  This option works differently than all the others,
+because it takes the rest of the command line argument and prepends it to
+the string ``cwebmac'' in the first line of the TeX output, so you can call
+CWEAVE with the option ``+ldeutsch'' to yield ``\input deutschcwebmac'' in
+the first line.
+
+These changes by Andreas Scherer are based on ideas by Carsten Steger
+provided in his `CWeb 2.0' port from ><> 551 and his `CWeb 2.8' port
+from the electronic nets and on suggestions by Giuseppe Ghibò.  The string
+argument to the `-l' option was suggested by Carsten Steger in a private
+communication in 1994.  Originally this was meant to be the single
+character following `l', but there would have been collisions between
+``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
+
 @x l.1309
 @** Index.
 @y
+@* Language setting.  This global variable is set by the argument of the
+`\.{+l}' (or `\.{-l}') command-line option.
+
+@<Global var...@>=
+const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
+
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
