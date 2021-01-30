@@ -126,6 +126,14 @@ Section 16.
 @ Code related to section numbers:
 @z
 
+Section 17.
+
+@x
+extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+@y
+extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
+@z
+
 Section 18.
 
 @x
@@ -1121,14 +1129,6 @@ Section 303.
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
 @y
-@z
-
-Section 305.
-
-@x
-extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
-@y
-extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
 @z
 
 Section 311.
