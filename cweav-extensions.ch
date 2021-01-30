@@ -45,16 +45,7 @@ if (cat1==lbrace || cat1==int_like || cat1==decl) {
   reduce(pp,1,fn_decl,0,1);
 }
 @y
-\.{CWEAVE} indents declarations after old-style function definitions.
-With the \.{-i} option they will come out flush left.  You won't see
-any difference if you use ANSI-style function definitions.
-
-@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
-
-@<Set init...@>=
-indent_param_decl=true;
-
-@ @<Cases for |exp|@>=
+@<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp);
   if (indent_param_decl) {
@@ -125,16 +116,6 @@ else if (cat1==stmt || cat1==function) {
   big_app1(pp+1); reduce(pp,2,cat1,-1,41);
 }
 @y
-@ The original manual described the \.{-o} option for \.{CWEAVE}, but this was
-not yet present.  Here is a simple implementation.  The purpose is to suppress
-the extra space between local variable declarations and the first statement in
-a function block.
-
-@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
-
-@<Set init...@>=
-order_decl_stmt=true;
-
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1);
@@ -160,9 +141,7 @@ else if (cat1==stmt) {
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
 @y
-@ Outdent after parameter declarations with option \.{-i}.
-
-@<Cases for |fn_decl|@>=
+@ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
 }
@@ -181,6 +160,26 @@ Addendum.
 @x l.4644
 @** Index.
 @y
+@* Formatting alternatives.
+\.{CWEAVE} indents declarations after old-style function definitions.
+With the \.{-i} option they will come out flush left.  You won't see
+any difference if you use ANSI-style function definitions.
+
+@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
+
+@<Set init...@>=
+indent_param_decl=true;
+
+@ The original manual described the \.{-o} option for \.{CWEAVE}, but this was
+not yet present.  Here is a simple implementation.  The purpose is to suppress
+the extra space between local variable declarations and the first statement in
+a function block.
+
+@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
+
+@<Set init...@>=
+order_decl_stmt=true;
+
 @* Language setting.  This global variable is defined and set in \.{COMMON} by
 the `\.{+l}' (or `\.{-l}') command-line option.
 
