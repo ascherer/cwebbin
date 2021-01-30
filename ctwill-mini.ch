@@ -99,6 +99,12 @@ internationalization.
 @-S@>
 @z
 
+@x
+@ Code related to the character set:
+@y
+@r @ Code related to the character set:
+@z
+
 Section 11.
 
 @x
