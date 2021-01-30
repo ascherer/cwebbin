@@ -86,5 +86,3 @@
 @$cb_show_banner {COMMON.W}95 \&{void} (\,)@>
 
 @$versionstring "<lib/lib.h>" \zip@>
-
-@$skip_comment {}108 =\\{copy\_comment}@>
