@@ -24,6 +24,7 @@
 @$sprintf "<stdio.h>" \zip@>
 @$stdout "<stdio.h>" \zip@>
 
+@$getenv "<stdlib.h>" \zip@>
 @$exit "<stdlib.h>" \zip@>
 
 @$isalpha "<ctype.h>" \zip@>
