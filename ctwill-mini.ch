@@ -743,6 +743,7 @@ Section 134.
 
 @x
 @ @c
+@-DEAD_CODE@>
 #if DEAD_CODE
 @y
 @ Debugging routine, use at your own risk.
