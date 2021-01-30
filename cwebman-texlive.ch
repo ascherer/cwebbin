@@ -96,7 +96,7 @@ variable is not set, some decent default paths are used instead.}
 @y
 \cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
 file can not be found in the current directory, \.{CWEB} will use the
-conventions of the \Kpathsea/ library as outlined in section~\X98:File lookup
+conventions of the \Kpathsea/ library as outlined in section~\X91:File lookup
 with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 % FIXME
 (This is true for any other input or change file lookup.)}
@@ -106,7 +106,7 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 \option i Indent parameters in function declarations.  This causes the
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
-value $N\in[0,127]$ of this option.  See section~100 % FIXME
+value $N\in[0,127]$ of this option.  See section~93 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  This causes the
