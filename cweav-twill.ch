@@ -1350,7 +1350,7 @@ else {
 
 @x l.483 of CWEAV-PATCH.CH
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{261.~Index}.''
+material should nicely integrate with the original ``\&{263.~Index}.''
 @y
 \bigskip
 \font\itt=cmitt10

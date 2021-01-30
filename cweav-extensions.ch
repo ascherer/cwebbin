@@ -51,7 +51,10 @@ any difference if you use ANSI-style function definitions.
 
 @d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
 
-@<Cases for |exp|@>=
+@<Set init...@>=
+indent_param_decl=true;
+
+@ @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp);
   if (indent_param_decl) {
@@ -129,7 +132,10 @@ a function block.
 
 @d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
 
-@<Cases for |decl|@>=
+@<Set init...@>=
+order_decl_stmt=true;
+
+@ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1);
   reduce(pp,2,decl,-1,40);
@@ -168,13 +174,6 @@ else if (cat1==stmt) {
   big_app(force);
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
-@z
-
-@x l.94 and l.474 of CWEAV-PATCH.CH
-  force_lines=make_pb=true; /* controlled by command-line options */
-@y
-  force_lines=make_pb=indent_param_decl=order_decl_stmt=true;
-    /* controlled by command-line options */
 @z
 
 Addendum.

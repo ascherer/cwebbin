@@ -203,36 +203,12 @@ Section 1.
 @d banner "This is CWEAVE (@VERSION@)"
 @z
 
-Section 2.  Clean up |main|.
-
-@x l.94
-  force_lines=make_pb=true; /* controlled by command-line options */
-  common_init();
-  @<Set initial values@>@;
-@y
-  @<Set initial values@>@;
-  common_init();
-  @<Start \TEX/ output@>@;
-@z
-
 Sections 3--18.
 
 @x l.144
 @i common.h
 @y
 @i comm-foo.h
-@z
-
-Section 84.
-
-@x l.1361
-`\.{\\input cwebmac}'.
-
-@<Set init...@>=
-@y
-`\.{\\input cwebmac}'.
-
-@<Start \TEX/...@>=
 @z
 
 Addendum.
@@ -245,13 +221,7 @@ features that have been created by numerous contributors over the course of a
 quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{261.~Index}.''
-
-@* Set \.{CWEAVE} flags.
-At least one of these is already used in \.{COMMON}.
-
-@<Set init...@>=
-  force_lines=make_pb=true; /* controlled by command-line options */
+material should nicely integrate with the original ``\&{263.~Index}.''
 
 @** Index.
 @z
