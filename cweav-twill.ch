@@ -697,10 +697,6 @@ null_scrap.trans=&tok_start[0];
 @y
   printf("|\n"); update_terminal;
 }
-@#
-static void pr_txt(
-  int k)
-{ print_text(&tok_start[k]); }
 @z
 
 @x l.2444
