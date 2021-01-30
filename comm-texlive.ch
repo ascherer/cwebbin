@@ -554,10 +554,7 @@ printversionandexit(cb_banner,
 
 @ But the ``banner'' is, at least the first part.
 
-@<Predecl...@>=
-void cb_show_banner (void); /* |extern| for option \.{+b} */
-
-@ @c
+@c
 void cb_show_banner (void)
 {
   assert(cb_banner[0]!='\0');
