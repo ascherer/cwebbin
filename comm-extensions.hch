@@ -28,3 +28,4 @@ extern boolean flags[]; /* an option for each 7-bit code */
 @y
 extern boolean flags[]; /* an option for each 7-bit code */
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+@z
