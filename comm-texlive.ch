@@ -325,9 +325,7 @@ static boolean set_path(char *include_path,char *environment)
   }
   return(1);
 }
-
 @y
-
 @z
 
 @x l.319 of COMM-EXTENSIONS.CH
