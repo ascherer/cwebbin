@@ -211,6 +211,32 @@ Sections 3--18.
 @i comm-foo.h
 @z
 
+Sections 112--113.
+
+@x
+static void print_text(text_pointer p);@/
+@y
+#if 0
+static void print_text(text_pointer p);@/
+#endif
+@z
+
+@x
+static void
+print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+@y
+#if 0
+static void
+print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+@z
+
+@x
+}
+@y
+}
+#endif
+@z
+
 Addendum.
 
 @x l.4644
