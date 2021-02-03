@@ -317,7 +317,7 @@ if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
   char *saveloc=loc,*savelimit=limit;
   loc=limit+1; limit=loc;
   *limit++='{';
-  strncpy(limit,tex_file_name,strlen(tex_file_name)-4);
+  memcpy(limit,tex_file_name,strlen(tex_file_name)-4);
   limit+=strlen(tex_file_name)-4;
   *limit++='}';
   title_lookup();
@@ -1011,7 +1011,7 @@ FILE *aux_file;
 char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
 @ @<Read the \.{.aux} file, if present; then open it for output@>=
-strncpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
+memcpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
 strcat(aux_file_name,".bux");
 include_depth=1; /* we simulate \.{@@i} */
 strcpy(cur_file_name,aux_file_name); /* first in, third out */
