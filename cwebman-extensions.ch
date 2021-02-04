@@ -50,18 +50,12 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 (On by default.)}
 @z
 ------------------------------------------------------------------------------
-@x l.1153
-saying `\.{pdftex}~\.{cob}'.
+@x
+the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
-saying `\.{pdftex}~\.{cob}'.%
-\cwebfootnote{A third way to create PDF output from \.{CWEB} input is the
-use of \.{XeTeX}, which uses `\.{[x]dvipdfm[x]}' in the background, but the
-``plain \TeX'' macros from \.{cwebmac.tex} otherwise.  The process works with
-a small trick in the first step:
-$$\vbox{\halign{\.{#}\hfil\cr
-cweave -lp+ cob\cr
-xetex cob\cr
-acroread cob.pdf\cr}}$$}
+the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.%
+\cwebfootnote{\TeX~Live comes with an up-to-date \.{ctwill} executable -- and
+its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
 @x l.1177 Add Appendix G, the CTWILL source code.
