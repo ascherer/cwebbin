@@ -88,3 +88,9 @@ if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
 @z
 ------------------------------------------------------------------------------
+@x l.1760
+\point 20. Furthermore, group titles can be converted to an arbitrary
+@y
+\vfill\eject
+\point 20. Furthermore, group titles can be converted to an arbitrary
+@z
