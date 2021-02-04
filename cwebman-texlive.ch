@@ -77,13 +77,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (3.65 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (4.0 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (3.65 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (4.0 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.12 of CWEBMAN-EXTENSIONS.CH
@@ -199,6 +199,6 @@ And here's what the same excerpt looks like when typeset.
 @x l.101 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.65)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.0)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

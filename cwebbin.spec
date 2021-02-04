@@ -35,7 +35,7 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 3.65
+Version: 4.0
 
 %if %{with ansi_only}
 Release: ansi
@@ -48,7 +48,7 @@ Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 # Overwrite 'prod.w' with CWEB original
 Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-%{version}.tar.gz
 # Add CWEBbin stuff on top
-Source2: cwebbin-%{version}.tar.gz
+Source2: cwebbin-3.65.tar.gz
 # Source2: cwebbin-%{release}.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
@@ -197,8 +197,8 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
-* Tue Jan 26 2021 Andreas Scherer <https://ascherer.github.io>
-- Tuneup for CWEB 3.65
+* Thu Feb 04 2021 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.0
 
 * Sun Sep 22 2019 Andreas Scherer <https://ascherer.github.io>
 - Prepare new release
