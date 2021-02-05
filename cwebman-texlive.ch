@@ -201,6 +201,13 @@ the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 \subsection CWEB file format.
 @z
 ------------------------------------------------------------------------------
+@x l.1193
+generated sections 27--31 of the file \.{common.w}, which contains
+@y
+generated sections 27--31 of the file
+\pdfURL{\.{common.w}}{common.pdf}, which contains
+@z
+------------------------------------------------------------------------------
 @x l.1268
 \def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
 @y
