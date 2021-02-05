@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, Januar 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2021.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -9,7 +9,6 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \input cwebmac
 \acrofalse\pdffalse\pdftexfalse
 @y
-\ifx\undefined\XeTeXrevision\else\let\pdf+\fi % XeTeX produces PDF output
 \input cwebmac
 @z
 ------------------------------------------------------------------------------
@@ -80,6 +79,38 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (4.0 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
+@x l.87
+Internet page \.{http://www-cs-faculty.stanford.edu/\char`\~knuth/cweb.html}
+@y
+Internet page
+\pdfURL{\.{http://www-cs-faculty.stanford.edu/\char`\~knuth/cweb.html}}%
+          {http://www-cs-faculty.stanford.edu/\TILDE//knuth/cweb.html}
+@z
+------------------------------------------------------------------------------
+@x l.92
+\.{https://github.com/ascherer/cweb} with the really current news.
+@y
+\pdfURL{\.{https://github.com/ascherer/cweb}}%
+          {https://github.com/ascherer/cweb}
+with the really current news.
+@z
+------------------------------------------------------------------------------
+@x l.110
+should be sent to the \TeX-related mailing list \.{tex-k@tug.org}.
+@y
+should be sent to the \TeX-related mailing list
+\pdfURL{\.{tex-k@tug.org}}%
+   {mailto:tex-k@tug.org}.
+@z
+------------------------------------------------------------------------------
+@x l.528
+email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
+@y
+email address in a \.{CWEB} file (e.g.,
+\pdfURL{\.{tex-k@@tug.org}}%
+   {mailto:tex-k@tug.org}).
+@z
+------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
@@ -142,6 +173,16 @@ Sometimes things don't work as smoothly, and you get a bunch of
 As an example of a real program written in \.{CWEB}, Appendix~A
 @y
 As an example of a real program written in \.{CWEB}, \Appendix A
+@z
+------------------------------------------------------------------------------
+@x l.1168
+the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
+@y
+the program sources at
+\pdfURL{\.{ftp://ftp.cs.stanford.edu/pub/ctwill}}%
+          {ftp://ftp.cs.stanford.edu/pub/ctwill}.%
+\cwebfootnote{\TeX~Live comes with an up-to-date \.{ctwill} executable -- and
+its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
 @x l.1171

@@ -1,11 +1,11 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, June 11, 2020.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2021.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.918
+@x l.922
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -17,7 +17,7 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 variable is not set, some decent default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
-@x l.1059
+@x l.1063
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @y
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)%
@@ -50,15 +50,7 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 (On by default.)}
 @z
 ------------------------------------------------------------------------------
-@x
-the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
-@y
-the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.%
-\cwebfootnote{\TeX~Live comes with an up-to-date \.{ctwill} executable -- and
-its associated helpers -- out of the box.}
-@z
-------------------------------------------------------------------------------
-@x l.1177 Add Appendix G, the CTWILL source code.
+@x l.1183 Add Appendix G, the CTWILL source code.
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
@@ -67,14 +59,14 @@ appendices D, E, and~F, which exhibit the complete source code for
 appendices \pdfURL{D}{common.pdf}, \pdfURL{E}{ctangle.pdf},
 and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.%
-\cwebfootnote{Actually, \pdfURL{appendix~D}{common.pdf} contains the source
-code for \.{COMMON}, and the additional \pdfURL{appendix~G}{ctwill.pdf}
+\cwebfootnote{Actually, \pdfURL{Appendix~D}{common.pdf} contains the source
+code for \.{COMMON}, and the additional \pdfURL{Appendix~G}{ctwill.pdf}
 exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1697
+@x l.1710
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
 if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
@@ -82,9 +74,10 @@ if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
 @z
 ------------------------------------------------------------------------------
-@x l.1760
+@x l.1762
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @z
+------------------------------------------------------------------------------
