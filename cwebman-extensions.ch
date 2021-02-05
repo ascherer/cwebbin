@@ -50,6 +50,13 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 (On by default.)}
 @z
 ------------------------------------------------------------------------------
+@x l.1138
+\section Hypertext and hyperdocumentation.
+@y
+\vfill\eject
+\section Hypertext and hyperdocumentation.
+@z
+------------------------------------------------------------------------------
 @x l.1183 Add Appendix G, the CTWILL source code.
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
