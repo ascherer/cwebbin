@@ -226,12 +226,17 @@ generated sections 27--31 of the file
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 
 And here's what the same excerpt looks like when typeset.
+(Can you spot the typographical nicety used in the \.{CWEB} code?)
+\let\K=\leftarrow
 @y
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 \subsection Final document.
 
 \acrofalse\pdftexfalse\pdffalse
 And here's what the same excerpt looks like when typeset.
+(Can you spot the typographical niceties used in the \.{CWEB} code?)
+\let\K=\leftarrow
+\def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 @z
 ------------------------------------------------------------------------------
 @x l.1501
