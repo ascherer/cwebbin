@@ -48,8 +48,7 @@ Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 # Overwrite 'prod.w' with CWEB original
 Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-%{version}.tar.gz
 # Add CWEBbin stuff on top
-Source2: cwebbin-3.65.tar.gz
-# Source2: cwebbin-%{release}.tar.gz
+Source2: cwebbin-%{release}.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
@@ -197,7 +196,7 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
-* Thu Feb 04 2021 Andreas Scherer <https://ascherer.github.io>
+* Sat Feb 06 2021 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.0
 
 * Sun Sep 22 2019 Andreas Scherer <https://ascherer.github.io>
