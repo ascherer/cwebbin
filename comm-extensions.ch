@@ -39,9 +39,9 @@ boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 38.
+Section 39.
 
-@x l.446
+@x l.441
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -66,9 +66,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-Section 39.
-
-@x l.482
+@x l.474
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -117,9 +115,9 @@ Section 39.
   }
 @z
 
-Section 74.
+Section 68.
 
-@x l.1063
+@x l.1075
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -141,7 +139,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1075
+@x l.1087
   if (history > harmless_message) return(1);
   else return(0);
 @y
@@ -153,9 +151,9 @@ can be made sensitive to these conditions.
   }
 @z
 
-Section 82.
+Section 75.
 
-@x l.1158
+@x l.1166
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -164,9 +162,9 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 83.
+Section 76.
 
-@x l.1177
+@x l.1185
   strcpy(change_file_name,"/dev/null");
 @y
 @#
@@ -182,7 +180,7 @@ Section 83.
 @^system dependencies@>
 @z
 
-@x l.1182
+@x l.1190
       while (*s) {
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -198,9 +196,9 @@ Section 83.
 @^system dependencies@>
 @z
 
-Section 87.
+Section 80.
 
-@x l.1256
+@x l.1264
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
@@ -214,9 +212,9 @@ Section 87.
     } else
 @z
 
-Section 88.
+Section 81.
 
-@x l.1264
+@x l.1272
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -262,7 +260,7 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1309
+@x l.1307
 @** Index.
 @y
 @* Language setting.  This global variable is set by the argument of the

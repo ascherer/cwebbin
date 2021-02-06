@@ -188,9 +188,9 @@ Section 1.
 @d banner "This is CTANGLE (@VERSION@)"
 @z
 
-Section 5.
+Section 3.
 
-@x l.127
+@x l.103
 @i common.h
 @y
 @i comm-foo.h

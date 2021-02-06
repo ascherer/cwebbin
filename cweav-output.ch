@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, March 30, 2020.
+Changes for CWEAVE.W by Andreas Scherer, February 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,14 +6,14 @@ manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
 previous results are not destroyed.
 
-This change file requires CWEAV-PATCH.CH, CWEAV-ANSI.CH, and
-CWEAV-EXTENSIONS.CH to be applied as well.
+This change file requires CWEAV-PATCH.CH and CWEAV-EXTENSIONS.CH to be
+applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 226.
+Section 240.
 
-@x l.4300
+@x l.4347
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -29,7 +29,7 @@ if (no_xref) {
 }
 @z
 
-@x l.4334
+@x l.4381
 @.\\end@>
   finish_line();
   fclose(active_file);
@@ -43,7 +43,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 
 Additional material.
 
-@x l.4644
+@x l.4706
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a

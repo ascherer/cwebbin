@@ -10,7 +10,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 10.
 
-@x l.181
+@x l.177
 extern char change_file_name[]; /* name of change file */
 @y
 extern char change_file_name[]; /* name of change file */
@@ -19,7 +19,7 @@ extern char check_file_name[]; /* name of |check_file| */
 
 Section 13.
 
-@x l.206
+@x l.202
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
 @d temporary_output flags['t'] /* should temporary output take precedence? */
@@ -28,7 +28,7 @@ Section 13.
 
 Section 14.
 
-@x l.225
+@x l.221
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */

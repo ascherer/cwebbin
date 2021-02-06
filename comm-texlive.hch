@@ -8,7 +8,7 @@
 
 Section 15.
 
-@x l.230
+@x l.226
 extern void print_stats(void);@/
 @y
 extern void print_stats(void);@/

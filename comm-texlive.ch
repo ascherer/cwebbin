@@ -3,9 +3,9 @@
 
 % Most of the original changes were merged with the set of change files
 % of the CWEBbin project.  This stripped change file is last in line of
-% comm-patch.ch, comm-ansi.ch, comm-extensions.ch, comm-output.ch,
-% comm-i18n.ch and comm-texlive.ch that get tie'd into comm-w2c.ch that
-% is used as a monolithic changefile for common.w in TeX Live.
+% comm-patch.ch, comm-extensions.ch, comm-output.ch, comm-i18n.ch, and
+% comm-texlive.ch that get tie'd into comm-w2c.ch that is used as a
+% monolithic changefile for common.w in TeX Live.
 
 Material in limbo.
 
@@ -31,8 +31,7 @@ Material in limbo.
 @x l.45
 }
 @y
-}}
-\datecontentspage
+}}\datecontentspage
 @z
 
 @x l.78 and l.204 of COMM-PATCH.CH
@@ -50,24 +49,24 @@ Section 20.
   @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
 @z
 
-Section 25.
+Section 24.
 
-@x l.176
+@x l.173
     if ((*(k++) = c) != ' ') limit = k;
 @y
     if ((*(k++) = c) != ' ' && c != '\r') limit = k;
 @z
 
-Section 26.
+Section 25.
 
-@x l.211 - no alt_web_file_name needed.
+@x l.203 - no alt_web_file_name needed.
 char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
 @z
 
-Section 35.
+Section 36.
 
-@x l.386 and l.78 of COMM-I18N.CH
+@x l.382 and l.78 of COMM-I18N.CH
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -86,7 +85,7 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-@x l.392 and l.84 of COMM-I18N.CH
+@x l.390 and l.84 of COMM-I18N.CH
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -102,9 +101,9 @@ if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-Section 38.
+Section 39.
 
-@x l.446 and l.56 of COMM-EXTENSIONS.CH
+@x l.441 and l.56 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -127,9 +126,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-Section 39.
-
-@x l.466
+@x l.456
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *k=cur_file_name, *kk;
@@ -139,7 +136,7 @@ Section 39.
   char *k=cur_file_name;
 @z
 
-@x l.478
+@x l.470
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
   if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL && @|
@@ -155,7 +152,7 @@ Section 39.
 
 Replaced by Kpathsea `kpse_find_file'.
 
-@x l.482 and l.97 of COMM-EXTENSIONS.CH
+@x l.474 and l.95 of COMM-EXTENSIONS.CH
   if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -180,17 +177,17 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
-Section 81.  CWEB in TeX Live runs quietly by default.
+Section 74.  CWEB in TeX Live runs quietly by default.
 
-@x l.1146
+@x l.1154
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
 make_xrefs=true;@/
 @z
 
-Section 82.
+Section 75.
 
-@x l.1151
+@x l.1159
 file.  It may have an extension, or it may omit the extension to get |".w"| or
 |".web"| added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @y
@@ -198,9 +195,9 @@ file.  It may have an extension, or it may omit the extension to get |".w"|
 added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @z
 
-Section 84.
+Section 77.
 
-@x l.1197
+@x l.1205
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
 |alt_web_file_name| by adding |"web"| after the dot.
@@ -209,16 +206,17 @@ otherwise we add |".w"|. If this file can't be opened, we prepare an
 otherwise we add |".w"|.
 @z
 
-@x l.1214 - no alt_web_file_name
+@x l.1222 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y
 @z
 
-Section 87.
+Section 80.
 
-@x l.1256
+@x l.1264
 @<Handle flag...@>=
 {
+  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 @y
 @<Handle flag...@>=
 {
@@ -234,11 +232,6 @@ Section 87.
   if (strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
 @.--quiet@>
   { show_banner=show_progress=show_happiness=0; continue; }
-@z
-
-@x l.1258
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-@y
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if (*dot_pos=='v') {
       show_banner=show_progress=show_happiness=1;
@@ -253,9 +246,9 @@ Section 87.
     } else
 @z
 
-Section 88.
+Section 81.
 
-@x l.1262 and l.255 of COMM-EXTENSIONS.CH and l.274 of COMM-I18N.CH
+@x l.1270 and l.227 of COMM-EXTENSIONS.CH and l.270 of COMM-I18N.CH
 @ @<Print usage error message and quit@>=
 {
 switch (program) {
@@ -280,9 +273,9 @@ cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 @.Usage:@>
 @z
 
-Section 90.
+Section 83.
 
-@x l.1285
+@x l.1293
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
@@ -291,7 +284,7 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Changes to former addenda.
 
-@x l.288 of COMM-EXTENSIONS.CH and l.326 of COMM-I18N.CH
+@x l.272 of COMM-EXTENSIONS.CH and l.324 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -328,7 +321,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.319 of COMM-EXTENSIONS.CH
+@x l.306 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -359,7 +352,7 @@ string texmf_locale;@/
 
 Material++
 
-@x l.363 of COMM-I18N.CH
+@x l.332 of COMM-I18N.CH
 @* Internationalization.  If a translation catalog for your personal
 \.{LANGUAGE} is installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
 will talk to you in your favorite language.  Catalog \.{cweb} contains all
@@ -413,7 +406,7 @@ There are several ways to set |TEXMFLOCALEDIR|:
     or \.{TEXMFLOCALEDIR.cweb=\$TEXMFMAIN/locale}.\par}
 @z
 
-@x l.356 of COMM-I18N.CH
+@x l.354 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
 texmf_locale = kpse_var_expand ("${TEXMFLOCALEDIR}");
@@ -427,7 +420,7 @@ bindtextdomain("cweb",
 free(texmf_locale);
 @z
 
-@x l.1299
+@x l.1307
 @** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from

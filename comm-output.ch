@@ -11,45 +11,45 @@ applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 74.
+Section 68.
 
-@x l.1074
+@x l.1086
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
 @z
 
-Section 80.
+Section 73.
 
-@x l.1138
+@x l.1146
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
-Section 81.
+Section 74.
 
-@x l.1146
+@x l.1154
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 temporary_output=true; /* Check temporary output for changes */
 @z
 
-Section 90.
+Section 83.
 
-@x l.1284
+@x l.1292
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 FILE *check_file; /* temporary output file */
 @z
 
-Section 91.
+Section 84.
 
-@x l.1287
+@x l.1295
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -96,7 +96,7 @@ else {
 
 New material after section 92.
 
-@x l.1309
+@x l.1307
 @** Index.
 @y
 @* Temporary file output.  Before we leave the program we have to make

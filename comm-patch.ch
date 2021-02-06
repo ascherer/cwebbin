@@ -206,7 +206,7 @@ Section 2.
 
 Section 92.
 
-@x l.1306
+@x l.1307
 @** Index.
 @y
 @** Extensions to \.{CWEB}.  The following sections introduce new or improved

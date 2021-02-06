@@ -6,9 +6,9 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 80.
+Section 85.
 
-@x l.1364 and l.257 of CWEAV-PATCH.CH
+@x l.1363
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -36,9 +36,9 @@ tex_printf(use_language);
 tex_puts("cwebma");
 @z
 
-Section 117.
+Section 125.
 
-@x l.2540
+@x l.2559
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp); big_app(indent); app(indent);
@@ -55,9 +55,9 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
 }
 @z
 
-Section 127.
+Section 135.
 
-@x l.2640
+@x l.2659
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
@@ -103,9 +103,9 @@ else if (cat1==lbrace || cat1==int_like || cat1==decl) {
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
 
-Section 128.
+Section 136.
 
-@x l.2660
+@x l.2679
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1);
@@ -129,9 +129,9 @@ else if (cat1==stmt || cat1==function) {
 }
 @z
 
-Section 132.
+Section 140.
 
-@x l.2713
+@x l.2732
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
@@ -157,7 +157,7 @@ else if (cat1==stmt) {
 
 Addendum.
 
-@x l.4644
+@x l.4706
 @** Index.
 @y
 @* Formatting alternatives.

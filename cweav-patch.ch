@@ -205,7 +205,7 @@ Section 1.
 
 Sections 3--18.
 
-@x l.144
+@x l.112
 @i common.h
 @y
 @i comm-foo.h
@@ -239,7 +239,7 @@ print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
 
 Addendum.
 
-@x l.4644
+@x l.4706
 @** Index.
 @y
 @** Extensions to \.{CWEB}.  The following sections introduce new or improved
