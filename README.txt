@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 3.64c [2021]).
+% This file is part of CWEBbin (Version 4.0 [2021]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated May 6, 2020 by Andreas Scherer.
+% This README file was last updated February 6, 2021 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2018–2020 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018–2021 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -28,7 +28,8 @@
 % under the terms of a permission notice identical to this one.
 
 % Please send comments, suggestions, etc., concerning the original CWEB
-% implementation to tex-k@tug.org.
+% implementation to tex-k@tug.org or visit the CWEB development project
+% https://github.com/ascherer/cweb.
 
 % Please send comments, suggestions, etc., related to changes specific
 % for this modified distribution CWEBbin, especially language catalog
@@ -37,13 +38,10 @@
 
 %%% WHAT IS THIS STUFF? %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-CWEBbin is the ANSI-C/C++ implementation of Silvio Levy's and Donald Ervin
-Knuth's CWEB system, compiled and provided with changefiles for ANSI-C and
-makefiles for Borland C/C++ 3.1 (no longer actively supported), MS/VC++ 4.1
-and 6.0 (both no longer actively supported), SAS/C++ 6.57 (no longer actively
-supported), and most of all UNIX-cc/g++.  Additional features differing from
-the original distribution are described further below.  General information is
-provided in the original README file shipped with the CWEB distribution.
+CWEBbin is an extension of Silvio Levy's and Donald Ervin Knuth's CWEB system.
+Additional features differing from the original distribution are described
+further below.  General information is provided in the original README file
+shipped with the CWEB distribution.
 
 CWEBbin started from the Amiga port of CWEB 2.8 by Carsten Steger.  Then it
 was merged with the CWEB-PC 3.0 distribution by Hans-Hermann Bode and Klaus
@@ -53,10 +51,9 @@ enhancements of these Amiga and MS/DOS/Windows ports.
 
 The distribution of CWEBbin consists of the additional files for this patch
 only.  The complete contents of the original distribution is a prerequisite.
-CWEB can be retrieved via anonymous ftp from
+CWEB 4.0 (and higher) can be retrieved from
 
-	FTP: ftp://ftp.cs.stanford.edu/pub/cweb
-	CTAN: https://ctan.org/pkg/cweb
+	https://github.com/ascherer/cweb
 
 To apply this patched version of CWEB, extract the patch archive (yielding a
 new subdirectory) and add the original distribution.  Care has been taken to
@@ -83,39 +80,10 @@ GENERAL CONTRIBUTION:
 .
 ├── 0001-Make-clean-twinx.patch		Patch for twinx.w
 ├── 0002-Make-clean-refsort.patch	Patch for refsort.w
-├── arexx				[AMIGA]
-│   ├── catalogs
-│   │   ├── cweb_arexx.cd		[AMIGA] catalog description for German defaults
-│   │   ├── cweb_arexx.e.ct		[AMIGA] catalog translation for English users
-│   │   ├── cweb_arexx.f.ct		[AMIGA] catalog translation for French users
-│   │   ├── cweb_arexx.i.ct		[AMIGA] catalog translation for Italian users
-│   │   ├── english
-│   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for English users
-│   │   ├── francais
-│   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for French users
-│   │   └── italiano
-│   │       └── cweb_arexx.catalog	[AMIGA] message catalog for Italian users
-│   ├── compile.ced			[AMIGA] ARexx script to start SAS/C 6.x from CED (V3.5+)
-│   └── start_web.ced			[AMIGA] ARexx script to start cweave/ctangle from CED
-├── catalogs
-│   ├── cweb.cd				[AMIGA] catalog description for English defaults
-│   ├── cweb.d.ct			[AMIGA] catalog translation for German users
-│   ├── cweb.i.ct			[AMIGA] catalog translation for Italian users
-│   ├── dcweb.h				[AMIGA,BCC] header file with the German strings
-│   ├── ecweb.h				[AMIGA,BCC] header file with the English default strings
-│   └── icweb.h				[AMIGA,BCC] header file with the Italian strings
-├── comm-ansi.ch			change file for common.w
-├── comm-ansi.hch			change file for common.h
-├── comm-arexx.ch			[AMIGA] change file for common.w
-├── comm-arexx.hch			[AMIGA] change file for common.h
-├── comm-borlandc.ch			[BCC] change file for common.w
-├── comm-borlandc.hch			[BCC] change file for common.h
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
 ├── comm-i18n.hch			change file for common.h
-├── comm-memory.ch			[AMIGA,BCC] change file for common.w
-├── comm-memory.hch			[AMIGA,BCC] change file for common.h
 ├── comm-newpage.ch			change file for common.w
 ├── common.cxx				product of common.w and comm-foo.ch
 ├── comm-output.ch			change file for common.w
@@ -123,41 +91,26 @@ GENERAL CONTRIBUTION:
 ├── comm-patch.ch			change file for common.w
 ├── comm-texlive.ch			change file for common.w
 ├── comm-texlive.hch			change file for common.h
-├── comm-translation.ch			[AMIGA,BCC] change file for common.w
-├── comm-translation.hch		[AMIGA,BCC] change file for common.h
-├── ctang-ansi.ch			change file for ctangle.w
-├── ctang-borlandc.ch			[BCC] change file for ctangle.w
-├── ctang-extensions.ch			change file for ctangle.w
 ├── ctang-i18n.ch			change file for ctangle.w
 ├── ctangle.1				clone of cweb.1
 ├── ctangle.cxx				product of ctangle.w and ctang-foo.ch
-├── ctangle.dsp				[MSVC] Developer Studio Project for CTANGLE
-├── ctang-memory.ch			[AMIGA,BCC] change file for ctangle.w
 ├── ctang-newpage.ch			change file for ctangle.w
 ├── ctang-output.ch			change file for ctangle.w
 ├── ctang-patch.ch			change file for ctangle.w
 ├── ctang-texlive.ch			change file for ctangle.w
-├── ctang-translation.ch		[AMIGA,BCC] change file for ctangle.w
 ├── ctwill.bux				auxiliary file for CTWILL
+├── ctwill-man.ch			auxiliary file for CTWILL
 ├── ctwill.md				manpage for CTWILL in markdown
 ├── ctwill-mini.ch			auxiliary file for CTWILL
-├── ctwill-refsort.1			manpage link to ctwill.1
 ├── ctwill-texlive.ch			change file for cweave.w/ctwill.w
-├── ctwill-twinx.1			manpage link to ctwill.1
-├── cweav-ansi.ch			change file for cweave.w
-├── cweav-borlandc.ch			[BCC] change file for cweave.w
 ├── cweave.1				clone of cweb.1
-├── cweave.dsp				[MSVC] Developer Studio Project for CWEAVE
 ├── cweav-extensions.ch			change file for cweave.w
 ├── cweav-i18n.ch			change file for cweave.w
-├── cweav-memory.ch			[AMIGA,BCC] change file for cweave.w
 ├── cweav-newpage.ch			change file for cweave.w
 ├── cweav-output.ch			change file for cweave.w
 ├── cweav-patch.ch			change file for cweave.w
 ├── cweav-texlive.ch			change file for cweave.w
-├── cweav-translation.ch		[AMIGA,BCC] change file for cweave.w
 ├── cweav-twill.ch			change file for cweave.w
-├── cwebbin.dsw				[MSVC] Developer Studio Workspace for all three
 ├── cwebbin.spec			extended build recipe for debbuild
 ├── cwebinputs
 │   ├── amiga_types.w			keywords by Commodore and SAS
@@ -165,9 +118,12 @@ GENERAL CONTRIBUTION:
 │   ├── cweb_ecma94.w			Transliteration table for Latin-1
 │   ├── cweb_hp8.w			Transliteration table for HP Roman 8
 │   ├── cweb_mac8.w			Transliteration table for Mac 8-bit
-│   └── cweb_pc850.w			Transliteration table for Codepage 850
-│   ├── iso_types.w			Keywords for ISO C/C++ standards
-├── cwebman.ch				change file for cwebman.tex
+│   ├── cweb_pc850.w0.w			Transliteration table for Codepage 850
+│   └── iso_types.w			Keywords for ISO C/C++ standards
+├── cwebman-extensions.ch		change file for cwebman.tex
+├── cwebman-patch.ch			change file for cwebman.tex
+├── cwebman-texlive.ch			change file for cwebman.tex
+├── cweb.md				base file for CWEB manpage cweb.1
 ├── examples
 │   ├── cct.w				program to translate between character tables
 │   ├── commonwords.w			program to count word frequencies in text files
@@ -189,8 +145,6 @@ GENERAL CONTRIBUTION:
 │   ├── wmerg-patch.ch			change file for wmerge.w
 │   └── wordtest-ansi.ch		change file for wordtest.w
 ├── LICENSE				MIT license
-├── Makefile.bcc			[BCC] makefile for Borland C/C++
-├── Makefile.sas			[AMIGA] makefile for SAS/C compiler 6.0 and up
 ├── Makefile.unix			makefile for cc, c89, gcc, ... on several machines
 ├── po
 │   ├── cweb.pot			Portable Object Template for i18n
@@ -205,6 +159,7 @@ GENERAL CONTRIBUTION:
 ├── prod-twill.ch			change file for prod.w/CTWILL
 ├── README.md				Github project description
 ├── README.txt				the current file
+├── refsort.1				manpage link to ctwill.1
 ├── system.bux				auxiliary file for CTWILL
 ├── texinputs
 │   ├── cweb_ecma94.sty			Umlauts and special characters for Latin-1
@@ -217,8 +172,52 @@ GENERAL CONTRIBUTION:
 │   ├── dproofmac.tex			German captions in addition to proofmac.tex
 │   ├── fcwebmac.tex			French captions in addition to cwebmac.tex
 │   ├── icwebmac.tex			Italian captions in addition to cwebmac.tex
+│   ├── pdfctwimac.tex			PDF macros for CTWILL
+│   ├── pdfwebtocfront.tex		place TOC page at front of PDF output
 │   └── Xcwebmac.tex			beautifications for cwebmac.tex
-└── texlive.w				introduction to *-w2c.ch change files
+├── texlive.w				introduction to *-w2c.ch change files
+├── twinx.1				manpage link to ctwill.1
+└── vault
+    ├── arexx				[AMIGA]
+    │   ├── catalogs
+    │   │   ├── cweb_arexx.cd		[AMIGA] catalog description for German defaults
+    │   │   ├── cweb_arexx.e.ct		[AMIGA] catalog translation for English users
+    │   │   ├── cweb_arexx.f.ct		[AMIGA] catalog translation for French users
+    │   │   ├── cweb_arexx.i.ct		[AMIGA] catalog translation for Italian users
+    │   │   ├── english
+    │   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for English users
+    │   │   ├── francais
+    │   │   │   └── cweb_arexx.catalog	[AMIGA] message catalog for French users
+    │   │   └── italiano
+    │   │       └── cweb_arexx.catalog	[AMIGA] message catalog for Italian users
+    │   ├── compile.ced			[AMIGA] ARexx script to start SAS/C 6.x from CED (V3.5+)
+    │   └── start_web.ced		[AMIGA] ARexx script to start cweave/ctangle from CED
+    ├── catalogs
+    │   ├── cweb.cd			[AMIGA] catalog description for English defaults
+    │   ├── cweb.d.ct			[AMIGA] catalog translation for German users
+    │   ├── cweb.i.ct			[AMIGA] catalog translation for Italian users
+    │   ├── dcweb.h			[AMIGA,BCC] header file with the German strings
+    │   ├── ecweb.h			[AMIGA,BCC] header file with the English default strings
+    │   └── icweb.h			[AMIGA,BCC] header file with the Italian strings
+    ├── comm-arexx.ch			[AMIGA] change file for common.w
+    ├── comm-arexx.hch			[AMIGA] change file for common.h
+    ├── comm-borlandc.ch		[BCC] change file for common.w
+    ├── comm-borlandc.hch		[BCC] change file for common.h
+    ├── comm-memory.ch			[AMIGA,BCC] change file for common.w
+    ├── comm-memory.hch			[AMIGA,BCC] change file for common.h
+    ├── comm-translation.ch		[AMIGA,BCC] change file for common.w
+    ├── comm-translation.hch		[AMIGA,BCC] change file for common.h
+    ├── ctang-borlandc.ch		[BCC] change file for ctangle.w
+    ├── ctangle.dsp			[MSVC] Developer Studio Project for CTANGLE
+    ├── ctang-memory.ch			[AMIGA,BCC] change file for ctangle.w
+    ├── ctang-translation.ch		[AMIGA,BCC] change file for ctangle.w
+    ├── cweav-borlandc.ch		[BCC] change file for cweave.w
+    ├── cweave.dsp			[MSVC] Developer Studio Project for CWEAVE
+    ├── cweav-memory.ch			[AMIGA,BCC] change file for cweave.w
+    ├── cweav-translation.ch		[AMIGA,BCC] change file for cweave.w
+    ├── cwebbin.dsw			[MSVC] Developer Studio Workspace for all three
+    ├── Makefile.bcc			[BCC] makefile for Borland C/C++
+    └── Makefile.sas			[AMIGA] makefile for SAS/C compiler 6.0 and up
 
 %%% HOW TO CREATE THE BINARIES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -300,12 +299,6 @@ your's instead of the Levy/Knuth distribution?''
 
 So here are some words about the `special features':
 
-   - [GENERAL] The complete source code can (or at least at some point of time
-     could) be recompiled with SAS/C for AmigaOS, with Borland C/C++ 3.1 for
-     MS/DOS, with MS/VC++ 4.1 and 6.0 for MS/Windows, and with CC, C89, and
-     GCC for UNIX without the need for further changes.  Well, to be honest,
-     the complete source code was only compiled using GCC.
-
    - [GENERAL] The `+l' (or `-l') option with its argument `X' causes CWEAVE
      to prepend `X' to `cwebmac.tex' in the first line of the output file.
      `X' may be any string of characters (case dependent and possibly empty),
@@ -324,16 +317,6 @@ So here are some words about the `special features':
      packages for other languages can easily be added to this scheme.  To date
      there are no conflicting languages, so single-character strings are used.
      However, there is no support for UTF-8 at this time.
-
-   - [GENERAL] <Obsolete> As of March 1997 five new macros with the prefix
-     `pdf' are available.  Together with the "tex2pdf/pdftex" system they
-     enable the presenation of CWEB source code in "Hyper CWEB" form, i.e.,
-     all section references and the table of contents are hyperlinked and can
-     be used in PDF readers.  Call "cweave -lpdf" (or "cweave -lpdfd", etc.)
-     to include the respective macro file in the TeX output, before running
-     "pdftex". </Obsolete>  As of July 2000 these macros are united with the
-     generic macros, i.e., `cwebmac.tex' can be used with "plain TeX," "plain
-     TeX + dvipdfm," "xetex" (which uses xdvipdfmx), and "pdftex."
 
    - [GENERAL] There are transliteration tables `cweb_ecma94.w', `cweb_hp8.w',
      `cweb_mac8.w', and `cweb_pc850.w' for @inclusion in limbo.  These files
@@ -387,80 +370,12 @@ So here are some words about the `special features':
      "TeX Live" system.  'cwebbin.spec' and 'Makefile.unix' are prepared to
      work with the '--with texlive' option.  This appends and merges the
      *-texlive.* change files and creates a set of *-w2c.ch change files and
-     an extended comm-foo.h @include file.  These files are drop-in
+     an extended comm-w2c.h @include file.  These files are drop-in
      replacements for the hand-coded files used in the TL ecosystem.
 
    - [GENERAL] The latest latest release of CWEBbin includes CWEAVE's
      'evil twin' CTWILL, together with its utility programs 'refsort' and
      'twinx', and the associated TeX macros.
-
-   - [AMIGA] Two AREXX scripts for use with the CygnusEd Professional Editor
-     were added to this package, one for CTANGLE and CWEAVE, localized with
-     the help of language catalogs under AmigaOS version 2.1 or 3.0, the other
-     for use with the SAS/C 6.x compiler in connection with CED V3.5.
-
-   - [AMIGA] All three system programs support the `version' information
-     command of the Amiga operating system.
-
-   - [AMIGA] All three system programs are compiled in the NEAR data segment
-     and can be made `resident'.
-
-   - [AMIGA] The `+m' option enables ARexx communication between CWEB and the
-     SAS/C message browser SCMSG.  Any warnings or error messages are
-     transferred to its list window.  The behaviour of  this feature can be
-     controlled via the external environment variable SCMSGOPT, which may be
-     set to any legal option string as described in the documentation of the
-     SAS/C development system by SAS Institute.
-
-%%% A BIT OF HISTORY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Patch level [p9b] of this implementation introduced localization to other
-languages than English.  All output strings of ctangle and cweave were
-replaced by variable references to an array AppStrings in cweb.h (also new),
-set to the English defaults at startup time.  This works for all systems and
-compilers in a compatible way.  However, version 2.1 of the AMIGA operating
-system introduced the use of language catalogs, thus enabling programs and
-applications to be inherently multilingual without recompilation.  To
-activate this feature, you only have to install AmigaOS 2.1/3.0.  Catalogs
-for various natural languages are already present at the correct place
-(./catalogs/), so ctangle and cweave will greet you in any of these
-languages, if you start them from their home directory ./bin and if your
-system default language is supported.  If you want to use CTANGLE, CWEAVE,
-and WMERGE as resident programs, you have to move the language catalogs to
-the appropriate directories of the LOCALE: drawer.  Catalog translations for
-other languages can easily be installed.  The author of this distribution
-would be grateful to receive catalog translations for other languages for
-inclusion in future versions.
-
-Patch level [p9d] of this implementation introduced dynamic memory allocation
-for all internal arrays except for `flags[256]'.  By this method both ctangle
-and cweave can be compiled in the `NEAR' data segment, so on the AMIGA they
-can be made `resident', i.e., they can reside in RAM and don't have to be
-loaded from disk after the first time.  Patch level [p9d] also introduced an
-ARexx communication facility between CWEB (i.e., ctangle and cweave) and the
-`Message Browser' SCMSG, included in the SAS/C 6.X development system.  If
-you run CWEB with the `+m' option, any error messages will be displayed in
-the window of SCMSG.  The default setting is `off'.  You can control the
-behaviour of this feature by setting the environment variable SCMSGOPT to
-a string with any legal command line options for SCMSG as described in the
-documentation provided with the compiler package by SAS Institute. If the
-environment variable is not set, the default behaviour of SCMSG will be used.
-Patch level [p9d] was evaluated on July 1, 1994, by Andreas Scherer and
-Burkhard Schmitt of Bayreuth University with CC and GCC on a HP Apollo
-workstation and a Sun 4 workstation and a SGI workstation, and on July 2,
-with Borland C/C++ version 3.1 on a MS/DOS machine without any problems.
-
-Patch level [p10] was released to the AmiNet and the Comprehensive TeX
-Archive Network (CTAN) in August 1994.  At least one user had problems
-installing the MS/DOS version.
-
-Patch level [p11] was released to the AmiNet and the Comprehensive TeX
-Archive Network (CTAN) in December 1994.  Only two days later another
-update of CWEB 3.3 was released in Stanford, so a new patch level [p11a]
-had to be created and released in mid-December 1994.  In January 1995 the
-successful installation on at least two more systems has been notified.
-The first is MS/DOS with GCC, the second OS/2 in genuine mode, both working
-with Makefile.unix (and the obvious modifications).
 
 %%% CREDIT WHERE CREDIT IS DUE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -471,7 +386,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-May 6, 2020.
+February 6, 2021
 
 Andreas Scherer
 
