@@ -80,6 +80,15 @@ Section 4.
 @y
 @z
 
+Section 5.
+
+@x
+@ \.{CWEAVE} has a fairly straightforward outline.  It operates in
+@y
+@* Introduction (continued). \.{CWEAVE} has a fairly straightforward outline.
+It operates in
+@z
+
 Section 7.
 
 @x
