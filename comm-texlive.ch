@@ -336,7 +336,7 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 @y
-@* User communation.  The |scan_args| and |cb_show_banner| routines and the
+@* User communication.  The |scan_args| and |cb_show_banner| routines and the
 |bindtextdomain| argument string need a few extra variables.
 
 @d max_banner 50
