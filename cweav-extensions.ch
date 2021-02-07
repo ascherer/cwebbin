@@ -6,96 +6,9 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 4.
+Section 85.
 
-@x l.121
-@d max_bytes 90000 /* the number of bytes in identifiers,
-@y
-@d max_bytes 1000000 /* the number of bytes in identifiers,
-@z
-
-@x l.123
-@d max_names 4000 /* number of identifiers, strings, section names;
-@y
-@d max_names 10239 /* number of identifiers, strings, section names;
-@z
-
-@x l.125
-@d max_sections 2000 /* greater than the total number of sections */
-@d hash_size 353 /* should be prime */
-@d buf_size 100 /* maximum length of input line, plus one */
-@y
-@d max_sections 10239 /* greater than the total number of sections */
-@d hash_size 8501 /* should be prime */
-@d buf_size 1000 /* maximum length of input line, plus one */
-@z
-
-@x l.132
-@d max_refs 20000 /* number of cross-references; must be less than 65536 */
-@d max_toks 20000 /* number of symbols in \CEE/ texts being parsed;
-@y
-@d max_refs 65535 /* number of cross-references; must be less than 65536 */
-@d max_toks 65535 /* number of symbols in \CEE/ texts being parsed;
-@z
-
-@x l.135
-@d max_texts 4000 /* number of phrases in \CEE/ texts being parsed;
-@y
-@d max_texts 10239 /* number of phrases in \CEE/ texts being parsed;
-@z
-
-@x l.137
-@d max_scraps 2000 /* number of tokens in \CEE/ texts being parsed */
-@d stack_size 400 /* number of simultaneous output levels */
-@y
-@d max_scraps 10000 /* number of tokens in \CEE/ texts being parsed */
-@d stack_size 2000 /* number of simultaneous output levels */
-@z
-
-Section 21.  Cross-over from CWEAVE to COMMON.
-
-@x l.269
-@d no_xref (flags['x']==0)
-@d make_xrefs flags['x'] /* should cross references be output? */
-@y
-@d no_xref (!make_xrefs) /* should cross references be suppressed? */
-@z
-
-Section 40.  Parse C++ string prefixes L, U, u, u8.
-
-@x l.708
-    else if (c=='\'' || c=='"' || (c=='L'&&(*loc=='\'' || *loc=='"'))@|
-@y
-    else if (c=='\'' || c=='"'@|
-           || ((c=='L' || c=='u' || c=='U')&&(*loc=='\'' || *loc=='"'))@|
-           || ((c=='u' && *loc=='8')&&(*(loc+1)=='\'' || *(loc+1)=='"'))@|
-@z
-
-Section 49.
-
-@x l.852
-  if (delim=='L') { /* wide character constant */
-    delim=*loc++; *++id_loc=delim;
-  }
-@y
-  if (delim=='L' || delim=='u' || delim=='U') { /* wide character constant */
-    if (delim=='u' && *loc=='8') { *++id_loc=*loc++; }
-    delim=*loc++; *++id_loc=delim;
-  }
-@z
-
-Section 78.
-
-@x l.1320
-@d tex_printf(c) fprintf(active_file,c)
-@y
-@d tex_printf(c) fprintf(active_file,"%s",c)
-@d tex_puts(c) fputs(c,active_file)
-@z
-
-Section 80.
-
-@x l.1364 and l.257 of CWEAV-PATCH.CH
+@x l.1363
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -123,21 +36,15 @@ tex_printf(use_language);
 tex_puts("cwebma");
 @z
 
-Section 117.
+Section 125.
 
-@x l.2540
+@x l.2559
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp); big_app(indent); app(indent);
   reduce(pp,1,fn_decl,0,1);
 }
 @y
-\.{CWEAVE} indents declarations after old-style function definitions.
-With the \.{-i} option they will come out flush left.  You won't see
-any difference if you use ANSI-style function definitions.
-
-@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
-
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app1(pp);
@@ -148,9 +55,9 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
 }
 @z
 
-Section 127.
+Section 135.
 
-@x l.2640
+@x l.2659
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
@@ -196,9 +103,9 @@ else if (cat1==lbrace || cat1==int_like || cat1==decl) {
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
 
-Section 128.
+Section 136.
 
-@x l.2660
+@x l.2679
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1);
@@ -209,14 +116,7 @@ else if (cat1==stmt || cat1==function) {
   big_app1(pp+1); reduce(pp,2,cat1,-1,41);
 }
 @y
-@ The original manual described the \.{-o} option for \.{CWEAVE}, but this was
-not yet present.  Here is a simple implementation.  The purpose is to suppress
-the extra space between local variable declarations and the first statement in
-a function block.
-
-@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
-
-@<Cases for |decl|@>=
+@ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1);
   reduce(pp,2,decl,-1,40);
@@ -229,9 +129,9 @@ else if (cat1==stmt || cat1==function) {
 }
 @z
 
-Section 132.
+Section 140.
 
-@x l.2713
+@x l.2732
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
@@ -241,9 +141,7 @@ else if (cat1==stmt) {
   big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
 @y
-@ Outdent after parameter declarations with option \.{-i}.
-
-@<Cases for |fn_decl|@>=
+@ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
 }
@@ -257,22 +155,30 @@ else if (cat1==stmt) {
 }
 @z
 
-@x l.105 and l.474 of CWEAV-PATCH.CH
-  make_xrefs=force_lines=make_pb=1; /* controlled by command-line options */
-@y
-  make_xrefs=force_lines=make_pb=indent_param_decl=order_decl_stmt=1;
-    /* controlled by command-line options */
-@z
-
 Addendum.
 
-@x l.4644
+@x l.4706
 @** Index.
 @y
-@* Language setting.  This global variable is defined and set in \.{COMMON} by
-the `\.{+l}' (or `\.{-l}') command-line option.
+@* Formatting alternatives.
+\.{CWEAVE} indents declarations after old-style function definitions.
+With the \.{-i} option they will come out flush left.  You won't see
+any difference if you use ANSI-style function definitions.
 
-@<Global var...@>=
-extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
+@d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
+
+@<Set init...@>=
+indent_param_decl=true;
+
+@ The original manual described the \.{-o} option for \.{CWEAVE}, but this was
+not yet present.  Here is a simple implementation.  The purpose is to suppress
+the extra space between local variable declarations and the first statement in
+a function block.
+
+@d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
+
+@<Set init...@>=
+order_decl_stmt=true;
 
 @** Index.
+@z

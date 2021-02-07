@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for COMMON.W, Version 3.64.
+It is a changefile for COMMON.W, Version 4.0.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -34,7 +34,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile COMMON.W.
 
-Copyright (C) 1993-1995,1998,2000,2005,2020 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2020,2021 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -171,88 +171,50 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 
 2020	11 March 2020	AS	Externalize common variables.
 2020	07 June 2020	AS	Fix two message errors.
+
+2021	04 February 2021	AS	Tuneup for CWEB 4.0 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.20
-\def\title{Common code for CTANGLE and CWEAVE (Version 3.64)}
+@x l.25
+\def\title{Common code for CTANGLE and CWEAVE (Version 4.0)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
-@x l.25
-  \centerline{(Version 3.64)}
+@x l.30
+  \centerline{(Version 4.0)}
 @y
   \centerline{(@VERSION@)}
 @z
 
 Activate this, if only the changed modules should be printed.
 
-x l.43
+x l.48
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only changed modules
 z
 
-Section 6. Externalize common variables.
+Section 2.
 
-@x l.137
-@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
+@x l.78
+@i common.h
 @y
-@d minus_gt_ast 027 /* `\.{->*}'\,;  corresponds to MIT's {\tentex\char'27} */
-
-@<Definitions...@>=
-char section_text[longest_name+1]; /* name being sought for */
-char *section_text_end = section_text+longest_name; /* end of |section_text| */
-char *id_first; /* where the current identifier begins in the buffer */
-char *id_loc; /* just after the current identifier in the buffer */
+@i comm-foo.h
 @z
 
-Section 61. Fix bug: Don't print empty line for '-ph'.
+Section 92.
 
-@x l.1151
-int wrap_up() {
-  putchar('\n');
+@x l.1307
+@** Index.
 @y
-int wrap_up() {
-  if (show_progress || show_happiness || (history > spotless)) new_line;
-@z
+@** Extensions to \.{CWEB}.  The following sections introduce new or improved
+features that have been created by numerous contributors over the course of a
+quarter century.
 
-@x l.1183
-  if (*s) printf(s);
-@y
-  if (*s) err_print(s);
-@z
+Care has been taken to keep the original section numbering intact, so this new
+material should nicely integrate with the original ``\&{85.~Index}.''
 
-Section 70. After 'boolean' was changed from 'short' to 'bool' it became
-obvious that '-1' is not really a useful value to designate special case '-'
-for the changefile argument. By flipping the detection logic all is fine again.
-
-@x l.1265
-  while (--argc > 0) {
-@y
-  strcpy(change_file_name,"/dev/null");
-  while (--argc > 0) {
-@z
-
-@x l.1282
-  if (found_change<=0) strcpy(change_file_name,"/dev/null");
-@y
-@z
-
-Section 72.
-
-@x l.1312
-  if (strcmp(*argv,"-")==0) found_change=-1;
-  else {
-@y
-  if (strcmp(*argv,"-")!=0) {
-@z
-
-@x l.1319
-    found_change=1;
-  }
-@y
-  }
-  found_change=1;
+@** Index.
 @z

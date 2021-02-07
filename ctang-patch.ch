@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CTANG-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CTANGLE.W, Version 3.64.
+It is a changefile for CTANGLE.W, Version 4.0.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -31,7 +31,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CTANGLE.W.
 
-Copyright (C) 1993-1995,1998,2000,2005,2011,2019 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2011,2019,2021 Andreas Scherer
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
 Permission is granted to make and distribute verbatim copies of this
@@ -155,24 +155,26 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2018	17 October 2018	AS	Updated version number [2018].
 	06 November 2018 AS	Integration with TeXLive.
+
+2021	04 February 2021	AS	2021 tuneup for CWEB 4.0 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.27
-\def\title{CTANGLE (Version 3.64)}
+@x l.30
+\def\title{CTANGLE (Version 4.0)}
 @y
 \def\title{CTANGLE (@VERSION@)}
 @z
 
-@x l.31
-  \centerline{(Version 3.64)}
+@x l.34
+  \centerline{(Version 4.0)}
 @y
   \centerline{(@VERSION@)}
 @z
 
 Activate this, if only the changed modules should be printed.
 
-x l.48
+x l.51
 \let\maybe=\iftrue
 y
 \let\maybe=\iffalse % print only sections that change
@@ -180,97 +182,18 @@ z
 
 Section 1.
 
-@x l.62
-@d banner "This is CTANGLE (Version 3.64)\n"
+@x l.64
+@d banner "This is CTANGLE (Version 4.0)"
 @y
 @d banner "This is CTANGLE (@VERSION@)"
 @z
 
-Section 16.  Typographic improvement.
+Section 3.
 
-@x l.140
-the array |text_info|, and we use a |text_pointer| variable to refer
+@x l.103
+@i common.h
 @y
-the array |text_info|, and we use a \&{text\_pointer} variable to refer
-@z
-
-Section 20.
-
-x
-@ @<Set init...@>=
-y
-@<Set init...@>=
-z
-
-Section 42.  Fix bug: Don't print empty line for '-bp'.
-
-@x l.564
-    if(show_happiness) printf("\nDone.");
-@y
-    if (show_happiness) {
-      if (show_progress) new_line;
-      printf("Done.");
-    }
-@z
-
-Section 43.
-
-Fix big: Replace colon with space.  See 'common.w' line 1381.
-
-@x l.578
-    if (C_file ==0) fatal("! Cannot open output file:",output_file_name);
-@y
-    if (C_file ==0) fatal("! Cannot open output file ",output_file_name);
-@z
-
-Fix bug: Don't print secondary output files for '-p'.
-
-@x l.580
-    printf("\n(%s)",output_file_name); update_terminal;
-@y
-    if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }
-@z
-
-Section 50.  Typographic improvement.
-
-@x l.681
-@ @<Cases like \.{!=}@>=
-case plus_plus: C_putc('+'); C_putc('+'); out_state=normal; break;
-case minus_minus: C_putc('-'); C_putc('-'); out_state=normal; break;
-case minus_gt: C_putc('-'); C_putc('>'); out_state=normal; break;
-case gt_gt: C_putc('>'); C_putc('>'); out_state=normal; break;
-case eq_eq: C_putc('='); C_putc('='); out_state=normal; break;
-case lt_lt: C_putc('<'); C_putc('<'); out_state=normal; break;
-case gt_eq: C_putc('>'); C_putc('='); out_state=normal; break;
-case lt_eq: C_putc('<'); C_putc('='); out_state=normal; break;
-case not_eq: C_putc('!'); C_putc('='); out_state=normal; break;
-case and_and: C_putc('&'); C_putc('&'); out_state=normal; break;
-case or_or: C_putc('|'); C_putc('|'); out_state=normal; break;
-case dot_dot_dot: C_putc('.'); C_putc('.'); C_putc('.'); out_state=normal;
-    break;
-case colon_colon: C_putc(':'); C_putc(':'); out_state=normal; break;
-case period_ast: C_putc('.'); C_putc('*'); out_state=normal; break;
-case minus_gt_ast: C_putc('-'); C_putc('>'); C_putc('*'); out_state=normal;
-    break;
-@y
-@ @<Cases like \.{!=}@>=
-case plus_plus: C_putc('+');@+C_putc('+'); out_state=normal; break;
-case minus_minus: C_putc('-');@+C_putc('-'); out_state=normal; break;
-case minus_gt: C_putc('-');@+C_putc('>'); out_state=normal; break;
-case gt_gt: C_putc('>');@+C_putc('>'); out_state=normal; break;
-case eq_eq: C_putc('=');@+C_putc('='); out_state=normal; break;
-case lt_lt: C_putc('<');@+C_putc('<'); out_state=normal; break;
-case gt_eq: C_putc('>');@+C_putc('='); out_state=normal; break;
-case lt_eq: C_putc('<');@+C_putc('='); out_state=normal; break;
-case not_eq: C_putc('!');@+C_putc('='); out_state=normal; break;
-case and_and: C_putc('&');@+C_putc('&'); out_state=normal; break;
-case or_or: C_putc('|');@+C_putc('|'); out_state=normal; break;
-case dot_dot_dot: C_putc('.');@+C_putc('.');@+C_putc('.'); out_state=normal;
-    break;
-case colon_colon: C_putc(':');@+C_putc(':'); out_state=normal; break;
-case period_ast: C_putc('.');@+C_putc('*'); out_state=normal; break;
-case minus_gt_ast: C_putc('-');@+C_putc('>');@+C_putc('*'); out_state=normal;
-    break;
+@i comm-foo.h
 @z
 
 Addendum.
@@ -278,14 +201,12 @@ Addendum.
 @x l.1550
 @** Index.
 @y
-@** Extensions for modern \.{CWEB}.  The following sections introduce changes
-and extensions to the code that have been created by numerous contributors over
-the course of a quarter century. They make \.{CWEB} adhere to modern coding
-standards and introduce new or improved features.
+@** Extensions to \.{CWEB}.  The following sections introduce new or improved
+features that have been created by numerous contributors over the course of a
+quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-section should have the same number as the original ``\&{96.~Index},'' and
-additional material follows below.
+material should nicely integrate with the original ``\&{105.~Index}.''
 
 @** Index.
 @z

@@ -1,4 +1,4 @@
-Changes for COMMON.H by Andreas Scherer, December 19, 2018.
+Changes for COMMON.H by Andreas Scherer, January 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
@@ -6,15 +6,15 @@ See `cwebmana.ch' for details about these new features.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Section 5.  Add CTWILL.
+Section 2.  Add CTWILL.
 
-@x l.26
+@x l.34
 @d ctangle 0
 @d cweave 1
 @y
 @z
 
-@x l.32
+@x l.41
 extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -23,17 +23,9 @@ typedef enum {
 extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 11 (of CTANGLE and CWEAVE).
-
-@x l.131
-@d max_file_name_length 60
+@x l.207
+extern boolean flags[]; /* an option for each 7-bit code */
 @y
-@d max_file_name_length 1024
-@z
-
-@x l.169
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d make_xrefs flags['x'] /* should cross references be output? */
+extern boolean flags[]; /* an option for each 7-bit code */
+extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @z

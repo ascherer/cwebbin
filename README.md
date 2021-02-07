@@ -1,16 +1,16 @@
 # literate programming in ansi-c/c++
 
-*cwebbin* is the ansi-c/c++ implementation of silvio levy's and donald e.
-knuth's [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
+*cwebbin* is an extension of silvio levy's and donald e. knuth's
+[cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
 and donald e. knuth's [ctwill program](ftp://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
-drop](http://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz) and [the secondary
-*ctwill* source drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to
-which it applies a set of change files to fix warnings issued by modern c/c++
-compilers and to introduce advanced features. see the extensive
+drop](https://github.com/ascherer/cweb/releases/download/cweb-4.0/cweb-4.0.tar.gz)
+and [the secondary *ctwill* source
+drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
+a set of change files to introduce advanced features. see the extensive
 [readme](README.txt) for the full story.
 
-extract `cwebbin-2020.tar.gz` and add the contents of `cweb-3.64c.tar.gz` and
+extract `cwebbin-2021.tar.gz` and add the contents of `cweb-4.0.tar.gz` and
 `ctwill.tar.gz` for the full set of source files.  unix/linux users should work
 with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 `cautiously`, and `all`).
@@ -22,8 +22,8 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-3.64c.tar.gz cweb-3.64c
-git archive -o cwebbin-2020.tar.gz cwebbin-2020
+git archive -o cweb-4.0.tar.gz cweb-4.0
+git archive -o cwebbin-2021.tar.gz cwebbin-2021
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 *SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build

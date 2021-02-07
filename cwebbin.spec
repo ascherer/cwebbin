@@ -35,23 +35,23 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
+Version: 4.0
+
+%if %{with ansi_only}
+Release: ansi
+%else
+Release: 2021
+%endif
+
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 # Overwrite 'prod.w' with CWEB original
-Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-3.64c.tar.gz
+Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-%{version}.tar.gz
 # Add CWEBbin stuff on top
-Source2: cwebbin-2020.tar.gz
+Source2: cwebbin-%{release}.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
-
-%if %{with ansi_only}
-Version: 3.64c
-Release: ansi
-%else
-Version: 2020
-Release: 18
-%endif
 
 %global __sed_i %{__sed} -i
 
@@ -77,7 +77,7 @@ and Donald Knuth for Literate Programming in C/C++.
 %endif
 
 for f in Makefile.unix po/cweb.pot po/*/cweb.po
-do %{__sed_i} -e "s/@@VERSION@@/Version 3.64 [CWEBbin %{version}]/" $f; done
+do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; done
 
 %if %{with texlive}
 %{__sed_i} -e "s/# \(.*-texlive\)/\1/" Makefile.unix
@@ -196,6 +196,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sat Feb 06 2021 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.0
+
 * Sun Sep 22 2019 Andreas Scherer <https://ascherer.github.io>
 - Prepare new release
 

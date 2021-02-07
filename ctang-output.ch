@@ -1,4 +1,4 @@
-Changes for CTANGLE.W by Andreas Scherer, June 07, 2020.
+Changes for CTANGLE.W by Andreas Scherer, February 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,20 +6,19 @@ manual, the current run is documented in a temporary output file which is
 copied to the expected file in the last moment.  In case of an user abort,
 previous results are not destroyed.
 
-This change file requires CTANG-PATCH.CH, CTANG-ANSI.CH, and
-CTANG-EXTENSIONS.CH to be applied as well.
+This change file requires CTANG-PATCH.CH to be applied as well.
 
 For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
-Section 43.
+Section 50.
 
-@x l.572 and  l.213 in CTANG-PATCH.CH
+@x l.561
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
     sprint_section_name(output_file_name,*an_output_file);
     fclose(C_file);
-    C_file=fopen(output_file_name,"w");
+    C_file=fopen(output_file_name,"wb");
     if (C_file ==0) fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
     if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }

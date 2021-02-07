@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, June 07, 2020.
+Changes for COMMON.W by Andreas Scherer, January 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -6,66 +6,59 @@ manual, the current run is documented in a temporary output file which
 is copied to the expected file in the last moment.  In case of an user
 abort, previous results are not destroyed.
 
-This change file requires COMM-PATCH.CH, COMM-ANSI.CH, and
-COMM-EXTENSIONS.CH to be applied as well.
+This change file requires COMM-PATCH.CH and COMM-EXTENSIONS.CH to be
+applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 61.
+Section 68.
 
-@x l.1155
-  @<Print the job |history|@>;
+@x l.1086
+  @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
   @<Remove the temporary file if not already done@>@;
 @z
 
-Section 67.
+Section 73.
 
-@x l.1218
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@y
-@d show_happiness flags['h'] /* should lack of errors be announced? */
-@d temporary_output flags['t'] /* should temporary output take precedence? */
-@z
-
-@x l.1226
+@x l.1146
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
 @z
 
-Section 68.
+Section 74.
 
-@x l.1234
-show_banner=show_happiness=show_progress=1;
+@x l.1154
+show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
-show_banner=show_happiness=show_progress=1;
-temporary_output=1; /* Check temporary output for changes */
+show_banner=show_happiness=show_progress=make_xrefs=true;@/
+temporary_output=true; /* Check temporary output for changes */
 @z
 
-Section 77.
+Section 83.
 
-@x l.1374
+@x l.1292
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 FILE *check_file; /* temporary output file */
 @z
 
-Section 78.
+Section 84.
 
-@x l.1377
+@x l.1295
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
-  if ((C_file=fopen(C_file_name,"w"))==NULL)
+  if ((C_file=fopen(C_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", C_file_name);
 @.Cannot open output file@>
 }
 else {
-  if ((tex_file=fopen(tex_file_name,"w"))==NULL)
+  if ((tex_file=fopen(tex_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", tex_file_name);
 }
 @y
@@ -101,9 +94,9 @@ else {
 }
 @z
 
-New material after section 82.
+New material after section 92.
 
-@x l.1418
+@x l.1307
 @** Index.
 @y
 @* Temporary file output.  Before we leave the program we have to make

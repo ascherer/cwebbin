@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEBMAN-FOO.CH, is part of CWEBBIN (@VERSION@).  It is a
-changefile written by Andreas Scherer for CWEBMAN.TEX, Version 3.64, that
+changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.0, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
@@ -14,7 +14,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000,2005,2011,2018,2020 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005,2011,2018,2021 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -68,48 +68,21 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.39
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 3.64)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.0)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
 @x l.53
-\vskip 18pt\centerline{(Version 3.64 --- February 2002)}
+\vskip 18pt\centerline{(Version 4.0 --- February 2021)}
 @y
-\vskip 18pt\centerline{(Version 3.64 --- February 2002)%
+\vskip 18pt\centerline{(Version 4.0 --- February 2021)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
-@x l.106
-should be sent to Levy (\.{levy@math.berkeley.edu}).
-@y
-should be sent to Levy (\.{levy@math.berkeley.edu}).%
-\cwebfootnote{Or rather to the ``\TeX~Live''-related mailing list
-\.{tex-k@tug.org}.}
-@z
-------------------------------------------------------------------------------
-@x l.524
-email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}).
-@y
-email address in a \.{CWEB} file (e.g., \.{levy@@math.berkeley.edu}%
-\cwebfootnote{Or rather \.{tex-k@@tug.org}.}).
-@z
-------------------------------------------------------------------------------
-@x l.1582
-  \.{ { }\\vskip 15pt \\centerline\{(Version 3.64)\}{ }\\vfill\}}\cr}$$
+@x l.1595
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.0)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
-@z
-------------------------------------------------------------------------------
-@x l.1704
-or the \CEE/ comments of a \.{CWEB} file:
-@y
-or the \CEE/ comments of a \.{CWEB} file:%
-\cwebfootnote{Be careful to make that $$\vbox{\halign{\.{#}\hfil\cr
-You can send email to
- \\pdfURL\{the author\}\{mailto:andreas\\UNDER/github@@freenet.de\}\cr
-or visit
- \\pdfURL\{his home page\}\{https://github.com/ascherer\}\cr}}$$ in
-the $21^{\rm st}$ century.}
 @z
 ------------------------------------------------------------------------------
