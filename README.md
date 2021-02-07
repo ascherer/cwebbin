@@ -15,6 +15,14 @@ extract `cwebbin-2021.tar.gz` and add the contents of `cweb-4.0.tar.gz` and
 with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 `cautiously`, and `all`).
 
+## feature list
+
+* **internationalization** with the “GNU `gettext` utilities”;
+* **temporary file output**: output is only written when different to former run; can be suppressed with new option `-t`;
+* [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
+* [only `ctangle`] output can be redirected to `@(/dev/{stdout,stderr,null}@>`;
+* [only in “tex live”] file lookup with the **kpathsea** library.
+
 ## advanced packaging
 
 alternatively, you may want to use *rpmbuild* or *debbuild* for compiling the
