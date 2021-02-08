@@ -4,8 +4,6 @@
 # By default CWEB and CWEBBIN are compiled and linked with optimization
 # switched on. Use '--with debuginfo' to switch debugging on.
 %bcond_with debuginfo
-# Apply only the set of ANSI changes.
-%bcond_with ansi_only
 # Prepare CWEBbin as base for TeXLive.
 %bcond_with texlive
 
@@ -36,19 +34,14 @@ Distribution: openSUSE 42 (x86_64)
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 Version: 4.0
-
-%if %{with ansi_only}
-Release: ansi
-%else
 Release: 2021
-%endif
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
 # Overwrite 'prod.w' with CWEB original
-Source1: ftp://ftp.cs.stanford.edu/pub/cweb/cweb-%{version}.tar.gz
+Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb-%{version}.tar.gz
 # Add CWEBbin stuff on top
-Source2: cwebbin-%{release}.tar.gz
+Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
 Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
@@ -92,14 +85,6 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 	-e "s/LINKFLAGS = -g/#LINKFLAGS = -g/" \
 	-e "s/#LINKFLAGS = -s/LINKFLAGS = -s/" \
 	Makefile.unix
-%endif
-
-%if %{with ansi_only}
-%{__sed_i} Makefile.unix -e \
-	"/CHANGES):/{N;s/\(.*: [a-z.\/]*\)\( .*\)\? \(.*ansi[.ch]*\).*/\1 \3/}"
-%{?with_doc:%{__sed_i} -e "s/cweave fullmanual/cweave docs/" Makefile.unix}
-%{__sed_i} -e "/case not_eq/ s/@+/ /" ctang-ansi.ch
-%{__sed_i} -e "0,/char \*b/ s/, where/,where/" cweav-ansi.ch
 %endif
 
 %endif

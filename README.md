@@ -17,6 +17,7 @@ with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 
 ## feature list
 
+* includes **ctwill** and its utilities;
 * **internationalization** with the “GNU `gettext` utilities”;
 * **temporary file output**: output is only written when different to former run; can be suppressed with new option `-t`;
 * [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
