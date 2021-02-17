@@ -285,7 +285,7 @@ ctangle.o: ctangle.$(EXTENSION)
 cweave: cweave.o common.o
 	$(CC) $(LINKFLAGS) -o cweave cweave.o common.o
 
-cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES)
+cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod.w
 	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
 
 cweave.o: cweave.$(EXTENSION)
