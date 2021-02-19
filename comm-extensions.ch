@@ -92,7 +92,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     }
   }
 @y
-  if(0==set_path(include_path,getenv("CWEBINPUTS"))) {
+  if(false==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
   path_prefix = include_path;
@@ -107,7 +107,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     if(k+l+2>=cur_file_name_end) too_long(); /* emergency break */
     strcpy(kk,cur_file_name);
     if((cur_file = fopen(temp_file_name,"r"))!=NULL) {
-      cur_line=0; print_where=1; goto restart; /* success */
+      cur_line=0; print_where=true; goto restart; /* success */
     }
     if((next_path_prefix = strchr(path_prefix,PATH_SEPARATOR))!=NULL)
       path_prefix = next_path_prefix+1;
@@ -293,14 +293,14 @@ static boolean set_path(char *include_path,char *environment)
 
   if(environment) {
     if(strlen(environment)+strlen(include_path) >= max_path_length) {
-      err_print("! Include path too long"); return(0);
+      err_print("! Include path too long"); return(false);
 @.Include path too long@>
     } else {
       sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
       strcpy(include_path,string);
     }
   }
-  return(1);
+  return(true);
 }
 
 @ The path search algorithm defined in section |@<Try to open...@>|

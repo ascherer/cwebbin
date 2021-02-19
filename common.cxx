@@ -862,7 +862,7 @@ cur_line= 0;print_where= true;
 goto restart;
 }
 #line 174 "comm-foo.ch"
-if(0==set_path(include_path,getenv("CWEBINPUTS"))){
+if(false==set_path(include_path,getenv("CWEBINPUTS"))){
 include_depth--;goto restart;
 }
 path_prefix= include_path;
@@ -877,7 +877,7 @@ if(path_prefix&&*path_prefix&&*path_prefix!=PATH_SEPARATOR&&
 if(k+l+2>=cur_file_name_end)too_long();
 strcpy(kk,cur_file_name);
 if((cur_file= fopen(temp_file_name,"r"))!=NULL){
-cur_line= 0;print_where= 1;goto restart;
+cur_line= 0;print_where= true;goto restart;
 }
 if((next_path_prefix= strchr(path_prefix,PATH_SEPARATOR))!=NULL)
 path_prefix= next_path_prefix+1;
@@ -1567,14 +1567,14 @@ include_path[max_path_length]= '\0';
 
 if(environment){
 if(strlen(environment)+strlen(include_path)>=max_path_length){
-err_print(_("! Include path too long"));return(0);
+err_print(_("! Include path too long"));return(false);
 
 }else{
 sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
 strcpy(include_path,string);
 }
 }
-return(1);
+return(true);
 }
 
 /*:88*/

@@ -319,9 +319,9 @@ Section 84.
 @z
 
 @x l.296 of COMM-EXTENSIONS.CH
-      err_print("! Include path too long"); return(0);
+      err_print("! Include path too long"); return(false);
 @y
-      err_print(_("! Include path too long")); return(0);
+      err_print(_("! Include path too long")); return(false);
 @z
 
 More new material.
