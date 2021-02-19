@@ -9,8 +9,8 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 Section 2.  Add CTWILL.
 
 @x l.34
-@d ctangle 0
-@d cweave 1
+@d ctangle false
+@d cweave true
 @y
 @z
 

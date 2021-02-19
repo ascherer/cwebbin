@@ -87,7 +87,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
-      cur_line=0; print_where=1;
+      cur_line=0; print_where=true;
       goto restart; /* success */
     }
   }
