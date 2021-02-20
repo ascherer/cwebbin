@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CWEAVE.W, Version 4.0.
+It is a changefile for CWEAVE.W, Version 4.1.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -172,17 +172,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 	06 November 2018 AS	Integration with TeXLive.
 
 2021	04 February 2021	AS	2021 tuneup for CWEB 4.0 [2021].
+	20 February 2021	AS	2021 tuneup for CWEB 4.1 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.35
-\def\title{CWEAVE (Version 4.0)}
+\def\title{CWEAVE (Version 4.1)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.39
-  \centerline{(Version 4.0)}
+  \centerline{(Version 4.1)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -198,7 +199,7 @@ z
 Section 1.
 
 @x l.70
-@d banner "This is CWEAVE (Version 4.0)"
+@d banner "This is CWEAVE (Version 4.1)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
 @z

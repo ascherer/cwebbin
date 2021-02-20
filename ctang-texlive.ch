@@ -12,13 +12,13 @@ Material in limbo.
 @x l.30 and l.166 of CTANG-PATCH.CH
 \def\title{CTANGLE (@VERSION@)}
 @y
-\def\title{CTANGLE (Version 4.0 [\TeX~Live])}
+\def\title{CTANGLE (Version 4.1 [\TeX~Live])}
 @z
 
 @x l.34 and l.172 of CTANG-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.0 [\TeX~Live])}
+  \centerline{(Version 4.1 [\TeX~Live])}
 @z
 
 @x l.36
@@ -38,7 +38,7 @@ Section 1.
 @x l.64 and l.188 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
 @d banner _("This is CTANGLE (@VERSION@)")
 @y
-@d banner "This is CTANGLE, Version 4.0"
+@d banner "This is CTANGLE, Version 4.1"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 

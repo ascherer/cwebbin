@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CTANG-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CTANGLE.W, Version 4.0.
+It is a changefile for CTANGLE.W, Version 4.1.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -157,17 +157,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 	06 November 2018 AS	Integration with TeXLive.
 
 2021	04 February 2021	AS	2021 tuneup for CWEB 4.0 [2021].
+	20 February 2021	AS	2021 tuneup for CWEB 4.1 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.30
-\def\title{CTANGLE (Version 4.0)}
+\def\title{CTANGLE (Version 4.1)}
 @y
 \def\title{CTANGLE (@VERSION@)}
 @z
 
 @x l.34
-  \centerline{(Version 4.0)}
+  \centerline{(Version 4.1)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -183,7 +184,7 @@ z
 Section 1.
 
 @x l.64
-@d banner "This is CTANGLE (Version 4.0)"
+@d banner "This is CTANGLE (Version 4.1)"
 @y
 @d banner "This is CTANGLE (@VERSION@)"
 @z
@@ -206,7 +207,7 @@ features that have been created by numerous contributors over the course of a
 quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{105.~Index}.''
+material should nicely integrate with the original ``\&{104.~Index}.''
 
 @** Index.
 @z

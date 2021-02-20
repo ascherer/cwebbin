@@ -140,8 +140,8 @@ can be made sensitive to these conditions.
 @z
 
 @x l.1087
-  if (history > harmless_message) return(1);
-  else return(0);
+  if (history > harmless_message) return EXIT_FAILURE;
+  else return EXIT_SUCCESS;
 @y
   switch(history) {
   case harmless_message: return RETURN_WARN;

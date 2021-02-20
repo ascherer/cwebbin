@@ -564,7 +564,7 @@ FILE*fp)
 {
 register int c= EOF;
 register char*k;
-if(feof(fp))return(false);
+if(feof(fp))return false;
 limit= k= buffer;
 while(k<=buffer_end&&(c= getc(fp))!=EOF&&c!='\n')
 if((*(k++)= c)!=' ')limit= k;
@@ -575,9 +575,9 @@ ungetc(c,fp);loc= buffer;err_print(_("! Input line too long"));
 #line 175 "common.w"
 
 }
-if(c==EOF&&limit==buffer)return(false);
+if(c==EOF&&limit==buffer)return false;
 
-return(true);
+return true;
 }
 
 /*:24*//*28:*/
@@ -965,7 +965,7 @@ init_p(p,t);
 /*:51*/
 #line 656 "common.w"
 
-return(p);
+return p;
 }
 
 /*:48*//*52:*/
