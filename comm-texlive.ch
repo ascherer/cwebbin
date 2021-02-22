@@ -60,7 +60,7 @@ Section 24.
 Section 25.
 
 @x l.203 - no alt_web_file_name needed.
-char alt_web_file_name[max_file_name_length]; /* alternate name to try */
+static char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
 @z
 

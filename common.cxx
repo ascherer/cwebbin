@@ -61,6 +61,15 @@
 #define xisupper(c) (isupper((eight_bits) c) &&((eight_bits) c<0200) ) 
 #define xisxdigit(c) (isxdigit((eight_bits) c) &&((eight_bits) c<0200) )  \
 
+#define max_include_depth 10 \
+
+#define max_file_name_length 1024
+#define cur_file file[include_depth]
+#define cur_file_name file_name[include_depth]
+#define cur_line line[include_depth]
+#define web_file file[0]
+#define web_file_name file_name[0] \
+
 #define length(c) (size_t) ((c+1) ->byte_start-(c) ->byte_start) 
 #define print_id(c) term_write((c) ->byte_start,length((c) ) ) 
 #define llink link
@@ -76,15 +85,6 @@
 #define mark_error history= error_message
 #define confusion(s) fatal(_("! This can't happen: ") ,s)  \
  \
-
-#define max_include_depth 10 \
-
-#define max_file_name_length 1024
-#define cur_file file[include_depth]
-#define cur_file_name file_name[include_depth]
-#define cur_line line[include_depth]
-#define web_file file[0]
-#define web_file_name file_name[0] \
 
 #define show_banner flags['b']
 #define show_progress flags['p']
@@ -184,7 +184,32 @@ extern char*loc;
 extern char*limit;
 
 /*:5*//*6:*/
-#line 119 "comm-foo.h"
+#line 122 "comm-foo.h"
+
+extern int include_depth;
+extern FILE*file[];
+extern FILE*change_file;
+extern char file_name[][max_file_name_length];
+
+extern char change_file_name[];
+extern char check_file_name[];
+extern int line[];
+extern int change_line;
+extern int change_depth;
+extern boolean input_has_ended;
+extern boolean changing;
+extern boolean web_file_open;
+
+/*:6*//*8:*/
+#line 143 "comm-foo.h"
+
+extern sixteen_bits section_count;
+extern boolean changed_section[];
+extern boolean change_pending;
+extern boolean print_where;
+
+/*:8*//*9:*/
+#line 157 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -208,45 +233,20 @@ extern name_pointer hash[];
 extern hash_pointer hash_end;
 extern hash_pointer h;
 
-/*:6*//*8:*/
-#line 163 "comm-foo.h"
+/*:9*//*11:*/
+#line 201 "comm-foo.h"
 
 extern int history;
 
-/*:8*//*10:*/
-#line 183 "comm-foo.h"
+/*:11*//*13:*/
+#line 218 "comm-foo.h"
 
-extern int include_depth;
-extern FILE*file[];
-extern FILE*change_file;
+extern int argc;
+extern char**argv;
 extern char C_file_name[];
 extern char tex_file_name[];
 extern char idx_file_name[];
 extern char scn_file_name[];
-extern char file_name[][max_file_name_length];
-
-extern char change_file_name[];
-extern char check_file_name[];
-extern int line[];
-extern int change_line;
-extern int change_depth;
-extern boolean input_has_ended;
-extern boolean changing;
-extern boolean web_file_open;
-
-/*:10*//*12:*/
-#line 208 "comm-foo.h"
-
-extern sixteen_bits section_count;
-extern boolean changed_section[];
-extern boolean change_pending;
-extern boolean print_where;
-
-/*:12*//*13:*/
-#line 222 "comm-foo.h"
-
-extern int argc;
-extern char**argv;
 extern boolean flags[];
 extern const char*use_language;
 
@@ -287,8 +287,8 @@ char*id_loc;
 
 char buffer[long_buf_size];
 char*buffer_end= buffer+buf_size-2;
-char*limit= buffer;
 char*loc= buffer;
+char*limit= buffer;
 
 /*:22*//*25:*/
 #line 194 "common.w"
@@ -299,7 +299,7 @@ FILE*change_file;
 char file_name[max_include_depth][max_file_name_length];
 
 char change_file_name[max_file_name_length];
-char alt_web_file_name[max_file_name_length];
+static char alt_web_file_name[max_file_name_length];
 int line[max_include_depth];
 int change_line;
 int change_depth;
@@ -310,8 +310,8 @@ boolean web_file_open= false;
 /*:25*//*26:*/
 #line 220 "common.w"
 
-char change_buffer[buf_size];
-char*change_limit;
+static char change_buffer[buf_size];
+static char*change_limit;
 
 /*:26*//*37:*/
 #line 401 "common.w"
@@ -333,8 +333,8 @@ name_pointer name_dir_end= name_dir+max_names-1;
 /*:43*//*44:*/
 #line 609 "common.w"
 
-name_pointer name_ptr;
 char*byte_ptr;
+name_pointer name_ptr;
 
 /*:44*//*46:*/
 #line 629 "common.w"
@@ -395,7 +395,14 @@ char separators[]= SEPARATORS;
 #line 70 "common.w"
 
 /*7:*/
-#line 142 "comm-foo.h"
+#line 137 "comm-foo.h"
+
+extern boolean get_line(void);
+extern void check_complete(void);
+extern void reset_input(void);
+
+/*:7*//*10:*/
+#line 180 "comm-foo.h"
 
 extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern name_pointer id_lookup(const char*,const char*,char);
@@ -407,22 +414,15 @@ extern void print_prefix_name(name_pointer);
 extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
-/*:7*//*9:*/
-#line 166 "comm-foo.h"
+/*:10*//*12:*/
+#line 204 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
 extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
-/*:9*//*11:*/
-#line 202 "comm-foo.h"
-
-extern boolean get_line(void);
-extern void check_complete(void);
-extern void reset_input(void);
-
-/*:11*//*15:*/
+/*:12*//*15:*/
 #line 244 "comm-foo.h"
 
 extern void common_init(void);
