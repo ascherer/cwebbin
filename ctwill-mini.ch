@@ -1084,8 +1084,8 @@ Section 283.
 @x
 the index section itself---NOT!
 
-@<Global...@>=
-sixteen_bits k_section; /* runs through the sections */
+@<Private...@>=
+static sixteen_bits k_section; /* runs through the sections */
 @y
 the index section itself---NOT!
 @z
@@ -1097,13 +1097,6 @@ Section 284.
 @y
 @ A left-to-right radix sorting method is used, since this makes it easy to
 @-c@>
-@z
-
-@x
-name_pointer blink[max_names]; /* links in the buckets */
-@y
-name_pointer blink[max_names]; /* links in the buckets */
-sixteen_bits k_section; /* runs through the sections */
 @z
 
 Section 286.
