@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (4.1 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.1 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (4.1 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.1 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.87
