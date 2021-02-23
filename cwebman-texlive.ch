@@ -133,6 +133,14 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
+@x l.1029
+except for error messages.
+@y
+except for error messages.%
+\cwebfootnote{\.{CWEB} in \TeX~Live runs `\.{--quiet}ly', i.\,e.,
+options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
+@z
+------------------------------------------------------------------------------
 @x l.1063 and l.27 of CWEBMAN-EXTENSIONS.CH
 \option i Indent parameters in function declarations.  This causes the
 @y
