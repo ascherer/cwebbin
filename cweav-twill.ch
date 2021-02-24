@@ -445,11 +445,11 @@ ccode['r']=ccode['R']=right_start;
 @z
 
 @x l.6594
-static eight_bits skip_TeX(void);@/
+static eight_bits skip_TeX(void);
 
 @ @c
 @y
-static eight_bits skip_TeX(void);@/
+static eight_bits skip_TeX(void);
 
 @ We look for a clue about the program's title, because this will become
 part of all meanings.
