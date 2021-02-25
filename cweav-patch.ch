@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CWEAVE.W, Version 4.1.
+It is a changefile for CWEAVE.W, Version 4.2.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -173,17 +173,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2021	04 February 2021	AS	2021 tuneup for CWEB 4.0 [2021].
 	20 February 2021	AS	2021 tuneup for CWEB 4.1 [2021].
+	25 February 2021	AS	2021 tuneup for CWEB 4.2 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.35
-\def\title{CWEAVE (Version 4.1)}
+\def\title{CWEAVE (Version 4.2)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.39
-  \centerline{(Version 4.1)}
+  \centerline{(Version 4.2)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -199,7 +200,7 @@ z
 Section 1.
 
 @x l.70
-@d banner "This is CWEAVE (Version 4.1)"
+@d banner "This is CWEAVE (Version 4.2)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
 @z
@@ -215,26 +216,33 @@ Sections 3--18.
 Sections 112--113.
 
 @x
-static void print_text(text_pointer p);@/
+@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+
+@c
+static void
+print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
 @y
+@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+
+@c
 #if 0
-static void print_text(text_pointer p);@/
+static void
+print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+@z
+
+@x
+}
+@y
+}
 #endif
 @z
 
 @x
-static void
-print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+@ @<Predecl...@>=@+static void print_text(text_pointer p);
 @y
+@ @<Predecl...@>=
 #if 0
-static void
-print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
-@z
-
-@x
-}
-@y
-}
+static void print_text(text_pointer p);
 #endif
 @z
 

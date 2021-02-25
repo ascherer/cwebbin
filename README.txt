@@ -1,7 +1,7 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.1 [2021]).
+% This file is part of CWEBbin (Version 4.2 [2021]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
@@ -51,7 +51,7 @@ enhancements of these Amiga and MS/DOS/Windows ports.
 
 The distribution of CWEBbin consists of the additional files for this patch
 only.  The complete contents of the original distribution is a prerequisite.
-CWEB 4.1 (and higher) can be retrieved from
+CWEB 4.2 (and higher) can be retrieved from
 
 	https://github.com/ascherer/cweb
 

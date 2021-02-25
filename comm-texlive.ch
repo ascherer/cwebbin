@@ -13,13 +13,13 @@ Material in limbo.
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{Common code for CTANGLE and CWEAVE (4.1 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.2 [\TeX~Live])}
 @z
 
 @x l.30 and l.188 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.1 [\TeX~Live])}
+  \centerline{(Version 4.2 [\TeX~Live])}
 @z
 
 @x l.32
@@ -60,7 +60,7 @@ Section 24.
 Section 25.
 
 @x l.203 - no alt_web_file_name needed.
-char alt_web_file_name[max_file_name_length]; /* alternate name to try */
+static char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
 @z
 
@@ -384,10 +384,9 @@ resulting \.{*.po} files to the maintainers at \.{tex-k@@tug.org}.
 does \\{not} set |HAVE_GETTEXT| at build-time, so \.{i18n} is ``off'' by
 default.  If you want to create \.{CWEB} executables with NLS support, you
 have to recompile the \TeX~Live sources with a positive value for
-|HAVE_GETTEXT| both in \.{comm-w2c.ch} and \.{comm-w2c.h}.  Also you
-have to ``compile'' the NLS catalogs provided for \.{CWEB} in the source
-tree with \.{msgfmt} and store the resulting \.{.mo} files at an appropriate
-place in the file system.
+|HAVE_GETTEXT| in \.{comm-w2c.h}.  Also you have to ``compile'' the NLS
+catalogs provided for \.{CWEB} in the source tree with \.{msgfmt} and store the
+resulting \.{.mo} files at an appropriate place in the file system.
 
 Plans for \TeX~Live are to store NLS catalogs inside the ``\TeX\ Directory
 Structure'' (TDS) and look them up with the help of the configuration variable

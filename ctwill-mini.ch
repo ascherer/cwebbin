@@ -14,7 +14,7 @@ Section 1.
 @z
 
 @x
-@d banner "This is CTWILL, Version 4.1"
+@d banner "This is CTWILL, Version 4.2"
 @y
 \bigskip
 {\font\itt=cmitt10 \font\bit=cmbxti10
@@ -35,7 +35,7 @@ be even more ``off'' from {\itt cweave.w}.  Care has been taken to give a
 faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 ---Enjoy!\bigskip}
 
-@d banner "This is CTWILL, Version 4.1"
+@d banner "This is CTWILL, Version 4.2"
 @z
 
 Section 2.
@@ -109,7 +109,7 @@ Section 9.
 @-c@>
 @z
 
-Section 10.
+Section 13.
 
 @x
 @ Code related to identifier and section name storage:
@@ -118,21 +118,13 @@ Section 10.
 @-c@>
 @z
 
-Section 12.
+Section 15.
 
 @x
 @ Code related to error handling:
 @y
 @ Code related to error handling:
 @-s@>
-@z
-
-Section 16.
-
-@x
-@ Code related to section numbers:
-@y
-@ Code related to section numbers:
 @z
 
 Section 17.
@@ -146,9 +138,9 @@ extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
 Section 18.
 
 @x
-@ Code relating to output:
+@ Code related to output:
 @y
-@ Code relating to output:
+@ Code related to output:
 @-a@>
 @-b@>
 @-c@>
@@ -715,14 +707,6 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
-Section 138.
-
-@x
-@ @<Set init...@>=
-@y
-@r @ @<Set init...@>=
-@z
-
 Section 139.
 
 @x
@@ -730,6 +714,14 @@ Section 139.
 @y
 @ Token lists in |@!tok_mem| are composed of the following kinds of
 @-p@>
+@z
+
+Section 141.
+
+@x
+@ @<Print token |r|...@>=
+@y
+@r @ @<Print token |r|...@>=
 @z
 
 Section 142.
@@ -941,12 +933,28 @@ Section 168.
 @r @ @<Cases for |decl_head|@>=
 @z
 
+Section 173.
+
+@x
+@ @<Cases for |fn_decl|@>=
+@y
+@r @ @<Cases for |fn_decl|@>=
+@z
+
 Section 208.
 
 @x
 @ Here's the |squash| procedure, which
 @y
 @r @ Here's the |squash| procedure, which
+@z
+
+Section 212.
+
+@x
+@ @<Print a snapsh...@>=
+@y
+@r @ @<Print a snapsh...@>=
 @z
 
 Section 220.
@@ -1071,25 +1079,6 @@ Section 272.
 @r @ The |footnote| procedure gives cross-reference information about
 @z
 
-Section 277.
-
-@x
-@ @<Output information about usage of id's defined in other sections@>=
-@y
-@r @ @<Output information about usage of id's defined in other sections@>=
-@z
-
-Section 283.
-
-@x
-the index section itself---NOT!
-
-@<Global...@>=
-sixteen_bits k_section; /* runs through the sections */
-@y
-the index section itself---NOT!
-@z
-
 Section 284.
 
 @x
@@ -1097,13 +1086,6 @@ Section 284.
 @y
 @ A left-to-right radix sorting method is used, since this makes it easy to
 @-c@>
-@z
-
-@x
-name_pointer blink[max_names]; /* links in the buckets */
-@y
-name_pointer blink[max_names]; /* links in the buckets */
-sixteen_bits k_section; /* runs through the sections */
 @z
 
 Section 286.
