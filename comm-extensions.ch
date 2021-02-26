@@ -83,7 +83,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   if (l>0) {
     if (k+l+2>=cur_file_name_end)  too_long();
 @.Include file name ...@>
-    for (; k>= cur_file_name; k--) *(k+l+1)=*k;
+    for (; k>=cur_file_name; k--) *(k+l+1)=*k;
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
@@ -121,7 +121,7 @@ Section 68.
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
-a status of 0 if and only if only harmless messages were printed.
+a status of |EXIT_SUCCESS| if and only if only harmless messages were printed.
 @^system dependencies@>
 @y
 On multi-tasking systems like the {\mc AMIGA} it is very convenient to
