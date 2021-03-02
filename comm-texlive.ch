@@ -177,6 +177,16 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
+Section 73.
+
+@x l.1128
+or flags to be turned on (beginning with |"+"|).
+@y
+or flags to be turned on (beginning with |"+"|).
+\TeX~Live's \.{CWEB} executables accept several ``long options'' as well;
+see section |@<Handle flag arg...@>| for details.
+@z
+
 Section 74.  CWEB in TeX Live runs quietly by default.
 
 @x l.1154
@@ -228,10 +238,10 @@ Section 80.
     @<Display version information and |exit|@>@;
   if (strcmp("-verbose",*argv)==0 || strcmp("--verbose",*argv)==0)
 @.--verbose@>
-  { show_banner=show_progress=show_happiness=1; continue; }
+  { show_banner=show_progress=show_happiness=true; continue; }
   if (strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
 @.--quiet@>
-  { show_banner=show_progress=show_happiness=0; continue; }
+  { show_banner=show_progress=show_happiness=false; continue; }
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if (*dot_pos=='v') {
       show_banner=show_progress=show_happiness=true;
