@@ -1,0 +1,25 @@
+@$ctangle {COMMON.W}2 \&{int}@>
+@$ctwill {COMMON.W}2 \&{int}@>
+@$cweave {COMMON.W}2 \&{int}@>
+
+@$HAVE_GETTEXT@> {COMMON.W}3 macro@>
+
+@$init_p {CWEAVE.W}32 \&{void} (\,)@>
+@$init_node {CWEAVE.W}32 \&{void} (\,)@>
+@$names_match {CWEAVE.W}32 \&{boolean} (\,)@>
+
+@$ac [CWEAVE.W}2 \&{int}@>
+@$av [CWEAVE.W}2 \&{char} ${*}$ ${*}$@>
+@$main {CWEAVE.W}2 \&{int} (\,)@>
+
+@$print_stats {CWEAVE.W}262 \&{void} (\,)@>
+
+@$xmem {CWEAVE.W}23 \&{xref\_info} [\,]@>
+
+@$xref {CWEAVE.W}24 \\{equiv\_or\_xref}@>
+
+@$text_info {CTANGLE.W}20 \&{text} [\,]@>
+
+@$equiv {CTANGLE.W}22 \\{equiv\_or\_xref}@>
+
+@$ilk {CWEAVE.W}20 \\{dummy.Ilk}@>

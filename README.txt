@@ -84,7 +84,9 @@ GENERAL CONTRIBUTION:
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
 ├── comm-i18n.hch			change file for common.h
+├── comm-mini.ch			auxiliary file for COMMON
 ├── comm-newpage.ch			change file for common.w
+├── common.bux				auxiliary file for COMMON
 ├── common.cxx				product of common.w and comm-foo.ch
 ├── comm-output.ch			change file for common.w
 ├── comm-output.hch			change file for common.h

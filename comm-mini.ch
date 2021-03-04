@@ -1,0 +1,73 @@
+Section 3.
+
+@x
+internationalization.
+@y
+internationalization.
+@-A@>
+@-S@>
+@z
+
+Section 14.
+
+@x
+@ Code related to output:
+@y
+@ Code related to output:
+@-a@>
+@-b@>
+@z
+
+Section 32.
+
+@x
+current line is nonempty.
+@y
+current line is nonempty.
+@-b@>
+@z
+
+Section 52.
+
+@x
+@d first_chunk(p)  ((p)->byte_start+2)
+@y
+@-m@>
+@d first_chunk(p)  ((p)->byte_start+2)
+@z
+
+Section 87.
+
+@x
+@^system dependencies@> @.CWEBINPUTS@>
+@y
+@^system dependencies@> @.CWEBINPUTS@>
+@-CWEBINPUTS@>
+@z
+
+Section 88.
+
+@x
+@ @c
+@y
+@ @-CWEBINPUTS@>@c
+@z
+
+Section 89.
+
+@x
+needs a few extra variables.
+@y
+needs a few extra variables.
+@-SEPARATORS@>
+@z
+
+Section 91.
+
+@x
+@.cweb.mo@>
+@y
+@.cweb.mo@>
+@-A@>
+@-B@>
+@z

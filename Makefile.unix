@@ -185,7 +185,8 @@ PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	0001-Update-CWEBbin-manpage.patch \
 	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
 	ctangle.1 cweave.1 ctwill.md refsort.1 twinx.1 \
-	README.md system.bux texlive.w ctwill.bux ctwill-mini.ch LICENSE
+	LICENSE README.md texlive.w system.bux \
+	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
