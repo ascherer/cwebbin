@@ -8,6 +8,24 @@ internationalization.
 @-S@>
 @z
 
+Section 5.
+
+@x
+@ Code related to input routines:
+@y
+@ Code related to input routines:
+@-c@>
+@z
+
+Section 9.
+
+@x
+@ Code related to identifier and section name storage:
+@y
+@ Code related to identifier and section name storage:
+@-c@>
+@z
+
 Section 14.
 
 @x
