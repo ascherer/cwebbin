@@ -75,3 +75,9 @@ void collapse(
 @y
 {@+register const char *p=x->id;
 @z
+
+@x l.434
+    if (*p=='_') putchar('\\');
+@y
+    if (*p=='_'&&*(p-1)!='\\') putchar('\\');
+@z
