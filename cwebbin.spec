@@ -43,7 +43,6 @@ Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb
 # Add CWEBbin stuff on top
 Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
-Patch2: 0001-Make-clean-twinx.patch
 Patch3: 0002-Make-clean-refsort.patch
 
 %global __sed_i %{__sed} -i
