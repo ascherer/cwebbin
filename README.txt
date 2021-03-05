@@ -78,8 +78,6 @@ The following files were added to this distribution by various contributors:
 
 GENERAL CONTRIBUTION:
 .
-├── 0001-Make-clean-twinx.patch		Patch for twinx.w
-├── 0002-Make-clean-refsort.patch	Patch for refsort.w
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
@@ -162,6 +160,7 @@ GENERAL CONTRIBUTION:
 ├── README.md				Github project description
 ├── README.txt				the current file
 ├── refsort.1				manpage link to ctwill.1
+├── refsort.ch				Patch for refsort.w
 ├── system.bux				auxiliary file for CTWILL
 ├── texinputs
 │   ├── cweb_ecma94.sty			Umlauts and special characters for Latin-1
@@ -179,6 +178,7 @@ GENERAL CONTRIBUTION:
 │   └── Xcwebmac.tex			beautifications for cwebmac.tex
 ├── texlive.w				introduction to *-w2c.ch change files
 ├── twinx.1				manpage link to ctwill.1
+├── twinx.ch				Patch for twinx.w
 └── vault
     ├── arexx				[AMIGA]
     │   ├── catalogs
