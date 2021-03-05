@@ -1,4 +1,4 @@
-@x
+@x l.10
 #include <stdio.h>
 @y
 #include <stdio.h>
@@ -7,7 +7,7 @@
 #include <ctype.h>
 @z
 
-@x
+@x l.15
 main(argc,argv)
   int argc;
   char *argv[];
@@ -17,13 +17,13 @@ int main(
   char *argv[])
 @z
 
-@x
+@x l.102
   char *id;
 @y
   const char *id;
 @z
 
-@x
+@x l.115
 char *save_string(s)
   char *s;
 @y
@@ -31,13 +31,20 @@ char *save_string(
   char *s)
 @z
 
-@x
+@x l.145
 node *new_node()
 @y
 node *new_node(void)
 @z
 
-@x
+@x l.216
+    if (*p=='{') bal++;
+@y
+    if (*p=='\\') { *q++=*p++; *q++=*p; continue; }
+    if (*p=='{') bal++;
+@z
+
+@x l.347
 int compare(p,q)
   node *p,*q;
 @y
@@ -45,13 +52,13 @@ int compare(
   node *p, node *q)
 @z
 
-@x
+@x l.379
   for (j=1;collate[j];j++) ord[collate[j]]=j;
 @y
   for (j=1;collate[j];j++) ord[(int)collate[j]]=j;
 @z
 
-@x
+@x l.390
 collapse(p,q)
   node *p,*q;
 @y
@@ -59,7 +66,7 @@ void collapse(
   node *p, node *q)
 @z
 
-@x
+@x l.414
 {@+register char *p=x->id;
 @y
 {@+register const char *p=x->id;
