@@ -139,7 +139,7 @@ do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > man/$m.man; done
 	man/ctwill.man
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w man \
+	po cwebinputs texinputs refsort.w twinx.w twinx.ch man \
 	system.bux ctwill.bux ctwill-mini.ch \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
