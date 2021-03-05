@@ -39,9 +39,13 @@ node *new_node(void)
 
 @x l.216
     if (*p=='{') bal++;
+    else if (*p=='}') bal--;
 @y
-    if (*p=='\\') { *q++=*p++; *q++=*p; continue; }
-    if (*p=='{') bal++;
+    switch (*p) {
+    case '\\': *q++=*p++; break;
+    case '{': bal++; break;
+    case '}': bal--; break;
+    }
 @z
 
 @x l.347
