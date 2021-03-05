@@ -43,8 +43,6 @@ Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb
 # Add CWEBbin stuff on top
 Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
-Patch3: 0002-Make-clean-refsort.patch
-
 %global __sed_i %{__sed} -i
 
 %global __make %{__make} -f Makefile.unix \\\
@@ -138,8 +136,8 @@ do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > man/$m.man; done
 	-e "s/twinx/ctwill-twinx/g" \
 	man/ctwill.man
 
-%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex \
-	po cwebinputs texinputs refsort.w twinx.w twinx.ch man \
+%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex po man \
+	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
 	system.bux ctwill.bux ctwill-mini.ch \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,

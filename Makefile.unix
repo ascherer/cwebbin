@@ -181,9 +181,8 @@ CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
-	cwebbin.spec examples/wmerge.dsp \
-	0002-Make-clean-refsort.patch \
-	ctangle.1 cweave.1 ctwill.md refsort.1 twinx.1 twinx.ch \
+	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
+	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
 	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch
 
@@ -303,7 +302,10 @@ ctwill.o: ctwill.$(EXTENSION)
 prod-twill.w: prod.w prod-twill.ch
 	$(TIE) -m $@ $^
 
-refsort: refsort.o
+refsort.$(EXTENSION): refsort.w refsort.ch
+	$(CTANGLE) $^ $@
+
+refsort: refsort.$(EXTENSION)
 	$(CC) $(CFLAGS) -o $@ $^
 
 twinx.$(EXTENSION): twinx.w twinx.ch
