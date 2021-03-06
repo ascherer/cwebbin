@@ -17,6 +17,20 @@ int main(
   char *argv[])
 @z
 
+@x l.21
+    f=fopen(*++argv,"r");
+    if (!f)
+@y
+    if((f=fopen(*++argv,"r"))==NULL)
+@z
+
+@x l.28
+      f=fopen(*argv,"r");
+      if (!f)
+@y
+      if((f=fopen(*argv,"r"))==NULL)
+@z
+
 @x l.102
   char *id;
 @y
