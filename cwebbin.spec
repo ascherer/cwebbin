@@ -74,13 +74,11 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 
 %else
 
-%{!?with_doc:%{__sed_i} -e "s/cweave fullmanual/cweave # fullmanual/" Makefile.unix}
+%{!?with_doc:%{__sed_i} -e "s/\(cweave\) \(fullmanual\)/\1 # \2/" Makefile.unix}
 
 %if ! %{with debuginfo}
-%{__sed_i} -e "s/CFLAGS = -g/#CFLAGS = -g/" \
-	-e "s/#CFLAGS = -O/CFLAGS = -O/" \
-	-e "s/LINKFLAGS = -g/#LINKFLAGS = -g/" \
-	-e "s/#LINKFLAGS = -s/LINKFLAGS = -s/" \
+%{__sed_i} -e "s/\(CFLAGS = -g\)/#\1/" -e "s/#\(CFLAGS = -O\)/\1/" \
+	-e "s/\(LINKFLAGS = -g\)/#\1/" -e "s/#\(LINKFLAGS = -s\)/\1/" \
 	Makefile.unix
 %endif
 
@@ -123,17 +121,18 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
-%{__sed_i} -e "s/proofmac/ctproofmac/" texinputs/dctproofmac.tex
-%{__sed_i} -e "s/twinxmac/cttwinxmac/" twinx.w
+%{__sed_i} -e "s/\(proofmac\)/ct\1/" texinputs/dctproofmac.tex
+%{__sed_i} -e "s/\(twinxmac\)/ct\1/" twinx.w
 
 %{__mkdir} man
 
 for m in ctwill cweb
 do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > man/$m.man; done
 
-%{__sed_i} -e "s/proofmac/ctproofmac/g" \
-	-e "s/refsort/ctwill-refsort/g" \
-	-e "s/twinx/ctwill-twinx/g" \
+%{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
+	-e "s/\(refsort\)/ctwill-\1/g" \
+	-e "s/\(twinx\)/ctwill-\1/g" \
+	-e "s/ctwill-\(twinx-startup\)/\1/g" \
 	man/ctwill.man
 
 %{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex po man \
