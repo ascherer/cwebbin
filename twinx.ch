@@ -1,9 +1,18 @@
 Changes for the TWINX utility from the CTWILL tarball.
 
 This minimal set of changes tries to satisfy the GCC compiler
-and it fixes a few minor issues.
+and it fixes a few minor issues. See the comments after '@x'.
 
 This file is not copyrighted and can be used freely.
+
+Section 1.
+
+@x l.7 Document minor change in behavior in section 3.
+the form `\.{\\def\\title\{NAME\}}'.
+@y
+the form `\.{\\def\\title\{NAME\}}'. For your convenience, \.{TWINX} grabs
+the first ``word'' in \.{\\title} and turns it into uppercase form.
+@z
 
 @x l.10 Standard C interface.
 #include <stdio.h>
@@ -38,17 +47,23 @@ int main(
       if((f=fopen(*argv,"r"))==NULL)
 @z
 
+Section 3.
+
 @x l.57 FIX: Fetch only the first word from the '\title'.
     for (p=buf+11,q=title;*p && *p!='}';p++) *q++=*p;
 @y
-    for (p=buf+11,q=title;*p&&*p!=' '&&*p!='}';p++) *q++=*p;
+    for (p=buf+11,q=title;*p&&*p!=' '&&*p!='}';p++) *q++=toupper(*p);
 @z
+
+Section 4.
 
 @x l.102 Compiler warning.
   char *id;
 @y
   const char *id;
 @z
+
+Section 5.
 
 @x l.115
 char *save_string(s)
@@ -58,11 +73,15 @@ char *save_string(
   char *s)
 @z
 
+Section 6.
+
 @x l.145
 node *new_node()
 @y
 node *new_node(void)
 @z
+
+Section 11.
 
 @x l.216 FIX: Don't count masked braces.
     if (*p=='{') bal++;
@@ -75,6 +94,8 @@ node *new_node(void)
     }
 @z
 
+Section 17.
+
 @x l.347
 int compare(p,q)
   node *p,*q;
@@ -83,11 +104,15 @@ int compare(
   node *p, node *q)
 @z
 
+Section 19.
+
 @x l.379 Compiler warning.
   for (j=1;collate[j];j++) ord[collate[j]]=j;
 @y
   for (j=1;collate[j];j++) ord[(int)collate[j]]=j;
 @z
+
+Section 20.
 
 @x l.390
 collapse(p,q)
@@ -96,6 +121,8 @@ collapse(p,q)
 void collapse(
   node *p, node *q)
 @z
+
+Section 22.
 
 @x l.414 Compiler warning.
 {@+register char *p=x->id;
