@@ -41,7 +41,7 @@ int main(
 @x l.57 FIX: Fetch only the first word from the '\title'.
     for (p=buf+11,q=title;*p && *p!='}';p++) *q++=*p;
 @y
-    for (p=buf+11,q=title;*p && *p!=' ' && *p!='}';p++) *q++=*p;
+    for (p=buf+11,q=title;*p&&*p!=' '&&*p!='}';p++) *q++=*p;
 @z
 
 @x l.102 Compiler warning.
