@@ -1,4 +1,10 @@
-@x
+Changes for the REFSORT utility from the CTWILL tarball.
+
+This minimal set of changes tries to satisfy the GCC compiler.
+
+This file is not copyrighted and can be used freely.
+
+@x standard C library interface
 #include "stdio.h"
 #include "strings.h"
 #include "ctype.h"
@@ -8,19 +14,19 @@
 #include <ctype.h>
 @z
 
-@x
+@x declare return type
 main()
 @y
 int main()
 @z
 
-@x
+@x variable not used
 { register int k;
 @y
 {
 @z
 
-@x
+@x add 'Index.' section
   for (;*p;p++) *q++=*p;
 }
 @y
