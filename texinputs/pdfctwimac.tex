@@ -639,7 +639,26 @@
 
 \hsize=\pagewd \vsize=\maxdimen \output={\twillout}
 
+\let\page=\pagebody \raggedbottom
+% \def\page{\box255 }\normalbottom % faster, but loses plain TeX footnotes
+\def\normaloutput#1#2#3{\ifodd\pageno\hoffset=\pageshift\fi
+ \shipout\vbox{
+  \vbox to\fullpageht{
+  \iftitle\global\titlefalse
+  \else\hbox to\pagewd{\vbox to10pt{}\ifodd\pageno #3\else#2\fi}\fi
+  \vfill#1}} % parameter #1 is the page itself
+  \global\advance\pageno by1}
+\def\topofcontents{\centerline{\titlefont\title}\vskip.7in
+  \vfill} % this material will start the table of contents page
+\def\startpdf{\ifpdftex\pdfcatalog{/PageMode /UseOutlines}\else
+    \ifpdf{\special{pdf: docview << /PageMode /UseOutlines >>}}\fi\fi}
+\def\botofcontents{\vfill
+  \centerline{\covernote}} % this material will end the table of contents page
+\def\covernote{}
 \def\contentspagenumber{0} % default page number for table of contents
+\newdimen\pageshift \pageshift=\hoffset
+   % shift righthand pages wrt lefthand ones (changed in version 3.70)
+\def\setpage{\hsize\pagewd\vsize\pageht} % use after changing page size
 \def\contentsfile{\jobname.toc} % file that gets table of contents info
 \def\readcontents{\input \contentsfile}
 \def\readsections{\input \jobname.scn}
