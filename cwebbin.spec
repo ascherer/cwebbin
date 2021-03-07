@@ -74,7 +74,7 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 
 %else
 
-%{!?with_doc:%{__sed_i} -e "s/\(cweave\) \(fullmanual\)/\1 # \2/" Makefile.unix}
+%{!?with_doc:%{__sed_i} -e "s/cweave fullmanual/cweave # fullmanual/" Makefile.unix}
 
 %if ! %{with debuginfo}
 %{__sed_i} -e "s/\(CFLAGS = -g\)/#\1/" -e "s/#\(CFLAGS = -O\)/\1/" \
