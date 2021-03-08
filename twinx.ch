@@ -57,6 +57,14 @@ Section 3.
 
 Section 4.
 
+@x l.96
+@<Type...@>=
+@y
+@s node_struct int
+
+@<Type...@>=
+@z
+
 @x l.102 Compiler warning.
   char *id;
 @y
