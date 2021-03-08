@@ -7,13 +7,6 @@ This file is not copyrighted and can be used freely.
 
 Section 1.
 
-@x l.7 Document minor change in behavior in section 3.
-the form `\.{\\def\\title\{NAME\}}'.
-@y
-the form `\.{\\def\\title\{NAME\}}'. For your convenience, \.{TWINX} grabs
-the first ``word'' in \.{\\title} and turns it into uppercase form.
-@z
-
 @x l.10 Standard C interface.
 #include <stdio.h>
 @y
@@ -48,6 +41,15 @@ int main(
 @z
 
 Section 3.
+
+@x l.49 Document minor change in behavior.
+@ @<Scan file |f|...@>=
+@y
+@ For your convenience, \.{TWINX} grabs the first ``word'' in \.{\\title} and
+turns it into uppercase form.
+
+@<Scan file |f|...@>=
+@z
 
 @x l.57 FIX: Fetch only the first word from the '\title'.
     for (p=buf+11,q=title;*p && *p!='}';p++) *q++=*p;
