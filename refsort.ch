@@ -4,6 +4,13 @@ This minimal set of changes tries to satisfy the GCC compiler.
 
 This file is not copyrighted and can be used freely.
 
+@x
+\datethis
+@y
+\datethis
+\let\maybe=\iffalse % print only sections that change
+@z
+
 @x standard C library interface
 #include "stdio.h"
 #include "strings.h"

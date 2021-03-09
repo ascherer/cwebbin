@@ -5,6 +5,15 @@ and it fixes a few minor issues. See the comments after '@x'.
 
 This file is not copyrighted and can be used freely.
 
+Limbo.
+
+@x l.1
+\datethis
+@y
+\datethis
+\let\maybe=\iffalse % print only sections that change
+@z
+
 Section 1.
 
 @x l.10 Standard C interface.
