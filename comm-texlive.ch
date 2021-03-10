@@ -73,8 +73,8 @@ if ((web_file=fopen(web_file_name,"r"))==NULL) {
        fatal(_("! Cannot open input file "), web_file_name);
 }
 @y
-if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
-    (web_file=fopen(found_filename,"r"))==NULL) {
+if ((found_filename=kpse_find_cweb(web_file_name))==NULL @|
+    || (web_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open input file "), web_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   /* Copy name for |#line| directives. */
@@ -89,8 +89,8 @@ if ((found_filename=kpse_find_cweb(web_file_name))==NULL || @|
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
-if ((found_filename=kpse_find_cweb(change_file_name))==NULL || @|
-    (change_file=fopen(found_filename,"r"))==NULL) {
+if ((found_filename=kpse_find_cweb(change_file_name))==NULL @|
+    || (change_file=fopen(found_filename,"r"))==NULL) {
   fatal(_("! Cannot open change file "), change_file_name);
 } else if (strlen(found_filename) < max_file_name_length) {
   /* Copy name for |#line| directives. */
@@ -139,8 +139,8 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @x l.470
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
-  if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL && @|
-      (cur_file=fopen(found_filename,"r"))!=NULL) {
+  if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL @|
+      && (cur_file=fopen(found_filename,"r"))!=NULL) {
     /* Copy name for |#line| directives. */
     if (strlen(found_filename) < max_file_name_length) {
       if (strcmp(cur_file_name, found_filename))
