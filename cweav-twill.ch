@@ -1118,12 +1118,12 @@ static name_pointer id_being_defined; /* the definee */
 @x l.4166
 @.Improper macro definition@>
   else {
-    app('$'); app_cur_id(false);
+    app_cur_id(false);
 @y
 @.Improper macro definition@>
   else {
     id_being_defined=id_lookup(id_first,id_loc,normal);
-    app('$'); app_cur_id(false);
+    app_cur_id(false);
     def_diff=*loc-'(';
 @z
 
