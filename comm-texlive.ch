@@ -532,6 +532,7 @@ static void cb_usagehelp (const_string *message, const_string bug_email)
   textdomain("web2c-help");
 @.web2c-help.mo@>
   while (*message) {
+    /* empty string \.{""} has special meaning for |gettext| */
     printf("%s\n", strcmp("", *message) ? _(*message) : *message);
     ++message;
   }
