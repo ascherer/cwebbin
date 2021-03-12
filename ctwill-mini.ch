@@ -489,9 +489,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-in@>@-x@>@-y@>
 \prodno=13 \midcol=2.5in
@@ -519,9 +519,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-in@>
 \prodno=27 \midcol=2.5in
@@ -549,9 +549,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-in@>
 \prodno=47 \midcol=2.5in
@@ -565,9 +565,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @z
 
 @x l.164
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & |else x=0;|\cr
+       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & $\!\!$|else x=0;|\cr
 @y
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & |else x=0;|\cr
+       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & $\!\!$|else x=0;|\cr
 \endgroup
 
 @ Cont.
@@ -579,9 +579,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-any@>@-z@>@-g@>@-a@>@-x@>@-y@>@-f@>
 \prodno=61 \midcol=2.5in
@@ -610,9 +610,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-any@>@-z@>@-g@>@-a@>
 \prodno=86 \midcol=2.5in
@@ -640,9 +640,9 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 {$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
    \strut\hbox{#3}\cr}\!\Biggr\}$ }
 \def\malt #1 #2
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
 \def\maltt #1 #2 #3
-{$\displaystyle\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-any_other@>@-z@>@-f@>@-x@>@-p@>
 \prodno=100 \midcol=2.5in
