@@ -515,6 +515,10 @@ skip_restricted(void)
 
 @x l.984
 @.Control codes are forbidden...@>
+  }
+}
+
+@ @<Predecl...@>=@+static void skip_restricted(void);
 @y
 @.Control codes are forbidden...@>
     if (c==meaning && phase==2) @<Process a user-generated meaning@>@;
@@ -522,15 +526,7 @@ skip_restricted(void)
   }
 }
 
-@ @<Suppress mini-index entry@>=
-{ char *first=id_first,*last=id_loc;
-  while (xisspace(*first)) first++;
-  while (xisspace(*(last-1))) last--;
-  if (first<last) {
-    struct perm_meaning *q=id_lookup(first,last,normal)-name_dir+cur_meaning;
-    q->stamp=section_count; /* this is what actually suppresses output */
-  }
-}
+@ @<Predecl...@>=@+static void skip_restricted(void);
 
 @ @<Process a user-generated meaning@>=
 { char *first=id_first;
@@ -549,6 +545,16 @@ skip_restricted(void)
     else @<Digest the meaning of |p|, |t|, |n|@>;
   }
   loc=id_loc+2;
+}
+
+@ @<Suppress mini-index entry@>=
+{ char *first=id_first,*last=id_loc;
+  while (xisspace(*first)) first++;
+  while (xisspace(*(last-1))) last--;
+  if (first<last) {
+    struct perm_meaning *q=id_lookup(first,last,normal)-name_dir+cur_meaning;
+    q->stamp=section_count; /* this is what actually suppresses output */
+  }
 }
 
 @ @<Digest...@>=
@@ -570,6 +576,8 @@ skip_restricted(void)
   else { char *q=m->tex_part;
     while (loc<id_loc) *q++=*loc++;
     *q='\0';
+  }
+}
 @z
 
 @x l.1025
