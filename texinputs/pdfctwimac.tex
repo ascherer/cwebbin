@@ -400,7 +400,7 @@
 \def\startsection{\titletrue
   \line{\smash{\titlefont\title}\quad\hrulefill}\bigskip
   \let\startsection=\stsec\stsec}
-\def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
+\def\defin#1{\global\advance\ind by 2 \1\&{#1 }} % begin `define' or `format'
 \def\A{\note{See also section}} % xref for doubly defined section name
 \def\As{\note{See also sections}} % xref for multiply defined section name
 \def\B{\iftenpoint\ninepoint\fi
@@ -415,7 +415,7 @@
 %\let\SHC\C % "// short comments" treated like "/* ordinary comments */"
 \def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 \def\SHC#1{\5\5\quad$\diamond\,${\cmntfont#1}}
-\def\D{\defin{\#define}} % macro definition
+\def\D{\defin{{\rm\#}define}} % macro definition
 \let\E=\equiv % equivalence sign
 \def\ET{ and~} % conjunction between two section numbers
 \def\ETs{, and~} % conjunction between the last two of several section numbers
