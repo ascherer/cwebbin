@@ -639,26 +639,26 @@
 
 \hsize=\pagewd \vsize=\maxdimen \output={\twillout}
 
-\let\page=\pagebody \raggedbottom
+%\let\page=\pagebody \raggedbottom
 % \def\page{\box255 }\normalbottom % faster, but loses plain TeX footnotes
-\def\normaloutput#1#2#3{\ifodd\pageno\hoffset=\pageshift\fi
- \shipout\vbox{
-  \vbox to\fullpageht{
-  \iftitle\global\titlefalse
-  \else\hbox to\pagewd{\vbox to10pt{}\ifodd\pageno #3\else#2\fi}\fi
-  \vfill#1}} % parameter #1 is the page itself
-  \global\advance\pageno by1}
-\def\topofcontents{\centerline{\titlefont\title}\vskip.7in
-  \vfill} % this material will start the table of contents page
-\def\startpdf{\ifpdftex\pdfcatalog{/PageMode /UseOutlines}\else
-    \ifpdf{\special{pdf: docview << /PageMode /UseOutlines >>}}\fi\fi}
-\def\botofcontents{\vfill
-  \centerline{\covernote}} % this material will end the table of contents page
-\def\covernote{}
+%\def\normaloutput#1#2#3{\ifodd\pageno\hoffset=\pageshift\fi
+ %\shipout\vbox{
+  %\vbox to\fullpageht{
+  %\iftitle\global\titlefalse
+  %\else\hbox to\pagewd{\vbox to10pt{}\ifodd\pageno #3\else#2\fi}\fi
+  %\vfill#1}} % parameter #1 is the page itself
+  %\global\advance\pageno by1}
+%\def\topofcontents{\centerline{\titlefont\title}\vskip.7in
+  %\vfill} % this material will start the table of contents page
+%\def\startpdf{\ifpdftex\pdfcatalog{/PageMode /UseOutlines}\else
+    %\ifpdf{\special{pdf: docview << /PageMode /UseOutlines >>}}\fi\fi}
+%\def\botofcontents{\vfill
+  %\centerline{\covernote}} % this material will end the table of contents page
+%\def\covernote{}
 \def\contentspagenumber{0} % default page number for table of contents
-\newdimen\pageshift \pageshift=\hoffset
-   % shift righthand pages wrt lefthand ones (changed in version 3.70)
-\def\setpage{\hsize\pagewd\vsize\pageht} % use after changing page size
+%\newdimen\pageshift \pageshift=\hoffset
+   %% shift righthand pages wrt lefthand ones (changed in version 3.70)
+%\def\setpage{\hsize\pagewd\vsize\pageht} % use after changing page size
 \def\contentsfile{\jobname.toc} % file that gets table of contents info
 \def\readcontents{\input \contentsfile}
 \def\readsections{\input \jobname.scn}
@@ -693,28 +693,29 @@
 \def\writebookmarkline#1#2#3#4#5{{%
   \let\(=\let \let\)=\let \let\[=\let \let\]=\let \let\/=\let
   \pdfoutline goto num #3 count -\expnumber{chunk#2.#3} {#5}}}
-\def\con{\par\vfill\eject % finish the section names
+\let\con=\end % no table of contents
+%\def\con{\par\vfill\eject % finish the section names
 % \ifodd\pageno\else\titletrue\null\vfill\eject\fi % for duplex printers
-  \rightskip 0pt \hyphenpenalty 50 \tolerance 200
-  \setpage \output={\normaloutput\page\lheader\rheader}
-  \titletrue % prepare to output the table of contents
-  \pageno=\contentspagenumber
-  \def\grouptitle{TABLE OF CONTENTS}
-  \message{Table of contents:}
-  \topofcontents \startpdf
-  \line{\hfil Section\hbox to3em{\hss Page}}
-  \let\ZZ=\contentsline
-  \readcontents\relax % read the contents info
-  \botofcontents \end} % print the contents page(s) and terminate
-\def\contentsline#1#2#3#4#5{\ifnum#2=0 \smallbreak\fi
-    \line{\consetup{#2}#1
-      \rm\leaders\hbox to .5em{.\hfil}\hfil
-      \ \ifacro\pdflink{#3}{\romannumeral#3}\else#3\fi\hbox to3em{\hss#4}}}
-\def\consetup#1{\ifcase#1 \bf % depth -1 (@**)
-  \or % depth 0 (@*)
-  \or \hskip2em % depth 1 (@*1)
-  \or \hskip4em \or \hskip6em \or \hskip8em \or \hskip10em % depth 2,3,4,5
-  \else \hskip12em \fi} % depth 6 or more
+  %\rightskip 0pt \hyphenpenalty 50 \tolerance 200
+  %\setpage \output={\normaloutput\page\lheader\rheader}
+  %\titletrue % prepare to output the table of contents
+  %\pageno=\contentspagenumber
+  %\def\grouptitle{TABLE OF CONTENTS}
+  %\message{Table of contents:}
+  %\topofcontents \startpdf
+  %\line{\hfil Section\hbox to3em{\hss Page}}
+  %\let\ZZ=\contentsline
+  %\readcontents\relax % read the contents info
+  %\botofcontents \end} % print the contents page(s) and terminate
+%\def\contentsline#1#2#3#4#5{\ifnum#2=0 \smallbreak\fi
+    %\line{\consetup{#2}#1
+      %\rm\leaders\hbox to .5em{.\hfil}\hfil
+      %\ \ifacro\pdflink{#3}{\romannumeral#3}\else#3\fi\hbox to3em{\hss#4}}}
+%\def\consetup#1{\ifcase#1 \bf % depth -1 (@**)
+  %\or % depth 0 (@*)
+  %\or \hskip2em % depth 1 (@*1)
+  %\or \hskip4em \or \hskip6em \or \hskip8em \or \hskip10em % depth 2,3,4,5
+  %\else \hskip12em \fi} % depth 6 or more
 \def\datethis{} \def\datecontentspage{}
 
 % To produce only a subset of pages, put the page numbers on separate
