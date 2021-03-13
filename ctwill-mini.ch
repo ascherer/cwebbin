@@ -1031,6 +1031,14 @@ Section 222.
 @z
 
 @x
+  case ignore: case xref_roman: case xref_wildcard:
+  case meaning: case suppress:
+@y
+  case ignore: case xref_roman: case xref_wildcard:@/
+  case meaning: case suppress:@/
+@z
+
+@x
   @t\4@>  @<Cases involving nonstandard characters@>@;
 @y
 @#
