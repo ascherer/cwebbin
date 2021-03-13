@@ -1020,6 +1020,31 @@ Section 221.
 @-c@>
 @z
 
+Section 222.
+
+@x
+@<Make sure that there is room for the new scraps, tokens, and texts@>@;
+@y
+@#
+@<Make sure that there is room for the new scraps, tokens, and texts@>@;
+@#
+@z
+
+@x
+  @t\4@>  @<Cases involving nonstandard characters@>@;
+@y
+@#
+  @t\4@>  @<Cases involving nonstandard characters@>@;
+@#
+@z
+
+@x
+  default: app(inserted);@+app(next_control);
+@y
+@#
+  default: app(inserted);@+app(next_control);
+@z
+
 Section 230.
 
 @x
