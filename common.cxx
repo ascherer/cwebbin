@@ -101,10 +101,7 @@
 
 #define update_terminal fflush(stdout) 
 #define new_line putchar('\n') 
-#define putxchar putchar
-#define term_write(a,b) fflush(stdout) ,fwrite(a,sizeof(char) ,b,stdout) 
-#define C_printf(c,a) fprintf(C_file,c,a) 
-#define C_putc(c) putc(c,C_file)  \
+#define term_write(a,b) fflush(stdout) ,fwrite(a,sizeof(char) ,b,stdout)  \
 
 #define max_bytes 1000000 \
 
@@ -257,7 +254,7 @@ extern boolean flags[];
 extern const char*use_language;
 
 /*:13*//*14:*/
-#line 241 "comm-foo.h"
+#line 239 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -430,7 +427,7 @@ extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
 /*:12*//*15:*/
-#line 250 "comm-foo.h"
+#line 248 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
