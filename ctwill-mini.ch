@@ -318,15 +318,17 @@ Section 85.
 
 @x
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
-@y
-@r @ The |outer_xref| subroutine is like |C_xref| except that it begins
-@z
-
-@x
 with |next_control!='|'| and ends with |next_control>=format_code|. Thus, it
+handles \CEE/ text with embedded comments.
+
+@c
 @y
+@ The |outer_xref| subroutine is like |C_xref| except that it begins
 with |next_control| |!='|'| and ends with |next_control>=format_code|.
 Thus, it
+handles \CEE/ text with embedded comments.
+
+@r @ @c
 @z
 
 Section 90.
