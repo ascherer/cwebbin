@@ -918,9 +918,9 @@ else squash(pp,1,exp,-2,122);
 @z
 
 @x l.2944
-  big_app1(pp); big_app(' '); big_app1(pp+1); reduce(pp,2,else_like,-2,102);
+  big_app1_insert(pp,' '); reduce(pp,2,else_like,-2,102);
 @y
-  big_app1(pp); big_app(' '); big_app1(pp+1); reduce(pp,2,else_like,-2,123);
+  big_app1_insert(pp,' '); reduce(pp,2,else_like,-2,123);
 @z
 
 @x l.2975
@@ -928,19 +928,18 @@ else squash(pp,1,exp,-2,122);
 if ((cat1==int_like || cat1==cast) && (cat2==comma || cat2==semi))
   squash(pp+1,1,exp,-1,115);
 else if (cat1==int_like) {
-  big_app1(pp); big_app(' '); big_app1(pp+1); reduce(pp,2,typedef_like,0,116);
+  big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,116);
 }
 else if (cat1==exp && cat2!=lpar && cat2!=exp && cat2!=cast) {
   make_underlined(pp+1); make_reserved(pp+1);
-  big_app1(pp); big_app(' '); big_app1(pp+1); reduce(pp,2,typedef_like,0,117);
+  big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,117);
 }
 else if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,typedef_like,0,118);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,119);
 else if (cat1==ubinop && (cat2==ubinop || cat2==cast)) {
-  big_app('{'); big_app1(pp+1); big_app('}'); big_app1(pp+2);
-  reduce(pp+1,2,cat2,0,120);
+  big_app('{'); big_app1_insert(pp+1,'}'); reduce(pp+1,2,cat2,0,120);
 }
 @y
 @ Here \.{CTWILL} deviates from the normal productions introduced in

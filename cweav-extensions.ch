@@ -63,7 +63,7 @@ if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
 }
 else if (cat1==ubinop) {
-  big_app1(pp); big_app('{'); big_app1(pp+1); big_app('}');
+  big_app1_insert(pp,'{'); big_app('}');
   reduce(pp,2,decl_head,-1,34);
 }
 else if (cat1==exp && cat2!=lpar && cat2!=exp && cat2!=cast) {
@@ -83,7 +83,7 @@ if (cat1==comma) {
   big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
 }
 else if (cat1==ubinop) {
-  big_app1(pp); big_app('{'); big_app1(pp+1); big_app('}');
+  big_app1_insert(pp,'{'); big_app('}');
   reduce(pp,2,decl_head,-1,34);
 }
 else if (cat1==exp && cat2!=lpar && cat2!=exp && cat2!=cast) {
@@ -108,24 +108,19 @@ Section 136.
 @x l.2679
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
-  big_app1(pp); big_app(force); big_app1(pp+1);
-  reduce(pp,2,decl,-1,40);
+  big_app1_insert(pp,force); reduce(pp,2,decl,-1,40);
 }
 else if (cat1==stmt || cat1==function) {
-  big_app1(pp); big_app(big_force);
-  big_app1(pp+1); reduce(pp,2,cat1,-1,41);
+  big_app1_insert(pp,big_force); reduce(pp,2,cat1,-1,41);
 }
 @y
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
-  big_app1(pp); big_app(force); big_app1(pp+1);
-  reduce(pp,2,decl,-1,40);
+  big_app1_insert(pp,force); reduce(pp,2,decl,-1,40);
 }
 else if (cat1==stmt || cat1==function) {
-  big_app1(pp);
-  if(order_decl_stmt) big_app(big_force);
-  else big_app(force);
-  big_app1(pp+1); reduce(pp,2,cat1,-1,41);
+  big_app1_insert(pp,order_decl_stmt ? big_force : force);
+  reduce(pp,2,cat1,-1,41);
 }
 @z
 
@@ -134,7 +129,7 @@ Section 140.
 @x l.2732
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
-  big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
+  big_app1_insert(pp,force); reduce(pp,2,fn_decl,0,51);
 }
 else if (cat1==stmt) {
   big_app1(pp); app(outdent); app(outdent); big_app(force);
@@ -143,7 +138,7 @@ else if (cat1==stmt) {
 @y
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
-  big_app1(pp); big_app(force); big_app1(pp+1); reduce(pp,2,fn_decl,0,51);
+  big_app1_insert(pp,force); reduce(pp,2,fn_decl,0,51);
 }
 else if (cat1==stmt) {
   big_app1(pp);
