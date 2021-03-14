@@ -982,11 +982,9 @@ if (cat1==decl_head) {
 @z
 
 @x l.3508
-to \.{\\PB}, if the user has invoked \.{CWEAVE} with the \.{+e} flag.
-Although \.{cwebmac} ignores \.{\\PB}, other macro packages
+to \.{\\PB}.  Although \.{cwebmac} ignores \.{\\PB}, other macro packages
 @y
-to \.{\\PB}, if the user has invoked \.{CTWILL} with the \.{+e} flag.
-Although \.{ctwimac} ignores \.{\\PB}, other macro packages
+to \.{\\PB}.  Although \.{ctwimac} ignores \.{\\PB}, other macro packages
 @z
 
 @x l.3539
