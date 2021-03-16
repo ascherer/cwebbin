@@ -150,20 +150,6 @@ else if (cat1==stmt) {
 }
 @z
 
-Section 188.
-
-@x l.3266
-  case '(': app_str("\\1\\1"); /* fall through */
-@y
-  case '(': if (indent_param_decl) app_str("\\1\\1"); /* fall through */
-@z
-
-@x l.3269
-  case ')': app_str("\\2\\2"); /* fall through */
-@y
-  case ')': if (indent_param_decl) app_str("\\2\\2"); /* fall through */
-@z
-
 Addendum.
 
 @x l.4706
