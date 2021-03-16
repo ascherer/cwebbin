@@ -35,7 +35,7 @@ Section 74.
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
-temporary_output=true; /* Check temporary output for changes */
+check_for_change=true; /* Check temporary output for changes */
 @z
 
 Section 83.

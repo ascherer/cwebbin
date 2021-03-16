@@ -22,8 +22,8 @@ Section 13.
 @x l.201
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
-@d temporary_output flags['t'] /* should temporary output take precedence? */
 @d make_xrefs flags['x'] /* should cross references be output? */
+@d check_for_change flags['c'] /* check temporary output for changes */
 @z
 
 Section 14.

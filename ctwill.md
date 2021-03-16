@@ -94,7 +94,7 @@ differences worth noting:
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
 * Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
@@ -124,6 +124,8 @@ In fact, the options are processed from left to right, so a sequence like
   shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
+* **-c**:
+  ignore temporary output irrespective of changes
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
@@ -132,8 +134,6 @@ In fact, the options are processed from left to right, so a sequence like
   suppress indentation of parameter declarations
 * **-o**:
   suppress separation of declarations and statements
-* **-t**:
-  ignore temporary output irrespective of changes
 * **-x**:
   omit indices, section names, table of contents
 * **+P**:

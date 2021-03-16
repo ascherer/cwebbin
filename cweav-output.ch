@@ -63,7 +63,7 @@ if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
     fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  if (temporary_output) @<Compare the temporary output...@>@;
+  if (check_for_change) @<Compare the temporary output...@>@;
 
   fclose(tex_file); tex_file=NULL;
   fclose(check_file); check_file=NULL;

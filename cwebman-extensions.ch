@@ -24,6 +24,9 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)%
 \cwebfootnote{This extended version of \.{CWEB} adds the following options
 to the list:
 \hfil\smallskip
+\option c Overwrite output files with temporary output only if changes occur.
+(On by default.)
+\hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  This causes the
 formal parameter declarations in function heads to be indented.  (On by
 default; \.{-i} typesets declarations flush left; some people think this
@@ -44,10 +47,7 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 \hfil\vskip\normallineskip
 \option o Separate declarations and the first statement in a function block.
 \.{CWEAVE} automatically inserts a bit of extra space.  (On by default.)
-(Has no effect on \.{CTANGLE}.)
-\hfil\vskip\normallineskip
-\option t Overwrite output files with temporary output only if changes occur.
-(On by default.)}
+(Has no effect on \.{CTANGLE}.)}
 @z
 ------------------------------------------------------------------------------
 @x l.1138

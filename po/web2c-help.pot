@@ -66,12 +66,12 @@ msgstr ""
 msgid "+/-v        shortcut for '+bhp'; also '--verbose'"
 msgstr ""
 
-#: help.h:64 help.h:90 help.h:117
-msgid "+s          print usage statistics"
+#: help.h:64 help.h:85 help.h:112
+msgid "-c          ignore temporary output irrespective of changes"
 msgstr ""
 
-#: help.h:65 help.h:91 help.h:118
-msgid "-t          ignore temporary output irrespective of changes"
+#: help.h:66 help.h:93 help.h:121
+msgid "+s          print usage statistics"
 msgstr ""
 
 #: help.h:66 help.h:92 help.h:119
