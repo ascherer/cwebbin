@@ -217,9 +217,9 @@ Section 38.
 Section 45.
 
 @x
-@ We have to get \CEE/'s
+@ We have to get \CEE/'s and \CPLUSPLUS/'s
 @y
-@r @ We have to get \CEE/'s
+@r @ We have to get \CEE/'s and \CPLUSPLUS/'s
 @z
 
 Section 46.
@@ -288,14 +288,6 @@ Section 66.
 @<Get a constant@>= {
 @y
 @<Get a constant@>= {@+
-@z
-
-Section 67.
-
-@x
-@<Get a string@>= {
-@y
-@<Get a string@>= {@+
 @z
 
 Section 71.
@@ -724,15 +716,20 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @y
 @z
 
-@x l.272
-\+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
+@x l.326
+\+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
+\yskip
+\yskip
+\yskip
+\yskip
+\yskip
 \yskip
 \yskip
 \yskip
 \parindent=0pt
 \dag{\bf Notes}
 @y
-\+& |any_other| |end_arg| & |end_arg| &    \&{char}$*$\.{@@]}\cr
+\+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
 \advance\midcol-3pt
 \+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
       |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
@@ -862,6 +859,11 @@ Section 148.
     case typedef_like: @<Cases for |typedef_like|@>@; @+break;
     case delete_like: @<Cases for |delete_like|@>@; @+break;
     case question: @<Cases for |question|@>@; @+break;
+    case alignas_like: @<Cases for |alignas_like|@>@; @+break;
+    case lbrack: @<Cases for |lbrack|@>@; @+break;
+    case attr_head: @<Cases for |attr_head|@>@; @+break;
+    case attr: @<Cases for |attr|@>@; @+break;
+    case default_like: @<Cases for |default_like|@>@; @+break;
   }
   pp++; /* if no match was found, we move to the right */
 }
@@ -920,6 +922,11 @@ Section 148.
     case typedef_like: @<Cases for |typedef_like|@>@; @+break;
     case delete_like: @<Cases for |delete_like|@>@; @+break;
     case question: @<Cases for |question|@>@; @+break;
+    case alignas_like: @<Cases for |alignas_like|@>@; @+break;
+    case lbrack: @<Cases for |lbrack|@>@; @+break;
+    case attr_head: @<Cases for |attr_head|@>@; @+break;
+    case attr: @<Cases for |attr|@>@; @+break;
+    case default_like: @<Cases for |default_like|@>@; @+break;
 @z
 
 Section 149.
@@ -1192,14 +1199,6 @@ Section 290.
 $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 @y
 |collate[0]| $<$|collate[1]|$<\cdots<$|collate[100]|.
-@z
-
-Section 297.
-
-@x
-    else {char *j;
-@y
-    else {@+char *j;
 @z
 
 Section 304.
