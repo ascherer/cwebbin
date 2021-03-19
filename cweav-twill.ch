@@ -673,10 +673,10 @@ the section is changed, we output `\.{\\*}' just after the number.
 @z
 
 @x l.1719
-@d end_arg 62 /* \.{@@]} */
+@d attr_head 69 /* denotes beginning of attribute */
 @y
-@d end_arg 62 /* \.{@@]} */
-@d title 63 /* program name or header name in a ``meaning'' */
+@d attr_head 69 /* denotes beginning of attribute */
+@d title 70 /* program name or header name in a ``meaning'' */
 @z
 
 @x l.2062
@@ -1298,10 +1298,10 @@ rest of the job.
 @<Output the name...@>=
 @z
 
-@x l.4596
-  case normal: case func_template: if (is_tiny(cur_name)) out_str("\\|");
+@x l.4773
+  case normal: case func_template:
 @y
-  case normal: if (is_tiny(cur_name)) out_str("\\|");
+  case normal:
 @z
 
 @x l.4607
@@ -1353,7 +1353,7 @@ else {
 
 @x l.249 of CWEAV-PATCH.CH
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{263.~Index}.''
+material should nicely integrate with the original ``\&{272.~Index}.''
 @y
 \bigskip
 \font\itt=cmitt10

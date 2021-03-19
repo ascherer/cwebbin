@@ -43,10 +43,10 @@ Section 40.
 
 Section 47.
 
-@x l.511
-      overflow("output files");
+@x l.509
+    else overflow("output files");
 @y
-      overflow(_("output files"));
+    else overflow(_("output files"));
 @z
 
 Section 49.

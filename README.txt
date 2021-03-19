@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated February 6, 2021 by Andreas Scherer.
+% This README file was last updated March 19, 2021 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -119,7 +119,6 @@ GENERAL CONTRIBUTION:
 │   ├── cweb_hp8.w			Transliteration table for HP Roman 8
 │   ├── cweb_mac8.w			Transliteration table for Mac 8-bit
 │   ├── cweb_pc850.w0.w			Transliteration table for Codepage 850
-│   └── iso_types.w			Keywords for ISO C/C++ standards
 ├── cwebman-extensions.ch		change file for cwebman.tex
 ├── cwebman-patch.ch			change file for cwebman.tex
 ├── cwebman-texlive.ch			change file for cwebman.tex

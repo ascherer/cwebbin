@@ -96,8 +96,8 @@
 #define show_progress flags['p']
 #define show_stats flags['s']
 #define show_happiness flags['h']
-#define temporary_output flags['t']
-#define make_xrefs flags['x'] \
+#define make_xrefs flags['x']
+#define check_for_change flags['c'] \
 
 #define update_terminal fflush(stdout) 
 #define new_line putchar('\n') 
@@ -507,7 +507,7 @@ textdomain("cweb");
 
 #line 370 "comm-foo.ch"
 show_banner= show_happiness= show_progress= make_xrefs= true;
-temporary_output= true;
+check_for_change= true;
 #line 1149 "common.w"
 show_stats= false;
 
