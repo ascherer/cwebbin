@@ -871,7 +871,7 @@ while (ast_count) {
 @z
 
 @x l.2575
-  make_underlined (pp);  squash(pp,2,tag,-1,7);
+  make_underlined (pp); squash(pp,2,tag,-1,7);
 @y
   make_underlined (pp);
   if (tok_loc>operator_found) {
