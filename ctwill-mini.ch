@@ -730,6 +730,11 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \dag{\bf Notes}
 @y
 \+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
+@-deprecated@>
+@-fallthrough@>
+@-likely@>
+@-nodiscard@>
+@-unlikely@>
 \advance\midcol-3pt
 \+\dag200\enspace& |typedef_like| |decl_head| \alt|exp| |int_like| &
       |typedef_like| |decl_head| \hfill $D=D$\alt $E^{**}$ $I^{**}$ \unskip &
