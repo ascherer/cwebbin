@@ -142,13 +142,13 @@ options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
 @z
 ------------------------------------------------------------------------------
 @x l.1063 and l.27 of CWEBMAN-EXTENSIONS.CH
-\option i Indent parameters in function declarations.  This causes the
+\option i Indent parameters in (classic) function declarations.  (On by
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
 value $N\in[0,127]$ of this option.  See section~93 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
-\option i Indent parameters in function declarations.  This causes the
+\option i Indent parameters in (classic) function declarations.  (On by
 @z
 ------------------------------------------------------------------------------
 @x l.1063 and l.40 of CWEBMAN-EXTENSIONS.CH

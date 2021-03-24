@@ -17,28 +17,30 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 variable is not set, some decent default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
-@x l.1063
-output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
+@x l.1038
+options are currently implemented:
+
+\yskip
+\def\option#1 {\textindent{\.#1}\hangindent2\parindent}
 @y
-output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)%
+\def\option#1 {\textindent{\.#1}\hangindent2\parindent}%
+options are currently implemented:%
 \cwebfootnote{This extended version of \.{CWEB} adds the following options
 to the list:
 \hfil\smallskip
 \option c Overwrite output files with temporary output only if changes occur.
 (On by default.)
 \hfil\vskip\normallineskip
-\option i Indent parameters in function declarations.  This causes the
-formal parameter declarations in function heads to be indented.  (On by
+\option i Indent parameters in (classic) function declarations.  (On by
 default; \.{-i} typesets declarations flush left; some people think this
-to be more logical than indenting them) (Has no effect on \.{CTANGLE}.)
+to be more logical than indenting them.) (Has no effect on \.{CTANGLE}.)
 \hfil\vskip\normallineskip
 \option l This option takes the string of characters to its right as its
 argument to switch between different user languages and macro packages.
 For example, if you call \.{CWEAVE} with the `\.{+ld}' (or `\.{-ld}') option,
 the German \.{CWEB} macros \.{dcwebmac.tex} will be loaded in the first line
-of output instead of the English ones. To avoid conflicts, the Danish
-macros could be called \.{dkcwebmac.tex} and would be included by `\.{+ldk}'.
-(Off by default) (Has no effect on \.{CTANGLE}.)
+of output instead of the English ones. (Off by default.) (Has no effect on
+\.{CTANGLE}.)
 \hfil\vskip\normallineskip
 \option m Install communication between \.{CWEB} and the message browser of
 the {\mc SAS/C} development system.  Set the external environment variable
@@ -46,8 +48,9 @@ the {\mc SAS/C} development system.  Set the external environment variable
 by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 \hfil\vskip\normallineskip
 \option o Separate declarations and the first statement in a function block.
-\.{CWEAVE} automatically inserts a bit of extra space.  (On by default.)
-(Has no effect on \.{CTANGLE}.)}
+(On by default.) (Has no effect on\break\hbox{}\qquad\.{CTANGLE}.)}
+
+\yskip
 @z
 ------------------------------------------------------------------------------
 @x l.1138

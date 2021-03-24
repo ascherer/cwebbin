@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 7, 2021
+% March 24, 2021
 
 # NAME
 
@@ -94,7 +94,8 @@ differences worth noting:
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-c**, **-i**, **-o**, **+lX**, and **+t** are new in CWEBbin and
+  TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
 * Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
@@ -142,6 +143,8 @@ In fact, the options are processed from left to right, so a sequence like
   use macros for language _X_ as of _X_{**ctwimac**|**proofmac**}**.tex**
 * **+s**:
   print usage statistics
+* **+t**:
+  treat **typename** in a template like **typedef**
 * **\-\-help**:
   display help message and exit
 * **\-\-version**:
