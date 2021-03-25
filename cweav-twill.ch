@@ -1357,7 +1357,7 @@ material should nicely integrate with the original ``\&{272.~Index}.''
 @y
 \bigskip
 \font\itt=cmitt10
-{\noindent \it Although \.{\itt CTWILL} is based on \.{\itt cweave.w}, new and
+{\noindent \it Although {\itt CTWILL} is based on {\itt cweave.w}, new and
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
 @z

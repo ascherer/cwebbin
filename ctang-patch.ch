@@ -203,9 +203,9 @@ Addendum.
 @x l.1550
 @** Index.
 @y
-@** Extensions to \.{CWEB}.  The following sections introduce new or improved
-features that have been created by numerous contributors over the course of a
-quarter century.
+@** Extensions to {\tentex CWEB}.  The following sections introduce new or
+improved features that have been created by numerous contributors over the
+course of a quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
 material should nicely integrate with the original ``\&{104.~Index}.''
