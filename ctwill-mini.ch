@@ -170,6 +170,14 @@ Section 24.
 @-a@>
 @z
 
+Section 25.
+
+@x
+@ We keep track of the current section number in |section_count|, which
+@y
+@r @ We keep track of the current section number in |section_count|, which
+@z
+
 Section 26.
 
 @x
@@ -178,22 +186,6 @@ Section 26.
 @ The other large memory area in \.{CWEAVE} keeps the cross-reference data.
 @-p@>
 @-x@>
-@z
-
-Section 28.
-
-@x
-@ \.{CTWILL} also has special data structures to keep track of current
-@y
-@r @ \.{CTWILL} also has special data structures to keep track of current
-@z
-
-Section 33.
-
-@x
-@ The |new_meaning| routine changes the current ``permanent meaning''
-@y
-@r @ The |new_meaning| routine changes the current ``permanent meaning''
 @z
 
 Section 36.
@@ -206,29 +198,13 @@ Section 36.
 @-c@>
 @z
 
-Section 38.
-
-@x
-@ The cross-reference lists for section names are slightly different.
-@y
-@r @ The cross-reference lists for section names are slightly different.
-@z
-
-Section 45.
-
-@x
-@ We have to get \CEE/'s and \CPLUSPLUS/'s
-@y
-@r @ We have to get \CEE/'s and \CPLUSPLUS/'s
-@z
-
 Section 46.
 
 @x
-id_lookup("goto",NULL,case_like);
+id_lookup("register",NULL,int_like);
 @y
 @ @<Store all...@>=
-id_lookup("goto",NULL,case_like);
+id_lookup("register",NULL,int_like);
 @z
 
 Section 50.
@@ -282,31 +258,55 @@ Section 64.
 @-c@>
 @z
 
-Section 66.
+@x
+              if (*(loc+1)=='*') {loc++;@+compress(minus_gt_ast);}
+@y
+              if (*(loc+1)=='*') {@+loc++;@+compress(minus_gt_ast);@+}
+@z
 
 @x
-@<Get a constant@>= {
+            else if (*loc=='.' && *(loc+1)=='.') {
+              loc++;@+compress(dot_dot_dot);
+            } break;
 @y
-@<Get a constant@>= {@+
+            else if (*loc=='.' && *(loc+1)=='.') {@+
+              loc++;@+compress(dot_dot_dot);@+
+            } break;
+@z
+
+Section 68.
+
+@x
+@ @<Get a bin...@>={
+@y
+@r @ @<Get a bin...@>={
 @z
 
 Section 71.
 
 @x
+@ @<Get a wide...@>={
+@y
+@r @ @<Get a wide...@>={
+@z
+
+Section 75.
+
+@x
 @ @<Put section name...@>=
 @y
-@r @ @<Put section name...@>=
+@ @<Put section name...@>=
 @z
 
 Section 76.
 
 @x
-@ @<Suppress mini-index entry@>=
+@ @<If end of name...@>=
 @y
-@r @ @<Suppress mini-index entry@>=
+@r @ @<If end of name...@>=
 @z
 
-Section 85.
+Section 89--90.
 
 @x
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
@@ -314,34 +314,46 @@ with |next_control!='|'| and ends with |next_control>=format_code|. Thus, it
 handles \CEE/ text with embedded comments.
 
 @c
+static void
+outer_xref(void) /* extension of |C_xref| */
+{
+  int bal; /* brace level in comment */
 @y
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
 with |next_control| |!='|'| and ends with |next_control>=format_code|.
 Thus, it
 handles \CEE/ text with embedded comments.
 
-@r @ @c
-@z
-
-Section 90.
-
-@x
-@ Error messages for improper format definitions will be issued in phase
-@y
-@r @ Error messages for improper format definitions will be issued in phase
+@ @c
+static void
+outer_xref(void) /* extension of |C_xref| */
+{@+
+  int bal; /* brace level in comment */
 @z
 
 Section 92.
 
 @x
+@ @<Replace |"@@@@"| by |"@@"| @>=
+{
+  char *src=id_first,*dst=id_first;
+@y
+@ @<Replace |"@@@@"| by |"@@"| @>=
+{@+
+  char *src=id_first,*dst=id_first;
+@z
+
+Section 97.
+
+@x
 @ Finally, when the \TEX/ and definition parts have been treated, we have
 |next_control>=begin_C|.
 @y
-@ Finally, when the \TEX/ and definition parts have been treated, we have
+@r @ Finally, when the \TEX/ and definition parts have been treated, we have
 \hfil\break|next_control>=begin_C|.
 @z
 
-Section 98.
+Section 103.
 
 @x
 @ The |flush_buffer| routine empties the buffer up to a given breakpoint,
@@ -350,15 +362,7 @@ Section 98.
 @-c@>
 @z
 
-Section 100.
-
-@x
-@ When we are copying \TEX/ source material, we retain line breaks
-@y
-@r @ When we are copying \TEX/ source material, we retain line breaks
-@z
-
-Section 102.
+Section 107.
 
 @x
 @ When we wish to append one character |c| to the output buffer, we write
@@ -367,15 +371,15 @@ Section 102.
 @-c@>
 @z
 
-Section 106.
+Section 114.
 
 @x
-@ We get to this section only in the unusual case that the entire output line
+@ The |out_name| procedure is used to output an identifier or index
 @y
-@r @ We get to this section only in the unusual case that the entire output line
+@r @ The |out_name| procedure is used to output an identifier or index
 @z
 
-Section 112.
+Section 117.
 
 @x
 @ The |copy_TeX| routine processes the \TEX/ code at the beginning of a
@@ -393,7 +397,7 @@ copy_TeX(void)
 {@+
 @z
 
-Section 113.
+Section 118.
 
 @x
 @ The |copy_comment| function issues a warning if more braces are opened than
@@ -412,7 +416,7 @@ int bal@t\2\2@>) /* brace balance */
   char c; /* current character being copied */
 @z
 
-Section 118.
+Section 123.
 
 @x
 @ Here is a list of the category codes that scraps can have.
@@ -420,7 +424,7 @@ Section 118.
 @r @ Here is a list of the category codes that scraps can have.
 @z
 
-Section 122.
+Section 127.
 
 @x
 @ The token lists for translated \TEX/ output contain some special control
@@ -429,7 +433,7 @@ Section 122.
 @-n@>
 @z
 
-Section 123.
+Section 128.
 
 @x
 \yskip\noindent All of these tokens are removed from the \TEX/ output that
@@ -438,7 +442,7 @@ Section 123.
 @-n@>
 @z
 
-Section 124.
+Section 129.
 
 @x
 @ The raw input is converted into scraps according to the following table,
@@ -456,26 +460,26 @@ The raw input is converted into scraps according to the following table,
 \yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
 @z
 
-Section 125.
+Section 130.
 
 @x
-\.>&|prerangle|: \.{\\rangle}&yes\cr
+\.\%&|binop|: \.{\\MOD}&yes\cr
 @y
-\.>&|prerangle|: \.{\\rangle}&yes\cr}
+\.\%&|binop|: \.{\\MOD}&yes\cr}
 
 @ Cont.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 126.
+Section 131.
 
 @x
-\.{continue}&|case_like|: \stars&maybe\cr
+\.{co\_await}&|case_like|: \stars&maybe\cr
 @y
-\.{continue}&|case_like|: \stars&maybe\cr}
+\.{co\_await}&|case_like|: \stars&maybe\cr}
 
-@r @ Cont.
+@ Cont.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
