@@ -41,16 +41,13 @@ Section 125.
 @x l.2559
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp); big_app(indent); app(indent);
+  make_underlined(pp); big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @y
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp);
-  if (indent_param_decl) {
-    big_app(indent); app(indent);
-  }
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @z
@@ -73,7 +70,7 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
 else if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  big_app1(pp); big_app(indent); app(indent); reduce(pp,1,fn_decl,0,38);
+  big_app(dindent); big_app1(pp); reduce(pp,1,fn_decl,0,38);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @y
@@ -93,10 +90,7 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
 else if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  big_app1(pp);
-  if (indent_param_decl) {
-    big_app(indent); app(indent);
-  }
+  if (indent_param_decl) big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,38);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,39);
@@ -144,9 +138,15 @@ else if (cat1==stmt) {
   if (indent_param_decl) {
     app(outdent); app(outdent);
   }
-  big_app(force);
-  big_app1(pp+1); reduce(pp,2,function,-1,52);
+  big_app(force); big_app1(pp+1); reduce(pp,2,function,-1,52);
 }
+@z
+
+@x
+  big_app1_insert(pp,dindent); reduce(pp,2,fn_decl,0,73);
+@y
+  big_app1(pp); if (indent_param_decl) big_app(dindent);
+  big_app1(pp+1); reduce(pp,2,fn_decl,0,73);
 @z
 
 Addendum.

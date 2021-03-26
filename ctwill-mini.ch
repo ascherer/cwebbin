@@ -407,11 +407,11 @@ Section 118.
 @z
 
 @x
-int bal@t\2\2@>) /* brace balance */
+int bal) /* brace balance */
 {
   char c; /* current character being copied */
 @y
-int bal@t\2\2@>) /* brace balance */
+int bal) /* brace balance */
 {@+
   char c; /* current character being copied */
 @z

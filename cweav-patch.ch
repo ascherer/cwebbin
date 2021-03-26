@@ -220,14 +220,14 @@ Sections 112--113.
 
 @c
 static void
-print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+print_text( /* prints a token list for debugging; not used in |main| */
 @y
 @d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
 
 @c
 #if 0
 static void
-print_text(@t\1\1@> /* prints a token list for debugging; not used in |main| */
+print_text( /* prints a token list for debugging; not used in |main| */
 @z
 
 @x

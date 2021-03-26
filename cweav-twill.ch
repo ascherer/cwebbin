@@ -857,17 +857,11 @@ while (ast_count) {
 @z
 
 @x l.2559 and l.50 of CWEAV-EXTENSIONS.CH
-  make_underlined(pp); big_app1(pp);
-  if (indent_param_decl) {
-    big_app(indent); app(indent);
-  }
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
 @y
   make_underlined(pp);
   make_ministring(0);
-  big_app1(pp);
-  if (indent_param_decl) {
-    big_app(indent); app(indent);
-  }
+  if (indent_param_decl) big_app(dindent); big_app1(pp);
 @z
 
 @x l.2575
