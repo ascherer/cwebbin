@@ -809,12 +809,26 @@ The code below is an exact translation of the production rules into
 @-a@>
 @z
 
-Section 147.
+Section 152.
 
 @x
 @ Let us consider the big switch for productions now, before looking
 @y
 @r @ Let us consider the big switch for productions now, before looking
+@z
+
+@x
+        && pp->cat!=new_exp
+        && pp->cat!=ftemplate @|
+@y
+        && pp->cat!=new_exp @|
+        && pp->cat!=ftemplate
+@z
+
+@x
+        && pp->cat!=const_like
+@y
+        && pp->cat!=const_like @|
 @z
 
 Section 148.
@@ -988,6 +1002,14 @@ Section 156.
 {@+
 @z
 
+Section 163.
+
+@x
+   && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
+@y
+   @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
+@z
+
 Section 160.
 
 @x
@@ -1026,6 +1048,16 @@ Section 213.
 @ @<Print a snapsh...@>=
 @y
 @r @ @<Print a snapsh...@>=
+@z
+
+Section 229.
+
+@x
+    if (next_control=='|' || next_control==begin_comment ||
+        next_control==begin_short_comment) return;
+@y
+    if (next_control=='|' || next_control==begin_comment @| ||
+        next_control==begin_short_comment) return;
 @z
 
 Section 221.
