@@ -897,7 +897,7 @@ Section 148.
   pp++; /* if no match was found, we move to the right */
 }
 
-@ @<Cases for |pp->cat|@>=
+@ @<Cases for |pp->cat|@>=@t\1\5\5@>
     case exp: @<Cases for |exp|@>@; @+break;
     case lpar: @<Cases for |lpar|@>@; @+break;
     case unop: @<Cases for |unop|@>@; @+break;
