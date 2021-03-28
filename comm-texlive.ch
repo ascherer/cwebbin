@@ -554,7 +554,6 @@ printversionandexit(cb_banner,
 @c
 void cb_show_banner (void)
 {
-  assert(cb_banner[0]!='\0');
   textdomain("cweb-tl");
 @.cweb-tl.mo@>
   printf("%s%s\n", _(cb_banner), versionstring);
