@@ -734,9 +734,9 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @z
 
 @x l.2552
-  r->num=m; /* everything from |q| on is left undisturbed */
+r->num=m; /* everything from |q| on is left undisturbed */
 @y
-  r->num=m; /* everything from |q| on is left undisturbed */
+r->num=m; /* everything from |q| on is left undisturbed */
 
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may

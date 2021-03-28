@@ -74,9 +74,9 @@ if ((web_file=fopen(web_file_name,"r"))==NULL) {
 }
 @y
 if ((found_filename=kpse_find_cweb(web_file_name))==NULL @|
-    || (web_file=fopen(found_filename,"r"))==NULL) {
+    || (web_file=fopen(found_filename,"r"))==NULL)
   fatal(_("! Cannot open input file "), web_file_name);
-} else if (strlen(found_filename) < max_file_name_length) {
+else if (strlen(found_filename) < max_file_name_length) {
   /* Copy name for \#\&{line} directives. */
   if (strcmp(web_file_name, found_filename))
     strcpy(web_file_name, found_filename +
@@ -90,9 +90,9 @@ if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
 if ((found_filename=kpse_find_cweb(change_file_name))==NULL @|
-    || (change_file=fopen(found_filename,"r"))==NULL) {
+    || (change_file=fopen(found_filename,"r"))==NULL)
   fatal(_("! Cannot open change file "), change_file_name);
-} else if (strlen(found_filename) < max_file_name_length) {
+else if (strlen(found_filename) < max_file_name_length) {
   /* Copy name for \#\&{line} directives. */
   if (strcmp(change_file_name, found_filename))
     strcpy(change_file_name, found_filename +
@@ -243,13 +243,9 @@ Section 80.
 @.--quiet@>
   { show_banner=show_progress=show_happiness=false; continue; }
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    if (*dot_pos=='v') {
-      show_banner=show_progress=show_happiness=true;
-    } else
-    if (*dot_pos=='q') {
-      show_banner=show_progress=show_happiness=false;
-    } else
-    if (*dot_pos=='d') {
+    if (*dot_pos=='v') show_banner=show_progress=show_happiness=true;
+    else if (*dot_pos=='q') show_banner=show_progress=show_happiness=false;
+    else if (*dot_pos=='d') {
       if (sscanf(++dot_pos,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
       while (isdigit(*dot_pos)) dot_pos++; /* skip numeric part */
       dot_pos--; /* reset to final digit */

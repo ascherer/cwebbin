@@ -181,18 +181,16 @@ Section 76.
 @z
 
 @x l.1190
-      while (*s) {
+      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
         else s++;
-      }
 @y
-      while (*s) {
+      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,name_pos=++s;
         else s++;
-      }
 @^system dependencies@>
 @z
 

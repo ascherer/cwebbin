@@ -92,9 +92,9 @@ Section 50.
 Section 54.
 
 @x l.620
-          else if (a<050000) { confusion("macro defs have strange char");}
+          else if (a<050000) confusion("macro defs have strange char");
 @y
-          else if (a<050000) { confusion(_("macro defs have strange char"));}
+          else if (a<050000) confusion(_("macro defs have strange char"));
 @z
 
 Section 67.
