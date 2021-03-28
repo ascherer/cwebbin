@@ -198,6 +198,16 @@ Section 36.
 @-c@>
 @z
 
+Section 38.
+
+@x
+  if (q>xmem)
+        while (q->num>section_xref_switch) {r=q; q=q->xlink;}
+@y
+  if (q>xmem) @+
+        while (q->num>section_xref_switch) {r=q; q=q->xlink;}
+@z
+
 Section 46.
 
 @x
@@ -463,9 +473,9 @@ The raw input is converted into scraps according to the following table,
 Section 130.
 
 @x
-\.\%&|binop|: \.{\\MOD}&yes\cr
+\./&|binop|: \./&yes\cr
 @y
-\.\%&|binop|: \.{\\MOD}&yes\cr}
+\./&|binop|: \./&yes\cr}
 
 @ Cont.
 
@@ -475,40 +485,52 @@ Section 130.
 Section 131.
 
 @x
-\.{co\_await}&|case_like|: \stars&maybe\cr
+\.{complex}&|int_like|: \stars&yes\cr
 @y
-\.{co\_await}&|case_like|: \stars&maybe\cr}
+\.{complex}&|int_like|: \stars&yes\cr}
 
 @ Cont.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 127.
+Section 132.
 
 @x
-\.{long}&|raw_int|: \stars&maybe\cr
+\.{friend}&|int_like|: \stars&maybe\cr
 @y
-\.{long}&|raw_int|: \stars&maybe\cr}
+\.{friend}&|int_like|: \stars&maybe\cr}
 
 @ Cont.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 128.
+Section 133.
 
 @x
-\.{try}&|else_like|: \stars&maybe\cr
+\.{static\_cast}&|raw_int|: \stars&maybe\cr
 @y
-\.{try}&|else_like|: \stars&maybe\cr}
+\.{static\_cast}&|raw_int|: \stars&maybe\cr}
 
-@r @ Cont.
+@ Cont.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Sections 129--136.
+Section 134.
+
+@x
+\.{xor\_eq}&|alfop|: \stars&yes\cr
+@y
+\.{xor\_eq}&|alfop|: \stars&yes\cr}
+
+@ Cont.
+
+\yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
+@z
+
+Sections 135--143.
 
 @x l.7 line numbers refer to 'prod.w'
 @ Here is a table of all the productions.  Each production that
@@ -720,6 +742,37 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @y
 @z
 
+@x l.291
+\+& |exp| |attr| & |attr| \hfill $E\.\ A$ & \&{enum} $\{x\ [[\ldots]]\}$ \cr
+@y
+\+& |exp| |attr| & |attr| \hfill $E\.\ A$ & \&{enum} $\{x\ [[\ldots]]\}$ \cr
+\endgroup
+
+@ Cont.
+\begingroup \lineskip=4pt
+\def\alt #1 #2
+{$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
+   \strut\hbox{#2}\cr}\!\Bigr\}$ }
+\def\altt #1 #2 #3
+{$\displaystyle\Biggl\{\!\matrix{\strut\hbox{#1}\cr\hbox{#2}\cr
+   \strut\hbox{#3}\cr}\!\Biggr\}$ }
+\def\malt #1 #2
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\strut\hbox{#2}\hfill\cr}$}
+\def\maltt #1 #2 #3
+{$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
+   \strut\hbox{#3}\hfill\cr}$}
+\yskip@-any_other@>@-z@>@-f@>@-x@>@-p@>
+\prodno=143 \midcol=2.5in
+\def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
+\def\dagit{\dag\theprodno}
+\def\+#1&#2&#3&#4\cr{\def\next{#1}%
+ \line{\hbox to 2em{\hss
+  \ifx\next\empty\theprodno\else\next\fi}\strut
+  \ignorespaces#2\hfil\hbox to\midcol{$\RA$
+  \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
+\advance\midcol20pt
+@z
+
 @x l.326
 \+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
 \yskip
@@ -750,15 +803,20 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \&{typedef} \&{int} \&{foo}\cr
 \endgroup
 
-@r @-any_other@>@-z@>@ \begingroup\dag{\bf Notes}
+@-any_other@>@-z@>@ \begingroup\dag{\bf Notes}
+\advance \hsize by -4cm
+\parindent=0pt
+\everypar={\hangindent=2em}
 @z
+
+TODO: Section 144++
 
 Section 137.
 
 @x
 @* Implementing the productions.
 @y
-@* Implementing the productions.  \advance \hsize by -4cm
+@* Implementing the productions.\advance \hsize by -4cm
 \ifx\undefined\pdfpagewidth \else \advance \pdfpagewidth by -4cm \fi
 @z
 
