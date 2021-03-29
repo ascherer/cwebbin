@@ -1446,6 +1446,12 @@ Section 284.
 @r @ @<Start a macro...@>= {
 @z
 
+@x
+  if(!space_checked){emit_space_if_needed;save_position;}
+@y
+  if(!space_checked){@+emit_space_if_needed;save_position;@+}
+@z
+
 Section 287.
 
 @x
