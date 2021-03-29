@@ -1221,13 +1221,10 @@ Section 235.
 @z
 
 @x
-  default: app(inserted);@+app(next_control);
-    app_scrap(insert,maybe_math);@+break;
+  overflow(_("scrap/token/text"));
 }
 @y
-@#
-  default: app(inserted);@+app(next_control);
-    app_scrap(insert,maybe_math);@+break;
+  overflow(_("scrap/token/text"));
 }
 
 @ @<Cases for operators@>=@t\1\5\5@>
