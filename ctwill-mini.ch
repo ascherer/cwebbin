@@ -1326,8 +1326,8 @@ Section 259.
   sixteen_bits save_next_control; /* values to be restored */
   text_pointer p; /* translation of the \CEE/ text */
 @y
-  text_pointer save_text_ptr, p; /* translation of the \CEE/ text */
   sixteen_bits save_next_control; /* values to be restored */
+  text_pointer save_text_ptr, p; /* translation of the \CEE/ text */
 @z
 
 Section 260.
