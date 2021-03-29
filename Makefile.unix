@@ -4,7 +4,7 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, January 2021.
+# Last updated by Andreas Scherer, March 2021.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
@@ -147,6 +147,7 @@ CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 SOURCES = cweave.w common.w ctangle.w
 
 ORIGINAL = $(SOURCES) prod.w \
+	0001-Support-extended-syntax-for-numeric-literals.patch \
 	Makefile common.c common.h ctangle.c \
 	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
 	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
