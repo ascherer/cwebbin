@@ -208,16 +208,7 @@ Section 38.
         while (q->num>section_xref_switch) {r=q; q=q->xlink;}
 @z
 
-Section 46.
-
-@x
-id_lookup("register",NULL,int_like);
-@y
-@ @<Store all...@>=
-id_lookup("register",NULL,int_like);
-@z
-
-Section 50.
+Section 49.
 
 @x
 @ Control codes are converted to \.{CWEAVE}'s internal
@@ -225,7 +216,7 @@ Section 50.
 @r @ Control codes are converted to \.{CWEAVE}'s internal
 @z
 
-Section 56.
+Section 55.
 
 @x
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
@@ -250,7 +241,7 @@ The value of |cur_section_char| will be |'('| if the section name was
 preceded by \.{@@(} instead of \.{@@<}.\par}
 @z
 
-Section 57.
+Section 56.
 
 @x
 @ As one might expect, |get_next| consists mostly of a big switch
@@ -259,7 +250,7 @@ Section 57.
 @-c@>
 @z
 
-Section 64.
+Section 63.
 
 @x
 @ The following code assigns values to the combinations \.{++},
@@ -284,7 +275,7 @@ Section 64.
             } break;
 @z
 
-Section 65.
+Section 64.
 
 @x
   id_first=--loc;
@@ -305,7 +296,7 @@ Section 65.
 }
 @z
 
-Section 68.
+Section 67.
 
 @x
 @ @<Get a bin...@>={
@@ -313,7 +304,7 @@ Section 68.
 @r @ @<Get a bin...@>={
 @z
 
-Section 71.
+Section 70.
 
 @x
 @ @<Get a wide...@>={
@@ -321,7 +312,7 @@ Section 71.
 @r @ @<Get a wide...@>={
 @z
 
-Section 75.
+Section 74.
 
 @x
 @ @<Put section name...@>=
@@ -329,7 +320,7 @@ Section 75.
 @ @<Put section name...@>=
 @z
 
-Section 76.
+Section 75.
 
 @x
 @ @<If end of name...@>=
@@ -337,7 +328,7 @@ Section 76.
 @r @ @<If end of name...@>=
 @z
 
-Section 89--90.
+Section 88--89.
 
 @x
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
@@ -362,7 +353,7 @@ outer_xref(void) /* extension of |C_xref| */
   int bal; /* brace level in comment */
 @z
 
-Section 92.
+Section 91.
 
 @x
 @ @<Replace |"@@@@"| by |"@@"| @>=
@@ -374,7 +365,7 @@ Section 92.
   char *src=id_first,*dst=id_first;
 @z
 
-Section 97.
+Section 96.
 
 @x
 @ Finally, when the \TEX/ and definition parts have been treated, we have
@@ -384,7 +375,7 @@ Section 97.
 \hfil\break|next_control>=begin_C|.
 @z
 
-Section 103.
+Section 102.
 
 @x
 @ The |flush_buffer| routine empties the buffer up to a given breakpoint,
@@ -393,7 +384,7 @@ Section 103.
 @-c@>
 @z
 
-Section 107.
+Section 106.
 
 @x
 @ When we wish to append one character |c| to the output buffer, we write
@@ -402,7 +393,7 @@ Section 107.
 @-c@>
 @z
 
-Section 114.
+Section 113.
 
 @x
 @ The |out_name| procedure is used to output an identifier or index
@@ -410,7 +401,7 @@ Section 114.
 @r @ The |out_name| procedure is used to output an identifier or index
 @z
 
-Section 117.
+Section 116.
 
 @x
 @ The |copy_TeX| routine processes the \TEX/ code at the beginning of a
@@ -428,7 +419,7 @@ copy_TeX(void)
 {@+
 @z
 
-Section 118.
+Section 117.
 
 @x
 @ The |copy_comment| function issues a warning if more braces are opened than
@@ -447,7 +438,7 @@ int bal) /* brace balance */
   char c; /* current character being copied */
 @z
 
-Section 123.
+Section 122.
 
 @x
 @ Here is a list of the category codes that scraps can have.
@@ -455,7 +446,7 @@ Section 123.
 @r @ Here is a list of the category codes that scraps can have.
 @z
 
-Section 127.
+Section 126.
 
 @x
 @ The token lists for translated \TEX/ output contain some special control
@@ -464,7 +455,7 @@ Section 127.
 @-n@>
 @z
 
-Section 128.
+Section 127.
 
 @x
 \yskip\noindent All of these tokens are removed from the \TEX/ output that
@@ -473,7 +464,7 @@ Section 128.
 @-n@>
 @z
 
-Section 129.
+Section 128.
 
 @x
 @ The raw input is converted into scraps according to the following table,
@@ -491,7 +482,7 @@ The raw input is converted into scraps according to the following table,
 \yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
 @z
 
-Section 130.
+Section 129.
 
 @x
 \./&|binop|: \./&yes\cr
@@ -503,7 +494,7 @@ Section 130.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 131.
+Section 130.
 
 @x
 \.{complex}&|int_like|: \stars&yes\cr
@@ -515,7 +506,7 @@ Section 131.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 132.
+Section 131.
 
 @x
 \.{friend}&|int_like|: \stars&maybe\cr
@@ -527,7 +518,7 @@ Section 132.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 133.
+Section 132.
 
 @x
 \.{static\_cast}&|raw_int|: \stars&maybe\cr
@@ -539,7 +530,7 @@ Section 133.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 134.
+Section 133.
 
 @x
 \.{xor\_eq}&|alfop|: \stars&yes\cr
@@ -551,7 +542,7 @@ Section 134.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Sections 135--143.
+Sections 134--142.
 
 @x l.7 line numbers refer to 'prod.w'
 @ Here is a table of all the productions.  Each production that
@@ -835,7 +826,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \everypar={\hangindent=2em}
 @z
 
-Section 144.
+Section 143.
 
 @x
 @* Implementing the productions.
@@ -850,7 +841,7 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
-Section 147.
+Section 146.
 
 @x
 @ Token lists in |@!tok_mem| are composed of the following kinds of
@@ -859,7 +850,7 @@ Section 147.
 @-p@>
 @z
 
-Section 150.
+Section 149.
 
 @x
 @ The production rules listed above are embedded directly into \.{CWEAVE},
@@ -874,7 +865,7 @@ Section 150.
 @-pp@>
 @z
 
-Section 151.
+Section 150.
 
 @x
 The code below is an exact translation of the production rules into
@@ -883,7 +874,7 @@ The code below is an exact translation of the production rules into
 @-a@>
 @z
 
-Section 154.
+Section 153.
 
 @x
 @ Let us consider the big switch for productions now, before looking
@@ -905,7 +896,7 @@ Section 154.
         && pp->cat!=const_like @|
 @z
 
-Section 155.
+Section 154.
 
 @x
   switch (pp->cat) {
@@ -1017,8 +1008,6 @@ Section 155.
     case raw_int: @<Cases for |raw_int|@>@; @+break;
     case operator_like: @<Cases for |operator_like|@>@; @+break;
     case typedef_like: @<Cases for |typedef_like|@>@; @+break;
-
-@ @<Cases for |pp->cat|@>=@t\1\5\5@>
     case delete_like: @<Cases for |delete_like|@>@; @+break;
     case question: @<Cases for |question|@>@; @+break;
     case alignas_like: @<Cases for |alignas_like|@>@; @+break;
@@ -1028,7 +1017,7 @@ Section 155.
     case default_like: @<Cases for |default_like|@>@; @+break;
 @z
 
-Section 157.
+Section 155.
 
 @x
 of identifiers in case labels.
@@ -1039,7 +1028,7 @@ of identifiers in case labels.
 If the first identifier is the keyword `\&{operator}', we give up;
 @z
 
-Section 151.
+Section 157.
 
 @x
 @ The scraps currently being parsed must be inspected for any
@@ -1053,7 +1042,7 @@ Section 151.
 \hfil\break|make_reserved|, hence |tok_loc| has been set.
 @z
 
-Section 163.
+Section 161.
 
 @x
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
@@ -1061,7 +1050,7 @@ Section 163.
 @r @ \.{CTWILL} needs the following procedure, which appends tokens of a
 @z
 
-Section 164.
+Section 162.
 
 @x
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
@@ -1078,7 +1067,7 @@ Section 164.
 {@+
 @z
 
-Section 165.
+Section 163.
 
 @x
 if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
@@ -1086,7 +1075,7 @@ if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
 if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }@+
 @z
 
-Section 166.
+Section 164.
 
 @x
    && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
@@ -1094,7 +1083,7 @@ Section 166.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
-Section 168.
+Section 166.
 
 @x
 @ @<Cases for |lpar|@>=
@@ -1102,7 +1091,7 @@ Section 168.
 @r @ @<Cases for |lpar|@>=
 @z
 
-Section 182.
+Section 180.
 
 @x
   if (indent_param_decl) {
@@ -1112,7 +1101,7 @@ Section 182.
   if (indent_param_decl) {@+app(outdent); app(outdent);@+}
 @z
 
-Section 191.
+Section 189.
 
 @x
 @ @<Cases for |case_like|@>=
@@ -1120,7 +1109,7 @@ Section 191.
 @r @ @<Cases for |case_like|@>=
 @z
 
-Section 208.
+Section 206.
 
 @x
 @ @<Cases for |raw_ubin|@>=
@@ -1128,7 +1117,7 @@ Section 208.
 @r @ @<Cases for |raw_ubin|@>=
 @z
 
-Section 223.
+Section 221.
 
 @x
 @ And here now is the code that applies productions as long as possible.
@@ -1136,7 +1125,7 @@ Section 223.
 @r @ And here now is the code that applies productions as long as possible.
 @z
 
-Section 229.
+Section 227.
 
 @x
 @ If the initial sequence of scraps does not reduce to a single scrap,
@@ -1144,7 +1133,7 @@ Section 229.
 @r @ If the initial sequence of scraps does not reduce to a single scrap,
 @z
 
-Section 232.
+Section 230.
 
 @x
     if (next_control=='|' || next_control==begin_comment ||
@@ -1154,7 +1143,7 @@ Section 232.
         next_control==begin_short_comment) return;
 @z
 
-Section 234.
+Section 232.
 
 @x
 @ The following macro is used to append a scrap whose tokens have just
@@ -1164,7 +1153,7 @@ Section 234.
 @-c@>
 @z
 
-Section 235.
+Section 233.
 
 @x
 @ @<Append the scr...@>=
@@ -1290,7 +1279,7 @@ Section 235.
   case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
 @z
 
-Section 239.
+Section 237.
 
 @x
 @ Some nonstandard characters may have entered \.{CWEAVE} by means of
@@ -1298,7 +1287,7 @@ Section 239.
 @r @ Some nonstandard characters may have entered \.{CWEAVE} by means of
 @z
 
-Section 241.
+Section 239.
 
 @x
 @<Append a \TEX/ string, without forming a scrap@>=
@@ -1306,7 +1295,7 @@ Section 241.
 @r @ @<Append a \TEX/ string, without forming a scrap@>=
 @z
 
-Section 247.
+Section 245.
 
 @x
 make_pb=true;
@@ -1318,7 +1307,7 @@ make_pb=true;
 @r @ @c
 @z
 
-Section 251.
+Section 249.
 
 @x
 @<Private...@>=
@@ -1326,7 +1315,7 @@ Section 251.
 @r @ @<Private...@>=
 @z
 
-Section 255.
+Section 253.
 
 @x
 called when |stack_ptr==1|.
@@ -1334,7 +1323,7 @@ called when |stack_ptr==1|.
 called when |stack_ptr| |==1|.
 @z
 
-Section 259.
+Section 257.
 
 @x
 @ The real work associated with token output is done by |make_output|.
@@ -1351,7 +1340,7 @@ Section 259.
   text_pointer save_text_ptr, p; /* translation of the \CEE/ text */
 @z
 
-Section 260.
+Section 258.
 
 @x
     reswitch: switch(a) {
@@ -1424,7 +1413,7 @@ Section 260.
     }
 @z
 
-Section 266.
+Section 264.
 
 @x
 @ The remaining part of |make_output| is somewhat more complicated. When we
@@ -1432,7 +1421,7 @@ Section 266.
 @r @ The remaining part of |make_output| is somewhat more complicated. When we
 @z
 
-Section 269.
+Section 267.
 
 @x
 @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
@@ -1440,7 +1429,7 @@ Section 269.
 @r @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
 @z
 
-Section 275.
+Section 273.
 
 @x
 @ The output file will contain the control sequence \.{\\Y} between non-null
@@ -1448,7 +1437,7 @@ Section 275.
 @r @ The output file will contain the control sequence \.{\\Y} between non-null
 @z
 
-Section 278.
+Section 276.
 
 @x
 @<Translate the \T...@>= do {
@@ -1456,7 +1445,7 @@ Section 278.
 @<Translate the \T...@>= do {@+
 @z
 
-Section 284.
+Section 282.
 
 @x
 @<Start a macro...@>= {
@@ -1470,7 +1459,7 @@ Section 284.
   if(!space_checked){@+emit_space_if_needed;save_position;@+}
 @z
 
-Section 287.
+Section 285.
 
 @x
 |next_control>=begin_C|. We will make the global variable |this_section|
@@ -1478,7 +1467,7 @@ Section 287.
 \hfil\break|next_control>=begin_C|. We will make the global variable |this_section|
 @z
 
-Section 288.
+Section 286.
 
 @x
 @ @<Translate the \CEE/...@>=
@@ -1486,7 +1475,7 @@ Section 288.
 @r @ @<Translate the \CEE/...@>=
 @z
 
-Section 292.
+Section 290.
 
 @x
 @ The |footnote| procedure gives cross-reference information about
@@ -1494,7 +1483,7 @@ Section 292.
 @r @ The |footnote| procedure gives cross-reference information about
 @z
 
-Section 304.
+Section 302.
 
 @x
 @ A left-to-right radix sorting method is used, since this makes it easy to
@@ -1503,7 +1492,7 @@ Section 304.
 @-c@>
 @z
 
-Section 306.
+Section 304.
 
 @x
 @<Rest of |trans_plus| union@>=
@@ -1513,7 +1502,7 @@ Section 306.
 @-k@>
 @z
 
-Section 310.
+Section 308.
 
 @x
 $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
@@ -1521,7 +1510,7 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 |collate[0]| $<$|collate[1]|$<\cdots<$|collate[100]|.
 @z
 
-Section 312.
+Section 310.
 
 @x
 unbucket( /* empties buckets having depth |d| */
@@ -1533,7 +1522,7 @@ unbucket(eight_bits d) /* empties buckets having depth |d| */
 { @+ int c; /* index into |bucket|; cannot be a simple |char| because of sign
 @z
 
-Section 324.
+Section 322.
 
 @x
 @ Because on some systems the difference between two pointers is a |ptrdiff_t|
@@ -1605,7 +1594,7 @@ rather than an |int|, we use \.{\%ld} to print these quantities.
             @t\5\5\5\5@>(long)max_scraps);
 @z
 
-Section 325.
+Section 323.
 
 @x
 \bigskip
@@ -1616,7 +1605,7 @@ care for keeping the original section numbering intact.}
 @y
 @z
 
-Section 333.
+Section 331.
 
 @x
 @** Index.
