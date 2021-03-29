@@ -743,7 +743,7 @@ translated text until coming to |tok_loc|, then suppresses text that may
 appear between parentheses or brackets. The calling routine should set
 |ident_seen=false| first. (This is admittedly tricky.)
 
-@c boolean ident_seen;
+@c static boolean ident_seen;
 static boolean app_supp(
   text_pointer p)
 { token_pointer j;

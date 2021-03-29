@@ -814,9 +814,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \everypar={\hangindent=2em}
 @z
 
-TODO: Section 144++
-
-Section 137.
+Section 144.
 
 @x
 @* Implementing the productions.
@@ -831,7 +829,7 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
-Section 140.
+Section 147.
 
 @x
 @ Token lists in |@!tok_mem| are composed of the following kinds of
@@ -840,15 +838,7 @@ Section 140.
 @-p@>
 @z
 
-Section 142.
-
-@x
-@ @<Print token |r|...@>=
-@y
-@r @ @<Print token |r|...@>=
-@z
-
-Section 143.
+Section 150.
 
 @x
 @ The production rules listed above are embedded directly into \.{CWEAVE},
@@ -863,7 +853,7 @@ Section 143.
 @-pp@>
 @z
 
-Section 144.
+Section 151.
 
 @x
 The code below is an exact translation of the production rules into
@@ -872,7 +862,7 @@ The code below is an exact translation of the production rules into
 @-a@>
 @z
 
-Section 152.
+Section 154.
 
 @x
 @ Let us consider the big switch for productions now, before looking
@@ -894,7 +884,7 @@ Section 152.
         && pp->cat!=const_like @|
 @z
 
-Section 148.
+Section 155.
 
 @x
   switch (pp->cat) {
@@ -1006,6 +996,8 @@ Section 148.
     case raw_int: @<Cases for |raw_int|@>@; @+break;
     case operator_like: @<Cases for |operator_like|@>@; @+break;
     case typedef_like: @<Cases for |typedef_like|@>@; @+break;
+
+@ @<Cases for |pp->cat|@>=@t\1\5\5@>
     case delete_like: @<Cases for |delete_like|@>@; @+break;
     case question: @<Cases for |question|@>@; @+break;
     case alignas_like: @<Cases for |alignas_like|@>@; @+break;
@@ -1015,7 +1007,7 @@ Section 148.
     case default_like: @<Cases for |default_like|@>@; @+break;
 @z
 
-Section 149.
+Section 157.
 
 @x
 of identifiers in case labels.
@@ -1040,7 +1032,7 @@ Section 151.
 \hfil\break|make_reserved|, hence |tok_loc| has been set.
 @z
 
-Section 155.
+Section 163.
 
 @x
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
@@ -1048,7 +1040,7 @@ Section 155.
 @r @ \.{CTWILL} needs the following procedure, which appends tokens of a
 @z
 
-Section 156.
+Section 164.
 
 @x
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
@@ -1065,7 +1057,15 @@ Section 156.
 {@+
 @z
 
-Section 163.
+Section 165.
+
+@x
+if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
+@y
+if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }@+
+@z
+
+Section 166.
 
 @x
    && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
@@ -1073,7 +1073,7 @@ Section 163.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
-Section 160.
+Section 168.
 
 @x
 @ @<Cases for |lpar|@>=
@@ -1081,39 +1081,49 @@ Section 160.
 @r @ @<Cases for |lpar|@>=
 @z
 
-Section 169.
+Section 182.
 
 @x
-@ @<Cases for |decl_head|@>=
+  if (indent_param_decl) {
+    app(outdent); app(outdent);
+  }
 @y
-@r @ @<Cases for |decl_head|@>=
+  if (indent_param_decl) {@+app(outdent); app(outdent);@+}
 @z
 
-Section 174.
+Section 191.
 
 @x
-@ @<Cases for |fn_decl|@>=
+@ @<Cases for |case_like|@>=
 @y
-@r @ @<Cases for |fn_decl|@>=
+@r @ @<Cases for |case_like|@>=
 @z
 
-Section 209.
+Section 208.
 
 @x
-@ Here's the |squash| procedure, which
+@ @<Cases for |raw_ubin|@>=
 @y
-@r @ Here's the |squash| procedure, which
+@r @ @<Cases for |raw_ubin|@>=
 @z
 
-Section 213.
+Section 223.
 
 @x
-@ @<Print a snapsh...@>=
+@ And here now is the code that applies productions as long as possible.
 @y
-@r @ @<Print a snapsh...@>=
+@r @ And here now is the code that applies productions as long as possible.
 @z
 
 Section 229.
+
+@x
+@ If the initial sequence of scraps does not reduce to a single scrap,
+@y
+@r @ If the initial sequence of scraps does not reduce to a single scrap,
+@z
+
+Section 232.
 
 @x
     if (next_control=='|' || next_control==begin_comment ||
@@ -1123,7 +1133,7 @@ Section 229.
         next_control==begin_short_comment) return;
 @z
 
-Section 221.
+Section 234.
 
 @x
 @ The following macro is used to append a scrap whose tokens have just
@@ -1133,13 +1143,48 @@ Section 221.
 @-c@>
 @z
 
-Section 222.
+Section 235.
 
 @x
+@ @<Append the scr...@>=
 @<Make sure that there is room for the new scraps, tokens, and texts@>@;
 @y
+@r @ @<Append the scr...@>=
 @#
 @<Make sure that there is room for the new scraps, tokens, and texts@>@;
+@#
+@z
+
+@x
+  case '/': case '.':
+    app(next_control);@+app_scrap(binop,yes_math);@+break;
+  case '<': app_str("\\langle");@+app_scrap(prelangle,yes_math);@+break;
+@.\\langle@>
+  case '>': app_str("\\rangle");@+app_scrap(prerangle,yes_math);@+break;
+@.\\rangle@>
+  case '=': app_str("\\K");@+app_scrap(binop,yes_math);@+break;
+@.\\K@>
+  case '|': app_str("\\OR");@+app_scrap(binop,yes_math);@+break;
+@.\\OR@>
+  case '^': app_str("\\XOR");@+app_scrap(binop,yes_math);@+break;
+@.\\XOR@>
+  case '%': app_str("\\MOD");@+app_scrap(binop,yes_math);@+break;
+@.\\MOD@>
+  case '!': app_str("\\R");@+app_scrap(unop,yes_math);@+break;
+@.\\R@>
+  case '~': app_str("\\CM");@+app_scrap(unop,yes_math);@+break;
+@.\\CM@>
+  case '+': case '-': app(next_control);@+app_scrap(ubinop,yes_math);@+break;
+  case '*': app(next_control);@+app_scrap(raw_ubin,yes_math);@+break;
+  case '&': app_str("\\AND");@+app_scrap(raw_ubin,yes_math);@+break;
+@.\\AND@>
+  case '?': app_str("\\?");@+app_scrap(question,yes_math);@+break;
+@.\\?@>
+  case '#': app_str("\\#");@+app_scrap(ubinop,yes_math);@+break;
+@.\\\#@>
+@y
+@#
+  @t\4@> @<Cases for operators@>@;
 @#
 @z
 
@@ -1152,37 +1197,118 @@ Section 222.
 @z
 
 @x
-  @t\4@>  @<Cases involving nonstandard characters@>@;
+  case '(': app(next_control);@+app_scrap(lpar,maybe_math);@+break;
+  case ')': app(next_control);@+app_scrap(rpar,maybe_math);@+break;
+  case '[': app(next_control);@+app_scrap(lbrack,maybe_math);@+break;
+  case ']': app(next_control);@+app_scrap(rbrack,maybe_math);@+break;
+  case '{': app_str("\\{"@q}@>);@+app_scrap(lbrace,yes_math);@+break;
+@.\\\{@>@q}@>
+  case '}': app_str(@q{@>"\\}");@+app_scrap(rbrace,yes_math);@+break;
+@q{@>@.\\\}@>
+  case ',': app(',');@+app_scrap(comma,yes_math);@+break;
+  case ';': app(';');@+app_scrap(semi,maybe_math);@+break;
+  case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
 @y
 @#
+  @t\4@> @<Cases for syntax markers@>@;
+@z
+
+@x
+  @t\4@>  @<Cases involving nonstandard characters@>@;
+@y
   @t\4@>  @<Cases involving nonstandard characters@>@;
 @#
 @z
 
 @x
   default: app(inserted);@+app(next_control);
+    app_scrap(insert,maybe_math);@+break;
+}
 @y
 @#
   default: app(inserted);@+app(next_control);
+    app_scrap(insert,maybe_math);@+break;
+}
+
+@ @<Cases for operators@>=@t\1\5\5@>
+  case '/': case '.':
+    app(next_control);@+app_scrap(binop,yes_math);@+break;
+  case '<': app_str("\\langle");@+app_scrap(prelangle,yes_math);@+break;
+@.\\langle@>
+  case '>': app_str("\\rangle");@+app_scrap(prerangle,yes_math);@+break;
+@.\\rangle@>
+  case '=': app_str("\\K");@+app_scrap(binop,yes_math);@+break;
+@.\\K@>
+  case '|': app_str("\\OR");@+app_scrap(binop,yes_math);@+break;
+@.\\OR@>
+  case '^': app_str("\\XOR");@+app_scrap(binop,yes_math);@+break;
+@.\\XOR@>
+  case '%': app_str("\\MOD");@+app_scrap(binop,yes_math);@+break;
+@.\\MOD@>
+  case '!': app_str("\\R");@+app_scrap(unop,yes_math);@+break;
+@.\\R@>
+  case '~': app_str("\\CM");@+app_scrap(unop,yes_math);@+break;
+@.\\CM@>
+  case '+': case '-': app(next_control);@+app_scrap(ubinop,yes_math);@+break;
+  case '*': app(next_control);@+app_scrap(raw_ubin,yes_math);@+break;
+  case '&': app_str("\\AND");@+app_scrap(raw_ubin,yes_math);@+break;
+@.\\AND@>
+  case '?': app_str("\\?");@+app_scrap(question,yes_math);@+break;
+@.\\?@>
+  case '#': app_str("\\#");@+app_scrap(ubinop,yes_math);@+break;
+@.\\\#@>
+
+@ @<Cases for syntax markers@>=@t\1\5\5@>
+  case '(': app(next_control);@+app_scrap(lpar,maybe_math);@+break;
+  case ')': app(next_control);@+app_scrap(rpar,maybe_math);@+break;
+  case '[': app(next_control);@+app_scrap(lbrack,maybe_math);@+break;
+  case ']': app(next_control);@+app_scrap(rbrack,maybe_math);@+break;
+  case '{': app_str("\\{"@q}@>);@+app_scrap(lbrace,yes_math);@+break;
+@.\\\{@>@q}@>
+  case '}': app_str(@q{@>"\\}");@+app_scrap(rbrace,yes_math);@+break;
+@q{@>@.\\\}@>
+  case ',': app(',');@+app_scrap(comma,yes_math);@+break;
+  case ';': app(';');@+app_scrap(semi,maybe_math);@+break;
+  case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
 @z
 
-Section 230.
+Section 239.
 
 @x
-@ The |outer_parse| routine is to |C_parse| as |outer_xref|
+@ Some nonstandard characters may have entered \.{CWEAVE} by means of
 @y
-@r @ The |outer_parse| routine is to |C_parse| as |outer_xref|
+@r @ Some nonstandard characters may have entered \.{CWEAVE} by means of
 @z
 
-Section 236.
+Section 241.
 
 @x
-@ To insert token-list |p| into the output, the |push_level| subroutine
+@<Append a \TEX/ string, without forming a scrap@>=
 @y
-@r @ To insert token-list |p| into the output, the |push_level| subroutine
+@r @ @<Append a \TEX/ string, without forming a scrap@>=
 @z
 
-Section 238.
+Section 247.
+
+@x
+make_pb=true;
+
+@ @c
+@y
+make_pb=true;
+
+@r @ @c
+@z
+
+Section 251.
+
+@x
+@<Private...@>=
+@y
+@r @ @<Private...@>=
+@z
+
+Section 255.
 
 @x
 called when |stack_ptr==1|.
@@ -1190,7 +1316,13 @@ called when |stack_ptr==1|.
 called when |stack_ptr| |==1|.
 @z
 
-Section 242.
+Section 259.
+
+@x
+@ The real work associated with token output is done by |make_output|.
+@y
+@r @ The real work associated with token output is done by |make_output|.
+@z
 
 @x
   text_pointer save_text_ptr;
@@ -1201,36 +1333,88 @@ Section 242.
   sixteen_bits save_next_control; /* values to be restored */
 @z
 
-Section 245.
+Section 260.
 
 @x
-else @<Look ahead for strongest line break, |goto reswitch|@>
-@y
-else {@<Look ahead for strongest line break, |goto reswitch|@>}
-@z
-
-Section 246.
-
-@x
-@<Look ahead for st...@>= {
-@y
-@<Look ahead for st...@>=
-@z
-
-@x
+    reswitch: switch(a) {
+      case end_translation: return;
+      case identifier: case res_word: @<Output an identifier@>@; break;
+      case section_code: @<Output a section name@>@; break;
+      case math_rel: out_str("\\MRL{"@q}@>);
+@.\\MRL@>
+      case noop: case inserted: break;
+      case cancel: case big_cancel: c=0; b=a;
+        while (true) {
+          a=get_output();
+          if (a==inserted) continue;
+          if ((a<indent && !(b==big_cancel&&a==' ')) || a>big_force) break;
+          if (a==indent) c++;
+          else if (a==outdent) c--;
+            else if (a==opt) a=get_output();
+        }
+        @<Output saved |indent| or |outdent| tokens@>@;
+        goto reswitch;
+      case dindent: a=get_output();
+        if (a!=big_force) {
+          out_str("\\1\\1"); goto reswitch;
+        }
+        else dindent_pending=true; /* fall through */
+      case indent: case outdent: case opt: case backup: case break_space:
+      case force: case big_force: case preproc_line: @<Output a control,
+        look ahead in case of line breaks, possibly |goto reswitch|@>@; break;
+      case quoted_char: out(*(cur_tok++));
+      case qualifier: break;
+      default: out(a); /* otherwise |a| is an ordinary character */
+    }
+  }
 }
 @y
+    reswitch: @/@<The output |switch|@>@;
+  }
+}
+
+@r @ @<The output |switch|@>=
+    switch(a) {
+      case end_translation: return;
+      case identifier: case res_word: @<Output an identifier@>@; break;
+      case section_code: @<Output a section name@>@; break;
+      case math_rel: out_str("\\MRL{"@q}@>);
+@.\\MRL@>
+      case noop: case inserted: break;
+      case cancel: case big_cancel: c=0; b=a;
+        while (true) {
+          a=get_output();
+          if (a==inserted) continue;
+          if ((a<indent && !(b==big_cancel&&a==' ')) || a>big_force) break;
+          if (a==indent) c++;
+          else if (a==outdent) c--;
+            else if (a==opt) a=get_output();
+        }
+        @<Output saved |indent| or |outdent| tokens@>@;
+        goto reswitch;
+      case dindent: a=get_output();
+        if (a!=big_force) {
+          out_str("\\1\\1"); goto reswitch;
+        }
+        else dindent_pending=true; /* fall through */
+      case indent: case outdent: case opt: case backup: case break_space:
+      case force: case big_force: case preproc_line: @<Output a control,
+        look ahead in case of line breaks, possibly |goto reswitch|@>@; break;
+      case quoted_char: out(*(cur_tok++));
+      case qualifier: break;
+      default: out(a); /* otherwise |a| is an ordinary character */
+    }
 @z
 
-Section 247.
+Section 266.
 
 @x
-@ @<Output saved...@>=
+@ The remaining part of |make_output| is somewhat more complicated. When we
 @y
-@r @ @<Output saved...@>=
+@r @ The remaining part of |make_output| is somewhat more complicated. When we
 @z
 
-Section 251.
+Section 269.
 
 @x
 @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
@@ -1238,7 +1422,7 @@ Section 251.
 @r @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
 @z
 
-Section 257.
+Section 275.
 
 @x
 @ The output file will contain the control sequence \.{\\Y} between non-null
@@ -1246,7 +1430,7 @@ Section 257.
 @r @ The output file will contain the control sequence \.{\\Y} between non-null
 @z
 
-Section 260.
+Section 278.
 
 @x
 @<Translate the \T...@>= do {
@@ -1254,7 +1438,15 @@ Section 260.
 @<Translate the \T...@>= do {@+
 @z
 
-Section 268.
+Section 284.
+
+@x
+@<Start a macro...@>= {
+@y
+@r @ @<Start a macro...@>= {
+@z
+
+Section 287.
 
 @x
 |next_control>=begin_C|. We will make the global variable |this_section|
@@ -1262,7 +1454,7 @@ Section 268.
 \hfil\break|next_control>=begin_C|. We will make the global variable |this_section|
 @z
 
-Section 269.
+Section 288.
 
 @x
 @ @<Translate the \CEE/...@>=
@@ -1270,7 +1462,7 @@ Section 269.
 @r @ @<Translate the \CEE/...@>=
 @z
 
-Section 273.
+Section 292.
 
 @x
 @ The |footnote| procedure gives cross-reference information about
@@ -1278,26 +1470,26 @@ Section 273.
 @r @ The |footnote| procedure gives cross-reference information about
 @z
 
-Section 285.
+Section 304.
 
 @x
 @ A left-to-right radix sorting method is used, since this makes it easy to
 @y
-@ A left-to-right radix sorting method is used, since this makes it easy to
+@r @ A left-to-right radix sorting method is used, since this makes it easy to
 @-c@>
 @z
 
-Section 287.
+Section 306.
 
 @x
-@ During the sorting phase we shall use the |cat| and |trans| arrays from
+@<Rest of |trans_plus| union@>=
 @y
-@ During the sorting phase we shall use the |cat| and |trans| arrays from
+@ @<Rest of |trans_plus| union@>=
 @-j@>
 @-k@>
 @z
 
-Section 290.
+Section 310.
 
 @x
 $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
@@ -1305,7 +1497,19 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 |collate[0]| $<$|collate[1]|$<\cdots<$|collate[100]|.
 @z
 
-Section 304.
+Section 312.
+
+@x
+unbucket( /* empties buckets having depth |d| */
+eight_bits d)
+{
+  int c; /* index into |bucket|; cannot be a simple |char| because of sign
+@y
+unbucket(eight_bits d) /* empties buckets having depth |d| */
+{ @+ int c; /* index into |bucket|; cannot be a simple |char| because of sign
+@z
+
+Section 324.
 
 @x
 @ Because on some systems the difference between two pointers is a |ptrdiff_t|
@@ -1315,7 +1519,69 @@ rather than an |int|, we use \.{\%ld} to print these quantities.
 |ptrdiff_t| rather than an |int|, we use \.{\%ld} to print these quantities.
 @z
 
-Section 305.
+@x
+  puts(_("\nMemory usage statistics:"));
+@.Memory usage statistics:@>
+  printf(_("%ld names (out of %ld)\n"),
+            (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+  printf(_("%ld cross-references (out of %ld)\n"),
+            (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
+  printf(_("%ld bytes (out of %ld)\n"),
+            (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+  printf(_("%ld temp meanings (out of %ld)\n"),
+            (ptrdiff_t)(max_temp_meaning_ptr-temp_meaning_stack),
+            (long)max_meanings);
+  printf(_("%ld titles (out of %ld)\n"),
+            (ptrdiff_t)(title_code_ptr-title_code),(long)max_titles);
+  puts(_("Parsing:"));
+  printf(_("%ld scraps (out of %ld)\n"),
+            (ptrdiff_t)(max_scr_ptr-scrap_info),(long)max_scraps);
+  printf(_("%ld texts (out of %ld)\n"),
+            (ptrdiff_t)(max_text_ptr-tok_start),(long)max_texts);
+  printf(_("%ld tokens (out of %ld)\n"),
+            (ptrdiff_t)(max_tok_ptr-tok_mem),(long)max_toks);
+  printf(_("%ld levels (out of %ld)\n"),
+            (ptrdiff_t)(max_stack_ptr-stack),(long)stack_size);
+  puts(_("Sorting:"));
+  printf(_("%ld levels (out of %ld)\n"),
+            (ptrdiff_t)(max_sort_ptr-scrap_info),(long)max_scraps);
+@y
+  puts(_("\nMemory usage statistics:"));@/
+@.Memory usage statistics:@>
+  printf(_("%ld names (out of %ld)\n"),
+            (ptrdiff_t)(name_ptr-name_dir),@/
+            @t\5\5\5\5@>(long)max_names);@/
+  printf(_("%ld cross-references (out of %ld)\n"),
+            (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);@/
+  printf(_("%ld bytes (out of %ld)\n"),
+            (ptrdiff_t)(byte_ptr-byte_mem),@/
+            @t\5\5\5\5@>(long)max_bytes);@/
+  printf(_("%ld temp meanings (out of %ld)\n"),
+            (ptrdiff_t)(max_temp_meaning_ptr-temp_meaning_stack),@/
+            @t\5\5\5\5@>(long)max_meanings);@/
+  printf(_("%ld titles (out of %ld)\n"),
+            (ptrdiff_t)(title_code_ptr-title_code),@/
+            @t\5\5\5\5@>(long)max_titles);@/
+  puts(_("Parsing:"));@/
+  printf(_("%ld scraps (out of %ld)\n"),
+            (ptrdiff_t)(max_scr_ptr-scrap_info),@/
+            @t\5\5\5\5@>(long)max_scraps);@/
+  printf(_("%ld texts (out of %ld)\n"),
+            (ptrdiff_t)(max_text_ptr-tok_start),@/
+            @t\5\5\5\5@>(long)max_texts);@/
+  printf(_("%ld tokens (out of %ld)\n"),
+            (ptrdiff_t)(max_tok_ptr-tok_mem),@/
+            @t\5\5\5\5@>(long)max_toks);@/
+  printf(_("%ld levels (out of %ld)\n"),
+            (ptrdiff_t)(max_stack_ptr-stack),@/
+            @t\5\5\5\5@>(long)stack_size);@/
+  puts(_("Sorting:"));@/
+  printf(_("%ld levels (out of %ld)\n"),
+            (ptrdiff_t)(max_sort_ptr-scrap_info),@/
+            @t\5\5\5\5@>(long)max_scraps);
+@z
+
+Section 325.
 
 @x
 \bigskip
@@ -1326,7 +1592,7 @@ care for keeping the original section numbering intact.}
 @y
 @z
 
-Section 313.
+Section 333.
 
 @x
 @** Index.
