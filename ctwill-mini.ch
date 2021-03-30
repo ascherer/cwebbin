@@ -328,6 +328,16 @@ Section 75.
 @r @ @<If end of name...@>=
 @z
 
+Section 87.
+
+@x
+C_xref( /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl)
+@y
+C_xref(eight_bits spec_ctrl)
+  /* makes cross-references for \CEE/ identifiers */
+@z
+
 Section 88--89.
 
 @x
@@ -393,6 +403,16 @@ Section 106.
 @-c@>
 @z
 
+Section 107.
+
+@x
+out_str( /* output characters from |s| to end of string */
+const char*s)
+@y
+out_str(const char*s)
+  /* output characters from |s| to end of string */
+@z
+
 Section 113.
 
 @x
@@ -429,10 +449,14 @@ Section 117.
 @z
 
 @x
+static int copy_comment( /* copies \TeX\ code in comments */
+boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
 {
   char c; /* current character being copied */
 @y
+static int copy_comment(
+boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
 {@+
   char c; /* current character being copied */
@@ -1042,6 +1066,25 @@ Section 157.
 \hfil\break|make_reserved|, hence |tok_loc| has been set.
 @z
 
+@x
+make_reserved( /* make the first identifier in |p->trans| like |int| */
+scrap_pointer p)
+@y
+make_reserved(scrap_pointer p)
+  /* make the first identifier in |p->trans| like |int| */
+@z
+
+Section 158.
+
+@x
+make_underlined(
+/* underline the entry for the first identifier in |p->trans| */
+scrap_pointer p)
+@y
+make_underlined(scrap_pointer p)
+  /* underline the entry for the first identifier in |p->trans| */
+@z
+
 Section 161.
 
 @x
@@ -1313,6 +1356,20 @@ Section 249.
 @<Private...@>=
 @y
 @r @ @<Private...@>=
+@z
+
+Section 252.
+
+@x
+@ @c
+static void
+push_level( /* suspends the current level */
+text_pointer p)
+@y
+@ Suspend the current level.
+@c
+static void
+push_level(text_pointer p)@/
 @z
 
 Section 253.
