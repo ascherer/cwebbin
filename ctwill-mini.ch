@@ -429,16 +429,6 @@ Section 116.
 @r @ The |copy_TeX| routine processes the \TEX/ code at the beginning of a
 @z
 
-@x
-static eight_bits
-copy_TeX(void)
-{
-@y
-static eight_bits
-copy_TeX(void)
-{@+
-@z
-
 Section 117.
 
 @x
@@ -452,14 +442,16 @@ Section 117.
 static int copy_comment( /* copies \TeX\ code in comments */
 boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
-{
-  char c; /* current character being copied */
 @y
 static int copy_comment(
 boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
-{@+
-  char c; /* current character being copied */
+@z
+
+@x
+      } else {
+@y
+      } @+ else {
 @z
 
 Section 122.
@@ -1572,11 +1564,9 @@ Section 310.
 @x
 unbucket( /* empties buckets having depth |d| */
 eight_bits d)
-{
-  int c; /* index into |bucket|; cannot be a simple |char| because of sign
 @y
-unbucket(eight_bits d) /* empties buckets having depth |d| */
-{ @+ int c; /* index into |bucket|; cannot be a simple |char| because of sign
+unbucket(eight_bits d)
+  /* empties buckets having depth |d| */
 @z
 
 Section 322.
