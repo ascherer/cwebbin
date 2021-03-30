@@ -995,13 +995,11 @@ temp_switch=false; temp_meaning_ptr=temp_meaning_stack;
 section_count=0; format_visible=true; right_start_switch=false; copy_limbo();
 @z
 
-@x l.4006
-while (!input_has_ended) @<Translate the current section@>@;
-}
+@x l.4193
+@ @<Predecl...@>=@+static void phase_two(void);
 
 @y
-while (!input_has_ended) @<Translate the current section@>@;
-}
+@ @<Predecl...@>=@+static void phase_two(void);
 
 @ @<Private...@>=
 static FILE *aux_file;
