@@ -1,11 +1,11 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, March 2021.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.922
+@x l.925
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -31,9 +31,9 @@ to the list:
 \option c Overwrite output files with temporary output only if changes occur.
 (On by default.)
 \hfil\vskip\normallineskip
-\option i Indent parameters in (classic) function declarations.  (On by
-default; \.{-i} typesets declarations flush left; some people think this
-to be more logical than indenting them.) (Has no effect on \.{CTANGLE}.)
+\option i Indent parameters in function declarations.  (On by default;
+\.{-i} typesets declarations flush left; some people think this to be
+more logical than indenting them.) (Has no effect on \.{CTANGLE}.)
 \hfil\vskip\normallineskip
 \option l This option takes the string of characters to its right as its
 argument to switch between different user languages and macro packages.
@@ -53,14 +53,14 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 \yskip
 @z
 ------------------------------------------------------------------------------
-@x l.1138
+@x l.1146
 \section Hypertext and hyperdocumentation.
 @y
 \vfill\eject
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
-@x l.1183 Add Appendix G, the CTWILL source code.
+@x l.1191 Add Appendix G, the CTWILL source code.
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
@@ -76,7 +76,7 @@ exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1710
+@x l.1716
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
 if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
@@ -84,7 +84,7 @@ if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
 @z
 ------------------------------------------------------------------------------
-@x l.1762
+@x l.1768
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject
