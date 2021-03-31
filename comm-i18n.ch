@@ -250,7 +250,7 @@ Section 71.
 
 Section 81.
 
-@x l.1272 and l.227 of COMM-EXTENSIONS.CH
+@x l.1259 and l.229 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] "@|

@@ -223,14 +223,13 @@ otherwise we add |".w"|.
 
 Section 80.
 
-@x l.1264
+@x l.1253 and l.199 of COMM-EXTENSIONS.CH
 @<Handle flag...@>=
-{
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    if(*dot_pos=='l') {
-       use_language=++dot_pos;
-       break;
-    } else flags[(eight_bits)*dot_pos]=flag_change;
+for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+  if(*dot_pos=='l') {
+     use_language=++dot_pos;
+     break;
+  } else flags[(eight_bits)*dot_pos]=flag_change;
 @y
 @<Handle flag...@>=
 {
@@ -260,13 +259,13 @@ Section 80.
     }
     break; /* from |for| loop */
   }
+}
 @z
 
 Section 81.
 
-@x l.1270 and l.227 of COMM-EXTENSIONS.CH and l.270 of COMM-I18N.CH
+@x l.1259 and l.229 of COMM-EXTENSIONS.CH and l.270 of COMM-I18N.CH
 @ @<Print usage error message and quit@>=
-{
 switch (program) {
 case ctangle: fatal(
 _("! Usage: ctangle [options] "@|
@@ -281,7 +280,6 @@ default: fatal(
 _("! Usage: ctwill [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
    ,"");
-}
 }
 @y
 @ @<Print usage error message and quit@>=

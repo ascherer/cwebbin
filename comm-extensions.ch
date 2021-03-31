@@ -196,7 +196,7 @@ Section 76.
 
 Section 80.
 
-@x l.1264
+@x l.1253
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
