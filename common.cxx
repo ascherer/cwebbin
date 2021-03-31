@@ -23,7 +23,7 @@
 #include <string.h>  
 
 /*:3*//*91:*/
-#line 606 "comm-foo.ch"
+#line 602 "comm-foo.ch"
 
 #if HAVE_GETTEXT
 #include <locale.h>  
@@ -367,25 +367,25 @@ char check_file_name[max_file_name_length];
 boolean flags[128];
 
 /*:73*//*83:*/
-#line 1277 "common.w"
+#line 1275 "common.w"
 
 FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
-#line 468 "comm-foo.ch"
+#line 464 "comm-foo.ch"
 FILE*scn_file;
 FILE*check_file;
-#line 1282 "common.w"
+#line 1280 "common.w"
 FILE*active_file;
 
-#line 485 "comm-foo.ch"
+#line 481 "comm-foo.ch"
 /*:83*//*86:*/
-#line 530 "comm-foo.ch"
+#line 526 "comm-foo.ch"
 
 const char*use_language= "";
 
 /*:86*//*89:*/
-#line 576 "comm-foo.ch"
+#line 572 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -460,7 +460,7 @@ static int section_name_cmp(char**,int,name_pointer);
 static void scan_args(void);
 
 /*:76*//*87:*/
-#line 542 "comm-foo.ch"
+#line 538 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 
@@ -492,7 +492,7 @@ for(h= hash;h<=hash_end;*h++= NULL);
 
 #line 47 "comm-foo.ch"
 /*92:*/
-#line 615 "comm-foo.ch"
+#line 611 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
@@ -516,7 +516,7 @@ show_stats= false;
 
 #line 101 "common.w"
 /*84:*/
-#line 485 "comm-foo.ch"
+#line 481 "comm-foo.ch"
 
 scan_args();
 if(program==ctangle){
@@ -547,9 +547,9 @@ else strcpy(dot_pos,".wtp");
 if((tex_file= fopen(check_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
 }
-#line 1295 "common.w"
+#line 1293 "common.w"
 
-#line 520 "comm-foo.ch"
+#line 516 "comm-foo.ch"
 /*:84*/
 #line 101 "common.w"
 
@@ -1306,7 +1306,7 @@ puts(_("(That was a fatal error, my friend.)"));
 #line 320 "comm-foo.ch"
 
 /*90:*/
-#line 588 "comm-foo.ch"
+#line 584 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1377,16 +1377,17 @@ strcpy(change_file_name,"/dev/null");
 #line 1174 "common.w"
 while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
-#line 420 "comm-foo.ch"
+#line 1253 "common.w"
 
+#line 417 "comm-foo.ch"
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
 if(*dot_pos=='l'){
 use_language= ++dot_pos;
 break;
 }else flags[(eight_bits)*dot_pos]= flag_change;
-#line 1258 "common.w"
+#line 1256 "common.w"
 
-#line 441 "comm-foo.ch"
+#line 437 "comm-foo.ch"
 /*:80*/
 #line 1175 "common.w"
 
@@ -1406,9 +1407,9 @@ if(!found_web)/*77:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 462 "comm-foo.ch"
+#line 458 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1272 "common.w"
+#line 1270 "common.w"
 
 
 /*:82*/
@@ -1438,9 +1439,9 @@ else if(!found_change)/*78:*/
 if(strcmp(*argv,"-")!=0){
 if(s-*argv> max_file_name_length-4)
 /*82:*/
-#line 462 "comm-foo.ch"
+#line 458 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1272 "common.w"
+#line 1270 "common.w"
 
 
 /*:82*/
@@ -1462,9 +1463,9 @@ else if(!found_out)/*79:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 462 "comm-foo.ch"
+#line 458 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1272 "common.w"
+#line 1270 "common.w"
 
 
 /*:82*/
@@ -1491,7 +1492,7 @@ found_out= true;
 #line 1185 "common.w"
 
 else/*81:*/
-#line 441 "comm-foo.ch"
+#line 437 "comm-foo.ch"
 
 switch(program){
 case ctangle:fatal(
@@ -1508,16 +1509,16 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1270 "common.w"
+#line 1268 "common.w"
 
-#line 462 "comm-foo.ch"
+#line 458 "comm-foo.ch"
 /*:81*/
 #line 1186 "common.w"
 
 }
 }
 if(!found_web)/*81:*/
-#line 441 "comm-foo.ch"
+#line 437 "comm-foo.ch"
 
 switch(program){
 case ctangle:fatal(
@@ -1534,16 +1535,16 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1270 "common.w"
+#line 1268 "common.w"
 
-#line 462 "comm-foo.ch"
+#line 458 "comm-foo.ch"
 /*:81*/
 #line 1189 "common.w"
 
 }
 
 /*:75*//*88:*/
-#line 545 "comm-foo.ch"
+#line 541 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {

@@ -223,15 +223,13 @@ otherwise we add |".w"|.
 
 Section 80.
 
-@x l.1253 and l.199 of COMM-EXTENSIONS.CH
-@<Handle flag...@>=
+@x l.1254 and l.203 of COMM-EXTENSIONS.CH
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   if(*dot_pos=='l') {
      use_language=++dot_pos;
      break;
   } else flags[(eight_bits)*dot_pos]=flag_change;
 @y
-@<Handle flag...@>=
 {
   if (strcmp("-help",*argv)==0 || strcmp("--help",*argv)==0)
 @.--help@>

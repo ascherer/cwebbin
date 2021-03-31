@@ -196,14 +196,10 @@ Section 76.
 
 Section 80.
 
-@x l.1253
-@<Handle flag...@>=
-{
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    flags[(eight_bits)*dot_pos]=flag_change;
-}
+@x l.1254
+for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+  flags[(eight_bits)*dot_pos]=flag_change;
 @y
-@<Handle flag...@>=
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   if(*dot_pos=='l') {
      use_language=++dot_pos;
