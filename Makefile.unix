@@ -147,15 +147,14 @@ CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 SOURCES = cweave.w common.w ctangle.w
 
 ORIGINAL = $(SOURCES) prod.w \
-	0001-Support-extended-syntax-for-numeric-literals.patch \
-	Makefile common.c common.h ctangle.c \
+	Makefile README common.c common.h ctangle.c \
 	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
 	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
 	comm-pc.ch ctang-pc.ch cweav-pc.ch comm-amiga.ch \
 	comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
 	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
 	comm-w32.ch ctang-w32.ch cweav-w32.ch \
-	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
+	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w iso_types.w \
 	examples/extex.ch examples/extex.w \
 	examples/kspell.el examples/Makefile examples/README \
 	examples/oemacs.el examples/oemacs.w \
@@ -182,6 +181,7 @@ CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
+	0001-Support-extended-syntax-for-numeric-literals.patch \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
 	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
