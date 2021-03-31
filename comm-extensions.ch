@@ -200,6 +200,7 @@ Section 80.
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+    flags[(eight_bits)*dot_pos]=flag_change;
 @y
 @<Handle flag...@>=
 {
@@ -207,7 +208,7 @@ Section 80.
     if(*dot_pos=='l') {
        use_language=++dot_pos;
        break;
-    } else
+    } else flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
 Section 81.

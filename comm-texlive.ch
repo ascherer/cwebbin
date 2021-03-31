@@ -227,6 +227,10 @@ Section 80.
 @<Handle flag...@>=
 {
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+    if(*dot_pos=='l') {
+       use_language=++dot_pos;
+       break;
+    } else flags[(eight_bits)*dot_pos]=flag_change;
 @y
 @<Handle flag...@>=
 {
@@ -242,14 +246,20 @@ Section 80.
   if (strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
 @.--quiet@>
       strcpy(*argv,"-q");
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    if (*dot_pos=='v') show_banner=show_progress=show_happiness=true;
-    else if (*dot_pos=='q') show_banner=show_progress=show_happiness=false;
-    else if (*dot_pos=='d') {
+  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++) {
+    switch (*dot_pos) {
+    case 'v': show_banner=show_progress=show_happiness=true; continue;
+    case 'q': show_banner=show_progress=show_happiness=false; continue;
+    case 'd':
       if (sscanf(++dot_pos,"%u",&kpathsea_debug)!=1) @<Print usage error...@>@;
       while (isdigit(*dot_pos)) dot_pos++; /* skip numeric part */
       dot_pos--; /* reset to final digit */
-    } else
+      continue;
+    case 'l': use_language=++dot_pos; break; /* from |switch| */
+    default: flags[(eight_bits)*dot_pos]=flag_change; continue;
+    }
+    break; /* from |for| loop */
+  }
 @z
 
 Section 81.
