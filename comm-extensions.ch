@@ -213,7 +213,9 @@ Section 80.
 
 Section 81.
 
-@x l.1272
+@x l.1259
+@ @<Print usage error message and quit@>=
+{
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -222,7 +224,9 @@ if (program==ctangle)
 else fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
+}
 @y
+@ @<Print usage error message and quit@>=
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] "@|
