@@ -238,10 +238,10 @@ Section 80.
     @<Display version information and |exit|@>@;
   if (strcmp("-verbose",*argv)==0 || strcmp("--verbose",*argv)==0)
 @.--verbose@>
-  { show_banner=show_progress=show_happiness=true; continue; }
+    strcpy(*argv,"-v");
   if (strcmp("-quiet",*argv)==0 || strcmp("--quiet",*argv)==0)
 @.--quiet@>
-  { show_banner=show_progress=show_happiness=false; continue; }
+      strcpy(*argv,"-q");
   for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
     if (*dot_pos=='v') show_banner=show_progress=show_happiness=true;
     else if (*dot_pos=='q') show_banner=show_progress=show_happiness=false;
