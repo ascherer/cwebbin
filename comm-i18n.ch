@@ -223,12 +223,14 @@ else if (include_depth==0) printf(_(". (l. %d)\n"), cur_line);
 Section 69.
 
 @x l.1093
-case spotless: if (show_happiness) puts("(No errors were found.)"); break;
+case spotless:
+  if (show_happiness) puts("(No errors were found.)"); break;
 case harmless_message:
   puts("(Did you see the warning message above?)"); break;
 case error_message:
   puts("(Pardon me, but I think I spotted something wrong.)"); break;
-case fatal_message: puts("(That was a fatal error, my friend.)");
+case fatal_message: default:
+  puts("(That was a fatal error, my friend.)");
 @y
 case spotless:
   if (show_happiness) puts(_("(No errors were found.)")); break;
@@ -236,7 +238,7 @@ case harmless_message:
   puts(_("(Did you see the warning message above?)")); break;
 case error_message:
   puts(_("(Pardon me, but I think I spotted something wrong.)")); break;
-case fatal_message:
+case fatal_message: default:
   puts(_("(That was a fatal error, my friend.)"));
 @z
 

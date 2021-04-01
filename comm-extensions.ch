@@ -144,10 +144,10 @@ can be made sensitive to these conditions.
   else return EXIT_SUCCESS;
 @y
   switch(history) {
+  case spotless: return RETURN_OK;
   case harmless_message: return RETURN_WARN;
   case error_message: return RETURN_ERROR;
-  case fatal_message: return RETURN_FAIL;
-  default: return RETURN_OK;
+  case fatal_message: default: return RETURN_FAIL;
   }
 @z
 
