@@ -167,15 +167,13 @@ Section 76.
 @x l.1185
   strcpy(change_file_name,"/dev/null");
 @y
-@#
+  strcpy(change_file_name,"/dev/null");
 #if defined DEV_NULL
   strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
   change_file_name[max_file_name_length-2]='\0';
 #elif defined _DEV_NULL
   strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
   change_file_name[max_file_name_length-2]='\0';
-#else
-  strcpy(change_file_name,"/dev/null");
 #endif
 @^system dependencies@>
 @z
