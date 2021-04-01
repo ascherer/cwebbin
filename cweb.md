@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 24, 2021
+% April 1, 2021
 
 # NAME
 
@@ -48,8 +48,7 @@ should not notice any differences in invoking the programs nor in the
 resulting output.  There are, however, a few differences worth noting:
 
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-c**, **-i**, **-o**, **+k**, **+lX**, and **+t** are new in CWEBbin
-  and TeX\ Live.
+  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by several wrapper files for **cwebmac.tex**
   with translated captions for German (**+ld**), French (**+lf**), and
   Italian (**+li**).
