@@ -1,7 +1,7 @@
 From ba514ca2a52ab65e46d3477724672564cb492646 Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Mon, 29 Mar 2021 13:14:34 +0200
-Subject: [PATCH] Support extended syntax for numeric literals.
+Subject: [PATCH 1/2] Support extended syntax for numeric literals.
 
 ---
  ctwimac.tex  | 15 ++++++++++-----

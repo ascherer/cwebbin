@@ -79,6 +79,7 @@ The following files were added to this distribution by various contributors:
 GENERAL CONTRIBUTION:
 .
 ├── 0001-Support-extended-syntax-for-numeric-literals.patch	for CTWILL
+├── 0002-purge-redundant-TeX-macro.patch			for CTWILL
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w

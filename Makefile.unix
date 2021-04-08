@@ -182,6 +182,7 @@ CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	0001-Support-extended-syntax-for-numeric-literals.patch \
+	0002-Purge-redundant-TeX-macro.patch \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
 	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \

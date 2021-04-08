@@ -43,7 +43,8 @@ Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb
 # Add CWEBbin stuff on top
 Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
-Patch: 0001-Support-extended-syntax-for-numeric-literals.patch
+Patch1: 0001-Support-extended-syntax-for-numeric-literals.patch
+Patch2: 0002-Purge-redundant-TeX-macro.patch
 
 %global __sed_i %{__sed} -i
 
