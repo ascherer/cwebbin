@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for COMMON.W, Version 4.2.
+It is a changefile for COMMON.W, Version 4.3.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -175,17 +175,18 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 2021	04 February 2021	AS	Tuneup for CWEB 4.0 [2021].
 	20 February 2021	AS	Tuneup for CWEB 4.1 [2021].
 	25 February 2021	AS	Tuneup for CWEB 4.2 [2021].
+	13 April 2021		AS	Tuneup for CWEB 4.3 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.25
-\def\title{Common code for CTANGLE and CWEAVE (Version 4.2)}
+\def\title{Common code for CTANGLE and CWEAVE (Version 4.3)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
 @x l.30
-  \centerline{(Version 4.2)}
+  \centerline{(Version 4.3)}
 @y
   \centerline{(@VERSION@)}
 @z

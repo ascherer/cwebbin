@@ -12,13 +12,13 @@ Material in limbo.
 @x l.35 and l.181 of CWEAV-PATCH.CH
 \def\title{CWEAVE (@VERSION@)}
 @y
-\def\title{CWEAVE (Version 4.2 [\TeX~Live])}
+\def\title{CWEAVE (Version 4.3 [\TeX~Live])}
 @z
 
 @x l.39 and l.187 of CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.2 [\TeX~Live])}
+  \centerline{(Version 4.3 [\TeX~Live])}
 @z
 
 @x l.41
@@ -38,7 +38,7 @@ Section 1.
 @x l.70 and l.203 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 @d banner _("This is CWEAVE (@VERSION@)")
 @y
-@d banner "This is CWEAVE, Version 4.2"
+@d banner "This is CWEAVE, Version 4.3"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
