@@ -58,7 +58,7 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2020	24 May 2020	AS	Remove macro translations.
 2020	11 Jun 2020	AS	Split into multiple changefiles.
 ------------------------------------------------------------------------------
-@x l.7 See comment in cwebmac.tex
+@x l.6 See comment in cwebmac.tex
 \def\page{\box255 } \normalbottom
 @y
 \let\page=\pagebody \raggedbottom
@@ -67,20 +67,20 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
   \advance\footnotecount by 1\relax}
 @z
 ------------------------------------------------------------------------------
-@x l.39
+@x l.38
 \def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.3)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
-@x l.53
+@x l.52
 \vskip 18pt\centerline{(Version 4.3 --- April 2021)}
 @y
 \vskip 18pt\centerline{(Version 4.3 --- April 2021)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
-@x l.1601
+@x l.1600
   \.{ { }\\vskip 15pt \\centerline\{(Version 4.3)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$

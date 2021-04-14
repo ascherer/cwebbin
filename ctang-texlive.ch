@@ -9,13 +9,13 @@
 
 Material in limbo.
 
-@x l.30 and l.166 of CTANG-PATCH.CH
+@x l.30 and l.169 of CTANG-PATCH.CH
 \def\title{CTANGLE (@VERSION@)}
 @y
 \def\title{CTANGLE (Version 4.3 [\TeX~Live])}
 @z
 
-@x l.34 and l.172 of CTANG-PATCH.CH
+@x l.34 and l.175 of CTANG-PATCH.CH
   \centerline{(@VERSION@)}
 @y
   \centerline{(Version 4.3 [\TeX~Live])}
@@ -52,13 +52,13 @@ Section 2.
 
 Sections 2--18.
 
-@x l.103 and l.196 of CTANG-PATCH.CH
+@x l.101 and l.199 of CTANG-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
 @z
 
-@x l.1550
+@x l.1554
 @** Index.
 @y
 @* Put ``version'' information in a single spot.

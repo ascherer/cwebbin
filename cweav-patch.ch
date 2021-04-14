@@ -249,7 +249,7 @@ static void print_text(text_pointer p);
 
 Addendum.
 
-@x l.4706
+@x l.4895
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

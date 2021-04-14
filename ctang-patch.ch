@@ -193,7 +193,7 @@ Section 1.
 
 Section 3.
 
-@x l.103
+@x l.101
 @i common.h
 @y
 @i comm-foo.h
@@ -201,7 +201,7 @@ Section 3.
 
 Addendum.
 
-@x l.1550
+@x l.1554
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

@@ -11,9 +11,9 @@ applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 240.
+Section 248.
 
-@x l.4347
+@x l.4534
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -29,7 +29,7 @@ if (no_xref) {
 }
 @z
 
-@x l.4381
+@x l.4568
 @.\\end@>
   finish_line();
   fclose(active_file);
@@ -43,7 +43,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 
 Additional material.
 
-@x l.4706
+@x l.4895
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a

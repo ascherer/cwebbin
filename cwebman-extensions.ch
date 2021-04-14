@@ -5,7 +5,7 @@ the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.925
+@x l.924
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -17,7 +17,7 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 variable is not set, some decent default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
-@x l.1038
+@x l.1037
 options are currently implemented:
 
 \yskip
@@ -53,14 +53,14 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 \yskip
 @z
 ------------------------------------------------------------------------------
-@x l.1146
+@x l.1145
 \section Hypertext and hyperdocumentation.
 @y
 \vfill\eject
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
-@x l.1191 Add Appendix G, the CTWILL source code.
+@x l.1190 Add Appendix G, the CTWILL source code.
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
@@ -76,7 +76,7 @@ exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1716
+@x l.1715
 if you have a duplex printer. Appendices D, E, and F of the complete
 @y
 if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
@@ -84,7 +84,7 @@ if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
 @z
 ------------------------------------------------------------------------------
-@x l.1768
+@x l.1767
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject

@@ -201,15 +201,15 @@ z
 
 Section 2.
 
-@x l.78
+@x l.72
 @i common.h
 @y
 @i comm-foo.h
 @z
 
-Section 92.
+Section 85.
 
-@x l.1307
+@x l.1292
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
