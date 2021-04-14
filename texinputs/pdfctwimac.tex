@@ -234,6 +234,7 @@
 \newskip\intersecskip \intersecskip=12pt minus 3pt % space between sections
 \let\yskip=\smallskip
 \def\?{\mathrel?}
+\def\,{\relax\ifmmode\mskip\thinmuskip\else\thinspace\fi}
 \def\note#1#2.{\par\penalty5000
   \Y\noindent{\hangindent2\em\baselineskip10pt%
     \eightrm#1~\ifacro{\pdfnote#2.}\else#2\fi.\par}}
@@ -494,10 +495,6 @@
 \def\vb#1{\leavevmode\hbox{\kern2pt\vrule\vtop{\vbox{\hrule
         \hbox{\strut\kern2pt\.{#1}\kern2pt}}
       \hrule}\vrule\kern2pt}} % verbatim string
-
-\def\TeX{{\ifmmode\it\fi
-   \leavevmode\hbox{T\kern-.1667em\lower.424ex\hbox{E}\hskip-.125em X}}}
-\def\,{\relax\ifmmode\mskip\thinmuskip\else\thinspace\fi}
 
 % now here's the mini-index formatting control
 \newcount\nrefs % total number of references in partial page
