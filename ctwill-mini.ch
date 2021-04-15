@@ -198,16 +198,6 @@ Section 36.
 @-c@>
 @z
 
-Section 38.
-
-@x
-  if (q>xmem)
-        while (q->num>section_xref_switch) {r=q; q=q->xlink;}
-@y
-  if (q>xmem) @+
-        while (q->num>section_xref_switch) {r=q; q=q->xlink;}
-@z
-
 Section 49.
 
 @x
@@ -1158,14 +1148,6 @@ Section 221.
 @ And here now is the code that applies productions as long as possible.
 @y
 @r @ And here now is the code that applies productions as long as possible.
-@z
-
-Section 227.
-
-@x
-@ If the initial sequence of scraps does not reduce to a single scrap,
-@y
-@r @ If the initial sequence of scraps does not reduce to a single scrap,
 @z
 
 Section 230.
