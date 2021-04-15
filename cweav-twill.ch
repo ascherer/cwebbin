@@ -1061,15 +1061,15 @@ if (*(loc-1)!='*') {
 @y
 @.\\N@>
   if (right_start_switch) {
-    out_str("N"); right_start_switch=false;
+    out('N'); right_start_switch=false;
 @.\\NN@>
   }
 @z
 
 @x l.4257
-out_str("{"); out_section(section_count); out_str("}");
+out('{'); out_section(section_count); out('}');
 @y
-out_str("{"); out_section(section_count); out_str("}");
+out('{'); out_section(section_count); out('}');
 flush_buffer(out_ptr,false,false);
 @z
 
