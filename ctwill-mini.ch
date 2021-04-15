@@ -1380,15 +1380,6 @@ Section 257.
 @r @ The real work associated with token output is done by |make_output|.
 @z
 
-@x
-  text_pointer save_text_ptr;
-  sixteen_bits save_next_control; /* values to be restored */
-  text_pointer p; /* translation of the \CEE/ text */
-@y
-  sixteen_bits save_next_control; /* values to be restored */
-  text_pointer save_text_ptr, p; /* translation of the \CEE/ text */
-@z
-
 Section 258.
 
 @x
