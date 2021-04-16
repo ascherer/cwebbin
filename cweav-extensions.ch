@@ -157,7 +157,8 @@ Addendum.
 @** Index.
 @y
 @* Formatting alternatives.
-\.{CWEAVE} indents declarations after old-style function definitions.
+\.{CWEAVE} indents declarations after old-style function definitions and
+long parameter lists of modern function definitions.
 With the \.{-i} option they will come out flush left.
 
 @d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
