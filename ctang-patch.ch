@@ -201,7 +201,7 @@ Section 3.
 
 Addendum.
 
-@x l.1554
+@x l.1553
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

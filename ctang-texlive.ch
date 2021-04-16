@@ -58,7 +58,7 @@ Sections 2--18.
 @i comm-w2c.h
 @z
 
-@x l.1554
+@x l.1553
 @** Index.
 @y
 @* Put ``version'' information in a single spot.

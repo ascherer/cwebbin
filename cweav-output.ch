@@ -13,7 +13,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 248.
 
-@x l.4534
+@x l.4535
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -29,7 +29,7 @@ if (no_xref) {
 }
 @z
 
-@x l.4568
+@x l.4570
 @.\\end@>
   finish_line();
   fclose(active_file);
@@ -43,7 +43,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 
 Additional material.
 
-@x l.4895
+@x l.4896
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a

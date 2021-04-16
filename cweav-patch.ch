@@ -216,7 +216,7 @@ Sections 3--18.
 
 Sections 112--113.
 
-@x
+@x l.2237
 @d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
 
 @c
@@ -231,14 +231,14 @@ print_text( /* prints a token list for debugging; not used in |main| */
 print_text( /* prints a token list for debugging; not used in |main| */
 @z
 
-@x
+@x l.2262
 }
 @y
 }
 #endif
 @z
 
-@x
+@x l.2264
 @ @<Predecl...@>=@+static void print_text(text_pointer p);
 @y
 @ @<Predecl...@>=
@@ -249,7 +249,7 @@ static void print_text(text_pointer p);
 
 Addendum.
 
-@x l.4895
+@x l.4896
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

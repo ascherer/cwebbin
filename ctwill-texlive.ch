@@ -60,7 +60,7 @@ Sections 6--21.
 
 Section 80.
 
-@x l.1415 and l.628 of CWEAV-TWILL.CH
+@x l.1414 and l.628 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
 \.{\\input Xproofmac} with option \.{+lX}), a set of macros used when
 @y
@@ -74,7 +74,7 @@ tex_puts(proofing?"proofma":"ctwima");
 tex_puts(proofing?"ctproofma":"ctwima");
 @z
 
-@x l.4895
+@x l.4896
 @** Index.
 @y
 @* Put ``version'' information in a single spot.
