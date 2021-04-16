@@ -4,7 +4,7 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, January 2021.
+# Last updated by Andreas Scherer, March 2021.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
@@ -147,14 +147,14 @@ CTANGLE = CWEBINPUTS=$(INCLUDE) ./ctangle $(TFLAGS)
 SOURCES = cweave.w common.w ctangle.w
 
 ORIGINAL = $(SOURCES) prod.w \
-	Makefile common.c common.h ctangle.c \
+	Makefile README common.c common.h ctangle.c \
 	cwebman.tex cwebmac.tex comm-vms.ch ctang-vms.ch \
 	cweav-vms.ch comm-man.ch ctang-man.ch cweav-man.ch \
 	comm-pc.ch ctang-pc.ch cweav-pc.ch comm-amiga.ch \
 	comm-bs.ch ctang-bs.ch cweav-bs.ch makefile.bs \
 	comm-ql.ch ctang-ql.ch cweav-ql.ch readme.ql \
 	comm-w32.ch ctang-w32.ch cweav-w32.ch \
-	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w README \
+	comm-os2.ch comm-mac.ch cweb.1 cweb.el c++lib.w iso_types.w \
 	examples/extex.ch examples/extex.w \
 	examples/kspell.el examples/Makefile examples/README \
 	examples/oemacs.el examples/oemacs.w \
@@ -181,11 +181,12 @@ CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
-	cwebbin.spec examples/wmerge.dsp \
-	0001-Update-CWEBbin-manpage.patch \
-	0001-Make-clean-twinx.patch 0002-Make-clean-refsort.patch \
-	ctangle.1 cweave.1 ctwill.md refsort.1 twinx.1 \
-	README.md system.bux texlive.w ctwill.bux ctwill-mini.ch LICENSE
+	0001-Support-extended-syntax-for-numeric-literals.patch \
+	0002-Purge-redundant-TeX-macro.patch \
+	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
+	refsort.1 twinx.1 refsort.ch twinx.ch \
+	LICENSE README.md texlive.w system.bux \
+	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
@@ -262,52 +263,58 @@ cautiously: ctangle
 	$(RM) SAVEctangle.$(EXTENSION)
 
 SAVEctangle.$(EXTENSION):
-	$(CP) ctangle.$(EXTENSION) SAVEctangle.$(EXTENSION)
+	$(CP) ctangle.$(EXTENSION) $@
 
 SAVEcommon.$(EXTENSION):
-	$(CP) common.$(EXTENSION) SAVEcommon.$(EXTENSION)
+	$(CP) common.$(EXTENSION) $@
 
 common.$(EXTENSION): common.w $(CCHANGES)
-	$(CTANGLE) common $(CCHANGES) common.$(EXTENSION)
+	$(CTANGLE) $^ $@
 
 common.o: common.$(EXTENSION)
-	$(CC) $(CFLAGS) -c common.$(EXTENSION)
+	$(CC) $(CFLAGS) -c $^
 
 ctangle: ctangle.o common.o
-	$(CC) $(LINKFLAGS) -o ctangle ctangle.o common.o 
+	$(CC) $(LINKFLAGS) -o $@ $^
 
 ctangle.$(EXTENSION): ctangle.w $(TCHANGES) $(HCHANGES)
-	$(CTANGLE) ctangle $(TCHANGES) ctangle.$(EXTENSION)
+	$(CTANGLE) ctangle $(TCHANGES) $@
 
 ctangle.o: ctangle.$(EXTENSION)
-	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)
+	$(CC) $(CFLAGS) -c $^
 
 cweave: cweave.o common.o
-	$(CC) $(LINKFLAGS) -o cweave cweave.o common.o
+	$(CC) $(LINKFLAGS) -o $@ $^
 
 cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod.w
-	$(CTANGLE) cweave $(WCHANGES) cweave.$(EXTENSION)
+	$(CTANGLE) cweave $(WCHANGES) $@
 
 cweave.o: cweave.$(EXTENSION)
-	$(CC) $(CFLAGS) -c cweave.$(EXTENSION)
+	$(CC) $(CFLAGS) -c $^
 
 ctwill: ctwill.o common.o
-	$(CC) $(LINKFLAGS) -o ctwill ctwill.o common.o
+	$(CC) $(LINKFLAGS) -o $@ $^
 
 ctwill.$(EXTENSION): cweave.w $(LCHANGES) $(HCHANGES) prod-twill.w
-	$(CTANGLE) cweave $(LCHANGES) ctwill.$(EXTENSION)
+	$(CTANGLE) cweave $(LCHANGES) $@
 
 ctwill.o: ctwill.$(EXTENSION)
-	$(CC) $(CFLAGS) -c ctwill.$(EXTENSION)
+	$(CC) $(CFLAGS) -c $^
 
 prod-twill.w: prod.w prod-twill.ch
 	$(TIE) -m $@ $^
 
-refsort: refsort.o
-	$(CC) $(CFLAGS) -o refsort refsort.o
+refsort.$(EXTENSION): refsort.w refsort.ch
+	$(CTANGLE) $^ $@
 
-twinx: twinx.o
-	$(CC) $(CFLAGS) -o twinx twinx.o
+refsort: refsort.$(EXTENSION)
+	$(CC) $(CFLAGS) -o $@ $^
+
+twinx.$(EXTENSION): twinx.w twinx.ch
+	$(CTANGLE) $^ $@
+
+twinx: twinx.$(EXTENSION)
+	$(CC) $(CFLAGS) -o $@ $^
 
 boot:
 	$(CC) $(CFLAGS) -c ctangle.$(EXTENSION)

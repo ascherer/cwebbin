@@ -13,7 +13,7 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
 Section 68.
 
-@x l.1086
+@x l.1073
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
@@ -22,7 +22,7 @@ Section 68.
 
 Section 73.
 
-@x l.1146
+@x l.1135
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
@@ -31,16 +31,16 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 
 Section 74.
 
-@x l.1154
+@x l.1143
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
 @y
 show_banner=show_happiness=show_progress=make_xrefs=true;@/
-temporary_output=true; /* Check temporary output for changes */
+check_for_change=true; /* Check temporary output for changes */
 @z
 
 Section 83.
 
-@x l.1292
+@x l.1277
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
 @y
 FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
@@ -49,7 +49,7 @@ FILE *check_file; /* temporary output file */
 
 Section 84.
 
-@x l.1295
+@x l.1280
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -94,9 +94,9 @@ else {
 }
 @z
 
-New material after section 92.
+New material after section 85.
 
-@x l.1307
+@x l.1292
 @** Index.
 @y
 @* Temporary file output.  Before we leave the program we have to make

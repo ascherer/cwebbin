@@ -12,14 +12,14 @@ For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
 Section 1.  Add CTWILL.
 
-@x l.55
+@x l.51
 to both \.{CTANGLE} and \.{CWEAVE}, which roughly concerns the following
 @y
 to \.{CTANGLE}, \.{CWEAVE}, and \.{CTWILL},
 which roughly concerns the following
 @z
 
-@x l.61
+@x l.57
 sometimes use \.{CWEB} to refer to either of the two component
 @y
 sometimes use \.{CWEB} to refer to any of the three component
@@ -27,13 +27,13 @@ sometimes use \.{CWEB} to refer to any of the three component
 
 Section 18.  Add CTWILL.
 
-@x l.83
+@x l.77
 |program|.
 @y
 |program|. And \.{CTWILL} adds some extra twists.
 @z
 
-@x l.86
+@x l.80
 boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
@@ -41,7 +41,7 @@ cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 
 Section 39.
 
-@x l.441
+@x l.434
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -66,7 +66,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-@x l.474
+@x l.467
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -83,7 +83,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   if (l>0) {
     if (k+l+2>=cur_file_name_end)  too_long();
 @.Include file name ...@>
-    for (; k>= cur_file_name; k--) *(k+l+1)=*k;
+    for (; k>=cur_file_name; k--) *(k+l+1)=*k;
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
@@ -117,11 +117,11 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 68.
 
-@x l.1075
+@x l.1062
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
-a status of 0 if and only if only harmless messages were printed.
+a status of |EXIT_SUCCESS| if and only if only harmless messages were printed.
 @^system dependencies@>
 @y
 On multi-tasking systems like the {\mc AMIGA} it is very convenient to
@@ -139,21 +139,21 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1087
+@x l.1074
   if (history > harmless_message) return EXIT_FAILURE;
   else return EXIT_SUCCESS;
 @y
   switch(history) {
+  case spotless: return RETURN_OK;
   case harmless_message: return RETURN_WARN;
   case error_message: return RETURN_ERROR;
-  case fatal_message: return RETURN_FAIL;
-  default: return RETURN_OK;
+  case fatal_message: default: return RETURN_FAIL;
   }
 @z
 
 Section 75.
 
-@x l.1166
+@x l.1155
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -162,59 +162,54 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 76.
+Section 75.
 
-@x l.1185
+@x l.1171
   strcpy(change_file_name,"/dev/null");
 @y
-@#
+  strcpy(change_file_name,"/dev/null");
 #if defined DEV_NULL
   strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
   change_file_name[max_file_name_length-2]='\0';
 #elif defined _DEV_NULL
   strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
   change_file_name[max_file_name_length-2]='\0';
-#else
-  strcpy(change_file_name,"/dev/null");
 #endif
 @^system dependencies@>
 @z
 
-@x l.1190
-      while (*s) {
+@x l.1176
+      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
         else s++;
-      }
 @y
-      while (*s) {
+      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,name_pos=++s;
         else s++;
-      }
 @^system dependencies@>
 @z
 
 Section 80.
 
-@x l.1264
-@<Handle flag...@>=
-{
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+@x l.1252
+for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+  flags[(eight_bits)*dot_pos]=flag_change;
 @y
-@<Handle flag...@>=
-{
-  for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
-    if(*dot_pos=='l') {
-       use_language=++dot_pos;
-       break;
-    } else
+for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
+  if(*dot_pos=='l') {
+     use_language=++dot_pos;
+     break;
+  } else flags[(eight_bits)*dot_pos]=flag_change;
 @z
 
 Section 81.
 
-@x l.1272
+@x l.1255
+@ @<Print usage error message and quit@>=
+{
 if (program==ctangle)
   fatal(
 "! Usage: ctangle [options] webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
@@ -223,7 +218,9 @@ if (program==ctangle)
 else fatal(
 "! Usage: cweave [options] webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
    ,"");
+}
 @y
+@ @<Print usage error message and quit@>=
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] "@|
@@ -260,7 +257,9 @@ communication in 1994.  Originally this was meant to be the single
 character following `l', but there would have been collisions between
 ``dansk'' and ``deutsch,'' ``espanol'' and ``english,'' and many others.
 
-@x l.1307
+Section 85.
+
+@x l.1292
 @** Index.
 @y
 @* Language setting.  This global variable is set by the argument of the
