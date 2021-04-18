@@ -32,10 +32,9 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 Section 74.
 
 @x l.1143
-show_banner=show_happiness=show_progress=make_xrefs=true;@/
+show_banner=show_happiness=show_progress=make_xrefs=true;
 @y
-show_banner=show_happiness=show_progress=make_xrefs=true;@/
-check_for_change=true; /* Check temporary output for changes */
+show_banner=show_happiness=show_progress=make_xrefs=check_for_change=true;
 @z
 
 Section 83.
