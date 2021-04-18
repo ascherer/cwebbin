@@ -190,9 +190,10 @@ see section |@<Handle flag arg...@>| for details.
 Section 74.  CWEB in TeX Live runs quietly by default.
 
 @x l.1143
-show_banner=show_happiness=show_progress=make_xrefs=true;@/
+show_banner=show_happiness=show_progress=
+make_xrefs=check_for_change=true;
 @y
-make_xrefs=true;@/
+make_xrefs=check_for_change=true;
 @z
 
 Section 75.

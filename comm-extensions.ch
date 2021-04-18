@@ -67,8 +67,8 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @z
 
 @x l.467
-  kk=getenv("CWEBINPUTS");
-  if (kk!=NULL) {
+  if ((kk=getenv("CWEBINPUTS"))!=NULL) {
+@.CWEBINPUTS@>
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
     strcpy(temp_file_name,kk);
   }
