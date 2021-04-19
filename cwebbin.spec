@@ -33,8 +33,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.3
-Release: 2021
+Version: 4.4
+Release: 2021.4
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
