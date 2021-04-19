@@ -226,14 +226,14 @@ skip_restricted(void)
 @y
 @.Control codes are forbidden...@>
     if (c==meaning && phase==2) @<Process a user-generated meaning@>@;
-    else if (c==suppress && phase==2) @<Suppress mini-index entry@>;
+    else if (c==suppress && phase==2) @<Suppress mini-index entry@>@;
 @z
 
 @x l.1075
   skip_limbo(); change_exists=false;
 @y
   skip_limbo();
-  @<Give a default title to the program, if necessary@>;
+  @<Give a default title to the program, if necessary@>@;
 @z
 
 @x l.1078
@@ -420,7 +420,7 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @x l.2972
 if (cat1==define_like) make_underlined(pp+2);
 @y
-if (cat1==define_like) { /* \.{\#define} is analogous to \&{extern} */
+if (cat1==define_like) { /* \#\&{define} is analogous to \&{extern} */
   make_underlined(pp+2);
   if (tok_loc>operator_found) {
     /* no time to work out this case; I'll handle defines by brute force
@@ -497,7 +497,7 @@ if (cat1==decl_head) {
       else app_scrap(p->ilk,maybe_math);
     }
   }
-  @<Flag the usage of this identifier, for the mini-index@>;
+  @<Flag the usage of this identifier, for the mini-index@>@;
 @z
 
 @x l.3685
@@ -517,7 +517,7 @@ to \.{\\PB}.  Although \.{ctwimac} ignores \.{\\PB}, other macro packages
 section_count=0; format_visible=true; copy_limbo();
 @y
 temp_switch=false; temp_meaning_ptr=temp_meaning_stack;
-@<Read the \.{.aux} file, if present; then open it for output@>;
+@<Read the \.{.aux} file, if present; then open it for output@>@;
 section_count=0; format_visible=true; right_start_switch=false; copy_limbo();
 @z
 
@@ -588,7 +588,7 @@ flush_buffer(out_ptr,false,false);
 }
 @y
   outer_parse();
-  if (is_macro) @<Make ministring for a new macro@>;
+  if (is_macro) @<Make ministring for a new macro@>@;
   finish_C(format_visible); format_visible=true;
   doing_format=false;
 }
@@ -630,7 +630,7 @@ flush_buffer(out_buf,false,false); /* insert a blank line, it looks nice */
 @y
 finish_line(); out_str("\\mini"); finish_line();
 @.\\mini@>
-@<Output information about usage of id's defined in other sections@>;
+@<Output information about usage of id's defined in other sections@>@;
 out_str("}\\FI"); finish_line();
 @.\\FI@>
 flush_buffer(out_buf,false,false); /* insert a blank line, it looks nice */
@@ -688,8 +688,8 @@ rest of the job.
 @x l.4797
   case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @y
-  case roman: out_str("  "); goto not_an_identifier;
-  case wildcard: out_str("\\9"); goto not_an_identifier;
+  case roman: out_str("  ");@+ goto not_an_identifier;
+  case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @z
 
 @x l.4801
@@ -1005,7 +1005,7 @@ new_meaning(
     q->perm.sec_no=section_count;
     strcpy(q->perm.tex_part,ministring_buf);
   }
-  @<Write the new meaning to the \.{.aux} file@>;
+  @<Write the new meaning to the \.{.aux} file@>@;
 }
 
 @ @<Predec...@>=@+static void new_meaning(name_pointer);
@@ -1036,7 +1036,7 @@ static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
       while (xisdigit(*loc)) n=10*n+(*loc++)-'0';
     if (*loc++!=' ')
       err_print(_("! Location in meaning should be followed by space"));
-    else @<Digest the meaning of |p|, |t|, |n|@>;
+    else @<Digest the meaning of |p|, |t|, |n|@>@;
   }
   loc=id_loc+2;
 }
@@ -1122,7 +1122,7 @@ make_ministring(
   boolean non_ast_seen; /* have we seen a non-asterisk? */
   if (tok_loc<=operator_found) return;
   cn=((*tok_loc)%id_flag)+name_dir;
-  @<Append the type of the declaree; |return| if it begins with \&{extern}@>;
+  @<Append the type of the declaree; |return| if it begins with \&{extern}@>@;
   null_scrap.mathness=(((pp+l)->mathness)%4)*5; big_app1(&null_scrap);
     /* now we're ready for the mathness that follows (I think);
        (without the mod 4 times 5, comments posed a problem,
@@ -1176,7 +1176,7 @@ else {
     r=**r-tok_flag+tok_start;
   }
   if (**r==ext_loc+res_flag) return; /* \&{extern} gives no definition */
-  @<Append tokens for type |q|@>;
+  @<Append tokens for type |q|@>@;
 }
 
 @ @<Append tokens for type |q|@>=
@@ -1282,7 +1282,7 @@ out_mini(
     else sprintf(s,"\\]%.*s",(int)length(n),n->byte_start);
   }
   out_str(s); out(' ');
-  @<Mini-output the name at |cur_name|@>;
+  @<Mini-output the name at |cur_name|@>@;
   out(' '); out_str(m->tex_part); finish_line();
 }
 
