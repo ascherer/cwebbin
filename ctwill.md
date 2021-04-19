@@ -90,7 +90,7 @@ The present incarnation of **ctwill** and its utilities tries hard to be a
 drop-in replacement for the original package.  There are, however, a few
 differences worth noting:
 
-* This version is based on the most recent version of CWEB (4.3).
+* This version is based on the most recent version of CWEB (4.4).
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
