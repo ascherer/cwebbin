@@ -117,6 +117,7 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 	-e WCHANGES=cweav-w2c.ch cweave.cxx \
 	-e LCHANGES=ctwill-w2c.ch ctwill.cxx \
 	-e DCHANGES=cwebman-w2c.ch cwebbin.tex
+ctie -c ctwill-ctwill.ch cweave.w ctwill-w2c.ch ctwill-mini.ch
 %endif
 
 %install
