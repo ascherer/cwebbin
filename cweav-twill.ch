@@ -742,7 +742,7 @@ material should nicely integrate with the original ``\&{272.~Index}.''
 introduce material that is specific to \.{CTWILL}.
 
 Care has been taken to keep the original section numbering of \.{CWEAVE}
-up to this section intact, so this new material should nicely integrate
+up to this point intact, so this new material should nicely integrate
 with the original ``\&{272.~Index}.''
 
 @ Here is a sort of user manual for \.{CTWILL}---which is exactly like
