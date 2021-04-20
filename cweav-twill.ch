@@ -904,8 +904,7 @@ and \.{@@r}, which are unique to \.{CTWILL}. But that is no problem,
 since you use them only in change files set up for book publishing,
 which are quite different from the change files you set up for tangling.
 
-(End of user manual. We now resume the program for \.{CWEAVE}, with occasional
-outbursts of new code.)
+(End of user manual.)
 
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 
