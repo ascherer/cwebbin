@@ -1033,8 +1033,8 @@ static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
   if (*loc++!=' ')
     err_print(_("! Identifier in meaning should be followed by space"));
   else { name_pointer p=id_lookup(first,loc-1,normal);
-    sixteen_bits t; int n=0;
-    t=title_lookup();
+    sixteen_bits t=title_lookup();
+    int n=0;
     if (*(loc-1)=='}')
       while (xisdigit(*loc)) n=10*n+(*loc++)-'0';
     if (*loc++!=' ')
