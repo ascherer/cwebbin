@@ -19,7 +19,7 @@ with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 
 * includes **ctwill** and its utilities;
 * **internationalization** with the “GNU `gettext` utilities”;
-* **temporary file output**: output is only written when different to former run; can be suppressed with new option `-t`;
+* **temporary file output**: output is only written when different to former run; can be suppressed with new option `-c`;
 * [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
 * [only `ctangle`] output can be redirected to `@(/dev/{stdout,stderr,null}@>`;
 * [only in “tex live”] file lookup with the **kpathsea** library.
