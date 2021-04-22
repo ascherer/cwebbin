@@ -58,6 +58,7 @@ reprinted in {\sl Digital Typography\/} (1999), 225--245.
 A kind of ``user manual'' for \.{CTWILL} can be found in the appendix
 \&{272.~Mogrify \.{CWEAVE} into \.{CTWILL}} and beyond, together with
 additional material specific to \.{CTWILL}. % FIXME
+Until then, \.{CWEAVE}'s sequence of sections will be preserved.
 
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 modified. The version number parallels the corresponding version of \.{CWEAVE}.
