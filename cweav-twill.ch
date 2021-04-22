@@ -752,7 +752,8 @@ up to this point intact, so this new material should nicely integrate
 with the original ``\&{272.~Index}.''
 
 @q Section 2->273. @>
-@ Here is a sort of user manual for \.{CTWILL}---which is exactly like
+@* {\tentex CTWILL} user manual.
+Here is a sort of user manual for \.{CTWILL}---which is exactly like
 \.{CWEAVE} except that it produces much better documentation, for which you
 must work harder. As with \.{CWEAVE}, input comes from a source file
 \.{foo.w} and from an optional (but now almost mandatory) change file
@@ -912,7 +913,8 @@ which are quite different from the change files you set up for tangling.
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 
 @q Section 25->274. @>
-@ \.{CTWILL} also has special data structures to keep track of current
+@* Data structures of {\tentex CTWILL}.
+\.{CTWILL} also has special data structures to keep track of current
 and temporary meanings. These structures were not designed for maximum
 efficiency; they were designed to be easily grafted into \.{CWEAVE}'s
 existing code without major surgery.
