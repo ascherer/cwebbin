@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% April 13, 2021
+% April 24, 2021
 
 # NAME
 
@@ -155,7 +155,6 @@ cweb(1), tex(1), cc(1)
 Don Knuth wrote WEB for TeX and Pascal. \
 Silvio Levy designed and developed CWEB by adapting the WEB conventions to C
 and by recoding everything in CWEB.
-Knuth began using CWEB and made further refinements.
+Knuth began using CWEB and made further refinements. \
 Many other helpers are acknowledged in the CWEB manual. \
-CWEB in TeX\ Live is based on the CWEBbin extension; see
-[the project page](https://github.com/ascherer/cwebbin).
+Contemporary development on https://github.com/ascherer/cweb.
