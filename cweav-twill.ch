@@ -1216,9 +1216,9 @@ out_mini(
 @ @<Predec...@>=@+static void out_mini(meaning_struct *);
 
 @ @<Mini-output...@>=
-switch (cur_name->ilk) {
+switch (cur_name->ilk) {@+char *j;
   case normal: case func_template: if (length(cur_name)==1) out_str("\\|");
-    else {char *j;
+    else {
       for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
         if (xislower(*j)) goto lowcase;
       out_str("\\."); break;
@@ -1233,12 +1233,12 @@ lowcase: out_str("\\\\");
 @.\\9@>
   case typewriter: out_str("\\."); break;
 @.\\.@>
-  case custom: {char *j; out_str("$\\");
+  case custom:
+    out_str("$\\");
     for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
       out(*j=='_'? 'x': *j=='$'? 'X': *j);
     out('$');
     goto name_done;
-    }
   default: out_str("\\&");
 @.\\\&@>
 }
@@ -1305,12 +1305,12 @@ rest of the job.
 
 @x l.4801
   case roman: not_an_identifier: out_name(cur_name,false); goto name_done;
-  case custom: {char *j; out_str("$\\");
+  case custom:
+    out_str("$\\");
     for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
       out(*j=='_'? 'x': *j=='$'? 'X': *j);
     out('$');
     goto name_done;
-    }
 @y
 not_an_identifier: out_name(cur_name,false); goto name_done;
   case custom: out_str("\\$"); break;
@@ -1323,7 +1323,7 @@ out_name(cur_name,true);
 if (proofing) out_name(cur_name,true);
 else {
   out('{');
-  {char *j;
+  {@+char *j;
     for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++) out(*j);
   }
   out('}');
