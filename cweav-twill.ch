@@ -1217,7 +1217,8 @@ out_mini(
 
 @ @<Mini-output...@>=
 switch (cur_name->ilk) {@+char *j;
-  case normal: case func_template: if (length(cur_name)==1) out_str("\\|");
+  case normal: case func_template:
+    if (is_tiny(cur_name)) out_str("\\|");
     else {
       for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
         if (xislower(*j)) goto lowcase;
@@ -1228,11 +1229,11 @@ lowcase: out_str("\\\\");
 @.\\|@>
 @.\\.@>
 @.\\\\@>
-  case roman: break;
   case wildcard: out_str("\\9"); break;
 @.\\9@>
-  case typewriter: out_str("\\."); break;
+  case typewriter: out_str("\\.");
 @.\\.@>
+  case roman: break;
   case custom:
     out_str("$\\");
     for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
@@ -1243,7 +1244,7 @@ lowcase: out_str("\\\\");
 @.\\\&@>
 }
 out_name(cur_name,true);
-name_done:
+name_done:@;
 
 @z
 
@@ -1299,8 +1300,8 @@ rest of the job.
 @x l.4797
   case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @y
-  case roman: out_str("  "); goto not_an_identifier;
-  case wildcard: out_str("\\9"); goto not_an_identifier;
+  case roman: out_str("  ");@+ goto not_an_identifier;
+  case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @z
 
 @x l.4801
@@ -1321,11 +1322,9 @@ not_an_identifier: out_name(cur_name,false); goto name_done;
 out_name(cur_name,true);
 @y
 if (proofing) out_name(cur_name,true);
-else {
+else {@+char *j;
   out('{');
-  {@+char *j;
-    for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++) out(*j);
-  }
+  for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++) out(*j);
   out('}');
 }
 @z
