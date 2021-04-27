@@ -351,9 +351,8 @@ new_meaning(
 @ @<Write the new meaning to the \.{.aux} file@>=
 {@+int n=q->perm.prog_no;
   fprintf(aux_file,"@@$%.*s %.*s",@|
-     (int)((p+1)->byte_start-p->byte_start),p->byte_start,@|
-      (int)((title_code[n]+1)->byte_start-title_code[n]->byte_start),
-         title_code[n]->byte_start);
+    (int)length(p),p->byte_start,@|
+    (int)length(title_code[n]),title_code[n]->byte_start);
   if (*(title_code[n]->byte_start)=='{') fprintf(aux_file,"%d",q->perm.sec_no);
   fprintf(aux_file," %s@@>\n",q->perm.tex_part);
 }
@@ -1203,9 +1202,8 @@ out_mini(
     sprintf(s,"\\[%d",m->sec_no);
   } else { name_pointer n=title_code[m->prog_no];
     if (*(n->byte_start)=='{')
-      sprintf(s,"\\]%.*s%d",(int)((n+1)->byte_start-n->byte_start),n->byte_start,
-             m->sec_no);
-    else sprintf(s,"\\]%.*s",(int)((n+1)->byte_start-n->byte_start),n->byte_start);
+      sprintf(s,"\\]%.*s%d",(int)length(n),n->byte_start,m->sec_no);
+    else sprintf(s,"\\]%.*s",(int)length(n),n->byte_start);
   }
   out_str(s); out(' ');
   @<Mini-output the name at |cur_name|@>;
