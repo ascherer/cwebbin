@@ -1138,11 +1138,7 @@ codes have disappeared.
 make_ministring(
   int l) /* 0, 1, or 2 */
 {
-  text_pointer q,r;
   name_pointer cn;
-  token t;
-  int ast_count; /* asterisks preceding the expression */
-  boolean non_ast_seen; /* have we seen a non-asterisk? */
   if (tok_loc<=operator_found) return;
   cn=((*tok_loc)%id_flag)+name_dir;
   @<Append the type of the declaree; |return| if it begins with \&{extern}@>@;
@@ -1177,9 +1173,10 @@ current meaning in other sections.
 @<Append the type of the declaree; |return| if it begins with \&{extern}@>=
 if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
 else {
-  q=(pp+l-1)->trans;
-  ast_count=0;
-  non_ast_seen=false;
+  text_pointer q=(pp+l-1)->trans, r;
+  token t;
+  int ast_count=0; /* asterisks preceding the expression */
+  boolean non_ast_seen=false; /* have we seen a non-asterisk? */
   while (true) {
     if (*(q+1)==*q+1) {
       r=q;@+break; /* e.g. \&{struct}; we're doing production 45 or 46 */
