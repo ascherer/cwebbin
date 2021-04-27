@@ -763,7 +763,7 @@ static boolean app_supp(
       if (j==tok_loc) ident_seen=true;
       else app(*j);
     } else if (*j>=inner_tok_flag) confusion(_("inner"));
-    else if (app_supp(*j-tok_flag+tok_start)) goto catch14;;
+    else if (app_supp(*j-tok_flag+tok_start)) goto catch14;
   }
   return false;
 catch14: if (*(*(p+1)-1)=='9') return true; /* production 14 was used */
