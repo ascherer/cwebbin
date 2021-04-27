@@ -975,7 +975,7 @@ It advances |loc| past the title found.
   if (last>limit) err_print(_("! Title name didn't end"));
   if (title_code_ptr==&title_code[max_titles]) overflow(_("titles"));
   *title_code_ptr=id_lookup(first,last,title);
-  for (p=title_code;;p++) if (*p==*title_code_ptr) break;
+  for (p=title_code;true;p++) if (*p==*title_code_ptr) break;
   if (p==title_code_ptr) title_code_ptr++;
   return p-title_code;
 }
