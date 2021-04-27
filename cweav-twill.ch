@@ -788,9 +788,9 @@ make_ministring(
   cn=((*tok_loc)%id_flag)+name_dir;
   @<Append the type of the declaree; |return| if it begins with \&{extern}@>;
   null_scrap.mathness=(((pp+l)->mathness)%4)*5; big_app1(&null_scrap);
-    /* now we're ready for the mathness that follows (I think) */
-    /* (without the mod 4 times 5, comments posed a problem) */
-    /* (namely in cases like |int a(b,c)| followed by comment) */
+    /* now we're ready for the mathness that follows (I think);
+       (without the mod 4 times 5, comments posed a problem,
+       namely in cases like |int a(b,c)| followed by comment) */
   ident_seen=false;@+app_supp((pp+l)->trans);
   null_scrap.mathness=10; big_app1(&null_scrap);
    /* now |cur_mathness==no_math| */
