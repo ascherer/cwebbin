@@ -1116,7 +1116,7 @@ static boolean app_supp(
   }
   for (j=*p;j<*(p+1);j++) {
     if (*j<tok_flag) {
-      if (*j==inserted) return false;
+      if (*j==inserted) break;
       if (j==tok_loc) ident_seen=true;
       else app(*j);
     } else if (*j>=inner_tok_flag) confusion(_("inner"));
