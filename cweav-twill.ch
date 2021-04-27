@@ -701,7 +701,7 @@ null_scrap.trans=&tok_start[0];
 @x l.2261
   update_terminal;
 @y
-  printf("|\n"); update_terminal;
+  puts("|"); update_terminal;
 @z
 
 @x l.2566
