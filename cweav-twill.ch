@@ -766,8 +766,7 @@ static boolean app_supp(
     else if (app_supp(*j-tok_flag+tok_start)) goto catch14;
   }
   return false;
-catch14: if (*(*(p+1)-1)=='9') return true; /* production 14 was used */
-  else return false;
+catch14: return *(*(p+1)-1)=='9'; /* was production 14 used? */
 }
 
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
