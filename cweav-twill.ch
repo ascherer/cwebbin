@@ -960,9 +960,8 @@ It advances |loc| past the title found.
 
 @c static sixteen_bits title_lookup(void)
 {
-  char *first,*last; /* boundaries */
+  char *first=loc,*last; /* boundaries */
   register name_pointer *p;
-  first=loc;
   if (*loc=='"') {
     while (++loc<=limit && *loc!='"') if (*loc=='\\') loc++;
   } else if (*loc=='{') {
@@ -1103,9 +1102,8 @@ appear between parentheses or brackets. The calling routine should set
 static boolean app_supp(
   text_pointer p)
 { token_pointer j;
-  text_pointer q;
   if (ident_seen && **p>=tok_flag) {
-    q=**p-tok_flag+tok_start;
+    text_pointer q=**p-tok_flag+tok_start;
     if (**q=='(') {
       app('(');@+app('\\');@+app(',');@+app(')'); goto catch14;
     }
