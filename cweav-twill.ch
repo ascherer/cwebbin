@@ -961,13 +961,12 @@ It advances |loc| past the title found.
 @c static sixteen_bits title_lookup(void)
 {
   char *first,*last; /* boundaries */
-  int balance; /* excess of left over right */
   register name_pointer *p;
   first=loc;
   if (*loc=='"') {
     while (++loc<=limit && *loc!='"') if (*loc=='\\') loc++;
   } else if (*loc=='{') {
-    balance=1;
+    int balance=1; /* excess of left over right */
     while (++loc<=limit) {
       if (*loc=='}' && --balance==0) break;
       if (*loc=='{') balance++;
