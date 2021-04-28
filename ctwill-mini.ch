@@ -1371,6 +1371,30 @@ Section 280.
 @r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
 @z
 
+Section 283.
+
+@x
+  next_name=sort_ptr->head;
+@y
+  next_name=sort_ptr->head;@/
+@z
+
+Section 284.
+
+@x
+  cur_name=sort_ptr->head;
+@y
+  cur_name=sort_ptr->head;@/
+@z
+
+Section 285.
+
+@x
+switch (cur_name->ilk) {@+char *j;
+@y
+switch (cur_name->ilk) { char *j;
+@z
+
 Section 292.
 
 @x
