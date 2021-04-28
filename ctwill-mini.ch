@@ -1282,6 +1282,14 @@ Section 273.
 @-c@>
 @z
 
+Section 281.
+
+@x
+@ Procedure |unbucket| goes through the buckets and adds nonempty lists
+@y
+@r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
+@z
+
 Section 304.
 
 @x
