@@ -1380,16 +1380,16 @@ Section 292.
             @t\5\5\5\5@>(long)max_scraps);
 @z
 
-Section 323.
+Section 293.
 
-x
-\bigskip
-\font\itt=cmitt10
-{\noindent \it Although {\itt CTWILL} is based on {\itt cweave.w}, new and
-modified material is incorporated all over the place, without taking special
-care for keeping the original section numbering intact.}
-y
-z
+@x
+introduce material that is specific to \.{CTWILL}.
+
+Care has been taken to keep the original section numbering of \.{CWEAVE}
+@y
+introduce material that is specific to \.{CTWILL}.
+Care has been taken to keep the original section numbering of \.{CWEAVE}
+@z
 
 Section 2->273.
 
