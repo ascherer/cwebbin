@@ -964,7 +964,7 @@ Section 210.
         next_control==begin_short_comment) return;
 @z
 
-Section 232.
+Section 212.
 
 @x
 @ The following macro is used to append a scrap whose tokens have just
@@ -974,7 +974,7 @@ Section 232.
 @-c@>
 @z
 
-Section 233.
+Section 213.
 
 @x
 @ @<Append the scr...@>=
@@ -1100,7 +1100,7 @@ Section 233.
   case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
 @z
 
-Section 237.
+Section 217.
 
 @x
 @ Some nonstandard characters may have entered \.{CWEAVE} by means of
@@ -1108,7 +1108,7 @@ Section 237.
 @r @ Some nonstandard characters may have entered \.{CWEAVE} by means of
 @z
 
-Section 239.
+Section 220.
 
 @x
 @<Append a \TEX/ string, without forming a scrap@>=
@@ -1116,7 +1116,7 @@ Section 239.
 @r @ @<Append a \TEX/ string, without forming a scrap@>=
 @z
 
-Section 245.
+Section 225.
 
 @x
 make_pb=true;
@@ -1128,7 +1128,7 @@ make_pb=true;
 @r @ @c
 @z
 
-Section 249.
+Section 229.
 
 @x
 @<Private...@>=
@@ -1136,19 +1136,19 @@ Section 249.
 @r @ @<Private...@>=
 @z
 
-Section 252.
+Section 232.
 
-@x
+x
 @ @c
 static void
 push_level( /* suspends the current level */
 text_pointer p)
-@y
+y
 @ Suspend the current level.
 @c
 static void
 push_level(text_pointer p)@/
-@z
+z
 
 Section 253.
 
