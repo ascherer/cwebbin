@@ -303,7 +303,7 @@ Section 90.
 @-c@>
 @z
 
-Section 107.
+Section 91.
 
 @x
 out_str( /* output characters from |s| to end of string */
@@ -312,18 +312,8 @@ const char*s)
 out_str(@t{}@> /* output characters from |s| to end of string */
 const char*s)
 @z
-out_str(const char*s)
-  /* output characters from |s| to end of string */
 
-Section 113.
-
-@x
-@ The |out_name| procedure is used to output an identifier or index
-@y
-@r @ The |out_name| procedure is used to output an identifier or index
-@z
-
-Section 116.
+Section 100.
 
 @x
 @ The |copy_TeX| routine processes the \TEX/ code at the beginning of a
@@ -331,7 +321,7 @@ Section 116.
 @r @ The |copy_TeX| routine processes the \TEX/ code at the beginning of a
 @z
 
-Section 117.
+Section 101.
 
 @x
 @ The |copy_comment| function issues a warning if more braces are opened than
@@ -345,7 +335,7 @@ static int copy_comment( /* copies \TeX\ code in comments */
 boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
 @y
-static int copy_comment(
+static int copy_comment(@t{}@> /* copies \TeX\ code in comments */
 boolean is_long_comment, /* is this a traditional \CEE/ comment? */
 int bal) /* brace balance */
 @z
