@@ -1468,6 +1468,14 @@ Section 314.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
+Section 320.
+
+@x
+@ @<Output information about usage of id's defined in other sections@>=
+@y
+@r @ @<Output information about usage of id's defined in other sections@>=
+@z
+
 Section 331.
 
 x
