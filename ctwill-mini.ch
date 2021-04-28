@@ -37,57 +37,6 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 ---Enjoy!\bigskip}
 @z
 
-Section 2.
-
-@x
-@ Here is a sort of user manual for \.{CTWILL}---which is exactly like
-@y
-@* {\tentex CTWILL} user manual.
-Here is a sort of user manual for \.{CTWILL}---which is exactly like
-@z
-
-@x
-give it the necessary hints in other places via your change file.
-@y
-give it the necessary hints in other places via your change file.
-@-f@>
-@-x@>
-@z
-
-Section 3.
-
-@x
-The current meaning of every identifier is initially `\.{\\uninitialized}'.
-@y
-@ The current meaning of every identifier is initially `\.{\\uninitialized}'.
-@z
-
-@x
-must have fewer than 50 characters. If the \TeX\ part starts
-@y
-must have fewer than 50 characters.
-
-@d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
-
-@ If the \TeX\ part starts
-@z
-
-Section 4.
-
-@x
-@d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
-@y
-@z
-
-Section 5.
-
-@x
-@ \.{CWEAVE} has a fairly straightforward outline.  It operates in
-@y
-@* Introduction (continued). \.{CWEAVE} has a fairly straightforward outline.
-It operates in
-@z
-
 Section 7.
 
 @x
@@ -106,7 +55,7 @@ internationalization.
 @d _(S) gettext(S)
 @-S@>
 
-@r @ @<Include files@>=
+@<Include files@>=
 @-A@>
 @-HAVE_GETTEXT@>
 #ifndef HAVE_GETTEXT
@@ -268,17 +217,17 @@ Section 64.
 
 @x
   id_first=--loc;
-  do {
+  do
     ++loc;
-  } while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
+  while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
       || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
   id_loc=loc; return identifier;
 }
 @y
   id_first=--loc;@/
-  do {
+  do
     ++loc;
-  } while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
+  while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
       || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));@/
   id_loc=loc;@/
   return identifier;
@@ -333,23 +282,10 @@ Section 88--89.
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
 with |next_control!='|'| and ends with |next_control>=format_code|. Thus, it
 handles \CEE/ text with embedded comments.
-
-@c
-static void
-outer_xref(void) /* extension of |C_xref| */
-{
-  int bal; /* brace level in comment */
 @y
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
 with |next_control| |!='|'| and ends with |next_control>=format_code|.
-Thus, it
-handles \CEE/ text with embedded comments.
-
-@ @c
-static void
-outer_xref(void) /* extension of |C_xref| */
-{@+
-  int bal; /* brace level in comment */
+Thus, it handles \CEE/ text with embedded comments.
 @z
 
 Section 91.
@@ -398,9 +334,11 @@ Section 107.
 out_str( /* output characters from |s| to end of string */
 const char*s)
 @y
+out_str(@t{}@> /* output characters from |s| to end of string */
+const char*s)
+@z
 out_str(const char*s)
   /* output characters from |s| to end of string */
-@z
 
 Section 113.
 
@@ -1035,11 +973,11 @@ If the first identifier is the keyword `\&{operator}', we give up;
 
 Section 157.
 
-@x
+x
 @ The scraps currently being parsed must be inspected for any
-@y
+y
 @r @ The scraps currently being parsed must be inspected for any
-@z
+z
 
 @x
 |make_reserved|, hence |tok_loc| has been set.
@@ -1064,47 +1002,6 @@ scrap_pointer p)
 @y
 make_underlined(scrap_pointer p)
   /* underline the entry for the first identifier in |p->trans| */
-@z
-
-Section 161.
-
-@x
-@ \.{CTWILL} needs the following procedure, which appends tokens of a
-@y
-@r @ \.{CTWILL} needs the following procedure, which appends tokens of a
-@z
-
-Section 162.
-
-@x
-@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
-@y
-@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
-@-b@>
-@z
-
-@x
-  int l) /* 0, 1, or 2 */
-{
-@y
-  int l) /* 0, 1, or 2 */
-{@+
-@z
-
-Section 163.
-
-@x
-if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
-@y
-if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }@+
-@z
-
-Section 164.
-
-@x
-   && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
-@y
-   @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
 Section 166.
@@ -1615,18 +1512,101 @@ rather than an |int|, we use \.{\%ld} to print these quantities.
 
 Section 323.
 
-@x
+x
 \bigskip
 \font\itt=cmitt10
 {\noindent \it Although {\itt CTWILL} is based on {\itt cweave.w}, new and
 modified material is incorporated all over the place, without taking special
 care for keeping the original section numbering intact.}
-@y
-@z
+y
+z
+
+Section 2->273.
+
+x
+@ Here is a sort of user manual for \.{CTWILL}---which is exactly like
+y
+@* {\tentex CTWILL} user manual.
+Here is a sort of user manual for \.{CTWILL}---which is exactly like
+z
+
+x
+give it the necessary hints in other places via your change file.
+y
+give it the necessary hints in other places via your change file.
+@-f@>
+@-x@>
+z
+
+Section 3->274.
+
+x
+The current meaning of every identifier is initially `\.{\\uninitialized}'.
+y
+@ The current meaning of every identifier is initially `\.{\\uninitialized}'.
+z
+
+x
+must have fewer than 50 characters. If the \TeX\ part starts
+y
+must have fewer than 50 characters.
+
+@d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
+
+@ If the \TeX\ part starts
+z
+
+Section 4->275.
+
+x
+@d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
+y
+z
+
+Section 161.
+
+x
+@ \.{CTWILL} needs the following procedure, which appends tokens of a
+y
+@r @ \.{CTWILL} needs the following procedure, which appends tokens of a
+z
+
+Section 162.
+
+x
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+y
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@-b@>
+z
+
+x
+  int l) /* 0, 1, or 2 */
+{
+y
+  int l) /* 0, 1, or 2 */
+{@+
+z
+
+Section 163.
+
+x
+if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
+y
+if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }@+
+z
+
+Section 164.
+
+x
+   && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
+y
+   @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
+z
 
 Section 331.
 
-@x
+x
 @** Index.
 If you have read and understood the code for Phase III above, you know what
 is in this index and how it got here. All sections in which an identifier is
@@ -1636,5 +1616,5 @@ of identifiers in section names are not indexed. Underlined entries
 correspond to where the identifier was declared. Error messages, control
 sequences put into the output, and a few
 other things like ``recursion'' are indexed here too.
-@y
-@z
+y
+z
