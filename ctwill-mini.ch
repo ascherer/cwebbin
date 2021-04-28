@@ -1396,8 +1396,6 @@ with the original ``\&{272.~Index}.''
 @** {\tentex CTWILL} user manual.
 @z
 
-Section 294.
-
 @x
 give it the necessary hints in other places via your change file.
 @y
@@ -1406,7 +1404,7 @@ give it the necessary hints in other places via your change file.
 @-x@>
 @z
 
-Section 295--296.
+Section 294--295.
 
 @x
 The current meaning of every identifier is initially `\.{\\uninitialized}'.
@@ -1430,7 +1428,7 @@ must have fewer than 50 characters.
 @y
 @z
 
-Section 303.
+Section 302.
 
 @x
 @ The |new_meaning| routine changes the current ``permanent meaning''
@@ -1438,7 +1436,7 @@ Section 303.
 @r @ The |new_meaning| routine changes the current ``permanent meaning''
 @z
 
-Section 309.
+Section 308.
 
 @x
 @ @<Digest...@>=
@@ -1447,46 +1445,28 @@ Section 309.
 @z
 
 
-Section 310.
+Section 311.
 
-x
-@ \.{CTWILL} needs the following procedure, which appends tokens of a
-y
-@r @ \.{CTWILL} needs the following procedure, which appends tokens of a
-z
-
-Section 162.
-
-x
+@x
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
-y
-@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@y
+@r @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
 @-b@>
-z
+@z
 
-x
-  int l) /* 0, 1, or 2 */
-{
-y
-  int l) /* 0, 1, or 2 */
-{@+
-z
+Section 314.
 
-Section 163.
+@x
+@ @<Append tokens for type |q|@>=
+@y
+@r @ @<Append tokens for type |q|@>=
+@z
 
-x
-if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
-y
-if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }@+
-z
-
-Section 164.
-
-x
+@x
    && *(*r+1)=='{') app(**q); /* |struct_like| identifier */
-y
+@y
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
-z
+@z
 
 Section 331.
 
