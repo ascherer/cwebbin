@@ -1249,13 +1249,13 @@ Section 252.
 @r @ @d usage_sentinel (struct perm_meaning *)1
 @z
 
-Section 254.
+Section 256.
 
-x
-@<Translate the \T...@>= do {
-y
-@<Translate the \T...@>= do {@+
-z
+@x
+@ The |finish_C| procedure outputs the translation of the current
+@y
+@r @ The |finish_C| procedure outputs the translation of the current
+@z
 
 Section 282.
 
