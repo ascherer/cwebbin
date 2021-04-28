@@ -946,7 +946,15 @@ Section 196.
 @r @ @<Cases for |attr|@>=
 @z
 
-Section 230.
+Section 207.
+
+@x
+@ If the initial sequence of scraps does not reduce to a single scrap,
+@y
+@r @ If the initial sequence of scraps does not reduce to a single scrap,
+@z
+
+Section 210.
 
 @x
     if (next_control=='|' || next_control==begin_comment ||
