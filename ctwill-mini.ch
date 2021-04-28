@@ -1257,19 +1257,19 @@ Section 256.
 @r @ The |finish_C| procedure outputs the translation of the current
 @z
 
-Section 282.
+Section 259.
 
 @x
-@<Start a macro...@>= {
+@ @<Start a format...@>= {
 @y
-@r @ @<Start a macro...@>= {
+@r @ @<Start a format...@>= {
 @z
 
-@x
+x
   if(!space_checked){emit_space_if_needed;save_position;}
-@y
+y
   if(!space_checked){@+emit_space_if_needed;save_position;@+}
-@z
+z
 
 Section 285.
 
