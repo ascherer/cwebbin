@@ -267,7 +267,7 @@ with |next_control| |!='|'| and ends with |next_control>=format_code|.
 Thus, it handles \CEE/ text with embedded comments.
 @z
 
-Section 96.
+Section 80.
 
 @x
 @ Finally, when the \TEX/ and definition parts have been treated, we have
@@ -277,7 +277,7 @@ Section 96.
 \hfil\break|next_control>=begin_C|.
 @z
 
-Section 102.
+Section 86.
 
 @x
 @ The |flush_buffer| routine empties the buffer up to a given breakpoint,
@@ -286,7 +286,15 @@ Section 102.
 @-c@>
 @z
 
-Section 106.
+Section 88.
+
+@x
+@ When we are copying \TEX/ source material, we retain line breaks
+@y
+@r @ When we are copying \TEX/ source material, we retain line breaks
+@z
+
+Section 90.
 
 @x
 @ When we wish to append one character |c| to the output buffer, we write
