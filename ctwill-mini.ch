@@ -1420,14 +1420,20 @@ must have fewer than 50 characters.
 @ If the \TeX\ part starts
 @z
 
-Section 4->275.
-
-x
+@x
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
-y
-z
+@y
+@z
 
-Section 161.
+Section 303.
+
+@x
+@ The |new_meaning| routine changes the current ``permanent meaning''
+@y
+@r @ The |new_meaning| routine changes the current ``permanent meaning''
+@z
+
+Section 310.
 
 x
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
