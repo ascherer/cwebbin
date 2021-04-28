@@ -1284,23 +1284,23 @@ Section 273.
 
 Section 281.
 
-@x
+x
 @ Procedure |unbucket| goes through the buckets and adds nonempty lists
-@y
+y
 @r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
-@z
+z
 
-Section 304.
+Section 275.
 
 @x
 @<Rest of |trans_plus| union@>=
 @y
-@ @<Rest of |trans_plus| union@>=
+@<Rest of |trans_plus| union@>=
 @-j@>
 @-k@>
 @z
 
-Section 308.
+Section 278.
 
 @x
 $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
