@@ -1282,14 +1282,6 @@ Section 273.
 @-c@>
 @z
 
-Section 281.
-
-x
-@ Procedure |unbucket| goes through the buckets and adds nonempty lists
-y
-@r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
-z
-
 Section 275.
 
 @x
@@ -1308,14 +1300,12 @@ $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 |collate[0]| $<$|collate[1]|$<\cdots<$|collate[100]|.
 @z
 
-Section 310.
+Section 280.
 
 @x
-unbucket( /* empties buckets having depth |d| */
-eight_bits d)
+@ Procedure |unbucket| goes through the buckets and adds nonempty lists
 @y
-unbucket(eight_bits d)
-  /* empties buckets having depth |d| */
+@r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
 @z
 
 Section 322.
