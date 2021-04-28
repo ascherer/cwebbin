@@ -346,7 +346,7 @@ int bal) /* brace balance */
       } @+ else {
 @z
 
-Section 122.
+Section 106.
 
 @x
 @ Here is a list of the category codes that scraps can have.
@@ -354,7 +354,7 @@ Section 122.
 @r @ Here is a list of the category codes that scraps can have.
 @z
 
-Section 126.
+Section 110--111.
 
 @x
 @ The token lists for translated \TEX/ output contain some special control
@@ -363,8 +363,6 @@ Section 126.
 @-n@>
 @z
 
-Section 127.
-
 @x
 \yskip\noindent All of these tokens are removed from the \TEX/ output that
 @y
@@ -372,7 +370,7 @@ Section 127.
 @-n@>
 @z
 
-Section 128.
+Section 112--117.
 
 @x
 @ The raw input is converted into scraps according to the following table,
@@ -390,8 +388,6 @@ The raw input is converted into scraps according to the following table,
 \yskip\halign{\quad#\hfil&\quad\hbox to11cm{#\hfil}&\quad\hfil#\hfil\cr
 @z
 
-Section 129.
-
 @x
 \./&|binop|: \./&yes\cr
 @y
@@ -401,8 +397,6 @@ Section 129.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
-
-Section 130.
 
 @x
 \.{complex}&|int_like|: \stars&yes\cr
@@ -414,8 +408,6 @@ Section 130.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 131.
-
 @x
 \.{friend}&|int_like|: \stars&maybe\cr
 @y
@@ -425,8 +417,6 @@ Section 131.
 
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
-
-Section 132.
 
 @x
 \.{static\_cast}&|raw_int|: \stars&maybe\cr
@@ -438,8 +428,6 @@ Section 132.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Section 133.
-
 @x
 \.{xor\_eq}&|alfop|: \stars&yes\cr
 @y
@@ -450,7 +438,7 @@ Section 133.
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-Sections 134--142.
+Sections 118--126.
 
 @x l.7 line numbers refer to 'prod.w'
 @ Here is a table of all the productions.  Each production that
@@ -734,7 +722,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \everypar={\hangindent=2em}
 @z
 
-Section 143.
+Section 127.
 
 @x
 @* Implementing the productions.
@@ -749,7 +737,7 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
-Section 146.
+Section 130.
 
 @x
 @ Token lists in |@!tok_mem| are composed of the following kinds of
@@ -758,7 +746,7 @@ Section 146.
 @-p@>
 @z
 
-Section 149.
+Section 133.
 
 @x
 @ The production rules listed above are embedded directly into \.{CWEAVE},
@@ -773,7 +761,7 @@ Section 149.
 @-pp@>
 @z
 
-Section 150.
+Section 134.
 
 @x
 The code below is an exact translation of the production rules into
@@ -782,7 +770,7 @@ The code below is an exact translation of the production rules into
 @-a@>
 @z
 
-Section 153.
+Section 137--138.
 
 @x
 @ Let us consider the big switch for productions now, before looking
@@ -803,8 +791,6 @@ Section 153.
 @y
         && pp->cat!=const_like @|
 @z
-
-Section 154.
 
 @x
   switch (pp->cat) {
@@ -925,15 +911,16 @@ Section 154.
     case default_like: @<Cases for |default_like|@>@; @+break;
 @z
 
-Section 155.
+Section 139.
 
 @x
-of identifiers in case labels.
-
-If the first identifier is the keyword `\&{operator}', we give up;
+should say, for example, `\.{@@!@@\^\\\&\{operator\} \$+\{=\}\$@@>}' (or,
+more properly alpha\-betized,
+`\.{@@!@@:operator+=\}\{\\\&\{operator\} \$+\{=\}\$@@>}').
 @y
-of identifiers in case labels.
-If the first identifier is the keyword `\&{operator}', we give up;
+should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
+(or, properly alpha\-betized,
+`\.{@@!@@:operator+=\}\{\\\&\{operator\}} \.{\$+\{=\}\$@@>}').
 @z
 
 Section 157.
