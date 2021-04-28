@@ -914,6 +914,14 @@ Section 142.
 @r @ In the following situations we want to mark the occurrence of
 @z
 
+Section 151.
+
+@x
+@ @<Cases for |sizeof_like|@>=
+@y
+@r @ @<Cases for |sizeof_like|@>=
+@z
+
 Section 180.
 
 @x
