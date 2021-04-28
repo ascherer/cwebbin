@@ -14,8 +14,15 @@ Section 1.
 @z
 
 @x
+A kind of ``user manual'' for \.{CTWILL} can be found in the appendix
+{\bf 272.~Mogrify \.{CWEAVE} into \.{CTWILL}} and beyond, together
+with additional material specific to \.{CTWILL}. % FIXME
+Until then, \.{CWEAVE}'s sequence of sections will be preserved.
+
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @y
+A kind of ``user manual'' for \.{CTWILL} can be found in section~\&{293}
+and beyond, together with additional material specific to \.{CTWILL}. % FIXME
 \bigskip
 {\font\itt=cmitt10 \font\bit=cmbxti10
 \noindent \bit Editor's Note: \it This heavily redacted version of
@@ -33,6 +40,14 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 ---Enjoy!\par}
 \bigskip
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
+@z
+
+Section 2.
+
+@x
+@ \.{CWEAVE} has a fairly straightforward outline.  It operates in
+@y
+@r @ \.{CWEAVE} has a fairly straightforward outline.  It operates in
 @z
 
 Section 4.
@@ -55,7 +70,7 @@ Section 6.
 @x
 @ Code related to input routines:
 @y
-@ Code related to input routines:
+@r @ Code related to input routines:
 @-c@>
 @z
 
@@ -66,6 +81,16 @@ Section 10.
 @y
 @ Code related to identifier and section name storage:
 @-c@>
+@z
+
+@x
+@d length(c) (size_t)((c+1)->byte_start-(c)->byte_start) /* the length of a name */
+@d print_id(c) term_write((c)->byte_start,length((c))) /* print identifier */
+@y
+@d length(c) @/
+  (size_t)((c+1)->byte_start-(c)->byte_start) /* the length of a name */
+@d print_id(c) @/
+  term_write((c)->byte_start,length((c))) /* print identifier */
 @z
 
 Section 12.
@@ -94,6 +119,14 @@ Section 15.
 @-a@>
 @-b@>
 @-c@>
+@z
+
+Section 16.
+
+@x
+@ The procedure that gets everything rolling:
+@y
+@r @ The procedure that gets everything rolling:
 @z
 
 Section 20.
