@@ -946,14 +946,6 @@ Section 196.
 @r @ @<Cases for |attr|@>=
 @z
 
-Section 221.
-
-@x
-@ And here now is the code that applies productions as long as possible.
-@y
-@r @ And here now is the code that applies productions as long as possible.
-@z
-
 Section 230.
 
 @x
