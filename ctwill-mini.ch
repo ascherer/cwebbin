@@ -14,27 +14,25 @@ Section 1.
 @z
 
 @x
-reprinted in {\sl Digital Typography\/} (1999), 225--245.
+The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @y
-reprinted in {\sl Digital Typography\/} (1999), 225--245.
 \bigskip
 {\font\itt=cmitt10 \font\bit=cmbxti10
-\noindent \bit Editor's Note: \it Although {\itt CTWILL} is based on
-{\itt cweave.w}, new and modified material is incorporated all over the place,
-without taking special care to keep the original section numbering intact.
-\smallskip
-\noindent Moreover, this heavily redacted version of {\itt ctwill.pdf} had to
-meddle with the section numbering even more, spreading tabular material over
-several sections and splitting long sections into smaller chunks in order to
-fix overful pages---both horizontally and vertically---, to make the overall
-appearance of the {\itt CTWILL} documentation most pleasing to the
-readers'~eyes.
+\noindent \bit Editor's Note: \it This heavily redacted version of
+{\itt ctwill.pdf} had to meddle with the section numbering of
+{\itt cweave.w}, spreading tabular material over several sections
+and splitting long sections into smaller chunks in order to
+fix overful pages---both horizontally and vertically---, to make
+the overall appearance of the {\itt CTWILL} documentation most
+pleasing to the readers'~eyes.
 \smallskip
 \noindent Please do not try to compare this {\itt ctwill.pdf} to the one
 created by {\itt CWEAVE} instead of {\itt CTWILL}; the section numbering will
-be even more ``off'' from {\itt cweave.w}.  Care has been taken to give a
+be quite ``off'' from {\itt cweave.w}.  Care has been taken to give a
 faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
----Enjoy!\bigskip}
+---Enjoy!\par}
+\bigskip
+The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @z
 
 Section 7.
