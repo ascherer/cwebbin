@@ -1136,21 +1136,7 @@ Section 229.
 @r @ @<Private...@>=
 @z
 
-Section 232.
-
-x
-@ @c
-static void
-push_level( /* suspends the current level */
-text_pointer p)
-y
-@ Suspend the current level.
-@c
-static void
-push_level(text_pointer p)@/
-z
-
-Section 253.
+Section 233.
 
 @x
 called when |stack_ptr==1|.
@@ -1158,7 +1144,7 @@ called when |stack_ptr==1|.
 called when |stack_ptr| |==1|.
 @z
 
-Section 257.
+Section 237.
 
 @x
 @ The real work associated with token output is done by |make_output|.
@@ -1166,7 +1152,7 @@ Section 257.
 @r @ The real work associated with token output is done by |make_output|.
 @z
 
-Section 258.
+Section 238--239.
 
 @x
     reswitch: switch(a) {
@@ -1239,7 +1225,7 @@ Section 258.
     }
 @z
 
-Section 264.
+Section 244.
 
 @x
 @ The remaining part of |make_output| is somewhat more complicated. When we
@@ -1247,7 +1233,7 @@ Section 264.
 @r @ The remaining part of |make_output| is somewhat more complicated. When we
 @z
 
-Section 267.
+Section 247.
 
 @x
 @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
@@ -1255,12 +1241,12 @@ Section 267.
 @r @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
 @z
 
-Section 273.
+Section 252.
 
 @x
-@ The output file will contain the control sequence \.{\\Y} between non-null
+@ @d usage_sentinel (struct perm_meaning *)1
 @y
-@r @ The output file will contain the control sequence \.{\\Y} between non-null
+@r @ @d usage_sentinel (struct perm_meaning *)1
 @z
 
 Section 276.
