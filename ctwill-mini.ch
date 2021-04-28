@@ -35,51 +35,40 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @z
 
-Section 7.
+Section 4.
 
 @x
-internationalization.
-
 @d _(S) gettext(S)
 
 @<Include files@>=
-#ifndef HAVE_GETTEXT
-#define HAVE_GETTEXT 0
-#endif
-@#
 @y
-internationalization.
-
 @d _(S) gettext(S)
 @-S@>
 
 @<Include files@>=
 @-A@>
 @-HAVE_GETTEXT@>
-#ifndef HAVE_GETTEXT
-#define HAVE_GETTEXT 0
-#endif
+@z
+
+Section 6.
+
+@x
+@ Code related to input routines:
+@y
+@ Code related to input routines:
+@-c@>
 @z
 
 Section 10.
 
 @x
-@ Code related to input routines:
-@y
-@ Code related to input routines:
-@-c@>
-@z
-
-Section 14.
-
-@x
 @ Code related to identifier and section name storage:
 @y
 @ Code related to identifier and section name storage:
 @-c@>
 @z
 
-Section 16.
+Section 12.
 
 @x
 @ Code related to error handling:
@@ -88,7 +77,7 @@ Section 16.
 @-s@>
 @z
 
-Section 18.
+Section 14.
 
 @x
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
@@ -96,7 +85,7 @@ extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
 @z
 
-Section 19.
+Section 15.
 
 @x
 @ Code related to output:
@@ -107,7 +96,7 @@ Section 19.
 @-c@>
 @z
 
-Section 24.
+Section 20.
 
 @x
 @* Data structures exclusive to {\tt CWEAVE}.
@@ -116,7 +105,7 @@ Section 24.
 @-a@>
 @z
 
-Section 25.
+Section 21.
 
 @x
 @ We keep track of the current section number in |section_count|, which
@@ -124,7 +113,7 @@ Section 25.
 @r @ We keep track of the current section number in |section_count|, which
 @z
 
-Section 26.
+Section 22.
 
 @x
 @ The other large memory area in \.{CWEAVE} keeps the cross-reference data.
@@ -134,7 +123,7 @@ Section 26.
 @-x@>
 @z
 
-Section 36.
+Section 29.
 
 @x
 @ A new cross-reference for an identifier is formed by calling |new_xref|,
@@ -144,7 +133,7 @@ Section 36.
 @-c@>
 @z
 
-Section 49.
+Section 37.
 
 @x
 @ Control codes are converted to \.{CWEAVE}'s internal
@@ -152,7 +141,7 @@ Section 49.
 @r @ Control codes are converted to \.{CWEAVE}'s internal
 @z
 
-Section 55.
+Section 43.
 
 @x
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
@@ -177,7 +166,7 @@ The value of |cur_section_char| will be |'('| if the section name was
 preceded by \.{@@(} instead of \.{@@<}.\par}
 @z
 
-Section 56.
+Section 44.
 
 @x
 @ As one might expect, |get_next| consists mostly of a big switch
@@ -186,7 +175,7 @@ Section 56.
 @-c@>
 @z
 
-Section 63.
+Section 51.
 
 @x
 @ The following code assigns values to the combinations \.{++},
@@ -211,7 +200,7 @@ Section 63.
             } break;
 @z
 
-Section 64.
+Section 52.
 
 @x
   id_first=--loc;
@@ -232,7 +221,7 @@ Section 64.
 }
 @z
 
-Section 67.
+Section 55.
 
 @x
 @ @<Get a bin...@>={
@@ -240,7 +229,7 @@ Section 67.
 @r @ @<Get a bin...@>={
 @z
 
-Section 70.
+Section 58.
 
 @x
 @ @<Get a wide...@>={
@@ -248,15 +237,7 @@ Section 70.
 @r @ @<Get a wide...@>={
 @z
 
-Section 74.
-
-@x
-@ @<Put section name...@>=
-@y
-@ @<Put section name...@>=
-@z
-
-Section 75.
+Section 63.
 
 @x
 @ @<If end of name...@>=
@@ -264,15 +245,17 @@ Section 75.
 @r @ @<If end of name...@>=
 @z
 
-Section 87.
+Section 72.
 
 @x
 C_xref( /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl)
 @y
+C_xref(@t{}@> /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl)
+@z
 C_xref(eight_bits spec_ctrl)
   /* makes cross-references for \CEE/ identifiers */
-@z
 
 Section 88--89.
 
