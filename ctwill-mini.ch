@@ -1268,12 +1268,48 @@ Section 247.
 @r @ The \CEE/ text enclosed in \pb\ should not contain `\.{\v}' characters,
 @z
 
+Section 251.
+
+@x
+  space_checked=true;
+@.\\Y@>
+@y
+  space_checked=true;
+@.\\Y@>
+@d usage_sentinel (struct perm_meaning *)1
+@z
+
 Section 252.
 
 @x
 @ @d usage_sentinel (struct perm_meaning *)1
 @y
-@r @ @d usage_sentinel (struct perm_meaning *)1
+@r @
+@z
+
+Section 253.
+
+@x
+  if (right_start_switch) {
+    out_str("\\shortpage\n"); right_start_switch=false;
+@.\\shortpage@>
+  }
+@y
+  if (right_start_switch) {@+
+    out_str("\\shortpage\n"); right_start_switch=false;@+
+@.\\shortpage@>
+  }
+@z
+
+@x
+  else {
+    for (sec_depth=0; xisdigit(*loc);loc++)
+      sec_depth = sec_depth*10 + (*loc) -'0';
+  }
+@y
+  else @+
+    for (sec_depth=0; xisdigit(*loc);loc++)
+      sec_depth = sec_depth*10 + (*loc) -'0';
 @z
 
 Section 256.
