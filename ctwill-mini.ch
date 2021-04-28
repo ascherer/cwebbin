@@ -1476,9 +1476,9 @@ Section 320.
 @r @ @<Output information about usage of id's defined in other sections@>=
 @z
 
-Section 331.
+Section 332.
 
-x
+@x
 @** Index.
 If you have read and understood the code for Phase III above, you know what
 is in this index and how it got here. All sections in which an identifier is
@@ -1488,5 +1488,5 @@ of identifiers in section names are not indexed. Underlined entries
 correspond to where the identifier was declared. Error messages, control
 sequences put into the output, and a few
 other things like ``recursion'' are indexed here too.
-y
-z
+@y
+@z
