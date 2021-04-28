@@ -304,7 +304,7 @@ Section 96.
 @ Finally, when the \TEX/ and definition parts have been treated, we have
 |next_control>=begin_C|.
 @y
-@r @ Finally, when the \TEX/ and definition parts have been treated, we have
+@ Finally, when the \TEX/ and definition parts have been treated, we have
 \hfil\break|next_control>=begin_C|.
 @z
 
