@@ -254,10 +254,8 @@ C_xref( /* makes cross-references for \CEE/ identifiers */
 C_xref(@t{}@> /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl)
 @z
-C_xref(eight_bits spec_ctrl)
-  /* makes cross-references for \CEE/ identifiers */
 
-Section 88--89.
+Section 73.
 
 @x
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
@@ -267,18 +265,6 @@ handles \CEE/ text with embedded comments.
 @ The |outer_xref| subroutine is like |C_xref| except that it begins
 with |next_control| |!='|'| and ends with |next_control>=format_code|.
 Thus, it handles \CEE/ text with embedded comments.
-@z
-
-Section 91.
-
-@x
-@ @<Replace |"@@@@"| by |"@@"| @>=
-{
-  char *src=id_first,*dst=id_first;
-@y
-@ @<Replace |"@@@@"| by |"@@"| @>=
-{@+
-  char *src=id_first,*dst=id_first;
 @z
 
 Section 96.
