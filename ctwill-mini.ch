@@ -922,6 +922,14 @@ Section 151.
 @r @ @<Cases for |sizeof_like|@>=
 @z
 
+Section 158.
+
+@x
+@ @<Cases for |struct_like|@>=
+@y
+@r @ @<Cases for |struct_like|@>=
+@z
+
 Section 180.
 
 @x
