@@ -1383,12 +1383,17 @@ Section 292.
 Section 293.
 
 @x
+@** Mogrify {\tentex CWEAVE} into {\tentex CTWILL}.  The following sections
 introduce material that is specific to \.{CTWILL}.
 
 Care has been taken to keep the original section numbering of \.{CWEAVE}
+up to this point intact, so this new material should nicely integrate
+with the original ``\&{272.~Index}.''
+
+@q Section 2->273. @>
+@* {\tentex CTWILL} user manual.
 @y
-introduce material that is specific to \.{CTWILL}.
-Care has been taken to keep the original section numbering of \.{CWEAVE}
+@** {\tentex CTWILL} user manual.
 @z
 
 Section 294.
