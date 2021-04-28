@@ -1308,6 +1308,14 @@ Section 280.
 @r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
 @z
 
+Section 286.
+
+@x
+@ Section numbers that are to be underlined are enclosed in
+@y
+@r @ Section numbers that are to be underlined are enclosed in
+@z
+
 Section 322.
 
 @x
