@@ -938,12 +938,12 @@ Section 180.
 @r @ @d reserve_typenames flags['t']
 @z
 
-Section 206.
+Section 186.
 
 @x
 @ @<Cases for |raw_ubin|@>=
 @y
-@r @ @<Cases for |raw_ubin|@>=
+@ @<Cases for |raw_ubin|@>=
 @z
 
 Section 221.
