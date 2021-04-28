@@ -930,12 +930,12 @@ Section 158.
 @r @ @<Cases for |struct_like|@>=
 @z
 
-Section 169.
+Section 180.
 
 @x
-@ @<Cases for |case_like|@>=
+@ @d reserve_typenames flags['t']
 @y
-@ @<Cases for |case_like|@>=
+@r @ @d reserve_typenames flags['t']
 @z
 
 Section 206.
