@@ -1265,13 +1265,7 @@ Section 259.
 @r @ @<Start a format...@>= {
 @z
 
-x
-  if(!space_checked){emit_space_if_needed;save_position;}
-y
-  if(!space_checked){@+emit_space_if_needed;save_position;@+}
-z
-
-Section 285.
+Section 260.
 
 @x
 |next_control>=begin_C|. We will make the global variable |this_section|
@@ -1279,12 +1273,12 @@ Section 285.
 \hfil\break|next_control>=begin_C|. We will make the global variable |this_section|
 @z
 
-Section 286.
+Section 261.
 
 @x
 @ @<Translate the \CEE/...@>=
 @y
-@r @ @<Translate the \CEE/...@>=
+@ @<Translate the \CEE/...@>=
 @z
 
 Section 290.
