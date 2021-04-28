@@ -1249,13 +1249,13 @@ Section 252.
 @r @ @d usage_sentinel (struct perm_meaning *)1
 @z
 
-Section 276.
+Section 254.
 
-@x
+x
 @<Translate the \T...@>= do {
-@y
+y
 @<Translate the \T...@>= do {@+
-@z
+z
 
 Section 282.
 
