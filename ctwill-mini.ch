@@ -83,16 +83,6 @@ Section 10.
 @-c@>
 @z
 
-@x
-@d length(c) (size_t)((c+1)->byte_start-(c)->byte_start) /* the length of a name */
-@d print_id(c) term_write((c)->byte_start,length((c))) /* print identifier */
-@y
-@d length(c) @/
-  (size_t)((c+1)->byte_start-(c)->byte_start) /* the length of a name */
-@d print_id(c) @/
-  term_write((c)->byte_start,length((c))) /* print identifier */
-@z
-
 Section 12.
 
 @x
@@ -971,12 +961,16 @@ Section 180.
 @r @ @d reserve_typenames flags['t']
 @z
 
-Section 196.
+Section 195.
 
 @x
-@ @<Cases for |attr|@>=
+  reduce(pp,4,attr_head,0,133);
+}
+else if (cat1==comma) squash(pp,2,attr_head,0,145);
 @y
-@r @ @<Cases for |attr|@>=
+  reduce(pp,4,attr_head,0,133);
+}@+
+else if (cat1==comma) squash(pp,2,attr_head,0,145);
 @z
 
 Section 207.
