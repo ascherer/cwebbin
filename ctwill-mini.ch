@@ -930,15 +930,15 @@ Section 158.
 @r @ @<Cases for |struct_like|@>=
 @z
 
-Section 180.
+Section 160.
 
-@x
+x
   if (indent_param_decl) {
     app(outdent); app(outdent);
   }
-@y
+y
   if (indent_param_decl) {@+app(outdent); app(outdent);@+}
-@z
+z
 
 Section 189.
 
