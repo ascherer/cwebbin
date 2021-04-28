@@ -1426,7 +1426,7 @@ with the original ``\&{272.~Index}.''
 @q Section 2->273. @>
 @* {\tentex CTWILL} user manual.
 @y
-@** {\tentex CTWILL} user manual.
+@** Mogrify {\tentex CWEAVE} into {\tentex CTWILL}.
 @z
 
 @x
