@@ -1316,15 +1316,7 @@ Section 286.
 @r @ Section numbers that are to be underlined are enclosed in
 @z
 
-Section 322.
-
-@x
-@ Because on some systems the difference between two pointers is a |ptrdiff_t|
-rather than an |int|, we use \.{\%ld} to print these quantities.
-@y
-@r @ Because on some systems the difference between two pointers is a
-|ptrdiff_t| rather than an |int|, we use \.{\%ld} to print these quantities.
-@z
+Section 292.
 
 @x
   puts(_("\nMemory usage statistics:"));
