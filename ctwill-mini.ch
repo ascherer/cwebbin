@@ -906,31 +906,12 @@ We use the fact that |make_underlined| has been called immediately preceding
 |make_reserved|, hence |tok_loc| has been set.
 @z
 
-x
-make_reserved( /* make the first identifier in |p->trans| like |int| */
-scrap_pointer p)
-y
-z
-make_reserved(scrap_pointer p)
-  /* make the first identifier in |p->trans| like |int| */
-
-Section 158.
+Section 142.
 
 @x
-make_underlined(
-/* underline the entry for the first identifier in |p->trans| */
-scrap_pointer p)
+@ In the following situations we want to mark the occurrence of
 @y
-make_underlined(scrap_pointer p)
-  /* underline the entry for the first identifier in |p->trans| */
-@z
-
-Section 166.
-
-@x
-@ @<Cases for |lpar|@>=
-@y
-@r @ @<Cases for |lpar|@>=
+@r @ In the following situations we want to mark the occurrence of
 @z
 
 Section 180.
