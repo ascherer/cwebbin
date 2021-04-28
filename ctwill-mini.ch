@@ -1433,6 +1433,15 @@ Section 303.
 @r @ The |new_meaning| routine changes the current ``permanent meaning''
 @z
 
+Section 309.
+
+@x
+@ @<Digest...@>=
+@y
+@r @ @<Digest...@>=
+@z
+
+
 Section 310.
 
 x
