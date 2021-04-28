@@ -1391,40 +1391,34 @@ introduce material that is specific to \.{CTWILL}.
 Care has been taken to keep the original section numbering of \.{CWEAVE}
 @z
 
-Section 2->273.
+Section 294.
 
-x
-@ Here is a sort of user manual for \.{CTWILL}---which is exactly like
-y
-@* {\tentex CTWILL} user manual.
-Here is a sort of user manual for \.{CTWILL}---which is exactly like
-z
-
-x
+@x
 give it the necessary hints in other places via your change file.
-y
+@y
 give it the necessary hints in other places via your change file.
 @-f@>
 @-x@>
-z
+@z
 
-Section 3->274.
+Section 295--296.
 
-x
+@x
 The current meaning of every identifier is initially `\.{\\uninitialized}'.
-y
-@ The current meaning of every identifier is initially `\.{\\uninitialized}'.
-z
+@y
+@r @ The current meaning of every identifier is initially `\.{\\uninitialized}'.
+@-printf@>
+@z
 
-x
+@x
 must have fewer than 50 characters. If the \TeX\ part starts
-y
+@y
 must have fewer than 50 characters.
 
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 
 @ If the \TeX\ part starts
-z
+@z
 
 Section 4->275.
 
