@@ -1273,28 +1273,12 @@ Section 260.
 \hfil\break|next_control>=begin_C|. We will make the global variable |this_section|
 @z
 
-Section 261.
-
-@x
-@ @<Translate the \CEE/...@>=
-@y
-@ @<Translate the \CEE/...@>=
-@z
-
-Section 290.
-
-@x
-@ The |footnote| procedure gives cross-reference information about
-@y
-@r @ The |footnote| procedure gives cross-reference information about
-@z
-
-Section 302.
+Section 273.
 
 @x
 @ A left-to-right radix sorting method is used, since this makes it easy to
 @y
-@r @ A left-to-right radix sorting method is used, since this makes it easy to
+@ A left-to-right radix sorting method is used, since this makes it easy to
 @-c@>
 @z
 
