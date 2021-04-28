@@ -268,6 +268,16 @@ Section 63.
 @r @ @<If end of name...@>=
 @z
 
+Section 72.
+
+@x
+    if (next_control=='|' || next_control==begin_comment ||
+        next_control==begin_short_comment) return;
+@y
+    if (next_control=='|' || next_control==begin_comment @| ||
+        next_control==begin_short_comment) return;
+@z
+
 Section 73.
 
 @x
