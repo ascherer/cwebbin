@@ -245,16 +245,6 @@ Section 63.
 @r @ @<If end of name...@>=
 @z
 
-Section 72.
-
-@x
-C_xref( /* makes cross-references for \CEE/ identifiers */
-  eight_bits spec_ctrl)
-@y
-C_xref(@t{}@> /* makes cross-references for \CEE/ identifiers */
-  eight_bits spec_ctrl)
-@z
-
 Section 73.
 
 @x
@@ -303,16 +293,6 @@ Section 90.
 @-c@>
 @z
 
-Section 91.
-
-@x
-out_str( /* output characters from |s| to end of string */
-const char*s)
-@y
-out_str(@t{}@> /* output characters from |s| to end of string */
-const char*s)
-@z
-
 Section 100.
 
 @x
@@ -328,16 +308,6 @@ Section 101.
 @y
 @ The |copy_comment| function issues a warning if more braces are opened than
 @-t@>
-@z
-
-@x
-static int copy_comment( /* copies \TeX\ code in comments */
-boolean is_long_comment, /* is this a traditional \CEE/ comment? */
-int bal) /* brace balance */
-@y
-static int copy_comment(@t{}@> /* copies \TeX\ code in comments */
-boolean is_long_comment, /* is this a traditional \CEE/ comment? */
-int bal) /* brace balance */
 @z
 
 @x
@@ -923,27 +893,26 @@ should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
 `\.{@@!@@:operator+=\}\{\\\&\{operator\}} \.{\$+\{=\}\$@@>}').
 @z
 
-Section 157.
-
-x
-@ The scraps currently being parsed must be inspected for any
-y
-@r @ The scraps currently being parsed must be inspected for any
-z
+Section 141.
 
 @x
+the |for| loop below.
+
+We use the fact that |make_underlined| has been called immediately preceding
 |make_reserved|, hence |tok_loc| has been set.
 @y
-\hfil\break|make_reserved|, hence |tok_loc| has been set.
+the |for| loop below.
+We use the fact that |make_underlined| has been called immediately preceding
+|make_reserved|, hence |tok_loc| has been set.
 @z
 
-@x
+x
 make_reserved( /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p)
-@y
+y
+z
 make_reserved(scrap_pointer p)
   /* make the first identifier in |p->trans| like |int| */
-@z
 
 Section 158.
 
