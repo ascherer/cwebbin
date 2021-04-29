@@ -615,7 +615,7 @@ flush_buffer(out_ptr,false,false);
   else {
     id_being_defined=id_lookup(id_first,id_loc,normal);
     app_cur_id(false);
-    def_diff=*loc-'(';
+    def_diff=(*loc!='(');
 @z
 
 @x l.4375
@@ -1245,7 +1245,7 @@ if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
 @q Section 253->296. @>
 @ @<Private...@>=
 static boolean is_macro; /* it's a macro def, not a format def */
-static int def_diff; /* 0 iff the current macro has parameters */
+static boolean def_diff; /* |false| iff the current macro has parameters */
 static name_pointer id_being_defined; /* the definee */
 
 @q Section 257->297. @>
