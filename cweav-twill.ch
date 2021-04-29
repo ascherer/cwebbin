@@ -914,7 +914,7 @@ which are quite different from the change files you set up for tangling.
 
 @q Section 25->274. @>
 @* Temporary and permanent meanings.
-\.{CTWILL} also has special data structures to keep track of current
+\.{CTWILL} has special data structures to keep track of current
 and temporary meanings. These structures were not designed for maximum
 efficiency; they were designed to be easily grafted into \.{CWEAVE}'s
 existing code without major surgery.
