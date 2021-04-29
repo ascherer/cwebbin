@@ -989,9 +989,9 @@ new_meaning(
   while (xisalpha(*loc)||xisdigit(*loc)||*loc=='_') loc++;
   if (*loc++!=' ')
     err_print(_("! Identifier in meaning should be followed by space"));
-  else { name_pointer p=id_lookup(first,loc-1,normal);
+  else {@+ int n=0;
+    name_pointer p=id_lookup(first,loc-1,normal);
     sixteen_bits t=title_lookup();
-    int n=0;
     if (*(loc-1)=='}')
       while (xisdigit(*loc)) n=10*n+(*loc++)-'0';
     if (*loc++!=' ')
