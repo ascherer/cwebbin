@@ -913,7 +913,7 @@ which are quite different from the change files you set up for tangling.
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 
 @q Section 25->274. @>
-@* Data structures of {\tentex CTWILL}.
+@* Temporary and permanent meanings.
 \.{CTWILL} also has special data structures to keep track of current
 and temporary meanings. These structures were not designed for maximum
 efficiency; they were designed to be easily grafted into \.{CWEAVE}'s
@@ -953,50 +953,7 @@ max_temp_meaning_ptr=temp_meaning_stack;
 title_code_ptr=title_code;
 ms_mode=false;
 
-@q Section 28->277. @>
-@ Here's a routine that converts a program title from the buffer
-into an internal number for the |prog_no| field of a meaning.
-It advances |loc| past the title found.
-
-@c static sixteen_bits title_lookup(void)
-{
-  char *first=loc,*last; /* boundaries */
-  register name_pointer *p;
-  if (*loc=='"') {
-    while (++loc<=limit && *loc!='"') if (*loc=='\\') loc++;
-  } else if (*loc=='{') {
-    int balance=1; /* excess of left over right */
-    while (++loc<=limit) {
-      if (*loc=='}' && --balance==0) break;
-      if (*loc=='{') balance++;
-    }
-  } else err_print(_("! Title should be enclosed in braces or doublequotes"));
-  last=++loc;
-  if (last>limit) err_print(_("! Title name didn't end"));
-  if (title_code_ptr==&title_code[max_titles]) overflow(_("titles"));
-  *title_code_ptr=id_lookup(first,last,title);
-  for (p=title_code;true;p++) if (*p==*title_code_ptr) break;
-  if (p==title_code_ptr) title_code_ptr++;
-  return p-title_code;
-}
-
-@q Section 278. @>
-@ @<Predec...@>=@+static sixteen_bits title_lookup(void);
-
-@q Section 29->279. @>
-@ @<Give a default title to the program, if necessary@>=
-if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
-  char *saveloc=loc,*savelimit=limit;
-  loc=limit+1; limit=loc;
-  *limit++='{';
-  memcpy(limit,tex_file_name,strlen(tex_file_name)-4);
-  limit+=strlen(tex_file_name)-4;
-  *limit++='}';
-  title_lookup();
-  loc=saveloc; limit=savelimit;
-}
-
-@q Section 30->280. @>
+@q Section 30->277. @>
 @ The |new_meaning| routine changes the current ``permanent meaning''
 when an identifier is redeclared. It gets the |tex_part| from
 |ministring_buf|.
@@ -1021,10 +978,10 @@ new_meaning(
   @<Write the new meaning to the \.{.aux} file@>@;
 }
 
-@q Section 281. @>
+@q Section 278. @>
 @ @<Predec...@>=@+static void new_meaning(name_pointer);
 
-@q Section 31->282. @>
+@q Section 31->279. @>
 @ @<Write the new meaning to the \.{.aux} file@>=
 {@+int n=q->perm.prog_no;
   fprintf(aux_file,"@@$%.*s %.*s",@|
@@ -1034,7 +991,7 @@ new_meaning(
   fprintf(aux_file," %s@@>\n",q->perm.tex_part);
 }
 
-@q Section 75->283. @>
+@q Section 75->280. @>
 @ @<Process a user-generated meaning@>=
 { char *first=id_first;
   while (xisspace(*first)) first++;
@@ -1054,7 +1011,7 @@ new_meaning(
   loc=id_loc+2;
 }
 
-@q Section 76->284. @>
+@q Section 76->281. @>
 @ @<Suppress mini-index entry@>=
 { char *first=id_first,*last=id_loc;
   while (xisspace(*first)) first++;
@@ -1065,7 +1022,7 @@ new_meaning(
   }
 }
 
-@q Section 77->285. @>
+@q Section 77->282. @>
 @ @<Digest...@>=
 { meaning_struct *m;
   struct perm_meaning *q=p-name_dir+cur_meaning;
@@ -1088,7 +1045,7 @@ new_meaning(
   }
 }
 
-@q Section 141->286/7. @>
+@q Section 141->283/4. @>
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may
 appear between parentheses or brackets. The calling routine should set
@@ -1122,10 +1079,10 @@ static boolean app_supp(
 catch14: return *(*(p+1)-1)=='9'; /* was production 14 used? */
 }
 
-@q Section 288. @>
+@q Section 285. @>
 @ @<Predec...@>=@+static boolean app_supp(text_pointer);
 
-@q Section 142->289. @>
+@q Section 142->286. @>
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
 which tries to figure out a symbolic form of definition after
 |make_underlined(pp+l)| has been called. We rely heavily on the
@@ -1156,14 +1113,14 @@ make_ministring(
   cur_mathness=maybe_math; /* restore it */
 }
 
-@q Section 290. @>
+@q Section 287. @>
 @ @<Predec...@>=@+static void make_ministring(int);
 
-@q Section 43->291. @>
+@q Section 43->288. @>
 @ @<Private...@>=
 static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
 
-@q Section 143->292. @>
+@q Section 143->289. @>
 @ Here we use the fact that a |decl_head| comes from |int_like| only in
 production~27, whose translation is fairly easy to recognize. (Well,
 production 28 has been added for \CPLUSPLUS/, but we hope that doesn't
@@ -1204,7 +1161,7 @@ else {
   @<Append tokens for type |q|@>@;
 }
 
-@q Section 144->293. @>
+@q Section 144->290. @>
 @ @<Append tokens for type |q|@>=
 cur_mathness=no_math; /* it was |maybe_math| */
 if (*(q+1)==*q+8 && *(*q+1)==' ' && *(*q+3)==' ') {
@@ -1216,12 +1173,12 @@ while (ast_count) {
   big_app('{');@+app('*');@+app('}');@+ast_count--;
 }
 
-@q Section 246->294. @>
+@q Section 246->291. @>
 @ @<Private...@>=
 static FILE *aux_file;
 static char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
-@q Section 247->295. @>
+@q Section 247->292. @>
 @ @<Read the \.{.aux} file, if present; then open it for output@>=
 memcpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
 strcat(aux_file_name,".bux");
@@ -1242,13 +1199,13 @@ if (include_depth) { /* at least one new file was opened */
 if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
   fatal(_("! Cannot open aux output file "),aux_file_name);
 
-@q Section 253->296. @>
+@q Section 253->293. @>
 @ @<Private...@>=
 static boolean is_macro; /* it's a macro def, not a format def */
 static boolean def_diff; /* |false| iff the current macro has parameters */
 static name_pointer id_being_defined; /* the definee */
 
-@q Section 257->297. @>
+@q Section 257->294. @>
 @ @<Make ministring for a new macro@>=
 {
   ms_mode=true; ministring_ptr=ministring_buf;
@@ -1266,7 +1223,7 @@ static name_pointer id_being_defined; /* the definee */
   new_meaning(id_being_defined);
 }
 
-@q Section 268->298. @>
+@q Section 268->295. @>
 @ The following code is performed for each identifier parsed during
 a section. Variable |top_usage| is always nonzero; it has the sentinel
 value~1 initially, then it points to each variable scheduled for
@@ -1281,7 +1238,7 @@ placed on the list, unless they are reserved and their current
     if (q->link==0) q->link=top_usage, top_usage=q;
 }
 
-@q Section 269->299. @>
+@q Section 269->296. @>
 @ @<Output information about usage of id's defined in other sections@>=
 { struct perm_meaning *q;
   while (temp_meaning_ptr>temp_meaning_stack) {
@@ -1297,7 +1254,7 @@ placed on the list, unless they are reserved and their current
   }
 }
 
-@q Section 270->300. @>
+@q Section 270->297. @>
 @ @c static void
 out_mini(
   meaning_struct *m)
@@ -1316,10 +1273,10 @@ out_mini(
   out(' '); out_str(m->tex_part); finish_line();
 }
 
-@q Section 271->301. @>
+@q Section 271->298. @>
 @ @<Predec...@>=@+static void out_mini(meaning_struct *);
 
-@q Section 272->302. @>
+@q Section 272->299. @>
 @ @<Mini-output...@>=
 switch (cur_name->ilk) {@+char *j;
   case normal: case func_template:
@@ -1351,7 +1308,51 @@ lowcase: out_str("\\\\");
 out_name(cur_name,true);
 name_done:@;
 
-@q Section 303. @>
+@q Section 28->300. @>
+@* Handle program title.
+Here's a routine that converts a program title from the buffer
+into an internal number for the |prog_no| field of a meaning.
+It advances |loc| past the title found.
+
+@c static sixteen_bits title_lookup(void)
+{
+  char *first=loc,*last; /* boundaries */
+  register name_pointer *p;
+  if (*loc=='"') {
+    while (++loc<=limit && *loc!='"') if (*loc=='\\') loc++;
+  } else if (*loc=='{') {
+    int balance=1; /* excess of left over right */
+    while (++loc<=limit) {
+      if (*loc=='}' && --balance==0) break;
+      if (*loc=='{') balance++;
+    }
+  } else err_print(_("! Title should be enclosed in braces or doublequotes"));
+  last=++loc;
+  if (last>limit) err_print(_("! Title name didn't end"));
+  if (title_code_ptr==&title_code[max_titles]) overflow(_("titles"));
+  *title_code_ptr=id_lookup(first,last,title);
+  for (p=title_code;true;p++) if (*p==*title_code_ptr) break;
+  if (p==title_code_ptr) title_code_ptr++;
+  return p-title_code;
+}
+
+@q Section 301. @>
+@ @<Predec...@>=@+static sixteen_bits title_lookup(void);
+
+@q Section 29->303. @>
+@ @<Give a default title to the program, if necessary@>=
+if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
+  char *saveloc=loc,*savelimit=limit;
+  loc=limit+1; limit=loc;
+  *limit++='{';
+  memcpy(limit,tex_file_name,strlen(tex_file_name)-4);
+  limit+=strlen(tex_file_name)-4;
+  *limit++='}';
+  title_lookup();
+  loc=saveloc; limit=savelimit;
+}
+
+@q Section 304. @>
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
 improved features that have been created by numerous contributors over the
 course of a quarter century.
