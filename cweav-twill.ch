@@ -981,17 +981,7 @@ new_meaning(
 @q Section 278. @>
 @ @<Predec...@>=@+static void new_meaning(name_pointer);
 
-@q Section 31->279. @>
-@ @<Write the new meaning to the \.{.aux} file@>=
-{@+int n=q->perm.prog_no;
-  fprintf(aux_file,"@@$%.*s %.*s",@|
-    (int)length(p),p->byte_start,@|
-    (int)length(title_code[n]),title_code[n]->byte_start);
-  if (*(title_code[n]->byte_start)=='{') fprintf(aux_file,"%d",q->perm.sec_no);
-  fprintf(aux_file," %s@@>\n",q->perm.tex_part);
-}
-
-@q Section 75->280. @>
+@q Section 75->279. @>
 @ @<Process a user-generated meaning@>=
 { char *first=id_first;
   while (xisspace(*first)) first++;
@@ -1011,7 +1001,7 @@ new_meaning(
   loc=id_loc+2;
 }
 
-@q Section 76->281. @>
+@q Section 76->280. @>
 @ @<Suppress mini-index entry@>=
 { char *first=id_first,*last=id_loc;
   while (xisspace(*first)) first++;
@@ -1022,7 +1012,7 @@ new_meaning(
   }
 }
 
-@q Section 77->282. @>
+@q Section 77->281. @>
 @ @<Digest...@>=
 { meaning_struct *m;
   struct perm_meaning *q=p-name_dir+cur_meaning;
@@ -1045,7 +1035,7 @@ new_meaning(
   }
 }
 
-@q Section 141->283/4. @>
+@q Section 141->282/3. @>
 @* Make ministrings.
  \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may
@@ -1080,10 +1070,10 @@ static boolean app_supp(
 catch14: return *(*(p+1)-1)=='9'; /* was production 14 used? */
 }
 
-@q Section 285. @>
+@q Section 284. @>
 @ @<Predec...@>=@+static boolean app_supp(text_pointer);
 
-@q Section 142->286. @>
+@q Section 142->285. @>
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
 which tries to figure out a symbolic form of definition after
 |make_underlined(pp+l)| has been called. We rely heavily on the
@@ -1114,14 +1104,14 @@ make_ministring(
   cur_mathness=maybe_math; /* restore it */
 }
 
-@q Section 287. @>
+@q Section 286. @>
 @ @<Predec...@>=@+static void make_ministring(int);
 
-@q Section 43->288. @>
+@q Section 43->287. @>
 @ @<Private...@>=
 static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
 
-@q Section 143->289. @>
+@q Section 143->288. @>
 @ Here we use the fact that a |decl_head| comes from |int_like| only in
 production~27, whose translation is fairly easy to recognize. (Well,
 production 28 has been added for \CPLUSPLUS/, but we hope that doesn't
@@ -1162,7 +1152,7 @@ else {
   @<Append tokens for type |q|@>@;
 }
 
-@q Section 144->290. @>
+@q Section 144->289. @>
 @ @<Append tokens for type |q|@>=
 cur_mathness=no_math; /* it was |maybe_math| */
 if (*(q+1)==*q+8 && *(*q+1)==' ' && *(*q+3)==' ') {
@@ -1174,13 +1164,13 @@ while (ast_count) {
   big_app('{');@+app('*');@+app('}');@+ast_count--;
 }
 
-@q Section 253->291. @>
+@q Section 253->290. @>
 @ @<Private...@>=
 static boolean is_macro; /* it's a macro def, not a format def */
 static boolean def_diff; /* |false| iff the current macro has parameters */
 static name_pointer id_being_defined; /* the definee */
 
-@q Section 257->292. @>
+@q Section 257->291. @>
 @ @<Make ministring for a new macro@>=
 {
   ms_mode=true; ministring_ptr=ministring_buf;
@@ -1198,14 +1188,14 @@ static name_pointer id_being_defined; /* the definee */
   new_meaning(id_being_defined);
 }
 
-@q Section 246->293. @>
+@q Section 246->292. @>
 @* Process {\tentex .aux} files.
 
 @<Private...@>=
 static FILE *aux_file;
 static char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
-@q Section 247->294. @>
+@q Section 247->293. @>
 @ @<Read the \.{.aux} file, if present; then open it for output@>=
 memcpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
 strcat(aux_file_name,".bux");
@@ -1226,8 +1216,19 @@ if (include_depth) { /* at least one new file was opened */
 if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
   fatal(_("! Cannot open aux output file "),aux_file_name);
 
+@q Section 31->294. @>
+@ @<Write the new meaning to the \.{.aux} file@>=
+{@+int n=q->perm.prog_no;
+  fprintf(aux_file,"@@$%.*s %.*s",@|
+    (int)length(p),p->byte_start,@|
+    (int)length(title_code[n]),title_code[n]->byte_start);
+  if (*(title_code[n]->byte_start)=='{') fprintf(aux_file,"%d",q->perm.sec_no);
+  fprintf(aux_file," %s@@>\n",q->perm.tex_part);
+}
+
 @q Section 268->295. @>
-@ The following code is performed for each identifier parsed during
+@* Parse identifiers.
+The following code is performed for each identifier parsed during
 a section. Variable |top_usage| is always nonzero; it has the sentinel
 value~1 initially, then it points to each variable scheduled for
 possible citation. A variable is on this list if and only if its
