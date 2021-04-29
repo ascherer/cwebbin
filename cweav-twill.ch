@@ -149,7 +149,7 @@ int_loc=id_lookup("int",NULL,raw_int)-name_dir;
 @d new_section 0235 /* control code for `\.{@@\ }' and `\.{@@*}' */
 @z
 
-@x l.599
+@x l.601
 ccode['\'']=ord;
 @y
 ccode['\'']=ord;
@@ -157,7 +157,7 @@ ccode['$']=meaning; ccode['%']=temp_meaning; ccode['-']=suppress;
 ccode['r']=ccode['R']=right_start;
 @z
 
-@x l.620
+@x l.622
 static eight_bits skip_TeX(void);
 
 @ @c
@@ -170,7 +170,7 @@ part of all meanings.
 @c
 @z
 
-@x l.626
+@x l.628
     if (loc>limit && get_line()==false) return;
 @y
     if (loc>limit && get_line()==false) return;
@@ -182,26 +182,26 @@ part of all meanings.
 
 CTWILL hickups on comment and produces unmatched '$' in mini-index.
 
-@x l.646
+x l.648
 skip_TeX(void) /* skip past pure \TEX/ code */
-@y
+y
 skip_TeX(void)
-@z
+z
 
-@x l.681
+@x l.683
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
 @y
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
 |meaning|, |suppress|,
 @z
 
-@x l.742
+@x l.744
 @d right_preproc 0217 /* ends a preprocessor command */
 @y
 @d right_preproc 0223 /* ends a preprocessor command */
 @z
 
-@x l.943
+@x l.945
     case underline: xref_switch=def_flag; continue;
 @y
     case underline: xref_switch=def_flag; continue;
@@ -209,14 +209,14 @@ skip_TeX(void)
     case right_start: right_start_switch=true; continue;
 @z
 
-@x l.945
+@x l.947
     case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
 @y
     case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
     case meaning: case suppress:
 @z
 
-@x l.1021
+@x l.1023
 static void
 skip_restricted(void)
 {
@@ -226,7 +226,7 @@ skip_restricted(void)
 { int c=ccode[(eight_bits)*(loc-1)];
 @z
 
-@x l.1035
+@x l.1037
 @.Control codes are forbidden...@>
 @y
 @.Control codes are forbidden...@>
@@ -234,38 +234,38 @@ skip_restricted(void)
     else if (c==suppress && phase==2) @<Suppress mini-index entry@>@;
 @z
 
-@x l.1075
+@x l.1077
   skip_limbo(); change_exists=false;
 @y
   skip_limbo();
   @<Give a default title to the program, if necessary@>@;
 @z
 
-@x l.1078
+@x l.1080
   changed_section[section_count]=change_exists;
     /* the index changes if anything does */
 @y
 @z
 
-@x l.1089
+@x l.1091
   changed_section[section_count]=changing;
      /* it will become |true| if any line changes */
 @y
 @z
 
-@x l.1098
+@x l.1100
   if (changed_section[section_count]) change_exists=true;
 @y
 @z
 
-@x l.1183
+@x l.1185
     case xref_roman: case xref_wildcard: case xref_typewriter:
 @y
     case xref_roman: case xref_wildcard: case xref_typewriter:
     case meaning: case suppress:
 @z
 
-@x l.1414 and l.25 of CWEAV-EXTENSIONS.CH
+@x l.1416 and l.25 of CWEAV-EXTENSIONS.CH
 \.{CWEAVE} with `\.{+lX}' (or `\.{-lX}' as well), where `\.X' is the
 (possibly empty) string of characters to the right of~`\.l', `\.X'~will be
 prepended to `\.{cwebmac.tex}', e.g., if you call \.{CWEAVE} with
@@ -286,13 +286,13 @@ debugging mini-index entries.
 @d proofing flags['P']
 @z
 
-@x l.1414 and l.36 of CWEAV-EXTENSIONS.CH
+@x l.1416 and l.36 of CWEAV-EXTENSIONS.CH
 tex_puts("cwebma");
 @y
 tex_puts(proofing?"proofma":"ctwima");
 @z
 
-@x l.1431
+@x l.1433
 @d out(c) {if (out_ptr>=out_buf_end) break_out(); *(++out_ptr)=c;}
 @y
 @d out(c)
@@ -306,60 +306,60 @@ tex_puts(proofing?"proofma":"ctwima");
  }
 @z
 
-@x l.1488
+@x l.1490
 |def_flag|, so it cannot have more than five decimal digits.  If
 the section is changed, we output `\.{\\*}' just after the number.
 @y
 |def_flag|, so it cannot have more than five decimal digits.
 @z
 
-@x l.1502
+@x l.1504
   if(changed_section[n]) out_str ("\\*");
 @.\\*@>
 @y
 @z
 
-@x l.1562 and l.167 of CWEAV-I18N.CH
+@x l.1564 and l.167 of CWEAV-I18N.CH
         default: err_print(_("! Double @@ should be used in limbo"));
 @y
         case right_start: right_start_switch=true; break;
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
-@x l.1774
+@x l.1776
 @d attr_head 69 /* denotes beginning of attribute */
 @y
 @d attr_head 69 /* denotes beginning of attribute */
 @d title 70 /* program name or header name in a ``meaning'' */
 @z
 
-@x l.2155
+@x l.2157
 @i prod.w
 @y
 @i prod-twill.w
 @z
 
-@x l.2203
+@x l.2205
 static scrap scrap_info[max_scraps]; /* memory array for scraps */
 @y
 static scrap scrap_info[max_scraps]; /* memory array for scraps */
 static scrap null_scrap; /* a scrap with empty translation */
 @z
 
-@x l.2212
+@x l.2214
 @ @<Set init...@>=
 @y
 @ @<Set init...@>=
 null_scrap.trans=&tok_start[0];
 @z
 
-@x l.2261
+@x l.2266
   update_terminal;
 @y
   puts("|"); update_terminal;
 @z
 
-@x l.2566
+@x l.2571
 the |for| loop below.
 
 @c
@@ -374,7 +374,7 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @#
 @z
 
-@x l.2574
+@x l.2579
   token_pointer tok_loc; /* pointer to |tok_value| */
   if ((tok_loc=find_first_ident(p->trans))<=operator_found)
     return; /* this should not happen */
@@ -382,12 +382,12 @@ static token_pointer tok_loc; /* where the first identifier appears */
   if (tok_loc<=operator_found) return; /* this should not happen */
 @z
 
-@x l.2605
+@x l.2610
   token_pointer tok_loc; /* where the first identifier appears */
 @y
 @z
 
-@x l.2661 and l.50 of CWEAV-EXTENSIONS.CH
+@x l.2666 and l.50 of CWEAV-EXTENSIONS.CH
   make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
 @y
   make_underlined(pp);
@@ -395,7 +395,7 @@ static token_pointer tok_loc; /* where the first identifier appears */
   if (indent_param_decl) big_app(dindent); big_app1(pp);
 @z
 
-@x l.2675
+@x l.2680
   make_underlined (pp); squash(pp,2,tag,-1,7);
 @y
   make_underlined (pp);
@@ -407,7 +407,7 @@ static token_pointer tok_loc; /* where the first identifier appears */
   squash(pp,2,tag,-1,7);
 @z
 
-@x l.2770
+@x l.2775
   make_underlined(pp+1); squash(pp,2,decl_head,-1,35);
 @y
   make_underlined(pp+1);
@@ -415,14 +415,14 @@ static token_pointer tok_loc; /* where the first identifier appears */
   squash(pp,2,decl_head,-1,35);
 @z
 
-@x l.2810
+@x l.2815
     make_underlined(pp+1); make_reserved(pp+1);
 @y
     make_underlined(pp+1); make_reserved(pp+1);
     make_ministring(1);
 @z
 
-@x l.2972
+@x l.2977
 if (cat1==define_like) make_underlined(pp+2);
 @y
 if (cat1==define_like) { /* \#\&{define} is analogous to \&{extern} */
@@ -434,7 +434,7 @@ if (cat1==define_like) { /* \#\&{define} is analogous to \&{extern} */
 }
 @z
 
-@x l.3067
+@x l.3072
 if (cat1==prelangle) squash(pp+1,1,langle,1,100);
 else squash(pp,1,exp,-2,101);
 @y
@@ -442,13 +442,13 @@ if (cat1==prelangle) squash(pp+1,1,langle,1,121);
 else squash(pp,1,exp,-2,122);
 @z
 
-@x l.3072
+@x l.3077
   big_app1_insert(pp,' '); reduce(pp,2,else_like,-2,102);
 @y
   big_app1_insert(pp,' '); reduce(pp,2,else_like,-2,123);
 @z
 
-@x l.3104
+@x l.3109
 @ @<Cases for |typedef_like|@>=
 if ((cat1==int_like || cat1==cast) && (cat2==comma || cat2==semi))
   squash(pp+1,1,exp,-1,115);
@@ -487,14 +487,14 @@ if (cat1==decl_head) {
     (cat3==semi || cat3==comma)) squash(pp+2,1,exp,1,202);
 @z
 
-@x l.3459
+@x l.3463
   case ignore: case xref_roman: case xref_wildcard:
 @y
   case ignore: case xref_roman: case xref_wildcard:
   case meaning: case suppress:
 @z
 
-@x l.3652
+@x l.3656
       else app_scrap(p->ilk,maybe_math);
     }
   }
@@ -505,20 +505,20 @@ if (cat1==decl_head) {
   @<Flag the usage of this identifier, for the mini-index@>@;
 @z
 
-@x l.3685
+@x l.3689
 to \.{\\PB}.  Although \.{cwebmac} ignores \.{\\PB}, other macro packages
 @y
 to \.{\\PB}.  Although \.{ctwimac} ignores \.{\\PB}, other macro packages
 @z
 
-@x l.3715
+@x l.3719
         app(tok_flag+(int)(p-tok_start));
 @y
         app(tok_flag+(int)(p-tok_start));
         app(inserted);
 @z
 
-@x l.4190
+@x l.4194
 section_count=0; format_visible=true; copy_limbo();
 @y
 temp_switch=false; temp_meaning_ptr=temp_meaning_stack;
@@ -526,7 +526,7 @@ temp_switch=false; temp_meaning_ptr=temp_meaning_stack;
 section_count=0; format_visible=true; right_start_switch=false; copy_limbo();
 @z
 
-@x l.4218
+@x l.4222
 static boolean group_found=false; /* has a starred section occurred? */
 
 @ @<Translate the current section@>= {
@@ -543,7 +543,7 @@ static boolean temp_switch; /* has `\.{@@\%}' occurred recently? */
   top_usage=usage_sentinel;
 @z
 
-@x l.4239
+@x l.4243
 if (*(loc-1)!='*') out_str("\\M");
 @y
 if (*(loc-1)!='*') {
@@ -555,7 +555,7 @@ if (*(loc-1)!='*') {
 }
 @z
 
-@x l.4254
+@x l.4258
 @.\\N@>
 @y
 @.\\N@>
@@ -565,14 +565,14 @@ if (*(loc-1)!='*') {
   }
 @z
 
-@x l.4259
+@x l.4263
 out('{'); out_section(section_count); out('}');
 @y
 out('{'); out_section(section_count); out('}');
 flush_buffer(out_ptr,false,false);
 @z
 
-@x l.4267
+@x l.4271
     case '@@': out('@@'); break;
 @y
     case '@@': out('@@'); break;
@@ -580,14 +580,14 @@ flush_buffer(out_ptr,false,false);
     case right_start: right_start_switch=true; break;
 @z
 
-@x l.4270
+@x l.4274
     case section_name: loc-=2; next_control=get_next(); /* skip to \.{@@>} */
 @y
     case meaning: case suppress:
     case section_name: loc-=2; next_control=get_next(); /* reprocess */
 @z
 
-@x l.4292
+@x l.4296
   outer_parse(); finish_C(format_visible); format_visible=true;
   doing_format=false;
 }
@@ -599,14 +599,14 @@ flush_buffer(out_ptr,false,false);
 }
 @z
 
-@x l.4344
+@x l.4348
 @<Start a macro...@>= {
 @y
 @<Start a macro...@>= {
   is_macro=true;
 @z
 
-@x l.4351
+@x l.4355
 @.Improper macro definition@>
   else {
     app_cur_id(false);
@@ -618,7 +618,7 @@ flush_buffer(out_ptr,false,false);
     def_diff=(*loc!='(');
 @z
 
-@x l.4375
+@x l.4379
 @ @<Start a format...@>= {
   doing_format=true;
 @y
@@ -628,7 +628,7 @@ flush_buffer(out_ptr,false,false);
   is_macro=false;
 @z
 
-@x l.4520
+@x l.4524
 out_str("\\fi"); finish_line();
 @.\\fi@>
 flush_buffer(out_buf,false,false); /* insert a blank line, it looks nice */
@@ -641,14 +641,14 @@ out_str("}\\FI"); finish_line();
 flush_buffer(out_buf,false,false); /* insert a blank line, it looks nice */
 @z
 
-@x l.4548
+@x l.4552
   if (change_exists) {
     @<Tell about changed sections@>@; finish_line(); finish_line();
   }
 @y
 @z
 
-@x l.4583
+@x l.4587
 the index section itself.
 
 @<Private...@>=
@@ -657,7 +657,7 @@ static sixteen_bits k_section; /* runs through the sections */
 the index section itself---NOT!
 @z
 
-@x l.4588
+@x l.4592
 @ @<Tell about changed sections@>= {
   /* remember that the index is already marked as changed */
   k_section=0;
@@ -675,7 +675,7 @@ the index section itself---NOT!
 @ No need to tell about changed sections.
 @z
 
-@x l.4783
+@x l.4787
 @ @<Output the name...@>=
 @y
 @ We don't format the index completely; the \.{twinx} program does the
@@ -684,20 +684,20 @@ rest of the job.
 @<Output the name...@>=
 @z
 
-@x l.4785
+@x l.4789
   case normal: case func_template:
 @y
   case normal:
 @z
 
-@x l.4797
+@x l.4801
   case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @y
   case roman: out_str("  ");@+ goto not_an_identifier;
   case wildcard: out_str("\\9");@+ goto not_an_identifier;
 @z
 
-@x l.4801
+@x l.4805
   case roman: not_an_identifier: out_name(cur_name,false); goto name_done;
   case custom:
     out_str("$\\");
@@ -711,7 +711,7 @@ not_an_identifier: out_name(cur_name,false); goto name_done;
 @.\\\$@>
 @z
 
-@x l.4811
+@x l.4815
 out_name(cur_name,true);
 @y
 if (proofing) out_name(cur_name,true);
@@ -722,7 +722,7 @@ else {@+char *j;
 }
 @z
 
-@x l.4880
+@x l.4884
   printf(_("%ld bytes (out of %ld)\n"),
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
 @y

@@ -8,7 +8,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 89.
 
-@x l.1414
+@x l.1416
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
