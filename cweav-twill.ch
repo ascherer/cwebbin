@@ -1039,8 +1039,8 @@ new_meaning(
 @* Make ministrings.
  \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may
-appear between parentheses or brackets. The calling routine should set
-|ident_seen=false| first. (This is admittedly tricky.)
+appear between parentheses or brackets. The calling routine |make_ministring|
+should set |ident_seen=false| first. (This is admittedly tricky.)
 
 @<Private var...@>=
 static boolean ident_seen;
