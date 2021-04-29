@@ -182,11 +182,11 @@ part of all meanings.
 
 CTWILL hickups on comment and produces unmatched '$' in mini-index.
 
-x l.648
+@x l.648
 skip_TeX(void) /* skip past pure \TEX/ code */
-y
+@y
 skip_TeX(void)
-z
+@z
 
 @x l.683
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
