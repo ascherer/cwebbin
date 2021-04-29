@@ -1517,24 +1517,7 @@ must have fewer than 50 characters.
 @y
 @z
 
-Section 302.
-
-@x
-@ The |new_meaning| routine changes the current ``permanent meaning''
-@y
-@r @ The |new_meaning| routine changes the current ``permanent meaning''
-@z
-
 Section 308.
-
-@x
-@ @<Digest...@>=
-@y
-@r @ @<Digest...@>=
-@z
-
-
-Section 311.
 
 @x
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
@@ -1543,7 +1526,7 @@ Section 311.
 @-b@>
 @z
 
-Section 314.
+Section 312.
 
 @x
 @ @<Append tokens for type |q|@>=
@@ -1557,7 +1540,7 @@ Section 314.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
-Section 320.
+Section 318.
 
 @x
 @ @<Output information about usage of id's defined in other sections@>=
@@ -1565,7 +1548,7 @@ Section 320.
 @r @ @<Output information about usage of id's defined in other sections@>=
 @z
 
-Section 332.
+Section 333.
 
 @x
 @** Index.
