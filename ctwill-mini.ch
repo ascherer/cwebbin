@@ -1517,7 +1517,7 @@ must have fewer than 50 characters.
 @y
 @z
 
-Section 308.
+Section 307.
 
 @x
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
@@ -1526,7 +1526,7 @@ Section 308.
 @-b@>
 @z
 
-Section 312.
+Section 311.
 
 @x
 @ @<Append tokens for type |q|@>=

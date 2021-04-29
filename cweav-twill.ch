@@ -1227,7 +1227,7 @@ if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
 }
 
 @q Section 268->295. @>
-@* Parse identifiers.
+@* Usage of identifiers.
 The following code is performed for each identifier parsed during
 a section. Variable |top_usage| is always nonzero; it has the sentinel
 value~1 initially, then it points to each variable scheduled for
@@ -1281,7 +1281,9 @@ out_mini(
 @ @<Predec...@>=@+static void out_mini(meaning_struct *);
 
 @q Section 272->299. @>
-@ @<Mini-output...@>=
+@ Compare this code with section |@<Output the name...@>|.
+
+@<Mini-output...@>=
 switch (cur_name->ilk) {@+char *j;
   case normal: case func_template:
     if (is_tiny(cur_name)) out_str("\\|");
@@ -1343,7 +1345,7 @@ It advances |loc| past the title found.
 @q Section 301. @>
 @ @<Predec...@>=@+static sixteen_bits title_lookup(void);
 
-@q Section 29->303. @>
+@q Section 29->302. @>
 @ @<Give a default title to the program, if necessary@>=
 if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
   char *saveloc=loc,*savelimit=limit;
@@ -1356,7 +1358,7 @@ if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
   loc=saveloc; limit=savelimit;
 }
 
-@q Section 304. @>
+@q Section 303. @>
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
 improved features that have been created by numerous contributors over the
 course of a quarter century.
