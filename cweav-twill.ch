@@ -1034,11 +1034,7 @@ new_meaning(
   fprintf(aux_file," %s@@>\n",q->perm.tex_part);
 }
 
-@q Section 43. @>
-@ @<Private...@>=
-static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
-
-@q Section 75->284. @>
+@q Section 75->283. @>
 @ @<Process a user-generated meaning@>=
 { char *first=id_first;
   while (xisspace(*first)) first++;
@@ -1058,7 +1054,7 @@ static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
   loc=id_loc+2;
 }
 
-@q Section 76->285. @>
+@q Section 76->284. @>
 @ @<Suppress mini-index entry@>=
 { char *first=id_first,*last=id_loc;
   while (xisspace(*first)) first++;
@@ -1069,7 +1065,7 @@ static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
   }
 }
 
-@q Section 77->286. @>
+@q Section 77->285. @>
 @ @<Digest...@>=
 { meaning_struct *m;
   struct perm_meaning *q=p-name_dir+cur_meaning;
@@ -1092,13 +1088,16 @@ static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
   }
 }
 
-@q Section 141->287. @>
+@q Section 141->286/7. @>
 @ \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may
 appear between parentheses or brackets. The calling routine should set
 |ident_seen=false| first. (This is admittedly tricky.)
 
-@c static boolean ident_seen;
+@<Private var...@>=
+static boolean ident_seen;
+
+@ @c
 static boolean app_supp(
   text_pointer p)
 { token_pointer j;
@@ -1160,7 +1159,11 @@ make_ministring(
 @q Section 290. @>
 @ @<Predec...@>=@+static void make_ministring(int);
 
-@q Section 143->291. @>
+@q Section 43->291. @>
+@ @<Private...@>=
+static sixteen_bits int_loc, ext_loc; /* locations of special reserved words */
+
+@q Section 143->292. @>
 @ Here we use the fact that a |decl_head| comes from |int_like| only in
 production~27, whose translation is fairly easy to recognize. (Well,
 production 28 has been added for \CPLUSPLUS/, but we hope that doesn't
@@ -1201,7 +1204,7 @@ else {
   @<Append tokens for type |q|@>@;
 }
 
-@q Section 144->292. @>
+@q Section 144->293. @>
 @ @<Append tokens for type |q|@>=
 cur_mathness=no_math; /* it was |maybe_math| */
 if (*(q+1)==*q+8 && *(*q+1)==' ' && *(*q+3)==' ') {
@@ -1213,12 +1216,12 @@ while (ast_count) {
   big_app('{');@+app('*');@+app('}');@+ast_count--;
 }
 
-@q Section 246->293. @>
+@q Section 246->294. @>
 @ @<Private...@>=
 static FILE *aux_file;
 static char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
-@q Section 247->294. @>
+@q Section 247->295. @>
 @ @<Read the \.{.aux} file, if present; then open it for output@>=
 memcpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
 strcat(aux_file_name,".bux");
@@ -1239,13 +1242,13 @@ if (include_depth) { /* at least one new file was opened */
 if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
   fatal(_("! Cannot open aux output file "),aux_file_name);
 
-@q Section 253->295. @>
+@q Section 253->296. @>
 @ @<Private...@>=
 static boolean is_macro; /* it's a macro def, not a format def */
 static int def_diff; /* 0 iff the current macro has parameters */
 static name_pointer id_being_defined; /* the definee */
 
-@q Section 257->296. @>
+@q Section 257->297. @>
 @ @<Make ministring for a new macro@>=
 {
   ms_mode=true; ministring_ptr=ministring_buf;
@@ -1263,7 +1266,7 @@ static name_pointer id_being_defined; /* the definee */
   new_meaning(id_being_defined);
 }
 
-@q Section 268->297. @>
+@q Section 268->298. @>
 @ The following code is performed for each identifier parsed during
 a section. Variable |top_usage| is always nonzero; it has the sentinel
 value~1 initially, then it points to each variable scheduled for
@@ -1278,7 +1281,7 @@ placed on the list, unless they are reserved and their current
     if (q->link==0) q->link=top_usage, top_usage=q;
 }
 
-@q Section 269->298. @>
+@q Section 269->299. @>
 @ @<Output information about usage of id's defined in other sections@>=
 { struct perm_meaning *q;
   while (temp_meaning_ptr>temp_meaning_stack) {
@@ -1294,7 +1297,7 @@ placed on the list, unless they are reserved and their current
   }
 }
 
-@q Section 270->299. @>
+@q Section 270->300. @>
 @ @c static void
 out_mini(
   meaning_struct *m)
@@ -1313,10 +1316,10 @@ out_mini(
   out(' '); out_str(m->tex_part); finish_line();
 }
 
-@q Section 271->300. @>
+@q Section 271->301. @>
 @ @<Predec...@>=@+static void out_mini(meaning_struct *);
 
-@q Section 272->301. @>
+@q Section 272->302. @>
 @ @<Mini-output...@>=
 switch (cur_name->ilk) {@+char *j;
   case normal: case func_template:
@@ -1348,7 +1351,7 @@ lowcase: out_str("\\\\");
 out_name(cur_name,true);
 name_done:@;
 
-@q Section 302. @>
+@q Section 303. @>
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
 improved features that have been created by numerous contributors over the
 course of a quarter century.
