@@ -1174,14 +1174,38 @@ while (ast_count) {
   big_app('{');@+app('*');@+app('}');@+ast_count--;
 }
 
-@q Section 246->291. @>
+@q Section 253->291. @>
+@ @<Private...@>=
+static boolean is_macro; /* it's a macro def, not a format def */
+static boolean def_diff; /* |false| iff the current macro has parameters */
+static name_pointer id_being_defined; /* the definee */
+
+@q Section 257->292. @>
+@ @<Make ministring for a new macro@>=
+{
+  ms_mode=true; ministring_ptr=ministring_buf;
+  *ministring_ptr++='=';
+  if (def_diff) { /* parameterless */
+    scrap_pointer s=scrap_ptr;
+    text_pointer t;
+    token_pointer j;
+    while (s->cat==insert) s--;
+    if ((s-1)->cat==dead && s->cat==exp && **(t=s->trans)=='\\'
+         && *(*t+1)=='T') /* it's just a constant */
+      for (j=*t;j<*(t+1);j++) *ministring_ptr++=*j;
+    else out_str("macro");
+  } else out_str("macro (\\,)");
+  new_meaning(id_being_defined);
+}
+
+@q Section 246->293. @>
 @* Process {\tentex .aux} files.
 
 @<Private...@>=
 static FILE *aux_file;
 static char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
-@q Section 247->292. @>
+@q Section 247->294. @>
 @ @<Read the \.{.aux} file, if present; then open it for output@>=
 memcpy(aux_file_name,tex_file_name,strlen(tex_file_name)-4);
 strcat(aux_file_name,".bux");
@@ -1201,30 +1225,6 @@ if (include_depth) { /* at least one new file was opened */
 }
 if ((aux_file=fopen(aux_file_name,"wb"))==NULL)
   fatal(_("! Cannot open aux output file "),aux_file_name);
-
-@q Section 253->293. @>
-@ @<Private...@>=
-static boolean is_macro; /* it's a macro def, not a format def */
-static boolean def_diff; /* |false| iff the current macro has parameters */
-static name_pointer id_being_defined; /* the definee */
-
-@q Section 257->294. @>
-@ @<Make ministring for a new macro@>=
-{
-  ms_mode=true; ministring_ptr=ministring_buf;
-  *ministring_ptr++='=';
-  if (def_diff) { /* parameterless */
-    scrap_pointer s=scrap_ptr;
-    text_pointer t;
-    token_pointer j;
-    while (s->cat==insert) s--;
-    if ((s-1)->cat==dead && s->cat==exp && **(t=s->trans)=='\\'
-         && *(*t+1)=='T') /* it's just a constant */
-      for (j=*t;j<*(t+1);j++) *ministring_ptr++=*j;
-    else out_str("macro");
-  } else out_str("macro (\\,)");
-  new_meaning(id_being_defined);
-}
 
 @q Section 268->295. @>
 @ The following code is performed for each identifier parsed during
