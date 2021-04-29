@@ -1540,6 +1540,16 @@ Section 311.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
+Section 321.
+
+@x
+@ Compare this code with section |@<Output the name...@>|.
+
+@<Mini-output...@>=
+@y
+@ @<Mini-output...@>=
+@z
+
 Section 333.
 
 @x
