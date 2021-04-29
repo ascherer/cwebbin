@@ -146,7 +146,7 @@ Section 22.
 @-x@>
 @z
 
-Section 29.
+Section 25.
 
 @x
 @ A new cross-reference for an identifier is formed by calling |new_xref|,
@@ -1370,7 +1370,7 @@ Section 278.
 @x
 $|collate|[0]<|collate|[1]<\cdots<|collate|[100]$.
 @y
-|collate[0]| $<$|collate[1]|$<\cdots<$|collate[100]|.
+|collate[0]| ${}<{}$|collate[1]|${}<\cdots<{}$|collate[100]|.
 @z
 
 Section 280.
