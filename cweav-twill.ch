@@ -953,7 +953,10 @@ max_temp_meaning_ptr=temp_meaning_stack;
 title_code_ptr=title_code;
 ms_mode=false;
 
-@q Section 30->277. @>
+@q Section 277. @>
+@ @<Predec...@>=@+static void new_meaning(name_pointer);
+
+@q Section 30->278. @>
 @ The |new_meaning| routine changes the current ``permanent meaning''
 when an identifier is redeclared. It gets the |tex_part| from
 |ministring_buf|.
@@ -977,9 +980,6 @@ new_meaning(
   }
   @<Write the new meaning to the \.{.aux} file@>@;
 }
-
-@q Section 278. @>
-@ @<Predec...@>=@+static void new_meaning(name_pointer);
 
 @q Section 75->279. @>
 @ @<Process a user-generated meaning@>=
