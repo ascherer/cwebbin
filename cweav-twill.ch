@@ -1046,7 +1046,8 @@ new_meaning(
 }
 
 @q Section 141->283/4. @>
-@ \.{CTWILL} needs the following procedure, which appends tokens of a
+@* Make ministrings.
+ \.{CTWILL} needs the following procedure, which appends tokens of a
 translated text until coming to |tok_loc|, then suppresses text that may
 appear between parentheses or brackets. The calling routine should set
 |ident_seen=false| first. (This is admittedly tricky.)
@@ -1174,7 +1175,9 @@ while (ast_count) {
 }
 
 @q Section 246->291. @>
-@ @<Private...@>=
+@* Process {\tentex .aux} files.
+
+@<Private...@>=
 static FILE *aux_file;
 static char aux_file_name[max_file_name_length]; /* name of \.{.aux} file */
 
