@@ -1202,7 +1202,7 @@ strcat(aux_file_name,".bux");
 include_depth=1; /* we simulate \.{@@i} */
 strcpy(cur_file_name,aux_file_name); /* first in, third out */
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
-strcpy(aux_file_name+strlen(aux_file_name)-4,".aux");
+strcpy(aux_file_name+strlen(aux_file_name)-4,".aux");@/
 strcpy(cur_file_name,aux_file_name); /* second in, second out */
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
 strcpy(cur_file_name,"system.bux"); /* third in, first out */
