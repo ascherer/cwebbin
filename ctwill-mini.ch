@@ -1342,8 +1342,11 @@ Section 260.
 
 @x
 |next_control>=begin_C|. We will make the global variable |this_section|
+point to the current section name, if it has a name.
 @y
-\hfil\break|next_control>=begin_C|. We will make the global variable |this_section|
+\hfil\break|next_control>=begin_C|.
+We will make the global variable |this_section| point to
+\hfil\break the current section name, if it has a name.
 @z
 
 Section 273.
