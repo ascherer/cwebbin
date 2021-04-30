@@ -56,8 +56,7 @@ be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the result...@>=
 if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
-  char x[BUFSIZ],y[BUFSIZ];
-  int x_size,y_size,comparison=false;
+  boolean comparison=false;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file ",check_file_name);
@@ -78,8 +77,9 @@ strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 
 @<Compare the temporary output to the previous output@>=
 do {
-  x_size = fread(x,1,BUFSIZ,tex_file);
-  y_size = fread(y,1,BUFSIZ,check_file);
+  char x[BUFSIZ],y[BUFSIZ];
+  int x_size = fread(x,1,BUFSIZ,tex_file);
+  int y_size = fread(y,1,BUFSIZ,check_file);
   comparison = (x_size == y_size); /* Do not merge these statements! */
   if(comparison) comparison = !memcmp(x,y,x_size);
 } while(comparison && !feof(tex_file) && !feof(check_file));
