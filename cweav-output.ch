@@ -80,8 +80,7 @@ do {
   char x[BUFSIZ],y[BUFSIZ];
   int x_size = fread(x,sizeof(char),BUFSIZ,tex_file);
   int y_size = fread(y,sizeof(char),BUFSIZ,check_file);
-  comparison = (x_size == y_size); /* Do not merge these statements! */
-  if(comparison) comparison = !memcmp(x,y,x_size);
+  comparison = (x_size == y_size) && !memcmp(x,y,x_size);
 } while(comparison && !feof(tex_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
