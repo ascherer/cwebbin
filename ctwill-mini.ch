@@ -65,6 +65,15 @@ Section 4.
 @-HAVE_GETTEXT@>
 @z
 
+Section 5.
+
+@x
+@d compress(c) if (loc++<=limit) return c
+@y
+@d compress(c) if (loc++<=limit) return c
+@-c@>
+@z
+
 Section 6.
 
 @x
@@ -126,6 +135,8 @@ Section 20.
 @y
 @* Data structures exclusive to {\tt CWEAVE}.
 @-a@>
+@-ilk@>
+@$ilk {CTWILL (Version 4.4 [\TeX~Live])}20 =\\{dummy}.\\{Ilk}@>
 @z
 
 Section 21.
@@ -154,6 +165,7 @@ Section 25.
 @ A new cross-reference for an identifier is formed by calling |new_xref|,
 @-a@>
 @-c@>
+@-p@>
 @z
 
 Section 37.
@@ -162,6 +174,15 @@ Section 37.
 @ Control codes are converted to \.{CWEAVE}'s internal
 @y
 @r @ Control codes are converted to \.{CWEAVE}'s internal
+@z
+
+Section 41.
+
+@x
+    if (loc++ <=limit) { int c=ccode[(eight_bits)*loc++];
+@y
+    if (loc++ <=limit) { int c=ccode[(eight_bits)*loc++];
+@-c@>
 @z
 
 Section 43.
@@ -196,16 +217,10 @@ Section 44.
 @y
 @ As one might expect, |get_next| consists mostly of a big switch
 @-c@>
+@$c {CTWILL (Version 4.4 [\TeX~Live])}44 \&{eight\_bits}@>
 @z
 
 Section 51.
-
-@x
-@ The following code assigns values to the combinations \.{++},
-@y
-@ The following code assigns values to the combinations \.{++},
-@-c@>
-@z
 
 @x
               if (*(loc+1)=='*') {loc++;@+compress(minus_gt_ast);}
@@ -242,6 +257,15 @@ Section 52.
   id_loc=loc;@/
   return identifier;
 }
+@z
+
+Section 53.
+
+@x
+@d gather_digits_while(t) while (t || *loc=='\'')
+@y
+@d gather_digits_while(t) while (t || *loc=='\'')
+@-t@>
 @z
 
 Section 55.
