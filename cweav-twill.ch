@@ -1351,14 +1351,14 @@ It advances |loc| past the title found.
 @q Section 29->302. @>
 @ @<Give a default title to the program, if necessary@>=
 if (title_code_ptr==title_code) { /* no \.{\\def\\title} found in limbo */
-  char *saveloc=loc,*savelimit=limit;
+  char *saveloc=loc,*savelimit=limit; /* save */
   loc=limit+1; limit=loc;
   *limit++='{';
   memcpy(limit,tex_file_name,strlen(tex_file_name)-4);
   limit+=strlen(tex_file_name)-4;
   *limit++='}';
-  title_lookup();
-  loc=saveloc; limit=savelimit;
+  title_lookup();@/
+  loc=saveloc; limit=savelimit; /* restore */
 }
 
 @q Section 303. @>
