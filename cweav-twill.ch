@@ -1239,7 +1239,10 @@ placed on the list, unless they are reserved and their current
 @<Flag the usage of this identifier, for the mini-index@>=
 { struct perm_meaning *q=p-name_dir+cur_meaning;
   if (!(abnormal(p)) || strcmp(q->perm.tex_part,"\\uninitialized")!=0)
-    if (q->link==0) q->link=top_usage, top_usage=q;
+    if (q->link==NULL) {
+      q->link=top_usage;
+      top_usage=q;
+    }
 }
 
 @q Section 269->296. @>
