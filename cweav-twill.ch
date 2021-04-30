@@ -428,7 +428,7 @@ if (cat1==define_like) make_underlined(pp+2);
 if (cat1==define_like) { /* \#\&{define} is analogous to \&{extern} */
   make_underlined(pp+2);
   if (tok_loc>operator_found) {
-    /* no time to work out this case; I'll handle defines by brute force
+    /* no time to work out this case; I'll handle \&{define}s by brute force
        in the \.{aux} file, since they usually don't go in mini-index */
   }
 }
