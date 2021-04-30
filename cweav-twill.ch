@@ -1049,15 +1049,11 @@ static boolean ident_seen;
 static boolean app_supp(
   text_pointer p)
 { token_pointer j;
-  if (ident_seen && **p>=tok_flag) {
-    text_pointer q=**p-tok_flag+tok_start;
-    if (**q=='(') {
-      app('(');@+app('\\');@+app(',');@+app(')'); goto catch14;
+  if (ident_seen && **p>=tok_flag)
+    switch (**(**p-tok_flag+tok_start)) {
+    case '(': app('(');@+app('\\');@+app(',');@+app(')'); goto catch14;
+    case '[': app('[');@+app('\\');@+app(',');@+app(']'); goto catch14;
     }
-    if (**q=='[') {
-      app('[');@+app('\\');@+app(',');@+app(']'); goto catch14;
-    }
-  }
   for (j=*p;j<*(p+1);j++) {
     if (*j<tok_flag) {
       if (*j==inserted) break;
