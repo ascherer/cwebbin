@@ -78,8 +78,8 @@ strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 @<Compare the temporary output to the previous output@>=
 do {
   char x[BUFSIZ],y[BUFSIZ];
-  int x_size = fread(x,1,BUFSIZ,tex_file);
-  int y_size = fread(y,1,BUFSIZ,check_file);
+  int x_size = fread(x,sizeof(char),BUFSIZ,tex_file);
+  int y_size = fread(y,sizeof(char),BUFSIZ,check_file);
   comparison = (x_size == y_size); /* Do not merge these statements! */
   if(comparison) comparison = !memcmp(x,y,x_size);
 } while(comparison && !feof(tex_file) && !feof(check_file));
