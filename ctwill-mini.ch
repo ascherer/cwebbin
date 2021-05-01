@@ -176,7 +176,7 @@ Section 17.
 @y
 @d long_buf_size (buf_size+longest_name) /* for \.{CWEAVE} */
 @-long_buf_size@>
-@$long_buf_size {CTWILL (Version 4.4 [\TeX~Live])}17 =$(\\{buf\_size}+\\{longest\_name})$@>
+@$long_buf_size {CTWILL (Version 4.4 [\TeX~Live])}17 =$\\{buf\_size}+\\{longest\_name}$@>
 @z
 
 Section 20.
@@ -216,8 +216,8 @@ Section 24.
 @-file_flag@>
 @-def_flag@>
 @-xref@>
-@$file_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$(\T{3}*\\{cite\_flag}{})$@>
-@$def_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$(\T{2}*\\{cite\_flag}{})$@>
+@$file_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$\T{3}*\\{cite\_flag}{}$@>
+@$def_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$\T{2}*\\{cite\_flag}{}$@>
 @$xref {CTWILL (Version 4.4 [\TeX~Live])}24 =\\{equiv\_or\_xref}@>
 @d file_flag (3*cite_flag)
 @z
@@ -232,7 +232,7 @@ Section 25.
 @-c@>
 @-p@>
 @-no_xref@>
-@$no_xref {CTWILL (Version 4.4 [\TeX~Live])}25 =$(\R\\{make\_xrefs})$@>
+@$no_xref {CTWILL (Version 4.4 [\TeX~Live])}25 =$\R\\{make\_xrefs}$@>
 @z
 
 Section 36.
