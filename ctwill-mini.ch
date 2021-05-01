@@ -904,6 +904,16 @@ Section 128.
 @$trans {CTWILL (Version 4.4 [\TeX~Live])}128 =\\{trans\_plus}.\\{Trans}@>
 @z
 
+Section 129.
+
+@x
+null_scrap.trans=&tok_start[0];
+scrap_base=scrap_info+1;
+@y
+null_scrap.trans=&tok_start[0];@/
+scrap_base=scrap_info+1;@/
+@z
+
 Section 130.
 
 @x

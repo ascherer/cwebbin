@@ -225,9 +225,14 @@ print_text( /* prints a token list for debugging; not used in |main| */
 @y
 @d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
 
-@c
+@ @<Predecl...@>=
 #if 0
-@t\4\4@>static void
+static void print_text(text_pointer p);
+#endif
+
+@ @c
+#if 0
+static void
 print_text( /* prints a token list for debugging; not used in |main| */
 @z
 
@@ -241,10 +246,6 @@ print_text( /* prints a token list for debugging; not used in |main| */
 @x l.2264
 @ @<Predecl...@>=@+static void print_text(text_pointer p);
 @y
-@ @<Predecl...@>=
-#if 0
-static void print_text(text_pointer p);
-#endif
 @z
 
 Addendum.
