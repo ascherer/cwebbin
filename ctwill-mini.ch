@@ -1814,6 +1814,27 @@ Section 311.
    @|&& *(*r+1)=='{') app(**q); /* |struct_like| identifier */
 @z
 
+Section 316.
+
+@x
+@ @<Write the new meaning to the \.{.aux} file@>=
+@y
+@ @<Write the new meaning to the \.{.aux} file@>=
+@%
+@$p {CTWILL (Version 4.4 [\TeX~Live])}300 \&{name\_pointer}@>
+@$q {CTWILL (Version 4.4 [\TeX~Live])}300 \&{struct perm\_meaning} ${}{*}{}$@>
+@z
+
+Section 317.
+
+@x
+@<Flag the usage of this identifier, for the mini-index@>=
+@y
+@<Flag the usage of this identifier, for the mini-index@>=
+@%
+@$p {CTWILL (Version 4.4 [\TeX~Live])}222 \&{name\_pointer}@>
+@z
+
 Section 321.
 
 @x
