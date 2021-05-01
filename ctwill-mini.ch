@@ -785,6 +785,16 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
+Section 128.
+
+@x
+@ @d trans trans_plus.Trans /* translation texts of scraps */
+@y
+@ @d trans trans_plus.Trans /* translation texts of scraps */
+@-trans@>
+@$trans {CTWILL (Version 4.4 [\TeX~Live])}130 =\\{trans\_plus}.\\{Trans}@>
+@z
+
 Section 130.
 
 @x
@@ -792,6 +802,14 @@ Section 130.
 @y
 @ Token lists in |@!tok_mem| are composed of the following kinds of
 @-p@>
+@-res_flag@>
+@-section_flag@>
+@-tok_flag@>
+@-inner_tok_flag@>
+@$res_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{2}*\\{id\_flag}$@>
+@$section_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{3}*\\{id\_flag}$@>
+@$tok_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{3}*\\{id\_flag}$@>
+@$inner_tok_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{4}*\\{id\_flag}$@>
 @z
 
 Section 133.
@@ -826,6 +844,12 @@ Section 137--138.
 @ Let us consider the big switch for productions now, before looking
 @y
 @r @ Let us consider the big switch for productions now, before looking
+@-cat1@>
+@-cat2@>
+@-cat3@>
+@$cat1 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{1})\MG\\{cat}$@>
+@$cat2 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{2})\MG\\{cat}$@>
+@$cat3 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{3})\MG\\{cat}$@>
 @z
 
 @x
@@ -971,6 +995,12 @@ more properly alpha\-betized,
 should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
 (or, properly alpha\-betized,
 `\.{@@!@@:operator+=\}\{\\\&\{operator\}} \.{\$+\{=\}\$@@>}').
+@-no_ident_found@>
+@-case_found@>
+@-operator_found@>
+@$no_ident_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 0@>
+@$case_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 1@>
+@$operator_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 2@>
 @z
 
 Section 141.
