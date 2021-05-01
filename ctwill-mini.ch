@@ -792,7 +792,7 @@ Section 128.
 @y
 @ @d trans trans_plus.Trans /* translation texts of scraps */
 @-trans@>
-@$trans {CTWILL (Version 4.4 [\TeX~Live])}130 =\\{trans\_plus}.\\{Trans}@>
+@$trans {CTWILL (Version 4.4 [\TeX~Live])}128 =\\{trans\_plus}.\\{Trans}@>
 @z
 
 Section 130.
