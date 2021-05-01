@@ -384,6 +384,14 @@ Section 63.
 Section 72.
 
 @x
+C_xref( /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl)
+@y
+C_xref(eight_bits spec_ctrl)
+  /* makes cross-references for \CEE/ identifiers */
+@z
+
+@x
     if (next_control=='|' || next_control==begin_comment ||
         next_control==begin_short_comment) return;
 @y
