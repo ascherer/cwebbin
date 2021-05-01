@@ -816,6 +816,8 @@ The code below is an exact translation of the production rules into
 @y
 @r @ The code below is an exact translation of the production rules into
 @-a@>
+@-c@>
+@-p@>
 @z
 
 Section 137--138.
@@ -984,12 +986,30 @@ We use the fact that |make_underlined| has been called immediately preceding
 |make_reserved|, hence |tok_loc| has been set.
 @z
 
+@x
+make_reserved( /* make the first identifier in |p->trans| like |int| */
+scrap_pointer p)
+@y
+make_reserved(scrap_pointer p)
+  /* make the first identifier in |p->trans| like |int| */
+@z
+
 Section 142.
 
 @x
 @ In the following situations we want to mark the occurrence of
 @y
 @r @ In the following situations we want to mark the occurrence of
+@z
+
+@x
+make_underlined(
+/* underline the entry for the first identifier in |p->trans| */
+scrap_pointer p)
+@y
+make_underlined(
+scrap_pointer p)
+/* underline the entry for the first identifier in |p->trans| */
 @z
 
 Section 151.
