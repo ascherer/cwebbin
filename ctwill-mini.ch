@@ -1795,7 +1795,9 @@ Section 307.
 @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
 @y
 @r @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@-a@>
 @-b@>
+@-c@>
 @z
 
 Section 311.
