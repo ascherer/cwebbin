@@ -330,6 +330,7 @@ Section 86.
 @ The |flush_buffer| routine empties the buffer up to a given breakpoint,
 @y
 @ The |flush_buffer| routine empties the buffer up to a given breakpoint,
+@-b@>
 @-c@>
 @z
 
@@ -348,6 +349,7 @@ Section 90.
 @y
 @ When we wish to append one character |c| to the output buffer, we write
 @-c@>
+@-s@>
 @z
 
 Section 100.
@@ -471,6 +473,7 @@ Sections 118--126.
 @ Here is a table of all the productions.  Each production that
 @y
 @* Table of all productions.  Each production that
+@-time@>
 @z
 
 TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
@@ -480,6 +483,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @y
 \newcount\prodno \newdimen\midcol \let\+\relax
 @z
+
+Section 119.
 
 @x l.78
 \+& |lpar| |rpar| & |exp| \hfill $L\.{\\,}R$ & functions, declarations\cr
@@ -512,6 +517,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
 @z
 
+Section 120.
+
 @x l.45
          |int_like| \alt|raw_int| |struct_like| & |extern "Ada" int|\cr
 @y
@@ -542,13 +549,15 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
 @z
 
+Section 121.
+
 @x l.75
               \&{struct} \&{name\_info} $\{$\cr
 @y
               \&{struct} \&{name\_info} $\{$\cr
 \endgroup
 
-@r @ Cont.@-z@>@-in@>
+@r @ Cont.@-z@>@-in@>@-x@>
 \begingroup \lineskip=4pt
 \def\alt #1 #2
 {$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
@@ -561,7 +570,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \def\maltt #1 #2 #3
 {$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
-\yskip@-in@>
+\yskip@-in@>@-x@>
 \prodno=47 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
@@ -571,6 +580,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \ignorespaces#2\hfil\hbox to\midcol{$\RA$
   \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
 @z
+
+Section 122.
 
 @x l.164
        $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & $\!\!$|else x=0;|\cr
@@ -603,6 +614,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 \advance\midcol20pt
 @z
 
+Section 123.
+
 @x l.211
 \+& |prerangle| & |binop| \hfill \.> & $>$ not in template\cr
 @y
@@ -633,6 +646,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
 @z
 
+Section 124.
+
 @x l.232
 \+\dagit& |new_exp| & |exp| & |new int;|\cr
 @y
@@ -645,6 +660,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @-likely@>
 @-nodiscard@>
 @-unlikely@>
+@-s@>
 \begingroup \lineskip=4pt
 \def\alt #1 #2
 {$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
@@ -682,6 +698,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @y
 @z
 
+Section 125.
+
 @x l.291
 \+& |exp| |attr| & |attr| \hfill $E\.\ A$ & \&{enum} $\{x\ [[\ldots]]\}$ \cr
 @y
@@ -694,6 +712,7 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
 @-likely@>
 @-nodiscard@>
 @-unlikely@>
+@-y@>
 \begingroup \lineskip=4pt
 \def\alt #1 #2
 {$\displaystyle\Bigl\{\!\matrix{\strut\hbox{#1}\cr
@@ -717,6 +736,8 @@ TeX reports 'extra \fi' when running on twilled 'ctwill.w'.
   \ignorespaces#3\hfil}\quad \hbox to1.45in{\ignorespaces#4\hfil}}}
 \advance\midcol20pt
 @z
+
+Section 126.
 
 @x l.326
 \+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
