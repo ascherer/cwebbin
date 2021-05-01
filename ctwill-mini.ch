@@ -998,9 +998,9 @@ should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
 @-no_ident_found@>
 @-case_found@>
 @-operator_found@>
-@$no_ident_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 0@>
-@$case_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 1@>
-@$operator_found {CTWILL (Version 4.4 [\TeX~Live])}139 =(\&{token\_pointer}) 2@>
+@$no_ident_found {CTWILL (Version 4.4 [\TeX~Live])}139 \hfil\break=(\&{token\_pointer}) 0@>
+@$case_found {CTWILL (Version 4.4 [\TeX~Live])}139 \hfil\break=(\&{token\_pointer}) 1@>
+@$operator_found {CTWILL (Version 4.4 [\TeX~Live])}139 \hfil\break=(\&{token\_pointer}) 2@>
 @z
 
 Section 141.
