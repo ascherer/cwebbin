@@ -305,7 +305,7 @@ Section 46.
 @d left_preproc ord /* begins a preprocessor command */
 @y
 @-left_preproc@>
-@$left_preproc {CTWILL (Version 4.4 [\TeX~Live])}46 \\{ord}@>
+@$left_preproc {CTWILL (Version 4.4 [\TeX~Live])}46 =\\{ord}@>
 @d left_preproc ord /* begins a preprocessor command */
 @z
 
