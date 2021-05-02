@@ -214,7 +214,7 @@ Sections 3--18.
 @i comm-foo.h
 @z
 
-Sections 112--113.
+Sections 116--117.
 
 @x l.2237
 @d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
