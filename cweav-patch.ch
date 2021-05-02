@@ -232,7 +232,7 @@ static void print_text(text_pointer p);
 
 @ @c
 #if 0
-static void
+@t\4\4@>static void
 print_text( /* prints a token list for debugging; not used in |main| */
 @z
 
