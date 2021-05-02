@@ -41,7 +41,7 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 \bigskip
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @-banner@>
-@$banner {CTWILL (Version 4.4 [\TeX~Live])}1 =\.{"This\ is\ CTWILL"}@>
+@$banner {CTWILL}1 =\.{"This\ is\ CTWILL"}@>
 @z
 
 Section 2.
@@ -51,8 +51,8 @@ Section 2.
 @y
 @r @ \.{CWEAVE} has a fairly straightforward outline.  It operates in
 @%
-@$show_banner {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'b'}]@>
-@$show_progress {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'p'}]@>
+@$show_banner {CTWILL}14 =\\{flags}[\.{'b'}]@>
+@$show_progress {CTWILL}14 =\\{flags}[\.{'p'}]@>
 @z
 
 Section 4.
@@ -97,9 +97,9 @@ Section 7.
 @-cur_file@>
 @-cur_file_name@>
 @-cur_line@>
-@$cur_file {CTWILL (Version 4.4 [\TeX~Live])}7 =\\{file}[\\{include\_depth}]@>
-@$cur_file_name {CTWILL (Version 4.4 [\TeX~Live])}7 =\hfil\break\\{file\_name}[\\{include\_depth}]@>
-@$cur_line {CTWILL (Version 4.4 [\TeX~Live])}7 =\\{line}[\\{include\_depth}]@>
+@$cur_file {CTWILL}7 =\\{file}[\\{include\_depth}]@>
+@$cur_file_name {CTWILL}7 =\hfil\break\\{file\_name}[\\{include\_depth}]@>
+@$cur_line {CTWILL}7 =\\{line}[\\{include\_depth}]@>
 @z
 
 Section 10.
@@ -112,9 +112,9 @@ Section 10.
 @-llink@>
 @-rlink@>
 @-root@>
-@$llink {CTWILL (Version 4.4 [\TeX~Live])}10 =\\{link}@>
-@$rlink {CTWILL (Version 4.4 [\TeX~Live])}10 =\\{dummy}.\\{Rlink}@>
-@$root {CTWILL (Version 4.4 [\TeX~Live])}10 =\\{name\_dir}$\MG$\\{rlink}@>
+@$llink {CTWILL}10 =\\{link}@>
+@$rlink {CTWILL}10 =\\{dummy}.\\{Rlink}@>
+@$root {CTWILL}10 =\\{name\_dir}$\MG$\\{rlink}@>
 @z
 
 Section 12.
@@ -138,12 +138,12 @@ extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
 @-show_stats@>
 @-make_xrefs@>
 @-check_for_change@>
-@$show_banner {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'b'}]@>
-@$show_progress {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'p'}]@>
-@$show_happiness {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'h'}]@>
-@$show_stats {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'s'}]@>
-@$make_xrefs {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'x'}]@>
-@$check_for_change {CTWILL (Version 4.4 [\TeX~Live])}14 =\\{flags}[\.{'c'}]@>
+@$show_banner {CTWILL}14 =\\{flags}[\.{'b'}]@>
+@$show_progress {CTWILL}14 =\\{flags}[\.{'p'}]@>
+@$show_happiness {CTWILL}14 =\\{flags}[\.{'h'}]@>
+@$show_stats {CTWILL}14 =\\{flags}[\.{'s'}]@>
+@$make_xrefs {CTWILL}14 =\\{flags}[\.{'x'}]@>
+@$check_for_change {CTWILL}14 =\\{flags}[\.{'c'}]@>
 @z
 
 Section 15.
@@ -157,8 +157,8 @@ Section 15.
 @-c@>
 @-update_terminal@>
 @-new_line@>
-@$update_terminal {CTWILL (Version 4.4 [\TeX~Live])}15 =\\{fflush}(\\{stdout})@>
-@$new_line {CTWILL (Version 4.4 [\TeX~Live])}15 =\\{putchar}(\.{'\\n'})@>
+@$update_terminal {CTWILL}15 =\\{fflush}(\\{stdout})@>
+@$new_line {CTWILL}15 =\\{putchar}(\.{'\\n'})@>
 @z
 
 Section 16.
@@ -176,7 +176,7 @@ Section 17.
 @y
 @d long_buf_size (buf_size+longest_name) /* for \.{CWEAVE} */
 @-long_buf_size@>
-@$long_buf_size {CTWILL (Version 4.4 [\TeX~Live])}17 =$\\{buf\_size}+\\{longest\_name}$@>
+@$long_buf_size {CTWILL}17 =$\\{buf\_size}+\\{longest\_name}$@>
 @z
 
 Section 20.
@@ -187,7 +187,7 @@ Section 20.
 @* Data structures exclusive to {\tt CWEAVE}.
 @-a@>
 @-ilk@>
-@$ilk {CTWILL (Version 4.4 [\TeX~Live])}20 =\\{dummy}.\\{Ilk}@>
+@$ilk {CTWILL}20 =\\{dummy}.\\{Ilk}@>
 @z
 
 Section 21.
@@ -216,9 +216,9 @@ Section 24.
 @-file_flag@>
 @-def_flag@>
 @-xref@>
-@$file_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$\T{3}*\\{cite\_flag}{}$@>
-@$def_flag {CTWILL (Version 4.4 [\TeX~Live])}24 =$\T{2}*\\{cite\_flag}{}$@>
-@$xref {CTWILL (Version 4.4 [\TeX~Live])}24 =\\{equiv\_or\_xref}@>
+@$file_flag {CTWILL}24 =$\T{3}*\\{cite\_flag}{}$@>
+@$def_flag {CTWILL}24 =$\T{2}*\\{cite\_flag}{}$@>
+@$xref {CTWILL}24 =\\{equiv\_or\_xref}@>
 @d file_flag (3*cite_flag)
 @z
 
@@ -232,7 +232,7 @@ Section 25.
 @-c@>
 @-p@>
 @-no_xref@>
-@$no_xref {CTWILL (Version 4.4 [\TeX~Live])}25 =$\R\\{make\_xrefs}$@>
+@$no_xref {CTWILL}25 =$\R\\{make\_xrefs}$@>
 @z
 
 Section 36.
@@ -243,8 +243,8 @@ Section 36.
 @d underline '\n' /* this code will be intercepted without confusion */
 @-begin_comment@>
 @-underline@>
-@$begin_comment {CTWILL (Version 4.4 [\TeX~Live])}36 =\.{'\\t'}@>
-@$underline {CTWILL (Version 4.4 [\TeX~Live])}36 =\.{'\\n'}@>
+@$begin_comment {CTWILL}36 =\.{'\\t'}@>
+@$underline {CTWILL}36 =\.{'\\n'}@>
 @z
 
 Section 37.
@@ -296,7 +296,7 @@ Section 44.
 @y
 @ As one might expect, |get_next| consists mostly of a big switch
 @-c@>
-@$c {CTWILL (Version 4.4 [\TeX~Live])}44 \&{eight\_bits}@>
+@$c {CTWILL}44 \&{eight\_bits}@>
 @z
 
 Section 46.
@@ -305,7 +305,7 @@ Section 46.
 @d left_preproc ord /* begins a preprocessor command */
 @y
 @-left_preproc@>
-@$left_preproc {CTWILL (Version 4.4 [\TeX~Live])}46 =\\{ord}@>
+@$left_preproc {CTWILL}46 =\\{ord}@>
 @d left_preproc ord /* begins a preprocessor command */
 @z
 
@@ -430,7 +430,7 @@ Section 86.
 @-b@>
 @-c@>
 @-tex_new_line@>
-@$tex_new_line {CTWILL (Version 4.4 [\TeX~Live])}86 =$\\{putc}(\.{'\\n'},\39\\{active\_file})$@>
+@$tex_new_line {CTWILL}86 =$\\{putc}(\.{'\\n'},\39\\{active\_file})$@>
 @z
 
 Section 88.
@@ -448,7 +448,7 @@ Section 89.
 @y
 @d proofing flags['P']
 @-proofing@>
-@$proofing {CTWILL (Version 4.4 [\TeX~Live])}89 =\\{flags}[\.{'P'}]@>
+@$proofing {CTWILL}89 =\\{flags}[\.{'P'}]@>
 @z
 
 Section 90.
@@ -901,7 +901,7 @@ Section 128.
 @y
 @ @d trans trans_plus.Trans /* translation texts of scraps */
 @-trans@>
-@$trans {CTWILL (Version 4.4 [\TeX~Live])}128 =\\{trans\_plus}.\\{Trans}@>
+@$trans {CTWILL}128 =\\{trans\_plus}.\\{Trans}@>
 @z
 
 Section 129.
@@ -925,10 +925,10 @@ Section 130.
 @-section_flag@>
 @-tok_flag@>
 @-inner_tok_flag@>
-@$res_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{2}*\\{id\_flag}$@>
-@$section_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{3}*\\{id\_flag}$@>
-@$tok_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{3}*\\{id\_flag}$@>
-@$inner_tok_flag {CTWILL (Version 4.4 [\TeX~Live])}130 =$\T{4}*\\{id\_flag}$@>
+@$res_flag {CTWILL}130 =$\T{2}*\\{id\_flag}$@>
+@$section_flag {CTWILL}130 =$\T{3}*\\{id\_flag}$@>
+@$tok_flag {CTWILL}130 =$\T{3}*\\{id\_flag}$@>
+@$inner_tok_flag {CTWILL}130 =$\T{4}*\\{id\_flag}$@>
 @z
 
 Section 133.
@@ -966,9 +966,9 @@ Section 137--138.
 @-cat1@>
 @-cat2@>
 @-cat3@>
-@$cat1 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{1})\MG\\{cat}$@>
-@$cat2 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{2})\MG\\{cat}$@>
-@$cat3 {CTWILL (Version 4.4 [\TeX~Live])}137 =$(\\{pp}+\T{3})\MG\\{cat}$@>
+@$cat1 {CTWILL}137 =$(\\{pp}+\T{1})\MG\\{cat}$@>
+@$cat2 {CTWILL}137 =$(\\{pp}+\T{2})\MG\\{cat}$@>
+@$cat3 {CTWILL}137 =$(\\{pp}+\T{3})\MG\\{cat}$@>
 @z
 
 @x
@@ -1117,9 +1117,9 @@ should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
 @-no_ident_found@>
 @-case_found@>
 @-operator_found@>
-@$no_ident_found {CTWILL (Version 4.4 [\TeX~Live])}139 =\hfil\break(\&{token\_pointer}) 0@>
-@$case_found {CTWILL (Version 4.4 [\TeX~Live])}139 =\hfil\break(\&{token\_pointer}) 1@>
-@$operator_found {CTWILL (Version 4.4 [\TeX~Live])}139 =\hfil\break(\&{token\_pointer}) 2@>
+@$no_ident_found {CTWILL}139 =\hfil\break(\&{token\_pointer}) 0@>
+@$case_found {CTWILL}139 =\hfil\break(\&{token\_pointer}) 1@>
+@$operator_found {CTWILL}139 =\hfil\break(\&{token\_pointer}) 2@>
 @z
 
 Section 141.
@@ -1184,7 +1184,7 @@ Section 172.
 @y
 @d force_lines flags['f'] /* should each statement be on its own line? */
 @-force_lines@>
-@$force_lines {CTWILL (Version 4.4 [\TeX~Live])}172 =\\{flags}[\.{'f'}]@>
+@$force_lines {CTWILL}172 =\\{flags}[\.{'f'}]@>
 @z
 
 Section 180.
@@ -1215,8 +1215,8 @@ Section 204.
 @ @<Print a snapsh...@>=
 @-n@>
 @%
-@$n {CTWILL (Version 4.4 [\TeX~Live])}199 \&{short}@>
-@$n {CTWILL (Version 4.4 [\TeX~Live])}200 \&{short}@>
+@$n {CTWILL}199 \&{short}@>
+@$n {CTWILL}200 \&{short}@>
 @z
 
 Section 207.
@@ -1396,7 +1396,7 @@ Section 224.
 @y
 @d make_pb flags['e']
 @-make_pb@>
-@$make_pb {CTWILL (Version 4.4 [\TeX~Live])}224 =\\{flags}[\.{'e'}]@>
+@$make_pb {CTWILL}224 =\\{flags}[\.{'e'}]@>
 @z
 
 Section 225.
@@ -1420,9 +1420,9 @@ Section 228.
 @-cur_end@>
 @-cur_tok@>
 @-cur_mode@>
-@$cur_end {CTWILL (Version 4.4 [\TeX~Live])}228 =\\{cur\_state}.\\{end\_field}]@>
-@$cur_tok {CTWILL (Version 4.4 [\TeX~Live])}228 =\\{cur\_state}.\\{tok\_field}]@>
-@$cur_mode {CTWILL (Version 4.4 [\TeX~Live])}228 =\\{cur\_state}.\\{mode\_field}]@>
+@$cur_end {CTWILL}228 =\\{cur\_state}.\\{end\_field}]@>
+@$cur_tok {CTWILL}228 =\\{cur\_state}.\\{tok\_field}]@>
+@$cur_mode {CTWILL}228 =\\{cur\_state}.\\{mode\_field}]@>
 @z
 
 Section 229.
@@ -1548,7 +1548,7 @@ Section 251.
 @.\\Y@>
 @d usage_sentinel (struct perm_meaning *)1
 @-usage_sentinel@>
-@$usage_sentinel {CTWILL (Version 4.4 [\TeX~Live])}251 =(\&{struct} \\{perm\_meaning} ${}{*}{}$) \T{1}@>
+@$usage_sentinel {CTWILL}251 =(\&{struct} \\{perm\_meaning} ${}{*}{}$) \T{1}@>
 @z
 
 Section 252.
@@ -1640,10 +1640,10 @@ Section 276.
 @-head@>
 @-sort_ptr@>
 @-max_sorts@>
-@$depth {CTWILL (Version 4.4 [\TeX~Live])}276 =\\{cat}@>
-@$head {CTWILL (Version 4.4 [\TeX~Live])}276 =\\{trans\_plus}.\\{Head}@>
-@$sort_ptr {CTWILL (Version 4.4 [\TeX~Live])}276 =\\{scrap\_ptr}@>
-@$max_sorts {CTWILL (Version 4.4 [\TeX~Live])}276 =\\{max_scraps}@>
+@$depth {CTWILL}276 =\\{cat}@>
+@$head {CTWILL}276 =\\{trans\_plus}.\\{Head}@>
+@$sort_ptr {CTWILL}276 =\\{scrap\_ptr}@>
+@$max_sorts {CTWILL}276 =\\{max_scraps}@>
 @z
 
 Section 278.
@@ -1831,8 +1831,8 @@ Section 316.
 @y
 @ @<Write the new meaning to the \.{.aux} file@>=
 @%
-@$p {CTWILL (Version 4.4 [\TeX~Live])}300 \&{name\_pointer}@>
-@$q {CTWILL (Version 4.4 [\TeX~Live])}300 \&{struct perm\_meaning} ${}{*}{}$@>
+@$p {CTWILL}300 \&{name\_pointer}@>
+@$q {CTWILL}300 \&{struct perm\_meaning} ${}{*}{}$@>
 @z
 
 Section 317.
@@ -1842,7 +1842,7 @@ Section 317.
 @y
 @<Flag the usage of this identifier, for the mini-index@>=
 @%
-@$p {CTWILL (Version 4.4 [\TeX~Live])}222 \&{name\_pointer}@>
+@$p {CTWILL}222 \&{name\_pointer}@>
 @z
 
 Section 321.
@@ -1862,7 +1862,7 @@ Section 326.
 @y
 @d indent_param_decl flags['i'] /* should formal parameter declarations be indented? */
 @-indent_param_decl@>
-@$indent_param_decl {CTWILL (Version 4.4 [\TeX~Live])}326 =\\{flags}[\.{'i'}]@>
+@$indent_param_decl {CTWILL}326 =\\{flags}[\.{'i'}]@>
 @z
 
 Section 327.
@@ -1872,7 +1872,7 @@ Section 327.
 @y
 @d order_decl_stmt flags['o'] /* should declarations and statements be separated? */
 @-order_decl_stmt@>
-@$order_decl_stmt {CTWILL (Version 4.4 [\TeX~Live])}327 =\\{flags}[\.{'o'}]@>
+@$order_decl_stmt {CTWILL}327 =\\{flags}[\.{'o'}]@>
 @z
 
 Section 333.

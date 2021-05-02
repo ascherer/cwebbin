@@ -1329,6 +1329,8 @@ It advances |loc| past the title found.
   } else if (*loc=='{') {
     int balance=1; /* excess of left over right */
     while (++loc<=limit) {
+      if (*loc==' ' && balance==1)
+        *loc='}'; /* Skip ``version'' after module name and fall through */
       if (*loc=='}' && --balance==0) break;
       if (*loc=='{') balance++;
     }

@@ -1,6 +1,6 @@
-@$ctangle {CTWILL (Version 4.4 [\TeX~Live])}3 \&{enum} \&{cweb}@>
-@$ctwill {CTWILL (Version 4.4 [\TeX~Live])}3 \&{enum} \&{cweb}@>
-@$cweave {CTWILL (Version 4.4 [\TeX~Live])}3 \&{enum} \&{cweb}@>
+@$ctangle {CTWILL}3 \&{enum} \&{cweb}@>
+@$ctwill {CTWILL}3 \&{enum} \&{cweb}@>
+@$cweave {CTWILL}3 \&{enum} \&{cweb}@>
 
 @$program {COMMON.W}18 \&{int}@>
 @$phase {COMMON.W}19 \&{int}@>
