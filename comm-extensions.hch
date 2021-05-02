@@ -8,13 +8,13 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 2.  Add CTWILL.
 
-@x l.32
+@x l.34
 @d ctangle false
 @d cweave true
 @y
 @z
 
-@x l.39
+@x l.41
 extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -23,7 +23,7 @@ typedef enum {
 extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-@x l.210
+@x l.206
 extern boolean flags[]; /* an option for each 7-bit code */
 @y
 extern boolean flags[]; /* an option for each 7-bit code */

@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEBMAN-FOO.CH, is part of CWEBBIN (@VERSION@).  It is a
-changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.3, that
+changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.2, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
@@ -58,7 +58,7 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 2020	24 May 2020	AS	Remove macro translations.
 2020	11 Jun 2020	AS	Split into multiple changefiles.
 ------------------------------------------------------------------------------
-@x l.6 See comment in cwebmac.tex
+@x l.7 See comment in cwebmac.tex
 \def\page{\box255 } \normalbottom
 @y
 \let\page=\pagebody \raggedbottom
@@ -67,21 +67,21 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
   \advance\footnotecount by 1\relax}
 @z
 ------------------------------------------------------------------------------
-@x l.38
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.3)}
+@x l.39
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.2)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
-@x l.52
-\vskip 18pt\centerline{(Version 4.3 --- April 2021)}
+@x l.53
+\vskip 18pt\centerline{(Version 4.2 --- February 2021)}
 @y
-\vskip 18pt\centerline{(Version 4.3 --- April 2021)%
+\vskip 18pt\centerline{(Version 4.2 --- February 2021)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
-@x l.1600
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.3)\}{ }\\vfill\}}\cr}$$
+@x l.1595
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.2)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z

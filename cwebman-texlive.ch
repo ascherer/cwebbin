@@ -1,18 +1,18 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, March 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2021.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.4
+@x l.5
 \input cwebmac
 \acrofalse\pdffalse\pdftexfalse
 @y
 \input cwebmac
 @z
 ------------------------------------------------------------------------------
-@x l.32
+@x l.33
 \outer\def\section #1.{\penalty-500\bigskip
         \centerline{\sectionfont\def\.##1{{\twelvett##1}} #1}\nobreak\vskip 6pt
         \everypar{\hskip-\parindent\everypar{}}}
@@ -72,20 +72,20 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
   \fi}
 @z
 ------------------------------------------------------------------------------
-@x l.38 and l.73 of CWEBMAN-PATCH.CH
+@x l.39 and l.73 of CWEBMAN-PATCH.CH
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.3 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.2 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.3 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.2 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
-@x l.86
+@x l.87
 Internet page \.{http://www-cs-faculty.stanford.edu/\char`\~knuth/cweb.html}
 @y
 Internet page
@@ -93,7 +93,7 @@ Internet page
           {http://www-cs-faculty.stanford.edu/\TILDE/knuth/cweb.html}
 @z
 ------------------------------------------------------------------------------
-@x l.91
+@x l.92
 \.{https://github.com/ascherer/cweb} with the really current news.
 @y
 \pdfURL{\.{https://github.com/ascherer/cweb}}%
@@ -101,7 +101,7 @@ Internet page
 with the really current news.
 @z
 ------------------------------------------------------------------------------
-@x l.109
+@x l.110
 should be sent to the \TeX-related mailing list \.{tex-k@tug.org}.
 @y
 should be sent to the \TeX-related mailing list
@@ -109,7 +109,7 @@ should be sent to the \TeX-related mailing list
    {mailto:tex-k@tug.org}.
 @z
 ------------------------------------------------------------------------------
-@x l.530
+@x l.528
 email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
 @y
 email address in a \.{CWEB} file (e.g.,
@@ -117,7 +117,7 @@ email address in a \.{CWEB} file (e.g.,
    {mailto:tex-k@tug.org}).
 @z
 ------------------------------------------------------------------------------
-@x l.924 and l.12 of CWEBMAN-EXTENSIONS.CH
+@x l.922 and l.12 of CWEBMAN-EXTENSIONS.CH
 \cwebfootnote{In this extended implementation, if an \.{@i}nclude file can
 not be found in the current directory, \.{CWEB} will look in standard
 directories like the \CEE/ preprocessor.  Multiple search paths may be
@@ -133,7 +133,7 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
-@x l.1031
+@x l.1029
 except for error messages.
 @y
 except for error messages.%
@@ -141,17 +141,17 @@ except for error messages.%
 options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
 @z
 ------------------------------------------------------------------------------
-@x l.1037 and l.34 of CWEBMAN-EXTENSIONS.CH
-\option i Indent parameters in function declarations.  (On by default;
+@x l.1063 and l.27 of CWEBMAN-EXTENSIONS.CH
+\option i Indent parameters in function declarations.  This causes the
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
 value $N\in[0,127]$ of this option.  See section~93 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
-\option i Indent parameters in function declarations.  (On by default;
+\option i Indent parameters in function declarations.  This causes the
 @z
 ------------------------------------------------------------------------------
-@x l.1037 and l.45 of CWEBMAN-EXTENSIONS.CH
+@x l.1063 and l.40 of CWEBMAN-EXTENSIONS.CH
 \option m Install communication between \.{CWEB} and the message browser of
 the {\mc SAS/C} development system.  Set the external environment variable
 \.{SCMSGOPT} to any legal command line option described in the documentation
@@ -160,14 +160,14 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 @y
 @z
 ------------------------------------------------------------------------------
-@x l.1125
+@x l.1118
 Sometimes things don't work as smoothly, and you get a bunch of
 @y
 \acrofalse\pdftexfalse\pdffalse
 Sometimes things don't work as smoothly, and you get a bunch of
 @z
 ------------------------------------------------------------------------------
-@x l.1133
+@x l.1126
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
@@ -177,7 +177,7 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1175
+@x l.1168
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
 the program sources at
@@ -187,13 +187,13 @@ the program sources at
 its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
-@x l.1179
+@x l.1172
 As an example of a real program written in \.{CWEB}, Appendix~A
 @y
 As an example of a real program written in \.{CWEB}, \Appendix A
 @z
 ------------------------------------------------------------------------------
-@x l.1184
+@x l.1177
 Appendix B is the file that sets \TEX/ up to accept
 the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 @y
@@ -201,7 +201,7 @@ the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 @z
 ------------------------------------------------------------------------------
-@x l.1196
+@x l.1189
 \section Appendix A: Excerpts from a \.{CWEB} Program.
 @y
 \def\subsections{4}
@@ -209,28 +209,28 @@ the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 \subsection CWEB file format.
 @z
 ------------------------------------------------------------------------------
-@x l.1200
+@x l.1193
 generated sections 27--31 of the file \.{common.w}, which contains
 @y
 generated sections 27--31 of the file
 \pdfURL{\.{common.w}}{common.pdf}, which contains
 @z
 ------------------------------------------------------------------------------
-@x l.1273
+@x l.1268
 \def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
 @y
 \def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------
-@x l.1342
+@x l.1337
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 \subsection Translation by CWEAVE.
 @z
 ------------------------------------------------------------------------------
-@x l.1422
+@x l.1417
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 
 And here's what the same excerpt looks like when typeset.
@@ -247,7 +247,7 @@ And here's what the same excerpt looks like when typeset.
 \def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 @z
 ------------------------------------------------------------------------------
-@x l.1506
+@x l.1501
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
@@ -257,9 +257,9 @@ And here's what the same excerpt looks like when typeset.
 \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1600 and l.86 of CWEBMAN-PATCH.CH
+@x l.1595 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.3)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.2)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

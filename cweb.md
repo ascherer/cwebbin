@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% April 13, 2021
+% September 23, 2020
 
 # NAME
 
@@ -48,7 +48,7 @@ should not notice any differences in invoking the programs nor in the
 resulting output.  There are, however, a few differences worth noting:
 
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by several wrapper files for **cwebmac.tex**
   with translated captions for German (**+ld**), French (**+lf**), and
   Italian (**+li**).
@@ -79,21 +79,16 @@ The first batch of options are common to both **ctangle** and **cweave**:
   shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
-* **-c**:
-  ignore temporary output irrespective of changes
 * **+s**:
   print usage statistics
+* **-t**:
+  ignore temporary output irrespective of changes
 * **\-\-help**:
   display help message and exit
 * **\-\-version**:
   output version information and exit
 
-There is one other option applicable to **ctangle** only:
-
-* **+k**:
-  keep separators in numeric literals in the output
-
-There are seven other options applicable to **cweave** only:
+There are six other options applicable to **cweave** only:
 
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
@@ -107,8 +102,6 @@ There are seven other options applicable to **cweave** only:
   omit indices, section names, table of contents
 * **+lX**/**-lX**:
   use macros for language _X_ as of _X_**cwebmac.tex**
-* **+t**:
-  treat **typename** in a template like **typedef**
 
 # ENVIRONMENT
 

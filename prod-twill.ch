@@ -38,14 +38,8 @@ Rule 117: The |exp| must not be immediately followed by |lpar|, |exp|,
 or |cast|.
 
 Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
-Rules 153, 154: |make_reserved| is called only if the \.{+t} option is given
-to \.{CWEAVE}.
 @y
 Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
-Rules 153, 154: |make_reserved| is called only if the \.{+t} option is given
-to \.{CWEAVE}.
 
 Rule 200: The |exp| must not be immediately followed by |lpar| or~|exp|.
 

@@ -8,9 +8,9 @@ previous results are not destroyed.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Section 6.
+Section 10.
 
-@x l.115
+@x l.176
 extern char change_file_name[]; /* name of change file */
 @y
 extern char change_file_name[]; /* name of change file */
@@ -22,13 +22,13 @@ Section 13.
 @x l.201
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
+@d temporary_output flags['t'] /* should temporary output take precedence? */
 @d make_xrefs flags['x'] /* should cross references be output? */
-@d check_for_change flags['c'] /* check temporary output for changes */
 @z
 
 Section 14.
 
-@x l.222
+@x l.220
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */

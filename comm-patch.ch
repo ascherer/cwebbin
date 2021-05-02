@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for COMMON.W, Version 4.3.
+It is a changefile for COMMON.W, Version 4.2.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -175,18 +175,17 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 2021	04 February 2021	AS	Tuneup for CWEB 4.0 [2021].
 	20 February 2021	AS	Tuneup for CWEB 4.1 [2021].
 	25 February 2021	AS	Tuneup for CWEB 4.2 [2021].
-	13 April 2021		AS	Tuneup for CWEB 4.3 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.25
-\def\title{Common code for CTANGLE and CWEAVE (Version 4.3)}
+\def\title{Common code for CTANGLE and CWEAVE (Version 4.2)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
 @x l.30
-  \centerline{(Version 4.3)}
+  \centerline{(Version 4.2)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -201,20 +200,20 @@ z
 
 Section 2.
 
-@x l.72
+@x l.78
 @i common.h
 @y
 @i comm-foo.h
 @z
 
-Section 85.
+Section 92.
 
-@x l.1292
+@x l.1307
 @** Index.
 @y
-@** Extensions to {\tentex CWEB}.  The following sections introduce new or
-improved features that have been created by numerous contributors over the
-course of a quarter century.
+@** Extensions to \.{CWEB}.  The following sections introduce new or improved
+features that have been created by numerous contributors over the course of a
+quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
 material should nicely integrate with the original ``\&{85.~Index}.''
