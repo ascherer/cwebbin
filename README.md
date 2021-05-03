@@ -10,7 +10,7 @@ drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
 [readme](README.txt) for the full story.
 
-extract `cwebbin-2021.tar.gz` and add the contents of `cweb-4.3.tar.gz` and
+extract `cwebbin-2021.3.tar.gz` and add the contents of `cweb-4.3.tar.gz` and
 `ctwill.tar.gz` for the full set of source files.  unix/linux users should work
 with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 `cautiously`, and `all`).
@@ -32,7 +32,7 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
 git archive -o cweb-4.3.tar.gz cweb-4.3
-git archive -o cwebbin-2021.tar.gz cwebbin-2021
+git archive -o cwebbin-2021.3.tar.gz cwebbin-2021.3
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 *SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build
