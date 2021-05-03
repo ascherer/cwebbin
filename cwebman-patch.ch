@@ -74,9 +74,9 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.52
-\vskip 18pt\centerline{(Version 4.3 --- April 2021)}
+\vskip 18pt\centerline{(Version 4.3 --- May 2021)}
 @y
-\vskip 18pt\centerline{(Version 4.3 --- April 2021)%
+\vskip 18pt\centerline{(Version 4.3 --- May 2021)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
