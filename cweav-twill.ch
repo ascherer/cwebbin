@@ -940,7 +940,7 @@ typedef struct {
 
 @q Section 26->275. @>
 @ @<Private...@>=
-struct perm_meaning {
+static struct perm_meaning {
   meaning_struct perm; /* current meaning of an identifier */
   int stamp; /* last section number in which further output suppressed */
   struct perm_meaning *link; /* another meaning to output in this section */
