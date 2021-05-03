@@ -25,7 +25,7 @@
 /*:4*/
 #line 67 "ctangle.w"
 
-#define banner _("This is CTANGLE (Version 4.3 [CWEBbin 2021])")  \
+#define banner _("This is CTANGLE (Version 4.3 [CWEBbin 2021.3])")  \
 
 #define _(S) gettext(S)  \
 
@@ -85,8 +85,8 @@
 
 #define show_banner flags['b']
 #define show_progress flags['p']
-#define show_stats flags['s']
 #define show_happiness flags['h']
+#define show_stats flags['s']
 #define make_xrefs flags['x']
 #define check_for_change flags['c'] \
 
