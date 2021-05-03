@@ -82,6 +82,13 @@ static boolean change_exists; /* has any section changed? */
 turned on during the first phase---NOT!
 @z
 
+@x l.353
+@ Here are the three procedures needed to complete |id_lookup|:
+@y
+@ Here are the three procedures needed to complete |id_lookup|:
+@s perm_meaning int
+@z
+
 @x l.373
   p->ilk=t; init_node(p);
 @y
