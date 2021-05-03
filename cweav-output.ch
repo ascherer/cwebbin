@@ -11,9 +11,9 @@ applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 240.
+Section 248.
 
-@x l.4347
+@x l.4535
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -29,7 +29,7 @@ if (no_xref) {
 }
 @z
 
-@x l.4381
+@x l.4570
 @.\\end@>
   finish_line();
   fclose(active_file);
@@ -43,7 +43,7 @@ finish_line(); fclose(active_file); active_file=NULL;
 
 Additional material.
 
-@x l.4706
+@x l.4896
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a
@@ -56,14 +56,13 @@ be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the result...@>=
 if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
-  char x[BUFSIZ],y[BUFSIZ];
-  int x_size,y_size,comparison=false;
+  boolean comparison=false;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  if (temporary_output) @<Compare the temporary output...@>@;
+  if (check_for_change) @<Compare the temporary output...@>@;
 
   fclose(tex_file); tex_file=NULL;
   fclose(check_file); check_file=NULL;
@@ -78,10 +77,10 @@ strcpy(check_file_name,""); /* We want to get rid of the temporary file */
 
 @<Compare the temporary output to the previous output@>=
 do {
-  x_size = fread(x,1,BUFSIZ,tex_file);
-  y_size = fread(y,1,BUFSIZ,check_file);
-  comparison = (x_size == y_size); /* Do not merge these statements! */
-  if(comparison) comparison = !memcmp(x,y,x_size);
+  char x[BUFSIZ],y[BUFSIZ];
+  int x_size = fread(x,sizeof(char),BUFSIZ,tex_file);
+  int y_size = fread(y,sizeof(char),BUFSIZ,check_file);
+  comparison = (x_size == y_size) && !memcmp(x,y,x_size);
 } while(comparison && !feof(tex_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to

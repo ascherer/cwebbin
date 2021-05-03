@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% September 23, 2020
+% April 24, 2021
 
 # NAME
 
@@ -48,7 +48,7 @@ should not notice any differences in invoking the programs nor in the
 resulting output.  There are, however, a few differences worth noting:
 
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by several wrapper files for **cwebmac.tex**
   with translated captions for German (**+ld**), French (**+lf**), and
   Italian (**+li**).
@@ -79,16 +79,21 @@ The first batch of options are common to both **ctangle** and **cweave**:
   shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
+* **-c**:
+  ignore temporary output irrespective of changes
 * **+s**:
   print usage statistics
-* **-t**:
-  ignore temporary output irrespective of changes
 * **\-\-help**:
   display help message and exit
 * **\-\-version**:
   output version information and exit
 
-There are six other options applicable to **cweave** only:
+There is one other option applicable to **ctangle** only:
+
+* **+k**:
+  keep separators in numeric literals in the output
+
+There are seven other options applicable to **cweave** only:
 
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
@@ -102,6 +107,8 @@ There are six other options applicable to **cweave** only:
   omit indices, section names, table of contents
 * **+lX**/**-lX**:
   use macros for language _X_ as of _X_**cwebmac.tex**
+* **+t**:
+  treat **typename** in a template like **typedef**
 
 # ENVIRONMENT
 
@@ -148,7 +155,6 @@ cweb(1), tex(1), cc(1)
 Don Knuth wrote WEB for TeX and Pascal. \
 Silvio Levy designed and developed CWEB by adapting the WEB conventions to C
 and by recoding everything in CWEB.
-Knuth began using CWEB and made further refinements.
+Knuth began using CWEB and made further refinements. \
 Many other helpers are acknowledged in the CWEB manual. \
-CWEB in TeX\ Live is based on the CWEBbin extension; see
-[the project page](https://github.com/ascherer/cwebbin).
+Contemporary development on https://github.com/ascherer/cweb.

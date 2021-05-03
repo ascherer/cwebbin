@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.2 [2021]).
+% This file is part of CWEBbin (Version 4.3 [2021]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated February 6, 2021 by Andreas Scherer.
+% This README file was last updated March 29, 2021 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -51,7 +51,7 @@ enhancements of these Amiga and MS/DOS/Windows ports.
 
 The distribution of CWEBbin consists of the additional files for this patch
 only.  The complete contents of the original distribution is a prerequisite.
-CWEB 4.2 (and higher) can be retrieved from
+CWEB 4.0 (and higher) can be retrieved from
 
 	https://github.com/ascherer/cweb
 
@@ -78,13 +78,15 @@ The following files were added to this distribution by various contributors:
 
 GENERAL CONTRIBUTION:
 .
-├── 0001-Make-clean-twinx.patch		Patch for twinx.w
-├── 0002-Make-clean-refsort.patch	Patch for refsort.w
+├── 0001-Support-extended-syntax-for-numeric-literals.patch	for CTWILL
+├── 0002-purge-redundant-TeX-macro.patch			for CTWILL
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
 ├── comm-i18n.hch			change file for common.h
+├── comm-mini.ch			auxiliary file for COMMON
 ├── comm-newpage.ch			change file for common.w
+├── common.bux				auxiliary file for COMMON
 ├── common.cxx				product of common.w and comm-foo.ch
 ├── comm-output.ch			change file for common.w
 ├── comm-output.hch			change file for common.h
@@ -119,7 +121,6 @@ GENERAL CONTRIBUTION:
 │   ├── cweb_hp8.w			Transliteration table for HP Roman 8
 │   ├── cweb_mac8.w			Transliteration table for Mac 8-bit
 │   ├── cweb_pc850.w0.w			Transliteration table for Codepage 850
-│   └── iso_types.w			Keywords for ISO C/C++ standards
 ├── cwebman-extensions.ch		change file for cwebman.tex
 ├── cwebman-patch.ch			change file for cwebman.tex
 ├── cwebman-texlive.ch			change file for cwebman.tex
@@ -160,6 +161,7 @@ GENERAL CONTRIBUTION:
 ├── README.md				Github project description
 ├── README.txt				the current file
 ├── refsort.1				manpage link to ctwill.1
+├── refsort.ch				Patch for refsort.w
 ├── system.bux				auxiliary file for CTWILL
 ├── texinputs
 │   ├── cweb_ecma94.sty			Umlauts and special characters for Latin-1
@@ -177,6 +179,8 @@ GENERAL CONTRIBUTION:
 │   └── Xcwebmac.tex			beautifications for cwebmac.tex
 ├── texlive.w				introduction to *-w2c.ch change files
 ├── twinx.1				manpage link to ctwill.1
+├── twinx.ch				Patch for twinx.w
+├── twinx-startup.tex			preamble starter for twinxmac.tex
 └── vault
     ├── arexx				[AMIGA]
     │   ├── catalogs

@@ -9,16 +9,16 @@
 
 Material in limbo.
 
-@x l.35 and l.181 of CWEAV-PATCH.CH
+@x l.35 and l.184 of CWEAV-PATCH.CH
 \def\title{CWEAVE (@VERSION@)}
 @y
-\def\title{CWEAVE (Version 4.2 [\TeX~Live])}
+\def\title{CWEAVE (Version 4.3 [\TeX~Live])}
 @z
 
-@x l.39 and l.187 of CWEAV-PATCH.CH
+@x l.39 and l.190 of CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.2 [\TeX~Live])}
+  \centerline{(Version 4.3 [\TeX~Live])}
 @z
 
 @x l.41
@@ -35,16 +35,16 @@ Material in limbo.
 
 Section 1.
 
-@x l.70 and l.203 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
+@x l.70 and l.206 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 @d banner _("This is CWEAVE (@VERSION@)")
 @y
-@d banner "This is CWEAVE, Version 4.2"
+@d banner "This is CWEAVE, Version 4.3"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
 Section 2.
 
-@x l.97 - Add Web2c version to banner.
+@x l.98 - Add Web2c version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   if (show_banner) cb_show_banner(); /* print a ``banner line'' */
@@ -52,16 +52,16 @@ Section 2.
 
 Sections 3--18.
 
-@x l.112 and l.211 of CWEAV-PATCH.CH
+@x l.112 and l.214 of CWEAV-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
 @z
 
-@x l.4706
+@x l.4896
 @** Index.
 @y
-@* Put ``version'' information in a single spot.
+@* Print ``version'' information.
 Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
 for printing the |banner| and the |versionstring| from there.
 

@@ -12,13 +12,13 @@ Material in limbo.
 @x l.21 of CWEAV-TWILL.CH
 \def\title{CTWILL (@VERSION@)}
 @y
-\def\title{CTWILL (Version 4.2 [\TeX~Live])}
+\def\title{CTWILL (Version 4.3 [\TeX~Live])}
 @z
 
-@x l.39 and l.187 of CWEAV-PATCH.CH
+@x l.39 and l.190 of CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.2 [\TeX~Live])}
+  \centerline{(Version 4.3 [\TeX~Live])}
 @z
 
 @x l.41
@@ -38,13 +38,13 @@ Section 1.
 @x l.61 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (@VERSION@)")
 @y
-@d banner "This is CTWILL, Version 4.2"
+@d banner "This is CTWILL, Version 4.3"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
 Section 5.
 
-@x l.97 - Add Web2c version to banner.
+@x l.98 - Add Web2c version to banner.
   if (show_banner) puts(banner); /* print a ``banner line'' */
 @y
   if (show_banner) cb_show_banner(); /* print a ``banner line'' */
@@ -52,7 +52,7 @@ Section 5.
 
 Sections 6--21.
 
-@x l.112 and l.211 of CWEAV-PATCH.CH
+@x l.112 and l.214 of CWEAV-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
@@ -60,7 +60,7 @@ Sections 6--21.
 
 Section 80.
 
-@x l.1363 and l.620 of CWEAV-TWILL.CH
+@x l.1414 and l.628 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
 \.{\\input Xproofmac} with option \.{+lX}), a set of macros used when
 @y
@@ -68,16 +68,16 @@ saying \.{+P} on the command line, it's `\.{\\input ctproofmac}' (resp.\
 \.{\\input Xctproofmac} with option \.{+lX}), a set of macros used when
 @z
 
-@x l.630 of CWEAV-TWILL.CH
+@x l.638 of CWEAV-TWILL.CH
 tex_puts(proofing?"proofma":"ctwima");
 @y
 tex_puts(proofing?"ctproofma":"ctwima");
 @z
 
-@x l.4706
+@x l.4896
 @** Index.
 @y
-@* Put ``version'' information in \.{COMMON}.
+@* Print ``version'' information.
 Don't do this at home, kids! Push our local macro to the variable in \.{COMMON}
 for printing the |banner| and the |versionstring| from there.
 

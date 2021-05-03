@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% February 6, 2021
+% April 24, 2021
 
 # NAME
 
@@ -39,7 +39,7 @@ If you just want to change the output file name, but don't have a change file
 to apply, you can use '**-**' as the second argument.
 
 **ctwill** is exactly like **cweave** except that it produces much better
-documentation, for which you must work harder.  You should run **ctwill**
+documentation, for which you must work much harder.  You should run **ctwill**
 twice, once to prime the pump and once to get decent answers.  Moreover, you
 must run the output twice through TeX.
 
@@ -49,8 +49,11 @@ weird file called **foo.ref**.  Say **refsort < foo.ref > foo.sref** and then
 another **tex foo** will produce alphabetized output.
 
 The **twinx** program compiles a master index for a set of related programs
-that have been processed by **ctwill**.  The individual programs should define
-their names with a line of the form **\\def\\title{NAME}**.
+that have been processed by **ctwill** (_not_ by **cweave**, mind you!).
+The individual programs should define their names with a line of the form
+**\\def\\title{NAME}**.  For your convenience, **twinx** grabs the first
+“word” in **\\title** and turns it into uppercase form.  You should adapt
+file **twinx-startup.tex** for the first page of the master index.
 
 The mini-indexes list identifiers that are used but not defined on each
 two-page spread.  At the end of each section, **ctwill** gives TeX a list of
@@ -87,11 +90,11 @@ The present incarnation of **ctwill** and its utilities tries hard to be a
 drop-in replacement for the original package.  There are, however, a few
 differences worth noting:
 
-* This version is based on the most recent version of CWEB (4.2).
+* This version is based on the most recent version of CWEB (4.3).
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-i**, **-o**, **-t**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
 * Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
@@ -121,6 +124,8 @@ In fact, the options are processed from left to right, so a sequence like
   shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
+* **-c**:
+  ignore temporary output irrespective of changes
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
@@ -129,8 +134,6 @@ In fact, the options are processed from left to right, so a sequence like
   suppress indentation of parameter declarations
 * **-o**:
   suppress separation of declarations and statements
-* **-t**:
-  ignore temporary output irrespective of changes
 * **-x**:
   omit indices, section names, table of contents
 * **+P**:
@@ -139,6 +142,8 @@ In fact, the options are processed from left to right, so a sequence like
   use macros for language _X_ as of _X_{**ctwimac**|**proofmac**}**.tex**
 * **+s**:
   print usage statistics
+* **+t**:
+  treat **typename** in a template like **typedef**
 * **\-\-help**:
   display help message and exit
 * **\-\-version**:
@@ -206,6 +211,4 @@ cweb(1), tex(1), cc(1)
 # AUTHORS
 
 Don Knuth wrote **ctwill** based on **cweave** by Silvio Levy and Knuth. \
-**ctwill** and its utilities **refsort** and **twinx** have been fully
-integrated with the CWEBbin extension that serves as the basis for CWEB
-in TeX\ Live; see [the project page](https://github.com/ascherer/cwebbin).
+Contemporary development on https://github.com/ascherer/cwebbin.

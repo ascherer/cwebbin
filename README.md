@@ -4,13 +4,13 @@
 [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
 and donald e. knuth's [ctwill program](ftp://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
-drop](https://github.com/ascherer/cweb/releases/download/cweb-4.2/cweb-4.2.tar.gz)
+drop](https://github.com/ascherer/cweb/releases/download/cweb-4.3/cweb-4.3.tar.gz)
 and [the secondary *ctwill* source
 drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
 [readme](README.txt) for the full story.
 
-extract `cwebbin-2021.tar.gz` and add the contents of `cweb-4.2.tar.gz` and
+extract `cwebbin-2021.3.tar.gz` and add the contents of `cweb-4.3.tar.gz` and
 `ctwill.tar.gz` for the full set of source files.  unix/linux users should work
 with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 `cautiously`, and `all`).
@@ -19,7 +19,7 @@ with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 
 * includes **ctwill** and its utilities;
 * **internationalization** with the “GNU `gettext` utilities”;
-* **temporary file output**: output is only written when different to former run; can be suppressed with new option `-t`;
+* **temporary file output**: output is only written when different to former run; can be suppressed with new option `-c`;
 * [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
 * [only `ctangle`] output can be redirected to `@(/dev/{stdout,stderr,null}@>`;
 * [only in “tex live”] file lookup with the **kpathsea** library.
@@ -31,8 +31,8 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-4.2.tar.gz cweb-4.2
-git archive -o cwebbin-2021.tar.gz cwebbin-2021
+git archive -o cweb-4.3.tar.gz cweb-4.3.1
+git archive -o cwebbin-2021.3.tar.gz cwebbin-2021.3.1
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 *SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build
