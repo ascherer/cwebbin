@@ -433,14 +433,6 @@ Section 86.
 @$tex_new_line {CTWILL}86 =$\\{putc}(\.{'\\n'},\39\\{active\_file})$@>
 @z
 
-Section 88.
-
-@x
-@ When we are copying \TEX/ source material, we retain line breaks
-@y
-@r @ When we are copying \TEX/ source material, we retain line breaks
-@z
-
 Section 89.
 
 @x
@@ -459,6 +451,14 @@ Section 90.
 @ When we wish to append one character |c| to the output buffer, we write
 @-c@>
 @-s@>
+@z
+
+Section 97.
+
+@x
+@ The |out_name| procedure is used to output an identifier or index
+@y
+@r @ The |out_name| procedure is used to output an identifier or index
 @z
 
 Section 100.
