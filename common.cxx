@@ -1242,12 +1242,12 @@ void
 err_print(
 const char*s)
 {
-char*k,*l;
 printf(*s=='!'?"\n%s":"%s",s);
 if(web_file_open)/*67:*/
-#line 1036 "common.w"
+#line 1035 "common.w"
 
-{if(changing&&include_depth==change_depth)
+{char*k,*l;
+if(changing&&include_depth==change_depth)
 #line 290 "comm-foo.ch"
 printf(_(". (l. %d of change file)\n"),change_line);
 else if(include_depth==0)printf(_(". (l. %d)\n"),cur_line);
@@ -1267,7 +1267,7 @@ putchar(' ');
 }
 
 /*:67*/
-#line 1023 "common.w"
+#line 1022 "common.w"
 
 update_terminal;mark_error;
 }
@@ -1540,7 +1540,6 @@ _("! Usage: ctwill [options] "
 
 static boolean set_path(char*include_path,char*environment)
 {
-char string[max_path_length+2];
 
 #ifdef CWEBINPUTS
 strncpy(include_path,CWEBINPUTS,max_path_length);
@@ -1552,6 +1551,7 @@ if(strlen(environment)+strlen(include_path)>=max_path_length){
 err_print(_("! Include path too long"));return(false);
 
 }else{
+char string[max_path_length+2];
 sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
 strcpy(include_path,string);
 }

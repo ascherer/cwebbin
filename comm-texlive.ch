@@ -312,7 +312,6 @@ static boolean set_path(char *,char *);@/
 @ @c
 static boolean set_path(char *include_path,char *environment)
 {
-  char string[max_path_length+2];
 @#
 #ifdef CWEBINPUTS
   strncpy(include_path,CWEBINPUTS,max_path_length);
@@ -324,6 +323,7 @@ static boolean set_path(char *include_path,char *environment)
       err_print(_("! Include path too long")); return(false);
 @.Include path too long@>
     } else {
+      char string[max_path_length+2];
       sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
       strcpy(include_path,string);
     }
