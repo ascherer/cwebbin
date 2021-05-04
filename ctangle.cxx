@@ -881,7 +881,7 @@ else if(0==strcmp("/dev/null",output_file_name))
 /*113:*/
 #line 417 "ctang-foo.ch"
 {
-int comparison= true;
+boolean comparison= true;
 /*110:*/
 #line 381 "ctang-foo.ch"
 

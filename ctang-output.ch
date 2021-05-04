@@ -170,7 +170,7 @@ else {
 @ No copying necessary, just remove the temporary output file.
 
 @<Redirect temporary output to \.{/dev/null}@>={
-  int comparison=true;
+  boolean comparison=true;
   @<Create the secondary output...@>@;
 }
 
