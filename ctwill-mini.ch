@@ -1548,7 +1548,7 @@ Section 251.
 @.\\Y@>
 @d usage_sentinel (struct perm_meaning *)1
 @-usage_sentinel@>
-@$usage_sentinel {CTWILL}251 =(\&{struct} \\{perm\_meaning} ${}{*}{}$) \T{1}@>
+@$usage_sentinel {CTWILL}251 =(\&{struct} \&{perm\_meaning} ${}{*}{}$) \T{1}@>
 @z
 
 Section 252.
@@ -1797,6 +1797,16 @@ must have fewer than 50 characters.
 @x
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 @y
+@z
+
+Section 297.
+
+@x
+static struct perm_meaning {
+@y
+static struct perm_meaning {
+@-perm_meaning@>
+@$perm_meaning {CTWILL}297 \&{static} \&{struct}@>
 @z
 
 Section 307.
