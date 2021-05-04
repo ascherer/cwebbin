@@ -79,8 +79,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
   rename(check_file_name,C_file_name); /* This was the first run */
 
 @ @<Set up the comparison of temporary output@>=
-  char x[BUFSIZ],y[BUFSIZ];
-  int x_size,y_size,comparison=false;
+  boolean comparison=false;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file ",check_file_name);
@@ -95,10 +94,10 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
 
 @<Compare the temporary output to the previous output@>=
 do {
-  x_size = fread(x,1,BUFSIZ,C_file);
-  y_size = fread(y,1,BUFSIZ,check_file);
-  comparison = (x_size == y_size); /* Do not merge these statements! */
-  if(comparison) comparison = !memcmp(x,y,x_size);
+  char x[BUFSIZ],y[BUFSIZ];
+  int x_size = fread(x,sizeof(char),BUFSIZ,C_file);
+  int y_size = fread(y,sizeof(char),BUFSIZ,check_file);
+  comparison = (x_size == y_size) && !memcmp(x,y,x_size);
 } while(comparison && !feof(C_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
@@ -147,7 +146,7 @@ else {
 @<Redirect temporary output to \.{/dev/stdout}@>={
   @<Setup system redirection@>@;
   do {
-    in_size = fread(in_buf,1,BUFSIZ,check_file);
+    in_size = fread(in_buf,sizeof(char),BUFSIZ,check_file);
     in_buf[in_size]='\0';
     fprintf(stdout,"%s",in_buf);
   } while(!feof(check_file));@/
@@ -160,7 +159,7 @@ else {
 @<Redirect temporary output to \.{/dev/stderr}@>={
   @<Setup system redirection@>@;
   do {
-    in_size = fread(in_buf,1,BUFSIZ,check_file);
+    in_size = fread(in_buf,sizeof(char),BUFSIZ,check_file);
     in_buf[in_size]='\0';
     fprintf(stderr,"%s",in_buf);
   } while(!feof(check_file));@/
@@ -177,7 +176,8 @@ else {
 
 @ @<Setup system redirection@>=
 char in_buf[BUFSIZ+1];
-int in_size,comparison=true;
+int in_size;
+boolean comparison=true;
 if((check_file=fopen(check_file_name,"r"))==NULL)
   fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
