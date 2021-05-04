@@ -213,7 +213,7 @@ skip_TeX(void)
     case underline: xref_switch=def_flag; continue;
 @y
     case underline: xref_switch=def_flag; continue;
-    case temp_meaning: temp_switch=true-temp_switch; continue;
+    case temp_meaning: temp_switch=!temp_switch; continue;
     case right_start: right_start_switch=true; continue;
 @z
 
@@ -584,7 +584,7 @@ flush_buffer(out_ptr,false,false);
     case '@@': out('@@'); break;
 @y
     case '@@': out('@@'); break;
-    case temp_meaning: temp_switch=true-temp_switch; break;
+    case temp_meaning: temp_switch=!temp_switch; break;
     case right_start: right_start_switch=true; break;
 @z
 
