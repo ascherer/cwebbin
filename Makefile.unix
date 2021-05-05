@@ -354,16 +354,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
