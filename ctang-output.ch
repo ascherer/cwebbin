@@ -117,11 +117,11 @@ instead of to a file (in \.{@@(...@@>}) to \.{/dev/null} or \.{/dev/stdout} or
 to a file and finally get rid of that file.
 
 @<Update the secondary results...@>=
-if(0==strcmp("/dev/stdout",output_file_name))
+if(0==strcmp("/dev/stdout",output_file_name))@/
   @<Redirect temporary output to \.{/dev/stdout}@>@;
-else if(0==strcmp("/dev/stderr",output_file_name))
+else if(0==strcmp("/dev/stderr",output_file_name))@/
   @<Redirect temporary output to \.{/dev/stderr}@>@;
-else if(0==strcmp("/dev/null",output_file_name))
+else if(0==strcmp("/dev/null",output_file_name))@/
   @<Redirect temporary output to \.{/dev/null}@>@;
 else { /* Hopefully a \\{regular} output file */
   if((C_file=fopen(output_file_name,"r"))!=NULL) {
