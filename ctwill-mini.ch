@@ -15,7 +15,7 @@ Section 1.
 
 @x
 A kind of ``user manual'' for \.{CTWILL} can be found in the appendix
-{\bf 272.~Mogrify \.{CWEAVE} into \.{CTWILL}} and beyond, together
+{\bf 271.~Mogrify \.{CWEAVE} into \.{CTWILL}} and beyond, together
 with additional material specific to \.{CTWILL}. % FIXME
 Until then, \.{CWEAVE}'s sequence of sections will be preserved.
 
@@ -1758,9 +1758,9 @@ introduce material that is specific to \.{CTWILL}.
 
 Care has been taken to keep the original section numbering of \.{CWEAVE}
 up to this point intact, so this new material should nicely integrate
-with the original ``\&{272.~Index}.''
+with the original ``\&{271.~Index}.''
 
-@q Section 2->273. @>
+@q Section 2->272. @>
 @* {\tentex CTWILL} user manual.
 @y
 @** Mogrify {\tentex CWEAVE} into {\tentex CTWILL}.
