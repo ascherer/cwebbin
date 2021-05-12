@@ -177,6 +177,14 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
+Section 46.
+
+@x l.622
+@d hash_size 353 /* should be prime */
+@y
+@d hash_size 8501 /* should be prime */
+@z
+
 Section 73.
 
 @x l.1123
