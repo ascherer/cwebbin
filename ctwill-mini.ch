@@ -21,7 +21,7 @@ Until then, \.{CWEAVE}'s sequence of sections will be preserved.
 
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @y
-A kind of ``user manual'' for \.{CTWILL} can be found in section~\&{293}
+A kind of ``user manual'' for \.{CTWILL} can be found in section~\&{289}
 and beyond, together with additional material specific to \.{CTWILL}. % FIXME
 \bigskip
 {\font\itt=cmitt10 \font\bit=cmbxti10
