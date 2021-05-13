@@ -267,6 +267,31 @@ Section 41.
 Section 43.
 
 @x
+\yskip\hang |identifier|: In this case the global variables |id_first| and
+|id_loc| will have been set to the beginning and ending-plus-one locations
+in the buffer, as required by the |id_lookup| routine.
+
+\yskip\hang |string|: The string will have been copied into the array
+|section_text|; |id_first| and |id_loc| are set as above (now they are
+pointers into |section_text|).
+
+\yskip\hang |constant|: The constant is copied into |section_text|, with
+slight modifications; |id_first| and |id_loc| are set.
+@y
+{\raggedright
+\yskip\hang |identifier|: In this case the global variables |id_first| and
+|id_loc| will have been set to the beginning and ending-plus-one locations
+in the buffer, as required by the |id_lookup| routine.
+
+\yskip\hang |string|: The string will have been copied into the array
+|section_text|; |id_first| and |id_loc| are set as above (now they are
+pointers into |section_text|).
+
+\yskip\hang |constant|: The constant is copied into |section_text|, with
+slight modifications; |id_first| and |id_loc| are set.\par}
+@z
+
+@x
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
 |meaning|, |suppress|,
 |verbatim|: The values of |id_first| and |id_loc| will have been set to
