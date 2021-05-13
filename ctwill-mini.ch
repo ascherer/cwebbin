@@ -376,9 +376,9 @@ Section 52.
 Section 53.
 
 @x
-@d gather_digits_while(t) while (t || *loc=='\'')
+@d gather_digits_while(t) while ((t) || *loc=='\'')
 @y
-@d gather_digits_while(t) while (t || *loc=='\'')
+@d gather_digits_while(t) while ((t) || *loc=='\'')
 @-t@>
 @z
 

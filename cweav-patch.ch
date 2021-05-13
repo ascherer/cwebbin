@@ -217,13 +217,13 @@ Sections 3--18.
 Sections 116--117.
 
 @x l.2237
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
 
 @c
 static void
 print_text( /* prints a token list for debugging; not used in |main| */
 @y
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
 
 @<Predecl...@>=
 #if 0
