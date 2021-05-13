@@ -1416,12 +1416,12 @@ Section 234--235.
   }
 }
 @y
-    reswitch: @/@<The output |switch|@>@;
+    @/@<The output |switch|@>@;
   }
 }
 
 @ @<The output |switch|@>=
-    switch(a) {
+    reswitch: switch(a) {
       case end_translation: return;
       case identifier: case res_word: @<Output an identifier@>@; break;
       case section_code: @<Output a section name@>@; break;
