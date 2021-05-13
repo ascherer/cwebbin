@@ -324,6 +324,15 @@ Section 44.
 @$c {CTWILL}44 \&{eight\_bits}@>
 @z
 
+Section 45.
+
+@x
+@ @<Predecl...@>=@+static eight_bits get_next(void);
+@y
+@ @<Predecl...@>=@+static eight_bits get_next(void);
+@-get_next@>
+@z
+
 Section 46.
 
 @x
@@ -406,14 +415,34 @@ Section 63.
 @r @ @<If end of name...@>=
 @z
 
+Section 65.
+
+@x
+@ @<Predecl...@>=@+static void skip_restricted(void);
+@y
+@ @<Predecl...@>=@+static void skip_restricted(void);
+@-skip_restricted@>
+@z
+
+Section 69.
+
+@x
+@ @<Predecl...@>=@+static void phase_one(void);
+@y
+@ @<Predecl...@>=@+static void phase_one(void);
+@-phase_one@>
+@z
+
 Section 72.
 
 @x
 C_xref( /* makes cross-references for \CEE/ identifiers */
   eight_bits spec_ctrl)
 @y
-C_xref(eight_bits spec_ctrl)
-  /* makes cross-references for \CEE/ identifiers */
+C_xref( /* makes cross-references for \CEE/ identifiers */
+  eight_bits spec_ctrl)
+@-C_xref@>
+@$C_xref {CTWILL}72 \&{static} \&{void} (\,)@>
 @z
 
 @x
@@ -478,6 +507,18 @@ Section 90.
 @-s@>
 @z
 
+Section 91.
+
+@x
+out_str( /* output characters from |s| to end of string */
+const char*s)
+@y
+out_str( /* output characters from |s| to end of string */
+const char*s)
+@-out_str@>
+@$out_str {CTWILL}91 \&{static} \&{void} (\,)@>
+@z
+
 Section 97.
 
 @x
@@ -500,7 +541,10 @@ Section 101.
 @ The |copy_comment| function issues a warning if more braces are opened than
 @y
 @ The |copy_comment| function issues a warning if more braces are opened than
+@-c@>
 @-t@>
+@-copy_comment@>
+@$copy_comment {CTWILL}101 \&{static} \&{int} (\,)@>
 @z
 
 @x
@@ -1139,6 +1183,10 @@ more properly alpha\-betized,
 should say, for example, `\.{@@!@@\^\\\&\{operator\}} \.{\$+\{=\}\$@@>}'
 (or, properly alpha\-betized,
 `\.{@@!@@:operator+=\}\{\\\&\{operator\}} \.{\$+\{=\}\$@@>}').
+@-find_first_ident@>
+@-make_reserved@>
+@-make_underlined@>
+@-underline_xref@>
 @-no_ident_found@>
 @-case_found@>
 @-operator_found@>
@@ -1164,8 +1212,10 @@ We use the fact that |make_underlined| has been called immediately preceding
 make_reserved( /* make the first identifier in |p->trans| like |int| */
 scrap_pointer p)
 @y
-make_reserved(scrap_pointer p)
-  /* make the first identifier in |p->trans| like |int| */
+make_reserved( /* make the first identifier in |p->trans| like |int| */
+scrap_pointer p)
+@-make_reserved@>
+@$make_reserved {CTWILL}140 \&{static} \&{void} (\,)@>
 @z
 
 Section 141.
@@ -1182,8 +1232,10 @@ make_underlined(
 scrap_pointer p)
 @y
 make_underlined(
-scrap_pointer p)
 /* underline the entry for the first identifier in |p->trans| */
+scrap_pointer p)
+@-make_underlined@>
+@$make_underlined {CTWILL}141 \&{static} \&{void} (\,)@>
 @z
 
 Section 150.
@@ -1224,14 +1276,34 @@ Section 203.
 @$n {CTWILL}199 \&{short}@>
 @z
 
+Section 205.
+
+@x
+@ @<Predecl...@>=@+static text_pointer translate(void);
+@y
+@ @<Predecl...@>=@+static text_pointer translate(void);
+@-translate@>
+@z
+
 Section 209.
 
 @x
     if (next_control=='|' || next_control==begin_comment ||
         next_control==begin_short_comment) return;
 @y
+@-C_parse@>
+@$C_parse {CTWILL}209 \&{static} \&{void} (\,)@>
     if (next_control=='|' || next_control==begin_comment @| ||
         next_control==begin_short_comment) return;
+@z
+
+Section 210.
+
+@x
+@ @<Predecl...@>=@+static void C_parse(eight_bits);
+@y
+@ @<Predecl...@>=@+static void C_parse(eight_bits);
+@-C_parse@>
 @z
 
 Section 211.
@@ -1391,6 +1463,18 @@ Section 225.
 @$cur_mode {CTWILL}225 =\\{cur\_state}.\\{mode\_field}]@>
 @z
 
+Section 228.
+
+@x
+push_level( /* suspends the current level */
+text_pointer p)
+@y
+push_level( /* suspends the current level */
+text_pointer p)
+@-push_level@>
+@$push_level {CTWILL}228 \&{static} \&{void} (\,)@>
+@z
+
 Section 230.
 
 @x
@@ -1545,6 +1629,15 @@ phase_two(void) {
 phase_two(void) {@+
 @z
 
+Section 246.
+
+@x
+@ @<Predecl...@>=@+static void phase_two(void);
+@y
+@ @<Predecl...@>=@+static void phase_two(void);
+@-phase_two@>
+@z
+
 Section 248.
 
 @x
@@ -1555,6 +1648,27 @@ Section 248.
 @-usage_sentinel@>
 @$usage_sentinel {CTWILL}248 =(\&{struct} \&{perm\_meaning} ${}{*}{}$) \T{1}@>
 @<Translate the current section@>=@+ {
+@z
+
+Section 252.
+
+@x
+finish_C( /* finishes a definition or a \CEE/ part */
+  boolean visible) /* |true| if we should produce \TeX\ output */
+@y
+finish_C( /* finishes a definition or a \CEE/ part */
+  boolean visible) /* |true| if we should produce \TeX\ output */
+@-finish_C@>
+@$finish_C {CTWILL}252 \&{static} \&{void} (\,)@>
+@z
+
+Section 253.
+
+@x
+@ @<Predecl...@>=@+static void finish_C(boolean);
+@y
+@ @<Predecl...@>=@+static void finish_C(boolean);
+@-finish_C@>
 @z
 
 Section 255.
@@ -1574,6 +1688,36 @@ point to the current section name, if it has a name.
 \hfil\break|next_control>=begin_C|.
 We will make the global variable |this_section| point to
 \hfil\break the current section name, if it has a name.
+@z
+
+Section 261.
+
+@x
+footnote( /* outputs section cross-references */
+sixteen_bits flag)
+@y
+footnote( /* outputs section cross-references */
+sixteen_bits flag)
+@-footnote@>
+@$footnote {CTWILL}261 \&{static} \&{void} (\,)@>
+@z
+
+Section 262.
+
+@x
+@ @<Predecl...@>=@+static void footnote(sixteen_bits);
+@y
+@ @<Predecl...@>=@+static void footnote(sixteen_bits);
+@-footnote@>
+@z
+
+Section 266.
+
+@x
+@ @<Predecl...@>=@+static void phase_three(void);
+@y
+@ @<Predecl...@>=@+static void phase_three(void);
+@-phase_three@>
 @z
 
 Section 269.
@@ -1625,6 +1769,17 @@ Section 276.
 @ Procedure |unbucket| goes through the buckets and adds nonempty lists
 @y
 @r @ Procedure |unbucket| goes through the buckets and adds nonempty lists
+@-unbucket@>
+@$unbucket {CTWILL}276 \&{static} \&{void} (\,)@>
+@z
+
+Section 277.
+
+@x
+@ @<Predecl...@>=@+static void unbucket(eight_bits);
+@y
+@ @<Predecl...@>=@+static void unbucket(eight_bits);
+@-unbucket@>
 @z
 
 Section 279.
@@ -1649,6 +1804,15 @@ Section 281.
 switch (cur_name->ilk) {@+char *j;
 @y
 switch (cur_name->ilk) { char *j;
+@z
+
+Section 286.
+
+@x
+@ @<Predecl...@>=@+static void section_print(name_pointer);
+@y
+@ @<Predecl...@>=@+static void section_print(name_pointer);
+@-section_print@>
 @z
 
 Section 288.
@@ -1774,6 +1938,15 @@ static struct perm_meaning {
 @$perm_meaning {CTWILL}293 \&{static} \&{struct}@>
 @z
 
+Section 302.
+
+@x
+@ @<Predec...@>=@+static boolean app_supp(text_pointer);
+@y
+@ @<Predec...@>=@+static boolean app_supp(text_pointer);
+@-app_supp@>
+@z
+
 Section 303.
 
 @x
@@ -1783,6 +1956,17 @@ Section 303.
 @-a@>
 @-b@>
 @-c@>
+@-make_ministring@>
+@$make_ministring {CTWILL}303 \&{static} \&{void} (\,)@>
+@z
+
+Section 304.
+
+@x
+@ @<Predec...@>=@+static void make_ministring(int);
+@y
+@ @<Predec...@>=@+static void make_ministring(int);
+@-make_ministring@>
 @z
 
 Section 307.
@@ -1820,6 +2004,15 @@ Section 313.
 @$p {CTWILL}219 \&{name\_pointer}@>
 @z
 
+Section 316.
+
+@x
+@ @<Predec...@>=@+static void out_mini(meaning_struct *);
+@y
+@ @<Predec...@>=@+static void out_mini(meaning_struct *);
+@-out_mini@>
+@z
+
 Section 317.
 
 @x
@@ -1828,6 +2021,15 @@ Section 317.
 @<Mini-output...@>=
 @y
 @ @<Mini-output...@>=
+@z
+
+Section 319.
+
+@x
+@ @<Predec...@>=@+static sixteen_bits title_lookup(void);
+@y
+@ @<Predec...@>=@+static sixteen_bits title_lookup(void);
+@-title_lookup@>
 @z
 
 Section 322.
