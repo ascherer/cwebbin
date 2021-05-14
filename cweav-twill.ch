@@ -1059,8 +1059,8 @@ static boolean app_supp(
 { token_pointer j;
   if (ident_seen && **p>=tok_flag)
     switch (**(**p-tok_flag+tok_start)) {
-    case '(': app('(');@+app('\\');@+app(',');@+app(')'); goto catch14;
-    case '[': app('[');@+app('\\');@+app(',');@+app(']'); goto catch14;
+    case '(': app_str("(\\,)"); goto catch14;
+    case '[': app_str("[\\,]"); goto catch14;
     }
   for (j=*p;j<*(p+1);j++) {
     if (*j<tok_flag) {
