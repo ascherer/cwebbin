@@ -809,12 +809,12 @@ please do so.
 understanding this method, you will understand how to fix it when things
 go wrong. Every identifier has a current ``meaning,'' consisting of its
 abstract type and the number of the section in which it was most recently
-defined. For example, if your \Cee\ program says `|char *s|' in section~3,
-the meaning of~|s| gets changed to `\&{char} $*$, \S3' while \.{CTWILL}
+defined. For example, if your \Cee\ program says `\&{char}~$*$|s|' in section~3,
+the meaning of~|s| gets changed to `\&{char}~$*$,~\S3' while \.{CTWILL}
 is processing that section. If you refer to~|s| in section~10, and if
 |s|~hasn't been redefined in the meantime, and if section~10 doesn't
 wind up on the same two-page spread as section~3, the mini-index generated
-by section~10 will say ``|s|: \&{char}~$*$, \S3.''
+by section~10 will say ``|s|:~\&{char}~$*$,~\S3.''
 
 The current meaning of every identifier is initially `\.{\\uninitialized}'.
 Then \.{CTWILL} reads the \.{.aux} file for your job, if any; this

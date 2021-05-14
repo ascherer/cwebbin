@@ -1475,12 +1475,15 @@ text_pointer p)
 @$push_level {CTWILL}228 \&{static} \&{void} (\,)@>
 @z
 
-Section 230.
+Section 229.
 
 @x
+force when the current level was begun. This subroutine will never be
 called when |stack_ptr==1|.
 @y
-called when |stack_ptr| |==1|.
+force when the current level was begun.
+
+This subroutine will never be called when |stack_ptr==1|.
 @z
 
 Section 234--235.
@@ -1893,6 +1896,7 @@ with the original ``\&{271.~Index}.''
 @* {\tentex CTWILL} user manual.
 @y
 @** Mogrify {\tentex CWEAVE} into {\tentex CTWILL}.
+@-s@>
 @z
 
 @x
