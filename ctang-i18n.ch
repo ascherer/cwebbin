@@ -198,9 +198,9 @@ Section 81.
 Section 82.
 
 @x l.1187
-@d app_repl(c)  {if (tok_ptr==tok_mem_end) overflow("token"); *tok_ptr++=c;}
+@d app_repl(c)  {if (tok_ptr==tok_mem_end) overflow("token"); *(tok_ptr++)=c;}
 @y
-@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow(_("token")); *tok_ptr++=c;}
+@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow(_("token")); *(tok_ptr++)=c;}
 @z
 
 Section 83.
