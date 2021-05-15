@@ -1027,7 +1027,7 @@ new_meaning(
   if (temp_switch) {
     m=temp_meaning_ptr++;
     if (temp_meaning_ptr>max_temp_meaning_ptr) {
-      if (temp_meaning_ptr>&temp_meaning_stack[max_meanings])
+      if (temp_meaning_ptr>=&temp_meaning_stack[max_meanings])
         overflow(_("temp meanings"));
       max_temp_meaning_ptr=temp_meaning_ptr;
     }
