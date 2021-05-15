@@ -217,9 +217,9 @@ generated sections 27--31 of the file
 @z
 ------------------------------------------------------------------------------
 @x l.1273
-\def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
+\def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 @y
-\def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
+\def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------

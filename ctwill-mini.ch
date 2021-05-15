@@ -4,7 +4,7 @@ Section 1.
 @** Introduction.
 @y
 \ifacro \ifx\undefined\pdfpagewidth\else
-  \pdfpagewidth=\pagewd  \advance\pdfpagewidth by 2cm
+  \pdfpagewidth=\pagewd \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageht \advance\pdfpageheight by 5cm
   \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
   \else \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
@@ -1369,13 +1369,13 @@ Section 212.
   case ',': app(',');@+app_scrap(comma,yes_math);@+break;
   case ';': app(';');@+app_scrap(semi,maybe_math);@+break;
   case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
-  @t\4@>  @<Cases involving nonstandard characters@>@;
+  @t\4@> @<Cases involving nonstandard characters@>@;
 @y
   case ignore: case xref_roman: case xref_wildcard: case meaning: @/
   case suppress: case xref_typewriter: case noop:@+break;
 @#
   @t\4@> @<Cases for operators and syntax markers@>@;
-  @t\4@>  @<Cases involving nonstandard characters@>@;
+  @t\4@> @<Cases involving nonstandard characters@>@;
 @#
 @z
 

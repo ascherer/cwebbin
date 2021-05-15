@@ -57,10 +57,10 @@ current line is nonempty.
 Section 52.
 
 @x
-@d first_chunk(p)  ((p)->byte_start+2)
+@d first_chunk(p) ((p)->byte_start+2)
 @y
 @-m@>
-@d first_chunk(p)  ((p)->byte_start+2)
+@d first_chunk(p) ((p)->byte_start+2)
 @z
 
 Section 87.
