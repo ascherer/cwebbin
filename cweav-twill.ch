@@ -685,17 +685,25 @@ the index section itself---NOT!
 
 @x l.4787
 @ @<Output the name...@>=
+switch (cur_name->ilk) {@+char *j;
 @y
 @ We don't format the index completely; the \.{twinx} program does the
 rest of the job.
 
 @<Output the name...@>=
+switch (cur_name->ilk) {
 @z
 
 @x l.4789
   case normal: case func_template:
 @y
   case normal:
+@z
+
+@x l.4776
+    else {
+@y
+    else {@+char *j;
 @z
 
 @x l.4801
@@ -722,12 +730,7 @@ not_an_identifier: out_name(cur_name,false); goto name_done;
 @x l.4815
 out_name(cur_name,true);
 @y
-if (proofing) out_name(cur_name,true);
-else {@+char *j;
-  out('{');
-  for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++) out(*j);
-  out('}');
-}
+out_name(cur_name,proofing);
 @z
 
 @x l.4884

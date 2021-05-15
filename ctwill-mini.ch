@@ -1788,8 +1788,12 @@ Section 277.
 Section 279.
 
 @x
+@ @<Split the list...@>= {
+  eight_bits c;
   next_name=sort_ptr->head;
 @y
+@ @<Split the list...@>= {@+
+  eight_bits c;
   next_name=sort_ptr->head;@/
 @z
 
@@ -1798,15 +1802,7 @@ Section 280.
 @x
   cur_name=sort_ptr->head;
 @y
-  cur_name=sort_ptr->head;@/
-@z
-
-Section 281.
-
-@x
-switch (cur_name->ilk) {@+char *j;
-@y
-switch (cur_name->ilk) { char *j;
+  @+cur_name=sort_ptr->head;@/
 @z
 
 Section 286.
