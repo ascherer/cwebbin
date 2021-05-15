@@ -11,7 +11,7 @@
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#define gettext(A) A
+#define gettext(a) a
 #endif
 
 #include <ctype.h>  
@@ -27,7 +27,7 @@
 
 #define banner _("This is CTANGLE (Version 4.3 [CWEBbin 2021.3])")  \
 
-#define _(S) gettext(S)  \
+#define _(s) gettext(s)  \
 
 #define and_and 04
 #define lt_lt 020

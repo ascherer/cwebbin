@@ -11,7 +11,7 @@
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#define gettext(A) A
+#define gettext(a) a
 #endif
 
 #include <ctype.h>  
@@ -28,15 +28,15 @@
 #if HAVE_GETTEXT
 #include <locale.h>  
 #else
-#define setlocale(A,B) ""
-#define bindtextdomain(A,B) ""
-#define textdomain(A) ""
+#define setlocale(a,b) ""
+#define bindtextdomain(a,b) ""
+#define textdomain(a) ""
 #endif
 
 /*:91*/
 #line 63 "common.w"
 
-#define _(S) gettext(S)  \
+#define _(s) gettext(s)  \
 
 #define and_and 04
 #define lt_lt 020

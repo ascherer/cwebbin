@@ -58,15 +58,15 @@ Section 2.
 Section 4.
 
 @x
-@d _(S) gettext(S)
+@d _(s) gettext(s)
 
 @<Include files@>=
 @y
-@d _(S) gettext(S)
-@-S@>
+@d _(s) gettext(s)
+@-s@>
 
 @<Include files@>=
-@-A@>
+@-a@>
 @-HAVE_GETTEXT@>
 @z
 
