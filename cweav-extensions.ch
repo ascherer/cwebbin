@@ -8,7 +8,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 89.
 
-@x l.1416
+@x l.1411
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -38,7 +38,7 @@ tex_puts("cwebma");
 
 Section 129.
 
-@x l.2659
+@x l.2651
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app(dindent); big_app1(pp);
