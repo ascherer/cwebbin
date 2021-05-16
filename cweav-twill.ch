@@ -104,13 +104,17 @@ turned on during the first phase---NOT!
 @x l.445
 id_lookup("extern",NULL,int_like);
 @y
+@#
 ext_loc=id_lookup("extern",NULL,int_like)-name_dir;
+@#
 @z
 
 @x l.458
 id_lookup("int",NULL,raw_int);
 @y
+@#
 int_loc=id_lookup("int",NULL,raw_int)-name_dir;
+@#
 @z
 
 @x l.553
