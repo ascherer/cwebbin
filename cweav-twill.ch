@@ -886,7 +886,7 @@ with `\.=', the mini-index entry will contain an equals sign instead
 of a colon; for example,
 $$\.{@@\$buf\_size \{PROG\}10 =\\T\{200\}@@>}$$
 generates either `$\\{buf\_size}=200$, \S10' or
-`$\\{buf\_size}=200$, {\sc PROG}\S10', depending on whether
+`$\\{buf\_size}=200$, {\sc PROG}~\S10', depending on whether
 `{\sc PROG}' is or isn't the title of the current program. If the
 \TeX\ part is `\.{\\zip}', the mini-index entry will contain neither
 colon nor equals, just a comma. The program name and section number
