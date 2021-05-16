@@ -255,15 +255,6 @@ Section 37.
 @r @ Control codes are converted to \.{CWEAVE}'s internal
 @z
 
-Section 41.
-
-@x
-    if (loc++ <=limit) { int c=ccode[(eight_bits)*loc++];
-@y
-    if (loc++ <=limit) { int c=ccode[(eight_bits)*loc++];
-@-c@>
-@z
-
 Section 43.
 
 @x
