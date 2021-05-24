@@ -1264,7 +1264,7 @@ placed on the list, unless they are reserved and their current
 
 @<Flag the usage of this identifier, for the mini-index@>=
 { struct perm_meaning *q=get_meaning(p);
-  if (!(abnormal(p)) || strcmp(q->perm.tex_part,"\\uninitialized")!=0)
+  if (!abnormal(p) || strcmp(q->perm.tex_part,"\\uninitialized")!=0)
     if (q->link==NULL) {
       q->link=top_usage;
       top_usage=q;
