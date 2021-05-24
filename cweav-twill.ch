@@ -1,3 +1,29 @@
+Changes for CWEAVE.W to create CTWILL, May 2021.
+
+This set of changes basically is the same as file CTWILL.DIFFS by Don Knuth
+from ftp://ftp.cs.stanford.edu/pub/ctwill as of July 24, 2000, based on
+CWEAVE.W version 3.61.  A diligent reader familiar with both the syntaxes
+of a DIFF patch and a CWEB changefile should be able to easily verify this.
+
+On January 26, 2019, Andreas Scherer converted the original patch file into
+a genuine CWEB changefile suitable for direct application to CWEAVE.W.  Also,
+the associated patch file PROD.DIFFS was converted into PROD-TWILL.CH.  This
+conversion was done in branch https://github.com/ascherer/ctwill/tree/local
+and led to the full integration of CTWILL into the CWEBbin project
+https://github.com/ascherer/cwebbin and hence into TeX Live 2019.
+
+On April 29, 2021, Andreas Scherer reshuffled all the "extra" sections
+introduced by CWEAV-TWILL.CH to the "appendix", in order to keep the section
+numbering of CWEAVE.W intact up to the "@* Index.", at least when processed
+with CWEAVE.  (Self-processing CTWILL with itself requires the changefile
+CTWILL-MINI.CH that splits long sections into groups of smaller parts in order
+to make the material fit into the different page layout.)
+
+In the meantime, CWEAV-TWILL.CH has received quite some spit and polish all
+over the place.  Great care has been taken, though, to keep the code fully
+functional, so the final CTWILL executable -- both in its CWEBbin incarnation
+and in its TeX Live form -- is able to decently format the virtual CTWILL.W.
+
 @x l.1
 % This file is part of CWEB.
 % This program by Silvio Levy and Donald E. Knuth
