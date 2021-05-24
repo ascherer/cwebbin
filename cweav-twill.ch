@@ -307,7 +307,7 @@ tex_puts(proofing?"proofma":"ctwima");
 @y
 @d out(c)
  {if (ms_mode) { /* outputting to |ministring_buf| */
-    if (ministring_ptr<&ministring_buf[max_tex_chars])
+    if (ministring_ptr<ministring_buf_end)
       *ministring_ptr++=c;
   } else {
      if (out_ptr>=out_buf_end) break_out();
@@ -952,11 +952,17 @@ static struct perm_meaning {
 } cur_meaning[max_names]; /* the current ``permanent'' meanings */
 static struct perm_meaning *top_usage; /* first meaning to output in this section */
 static meaning_struct temp_meaning_stack[max_meanings]; /* the current ``temporary'' meanings */
+static meaning_struct *temp_meaning_stack_end=temp_meaning_stack+max_meanings-1;
+  /* end of |temp_meaning_stack| */
 static meaning_struct *temp_meaning_ptr; /* first available slot in |temp_meaning_stack| */
 static meaning_struct *max_temp_meaning_ptr; /* its maximum value so far */
 static name_pointer title_code[max_titles]; /* program names seen so far */
+static name_pointer *title_code_end=title_code+max_titles-1;
+  /* end of |title_code| */
 static name_pointer *title_code_ptr; /* first available slot in |title_code| */
 static char ministring_buf[max_tex_chars]; /* \TeX\ code being generated */
+static char *ministring_buf_end=ministring_buf+max_tex_chars-1;
+  /* end of |ministring_buf| */
 static char *ministring_ptr; /* first available slot in |ministring_buf| */
 static boolean ms_mode; /* are we outputting to |ministring_buf|? */
 
@@ -983,7 +989,7 @@ new_meaning(
   ms_mode=false;
   if (q->stamp!=section_count) {
     if (*(ministring_ptr-1)==' ') ministring_ptr--;
-    if (ministring_ptr>=&ministring_buf[max_tex_chars])
+    if (ministring_ptr>=ministring_buf_end)
       strcpy(ministring_buf,"\\zip"); /* ignore |tex_part| if too long */
 @.\\zip@>
     else *ministring_ptr='\0';
@@ -1032,7 +1038,7 @@ new_meaning(
   if (temp_switch) {
     m=temp_meaning_ptr++;
     if (temp_meaning_ptr>max_temp_meaning_ptr) {
-      if (temp_meaning_ptr>=&temp_meaning_stack[max_meanings])
+      if (temp_meaning_ptr>=temp_meaning_stack_end)
         overflow(_("temp meanings"));
       max_temp_meaning_ptr=temp_meaning_ptr;
     }
@@ -1349,7 +1355,7 @@ It advances |loc| past the title found.
   } else err_print(_("! Title should be enclosed in braces or doublequotes"));
   last=++loc;
   if (last>limit) err_print(_("! Title name didn't end"));
-  if (title_code_ptr==&title_code[max_titles]) overflow(_("titles"));
+  if (title_code_ptr==title_code_end) overflow(_("titles"));
   *title_code_ptr=id_lookup(first,last,title);
   for (p=title_code;true;p++) if (*p==*title_code_ptr) break;
   if (p==title_code_ptr) title_code_ptr++;
