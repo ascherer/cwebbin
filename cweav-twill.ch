@@ -92,13 +92,24 @@ turned on during the first phase---NOT!
 @x l.376
   p->ilk=t; init_node(p);
 @y
-  struct perm_meaning *q=p-name_dir+cur_meaning;
+  struct perm_meaning *q=get_meaning(p);
   p->ilk=t; init_node(p);
   q->stamp=0;
   q->link=NULL;
   q->perm.id=p;
   q->perm.prog_no=q->perm.sec_no=0;
   strcpy(q->perm.tex_part,"\\uninitialized");
+@z
+
+@x l.386
+@ And here's a small helper function to simplify the code.
+
+@d update_node(p) (p)->xref=(void *)xref_ptr
+@y
+@ And here are two small helper functions to simplify the code.
+
+@d update_node(p) (p)->xref=(void *)xref_ptr
+@d get_meaning(p) (p)-name_dir+cur_meaning
 @z
 
 @x l.445
@@ -985,7 +996,7 @@ static void
 new_meaning(
   name_pointer p)
 {
-  struct perm_meaning *q=p-name_dir+cur_meaning;
+  struct perm_meaning *q=get_meaning(p);
   ms_mode=false;
   if (q->stamp!=section_count) {
     if (*(ministring_ptr-1)==' ') ministring_ptr--;
@@ -1026,7 +1037,7 @@ new_meaning(
   while (xisspace(*first)) first++;
   while (xisspace(*(last-1))) last--;
   if (first<last) {
-    struct perm_meaning *q=id_lookup(first,last,normal)-name_dir+cur_meaning;
+    struct perm_meaning *q=get_meaning(id_lookup(first,last,normal));
     q->stamp=section_count; /* this is what actually suppresses output */
   }
 }
@@ -1034,7 +1045,7 @@ new_meaning(
 @q Section 77->280. @>
 @ @<Digest...@>=
 { meaning_struct *m;
-  struct perm_meaning *q=p-name_dir+cur_meaning;
+  struct perm_meaning *q=get_meaning(p);
   if (temp_switch) {
     m=temp_meaning_ptr++;
     if (temp_meaning_ptr>max_temp_meaning_ptr) {
@@ -1252,7 +1263,7 @@ placed on the list, unless they are reserved and their current
 \TeX\ meaning is uninitialized.
 
 @<Flag the usage of this identifier, for the mini-index@>=
-{ struct perm_meaning *q=p-name_dir+cur_meaning;
+{ struct perm_meaning *q=get_meaning(p);
   if (!(abnormal(p)) || strcmp(q->perm.tex_part,"\\uninitialized")!=0)
     if (q->link==NULL) {
       q->link=top_usage;
@@ -1265,7 +1276,7 @@ placed on the list, unless they are reserved and their current
 { struct perm_meaning *q;
   while (temp_meaning_ptr>temp_meaning_stack) {
     out_mini(--temp_meaning_ptr);
-    q=temp_meaning_ptr->id-name_dir+cur_meaning;
+    q=get_meaning(temp_meaning_ptr->id);
     q->stamp=section_count; /* suppress output from ``permanent'' data */
   }
   while (top_usage!=usage_sentinel) {
