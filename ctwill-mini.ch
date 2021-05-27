@@ -59,13 +59,9 @@ Section 4.
 
 @x
 @d _(s) gettext(s)
-
-@<Include files@>=
 @y
 @d _(s) gettext(s)
 @-s@>
-
-@<Include files@>=
 @-a@>
 @-HAVE_GETTEXT@>
 @z
