@@ -312,9 +312,9 @@ Section 227.
 Section 228.
 
 @x l.4188
-reset_input(); if (show_progress) fputs("\nWriting the output file...",stdout);
+if (show_progress) fputs("\nWriting the output file...",stdout);
 @y
-reset_input(); if (show_progress) fputs(_("\nWriting the output file..."),stdout);
+if (show_progress) fputs(_("\nWriting the output file..."),stdout);
 @z
 
 Section 233.
