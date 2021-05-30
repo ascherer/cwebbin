@@ -134,15 +134,15 @@ Section 74.
 Section 75.
 
 @x l.1048
-    case translit_code: err_print("! Use @@l in limbo only"); continue;
+  case translit_code: err_print("! Use @@l in limbo only"); continue;
 @y
-    case translit_code: err_print(_("! Use @@l in limbo only")); continue;
+  case translit_code: err_print(_("! Use @@l in limbo only")); continue;
 @z
 
 @x l.1053
-        err_print("! Double @@ should be used in control text");
+      err_print("! Double @@ should be used in control text");
 @y
-        err_print(_("! Double @@ should be used in control text"));
+      err_print(_("! Double @@ should be used in control text"));
 @z
 
 Section 76.
@@ -190,9 +190,9 @@ Section 80.
 Section 81.
 
 @x l.1162
-  if (loc>=limit) err_print("! Verbatim string didn't end");
+if (loc>=limit) err_print("! Verbatim string didn't end");
 @y
-  if (loc>=limit) err_print(_("! Verbatim string didn't end"));
+if (loc>=limit) err_print(_("! Verbatim string didn't end"));
 @z
 
 Section 82.
@@ -252,9 +252,9 @@ Section 89.
 Section 93.
 
 @x l.1414
-    err_print("! Definition flushed, must start with identifier");
+  err_print("! Definition flushed, must start with identifier");
 @y
-    err_print(_("! Definition flushed, must start with identifier"));
+  err_print(_("! Definition flushed, must start with identifier"));
 @z
 
 Section 100
