@@ -1096,14 +1096,12 @@ Section 136--137.
     case attr: @<Cases for |attr|@>@; @+break;
     case default_like: @<Cases for |default_like|@>@; @+break;
   }
-  pp++; /* if no match was found, we move to the right */
-}
+pp++; /* if no match was found, we move to the right */
 @y
   switch (pp->cat) {
     @<Cases for |pp->cat|@>@;
   }
-  pp++; /* if no match was found, we move to the right */
-}
+pp++; /* if no match was found, we move to the right */
 
 @ @<Cases for |pp->cat|@>=@t\1\5\5@>
     case exp: @<Cases for |exp|@>@; @+break;

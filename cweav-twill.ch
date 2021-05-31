@@ -251,18 +251,18 @@ skip_TeX(void)
 @z
 
 @x l.943
-    case underline: xref_switch=def_flag; continue;
+  case underline: xref_switch=def_flag; continue;
 @y
-    case underline: xref_switch=def_flag; continue;
-    case temp_meaning: temp_switch=!temp_switch; continue;
-    case right_start: right_start_switch=true; continue;
+  case underline: xref_switch=def_flag; continue;
+  case temp_meaning: temp_switch=!temp_switch; continue;
+  case right_start: right_start_switch=true; continue;
 @z
 
 @x l.945
-    case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
+  case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
 @y
-    case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
-    case meaning: case suppress:
+  case xref_roman: case xref_wildcard: case xref_typewriter: case noop:
+  case meaning: case suppress:
 @z
 
 @x l.1021
@@ -704,20 +704,19 @@ static sixteen_bits k_section; /* runs through the sections */
 the index section itself---NOT!
 @z
 
-@x l.4578
-@ @<Tell about changed sections@>= {
-  /* remember that the index is already marked as changed */
-  k_section=0;
-  while (!changed_section[++k_section]);
-  out_str("\\ch ");
+@x l.4572
+@ @<Tell about changed sections@>=
+/* remember that the index is already marked as changed */
+k_section=0;
+while (!changed_section[++k_section]);
+out_str("\\ch ");
 @.\\ch@>
-  out_section(k_section);
-  while (k_section<section_count) {
-    while (!changed_section[++k_section]);
-    out_str(", "); out_section(k_section);
-  }
-  out('.');
+out_section(k_section);
+while (k_section<section_count) {
+  while (!changed_section[++k_section]);
+  out_str(", "); out_section(k_section);
 }
+out('.');
 @y
 @ No need to tell about changed sections.
 @z
