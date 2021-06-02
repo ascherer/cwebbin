@@ -1437,9 +1437,9 @@ Section 221.
 Section 225.
 
 @x
-@ @d cur_end cur_state.end_field /* current ending location in |tok_mem| */
+@d cur_mode cur_state.mode_field /* current mode of interpretation */
 @y
-@ @d cur_end cur_state.end_field /* current ending location in |tok_mem| */
+@d cur_mode cur_state.mode_field /* current mode of interpretation */
 @-cur_end@>
 @-cur_tok@>
 @-cur_mode@>
