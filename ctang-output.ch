@@ -123,7 +123,7 @@ else if(0==strcmp("/dev/stderr",output_file_name))@/
   @<Redirect temporary output to \.{/dev/stderr}@>@;
 else if(0==strcmp("/dev/null",output_file_name))@/
   @<Redirect temporary output to \.{/dev/null}@>@;
-else { /* Hopefully a \\{regular} output file */
+else { /* Hopefully a regular output file */
   if((C_file=fopen(output_file_name,"r"))!=NULL) {
     @<Set up the comparison of temporary output@>@;
     @<Create the secondary output depending on the comparison@>@;
