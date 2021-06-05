@@ -723,7 +723,7 @@ out('.');
 
 @x l.4772
 @ @<Output the name...@>=
-switch (cur_name->ilk) {@+char *j;
+switch (cur_name->ilk) {@+char *j;@+@t}\6{\4@>
 @y
 @ We don't format the index completely; the \.{twinx} program does the
 rest of the job.
@@ -741,7 +741,7 @@ switch (cur_name->ilk) {
 @x l.4776
     else {
 @y
-    else {@+char *j;
+    else {@+char *j;@+@t}\6{@>
 @z
 
 @x l.4786
@@ -1109,14 +1109,13 @@ static boolean app_supp(
     case '(': app_str("(\\,)"); goto catch14;
     case '[': app_str("[\\,]"); goto catch14;
     }
-  for (j=*p;j<*(p+1);j++) {
+  for (j=*p;j<*(p+1);j++)
     if (*j<tok_flag) {
       if (*j==inserted) break;
       if (j==tok_loc) ident_seen=true;
       else app(*j);
     } else if (*j>=inner_tok_flag) confusion(_("inner"));
     else if (app_supp(*j-tok_flag+tok_start)) goto catch14;
-  }
   return false;
 catch14: return *(*(p+1)-1)=='9'; /* was production 14 used? */
 }
@@ -1338,7 +1337,7 @@ out_mini(
 @ Compare this code with section |@<Output the name...@>|.
 
 @<Mini-output...@>=
-switch (cur_name->ilk) {@+char *j;
+switch (cur_name->ilk) {@+char *j;@+@t}\6{\4@>
   case normal: case func_template:
     if (is_tiny(cur_name)) out_str("\\|");
     else {
