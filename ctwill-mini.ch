@@ -1223,20 +1223,32 @@ scrap_pointer p)
 @$make_underlined {CTWILL}141 \&{static} \&{void} (\,)@>
 @z
 
-Section 150.
+Section 144.
 
 @x
-@ @<Cases for |sizeof_like|@>=
+else if (cat1==attr) {
 @y
-@r @ @<Cases for |sizeof_like|@>=
+else @/ if (cat1==attr) {
 @z
 
-Section 157.
+Section 158.
 
 @x
-@ @<Cases for |struct_like|@>=
+@ @<Cases for |struct_head|@>=
 @y
-@r @ @<Cases for |struct_like|@>=
+@r @ @<Cases for |struct_head|@>=
+@z
+
+Section 165.
+
+@x
+  else squash(pp,1,else_like,0,65);
+}
+else if (cat1==attr) {
+@y
+  else squash(pp,1,else_like,0,65);
+}
+@+ else @/ if (cat1==attr) {
 @z
 
 Section 171.
@@ -1247,6 +1259,44 @@ Section 171.
 @d force_lines flags['f'] /* should each statement be on its own line? */
 @-force_lines@>
 @$force_lines {CTWILL}171 =\\{flags}[\.{'f'}]@>
+@z
+
+Section 174.
+
+@x
+if (cat1==else_like || cat1==if_like || cat1==define_like)
+@y
+if (cat1==else_like || cat1==if_like || cat1==define_like) @/
+@z
+
+@x
+} else if (cat1==exp || cat1==function) {
+@y
+} else @/ if (cat1==exp || cat1==function) {
+@z
+
+Section 182.
+
+@x
+  big_app1(pp+2); reduce(pp,3,new_exp,0,96);
+}
+else if (cat1==raw_ubin) {
+@y
+  big_app1(pp+2); reduce(pp,3,new_exp,0,96);
+}
+@+ else @/ if (cat1==raw_ubin) {
+@z
+
+Section 198.
+
+@x
+static void squash(scrap_pointer,short,eight_bits,short,short);
+
+@ @c
+@y
+static void squash(scrap_pointer,short,eight_bits,short,short);
+
+@r @ @c
 @z
 
 Section 203.
@@ -1413,18 +1463,13 @@ Section 213--214.
   case ':': app(':');@+app_scrap(colon,no_math);@+break;@/
 @z
 
-Section 216.
+Section 221.
 
 @x
-has been used, so another |app| is legitimate before testing again.
-
-Many of the special characters in a string must be prefixed by `\.\\' so that
+@ The |outer_parse| routine is to |C_parse| as |outer_xref|
 @y
-has been used, so another |app| is legitimate before testing again.
-Many of the special characters in a string must be prefixed by `\.\\' so that
+@r @ The |outer_parse| routine is to |C_parse| as |outer_xref|
 @z
-
-Section 221.
 
 @x
 @d make_pb flags['e']
