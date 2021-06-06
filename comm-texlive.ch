@@ -13,13 +13,13 @@ Material in limbo.
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{Common code for CTANGLE and CWEAVE (4.3 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.4 [\TeX~Live])}
 @z
 
 @x l.30 and l.191 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.3 [\TeX~Live])}
+  \centerline{(Version 4.4 [\TeX~Live])}
 @z
 
 @x l.32
@@ -177,6 +177,14 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
+Section 46.
+
+@x l.622
+@d hash_size 353 /* should be prime */
+@y
+@d hash_size 8501 /* should be prime */
+@z
+
 Section 73.
 
 @x l.1123
@@ -312,7 +320,6 @@ static boolean set_path(char *,char *);@/
 @ @c
 static boolean set_path(char *include_path,char *environment)
 {
-  char string[max_path_length+2];
 @#
 #ifdef CWEBINPUTS
   strncpy(include_path,CWEBINPUTS,max_path_length);
@@ -324,6 +331,7 @@ static boolean set_path(char *include_path,char *environment)
       err_print(_("! Include path too long")); return(false);
 @.Include path too long@>
     } else {
+      char string[max_path_length+2];
       sprintf(string,"%s%c%s",environment,PATH_SEPARATOR,include_path);
       strcpy(include_path,string);
     }

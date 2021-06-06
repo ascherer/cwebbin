@@ -346,9 +346,9 @@ at \.{https://github.com/ascherer/cwebbin}.
 #if HAVE_GETTEXT
 #include <locale.h> /* |@!LC_MESSAGES|, |@!LC_CTYPE| */
 #else
-#define setlocale(A,B) ""
-#define bindtextdomain(A,B) ""
-#define textdomain(A) ""
+#define setlocale(a,b) ""
+#define bindtextdomain(a,b) ""
+#define textdomain(a) ""
 #endif
 
 @ @<Set locale...@>=

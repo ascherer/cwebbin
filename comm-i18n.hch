@@ -19,7 +19,7 @@ are placed in the context of the `|_|'~macro.  This is just a shortcut for the
 not have this library installed, we wrap things for neutral behavior without
 internationalization.
 
-@d _(S) gettext(S)
+@d _(s) gettext(s)
 
 @<Include files@>=
 #ifndef HAVE_GETTEXT
@@ -29,7 +29,7 @@ internationalization.
 #if HAVE_GETTEXT
 #include <libintl.h>
 #else
-#define gettext(A) A
+#define gettext(a) a
 #endif
 @#
 @z

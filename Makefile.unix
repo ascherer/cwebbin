@@ -177,7 +177,7 @@ COMMPATCH = comm-extensions.ch comm-extensions.hch \
 CTANGPATCH = ctang-i18n.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-texlive.ch
 CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
-	cweav-output.ch cweav-patch.ch cweav-texlive.ch
+	cweav-output.ch cweav-patch.ch cweav-texlive.ch cwtw-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
@@ -354,16 +354,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,50 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	sed -i -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
@@ -392,10 +392,11 @@ $(TCHANGES): ctangle.w ctang-patch.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
-	cweav-output.ch cweav-i18n.ch # cweav-texlive.ch
+	cweav-output.ch cweav-i18n.ch # cwtw-texlive.ch cweav-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(LCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
-	cweav-output.ch cweav-i18n.ch cweav-twill.ch # ctwill-texlive.ch
+	cweav-output.ch cweav-i18n.ch \
+	cweav-twill.ch # cwtw-texlive.ch ctwill-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(DCHANGES): cwebman.tex cwebman-patch.ch \
 	cwebman-extensions.ch # cwebman-texlive.ch

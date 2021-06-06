@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CWEAVE.W, Version 4.3.
+It is a changefile for CWEAVE.W, Version 4.4.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -175,17 +175,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 	20 February 2021	AS	2021 tuneup for CWEB 4.1 [2021].
 	25 February 2021	AS	2021 tuneup for CWEB 4.2 [2021].
 	13 April 2021		AS	2021 tuneup for CWEB 4.3 [2021].
+	06 June 2021		AS	2021 tuneup for CWEB 4.4 [2021].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.35
-\def\title{CWEAVE (Version 4.3)}
+\def\title{CWEAVE (Version 4.4)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.39
-  \centerline{(Version 4.3)}
+  \centerline{(Version 4.4)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -201,7 +202,7 @@ z
 Section 1.
 
 @x l.70
-@d banner "This is CWEAVE (Version 4.3)"
+@d banner "This is CWEAVE (Version 4.4)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
 @z
@@ -217,13 +218,13 @@ Sections 3--18.
 Sections 116--117.
 
 @x l.2237
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
 
 @c
 static void
 print_text( /* prints a token list for debugging; not used in |main| */
 @y
-@d inner_tok_flag 5*id_flag /* signifies a token list in `\pb' */
+@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
 
 @<Predecl...@>=
 #if 0
@@ -258,7 +259,7 @@ improved features that have been created by numerous contributors over the
 course of a quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{272.~Index}.''
+material should nicely integrate with the original ``\&{271.~Index}.''
 
 @** Index.
 @z

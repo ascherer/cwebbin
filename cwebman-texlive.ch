@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.3 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.4 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.3 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.4 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -217,9 +217,9 @@ generated sections 27--31 of the file
 @z
 ------------------------------------------------------------------------------
 @x l.1273
-\def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
+\def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 @y
-\def\runninghead{APPENDIX A  --- TRANSLATION BY {\tentt CTANGLE}}
+\def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------
@@ -260,6 +260,6 @@ And here's what the same excerpt looks like when typeset.
 @x l.1600 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.3)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.4)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
