@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% April 24, 2021
+% June 6, 2021
 
 # NAME
 

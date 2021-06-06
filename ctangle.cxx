@@ -25,7 +25,7 @@
 /*:4*/
 #line 67 "ctangle.w"
 
-#define banner _("This is CTANGLE (Version 4.3 [CWEBbin 2021.3])")  \
+#define banner _("This is CTANGLE (Version 4.4 [CWEBbin 2021.4])")  \
 
 #define _(s) gettext(s)  \
 

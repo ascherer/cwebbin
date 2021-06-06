@@ -15,12 +15,12 @@ index eddd6af..1fbb0ac 100644
 @@ -1,9 +1,9 @@
  % standard macros for CWEB listings (in addition to plain.tex)
 -% Version 3.6 --- May 2000
-+% Version 4.3 --- April 2021
++% Version 4.4 --- June 2021
  % modified for pages produced by CTWILL
  % further modified for page size of the MMIXware book
  \ifx\documentstyle\undefined\else\endinput\fi % LaTeX will use other macros
 -\xdef\fmtversion{\fmtversion+CTWILL3.6+LNCS}
-+\xdef\fmtversion{\fmtversion+CTWILL4.3+LNCS}
++\xdef\fmtversion{\fmtversion+CTWILL4.4+LNCS}
  
  \let\:=\. % preserve a way to get the dot accent
   % (all other accents will still work as usual)
@@ -56,11 +56,11 @@ index 29533b8..dbcf312 100644
 @@ -1,8 +1,8 @@
  % standard macros for CWEB listings (in addition to plain.tex)
 -% Version 3.6 --- May 2000
-+% Version 4.3 --- April 2021
++% Version 4.4 --- June 2021
  % Modified for proofs in CTWILL
  \ifx\documentstyle\undefined\else\endinput\fi % LaTeX will use other macros
 -\xdef\fmtversion{\fmtversion+CWEB3.6+PROOFS}
-+\xdef\fmtversion{\fmtversion+CWEB4.3+PROOFS}
++\xdef\fmtversion{\fmtversion+CWEB4.4+PROOFS}
  
  \let\:=\. % preserve a way to get the dot accent
   % (all other accents will still work as usual)
