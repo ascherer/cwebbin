@@ -1765,6 +1765,12 @@ Section 269.
 Section 271.
 
 @x
+@ During the sorting phase we shall use the |cat| and |trans| arrays from
+@y
+@r @ During the sorting phase we shall use the |cat| and |trans| arrays from
+@z
+
+@x
 @<Rest of |trans_plus| union@>=
 @y
 @<Rest of |trans_plus| union@>=
