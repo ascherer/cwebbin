@@ -1536,10 +1536,14 @@ Section 234--235.
         while (true) {
           a=get_output();
           if (a==inserted) continue;
-          if ((a<indent && !(b==big_cancel&&a==' ')) || a>big_force) break;
-          if (a==indent) c++;
-          else if (a==outdent) c--;
-            else if (a==opt) a=get_output();
+          if ((a<indent && !(b==big_cancel&&a==' ')) @|
+            || (a>big_force && a!=dindent)) break;
+          switch (a) {
+          case indent: c++; break;
+          case outdent: c--; break;
+          case dindent: c+=2; break;
+          case opt: a=get_output();
+          }
         }
         @<Output saved |indent| or |outdent| tokens@>@;
         goto reswitch;
@@ -1574,10 +1578,14 @@ Section 234--235.
         while (true) {
           a=get_output();
           if (a==inserted) continue;
-          if ((a<indent && !(b==big_cancel&&a==' ')) || a>big_force) break;
-          if (a==indent) c++;
-          else if (a==outdent) c--;
-            else if (a==opt) a=get_output();
+          if ((a<indent && !(b==big_cancel&&a==' ')) @|
+            || (a>big_force && a!=dindent)) break;
+          switch (a) {
+          case indent: c++; break;
+          case outdent: c--; break;
+          case dindent: c+=2; break;
+          case opt: a=get_output();
+          }
         }
         @<Output saved |indent| or |outdent| tokens@>@;
         goto reswitch;
