@@ -198,9 +198,15 @@ if (loc>=limit) err_print(_("! Verbatim string didn't end"));
 Section 82.
 
 @x l.1187
-@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow("token"); *(tok_ptr++)=c;}
+@d app_repl(c) {
+  if (tok_ptr==tok_mem_end) overflow("token");
+  else *(tok_ptr++)=(eight_bits)c;
+}
 @y
-@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow(_("token")); *(tok_ptr++)=c;}
+@d app_repl(c) {
+  if (tok_ptr==tok_mem_end) overflow(_("token"));
+  else *(tok_ptr++)=(eight_bits)c;
+}
 @z
 
 Section 83.
