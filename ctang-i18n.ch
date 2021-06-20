@@ -296,20 +296,20 @@ Section 103.
 @x l.1542
   puts("\nMemory usage statistics:");
   printf("%ld names (out of %ld)\n",
-          (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+          (long)(name_ptr-name_dir),(long)max_names);
   printf("%ld replacement texts (out of %ld)\n",
-          (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
+          (long)(text_ptr-text_info),(long)max_texts);
   printf("%ld bytes (out of %ld)\n",
-          (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+          (long)(byte_ptr-byte_mem),(long)max_bytes);
   printf("%ld tokens (out of %ld)\n",
 @y
   puts(_("\nMemory usage statistics:"));
   printf(_("%ld names (out of %ld)\n"),
-          (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+          (long)(name_ptr-name_dir),(long)max_names);
   printf(_("%ld replacement texts (out of %ld)\n"),
-          (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
+          (long)(text_ptr-text_info),(long)max_texts);
   printf(_("%ld bytes (out of %ld)\n"),
-          (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+          (long)(byte_ptr-byte_mem),(long)max_bytes);
   printf(_("%ld tokens (out of %ld)\n"),
 @z
 
