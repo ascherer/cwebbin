@@ -56,12 +56,12 @@
 
 #define compress(c) if(loc++<=limit) return c \
 
-#define xisalpha(c) (isalpha((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
-#define xisdigit(c) (isdigit((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
-#define xisspace(c) (isspace((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
-#define xislower(c) (islower((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
-#define xisupper(c) (isupper((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
-#define xisxdigit(c) (isxdigit((eight_bits) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xisalpha(c) (isalpha((int) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xisdigit(c) (isdigit((int) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xisspace(c) (isspace((int) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xislower(c) (islower((int) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xisupper(c) (isupper((int) (c) ) &&((eight_bits) (c) <0200) ) 
+#define xisxdigit(c) (isxdigit((int) (c) ) &&((eight_bits) (c) <0200) ) 
 #define isxalpha(c) ((c) =='_'||(c) =='$')  \
 
 #define ishigh(c) ((eight_bits) (c) > 0177)  \
@@ -114,7 +114,7 @@
 #define max_sections 2000 \
 
 #define lines_dont_match (change_limit-change_buffer!=limit-buffer|| \
-strncmp(buffer,change_buffer,(size_t) (limit-buffer) ) )  \
+strncmp(buffer,change_buffer,(size_t) (limit-buffer) ) !=0)  \
 
 #define if_section_start_make_pending(b)  \
 *limit= '!'; \
@@ -128,10 +128,10 @@ err_print(_("! Include file name too long") ) ;goto restart;} \
 #define hash_size 353 \
 
 #define first_chunk(p) ((p) ->byte_start+2) 
-#define prefix_length(p) (int) ((eight_bits) *((p) ->byte_start) *256+ \
+#define prefix_length(p) (size_t) ((eight_bits) *((p) ->byte_start) *256+ \
 (eight_bits) *((p) ->byte_start+1) ) 
-#define set_prefix_length(p,m) (*((p) ->byte_start) = (m) /256, \
-*((p) ->byte_start+1) = (m) %256)  \
+#define set_prefix_length(p,m) (*((p) ->byte_start) = (char) ((m) /256) , \
+*((p) ->byte_start+1) = (char) ((m) %256) )  \
 
 #define less 0
 #define equal 1
@@ -445,13 +445,13 @@ static void check_change(void);
 /*:33*//*55:*/
 #line 764 "common.w"
 
-static int web_strcmp(char*,int,char*,int);
+static int web_strcmp(char*,size_t,char*,size_t);
 static name_pointer add_section_name(name_pointer,int,char*,char*,boolean);
 static void extend_section_name(name_pointer,char*,char*,boolean);
 
 /*:55*//*64:*/
 #line 991 "common.w"
-static int section_name_cmp(char**,int,name_pointer);
+static int section_name_cmp(char**,size_t,name_pointer);
 
 /*:64*//*76:*/
 #line 1186 "common.w"
@@ -590,7 +590,7 @@ change_line++;
 if(!input_ln(change_file))return;
 if(limit<buffer+2)continue;
 if(buffer[0]!='@')continue;
-if(xisupper(buffer[1]))buffer[1]= tolower((eight_bits)buffer[1]);
+if(xisupper(buffer[1]))buffer[1]= tolower((int)buffer[1]);
 if(buffer[1]=='x')break;
 if(buffer[1]=='y'||buffer[1]=='z'||buffer[1]=='i'){
 loc= buffer+2;
@@ -656,7 +656,7 @@ change_limit= change_buffer;changing= false;
 return;
 }
 if(limit> buffer+1&&buffer[0]=='@'){
-char xyz_code= xisupper(buffer[1])?tolower((eight_bits)buffer[1]):buffer[1];
+char xyz_code= xisupper(buffer[1])?tolower((int)buffer[1]):buffer[1];
 /*34:*/
 #line 336 "common.w"
 
@@ -768,7 +768,7 @@ changed_section[section_count]= true;change_pending= false;
 }
 *limit= ' ';
 if(buffer[0]=='@'){
-if(xisupper(buffer[1]))buffer[1]= tolower((eight_bits)buffer[1]);
+if(xisupper(buffer[1]))buffer[1]= tolower((int)buffer[1]);
 if(buffer[1]=='x'||buffer[1]=='y'){
 loc= buffer+2;
 #line 212 "comm-foo.ch"
@@ -837,7 +837,7 @@ include_depth++;
 char temp_file_name[max_file_name_length];
 char*cur_file_name_end= cur_file_name+max_file_name_length-1;
 char*kk,*k= cur_file_name;
-int l;
+size_t l;
 
 if(*loc=='"'){
 loc++;
@@ -914,10 +914,10 @@ char t)
 {
 const char*i= first;
 int h;
-int l;
+size_t l;
 name_pointer p;
 if(last==NULL)for(last= first;*last!='\0';last++);
-l= (int)(last-first);
+l= (size_t)(last-first);
 /*49:*/
 #line 656 "common.w"
 
@@ -932,7 +932,7 @@ while(++i<last)h= (h+h+(int)((eight_bits)*i))%hash_size;
 #line 664 "common.w"
 
 p= hash[h];
-while(p&&!names_match(p,first,l,t))p= p->link;
+while(p&&!names_match(p,first,l,(eight_bits)t))p= p->link;
 if(p==NULL){
 p= name_ptr;
 p->link= hash[h];hash[h]= p;
@@ -950,7 +950,7 @@ if(name_ptr>=name_dir_end)overflow(_("name"));
 #line 679 "common.w"
 strncpy(byte_ptr,first,l);
 (++name_ptr)->byte_start= byte_ptr+= l;
-init_p(p,t);
+init_p(p,(eight_bits)t);
 }
 
 /*:51*/
@@ -1006,7 +1006,7 @@ print_prefix_name(
 name_pointer p)
 {
 char*s= first_chunk(p);
-int l= prefix_length(p);
+size_t l= prefix_length(p);
 term_write(s,l);
 if(s+l<(p+1)->byte_start)term_write("...",3);
 }
@@ -1016,9 +1016,9 @@ if(s+l<(p+1)->byte_start)term_write("...",3);
 
 static int web_strcmp(
 char*j,
-int j_len,
+size_t j_len,
 char*k,
-int k_len)
+size_t k_len)
 {
 char*j1= j+j_len,*k1= k+k_len;
 while(k<k1&&j<j1&&*j==*k)k++,j++;
@@ -1042,7 +1042,7 @@ boolean ispref)
 {
 name_pointer p= name_ptr;
 char*s= first_chunk(p);
-int name_len= (int)(last-first)+ispref;
+size_t name_len= (size_t)(last-first+(int)ispref);
 #line 233 "comm-foo.ch"
 if(s+name_len> byte_mem_end)overflow(_("byte memory"));
 if(name_ptr+1>=name_dir_end)overflow(_("name"));
@@ -1073,7 +1073,7 @@ boolean ispref)
 {
 char*s;
 name_pointer q= p+1;
-int name_len= (int)(last-first)+ispref;
+size_t name_len= (size_t)(last-first+(int)ispref);
 #line 240 "comm-foo.ch"
 if(name_ptr>=name_dir_end)overflow(_("name"));
 #line 838 "common.w"
@@ -1103,7 +1103,7 @@ name_pointer q= NULL;
 name_pointer r= NULL;
 name_pointer par= NULL;
 
-int name_len= (int)(last-first)+1;
+size_t name_len= (size_t)(last-first+1);
 /*60:*/
 #line 878 "common.w"
 
@@ -1199,7 +1199,7 @@ return r;
 
 static int section_name_cmp(
 char**pfirst,
-int len,
+size_t len,
 name_pointer r)
 {
 char*first= *pfirst;
@@ -1211,7 +1211,7 @@ while(true){
 ss= (r+1)->byte_start-1;
 if(*ss==' '&&ss>=r->byte_start)ispref= true,q= q->link;
 else ispref= false,ss++,q= name_dir;
-switch(c= web_strcmp(first,len,s,ss-s)){
+switch(c= web_strcmp(first,len,s,(size_t)(ss-s))){
 case equal:if(q==name_dir)
 if(ispref){
 *pfirst= first+(ptrdiff_t)(ss-s);
@@ -1235,7 +1235,7 @@ void
 err_print(
 const char*s)
 {
-printf(*s=='!'?"\n%s":"%s",s);
+*s=='!'?printf("\n%s",s):printf("%s",s);
 if(web_file_open)/*67:*/
 #line 1032 "common.w"
 
