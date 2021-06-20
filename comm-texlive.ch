@@ -130,7 +130,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *kk, *k=cur_file_name;
-  int l; /* length of file name */
+  size_t l; /* length of file name */
 @y
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *k=cur_file_name;
