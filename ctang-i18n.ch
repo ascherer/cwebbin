@@ -295,22 +295,22 @@ Section 103.
 
 @x l.1542
   puts("\nMemory usage statistics:");
-  printf("%ld names (out of %ld)\n",
-          (long)(name_ptr-name_dir),(long)max_names);
-  printf("%ld replacement texts (out of %ld)\n",
-          (long)(text_ptr-text_info),(long)max_texts);
-  printf("%ld bytes (out of %ld)\n",
-          (long)(byte_ptr-byte_mem),(long)max_bytes);
-  printf("%ld tokens (out of %ld)\n",
+  printf("%td names (out of %ld)\n",
+          (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+  printf("%td replacement texts (out of %ld)\n",
+          (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
+  printf("%td bytes (out of %ld)\n",
+          (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+  printf("%td tokens (out of %ld)\n",
 @y
   puts(_("\nMemory usage statistics:"));
-  printf(_("%ld names (out of %ld)\n"),
-          (long)(name_ptr-name_dir),(long)max_names);
-  printf(_("%ld replacement texts (out of %ld)\n"),
-          (long)(text_ptr-text_info),(long)max_texts);
-  printf(_("%ld bytes (out of %ld)\n"),
-          (long)(byte_ptr-byte_mem),(long)max_bytes);
-  printf(_("%ld tokens (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),
+          (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+  printf(_("%td replacement texts (out of %ld)\n"),
+          (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
+  printf(_("%td bytes (out of %ld)\n"),
+          (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+  printf(_("%td tokens (out of %ld)\n"),
 @z
 
 Addendum.

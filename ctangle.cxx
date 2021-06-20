@@ -1935,15 +1935,15 @@ void
 print_stats(void){
 #line 297 "ctang-foo.ch"
 puts(_("\nMemory usage statistics:"));
-printf(_("%ld names (out of %ld)\n"),
-(long)(name_ptr-name_dir),(long)max_names);
-printf(_("%ld replacement texts (out of %ld)\n"),
-(long)(text_ptr-text_info),(long)max_texts);
-printf(_("%ld bytes (out of %ld)\n"),
-(long)(byte_ptr-byte_mem),(long)max_bytes);
-printf(_("%ld tokens (out of %ld)\n"),
+printf(_("%td names (out of %ld)\n"),
+(ptrdiff_t)(name_ptr-name_dir),(long)max_names);
+printf(_("%td replacement texts (out of %ld)\n"),
+(ptrdiff_t)(text_ptr-text_info),(long)max_texts);
+printf(_("%td bytes (out of %ld)\n"),
+(ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
+printf(_("%td tokens (out of %ld)\n"),
 #line 1553 "ctangle.w"
-(long)(tok_ptr-tok_mem),(long)max_toks);
+(ptrdiff_t)(tok_ptr-tok_mem),(long)max_toks);
 }
 
 #line 310 "ctang-foo.ch"
