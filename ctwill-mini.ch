@@ -354,16 +354,16 @@ Section 52.
   id_first=--loc;
   do
     ++loc;
-  while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
-      || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));
+  while (isalpha((int)*loc) || isdigit((int)*loc) @|
+      || isxalpha(*loc) || ishigh(*loc));
   id_loc=loc; return identifier;
 }
 @y
   id_first=--loc;@/
   do
     ++loc;
-  while (isalpha((eight_bits)*loc) || isdigit((eight_bits)*loc) @|
-      || isxalpha((eight_bits)*loc) || ishigh((eight_bits)*loc));@/
+  while (isalpha((int)*loc) || isdigit((int)*loc) @|
+      || isxalpha(*loc) || ishigh(*loc));@/
   id_loc=loc;@/
   return identifier;
 }
@@ -1529,7 +1529,7 @@ Section 234--235.
       case end_translation: return;
       case identifier: case res_word: @<Output an identifier@>@; break;
       case section_code: @<Output a section name@>@; break;
-      case math_rel: out_str("\\MRL{"@q}@>);
+      case math_rel: out_str("\\MRL{"@q}@>); /* fall through */
 @.\\MRL@>
       case noop: case inserted: break;
       case cancel: case big_cancel: c=0; b=a;
@@ -1555,7 +1555,7 @@ Section 234--235.
       case indent: case outdent: case opt: case backup: case break_space:
       case force: case big_force: case preproc_line: @<Output a control,
         look ahead in case of line breaks, possibly |goto reswitch|@>@; break;
-      case quoted_char: out(*(cur_tok++));
+      case quoted_char: out(*(cur_tok++)); /* fall through */
       case qualifier: break;
       default: out(a); /* otherwise |a| is an ordinary character */
     }
@@ -1571,7 +1571,7 @@ Section 234--235.
       case end_translation: return;
       case identifier: case res_word: @<Output an identifier@>@; break;
       case section_code: @<Output a section name@>@; break;
-      case math_rel: out_str("\\MRL{"@q}@>);
+      case math_rel: out_str("\\MRL{"@q}@>); /* fall through */
 @.\\MRL@>
       case noop: case inserted: break;
       case cancel: case big_cancel: c=0; b=a;
@@ -1597,7 +1597,7 @@ Section 234--235.
       case indent: case outdent: case opt: case backup: case break_space:
       case force: case big_force: case preproc_line: @<Output a control,
         look ahead in case of line breaks, possibly |goto reswitch|@>@; break;
-      case quoted_char: out(*(cur_tok++));
+      case quoted_char: out(*(cur_tok++)); /* fall through */
       case qualifier: break;
       default: out(a); /* otherwise |a| is an ordinary character */
     }
@@ -1833,11 +1833,11 @@ Section 279.
 
 @x
 @ @<Split the list...@>= {
-  eight_bits c;
+  int c;
   next_name=sort_ptr->head;
 @y
 @ @<Split the list...@>= {@+
-  eight_bits c;
+  int c;
   next_name=sort_ptr->head;@/
 @z
 

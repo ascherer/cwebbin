@@ -234,9 +234,9 @@ Section 191.
 Section 192.
 
 @x l.3346
-  printf("\nIrreducible scrap sequence in section %d:",section_count);
+  printf("\nIrreducible scrap sequence in section %d:",(int)section_count);
 @y
-  printf(_("\nIrreducible scrap sequence in section %d:"),section_count);
+  printf(_("\nIrreducible scrap sequence in section %d:"),(int)section_count);
 @z
 
 Section 193.
