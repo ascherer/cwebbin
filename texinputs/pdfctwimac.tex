@@ -1,11 +1,11 @@
 % standard macros for CWEB listings (in addition to plain.tex)
-% Version 4.0 --- February 2021
+% Version 4.4 --- July 2021
 % modified for pages produced by CTWILL
 % further modified for page size of the MMIXware book
 % modified for PDF output with 'tex "\let\pdf+', 'pdftex', and 'xetex'
 % This file is not copyrighted and can be used freely.
 \ifx\renewenvironment\undefined\else\endinput\fi % LaTeX will use other macros
-\xdef\fmtversion{\fmtversion+CTWILL4.0+LNCS+PDF}
+\xdef\fmtversion{\fmtversion+CTWILL4.4+LNCS+PDF}
 
 \newif\ifpdf
 \ifx\pdf+\pdftrue\fi
@@ -611,8 +611,8 @@
 \else \def\lmda#1{#1\global\let#1\relax} \fi
 {\obeylines\gdef\makeinref#1 #2 #3
   {\ifsorted\else\ttoks={\[#1 #2 #3}\immediate\write\reffile{+ \the\ttoks}\fi %
-  \hangindent=1em \noindent #2\miniform#3, %<== space!
-    \S\ifacro{\pdfnote#1.}\else{#1}\fi.\par}}
+  \hangindent=1em \noindent #2\miniform#3, \S
+    \ifacro{\pdfnote#1.}\else{#1}\fi.\par}}
 {\obeylines\gdef\makeoutref#1 #2 #3
   {\ifsorted\else\ttoks={\]#1 #2 #3}\immediate\write\reffile{+ \the\ttoks}\fi %
   \hangindent=1em \noindent #2\miniform#3, \extref#1.\par}}

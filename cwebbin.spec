@@ -45,6 +45,7 @@ Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release
 
 Patch1: 0001-Support-extended-syntax-for-numeric-literals.patch
 Patch2: 0002-Purge-redundant-TeX-macro.patch
+Patch3: 0003-Adapt-to-CWEB-4.4.patch
 
 %global __sed_i %{__sed} -i
 
