@@ -6,6 +6,21 @@
 % comm-extensions.hch, comm-output.hch, comm-i18n.hch, and comm-texlive.hch
 % that get tie'd into comm-w2c.h that is used in CWEB for TeX Live.
 
+Section 2.
+
+@x
+typedef bool boolean;
+@y
+@z
+
+Section 3.
+
+@x
+#include <stdbool.h> /* definition of |@!bool|, |@!true| and |@!false| */
+@y
+#include <kpathsea/simpletypes.h> /* |@!bool|, |@!true| and |@!false| */
+@z
+
 Section 6.
 
 @x
