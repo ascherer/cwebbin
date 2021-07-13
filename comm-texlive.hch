@@ -9,8 +9,11 @@
 Section 2.
 
 @x
+@<Common code...@>=
 typedef bool boolean;
 @y
+@s boolean bool
+@<Common code...@>=
 @z
 
 Section 3.
@@ -18,7 +21,7 @@ Section 3.
 @x
 #include <stdbool.h> /* definition of |@!bool|, |@!true| and |@!false| */
 @y
-#include <kpathsea/simpletypes.h> /* |@!bool|, |@!true| and |@!false| */
+#include <kpathsea/simpletypes.h> /* |@!boolean|, |@!true| and |@!false| */
 @z
 
 Section 6.
