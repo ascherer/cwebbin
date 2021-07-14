@@ -435,11 +435,10 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @z
 
 @x l.2651 and l.50 of CWEAV-EXTENSIONS.CH
-  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
+  make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
 @y
-  make_underlined(pp);
-  make_ministring(0);
-  if (indent_param_decl) big_app(dindent); big_app1(pp);
+  make_underlined(pp); make_ministring(0); big_app1(pp);
+  if (indent_param_decl) big_app(dindent);
 @z
 
 @x l.2667
@@ -772,15 +771,15 @@ out_name(cur_name,proofing);
 @z
 
 @x l.4869
-  printf(_("%ld bytes (out of %ld)\n"),
+  printf(_("%td bytes (out of %ld)\n"),
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
 @y
-  printf(_("%ld bytes (out of %ld)\n"),
+  printf(_("%td bytes (out of %ld)\n"),
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
-  printf(_("%ld temp meanings (out of %ld)\n"),
+  printf(_("%td temp meanings (out of %ld)\n"),
             (ptrdiff_t)(max_temp_meaning_ptr-temp_meaning_stack),
             (long)max_meanings);
-  printf(_("%ld titles (out of %ld)\n"),
+  printf(_("%td titles (out of %ld)\n"),
             (ptrdiff_t)(title_code_ptr-title_code),(long)max_titles);
 @z
 

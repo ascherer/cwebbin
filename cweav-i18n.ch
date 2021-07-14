@@ -234,9 +234,9 @@ Section 191.
 Section 192.
 
 @x l.3346
-  printf("\nIrreducible scrap sequence in section %d:",section_count);
+  printf("\nIrreducible scrap sequence in section %d:",(int)section_count);
 @y
-  printf(_("\nIrreducible scrap sequence in section %d:"),section_count);
+  printf(_("\nIrreducible scrap sequence in section %d:"),(int)section_count);
 @z
 
 Section 193.
@@ -408,44 +408,44 @@ Section 271.
 @x l.4856
   puts("\nMemory usage statistics:");
 @.Memory usage statistics:@>
-  printf("%ld names (out of %ld)\n",
+  printf("%td names (out of %ld)\n",
             (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
-  printf("%ld cross-references (out of %ld)\n",
+  printf("%td cross-references (out of %ld)\n",
             (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
-  printf("%ld bytes (out of %ld)\n",
+  printf("%td bytes (out of %ld)\n",
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
   puts("Parsing:");
-  printf("%ld scraps (out of %ld)\n",
+  printf("%td scraps (out of %ld)\n",
             (ptrdiff_t)(max_scr_ptr-scrap_info),(long)max_scraps);
-  printf("%ld texts (out of %ld)\n",
+  printf("%td texts (out of %ld)\n",
             (ptrdiff_t)(max_text_ptr-tok_start),(long)max_texts);
-  printf("%ld tokens (out of %ld)\n",
+  printf("%td tokens (out of %ld)\n",
             (ptrdiff_t)(max_tok_ptr-tok_mem),(long)max_toks);
-  printf("%ld levels (out of %ld)\n",
+  printf("%td levels (out of %ld)\n",
             (ptrdiff_t)(max_stack_ptr-stack),(long)stack_size);
   puts("Sorting:");
-  printf("%ld levels (out of %ld)\n",
+  printf("%td levels (out of %ld)\n",
             (ptrdiff_t)(max_sort_ptr-scrap_info),(long)max_scraps);
 @y
   puts(_("\nMemory usage statistics:"));
 @.Memory usage statistics:@>
-  printf(_("%ld names (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),
             (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
-  printf(_("%ld cross-references (out of %ld)\n"),
+  printf(_("%td cross-references (out of %ld)\n"),
             (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
-  printf(_("%ld bytes (out of %ld)\n"),
+  printf(_("%td bytes (out of %ld)\n"),
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
   puts(_("Parsing:"));
-  printf(_("%ld scraps (out of %ld)\n"),
+  printf(_("%td scraps (out of %ld)\n"),
             (ptrdiff_t)(max_scr_ptr-scrap_info),(long)max_scraps);
-  printf(_("%ld texts (out of %ld)\n"),
+  printf(_("%td texts (out of %ld)\n"),
             (ptrdiff_t)(max_text_ptr-tok_start),(long)max_texts);
-  printf(_("%ld tokens (out of %ld)\n"),
+  printf(_("%td tokens (out of %ld)\n"),
             (ptrdiff_t)(max_tok_ptr-tok_mem),(long)max_toks);
-  printf(_("%ld levels (out of %ld)\n"),
+  printf(_("%td levels (out of %ld)\n"),
             (ptrdiff_t)(max_stack_ptr-stack),(long)stack_size);
   puts(_("Sorting:"));
-  printf(_("%ld levels (out of %ld)\n"),
+  printf(_("%td levels (out of %ld)\n"),
             (ptrdiff_t)(max_sort_ptr-scrap_info),(long)max_scraps);
 @z
 

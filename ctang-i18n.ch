@@ -198,9 +198,15 @@ if (loc>=limit) err_print(_("! Verbatim string didn't end"));
 Section 82.
 
 @x l.1187
-@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow("token"); *(tok_ptr++)=c;}
+@d app_repl(c) {
+  if (tok_ptr==tok_mem_end) overflow("token");
+  else *(tok_ptr++)=(eight_bits)c;
+}
 @y
-@d app_repl(c) {if (tok_ptr==tok_mem_end) overflow(_("token")); *(tok_ptr++)=c;}
+@d app_repl(c) {
+  if (tok_ptr==tok_mem_end) overflow(_("token"));
+  else *(tok_ptr++)=(eight_bits)c;
+}
 @z
 
 Section 83.
@@ -289,22 +295,22 @@ Section 103.
 
 @x l.1542
   puts("\nMemory usage statistics:");
-  printf("%ld names (out of %ld)\n",
+  printf("%td names (out of %ld)\n",
           (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
-  printf("%ld replacement texts (out of %ld)\n",
+  printf("%td replacement texts (out of %ld)\n",
           (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
-  printf("%ld bytes (out of %ld)\n",
+  printf("%td bytes (out of %ld)\n",
           (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
-  printf("%ld tokens (out of %ld)\n",
+  printf("%td tokens (out of %ld)\n",
 @y
   puts(_("\nMemory usage statistics:"));
-  printf(_("%ld names (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),
           (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
-  printf(_("%ld replacement texts (out of %ld)\n"),
+  printf(_("%td replacement texts (out of %ld)\n"),
           (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
-  printf(_("%ld bytes (out of %ld)\n"),
+  printf(_("%td bytes (out of %ld)\n"),
           (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
-  printf(_("%ld tokens (out of %ld)\n"),
+  printf(_("%td tokens (out of %ld)\n"),
 @z
 
 Addendum.
