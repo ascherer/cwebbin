@@ -704,6 +704,7 @@ Section 119.
 {$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-in@>
+@%@$dindent {CTWILL}110 =\T{\~226/}@>
 \prodno=27 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
@@ -768,6 +769,7 @@ Section 121.
 {$\displaystyle\!\matrix{\strut\hbox{#1}\hfill\cr\hbox{#2}\hfill\cr
    \strut\hbox{#3}\hfill\cr}$}
 \yskip@-any@>@-z@>@-g@>@-a@>@-x@>@-y@>@-f@>
+@%@$dindent {CTWILL}110 =\T{\~226/}@>
 \prodno=61 \midcol=2.5in
 \def\theprodno{\number\prodno \global\advance\prodno by1\enspace}
 \def\dagit{\dag\theprodno}
