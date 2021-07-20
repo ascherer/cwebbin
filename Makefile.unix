@@ -176,7 +176,7 @@ COMMPATCH = comm-extensions.ch comm-extensions.hch \
 	comm-patch.ch comm-texlive.ch comm-texlive.hch
 CTANGPATCH = ctang-i18n.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-texlive.ch
-CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
+CWEAVPATCH = cweav-extensions.ch prod-cweave.ch cweav-i18n.ch cweav-newpage.ch \
 	cweav-output.ch cweav-patch.ch cweav-texlive.ch cwtw-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
@@ -286,11 +286,14 @@ ctangle.o: ctangle.$(EXTENSION)
 cweave: cweave.o common.o
 	$(CC) $(LINKFLAGS) -o $@ $^
 
-cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod.w
+cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod-cweave.w
 	$(CTANGLE) cweave $(WCHANGES) $@
 
 cweave.o: cweave.$(EXTENSION)
 	$(CC) $(CFLAGS) -c $^
+
+prod-cweave.w: prod.w prod-cweave.ch
+	$(TIE) -m $@ $^
 
 ctwill: ctwill.o common.o
 	$(CC) $(LINKFLAGS) -o $@ $^
@@ -301,7 +304,7 @@ ctwill.$(EXTENSION): cweave.w $(LCHANGES) $(HCHANGES) prod-twill.w
 ctwill.o: ctwill.$(EXTENSION)
 	$(CC) $(CFLAGS) -c $^
 
-prod-twill.w: prod.w prod-twill.ch
+prod-twill.w: prod.w prod-cweave.ch prod-twill.ch
 	$(TIE) -m $@ $^
 
 refsort.$(EXTENSION): refsort.w refsort.ch
@@ -406,7 +409,7 @@ $(DCHANGES): cwebman.tex cwebman-patch.ch \
 # for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
-	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-twill.w \
+	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-cweave.w prod-twill.w \
 	cwebbin.tex *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
 	ctwill refsort twinx refsort.c twinx.c

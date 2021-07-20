@@ -36,6 +36,14 @@ tex_printf(use_language);
 tex_puts("cwebma");
 @z
 
+Section 111.
+
+@x
+@i prod.w
+@y
+@i prod-cweave.w
+@z
+
 Section 129.
 
 @x l.2651
@@ -149,6 +157,17 @@ Section 153.
 @y
   big_app1(pp); if (indent_param_decl) big_app(dindent);
   big_app1(pp+1); reduce(pp,2,fn_decl,0,73);
+@z
+
+Section 156.
+
+@x
+  big_app1_insert(pp, (cat1==function || cat1==decl) ? big_force :
+     force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
+@y
+  big_app1_insert(pp, (cat1==function || cat1==decl) ?
+     ( order_decl_stmt ? big_force : force ) :
+     force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
 @z
 
 Addendum.

@@ -381,7 +381,7 @@ the section is changed, we output `\.{\\*}' just after the number.
 @z
 
 @x l.2144
-@i prod.w
+@i prod-cweave.w
 @y
 @i prod-twill.w
 @z
