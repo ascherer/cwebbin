@@ -98,7 +98,7 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 	-e WCHANGES=cweav-w2c.ch cweav-w2c.ch \
 	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch \
 	-e DCHANGES=cwebman-w2c.ch cwebman-w2c.ch \
-	prod-twill.w
+	prod-cweave.w prod-twill.w
 
 %else
 
@@ -140,7 +140,7 @@ do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" $m.1 > man/$m.man; done
 	-e "s/ctwill-\(twinx-startup\)/\1/g" \
 	man/ctwill.man
 
-%{__pax} *-w2c.ch comm-w2c.h prod-twill.w ct*mac.tex po man \
+%{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
 	*.bux *-mini.ch twinx-startup.tex \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \

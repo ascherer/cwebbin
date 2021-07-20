@@ -409,7 +409,7 @@ $(DCHANGES): cwebman.tex cwebman-patch.ch \
 # for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
-	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-cweave.w prod-twill.w \
+	cweave.$(EXTENSION) prod-cweave.w ctwill.$(EXTENSION) prod-twill.w \
 	cwebbin.tex *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
 	ctwill refsort twinx refsort.c twinx.c
