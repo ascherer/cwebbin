@@ -915,6 +915,7 @@ Section 125.
 \yskip
 \yskip
 \parindent=0pt
+\everypar={\hangindent=2em}
 \dag{\bf Notes}
 @y
 \+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
