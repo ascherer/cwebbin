@@ -1,8 +1,8 @@
-Changes for COMMON.H by Andreas Scherer, January 2021.
+Changes for COMMON.H by Andreas Scherer, July 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
-See `cwebmana.ch' for details about these new features.
+See CWEBMAN-EXTENSIONS.CH for details about these new features.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 

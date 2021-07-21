@@ -2,7 +2,7 @@ Changes for CWEAVE.W by Andreas Scherer et al.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
-See `cwebmana.ch' for details about these new features.
+See CWEBMAN-EXTENSIONS.CH for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
