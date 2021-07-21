@@ -165,9 +165,9 @@ Section 156.
   big_app1_insert(pp, (cat1==function || cat1==decl) ? big_force :
      force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
 @y
-  big_app1_insert(pp, (cat1==function || cat1==decl) ?
-     ( order_decl_stmt ? big_force : force ) :
-     force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
+  big_app1_insert(pp, (cat1==function || cat1==decl) ? @|
+     ( order_decl_stmt ? big_force : force ) : @|
+     ( force_lines ? force : break_space ) ); reduce(pp,2,cat1,-1,76);
 @z
 
 Addendum.
