@@ -1005,6 +1005,14 @@ Section 132.
 @-pp@>
 @z
 
+@x
+example, `|squash(pp,3,exp,-2,3)|' is an abbreviation for `|big_app3(pp);
+reduce(pp,3,exp,-2,3)|'.
+@y
+example, `|squash(pp,3,exp,-2,3)|' is an abbreviation for `|big_app3(pp)|'
+followed by `|reduce(pp,3,exp,-2,3)|'.
+@z
+
 Section 133.
 
 @x
