@@ -1018,7 +1018,7 @@ Section 133.
 @x
 The code below is an exact translation of the production rules into
 @y
-@r @ The code below is an exact translation of the production rules into
+@ The code below is an exact translation of the production rules into
 @-a@>
 @-c@>
 @-p@>
