@@ -437,7 +437,7 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @x l.2651 and l.50 of CWEAV-EXTENSIONS.CH
   make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
 @y
-  make_underlined(pp); make_ministring(0); big_app1(pp);
+  make_underlined(pp); make_ministring(pp); big_app1(pp);
   if (indent_param_decl) big_app(dindent);
 @z
 
@@ -456,16 +456,14 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @x l.2762
   make_underlined(pp+1); squash(pp,2,decl_head,-1,35);
 @y
-  make_underlined(pp+1);
-  make_ministring(1);
+  make_underlined(pp+1); make_ministring(pp+1);
   squash(pp,2,decl_head,-1,35);
 @z
 
 @x l.2802
     make_underlined(pp+1); make_reserved(pp+1);
 @y
-    make_underlined(pp+1); make_reserved(pp+1);
-    make_ministring(1);
+    make_underlined(pp+1); make_reserved(pp+1); make_ministring(pp+1);
 @z
 
 @x l.2964
@@ -522,8 +520,7 @@ less friendly to \CPLUSPLUS/ but good enough for me.
 @<Cases for |typedef_like|@>=
 if (cat1==decl_head) {
   if ((cat2==exp&&cat3!=lpar&&cat3!=exp)||cat2==int_like) {
-    make_underlined(pp+2); make_reserved(pp+2);
-    make_ministring(2);
+    make_underlined(pp+2); make_reserved(pp+2); make_ministring(pp+2);
     squash(pp+1,2,decl_head,0,200);
   }
   else if (cat2==semi) {
@@ -1123,30 +1120,29 @@ catch14: return *(*(p+1)-1)=='9'; /* was production 14 used? */
 @ @<Predec...@>=@+static boolean app_supp(text_pointer);
 
 @q Section 142->284. @>
-@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
-which tries to figure out a symbolic form of definition after
-|make_underlined(pp+l)| has been called. We rely heavily on the
-existing productions, which force the translated texts to have a
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(pp+l)|,
+with offset $l\in\{0,1,2\}$, which tries to figure out a symbolic form of
+definition after |make_underlined(pp+l)| has been called. We rely heavily
+on the existing productions, which force the translated texts to have a
 structure that's decodable even though the underlying |cat| and |mathness|
 codes have disappeared.
 
 @c static void
-make_ministring(
-  int l) /* 0, 1, or 2 */
+make_ministring(scrap_pointer p)
 {
   name_pointer cn;
   if (tok_loc<=operator_found) return;
   cn=((*tok_loc)%id_flag)+name_dir;
   @<Append the type of the declaree; |return| if it begins with \&{extern}@>@;
-  null_scrap.mathness=(((pp+l)->mathness)%4)*5; big_app1(&null_scrap);
+  null_scrap.mathness=((p->mathness)%4)*5; big_app1(&null_scrap);
     /* now we're ready for the mathness that follows (I think);
        (without the mod 4 times 5, comments posed a problem,
        namely in cases like |int a(b,c)| followed by comment) */
-  ident_seen=false;@+app_supp((pp+l)->trans);
+  ident_seen=false;@+app_supp(p->trans);
   null_scrap.mathness=10; big_app1(&null_scrap);
    /* now |cur_mathness==no_math| */
   ms_mode=true; ministring_ptr=ministring_buf;
-  if (l==2) *ministring_ptr++='=';
+  if (p==pp+2) *ministring_ptr++='=';
   make_output(); /* translate the current text into a ministring */
   tok_ptr=*(--text_ptr); /* delete that text */
   new_meaning(cn);
@@ -1154,7 +1150,7 @@ make_ministring(
 }
 
 @q Section 285. @>
-@ @<Predec...@>=@+static void make_ministring(int);
+@ @<Predec...@>=@+static void make_ministring(scrap_pointer);
 
 @q Section 43->286. @>
 @ @<Private...@>=
@@ -1171,9 +1167,9 @@ its current meaning, but we do suppress mini-index entries to its
 current meaning in other sections.
 
 @<Append the type of the declaree; |return| if it begins with \&{extern}@>=
-if (l==0) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
+if (p==pp) { app(int_loc+res_flag); app(' '); cur_mathness=no_math; }
 else {
-  text_pointer q=(pp+l-1)->trans, r;
+  text_pointer q=(p-1)->trans, r;
   token t;
   int ast_count=0; /* asterisks preceding the expression */
   boolean non_ast_seen=false; /* have we seen a non-asterisk? */

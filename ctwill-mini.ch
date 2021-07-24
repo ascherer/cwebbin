@@ -1997,12 +1997,13 @@ Section 302.
 Section 303.
 
 @x
-@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@ The trickiest part of \.{CTWILL} is the procedure |make_ministring(pp+l)|,
 @y
-@r @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(l)|,
+@r @ The trickiest part of \.{CTWILL} is the procedure |make_ministring(pp+l)|,
 @-a@>
 @-b@>
 @-c@>
+@-l@>
 @-make_ministring@>
 @$make_ministring {CTWILL}303 \&{static} \&{void} (\,)@>
 @z
@@ -2010,9 +2011,9 @@ Section 303.
 Section 304.
 
 @x
-@ @<Predec...@>=@+static void make_ministring(int);
+@ @<Predec...@>=@+static void make_ministring(scrap_pointer);
 @y
-@ @<Predec...@>=@+static void make_ministring(int);
+@ @<Predec...@>=@+static void make_ministring(scrap_pointer);
 @-make_ministring@>
 @z
 
