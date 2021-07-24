@@ -1301,13 +1301,9 @@ else if (cat1==raw_ubin) {
 Section 198.
 
 @x
-static void squash(scrap_pointer,short,eight_bits,short,short);
-
-@ @c
+@ Now here's the |reduce| procedure used in our code for productions,
 @y
-static void squash(scrap_pointer,short,eight_bits,short,short);
-
-@r @ @c
+@r @ Now here's the |reduce| procedure used in our code for productions,
 @z
 
 Section 203.
