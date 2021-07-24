@@ -481,11 +481,11 @@ if (cat1==define_like) { /* \#\&{define} is analogous to \&{extern} */
 @z
 
 @x l.3059
-if (cat1==prelangle) squash(pp+1,1,langle,1,100);
-else squash(pp,1,exp,-2,101);
+if (cat1==prelangle) reduce(pp+1,0,langle,1,100);
+else reduce(pp,0,exp,-2,101);
 @y
-if (cat1==prelangle) squash(pp+1,1,langle,1,121);
-else squash(pp,1,exp,-2,122);
+if (cat1==prelangle) reduce(pp+1,0,langle,1,121);
+else reduce(pp,0,exp,-2,122);
 @z
 
 @x l.3064
@@ -497,7 +497,7 @@ else squash(pp,1,exp,-2,122);
 @x l.3096
 @ @<Cases for |typedef_like|@>=
 if ((cat1==int_like || cat1==cast) && (cat2==comma || cat2==semi))
-  squash(pp+1,1,exp,-1,115);
+  reduce(pp+1,0,exp,-1,115);
 else if (cat1==int_like) {
   big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,116);
 }
@@ -524,13 +524,13 @@ if (cat1==decl_head) {
   if ((cat2==exp&&cat3!=lpar&&cat3!=exp)||cat2==int_like) {
     make_underlined(pp+2); make_reserved(pp+2);
     make_ministring(2);
-    big_app2(pp+1); reduce(pp+1,2,decl_head,0,200);
+    squash(pp+1,2,decl_head,0,200);
   }
   else if (cat2==semi) {
     big_app1(pp); big_app(' '); big_app2(pp+1); reduce(pp,3,decl,-1,201);
   }
 } else if (cat1==int_like && cat2==raw_int &&
-    (cat3==semi || cat3==comma)) squash(pp+2,1,exp,1,202);
+    (cat3==semi || cat3==comma)) reduce(pp+2,0,exp,1,202);
 @z
 
 @x l.3449

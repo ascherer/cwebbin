@@ -1007,12 +1007,10 @@ Section 132.
 
 @x
 example, `|squash(pp,3,exp,-2,3)|' is an abbreviation for `|big_app3(pp);
-reduce(pp,3,exp,-2,3)|'. Beware, however, that rules~38 and~77 can \\{not}
-be rewritten with `|squash|'!
+reduce(pp,3,exp,-2,3)|'.
 @y
 example, `|squash(pp,3,exp,-2,3)|' is an abbreviation for `|big_app3(pp)|'
-followed by `|reduce(pp,3,exp,-2,3)|'.  Beware, however, that rules~38 and~77
-can \\{not} be rewritten with `|squash|'!
+followed by `|reduce(pp,3,exp,-2,3)|'.
 @z
 
 Section 133.
@@ -1255,11 +1253,11 @@ Section 158.
 Section 165.
 
 @x
-  else squash(pp,1,else_like,0,65);
+  else reduce(pp,0,else_like,0,65);
 }
 else if (cat1==attr) {
 @y
-  else squash(pp,1,else_like,0,65);
+  else reduce(pp,0,else_like,0,65);
 }
 @+ else @/ if (cat1==attr) {
 @z
