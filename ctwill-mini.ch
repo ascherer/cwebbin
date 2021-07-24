@@ -1479,17 +1479,19 @@ Section 213--214.
 Section 221.
 
 @x
-@ The |outer_parse| routine is to |C_parse| as |outer_xref|
-@y
-@r @ The |outer_parse| routine is to |C_parse| as |outer_xref|
-@z
-
-@x
 @d make_pb flags['e']
 @y
 @d make_pb flags['e']
 @-make_pb@>
 @$make_pb {CTWILL}221 =\\{flags}[\.{'e'}]@>
+@z
+
+Section 222.
+
+@x
+@ @c
+@y
+@r @ @c
 @z
 
 Section 225.
@@ -1530,12 +1532,6 @@ This subroutine will never be called when |stack_ptr==1|.
 @z
 
 Section 234--235.
-
-@x
-@ Here is \.{CWEAVE}'s major output handler.
-@y
-@r @ Here is \.{CWEAVE}'s major output handler.
-@z
 
 @x
     reswitch: switch(a) {
