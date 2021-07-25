@@ -446,9 +446,8 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @y
   make_underlined (pp);
   if (tok_loc>operator_found) {
-    name_pointer cn=((*tok_loc)%id_flag)+name_dir;
     strcpy(ministring_buf,"label");
-    new_meaning(cn);
+    new_meaning(((*tok_loc)%id_flag)+name_dir);
   }
   squash(pp,2,tag,-1,7);
 @z
@@ -1130,9 +1129,7 @@ codes have disappeared.
 @c static void
 make_ministring(scrap_pointer p)
 {
-  name_pointer cn;
   if (tok_loc<=operator_found) return;
-  cn=((*tok_loc)%id_flag)+name_dir;
   @<Append the type of the declaree; |return| if it begins with \&{extern}@>@;
   null_scrap.mathness=((p->mathness)%4)*5; big_app1(&null_scrap);
     /* now we're ready for the mathness that follows (I think);
@@ -1145,7 +1142,7 @@ make_ministring(scrap_pointer p)
   if (p==pp+2) *ministring_ptr++='=';
   make_output(); /* translate the current text into a ministring */
   tok_ptr=*(--text_ptr); /* delete that text */
-  new_meaning(cn);
+  new_meaning(((*tok_loc)%id_flag)+name_dir);
   cur_mathness=maybe_math; /* restore it */
 }
 

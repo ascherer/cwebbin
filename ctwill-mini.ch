@@ -1230,6 +1230,12 @@ scrap_pointer p)
 Section 144.
 
 @x
+    strcpy(ministring_buf,"label");
+@y
+    strcpy(ministring_buf,"label");@/
+@z
+
+@x
 else if (cat1==attr) {
 @y
 else @/ if (cat1==attr) {
