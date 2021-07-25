@@ -908,14 +908,7 @@ Section 125.
 
 @x l.326
 \+& |alignas_like| |cast| & |attr| & |alignas(int)| \cr
-\yskip
-\yskip
-\yskip
-\yskip
-\yskip
-\yskip
-\yskip
-\yskip
+\vfill\break
 \parindent=0pt
 \everypar={\hangindent=2em}
 \dag{\bf Notes}
