@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, March 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, July 2021.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
@@ -29,7 +29,7 @@ options are currently implemented:%
 to the list:
 \hfil\smallskip
 \option c Overwrite output files with temporary output only if changes occur.
-(On by default.)
+(Off by default.)
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  (On by default;
 \.{-i} typesets declarations flush left; some people think this to be

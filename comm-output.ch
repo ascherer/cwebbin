@@ -1,10 +1,11 @@
-Changes for COMMON.W by Andreas Scherer, January 2021.
+Changes for COMMON.W by Andreas Scherer, July 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
 manual, the current run is documented in a temporary output file which
 is copied to the expected file in the last moment.  In case of an user
-abort, previous results are not destroyed.
+abort, previous results are not destroyed.  This feature is activated
+with commandline option '+c'.
 
 This change file requires COMM-PATCH.CH and COMM-EXTENSIONS.CH to be
 applied as well.
@@ -27,14 +28,6 @@ char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 char check_file_name[max_file_name_length]; /* name of |check_file| */
-@z
-
-Section 74.
-
-@x l.1143
-show_banner=show_happiness=show_progress=make_xrefs=true;
-@y
-show_banner=show_happiness=show_progress=make_xrefs=check_for_change=true;
 @z
 
 Section 83.
