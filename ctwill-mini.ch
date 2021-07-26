@@ -548,6 +548,15 @@ Section 106.
 @r @ Here is a list of the category codes that scraps can have.
 @z
 
+Section 108.
+
+@x
+@d print_cat(c) fputs(cat_name[(eight_bits)(c)],stdout)
+@y
+@d print_cat(c) fputs(cat_name[(eight_bits)(c)],stdout)
+@-c@>
+@z
+
 Section 109--110.
 
 @x
@@ -718,9 +727,9 @@ Section 119.
 Section 120.
 
 @x l.75
-              \&{struct} \&{name\_info} $\{$\cr
+    & \&{struct} \&{name\_info} $\{$\cr
 @y
-              \&{struct} \&{name\_info} $\{$\cr
+    & \&{struct} \&{name\_info} $\{$\cr
 \endgroup
 
 @r @ Cont.@-z@>@-in@>@-x@>
@@ -750,9 +759,9 @@ Section 120.
 Section 121.
 
 @x l.164
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & $\!\!$|else x=0;|\cr
+    & \&{else} $x=0;$\cr
 @y
-       $|force|\,E\,\\{in}\,\\{bsp}\,S\,\\{out}\,|force|$ & $\!\!$|else x=0;|\cr
+    & \&{else} $x=0;$\cr
 \endgroup
 
 @ Cont.
@@ -1225,6 +1234,12 @@ make_underlined(
 scrap_pointer p)
 @-make_underlined@>
 @$make_underlined {CTWILL}141 \&{static} \&{void} (\,)@>
+@z
+
+@x
+    return; /* this happens, for example, in |case found:| */
+@y
+    return; /* this happens, for example, in \&{case} \\{found}: */
 @z
 
 Section 144.
