@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% July 26, 2021
+% July 27, 2021
 
 # NAME
 
@@ -80,7 +80,7 @@ The first batch of options are common to both **ctangle** and **cweave**:
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
 * **+c**:
-  ignore temporary output irrespective of changes
+  check temporary output for changes
 * **+s**:
   print usage statistics
 * **\-\-help**:

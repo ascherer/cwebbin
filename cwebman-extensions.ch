@@ -28,8 +28,7 @@ options are currently implemented:%
 \cwebfootnote{This extended version of \.{CWEB} adds the following options
 to the list:
 \hfil\smallskip
-\option c Overwrite output files with temporary output only if changes occur.
-(Off by default.)
+\option c Check temporary output files for changes.  (Off by default.)
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  (On by default;
 \.{-i} typesets declarations flush left; some people think this to be

@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% July 26, 2021
+% July 27, 2021
 
 # NAME
 
@@ -125,7 +125,7 @@ In fact, the options are processed from left to right, so a sequence like
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
 * **+c**:
-  ignore temporary output irrespective of changes
+  check temporary output for changes
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
