@@ -73,6 +73,8 @@ if (check_for_change) {
     rename(check_file_name,tex_file_name); /* This was the first run */
 
   strcpy(check_file_name,""); /* We want to get rid of the temporary file */
+} else {
+  fclose(tex_file); tex_file=NULL;
 }
 
 @ We hope that this runs fast on most systems.
