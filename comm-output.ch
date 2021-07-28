@@ -98,8 +98,8 @@ sure that the output files are correctly written.
 if(C_file) fclose(C_file);
 if(tex_file) fclose(tex_file);
 if(check_file) fclose(check_file);
-if(strlen(check_file_name)) /* Delete the temporary file in case of a break */
-   remove(check_file_name);
+if(check_for_change && strlen(check_file_name))
+   remove(check_file_name); /* Delete the temporary file in case of a break */
 
 @** Index.
 @z
