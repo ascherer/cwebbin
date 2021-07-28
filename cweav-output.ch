@@ -55,23 +55,25 @@ where necessary. The idea and basic implementation of this mechanism can
 be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the result...@>=
-if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
-  boolean comparison=false;
+if (check_for_change) {
+  if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
+    boolean comparison=false;
 
-  if((check_file=fopen(check_file_name,"r"))==NULL)
-    fatal("! Cannot open output file ",check_file_name);
+    if((check_file=fopen(check_file_name,"r"))==NULL)
+      fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  if (check_for_change) @<Compare the temporary output...@>@;
+    if (check_for_change) @<Compare the temporary output...@>@;
 
-  fclose(tex_file); tex_file=NULL;
-  fclose(check_file); check_file=NULL;
+    fclose(tex_file); tex_file=NULL;
+    fclose(check_file); check_file=NULL;
 
-  @<Take appropriate action depending on the comparison@>@;
-} else
-  rename(check_file_name,tex_file_name); /* This was the first run */
+    @<Take appropriate action depending on the comparison@>@;
+  } else
+    rename(check_file_name,tex_file_name); /* This was the first run */
 
-strcpy(check_file_name,""); /* We want to get rid of the temporary file */
+  strcpy(check_file_name,""); /* We want to get rid of the temporary file */
+}
 
 @ We hope that this runs fast on most systems.
 
