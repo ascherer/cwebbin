@@ -1172,7 +1172,7 @@ else {
   boolean non_ast_seen=false; /* have we seen a non-asterisk? */
   while (true) {
     if (*(q+1)==*q+1) {
-      r=q;@+break; /* e.g. \&{struct}; we're doing production 45 or 46 */
+      r=q;@+break; /* e.g., \&{struct}; we're doing production 45 or 46 */
     }
     if (**q<tok_flag) confusion(_("find type"));
     r=**q-tok_flag+tok_start;
