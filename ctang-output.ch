@@ -72,11 +72,13 @@ where necessary. The idea and basic implementation of this mechanism can
 be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
 @<Update the primary result...@>=
-if((C_file=fopen(C_file_name,"r"))!=NULL) {
-  @<Set up the comparison of temporary output@>@;
-  @<Create the primary output depending on the comparison@>@;
-} else
-  rename(check_file_name,C_file_name); /* This was the first run */
+if (check_for_change) {
+  if((C_file=fopen(C_file_name,"r"))!=NULL) {
+    @<Set up the comparison of temporary output@>@;
+    @<Create the primary output depending on the comparison@>@;
+  } else
+    rename(check_file_name,C_file_name); /* This was the first run */
+}
 
 @ @<Set up the comparison of temporary output@>=
   boolean comparison=false;
