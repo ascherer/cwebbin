@@ -551,9 +551,9 @@ Section 106.
 Section 108.
 
 @x
-@d print_cat(c) fputs(cat_name[(eight_bits)(c)],stdout)
+@d print_cat(c) fputs(cat_name[c],stdout)
 @y
-@d print_cat(c) fputs(cat_name[(eight_bits)(c)],stdout)
+@d print_cat(c) fputs(cat_name[c],stdout)
 @-c@>
 @z
 
