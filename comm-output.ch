@@ -62,7 +62,7 @@ if (program==ctangle) {
 @.Cannot open output file@>
   else fclose(C_file); /* Test accessability */
   strcpy(check_file_name,C_file_name);
-  if(check_file_name[0]!='\0') {
+  if(check_for_change && check_file_name[0]!='\0') {
     char *dot_pos=strrchr(check_file_name,'.');
     if(dot_pos==NULL) strcat(check_file_name,".ttp");
     else strcpy(dot_pos,".ttp");
@@ -76,7 +76,7 @@ else {
     fatal("! Cannot open output file ", tex_file_name);
   else fclose(tex_file); /* Test accessability */
   strcpy(check_file_name,tex_file_name);
-  if(check_file_name[0]!='\0') {
+  if(check_for_change && check_file_name[0]!='\0') {
     char *dot_pos=strrchr(check_file_name,'.');
     if(dot_pos==NULL) strcat(check_file_name,".wtp");
     else strcpy(dot_pos,".wtp");
