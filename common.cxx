@@ -519,7 +519,7 @@ fatal(_("! Cannot open output file "),C_file_name);
 
 else fclose(C_file);
 strcpy(check_file_name,C_file_name);
-if(check_file_name[0]!='\0'){
+if(check_for_change&&check_file_name[0]!='\0'){
 char*dot_pos= strrchr(check_file_name,'.');
 if(dot_pos==NULL)strcat(check_file_name,".ttp");
 else strcpy(dot_pos,".ttp");
@@ -533,7 +533,7 @@ if((tex_file= fopen(tex_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
 else fclose(tex_file);
 strcpy(check_file_name,tex_file_name);
-if(check_file_name[0]!='\0'){
+if(check_for_change&&check_file_name[0]!='\0'){
 char*dot_pos= strrchr(check_file_name,'.');
 if(dot_pos==NULL)strcat(check_file_name,".wtp");
 else strcpy(dot_pos,".wtp");
@@ -1296,7 +1296,7 @@ puts(_("(That was a fatal error, my friend.)"));
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
 if(check_file)fclose(check_file);
-if(strlen(check_file_name))
+if(check_for_change&&strlen(check_file_name))
 remove(check_file_name);
 
 /*:90*/
