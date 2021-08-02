@@ -16,7 +16,7 @@ tricky way so that the first line of the output file will be
 
 @<Start \TEX/...@>=
 out_ptr=out_buf+1; out_line=1; active_file=tex_file;
-*out_ptr='c'; tex_printf("\\input cwebma");
+tex_printf("\\input cwebma"); *out_ptr='c';
 @y
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
@@ -30,10 +30,11 @@ Without this option the first line of the output file will be
 `\.{\\input cwebmac}'.
 
 @<Start \TEX/...@>=
-out_ptr=out_buf+1; out_line=1; active_file=tex_file; *out_ptr='c';
+out_ptr=out_buf+1; out_line=1; active_file=tex_file;
 tex_puts("\\input ");
 tex_printf(use_language);
 tex_puts("cwebma");
+*out_ptr='c';
 @z
 
 Section 111.
