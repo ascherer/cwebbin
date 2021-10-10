@@ -40,7 +40,7 @@ if (check_for_change) {
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
   an_output_file--;
   sprint_section_name(output_file_name,*an_output_file);
-  if (check_for_change) @<Write all the intermediate output files@>@;
+  if (check_for_change) @<Open the intermediate output file@>@;
   else {
     fclose(C_file);
     if ((C_file=fopen(output_file_name,"wb"))==NULL)
@@ -77,7 +77,7 @@ some of them. Thus the \.{make} process will only recompile those modules
 where necessary. The idea and basic implementation of this mechanism can
 be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
-@<Write all the intermediate output files@>= {
+@<Open the intermediate output file@>= {
   if ((C_file=fopen(output_file_name,"a"))==NULL)
     fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
