@@ -101,7 +101,7 @@ if((C_file=fopen(C_file_name,"r"))!=NULL) {
     fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  if (check_for_change) @<Compare the temporary output...@>@;
+  @<Compare the temporary output...@>@;
 
   fclose(C_file); C_file=NULL;
   fclose(check_file); check_file=NULL;
