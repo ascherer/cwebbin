@@ -112,7 +112,7 @@ LINKFLAGS = -g
 # The `f' flag is turned off to save paper
 # The `s' flag displays some statistics
 # The `c' flag creates intermediate C/TeX output
-WFLAGS = -f +s # +c
+WFLAGS = -f +s +c
 TFLAGS = +s # +c
 
 # Always use this extended Makefile
