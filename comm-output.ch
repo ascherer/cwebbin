@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, July 2021.
+Changes for COMMON.W by Andreas Scherer, October 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -57,6 +57,26 @@ else {
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
+  if (check_for_change) @<Open intermediate \CEE/ output file@>@;
+  else if ((C_file=fopen(C_file_name,"wb"))==NULL)
+    fatal("! Cannot open output file ", C_file_name);
+@.Cannot open output file@>
+}
+else {
+  if (check_for_change) @<Open intermediate \TEX/ output file@>@;
+  else if ((tex_file=fopen(tex_file_name,"wb"))==NULL)
+    fatal("! Cannot open output file ", tex_file_name);
+}
+@z
+
+New material after section 85.
+
+@x l.1292
+@** Index.
+@y
+@* Temporary file output.
+
+@<Open intermediate \CEE/ output file@>= {
   if ((C_file=fopen(C_file_name,"a"))==NULL)
     fatal("! Cannot open output file ", C_file_name);
 @.Cannot open output file@>
@@ -69,11 +89,12 @@ if (program==ctangle) {
   }
   if ((C_file=fopen(check_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", check_file_name);
-@.Cannot open output file@>
 }
-else {
+
+@ @<Open intermediate \TEX/ output file@>= {
   if ((tex_file=fopen(tex_file_name,"a"))==NULL)
     fatal("! Cannot open output file ", tex_file_name);
+@.Cannot open output file@>
   else fclose(tex_file); /* Test accessability */
   strcpy(check_file_name,tex_file_name);
   if(check_file_name[0]!='\0') {
@@ -84,14 +105,8 @@ else {
   if ((tex_file=fopen(check_file_name,"wb"))==NULL)
     fatal("! Cannot open output file ", check_file_name);
 }
-@z
 
-New material after section 85.
-
-@x l.1292
-@** Index.
-@y
-@* Temporary file output.  Before we leave the program we have to make
+@ Before we leave the program we have to make
 sure that the output files are correctly written.
 
 @<Remove the temporary file...@>=

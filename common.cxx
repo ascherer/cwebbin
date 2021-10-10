@@ -22,8 +22,8 @@
 #include <stdlib.h>  
 #include <string.h>  
 
-/*:3*//*91:*/
-#line 595 "comm-foo.ch"
+/*:3*//*93:*/
+#line 610 "comm-foo.ch"
 
 #if HAVE_GETTEXT
 #include <locale.h>  
@@ -33,7 +33,7 @@
 #define textdomain(a) ""
 #endif
 
-/*:91*/
+/*:93*/
 #line 63 "common.w"
 
 #define _(s) gettext(s)  \
@@ -378,12 +378,12 @@ FILE*active_file;
 
 #line 474 "comm-foo.ch"
 /*:83*//*86:*/
-#line 519 "comm-foo.ch"
+#line 502 "comm-foo.ch"
 
 const char*use_language= "";
 
 /*:86*//*89:*/
-#line 565 "comm-foo.ch"
+#line 548 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -458,7 +458,7 @@ static int section_name_cmp(char**,size_t,name_pointer);
 static void scan_args(void);
 
 /*:76*//*87:*/
-#line 531 "comm-foo.ch"
+#line 514 "comm-foo.ch"
 
 static boolean set_path(char*,char*);
 
@@ -489,15 +489,15 @@ for(h= hash;h<=hash_end;*h++= NULL);
 #line 99 "common.w"
 
 #line 47 "comm-foo.ch"
-/*92:*/
-#line 604 "comm-foo.ch"
+/*94:*/
+#line 619 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
 textdomain("cweb");
 
 
-/*:92*/
+/*:94*/
 #line 47 "comm-foo.ch"
 
 /*74:*/
@@ -514,6 +514,9 @@ show_banner= show_happiness= show_progress= make_xrefs= true;
 
 scan_args();
 if(program==ctangle){
+if(check_for_change)/*90:*/
+#line 559 "comm-foo.ch"
+{
 if((C_file= fopen(C_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),C_file_name);
 
@@ -526,11 +529,22 @@ else strcpy(dot_pos,".ttp");
 }
 if((C_file= fopen(check_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
+}
+
+/*:90*/
+#line 477 "comm-foo.ch"
+
+else if((C_file= fopen(C_file_name,"wb"))==NULL)
+fatal(_("! Cannot open output file "),C_file_name);
 
 }
 else{
+if(check_for_change)/*91:*/
+#line 574 "comm-foo.ch"
+{
 if((tex_file= fopen(tex_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
+
 else fclose(tex_file);
 strcpy(check_file_name,tex_file_name);
 if(check_file_name[0]!='\0'){
@@ -541,9 +555,16 @@ else strcpy(dot_pos,".wtp");
 if((tex_file= fopen(check_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),check_file_name);
 }
+
+/*:91*/
+#line 483 "comm-foo.ch"
+
+else if((tex_file= fopen(tex_file_name,"wb"))==NULL)
+fatal(_("! Cannot open output file "),tex_file_name);
+}
 #line 1287 "common.w"
 
-#line 509 "comm-foo.ch"
+#line 492 "comm-foo.ch"
 /*:84*/
 #line 101 "common.w"
 
@@ -1290,8 +1311,8 @@ puts(_("(That was a fatal error, my friend.)"));
 /*:69*/
 #line 320 "comm-foo.ch"
 
-/*90:*/
-#line 577 "comm-foo.ch"
+/*92:*/
+#line 592 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1299,7 +1320,7 @@ if(check_file)fclose(check_file);
 if(strlen(check_file_name))
 remove(check_file_name);
 
-/*:90*/
+/*:92*/
 #line 321 "comm-foo.ch"
 
 #line 328 "comm-foo.ch"
@@ -1527,7 +1548,7 @@ _("! Usage: ctwill [options] "
 }
 
 /*:75*//*88:*/
-#line 534 "comm-foo.ch"
+#line 517 "comm-foo.ch"
 
 static boolean set_path(char*include_path,char*environment)
 {
