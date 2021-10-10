@@ -55,8 +55,9 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
   cur_byte=cur_repl->tok_start;
   cur_end=(cur_repl+1)->tok_start;
   while (stack_ptr > stack) get_output();
+  flush_buffer();
   if (check_for_change) {
-    flush_buffer(); fclose(C_file); C_file=NULL;
+    fclose(C_file); C_file=NULL;
     @<Update the secondary results when they have changed@>@;
   }
 }
