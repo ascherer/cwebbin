@@ -74,7 +74,14 @@ New material after section 85.
 @x l.1292
 @** Index.
 @y
-@* Temporary file output.
+@* Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
+that automatically takes care of the temporal dependecies between the different
+source modules. It may be convenient that \.{CWEB} doesn't create new output
+for all existing files, when there are only changes to some of them. Thus the
+\.{make} process will only recompile those modules where necessary. You can
+activate this feature with the `\.{+c}' command-line option. The idea and basic
+implementation of this mechanism can be found in the program \.{NUWEB} by
+Preston Briggs, to whom credit is due.
 
 @<Open intermediate \CEE/ output file@>= {
   if ((C_file=fopen(C_file_name,"a"))==NULL)
