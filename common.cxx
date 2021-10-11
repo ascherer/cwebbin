@@ -23,7 +23,7 @@
 #include <string.h>  
 
 /*:3*//*93:*/
-#line 610 "comm-foo.ch"
+#line 617 "comm-foo.ch"
 
 #if HAVE_GETTEXT
 #include <locale.h>  
@@ -490,7 +490,7 @@ for(h= hash;h<=hash_end;*h++= NULL);
 
 #line 47 "comm-foo.ch"
 /*94:*/
-#line 619 "comm-foo.ch"
+#line 626 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
@@ -515,7 +515,7 @@ show_banner= show_happiness= show_progress= make_xrefs= true;
 scan_args();
 if(program==ctangle){
 if(check_for_change)/*90:*/
-#line 559 "comm-foo.ch"
+#line 566 "comm-foo.ch"
 {
 if((C_file= fopen(C_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),C_file_name);
@@ -540,7 +540,7 @@ fatal(_("! Cannot open output file "),C_file_name);
 }
 else{
 if(check_for_change)/*91:*/
-#line 574 "comm-foo.ch"
+#line 581 "comm-foo.ch"
 {
 if((tex_file= fopen(tex_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
@@ -1312,7 +1312,7 @@ puts(_("(That was a fatal error, my friend.)"));
 #line 320 "comm-foo.ch"
 
 /*92:*/
-#line 592 "comm-foo.ch"
+#line 599 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
