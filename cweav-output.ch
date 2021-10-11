@@ -1,4 +1,4 @@
-Changes for CWEAVE.W by Andreas Scherer, February 2021.
+Changes for CWEAVE.W by Andreas Scherer, October 2021.
 
 This set of changes modifies the output behaviour of the CWEB system.
 Instead of writing directly to the C or TeX file as described in the
@@ -11,9 +11,9 @@ applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 248.
+Section 247.
 
-@x l.4535
+@x l.4520
 if (no_xref) {
   finish_line();
   out_str("\\end");
@@ -25,11 +25,10 @@ if (no_xref) {
   finish_line();
   out_str("\\end");
 @.\\end@>
-  active_file=tex_file;
 }
 @z
 
-@x l.4570
+@x l.4554
 @.\\end@>
   finish_line();
   fclose(active_file);
@@ -38,12 +37,12 @@ if (no_xref) {
 @.\\end@>
 }
 finish_line(); fclose(active_file); active_file=NULL;
-@<Update the result when it has changed@>@;
+if (check_for_change) @<Update the result when it has changed@>@;
 @z
 
 Additional material.
 
-@x l.4896
+@x l.4879
 @** Index.
 @y
 @* Output file update.  Most \CEE/ projects are controlled by a
@@ -54,7 +53,7 @@ some of them. Thus the \.{make} process will only recompile those modules
 where necessary. The idea and basic implementation of this mechanism can
 be found in the program \.{NUWEB} by Preston Briggs, to whom credit is due.
 
-@<Update the result...@>=
+@<Update the result...@>= {
 if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
   boolean comparison=false;
 
@@ -62,7 +61,7 @@ if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
     fatal("! Cannot open output file ",check_file_name);
 @.Cannot open output file@>
 
-  if (check_for_change) @<Compare the temporary output...@>@;
+  @<Compare the temporary output...@>@;
 
   fclose(tex_file); tex_file=NULL;
   fclose(check_file); check_file=NULL;
@@ -72,6 +71,7 @@ if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
   rename(check_file_name,tex_file_name); /* This was the first run */
 
 strcpy(check_file_name,""); /* We want to get rid of the temporary file */
+}
 
 @ We hope that this runs fast on most systems.
 
