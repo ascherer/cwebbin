@@ -36,7 +36,7 @@ if (no_xref) {
 @y
 @.\\end@>
 }
-finish_line(); fclose(active_file); active_file=NULL;
+finish_line(); fclose(active_file); active_file=tex_file=NULL;
 if (check_for_change) @<Update the result when it has changed@>@;
 @z
 
