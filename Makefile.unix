@@ -82,13 +82,13 @@ EXTENSION= cxx
 # This list of options works for all UNIX compilers tested.
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
 	-Wall -Wextra -Wno-implicit-fallthrough \
-	-Wno-format-overflow -Wno-stringop-truncation
+	-Wno-char-subscripts # -Wno-format-overflow -Wno-stringop-truncation
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
 #CFLAGS = -O $(OPT)
 # All linkers tested worked fine with this option.
-LINKFLAGS = -g
+LINKFLAGS = -g -lintl
 #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
 # The following set of options work for CC 8.00 on HP-UX 8.00.
@@ -122,7 +122,7 @@ MAKE = make -f Makefile.unix
 TIE = tie
 
 # Replace @VERSION@ placeholder in tie'd change files
-SUBVER = sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+SUBVER = sed -i "" -e "s/@VERSION@/Version 4.6rc2/" $@
 
 # What C compiler are you using?
 CC = g++ # gcc cc
