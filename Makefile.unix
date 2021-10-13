@@ -121,8 +121,11 @@ MAKE = make -f Makefile.unix
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
 
+# Add an empty string "" for BSD sed.
+SED_I = sed -i ""
+
 # Replace @VERSION@ placeholder in tie'd change files
-SUBVER = sed -i "" -e "s/@VERSION@/Version 4.6rc2/" $@
+SUBVER = $(SED_I) -e "s/@VERSION@/Version 4.6rc2 [CWEBbin 2021.6]/" $@
 
 # What C compiler are you using?
 CC = g++ # gcc cc
@@ -349,7 +352,7 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^; $(SUBVER)
-	sed -i -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
+	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
 
 # the documentation change files are created automatically by the TIE
@@ -358,16 +361,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
