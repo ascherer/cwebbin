@@ -10,11 +10,6 @@ drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
 [readme](README.txt) for the full story.
 
-extract `cwebbin-2021.5.tar.gz` and add the contents of `cweb-4.5.tar.gz` and
-`ctwill.tar.gz` for the full set of source files.  unix/linux users should work
-with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
-`cautiously`, and `all`).
-
 ## feature list
 
 * includes **ctwill** and its utilities;
@@ -23,6 +18,19 @@ with [`make -f Makefile.unix`](Makefile.unix) exclusively (targets `boot`,
 * [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
 * [only `ctangle`] output can be redirected to `@(/dev/{stdout,stderr,null}@>`;
 * [only in “tex live”] file lookup with the **kpathsea** library.
+
+## manual compilation
+
+extract `ctwill.tar.gz` and add the contents of `cweb-4.5.tar.gz` (overwriting
+outdated source files) and `cwebbin-2021.5.tar.gz` (overwriting `README.md`)
+for the full set of source files.
+replace `@@VERSION@@` in line 129 of the `Makefile.unix` with something like
+`Version 4.6 [CWEBbin 2021.6]`.
+`touch *.cxx`.
+unix/linux users should work with [`make -f Makefile.unix`](Makefile.unix)
+exclusively (targets `boot`, `cautiously`, and `all`).
+macos/bsd users will have to adapt `Makefile.unix` in several spots to make
+things work.
 
 ## advanced packaging
 
