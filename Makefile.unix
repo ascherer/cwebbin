@@ -83,12 +83,13 @@ EXTENSION= cxx
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
 	-Wall -Wextra -Wno-implicit-fallthrough \
 	-Wno-format-overflow -Wno-stringop-truncation
+	# -Wno-char-subscripts # swap the last two lines for LLVM
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
 #CFLAGS = -O $(OPT)
 # All linkers tested worked fine with this option.
-LINKFLAGS = -g
+LINKFLAGS = -g # -lintl # in case your compiler doesn't import libintl
 #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
 # The following set of options work for CC 8.00 on HP-UX 8.00.
@@ -121,8 +122,11 @@ MAKE = make -f Makefile.unix
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
 
+# Add an empty string "" for BSD sed.
+SED_I = sed -i
+
 # Replace @VERSION@ placeholder in tie'd change files
-SUBVER = sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+SUBVER = $(SED_I) -e "s/@VERSION@/@@VERSION@@/" $@
 
 # What C compiler are you using?
 CC = g++ # gcc cc
@@ -349,7 +353,7 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^; $(SUBVER)
-	sed -i -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
+	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
 
 # the documentation change files are created automatically by the TIE
@@ -358,16 +362,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
