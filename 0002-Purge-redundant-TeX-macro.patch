@@ -68,5 +68,5 @@ index 99ae604..89e3b68 100644
  \let\mc=\ninerm % medium caps
  \def\CEE/{{\mc C\spacefactor1000}}
 -- 
-2.32.0
+2.33.1
 

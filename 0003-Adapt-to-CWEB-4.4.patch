@@ -1,15 +1,16 @@
-From 54b2a64eddf64af83915781bc6b175667f0718ab Mon Sep 17 00:00:00 2001
+From 29366491478878021e54cfa9d4e4a9b1997e7656 Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Wed, 7 Jul 2021 13:57:00 +0200
 Subject: [PATCH 3/3] Adapt to CWEB 4.4.
 
 ---
- ctwimac.tex  | 23 ++++++++++++-----------
- proofmac.tex |  8 ++++----
- 2 files changed, 16 insertions(+), 15 deletions(-)
+ ctwimac.tex  | 25 +++++++++++++------------
+ proofmac.tex | 10 +++++-----
+ twinxmac.tex |  1 +
+ 3 files changed, 19 insertions(+), 17 deletions(-)
 
 diff --git a/ctwimac.tex b/ctwimac.tex
-index 8596b27..cee38a8 100644
+index 8596b27..b5a81e8 100644
 --- a/ctwimac.tex
 +++ b/ctwimac.tex
 @@ -1,9 +1,9 @@
@@ -73,7 +74,7 @@ index 8596b27..cee38a8 100644
    \ifleft \flushout
      \gdef\rlhead{\let\i=I\uppercase{\ignorespaces#3}} % running left headline
      \global\let\rrhead=\rlhead % running right headline
-@@ -276,7 +277,7 @@
+@@ -276,16 +277,16 @@
  \let\R=\lnot % logical not
  % \S is section sign
  \def\T#1{\leavevmode % octal, hex or decimal constant
@@ -81,8 +82,10 @@ index 8596b27..cee38a8 100644
 +  \hbox{$\def\?{\kern.2em}%$%
      \def\$##1{\egroup_{\,\rm##1}\bgroup}% suffix to constant
      \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
-     \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
-@@ -285,7 +286,7 @@
+-    \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
++    \def\%{\cdot 2^{\aftergroup}}% power of two (via dirty trick)
+     \let\~=\oct \let\^=\hex \let\\=\bin{#1}$}}%$%
+ \def\U{\note{This code is used in section}} % xref for use of a section
  \def\Us{\note{This code is used in sections}} % xref for uses of a section
  \let\V=\lor % logical or
  \let\W=\land % logical and
@@ -92,7 +95,7 @@ index 8596b27..cee38a8 100644
  \def\Y{\par\yskip}
  \let\Z=\le
 diff --git a/proofmac.tex b/proofmac.tex
-index ccfd36b..bd8b84d 100644
+index ccfd36b..39978fd 100644
 --- a/proofmac.tex
 +++ b/proofmac.tex
 @@ -1,8 +1,8 @@
@@ -106,7 +109,7 @@ index ccfd36b..bd8b84d 100644
  
  \let\:=\. % preserve a way to get the dot accent
   % (all other accents will still work as usual)
-@@ -160,7 +160,7 @@
+@@ -160,16 +160,16 @@
  \let\R=\lnot % logical not
  % \S is section sign
  \def\T#1{\leavevmode % octal, hex or decimal constant
@@ -114,8 +117,10 @@ index ccfd36b..bd8b84d 100644
 +  \hbox{$\def\?{\kern.2em}%$%
      \def\$##1{\egroup_{\,\rm##1}\bgroup}% suffix to constant
      \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
-     \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
-@@ -169,7 +169,7 @@
+-    \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
++    \def\%{\cdot 2^{\aftergroup}}% power of two (via dirty trick)
+     \let\~=\oct \let\^=\hex \let\\=\bin{#1}$}}%$%
+ \def\U{\note{This code is used in section}} % xref for use of a section
  \def\Us{\note{This code is used in sections}} % xref for uses of a section
  \let\V=\lor % logical or
  \let\W=\land % logical and
@@ -124,6 +129,18 @@ index ccfd36b..bd8b84d 100644
    \XX$\langle\,${\let\I=\ne#2\eightrm\kern.5em#1}$\,\rangle$\XX}
  \def\Y{\par\yskip}
  \let\Z=\le
+diff --git a/twinxmac.tex b/twinxmac.tex
+index 89e3b68..064d044 100644
+--- a/twinxmac.tex
++++ b/twinxmac.tex
+@@ -225,6 +225,7 @@
+   \hbox{${\def\?{\kern.2em}%
+     \def\${\ell}% long constant
+     \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
++    \def\%{\cdot 2^{\aftergroup}}% power of two (via dirty trick)
+     \let\~=\oct \let\^=\hex #1}$}}
+ \def\U{\note{This code is used in section}} % xref for use of a section
+ \def\Us{\note{This code is used in sections}} % xref for uses of a section
 -- 
-2.32.0
+2.33.1
 
