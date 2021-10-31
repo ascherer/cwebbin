@@ -1,0 +1,270 @@
+From 3e8c31f1e457bb6e9c589a3ae7574a753033d8b6 Mon Sep 17 00:00:00 2001
+From: Andreas Scherer <andreas_github@freenet.de>
+Date: Wed, 7 Jul 2021 13:57:00 +0200
+Subject: [PATCH 3/3] Adapt to CWEB 4.5.
+
+---
+ ctwimac.tex  | 40 ++++++++++++++++++++--------------------
+ proofmac.tex | 25 ++++++++++++-------------
+ twinxmac.tex | 21 ++++++++++++---------
+ 3 files changed, 44 insertions(+), 42 deletions(-)
+
+diff --git a/ctwimac.tex b/ctwimac.tex
+index 8596b27..df24900 100644
+--- a/ctwimac.tex
++++ b/ctwimac.tex
+@@ -1,9 +1,9 @@
+ % standard macros for CWEB listings (in addition to plain.tex)
+-% Version 4.3 --- April 2021
++% Version 4.5 --- October 2021
+ % modified for pages produced by CTWILL
+ % further modified for page size of the MMIXware book
+-\ifx\documentstyle\undefined\else\endinput\fi % LaTeX will use other macros
+-\xdef\fmtversion{\fmtversion+CTWILL4.3+LNCS}
++\ifx\renewenvironment\undefined\else\endinput\fi % LaTeX will use other macros
++\xdef\fmtversion{\fmtversion+CTWILL4.5+LNCS}
+ 
+ \let\:=\. % preserve a way to get the dot accent
+  % (all other accents will still work as usual)
+@@ -17,8 +17,8 @@
+ \newwrite\reffile
+ \ifx\norefs\def\else
+   \openin\sreffile=\jobname.sref
+-  \ifeof\sreffile \immediate\openout\reffile=\jobname.ref \sortedfalse
+-    \message{This is the first pass!}
++  \ifeof\sreffile \immediate\openout\reffile=\jobname.ref
++       \sortedfalse \message{This is the first pass!}
+   \else \sortedtrue \message{This is the second pass!} \fi
+ \fi
+ 
+@@ -29,6 +29,7 @@
+ \def\TEX/{\TeX}
+ \def\CPLUSPLUS/{{\mc C\PP\spacefactor1000}}
+ \def\Cee{\CEE/} % for backward compatibility
++\def\Cpp{\CPLUSPLUS/} % for backward compatibility
+ \def\9#1{}
+ \font\eightrm=cmr8
+ \font\sixrm=cmr6
+@@ -211,7 +212,7 @@
+ \def\6{\ifmmode\else\par % forced break
+   \hangindent\ind\em\noindent\kern\ind\em\copy\bakk\ignorespaces\fi}
+ \def\7{\Y\6} % forced break and a little extra space
+-\def\8{\hskip-\ind em\hskip 2\em} % no indentation
++\def\8{\hskip-\ind\em\hskip 2\em} % no indentation
+ 
+ \newcount\gdepth % depth of current major group, plus one
+ \newtoks\gtitle % title of current major group
+@@ -228,7 +229,7 @@
+ \def\startsection{\titletrue
+   \line{\smash{\titlefont\title}\quad\hrulefill}\bigskip
+   \let\startsection=\stsec\stsec}
+-\def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
++\def\defin#1{\global\advance\ind by 2 \1\&{#1 }} % begin `define' or `format'
+ \def\A{\note{See also section}} % xref for doubly defined section name
+ \def\As{\note{See also sections}} % xref for multiply defined section name
+ \def\B{\iftenpoint\ninepoint\fi
+@@ -242,7 +243,7 @@
+ \let\SHC\C % "// short comments" treated like "/* ordinary comments */"
+ %\def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
+ %\def\SHC#1{\5\5\quad$\diamond\,${\cmntfont#1}}
+-\def\D{\defin{\#define}} % macro definition
++\def\D{\defin{{\rm\#}define}} % macro definition
+ \let\E=\equiv % equivalence sign
+ \def\ET{ and~} % conjunction between two section numbers
+ \def\ETs{, and~} % conjunction between the last two of several section numbers
+@@ -259,7 +260,8 @@
+   \else\ifdim\ht\partialpage<\pageht \leftfalse\else\lefttrue\fi\fi\NNN}
+ \outer\def\NN{\ifvoid\partialpage\leftfalse
+   \else\ifdim\ht\partialpage<\pageht \lefttrue\else\leftfalse\fi\fi\NNN}
+-\outer\def\NNN#1#2#3.{\gdepth=#1\gtitle={#3}\def\secno{#2}% starred section
++\outer\def\NNN#1#2#3.{% beginning of starred section
++  \gdepth=#1\gtitle={#3}\def\secno{#2}
+   \ifleft \flushout
+     \gdef\rlhead{\let\i=I\uppercase{\ignorespaces#3}} % running left headline
+     \global\let\rrhead=\rlhead % running right headline
+@@ -276,16 +278,16 @@
+ \let\R=\lnot % logical not
+ % \S is section sign
+ \def\T#1{\leavevmode % octal, hex or decimal constant
+-  \hbox{$\def\?{\kern.2em}%
+-    \def\$##1{\egroup_{\,\rm##1}\bgroup}% suffix to constant
++  \hbox{$\def\?{\kern.2em}%$%
++    \let\ \, % C++ digit separator becomes a little white space
++    \def\$##1{\egroup_{\rm##1}\bgroup}% suffix to constant
+     \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
+-    \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
+-    \let\~=\oct \let\^=\hex \let\\=\bin{#1}$}}%$%
++    \let\~=\oct \let\^=\hex \let\\=\bin {#1}$}}%$%
+ \def\U{\note{This code is used in section}} % xref for use of a section
+ \def\Us{\note{This code is used in sections}} % xref for uses of a section
+ \let\V=\lor % logical or
+ \let\W=\land % logical and
+-\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi % section name
++\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi %$% section name
+   \XX$\langle\,${\let\I=\ne#2\sevenrm\kern.5em#1}$\,\rangle$\XX}
+ \def\Y{\par\yskip}
+ \let\Z=\le
+@@ -294,15 +296,13 @@
+ 
+ %\def\oct{\hbox{\rm\char'23\kern-.2em\it\aftergroup\?\aftergroup}} % WEB style
+ %\def\hex{\hbox{\rm\char"7D\tt\aftergroup}} % WEB style
+-\def\oct{\hbox{$^\circ$\kern-.1em}\Od}% CWEB style
+-\def\hex{\hbox{$^{\scriptscriptstyle\#}$}\Hd} % CWEB style
+-\def\bin{\hbox{$^{\scriptscriptstyle b}$}\Bd}
+-\def\Od#1/{{\it#1}} % octal digit
+-\def\Hd#1/{{\tt#1}} % hexadecimal digit
+-\def\Bd#1/{{\tt#1}} % binary digit
++\def\oct{\hbox{$^\circ$\kern-.1em\it\aftergroup\?\aftergroup}} % CWEB style
++\def\hex{\hbox{$^{\scriptscriptstyle\#}$\tt\aftergroup}} % CWEB style
++\def\bin{\hbox{$^{\scriptscriptstyle b}$\tt\aftergroup}} % new in CWEB 4.3
+ \def\vb#1{\leavevmode\hbox{\kern2pt\vrule\vtop{\vbox{\hrule
+         \hbox{\strut\kern2pt\.{#1}\kern2pt}}
+       \hrule}\vrule\kern2pt}} % verbatim string
++\def\p#1{\cdot 2^{#1}} % power of two (hex exponent)
+ 
+ % now here's the mini-index formatting control
+ \newcount\nrefs % total number of references in partial page
+diff --git a/proofmac.tex b/proofmac.tex
+index ccfd36b..c0b4fa6 100644
+--- a/proofmac.tex
++++ b/proofmac.tex
+@@ -1,8 +1,8 @@
+ % standard macros for CWEB listings (in addition to plain.tex)
+-% Version 4.3 --- April 2021
++% Version 4.5 --- October 2021
+ % Modified for proofs in CTWILL
+ \ifx\documentstyle\undefined\else\endinput\fi % LaTeX will use other macros
+-\xdef\fmtversion{\fmtversion+CWEB4.3+PROOFS}
++\xdef\fmtversion{\fmtversion+CWEB4.5+PROOFS}
+ 
+ \let\:=\. % preserve a way to get the dot accent
+  % (all other accents will still work as usual)
+@@ -17,6 +17,7 @@
+ \def\TEX/{\TeX}
+ \def\CPLUSPLUS/{{\mc C\PP\spacefactor1000}}
+ \def\Cee{\CEE/} % for backward compatibility
++\def\Cpp{\CPLUSPLUS/} % for backward compatibility
+ \def\9#1{}
+ \font\eightrm=cmr8
+ \let\sc=\eightrm % small caps (NOT a caps-and-small-caps font)
+@@ -160,16 +161,16 @@
+ \let\R=\lnot % logical not
+ % \S is section sign
+ \def\T#1{\leavevmode % octal, hex or decimal constant
+-  \hbox{$\def\?{\kern.2em}%
+-    \def\$##1{\egroup_{\,\rm##1}\bgroup}% suffix to constant
++  \hbox{$\def\?{\kern.2em}%$%
++    \let\ \, % C++ digit separator becomes a little white space
++    \def\$##1{\egroup_{\rm##1}\bgroup}% suffix to constant
+     \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
+-    \def\%{\cdot 16^{\aftergroup}}% power of sixteen (via dirty trick)
+-    \let\~=\oct \let\^=\hex \let\\=\bin{#1}$}}%$%
++    \let\~=\oct \let\^=\hex \let\\=\bin {#1}$}}%$%
+ \def\U{\note{This code is used in section}} % xref for use of a section
+ \def\Us{\note{This code is used in sections}} % xref for uses of a section
+ \let\V=\lor % logical or
+ \let\W=\land % logical and
+-\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi % section name
++\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi %$% section name
+   \XX$\langle\,${\let\I=\ne#2\eightrm\kern.5em#1}$\,\rangle$\XX}
+ \def\Y{\par\yskip}
+ \let\Z=\le
+@@ -178,15 +179,13 @@
+ 
+ %\def\oct{\hbox{\rm\char'23\kern-.2em\it\aftergroup\?\aftergroup}} % WEB style
+ %\def\hex{\hbox{\rm\char"7D\tt\aftergroup}} % WEB style
+-\def\oct{\hbox{$^\circ$\kern-.1em}\Od}% CWEB style
+-\def\hex{\hbox{$^{\scriptscriptstyle\#}$}\Hd} % CWEB style
+-\def\bin{\hbox{$^{\scriptscriptstyle b}$}\Bd}
+-\def\Od#1/{{\it#1}} % octal digit
+-\def\Hd#1/{{\tt#1}} % hexadecimal digit
+-\def\Bd#1/{{\tt#1}} % binary digit
++\def\oct{\hbox{$^\circ$\kern-.1em\it\aftergroup\?\aftergroup}} % CWEB style
++\def\hex{\hbox{$^{\scriptscriptstyle\#}$\tt\aftergroup}} % CWEB style
++\def\bin{\hbox{$^{\scriptscriptstyle b}$\tt\aftergroup}} % new in CWEB 4.3
+ \def\vb#1{\leavevmode\hbox{\kern2pt\vrule\vtop{\vbox{\hrule
+         \hbox{\strut\kern2pt\.{#1}\kern2pt}}
+       \hrule}\vrule\kern2pt}} % verbatim string
++\def\p#1{\cdot 2^{#1}} % power of two (hex exponent)
+ 
+ \def\onmaybe{\let\ifon=\maybe} \let\maybe=\iftrue
+ \newif\ifon \newif\iftitle \newif\ifpagesaved
+diff --git a/twinxmac.tex b/twinxmac.tex
+index 89e3b68..30d4449 100644
+--- a/twinxmac.tex
++++ b/twinxmac.tex
+@@ -8,6 +8,8 @@
+ \def\UNIX/{{\mc U\kern-.05emNIX\spacefactor1000}}
+ \def\TEX/{\TeX}
+ \def\CPLUSPLUS/{{\mc C\PP\spacefactor1000}}
++\def\Cee{\CEE/} % for backward compatibility
++\def\Cpp{\CPLUSPLUS/} % for backward compatibility
+ \def\9#1{}
+ 
+ \newdimen\em \em=10pt % this "em" will not change with font size
+@@ -119,8 +121,6 @@
+ \def\eightbig#1{{\hbox{$\textfont0=\ninerm\textfont2=\ninesy
+   \left#1\vbox to6.5pt{}\right.\nulldelimiterspace=0pt$}}}
+ 
+-\def\Cee{{\mc C\spacefactor1000}}
+-\def\UNIX{{\mc UNIX\spacefactor1000}}
+ \font\titlefont=cmr7 scaled\magstep4 % title on the contents page
+ \font\ttitlefont=cmtt10 scaled\magstep2 % typewriter type in title
+ 
+@@ -194,7 +194,7 @@
+   \sfcode`;=1500 \pretolerance 200 \hyphenpenalty 50 \exhyphenpenalty 50
+   \noindent\strut{\bf\modno.\quad}}
+ \let\startsection=\stsec
+-\def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
++\def\defin#1{\global\advance\ind by 2 \1\&{#1 }} % begin `define' or `format'
+ \def\A{\note{See also section}} % xref for doubly defined section name
+ \def\As{\note{See also sections}} % xref for multiply defined section name
+ \def\B{\iftenpoint\ninepoint\fi
+@@ -205,7 +205,7 @@
+   \exhyphenpenalty 10000
+   \global\ind=2 \1\ \unskip}
+ \def\C#1{\5\5\quad$/\ast\,$#1$\,\ast/$}
+-\def\D{\defin{\#define}} % macro definition
++\def\D{\defin{{\rm\#}define}} % macro definition
+ \let\E=\equiv % equivalence sign
+ \def\ET{ and~} % conjunction between two section numbers
+ \def\ETs{, and~} % conjunction between the last two of several section numbers
+@@ -222,15 +222,16 @@
+ \let\R=\lnot % logical not
+ % \S is section sign
+ \def\T#1{\leavevmode % octal, hex or decimal constant
+-  \hbox{${\def\?{\kern.2em}%
+-    \def\${\ell}% long constant
++  \hbox{${\def\?{\kern.2em}%$%
++    \let\ \, % C++ digit separator becomes a little white space
++    \def\$##1{\egroup_{\rm##1}\bgroup}% suffix to constant
+     \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
+-    \let\~=\oct \let\^=\hex #1}$}}
++    \let\~=\oct \let\^=\hex \let\\=\bin {#1}$}}%$%
+ \def\U{\note{This code is used in section}} % xref for use of a section
+ \def\Us{\note{This code is used in sections}} % xref for uses of a section
+ \let\V=\lor % logical or
+ \let\W=\land % logical and
+-\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi % section name
++\def\X#1:#2\X{\ifmmode\gdef\XX{\null$\null}\else\gdef\XX{}\fi %$% section name
+   \XX$\langle\,${#2\sevenrm\kern.5em#1}$\,\rangle$\XX}
+ \def\Y{\par\yskip}
+ \let\Z=\let % now you can \send the control sequence \Z
+@@ -238,11 +239,13 @@
+ 
+ %\def\oct{\hbox{\rm\char'23\kern-.2em\it\aftergroup\?\aftergroup}} % WEB style
+ %\def\hex{\hbox{\rm\char"7D\tt\aftergroup}} % WEB style
+-\def\oct{\hbox{$^\circ$\kern-.1em\it\aftergroup\?\aftergroup}}% CWEB style
++\def\oct{\hbox{$^\circ$\kern-.1em\it\aftergroup\?\aftergroup}} % CWEB style
+ \def\hex{\hbox{$^{\scriptscriptstyle\#}$\tt\aftergroup}} % CWEB style
++\def\bin{\hbox{$^{\scriptscriptstyle b}$\tt\aftergroup}} % new in CWEB 4.3
+ \def\vb#1{\leavevmode\hbox{\kern2pt\vrule\vtop{\vbox{\hrule
+         \hbox{\strut\kern2pt\.{#1}\kern2pt}}
+       \hrule}\vrule\kern2pt}} % verbatim string
++\def\p#1{\cdot 2^{#1}} % power of two (hex exponent)
+ 
+ \def\normaloutput#1{\shipout\vbox{
+       \vbox to 3pc{\ifodd\pageno\rightheadline\else\leftheadline\fi\vfill}
+-- 
+2.33.1
+
