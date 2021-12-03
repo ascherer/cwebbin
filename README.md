@@ -2,7 +2,7 @@
 
 *cwebbin* is an extension of silvio levy's and donald e. knuth's
 [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
-and donald e. knuth's [ctwill program](ftp://ftp.cs.stanford.edu/pub/ctwill).
+and donald e. knuth's [ctwill program](http://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
 drop](https://github.com/ascherer/cweb/releases/download/cweb-4.5/cweb-4.5.tar.gz)
 and [the secondary *ctwill* source
