@@ -12,6 +12,13 @@ Section 3.
 @ Interface to the standard \CEE/ library:
 
 @<Include files@>=
+#include <ctype.h> /* definition of |@!isalpha|, |@!isdigit| and so on */
+#include <stdbool.h> /* definition of |@!bool|, |@!true| and |@!false| */
+#include <stddef.h> /* definition of |@!ptrdiff_t| */
+#include <stdint.h> /* definition of |@!uint8_t| and |@!uint16_t| */
+#include <stdio.h> /* definition of |@!printf| and friends */
+#include <stdlib.h> /* definition of |@!getenv| and |@!exit| */
+#include <string.h> /* definition of |@!strlen|, |@!strcmp| and so on */
 @y
 @ You may have noticed that almost all \.{"strings"} in the \.{CWEB} sources
 are placed in the context of the `|_|'~macro.  This is just a shortcut for the
@@ -22,6 +29,14 @@ internationalization.
 @d _(s) gettext(s)
 
 @<Include files@>=
+#include <ctype.h> /* definition of |@!isalpha|, |@!isdigit| and so on */
+#include <stdbool.h> /* definition of |@!bool|, |@!true| and |@!false| */
+#include <stddef.h> /* definition of |@!ptrdiff_t| */
+#include <stdint.h> /* definition of |@!uint8_t| and |@!uint16_t| */
+#include <stdio.h> /* definition of |@!printf| and friends */
+#include <stdlib.h> /* definition of |@!getenv| and |@!exit| */
+#include <string.h> /* definition of |@!strlen|, |@!strcmp| and so on */
+@#
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
@@ -31,7 +46,6 @@ internationalization.
 #else
 #define gettext(a) a
 #endif
-@#
 @z
 
 Section 8.

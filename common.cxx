@@ -4,6 +4,14 @@
 /*3:*/
 #line 51 "comm-foo.h"
 
+#include <ctype.h>  
+#include <stdbool.h>  
+#include <stddef.h>  
+#include <stdint.h>  
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <string.h>  
+
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
@@ -13,14 +21,6 @@
 #else
 #define gettext(a) a
 #endif
-
-#include <ctype.h>  
-#include <stdbool.h>  
-#include <stddef.h>  
-#include <stdint.h>  
-#include <stdio.h>  
-#include <stdlib.h>  
-#include <string.h>  
 
 /*:3*//*93:*/
 #line 617 "comm-foo.ch"
