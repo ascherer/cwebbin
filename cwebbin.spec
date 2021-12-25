@@ -33,8 +33,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.5
-Release: 2021.5
+Version: 4.6
+Release: 2021.6
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
@@ -185,6 +185,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sat Dec 25 2021 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.6
+
 * Wed Jul 14 2021 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.5
 

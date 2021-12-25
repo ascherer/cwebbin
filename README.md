@@ -4,7 +4,7 @@
 [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
 and donald e. knuth's [ctwill program](http://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
-drop](https://github.com/ascherer/cweb/releases/download/cweb-4.5/cweb-4.5.tar.gz)
+drop](https://github.com/ascherer/cweb/releases/download/cweb-4.6/cweb-4.6.tar.gz)
 and [the secondary *ctwill* source
 drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
@@ -21,8 +21,8 @@ a set of change files to introduce advanced features. see the extensive
 
 ## manual compilation
 
-extract `ctwill.tar.gz` and add the contents of `cweb-4.5.tar.gz` (overwriting
-outdated source files) and `cwebbin-2021.5.tar.gz` (overwriting `README.md`)
+extract `ctwill.tar.gz` and add the contents of `cweb-4.6.tar.gz` (overwriting
+outdated source files) and `cwebbin-2021.6.tar.gz` (overwriting `README.md`)
 for the full set of source files.
 replace `@@VERSION@@` in line 129 of the `Makefile.unix` with something like
 `Version 4.6 [CWEBbin 2021.6]`.
@@ -39,8 +39,8 @@ sources and for creating installable packages in *rpm* and *deb* format. clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-4.5.tar.gz cweb-4.5
-git archive -o cwebbin-2021.5.tar.gz cwebbin-2021.5
+git archive -o cweb-4.6.tar.gz cweb-4.6
+git archive -o cwebbin-2021.6.tar.gz cwebbin-2021.6
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 *SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build

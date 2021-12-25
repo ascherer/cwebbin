@@ -12,7 +12,7 @@ Material in limbo.
 @x l.21 of CWEAV-TWILL.CH
 \def\title{CTWILL (@VERSION@)}
 @y
-\def\title{CTWILL (Version 4.5 [\TeX~Live])}
+\def\title{CTWILL (Version 4.6 [\TeX~Live])}
 @z
 
 Section 1.
@@ -20,7 +20,7 @@ Section 1.
 @x l.61 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (@VERSION@)")
 @y
-@d banner "This is CTWILL, Version 4.5"
+@d banner "This is CTWILL, Version 4.6"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
