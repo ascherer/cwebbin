@@ -2,7 +2,7 @@ Changes for CWEAVE.W by Andreas Scherer et al.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here.
-See `cwebmana.ch' for details about these new features.
+See CWEBMAN-EXTENSIONS.CH for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
@@ -16,7 +16,7 @@ tricky way so that the first line of the output file will be
 
 @<Start \TEX/...@>=
 out_ptr=out_buf+1; out_line=1; active_file=tex_file;
-*out_ptr='c'; tex_printf("\\input cwebma");
+tex_printf("\\input cwebma"); *out_ptr='c';
 @y
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
@@ -30,10 +30,19 @@ Without this option the first line of the output file will be
 `\.{\\input cwebmac}'.
 
 @<Start \TEX/...@>=
-out_ptr=out_buf+1; out_line=1; active_file=tex_file; *out_ptr='c';
+out_ptr=out_buf+1; out_line=1; active_file=tex_file;
 tex_puts("\\input ");
 tex_printf(use_language);
 tex_puts("cwebma");
+*out_ptr='c';
+@z
+
+Section 111.
+
+@x
+@i prod.w
+@y
+@i prod-cweave.w
 @z
 
 Section 129.
@@ -70,7 +79,7 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
 else if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  big_app(dindent); big_app1(pp); reduce(pp,1,fn_decl,0,38);
+  big_app(dindent); squash(pp,1,fn_decl,0,38);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @y
@@ -90,8 +99,8 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
 else if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  if (indent_param_decl) big_app(dindent); big_app1(pp);
-  reduce(pp,1,fn_decl,0,38);
+  if (indent_param_decl) big_app(dindent);
+  squash(pp,1,fn_decl,0,38);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
@@ -149,6 +158,17 @@ Section 153.
 @y
   big_app1(pp); if (indent_param_decl) big_app(dindent);
   big_app1(pp+1); reduce(pp,2,fn_decl,0,73);
+@z
+
+Section 156.
+
+@x
+  big_app1_insert(pp, (cat1==function || cat1==decl) ? big_force :
+     force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
+@y
+  big_app1_insert(pp, (cat1==function || cat1==decl) ? @|
+     ( order_decl_stmt ? big_force : force ) : @|
+     ( force_lines ? force : break_space ) ); reduce(pp,2,cat1,-1,76);
 @z
 
 Addendum.

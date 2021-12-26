@@ -83,12 +83,13 @@ EXTENSION= cxx
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
 	-Wall -Wextra -Wno-implicit-fallthrough \
 	-Wno-format-overflow -Wno-stringop-truncation
+	# -Wno-char-subscripts # swap the last two lines for LLVM
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
 #CFLAGS = -O $(OPT)
 # All linkers tested worked fine with this option.
-LINKFLAGS = -g
+LINKFLAGS = -g # -lintl # in case your compiler doesn't import libintl
 #LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
 
 # The following set of options work for CC 8.00 on HP-UX 8.00.
@@ -111,8 +112,9 @@ LINKFLAGS = -g
 
 # The `f' flag is turned off to save paper
 # The `s' flag displays some statistics
-WFLAGS = -f +s
-TFLAGS = +s
+# The `c' flag creates intermediate C/TeX output
+WFLAGS = -f +s # +c
+TFLAGS = +s # +c
 
 # Always use this extended Makefile
 MAKE = make -f Makefile.unix
@@ -120,8 +122,11 @@ MAKE = make -f Makefile.unix
 # Klaus Guntermann's Tie 2.4 processor can easily be installed on UNIX.
 TIE = tie
 
+# Add an empty string "" for BSD sed.
+SED_I = sed -i
+
 # Replace @VERSION@ placeholder in tie'd change files
-SUBVER = sed -i $@ -e "s/@VERSION@/@@VERSION@@/"
+SUBVER = $(SED_I) -e "s/@VERSION@/@@VERSION@@/" $@
 
 # What C compiler are you using?
 CC = g++ # gcc cc
@@ -176,7 +181,7 @@ COMMPATCH = comm-extensions.ch comm-extensions.hch \
 	comm-patch.ch comm-texlive.ch comm-texlive.hch
 CTANGPATCH = ctang-i18n.ch ctang-newpage.ch ctang-output.ch \
 	ctang-patch.ch ctang-texlive.ch
-CWEAVPATCH = cweav-extensions.ch cweav-i18n.ch cweav-newpage.ch \
+CWEAVPATCH = cweav-extensions.ch prod-cweave.ch cweav-i18n.ch cweav-newpage.ch \
 	cweav-output.ch cweav-patch.ch cweav-texlive.ch cwtw-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
 CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
@@ -286,11 +291,14 @@ ctangle.o: ctangle.$(EXTENSION)
 cweave: cweave.o common.o
 	$(CC) $(LINKFLAGS) -o $@ $^
 
-cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod.w
+cweave.$(EXTENSION): cweave.w $(WCHANGES) $(HCHANGES) prod-cweave.w
 	$(CTANGLE) cweave $(WCHANGES) $@
 
 cweave.o: cweave.$(EXTENSION)
 	$(CC) $(CFLAGS) -c $^
+
+prod-cweave.w: prod.w prod-cweave.ch
+	$(TIE) -m $@ $^
 
 ctwill: ctwill.o common.o
 	$(CC) $(LINKFLAGS) -o $@ $^
@@ -301,7 +309,7 @@ ctwill.$(EXTENSION): cweave.w $(LCHANGES) $(HCHANGES) prod-twill.w
 ctwill.o: ctwill.$(EXTENSION)
 	$(CC) $(CFLAGS) -c $^
 
-prod-twill.w: prod.w prod-twill.ch
+prod-twill.w: prod.w prod-cweave.ch prod-twill.ch
 	$(TIE) -m $@ $^
 
 refsort.$(EXTENSION): refsort.w refsort.ch
@@ -345,7 +353,7 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^; $(SUBVER)
-	sed -i -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
+	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
 
 # the documentation change files are created automatically by the TIE
@@ -354,16 +362,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^; $(SUBVER)
-	sed -i -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
@@ -406,7 +414,7 @@ $(DCHANGES): cwebman.tex cwebman-patch.ch \
 # for bootstrapping
 clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
-	cweave.$(EXTENSION) ctwill.$(EXTENSION) prod-twill.w \
+	cweave.$(EXTENSION) prod-cweave.w ctwill.$(EXTENSION) prod-twill.w \
 	cwebbin.tex *-foo.* *-doc.ch *.orig *.rej \
 	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
 	ctwill refsort twinx refsort.c twinx.c

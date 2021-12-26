@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% June 6, 2021
+% July 27, 2021
 
 # NAME
 
@@ -48,7 +48,7 @@ should not notice any differences in invoking the programs nor in the
 resulting output.  There are, however, a few differences worth noting:
 
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
-  flags **-c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
+  flags **+c**, **-i**, **-o**, and **+lX** are new in CWEBbin and TeX\ Live.
 * Option **+lX** is accompanied by several wrapper files for **cwebmac.tex**
   with translated captions for German (**+ld**), French (**+lf**), and
   Italian (**+li**).
@@ -79,8 +79,8 @@ The first batch of options are common to both **ctangle** and **cweave**:
   shortcut for **-bhp**; also **\-\-quiet** (default)
 * **+v**/**-v**:
   shortcut for **+bhp**; also **\-\-verbose**
-* **-c**:
-  ignore temporary output irrespective of changes
+* **+c**:
+  check temporary output for changes
 * **+s**:
   print usage statistics
 * **\-\-help**:

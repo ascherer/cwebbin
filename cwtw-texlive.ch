@@ -10,7 +10,7 @@ Material in limbo.
 @x l.39 and l.190 of CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.5 [\TeX~Live])}
+  \centerline{(Version 4.6 [\TeX~Live])}
 @z
 
 @x l.41

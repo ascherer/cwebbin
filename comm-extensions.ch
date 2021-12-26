@@ -1,9 +1,9 @@
-Changes for COMMON.W by Andreas Scherer, January 2021.
+Changes for COMMON.W by Andreas Scherer, July 2021.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
 well as an extended path search mechanism for lookup of `@i'input files.
-See `cwebmana.ch' for details about these new features.
+See CWEBMAN-EXTENSIONS.CH for details about these new features.
 It also incorporates the basis for CTWILL, CWEAVE's evil twin.
 
 This change file requires COMM-PATCH.CH to be applied first.

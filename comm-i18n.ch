@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, January 2021.
+Changes for COMMON.W by Andreas Scherer, October 2021.
 
 This set of changes translates all string values written by the CWEB module
 COMMON.W in case of errors or information requests with the help of 'gettext'
@@ -296,28 +296,16 @@ Section 82.
 
 Section 84.
 
-@x l.1284 and l.69 of COMM-OUTPUT.CH
+@x l.1284 and l.62 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", C_file_name);
 @y
     fatal(_("! Cannot open output file "), C_file_name);
 @z
 
-@x l.79 of COMM-OUTPUT.CH
-    fatal("! Cannot open output file ", check_file_name);
-@y
-    fatal(_("! Cannot open output file "), check_file_name);
-@z
-
-@x l.1289 and l.84 of COMM-OUTPUT.CH
+@x l.1289 and l.68 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", tex_file_name);
 @y
     fatal(_("! Cannot open output file "), tex_file_name);
-@z
-
-@x l.93 of COMM-OUTPUT.CH
-    fatal("! Cannot open output file ", check_file_name);
-@y
-    fatal(_("! Cannot open output file "), check_file_name);
 @z
 
 @x l.295 of COMM-EXTENSIONS.CH
@@ -327,6 +315,30 @@ Section 84.
 @z
 
 More new material.
+
+@x l.81 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", C_file_name);
+@y
+    fatal(_("! Cannot open output file "), C_file_name);
+@z
+
+@x l.91 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", check_file_name);
+@y
+    fatal(_("! Cannot open output file "), check_file_name);
+@z
+
+@x l.96 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", tex_file_name);
+@y
+    fatal(_("! Cannot open output file "), tex_file_name);
+@z
+
+@x l.106 of COMM-OUTPUT.CH
+    fatal("! Cannot open output file ", check_file_name);
+@y
+    fatal(_("! Cannot open output file "), check_file_name);
+@z
 
 @x l.1292
 @** Index.

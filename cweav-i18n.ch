@@ -258,9 +258,9 @@ Section 198.
 Section 200.
 
 @x l.3572
-        else err_print("! Double @@ should be used in strings");
+      else err_print("! Double @@ should be used in strings");
 @y
-        else err_print(_("! Double @@ should be used in strings"));
+      else err_print(_("! Double @@ should be used in strings"));
 @z
 
 Section 204.

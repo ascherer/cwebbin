@@ -1,7 +1,7 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.5 [2021]).
+% This file is part of CWEBbin (Version 4.6 [2021]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
@@ -79,7 +79,8 @@ The following files were added to this distribution by various contributors:
 GENERAL CONTRIBUTION:
 .
 ├── 0001-Support-extended-syntax-for-numeric-literals.patch	for CTWILL
-├── 0002-purge-redundant-TeX-macro.patch			for CTWILL
+├── 0002-Purge-redundant-TeX-macro.patch			for CTWILL
+├── 0003-Adapt-to-CWEB-4.5.patch				for CTWILL
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w

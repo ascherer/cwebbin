@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.5 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.6 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.5 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.6 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -127,7 +127,7 @@ variable is not set, some decent default paths are used instead.}
 @y
 \cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
 file can not be found in the current directory, \.{CWEB} will use the
-conventions of the \Kpathsea/ library as outlined in section~\X91:File lookup
+conventions of the \Kpathsea/ library as outlined in section~\X93:File lookup
 with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 % FIXME
 (This is true for any other input or change file lookup.)}
@@ -145,7 +145,7 @@ options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
 \option i Indent parameters in function declarations.  (On by default;
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
-value $N\in[0,127]$ of this option.  See section~93 % FIXME
+value $N\in[0,127]$ of this option.  See section~95 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  (On by default;
@@ -260,6 +260,6 @@ And here's what the same excerpt looks like when typeset.
 @x l.1600 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.5)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.6)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
