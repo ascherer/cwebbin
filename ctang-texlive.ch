@@ -61,7 +61,7 @@ Sections 2--18.
 Section 20.
 
 @x l.129
-@ @d max_texts 2500 /* number of replacement texts, must be less than 10240 */
+@ @d max_texts 4000 /* number of replacement texts, must be less than 10240 */
 @d max_toks 270000 /* number of bytes in compressed \CEE/ code */
 @y
 @ @d max_texts 10239 /* number of replacement texts, must be less than 10240 */

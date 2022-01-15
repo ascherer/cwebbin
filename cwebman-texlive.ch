@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, March 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, December 2021.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -117,7 +117,7 @@ email address in a \.{CWEB} file (e.g.,
    {mailto:tex-k@tug.org}).
 @z
 ------------------------------------------------------------------------------
-@x l.924 and l.12 of CWEBMAN-EXTENSIONS.CH
+@x l.925 and l.12 of CWEBMAN-EXTENSIONS.CH
 \cwebfootnote{In this extended implementation, if an \.{@i}nclude file can
 not be found in the current directory, \.{CWEB} will look in standard
 directories like the \CEE/ preprocessor.  Multiple search paths may be
@@ -133,7 +133,7 @@ with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
-@x l.1031
+@x l.1032
 except for error messages.
 @y
 except for error messages.%
@@ -141,7 +141,7 @@ except for error messages.%
 options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
 @z
 ------------------------------------------------------------------------------
-@x l.1037 and l.34 of CWEBMAN-EXTENSIONS.CH
+@x l.1038 and l.33 of CWEBMAN-EXTENSIONS.CH
 \option i Indent parameters in function declarations.  (On by default;
 @y
 \option d Set the debugging variable \\{kpathsea\_debug} to the numeric
@@ -151,7 +151,7 @@ of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \option i Indent parameters in function declarations.  (On by default;
 @z
 ------------------------------------------------------------------------------
-@x l.1037 and l.45 of CWEBMAN-EXTENSIONS.CH
+@x l.1038 and l.44 of CWEBMAN-EXTENSIONS.CH
 \option m Install communication between \.{CWEB} and the message browser of
 the {\mc SAS/C} development system.  Set the external environment variable
 \.{SCMSGOPT} to any legal command line option described in the documentation
@@ -160,14 +160,14 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 @y
 @z
 ------------------------------------------------------------------------------
-@x l.1125
+@x l.1126
 Sometimes things don't work as smoothly, and you get a bunch of
 @y
 \acrofalse\pdftexfalse\pdffalse
 Sometimes things don't work as smoothly, and you get a bunch of
 @z
 ------------------------------------------------------------------------------
-@x l.1133
+@x l.1134
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
@@ -177,23 +177,19 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1175
-the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
+@x l.1176 amd l.68 of CWEBMAN-EXTENSIONS.CH.
+\cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
-the program sources at
-\pdfURL{\.{ftp://ftp.cs.stanford.edu/pub/ctwill}}%
-          {ftp://ftp.cs.stanford.edu/pub/ctwill}.%
-\cwebfootnote{\TeX~Live comes with an up-to-date \.{ctwill} executable -- and
-its associated helpers -- out of the box.}
+\cwebfootnote{\TeX~Live comes with an up-to-date
 @z
 ------------------------------------------------------------------------------
-@x l.1179
+@x l.1180
 As an example of a real program written in \.{CWEB}, Appendix~A
 @y
 As an example of a real program written in \.{CWEB}, \Appendix A
 @z
 ------------------------------------------------------------------------------
-@x l.1184
+@x l.1185
 Appendix B is the file that sets \TEX/ up to accept
 the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 @y
@@ -201,7 +197,7 @@ the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 @z
 ------------------------------------------------------------------------------
-@x l.1196
+@x l.1197
 \section Appendix A: Excerpts from a \.{CWEB} Program.
 @y
 \def\subsections{4}
@@ -209,28 +205,28 @@ the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 \subsection CWEB file format.
 @z
 ------------------------------------------------------------------------------
-@x l.1200
+@x l.1201
 generated sections 27--31 of the file \.{common.w}, which contains
 @y
 generated sections 27--31 of the file
 \pdfURL{\.{common.w}}{common.pdf}, which contains
 @z
 ------------------------------------------------------------------------------
-@x l.1273
+@x l.1272
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------
-@x l.1342
+@x l.1339
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 \subsection Translation by CWEAVE.
 @z
 ------------------------------------------------------------------------------
-@x l.1422
+@x l.1419
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 
 And here's what the same excerpt looks like when typeset.
@@ -247,7 +243,7 @@ And here's what the same excerpt looks like when typeset.
 \def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 @z
 ------------------------------------------------------------------------------
-@x l.1506
+@x l.1501
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
@@ -257,7 +253,7 @@ And here's what the same excerpt looks like when typeset.
 \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1600 and l.86 of CWEBMAN-PATCH.CH
+@x l.1595 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(Version 4.6)\}{ }\\vfill\}}\cr}$$

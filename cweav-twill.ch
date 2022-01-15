@@ -1,4 +1,4 @@
-Changes for CWEAVE.W to create CTWILL, May 2021.
+Changes for CWEAVE.W to create CTWILL, December 2021.
 
 This set of changes basically is the same as file CTWILL.DIFFS by Don Knuth
 from ftp://ftp.cs.stanford.edu/pub/ctwill as of July 24, 2000, based on
@@ -74,7 +74,7 @@ on \.{CWEAVE} by Silvio Levy and D.~E. Knuth. It is also based on
 Volumes B and~D of {\sl Computers {\char`\&} Typesetting\/} in 1985.
 \.{CTWILL} was hacked together hastily in June, 1992, to generate pages for
 Knuth's book about the Stanford GraphBase, and updated even more hastily
-in March, 1993 to generate final copy for that book.  The main idea was to
+in March, 1993, to generate final copy for that book.  The main idea was to
 extend \.{CWEAVE} so that ``mini-indexes'' could appear.
 No time was available to make \.{CTWILL} into a refined or complete system,
 nor even to fully update the program documentation below. Subsequent changes
