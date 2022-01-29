@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, December 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, January 2022.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -7,7 +7,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
 @x l.4
 \input cwebmac
-\acrofalse\pdffalse\pdftexfalse
+\acrofalse\pdffalse\pdftexfalse\HINTfalse\acroHINTfalse
 @y
 \input cwebmac
 @z
