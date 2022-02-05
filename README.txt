@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.6 [2021]).
+% This file is part of CWEBbin (Version 4.7 [2022]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated March 29, 2021 by Andreas Scherer.
+% This README file was last updated February 5, 2022 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2018–2021 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018–2022 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -382,6 +382,10 @@ So here are some words about the `special features':
      'evil twin' CTWILL, together with its utility programs 'refsort' and
      'twinx', and the associated TeX macros.
 
+   - [GENERAL] CWEB 4.7 introduced full support for
+     Martin Ruckert's HiTeX and its HINT output format; see
+     https://hint.userweb.mwn.de/hint/hitex.html for details.
+
 %%% CREDIT WHERE CREDIT IS DUE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 I want to express my deep gratitude to Silvio Levy and Donald Knuth for the
@@ -391,7 +395,7 @@ and co-workers on whose initial ideas and contributions this package is based.
 
 Happy CWEBbin'!
 
-February 6, 2021
+February 5, 2022
 
 Andreas Scherer
 
