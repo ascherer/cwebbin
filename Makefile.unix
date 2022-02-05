@@ -4,12 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, March 2021.
+# Last updated by Andreas Scherer, February 2022.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2021 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2022 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -137,9 +137,11 @@ CP= /bin/cp
 
 # uncomment the second line if you use xetex to mogrify .dvi files into .pdf
 # uncomment the third line if you use pdftex to bypass .dvi files altogether
+# uncomment the forth line if you use hitex for HINT output
 PDFTEX = dvipdfm
 #PDFTEX = xetex
 #PDFTEX = pdftex
+#PDFTEX = hitex
 
 ##########  You shouldn't have to change anything after this point #######
 
@@ -247,6 +249,8 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 			TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
 		pdftex ) TEXINPUTS=.//: pdftex $* ; \
 			TEXINPUTS=.//: pdftex $* ;; \
+		hitex ) TEXINPUTS=.//: hitex $* ; \
+			TEXINPUTS=.//: hitex $* ;; \
 	esac
 
 .ref.sref: refsort
@@ -416,7 +420,7 @@ clean:
 	$(RM) -f -r *~ *.o common.tex ctangle.tex cweave.tex ctwill.tex \
 	cweave.$(EXTENSION) prod-cweave.w ctwill.$(EXTENSION) prod-twill.w \
 	cwebbin.tex *-foo.* *-doc.ch *.orig *.rej \
-	  *.log *.dvi *.toc *.idx *.scn *.pdf core cweave ctangle \
+	  *.log *.dvi *.toc *.idx *.scn *.pdf *.hnt core cweave ctangle \
 	ctwill refsort twinx refsort.c twinx.c
 
 install: all
