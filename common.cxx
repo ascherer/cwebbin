@@ -15,12 +15,16 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
+#line 62 "comm-foo.h"
+
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
 #define gettext(a) a
 #endif
+#line 68 "comm-foo.h"
+
 
 /*:3*//*93:*/
 #line 617 "comm-foo.ch"
@@ -32,6 +36,8 @@
 #define bindtextdomain(a,b) ""
 #define textdomain(a) ""
 #endif
+#line 624 "comm-foo.ch"
+
 
 /*:93*/
 #line 63 "common.w"
@@ -391,6 +397,8 @@ char*p,*path_prefix,*next_path_prefix;
 #ifndef SEPARATORS
 #define SEPARATORS "://"
 #endif
+#line 554 "comm-foo.ch"
+
 char separators[]= SEPARATORS;
 
 /*:89*/
@@ -1377,6 +1385,8 @@ change_file_name[max_file_name_length-2]= '\0';
 strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
 change_file_name[max_file_name_length-2]= '\0';
 #endif
+#line 388 "comm-foo.ch"
+
 
 #line 1168 "common.w"
 while(--argc> 0){
@@ -1557,6 +1567,8 @@ static boolean set_path(char*include_path,char*environment)
 strncpy(include_path,CWEBINPUTS,max_path_length);
 include_path[max_path_length]= '\0';
 #endif
+#line 524 "comm-foo.ch"
+
 
 if(environment){
 if(strlen(environment)+strlen(include_path)>=max_path_length){
