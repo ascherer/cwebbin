@@ -7,7 +7,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
 @x l.4
 \input cwebmac
-\acrofalse\pdffalse\pdftexfalse\HINTfalse\acroHINTfalse
+\acrofalse\pdffalse\pdftexfalse\hintfalse\acrohintfalse
 @y
 \input cwebmac
 @z
