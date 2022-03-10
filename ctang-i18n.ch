@@ -265,9 +265,11 @@ Section 100
             err_print(_("! Double @@ should be used in control text"));
 @z
 
-@x l.1504
+@x l.1513
+          } @=/* otherwise fall through */@>
         default: err_print("! Double @@ should be used in limbo");
 @y
+          } @=/* otherwise fall through */@>
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 

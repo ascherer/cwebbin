@@ -339,9 +339,11 @@ Section 237.
     err_print(_("! Improper macro definition"));
 @z
 
-@x l.4350
+@x l.4358
+        } @=/* otherwise fall through */@>
       default: err_print("! Improper macro definition"); break;
 @y
+        } @=/* otherwise fall through */@>
       default: err_print(_("! Improper macro definition")); break;
 @z
 

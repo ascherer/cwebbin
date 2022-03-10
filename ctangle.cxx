@@ -738,11 +738,11 @@ writeloop:/*50:*/
 if(check_for_change){
 fclose(C_file);C_file= NULL;
 /*106:*/
-#line 342 "ctang-foo.ch"
+#line 344 "ctang-foo.ch"
 
 if((C_file= fopen(C_file_name,"r"))!=NULL){
 /*107:*/
-#line 349 "ctang-foo.ch"
+#line 351 "ctang-foo.ch"
 
 boolean comparison= false;
 
@@ -751,7 +751,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*108:*/
-#line 363 "ctang-foo.ch"
+#line 365 "ctang-foo.ch"
 
 do{
 char x[BUFSIZ],y[BUFSIZ];
@@ -761,17 +761,17 @@ comparison= (x_size==y_size)&&!memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:108*/
-#line 356 "ctang-foo.ch"
+#line 358 "ctang-foo.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*:107*/
-#line 344 "ctang-foo.ch"
+#line 346 "ctang-foo.ch"
 
 /*109:*/
-#line 374 "ctang-foo.ch"
+#line 376 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -781,7 +781,7 @@ rename(check_file_name,C_file_name);
 }
 
 /*:109*/
-#line 345 "ctang-foo.ch"
+#line 347 "ctang-foo.ch"
 
 }else
 rename(check_file_name,C_file_name);
@@ -794,7 +794,7 @@ for(an_output_file= end_output_files;an_output_file> cur_out_file;){
 an_output_file--;
 sprint_section_name(output_file_name,*an_output_file);
 if(check_for_change)/*105:*/
-#line 333 "ctang-foo.ch"
+#line 335 "ctang-foo.ch"
 {
 if((C_file= fopen(output_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),output_file_name);
@@ -825,14 +825,14 @@ flush_buffer();
 if(check_for_change){
 fclose(C_file);C_file= NULL;
 /*110:*/
-#line 387 "ctang-foo.ch"
+#line 389 "ctang-foo.ch"
 
 if(0==strcmp("/dev/stdout",output_file_name))
 /*112:*/
-#line 414 "ctang-foo.ch"
+#line 416 "ctang-foo.ch"
 {
 /*115:*/
-#line 445 "ctang-foo.ch"
+#line 447 "ctang-foo.ch"
 
 char in_buf[BUFSIZ+1];
 int in_size;
@@ -842,7 +842,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*:115*/
-#line 415 "ctang-foo.ch"
+#line 417 "ctang-foo.ch"
 
 do{
 in_size= fread(in_buf,sizeof(char),BUFSIZ,check_file);
@@ -851,7 +851,7 @@ fprintf(stdout,"%s",in_buf);
 }while(!feof(check_file));
 fclose(check_file);check_file= NULL;
 /*111:*/
-#line 404 "ctang-foo.ch"
+#line 406 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -861,19 +861,19 @@ rename(check_file_name,output_file_name);
 }
 
 /*:111*/
-#line 422 "ctang-foo.ch"
+#line 424 "ctang-foo.ch"
 
 }
 
 /*:112*/
-#line 389 "ctang-foo.ch"
+#line 391 "ctang-foo.ch"
 
 else if(0==strcmp("/dev/stderr",output_file_name))
 /*113:*/
-#line 427 "ctang-foo.ch"
+#line 429 "ctang-foo.ch"
 {
 /*115:*/
-#line 445 "ctang-foo.ch"
+#line 447 "ctang-foo.ch"
 
 char in_buf[BUFSIZ+1];
 int in_size;
@@ -883,7 +883,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*:115*/
-#line 428 "ctang-foo.ch"
+#line 430 "ctang-foo.ch"
 
 do{
 in_size= fread(in_buf,sizeof(char),BUFSIZ,check_file);
@@ -892,7 +892,7 @@ fprintf(stderr,"%s",in_buf);
 }while(!feof(check_file));
 fclose(check_file);check_file= NULL;
 /*111:*/
-#line 404 "ctang-foo.ch"
+#line 406 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -902,20 +902,20 @@ rename(check_file_name,output_file_name);
 }
 
 /*:111*/
-#line 435 "ctang-foo.ch"
+#line 437 "ctang-foo.ch"
 
 }
 
 /*:113*/
-#line 391 "ctang-foo.ch"
+#line 393 "ctang-foo.ch"
 
 else if(0==strcmp("/dev/null",output_file_name))
 /*114:*/
-#line 440 "ctang-foo.ch"
+#line 442 "ctang-foo.ch"
 {
 boolean comparison= true;
 /*111:*/
-#line 404 "ctang-foo.ch"
+#line 406 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -925,17 +925,17 @@ rename(check_file_name,output_file_name);
 }
 
 /*:111*/
-#line 442 "ctang-foo.ch"
+#line 444 "ctang-foo.ch"
 
 }
 
 /*:114*/
-#line 393 "ctang-foo.ch"
+#line 395 "ctang-foo.ch"
 
 else{
 if((C_file= fopen(output_file_name,"r"))!=NULL){
 /*107:*/
-#line 349 "ctang-foo.ch"
+#line 351 "ctang-foo.ch"
 
 boolean comparison= false;
 
@@ -944,7 +944,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 
 
 /*108:*/
-#line 363 "ctang-foo.ch"
+#line 365 "ctang-foo.ch"
 
 do{
 char x[BUFSIZ],y[BUFSIZ];
@@ -954,17 +954,17 @@ comparison= (x_size==y_size)&&!memcmp(x,y,x_size);
 }while(comparison&&!feof(C_file)&&!feof(check_file));
 
 /*:108*/
-#line 356 "ctang-foo.ch"
+#line 358 "ctang-foo.ch"
 
 
 fclose(C_file);C_file= NULL;
 fclose(check_file);check_file= NULL;
 
 /*:107*/
-#line 396 "ctang-foo.ch"
+#line 398 "ctang-foo.ch"
 
 /*111:*/
-#line 404 "ctang-foo.ch"
+#line 406 "ctang-foo.ch"
 
 if(comparison)
 remove(check_file_name);
@@ -974,7 +974,7 @@ rename(check_file_name,output_file_name);
 }
 
 /*:111*/
-#line 397 "ctang-foo.ch"
+#line 399 "ctang-foo.ch"
 
 }else
 rename(check_file_name,output_file_name);
@@ -1137,7 +1137,7 @@ case string:if(out_state==verbatim)out_state= normal;
 else out_state= verbatim;break;
 case'/':C_putc('/');out_state= post_slash;break;
 case'*':if(out_state==post_slash)C_putc(' ');
-
+/* fall through */
 default:C_putc(cur_char);out_state= normal;break;
 }
 }
@@ -1914,7 +1914,7 @@ while(xisspace(*loc)&&loc<limit)loc++;
 loc+= 3;
 if(loc> limit||!xisxdigit(*(loc-3))||!xisxdigit(*(loc-2))
 ||(*(loc-3)>='0'&&*(loc-3)<='7')||!xisspace(*(loc-1)))
-#line 285 "ctang-foo.ch"
+#line 287 "ctang-foo.ch"
 err_print(_("! Improper hex number following @l"));
 #line 1529 "ctangle.w"
 
@@ -1926,7 +1926,7 @@ while(xisspace(*loc)&&loc<limit)loc++;
 beg= loc;
 while(loc<limit&&(xisalpha(*loc)||xisdigit(*loc)||*loc=='_'))loc++;
 if(loc-beg>=translit_length)
-#line 291 "ctang-foo.ch"
+#line 293 "ctang-foo.ch"
 err_print(_("! Replacement string in @l too long"));
 #line 1539 "ctangle.w"
 
@@ -1948,8 +1948,8 @@ err_print(_("! Double @ should be used in control text"));
 #line 1511 "ctangle.w"
 
 break;
-}
-#line 279 "ctang-foo.ch"
+#line 280 "ctang-foo.ch"
+}/* otherwise fall through */
 default:err_print(_("! Double @ should be used in limbo"));
 #line 1515 "ctangle.w"
 
@@ -1963,7 +1963,7 @@ default:err_print(_("! Double @ should be used in limbo"));
 
 void
 print_stats(void){
-#line 304 "ctang-foo.ch"
+#line 306 "ctang-foo.ch"
 puts(_("\nMemory usage statistics:"));
 printf(_("%td names (out of %ld)\n"),
 (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
@@ -1976,5 +1976,5 @@ printf(_("%td tokens (out of %ld)\n"),
 (ptrdiff_t)(tok_ptr-tok_mem),(long)max_toks);
 }
 
-#line 317 "ctang-foo.ch"
+#line 319 "ctang-foo.ch"
 /*:103*/
