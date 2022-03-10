@@ -266,10 +266,10 @@ Section 100
 @z
 
 @x l.1513
-          } @=/* otherwise fall through */@>
+          } @=/* otherwise fall through */@>@;
         default: err_print("! Double @@ should be used in limbo");
 @y
-          } @=/* otherwise fall through */@>
+          } @=/* otherwise fall through */@>@;
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
