@@ -50,13 +50,13 @@ Section 129.
 @x l.2651
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp); big_app(dindent);
+  make_underlined(pp); big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @y
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @z

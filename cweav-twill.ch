@@ -435,10 +435,10 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @z
 
 @x l.2651 and l.50 of CWEAV-EXTENSIONS.CH
-  make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
 @y
-  make_underlined(pp); make_ministring(pp); big_app1(pp);
-  if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); make_ministring(pp);
+  if (indent_param_decl) big_app(dindent); big_app1(pp);
 @z
 
 @x l.2667
