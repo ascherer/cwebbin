@@ -34,16 +34,17 @@
 @z
 
 @x
-Rule 117: The |exp| must not be immediately followed by |lpar|, |exp|,
-or |cast|.
+Rules 35, 117: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+|exp|, or~|cast|.
+@y
+Rule 35: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+|exp|, or~|cast|.
+@z
 
-Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
+@x
 Rules 153, 154: |make_reserved| is called only if \.{CWEAVE} has been invoked
 with the \.{+t} option.
 @y
-Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
 Rules 153, 154: |make_reserved| is called only if \.{CWEAVE} has been invoked
 with the \.{+t} option.
 

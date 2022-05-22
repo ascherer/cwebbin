@@ -1,4 +1,4 @@
-Changes for CWEAVE.W to create CTWILL, December 2021.
+Changes for CWEAVE.W to create CTWILL, May 2022.
 
 This set of changes basically is the same as file CTWILL.DIFFS by Don Knuth
 from ftp://ftp.cs.stanford.edu/pub/ctwill as of July 24, 2000, based on
@@ -498,7 +498,7 @@ if ((cat1==int_like || cat1==cast) && (cat2==comma || cat2==semi))
 else if (cat1==int_like) {
   big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,116);
 }
-else if (cat1==exp && cat2!=lpar && cat2!=exp && cat2!=cast) {
+else if (cat1==exp && cat2!=lpar && cat2!=lbrack && cat2!=exp && cat2!=cast) {
   make_underlined(pp+1); make_reserved(pp+1);
   big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,117);
 }
