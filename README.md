@@ -14,16 +14,18 @@ a set of change files to introduce advanced features. see the extensive
 
 * includes **ctwill** and its utilities;
 * **internationalization** with the “GNU `gettext` utilities”;
-* **temporary file output**: check output for differences from former run with new option `+c`;
-* [only `cweave` and `ctwill`] option `-l` to change the first line in the tex output; options `-i` and `-o` for slightly customizable code layout;
+* **temporary file output**: check output for differences from former run with
+  new option `+c`;
+* [only `cweave` and `ctwill`] option `-l` to change the first line in the tex
+  output; options `-i` and `-o` for slightly customizable code layout;
 * [only `ctangle`] output can be redirected to `@(/dev/{stdout,stderr,null}@>`;
 * [only in “tex live”] file lookup with the **kpathsea** library.
 
 ## manual compilation
 
 extract `ctwill.tar.gz` and add the contents of `cweb-4.7.tar.gz` (overwriting
-outdated source files) and `cwebbin-2022.1.tar.gz` (overwriting `README.md`)
-for the full set of source files.
+outdated source files `Makefile`, `common.h`, `common.w`, and `prod.w`) and
+`cwebbin-2022.1.tar.gz` for the full set of source files.
 replace `@@VERSION@@` in line 129 of the `Makefile.unix` with something like
 `Version 4.7 [CWEBbin 2022.1]`.
 `touch *.cxx`.
@@ -34,8 +36,14 @@ things work.
 
 ## advanced packaging
 
-alternatively, you may want to use *rpmbuild* or *debbuild* for compiling the
-sources and for creating installable packages in *rpm* and *deb* format. clone
+alternatively, you may want to use
+[rpmbuild](https://github.com/rpm-software-management/rpm) or
+[debbuild](https://github.com/debbuild/debbuild) for compiling the sources and
+for creating installable packages in *rpm* and *deb* format.
+set up your *build arena* with `mkdir BUILD BUILDROOT RPMS SOURCES SPECS SRPMS`
+for *rpmbuild* (plus `mkdir DEBS SDEBS` for *debbuild*).
+
+clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
@@ -43,12 +51,25 @@ git archive -o cweb-4.7.tar.gz cweb-4.7
 git archive -o cwebbin-2022.1.tar.gz cwebbin-2022.1
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
-*SOURCES* directory and `cwebbin.spec` in the *SPECS* directory of your build
-arena, and run
+*SOURCES* directory, add the patch files
+* `0001-Support-extended-syntax-for-numeric-literals.patch`
+* `0002-Purge-redundant-TeX-macro.patch`
+* `0003-Adapt-to-CWEB-4.5.patch`
+* `0004-Add-silent-datecontentspage-macro.patch`
+
+to *SOURCES* also, and place `cwebbin.spec` in the *SPECS* directory of your
+build arena.
+
+the four patch files upgrade the *ctwill* macros for modern cweb. originally,
+they come from branch
+[update-macros-for-cweb-4](https://github.com/ascherer/ctwill/tree/update-macros-for-cweb-4)
+and can be recreated by `git format-patch master` in the archived
+[ctwill project](https://github.com/ascherer/ctwill).
+
+depending on your preferences run the magic incantation
 ```
 {deb|rpm}build -ba SPECS/cwebbin.spec
 ```
-depending on your preferences.
 
 ## cweb for texlive
 
@@ -61,7 +82,18 @@ by invoking
 you receive a small tarball `cweb-texlive.tar.gz`, which should be extracted in
 texlive's source directory
 [`texlive-source`](https://github.com/TeX-Live/texlive-source) (or the
-[subversion equivalent](https://tug.org/svn/texlive/trunk/Build/source)).
+[subversion equivalent](https://tug.org/svn/texlive/trunk/Build/source)) with
+```
+cd /path/to/texlive-source
+pax -rzf /path/to/cweb-texlive.tar.gz
+```
+
 this tarball contains `*-w2c.ch` files that modify the original cweb sources
 for the texlive ecosystem.  additionally, it contains language catalogs, tex
 macros, and cweb include files.
+
+updated versions of **cweb** are added to the texlive source tree with
+```
+cd /path/to/texlive-source/texk/web2c/cwebdir
+pax -rzf /path/to/cweb-4.7.tar.gz
+```
