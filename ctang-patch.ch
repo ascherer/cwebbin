@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CTANG-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CTANGLE.W, Version 4.7.
+It is a changefile for CTANGLE.W, Version 4.2.
 
 Technically, CTANG-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -165,17 +165,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 	25 December 2021	AS	tuneup for CWEB 4.6 [2021].
 
 2022	05 February 2022	AS	tuneup for CWEB 4.7 [2022].
+	05 June 2022		AS	tuneup for CWEB 4.8 [2022].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.30
-\def\title{CTANGLE (Version 4.7)}
+\def\title{CTANGLE (Version 4.8)}
 @y
 \def\title{CTANGLE (@VERSION@)}
 @z
 
 @x l.34
-  \centerline{(Version 4.7)}
+  \centerline{(Version 4.8)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -191,7 +192,7 @@ z
 Section 1.
 
 @x l.64
-@d banner "This is CTANGLE (Version 4.7)"
+@d banner "This is CTANGLE (Version 4.8)"
 @y
 @d banner "This is CTANGLE (@VERSION@)"
 @z

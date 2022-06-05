@@ -12,7 +12,7 @@ Material in limbo.
 @x l.35 and l.184 of CWEAV-PATCH.CH
 \def\title{CWEAVE (@VERSION@)}
 @y
-\def\title{CWEAVE (Version 4.7 [\TeX~Live])}
+\def\title{CWEAVE (Version 4.8 [\TeX~Live])}
 @z
 
 Section 1.
@@ -20,6 +20,6 @@ Section 1.
 @x l.70 and l.206 of CWEAV-PATCH.CH and l.17 of CWEAV-I18N.CH
 @d banner _("This is CWEAVE (@VERSION@)")
 @y
-@d banner "This is CWEAVE, Version 4.7"
+@d banner "This is CWEAVE, Version 4.8"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
