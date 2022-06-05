@@ -1,4 +1,4 @@
-Changes for CWEAVE.W to create CTWILL, December 2021.
+Changes for CWEAVE.W to create CTWILL, May 2022.
 
 This set of changes basically is the same as file CTWILL.DIFFS by Don Knuth
 from ftp://ftp.cs.stanford.edu/pub/ctwill as of July 24, 2000, based on
@@ -435,10 +435,10 @@ static token_pointer tok_loc; /* where the first identifier appears */
 @z
 
 @x l.2651 and l.50 of CWEAV-EXTENSIONS.CH
-  make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
 @y
-  make_underlined(pp); make_ministring(pp); big_app1(pp);
-  if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); make_ministring(pp);
+  if (indent_param_decl) big_app(dindent); big_app1(pp);
 @z
 
 @x l.2667
@@ -498,13 +498,11 @@ if ((cat1==int_like || cat1==cast) && (cat2==comma || cat2==semi))
 else if (cat1==int_like) {
   big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,116);
 }
-else if (cat1==exp && cat2!=lpar && cat2!=exp && cat2!=cast) {
+else if (cat1==exp && cat2!=lpar && cat2!=lbrack && cat2!=exp && cat2!=cast) {
   make_underlined(pp+1); make_reserved(pp+1);
   big_app1_insert(pp,' '); reduce(pp,2,typedef_like,0,117);
 }
-else if (cat1==comma) {
-  big_app2(pp); big_app(' '); reduce(pp,2,typedef_like,0,118);
-}
+else if (cat1==comma) squash(pp,2,typedef_like,0,118);
 else if (cat1==semi) squash(pp,2,decl,-1,119);
 else if (cat1==ubinop && (cat2==ubinop || cat2==cast)) {
   big_app('{'); big_app1_insert(pp+1,'}'); reduce(pp+1,2,cat2,0,120);

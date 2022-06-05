@@ -225,12 +225,12 @@ switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n"
-   ,"");
+   ,""); break;
 @.Usage:@>
 case cweave: fatal(
 "! Usage: cweave [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"
-   ,"");
+   ,""); break;
 default: fatal(
 "! Usage: ctwill [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n"

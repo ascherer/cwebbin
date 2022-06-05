@@ -50,23 +50,23 @@ Section 129.
 @x l.2651
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp); big_app(dindent);
+  make_underlined(pp); big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @y
 @<Cases for |exp|@>=
 if(cat1==lbrace || cat1==int_like || cat1==decl) {
-  make_underlined(pp); big_app1(pp); if (indent_param_decl) big_app(dindent);
+  make_underlined(pp); if (indent_param_decl) big_app(dindent); big_app1(pp);
   reduce(pp,1,fn_decl,0,1);
 }
 @z
 
 Section 139.
 
-@x l.2762
+@x l.2749
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
-  big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
+  big_app2(pp); app(opt); app('9'); reduce(pp,2,decl_head,-1,33);
 }
 else if (cat1==ubinop) {
   big_app1_insert(pp,'{'); big_app('}'); reduce(pp,2,decl_head,-1,34);
@@ -78,14 +78,14 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
     cat3==semi || cat3==rpar))
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
-else if (cat1==lbrace || cat1==int_like || cat1==decl) {
+else if (cat1==int_like || cat1==lbrace || cat1==decl) {
   big_app(dindent); squash(pp,1,fn_decl,0,38);
 }
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @y
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
-  big_app2(pp); big_app(' '); reduce(pp,2,decl_head,-1,33);
+  big_app2(pp); app(opt); app('9'); reduce(pp,2,decl_head,-1,33);
 }
 else if (cat1==ubinop) {
   big_app1_insert(pp,'{'); big_app('}');
@@ -98,7 +98,7 @@ else if ((cat1==binop||cat1==colon) && cat2==exp && (cat3==comma ||
     cat3==semi || cat3==rpar))
   squash(pp,3,decl_head,-1,36);
 else if (cat1==cast) squash(pp,2,decl_head,-1,37);
-else if (cat1==lbrace || cat1==int_like || cat1==decl) {
+else if (cat1==int_like || cat1==lbrace || cat1==decl) {
   if (indent_param_decl) big_app(dindent);
   squash(pp,1,fn_decl,0,38);
 }
@@ -163,10 +163,10 @@ Section 153.
 Section 156.
 
 @x
-  big_app1_insert(pp, (cat1==function || cat1==decl) ? big_force :
+  big_app1_insert(pp, (cat1==decl || cat1==function) ? big_force :
      force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
 @y
-  big_app1_insert(pp, (cat1==function || cat1==decl) ? @|
+  big_app1_insert(pp, (cat1==decl || cat1==function) ? @|
      ( order_decl_stmt ? big_force : force ) : @|
      ( force_lines ? force : break_space ) ); reduce(pp,2,cat1,-1,76);
 @z

@@ -33,8 +33,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.7
-Release: 2022.1
+Version: 4.8
+Release: 2022.2
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
@@ -46,6 +46,7 @@ Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release
 Patch1: 0001-Support-extended-syntax-for-numeric-literals.patch
 Patch2: 0002-Purge-redundant-TeX-macro.patch
 Patch3: 0003-Adapt-to-CWEB-4.5.patch
+Patch4: 0004-Add-silent-datecontentspage-macro.patch
 
 %global __sed_i %{__sed} -i
 
@@ -185,6 +186,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sun Jun 05 2022 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.8
+
 * Sat Feb 05 2022 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.7
 

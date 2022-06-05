@@ -13,13 +13,13 @@ Material in limbo.
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{Common code for CTANGLE and CWEAVE (4.7 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.8 [\TeX~Live])}
 @z
 
 @x l.30 and l.191 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.7 [\TeX~Live])}
+  \centerline{(Version 4.8 [\TeX~Live])}
 @z
 
 @x l.32
@@ -276,12 +276,12 @@ switch (program) {
 case ctangle: fatal(
 _("! Usage: ctangle [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-   ,"");
+   ,""); break;
 @.Usage:@>
 case cweave: fatal(
 _("! Usage: cweave [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-   ,"");
+   ,""); break;
 default: fatal(
 _("! Usage: ctwill [options] "@|
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")

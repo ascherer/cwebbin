@@ -13,9 +13,9 @@
     \&{typedef} \&{char}\cr
 \+\dagit& |typedef_like| |exp| & |typedef_like| \hfill $T\.\ E^{**}$ &
     \&{typedef} \&I \.{@@[@@]} (|*|\&P)\cr
-\+& |typedef_like| |comma| & |typedef_like| \hfill $TC\.\ $ &
+\+& |typedef_like| |comma| & |typedef_like| \hfill $TC$ &
     \&{typedef} \&{int} \&x,\cr
-\+& |typedef_like| |semi| & |decl| & \&{typedef} \&{int} $\&x,\&y$;\cr
+\+& |typedef_like| |semi| & |decl| & \&{typedef} \&{int} $\&x,{}$ $\&y$;\cr
 \+& |typedef_like| |ubinop| \alt |cast| |ubinop| & 
     |typedef_like| \alt |cast| |ubinop| \hfill
     \alt $C=\.\{U\.\}C$ $U_2=\.\{U_1\.\}U_2$ \unskip &
@@ -34,16 +34,17 @@
 @z
 
 @x
-Rule 117: The |exp| must not be immediately followed by |lpar|, |exp|,
-or |cast|.
+Rules 35, 117: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+|exp|, or~|cast|.
+@y
+Rule 35: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+|exp|, or~|cast|.
+@z
 
-Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
+@x
 Rules 153, 154: |make_reserved| is called only if \.{CWEAVE} has been invoked
 with the \.{+t} option.
 @y
-Rule 123: The mathness of the |colon| or |base| changes to `yes'.
-
 Rules 153, 154: |make_reserved| is called only if \.{CWEAVE} has been invoked
 with the \.{+t} option.
 

@@ -38,12 +38,12 @@ Section 111.
 @z
 
 @x
-Rule 35: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+Rules 35, 117: The |exp| must not be immediately followed by |lpar|, |lbrack|,
 @y
 Rules 1, 38, 52, and 73: The \\{din}s and \\{out}s are suppressed if
 \.{CWEAVE} has been invoked with the \.{-i} option.
 
-Rule 35: The |exp| must not be immediately followed by |lpar|, |lbrack|,
+Rules 35, 117: The |exp| must not be immediately followed by |lpar|, |lbrack|,
 @z
 
 @x

@@ -15,12 +15,15 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
+#line 63 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
+#line 67 "comm-foo.h"
 #define gettext(a) a
 #endif
+#line 69 "comm-foo.h"
 
 /*:3*//*93:*/
 #line 617 "comm-foo.ch"
@@ -28,10 +31,12 @@
 #if HAVE_GETTEXT
 #include <locale.h>  
 #else
+#line 621 "comm-foo.ch"
 #define setlocale(a,b) ""
 #define bindtextdomain(a,b) ""
 #define textdomain(a) ""
 #endif
+#line 625 "comm-foo.ch"
 
 /*:93*/
 #line 63 "common.w"
@@ -391,7 +396,8 @@ char*p,*path_prefix,*next_path_prefix;
 #ifndef SEPARATORS
 #define SEPARATORS "://"
 #endif
-char separators[]= SEPARATORS;
+#line 555 "comm-foo.ch"
+ char separators[]= SEPARATORS;
 
 /*:89*/
 #line 66 "common.w"
@@ -1181,7 +1187,7 @@ print_section_name(r);
 err_print(">");
 }
 else if(name_len<prefix_length(r))set_prefix_length(r,name_len);
-
+/* fall through */
 case equal:break;
 case extension:if(!ispref||first<=last)
 extend_section_name(r,first,last+1,ispref);
@@ -1374,12 +1380,14 @@ strcpy(change_file_name,"/dev/null");
 strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
 change_file_name[max_file_name_length-2]= '\0';
 #elif defined _DEV_NULL
-strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
+#line 386 "comm-foo.ch"
+ strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
 change_file_name[max_file_name_length-2]= '\0';
 #endif
+#line 389 "comm-foo.ch"
 
 #line 1168 "common.w"
-while(--argc> 0){
+ while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
 #line 1247 "common.w"
 
@@ -1502,12 +1510,12 @@ switch(program){
 case ctangle:fatal(
 _("! Usage: ctangle [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-,"");
+,"");break;
 
 case cweave:fatal(
 _("! Usage: cweave [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-,"");
+,"");break;
 default:fatal(
 _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
@@ -1528,12 +1536,12 @@ switch(program){
 case ctangle:fatal(
 _("! Usage: ctangle [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.c]]]\n")
-,"");
+,"");break;
 
 case cweave:fatal(
 _("! Usage: cweave [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
-,"");
+,"");break;
 default:fatal(
 _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
@@ -1557,6 +1565,7 @@ static boolean set_path(char*include_path,char*environment)
 strncpy(include_path,CWEBINPUTS,max_path_length);
 include_path[max_path_length]= '\0';
 #endif
+#line 525 "comm-foo.ch"
 
 if(environment){
 if(strlen(environment)+strlen(include_path)>=max_path_length){
