@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, December 2021.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, June 2022.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
@@ -50,6 +50,14 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 (On by default.) (Has no effect on\break\hbox{}\qquad\.{CTANGLE}.)}
 
 \yskip
+@z
+------------------------------------------------------------------------------
+@x l.1144
+the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.
+@y
+the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.%
+\cwebfootnote{This extended version of \.{CWEB} acknowledges the \.{-o} option
+to suppress the extra space globally.}
 @z
 ------------------------------------------------------------------------------
 @x l.1146
