@@ -7,7 +7,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
 @x l.4
 \input cwebmac
-\acrofalse\pdffalse\pdftexfalse\hintfalse\acrohintfalse
+\acrofalse\pdffalse\acrohintfalse
 @y
 \input cwebmac
 @z
@@ -163,7 +163,7 @@ by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
 @x l.1126
 Sometimes things don't work as smoothly, and you get a bunch of
 @y
-\acrofalse\pdftexfalse\pdffalse
+\acrofalse\pdffalse\acrohintfalse
 Sometimes things don't work as smoothly, and you get a bunch of
 @z
 ------------------------------------------------------------------------------
@@ -171,10 +171,9 @@ Sometimes things don't work as smoothly, and you get a bunch of
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
-\ifx\pdf+\pdftrue\fi
-\ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
-\else \pdftextrue \pdfoutput=1\fi\fi
+\ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
 \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
 @x l.1176 amd l.68 of CWEBMAN-EXTENSIONS.CH.
