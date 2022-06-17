@@ -240,7 +240,7 @@
 \newtoks\toksA \newtoks\toksB \newtoks\toksC \newtoks\toksD
 \newtoks\toksE \newtoks\toksF \newtoks\usersanitizer
 \newcount\countA \countA=0 \newcount\countB \countB=0
-\newcount\countC \countC=0
+\newcount\countC \countC=0 \newcount\countD \countD=0
 \newif\iftokprocessed \newif\ifTnum \newif\ifinstr
 {\def\\{\global\let\spacechar= }\\ }
 
@@ -352,7 +352,7 @@
 \def\makeolproctokctlii{%
   \ifx\nxt\MG\addF{->}\else\ifx\nxt\GG\addF{>>}%
   \else\ifx\nxt\LL\addF{<<}\else\ifx\nxt\NULL\addF{NULL}%
-  \else\ifx\nxt\AND\addF&\else\ifx\nxt\OR\addF|%|
+  \else\ifx\nxt\AND\addF&\else\ifx\nxt\OR\addF|%
   \else\ifx\nxt\XOR\addF^\else\ifx\nxt\CM\addF\tildechar
   \else\ifx\nxt\MOD\addF{\string\%}\else\ifx\nxt\DC\addF{::}%
   \else\ifx\nxt\PA\addF{.*}\else\ifx\nxt\MGA\addF{->*}%
@@ -676,8 +676,9 @@
 \def\fin{\ifacro \message{Section names:}
   \def\U##1.{} \def\Us##1.{} \let\I=\relax \let\*=*
   \def\outsecname{Names of the sections}
-  \ifpdftex \makebookmarks
-    \pdfoutline goto num 1 count -\secno {\outsecname}
+  \ifpdftex \makebookmarks \countsections
+    \pdfdest name {NOS} fith
+    \pdfoutline goto name {NOS} count -\the\countD {\outsecname}
     \def\X##1:##2\X{\firstsecno##1.%
       {\toksF={}\makeoutlinetoks##2\outlinedone\outlinedone}%
       \pdfoutline goto num \the\toksA \expandafter{\the\toksE}}
@@ -689,6 +690,10 @@
         /A << /S /GoTo /D (\romannumeral\the\toksA) >> >>}}
   \fi \readsections \fi}
 \def\makebookmarks{\let\ZZ=\writebookmarkline \readcontents\relax}
+\def\countsections{\message{Number of named sections:}
+  {\def\I{\global\advance\countD by 1}\def\X##1\X{\relax}
+  \def\Q##1.{\relax}\def\Qs##1.{\relax}\def\U##1.{\relax}\def\Us##1.{\relax}
+  \readsections\relax}\message{\the\countD}}
 \def\writebookmarkline#1#2#3#4#5{{%
   \let\(=\let \let\)=\let \let\[=\let \let\]=\let \let\/=\let
   \pdfoutline goto num #3 count -\expnumber{chunk#2.#3} {#5}}}
