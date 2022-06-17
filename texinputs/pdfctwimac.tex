@@ -1,25 +1,22 @@
 % standard macros for CWEB listings (in addition to plain.tex)
-% Version 4.5 --- October 2021
+% Version 5.0 --- June 2022
 % modified for pages produced by CTWILL
 % further modified for page size of the MMIXware book
 % modified for PDF output with 'tex "\let\pdf+', 'pdftex', and 'xetex'
 % This file is not copyrighted and can be used freely.
 \ifx\renewenvironment\undefined\else\endinput\fi % LaTeX will use other macros
-\xdef\fmtversion{\fmtversion+CTWILL4.5+LNCS+PDF}
-
-\newif\ifpdf
-\ifx\pdf+\pdftrue\fi
+\xdef\fmtversion{\fmtversion+CTWILL5.0+LNCS+PDF}
+\input iftex.sty % TeX engine tests
+\ifx\pdf+\pdftrue\fi % for plain TeX in combination with dvipdfm
 % Uncomment the following line if you want PDF goodies to be the default
 %\ifx\pdf-\else\pdftrue\fi
 \def\pdflinkcolor{0 0 1} % the RGB values for hyperlink color
-\ifx\undefined\XeTeXrevision\else\pdftrue\fi % XeTeX produces PDF output
-\newif\ifpdftex
-\ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
-\else \pdftextrue \pdfoutput=1
+\ifxetex\pdftrue\fi % XeTeX produces PDF output
+\ifpdftex % pdfTeX produces PDF output if \pdfoutput>0
   \def\Black{\pdfliteral{0 g 0 G}}  % use rgb colors for direct PDF output too
   \def\PDFlinkcolor{\pdfliteral{\pdflinkcolor\space rg \pdflinkcolor\space RG}}
-\fi\fi
-\newif\ifacro \ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\fi
+\newif\ifacro \ifpdf\acrotrue\fi
 
 \let\:=\. % preserve a way to get the dot accent
  % (all other accents will still work as usual)
@@ -355,7 +352,7 @@
 \def\makeolproctokctlii{%
   \ifx\nxt\MG\addF{->}\else\ifx\nxt\GG\addF{>>}%
   \else\ifx\nxt\LL\addF{<<}\else\ifx\nxt\NULL\addF{NULL}%
-  \else\ifx\nxt\AND\addF&\else\ifx\nxt\OR\addF|%
+  \else\ifx\nxt\AND\addF&\else\ifx\nxt\OR\addF|%|
   \else\ifx\nxt\XOR\addF^\else\ifx\nxt\CM\addF\tildechar
   \else\ifx\nxt\MOD\addF{\string\%}\else\ifx\nxt\DC\addF{::}%
   \else\ifx\nxt\PA\addF{.*}\else\ifx\nxt\MGA\addF{->*}%
@@ -652,8 +649,8 @@
   %\global\advance\pageno by1}
 %\def\topofcontents{\centerline{\titlefont\title}\vskip.7in
   %\vfill} % this material will start the table of contents page
-%\def\startpdf{\ifpdftex\pdfcatalog{/PageMode /UseOutlines}\else
-    %\ifpdf{\special{pdf: docview << /PageMode /UseOutlines >>}}\fi\fi}
+%\def\startpdf{\ifpdftex\ifnum\pdfoutput>0 \pdfcatalog{/PageMode /UseOutlines}\fi
+  %\else \ifpdf{\special{pdf: docview << /PageMode /UseOutlines >>}}\fi\fi}
 %\def\botofcontents{\vfill
   %\centerline{\covernote}} % this material will end the table of contents page
 %\def\covernote{}
