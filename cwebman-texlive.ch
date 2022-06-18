@@ -172,7 +172,7 @@ Sometimes things don't work as smoothly, and you get a bunch of
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
-\ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\ifpdf\acrotrue\fi
 \ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ And here's what the same excerpt looks like when typeset.
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 \subsection Final document.
 
-\acrofalse\pdftexfalse\pdffalse
+\acrofalse\pdffalse\acrohintfalse
 And here's what the same excerpt looks like when typeset.
 (Can you spot the typographical niceties used in the \.{CWEB} code?)
 \let\K=\leftarrow
@@ -246,10 +246,9 @@ And here's what the same excerpt looks like when typeset.
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
-\ifx\pdf+\pdftrue\fi
-\ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
-\else \pdftextrue \pdfoutput=1\fi\fi
-\ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
+\ifpdf\acrotrue\fi
+\ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
 @x l.1595 and l.86 of CWEBMAN-PATCH.CH
