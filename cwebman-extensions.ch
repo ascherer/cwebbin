@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, June 2022.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2022.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
@@ -36,18 +36,13 @@ more logical than indenting them.) (Has no effect on \.{CTANGLE}.)
 \hfil\vskip\normallineskip
 \option l This option takes the string of characters to its right as its
 argument to switch between different user languages and macro packages.
-For example, if you call \.{CWEAVE} with the `\.{+ld}' (or `\.{-ld}') option,
-the German \.{CWEB} macros \.{dcwebmac.tex} will be loaded in the first line
-of output instead of the English ones. (Off by default.) (Has no effect on
-\.{CTANGLE}.)
-\hfil\vskip\normallineskip
-\option m Install communication between \.{CWEB} and the message browser of
-the {\mc SAS/C} development system.  Set the external environment variable
-\.{SCMSGOPT} to any legal command line option described in the documentation
-by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
+(Off by default.) (Has no effect on \.{CTANGLE}.)
 \hfil\vskip\normallineskip
 \option o Separate declarations and the first statement in a function block.
-(On by default.) (Has no effect on\break\hbox{}\qquad\.{CTANGLE}.)}
+(On by default.) (Has no effect on \.{CTANGLE}.)
+\hfil\vskip\normallineskip
+\option u Transliteration of UTF-8 multi-byte characters.
+(Off by default.) (Has no effect on \.{CWEAVE}.)}
 
 \yskip
 @z

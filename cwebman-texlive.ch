@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2022.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2022.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -150,15 +150,6 @@ value $N\in[0,127]$ of this option.  See section~95 % FIXME
 of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \hfil\vskip\normallineskip
 \option i Indent parameters in function declarations.  (On by default;
-@z
-------------------------------------------------------------------------------
-@x l.1038 and l.44 of CWEBMAN-EXTENSIONS.CH
-\option m Install communication between \.{CWEB} and the message browser of
-the {\mc SAS/C} development system.  Set the external environment variable
-\.{SCMSGOPT} to any legal command line option described in the documentation
-by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
-\hfil\vskip\normallineskip
-@y
 @z
 ------------------------------------------------------------------------------
 @x l.1126
