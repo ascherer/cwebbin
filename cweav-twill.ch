@@ -646,15 +646,15 @@ flush_buffer(out_ptr,false,false);
   is_macro=true;
 @z
 
-@x l.4342
+@x l.4351
 @.Improper macro definition@>
   else {
-    app_cur_id(false);
+    app('$'); app_cur_id(false);
 @y
 @.Improper macro definition@>
   else {
     id_being_defined=id_lookup(id_first,id_loc,normal);
-    app_cur_id(false);
+    app('$'); app_cur_id(false);
     def_diff=(*loc!='(');
 @z
 
