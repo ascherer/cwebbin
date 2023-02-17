@@ -13,9 +13,9 @@ License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
 Packager: Andreas Scherer <https://ascherer.github.io>
 
-%if %{_vendor} == "debbuild"
+%if "%{_vendor}" == "debbuild"
 Group: tex
-Distribution: Kubuntu 20.04 (x86_64)
+Distribution: Kubuntu 22.04 (x86_64)
 Requires: texlive, pandoc, gettext
 %if %{with texlive}
 Requires: pax
@@ -63,7 +63,7 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
-%if %{_vendor} == "debbuild"
+%if "%{_vendor}" == "debbuild"
 %autosetup -c -a1 -a2
 %else
 %autosetup -c -T -a 0 -N
