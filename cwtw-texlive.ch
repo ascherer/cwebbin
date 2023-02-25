@@ -3,7 +3,7 @@
 
 % These changes apply to both CWEAVE and CTWILL when preparing their
 % incantations for TeX Live. They were factored out of cweav-texlive.ch
-% and ctwill-texlive.ch to avoid redundancy amd discrepancy.
+% and ctwill-texlive.ch to avoid redundancy and discrepancy.
 
 Material in limbo.
 

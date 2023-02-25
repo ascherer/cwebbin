@@ -168,7 +168,7 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 amd l.68 of CWEBMAN-EXTENSIONS.CH.
+@x l.1176 and l.68 of CWEBMAN-EXTENSIONS.CH.
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
 \cwebfootnote{\TeX~Live comes with an up-to-date
