@@ -229,14 +229,6 @@ part of all meanings.
     }
 @z
 
-CTWILL hickups on comment and produces unmatched '$' in mini-index.
-
-@x l.646
-skip_TeX(void) /* skip past pure \TEX/ code */
-@y
-skip_TeX(void)
-@z
-
 @x l.681
 \yskip\hang |xref_roman|, |xref_wildcard|, |xref_typewriter|, |TeX_string|,
 @y
