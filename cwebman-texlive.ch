@@ -17,7 +17,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
         \centerline{\sectionfont\def\.##1{{\twelvett##1}} #1}\nobreak\vskip 6pt
         \everypar{\hskip-\parindent\everypar{}}}
 @y
-\ifpdf
+\ifacro
   \pdfpagewidth=\pagewidth \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageheight \advance\pdfpageheight by 3cm
   \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
@@ -30,7 +30,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\subsections{0}
 \outer\def\section #1.{\penalty-500\bigskip
         \centerline{\sectionfont\def\.##1{{\twelvett##1}}
-  \ifpdf\vbox to 0pt{\kern-2.5ex\relax
+  \ifacro\vbox to 0pt{\kern-2.5ex\relax
     \ifpdftex\pdfdest num \destcount fitbh\relax
     \else\special{pdf: dest (\the\destcount) [ @thispage /FitBH @ypos ]}\fi
     \def\.##1{##1}\def\TeX{TeX}%
@@ -49,7 +49,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\appC{17}
 
 \def\Appendix#1{\leavevmode
-  \ifpdf\ifpdftex
+  \ifacro\ifpdftex
     \pdfstartlink attr{/Border[0 0 0]} goto num\csname app#1\endcsname\relax
     \Blue\hbox{Appendix}~#1\Black
     \pdfendlink
@@ -62,7 +62,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 
 \newcount\subdestcount \subdestcount=151\relax
 
-\outer\def\subsection #1.{\ifpdf
+\outer\def\subsection #1.{\ifacro
     \ifpdftex\pdfdest num \subdestcount fitbh\relax
       \pdfoutline goto num \subdestcount {#1}\relax
     \else\special{pdf: dest (\the\subdestcount) [ @thispage /FitBH @ypos ]}%
@@ -240,7 +240,7 @@ And here's what the same excerpt looks like when typeset.
 \vfil\eject\titletrue
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
 \ifpdftex\ifnum\pdfoutput>0 \pdftrue\fi\fi
-\ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
+\ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
 @x l.1595 and l.86 of CWEBMAN-PATCH.CH
