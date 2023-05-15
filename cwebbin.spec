@@ -13,9 +13,9 @@ License: Public Domain
 URL: http://www-cs-faculty.stanford.edu/~uno/cweb.html
 Packager: Andreas Scherer <https://ascherer.github.io>
 
-%if %{_vendor} == "debbuild"
+%if "%{_vendor}" == "debbuild"
 Group: tex
-Distribution: Kubuntu 20.04 (x86_64)
+Distribution: Kubuntu 22.04 (x86_64)
 Requires: texlive, pandoc, gettext
 %if %{with texlive}
 Requires: pax
@@ -33,8 +33,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.8
-Release: 2022.2
+Version: 4.9
+Release: 2023
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
@@ -63,7 +63,7 @@ The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
 
 %prep
-%if %{_vendor} == "debbuild"
+%if "%{_vendor}" == "debbuild"
 %autosetup -c -a1 -a2
 %else
 %autosetup -c -T -a 0 -N
@@ -186,6 +186,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Mon May 15 2023 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.9
+
 * Sun Jun 05 2022 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.8
 

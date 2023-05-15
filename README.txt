@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.8 [2022]).
+% This file is part of CWEBbin (Version 4.9 [2023]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated June 5, 2022 by Andreas Scherer.
+% This README file was last updated May 15, 2023 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2018–2022 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018–2023 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -55,11 +55,11 @@ CWEB 4.0 (and higher) can be retrieved from
 
 	https://github.com/ascherer/cweb
 
-To apply this patched version of CWEB, extract the patch archive (yielding a
-new subdirectory) and add the original distribution.  Care has been taken to
-avoid collisions with any files from the original distribution and the
-Makefiles provide a target to cleanly remove the patch leaving only the files
-of the original distribution (and vice versa).
+To apply this patched version of CWEB, extract the patch archive and add the
+contents of the original distribution.  Care has been taken to avoid
+collisions with any files from the original distribution and the Makefiles
+provide a target to cleanly remove the patch leaving only the files of the
+original distribution (and vice versa).
 
 Intermediate files with extensions .tex and .cxx are reproducable from the
 general sources by means of an executable ctangle, cweave, and an ANSI-C/C++
@@ -68,9 +68,12 @@ available at
 
 	CTAN: https://ctan.org/pkg/tie
 
-TIE should be available on all systems with a recent TeX installation.
-Alternatively, you can also try to use Julian Gilbey's CTIE processor, but
-intermediate results are different.
+To produce the CWEB source code of the CTWILL program from the original CWEAVE
+source, you need Julian Gilbey's CTIE processor, which is available at
+
+	CTAN: https://ctan.org/pkg/ctie
+
+C/TIE should be available on all systems with a recent TeX installation.
 
 %%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -81,6 +84,7 @@ GENERAL CONTRIBUTION:
 ├── 0001-Support-extended-syntax-for-numeric-literals.patch	for CTWILL
 ├── 0002-Purge-redundant-TeX-macro.patch			for CTWILL
 ├── 0003-Adapt-to-CWEB-4.5.patch				for CTWILL
+├── 0004-Add-silent-datecontentspage-macro.patch		for CTWILL
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
@@ -251,10 +255,13 @@ GENERAL CONTRIBUTION:
 	itself.  (Otherwise the source files common.w and ctangle.w won't
 	actually have been used.)
 
-	5. After all is set, you should become `superuser' and run `make -f
-	Makefile.unix install'; this will install the binaries, the TeX macros
-	and CWEB @include files, and some documentation in places specified in
-	Makefile.unix.
+	5. <Obsolete>After all is set, you should become `superuser' and run
+	`make -f Makefile.unix install'; this will install the binaries, the
+	TeX macros and CWEB @include files, and some documentation in places
+	specified in Makefile.unix.</Obsolete>
+	Please follow the instructions in README.md for 'advanced packaging'.
+	deb- and rpm-packages not only can be installed, but also cleanly
+	uninstalled from all system paths.
 
 	6. If you want a full documentation of the tangle and weave programs,
 	type `make -f Makefile.unix docs' or preferably `make -f Makefile.unix
@@ -392,11 +399,6 @@ I want to express my deep gratitude to Silvio Levy and Donald Knuth for the
 marvelous tool they provided us with.  Also I am indepted to my various pre-
 and co-workers on whose initial ideas and contributions this package is based.
 
-
 Happy CWEBbin'!
-
-June 5, 2022
-
-Andreas Scherer
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CWEAVE.W, Version 4.8.
+It is a changefile for CWEAVE.W, Version 4.9.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -181,17 +181,19 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 
 2022	05 February 2022	AS	tuneup for CWEB 4.7 [2022].
 	05 June 2022		AS	tuneup for CWEB 4.8 [2022].
+
+2023	15 May 2023		AS	tuneup for CWEB 4.9 [2023].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.35
-\def\title{CWEAVE (Version 4.8)}
+\def\title{CWEAVE (Version 4.9)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.39
-  \centerline{(Version 4.8)}
+  \centerline{(Version 4.9)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -207,7 +209,7 @@ z
 Section 1.
 
 @x l.70
-@d banner "This is CWEAVE (Version 4.8)"
+@d banner "This is CWEAVE (Version 4.9)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
 @z

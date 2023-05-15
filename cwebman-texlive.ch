@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, February 2022.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, May 2023.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -7,7 +7,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
 @x l.4
 \input cwebmac
-\acrofalse\pdffalse\pdftexfalse\hintfalse\acrohintfalse
+\pdffalse\acrohintfalse
 @y
 \input cwebmac
 @z
@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.8 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.9 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.8 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.9 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -125,10 +125,11 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 \.{PATH\_SEPARATOR}s (on \UNIX/ commonly known as~`\.:').  If the environment
 variable is not set, some decent default paths are used instead.}
 @y
-\cwebfootnote{\acrofalse In this extended implementation, if an \.{@i}nclude
-file can not be found in the current directory, \.{CWEB} will use the
-conventions of the \Kpathsea/ library as outlined in section~\X93:File lookup
-with \Kpathsea/\X~of \pdfURL{appendix~D}{common-changes.pdf} to look for it.
+\cwebfootnote{In this extended implementation, if an \.{@i}nclude file can not
+be found in the current directory, \.{CWEB} will use the conventions of the
+\Kpathsea/ library as outlined in {\pdffalse\acrohintfalse section~\X93:File
+lookup with \Kpathsea/\X~of} \pdfURL{appendix~D}{common-changes.pdf} to look
+for it.
 % FIXME
 (This is true for any other input or change file lookup.)}
 @z
@@ -151,19 +152,10 @@ of \pdfURL{appendix~D}{common-changes.pdf} for details.
 \option i Indent parameters in function declarations.  (On by default;
 @z
 ------------------------------------------------------------------------------
-@x l.1038 and l.44 of CWEBMAN-EXTENSIONS.CH
-\option m Install communication between \.{CWEB} and the message browser of
-the {\mc SAS/C} development system.  Set the external environment variable
-\.{SCMSGOPT} to any legal command line option described in the documentation
-by SAS Institute.  (Off by default; works only on the {\mc AMIGA} system.)
-\hfil\vskip\normallineskip
-@y
-@z
-------------------------------------------------------------------------------
 @x l.1126
 Sometimes things don't work as smoothly, and you get a bunch of
 @y
-\acrofalse\pdftexfalse\pdffalse
+\pdffalse\acrohintfalse
 Sometimes things don't work as smoothly, and you get a bunch of
 @z
 ------------------------------------------------------------------------------
@@ -171,13 +163,12 @@ Sometimes things don't work as smoothly, and you get a bunch of
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
-\ifx\pdf+\pdftrue\fi
-\ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
-\else \pdftextrue \pdfoutput=1\fi\fi
-\ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
+\ifpdftex\ifnum\pdfoutput>0\pdftrue\fi\fi
+\ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 amd l.68 of CWEBMAN-EXTENSIONS.CH.
+@x l.1176 and l.68 of CWEBMAN-EXTENSIONS.CH.
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
 \cwebfootnote{\TeX~Live comes with an up-to-date
@@ -236,7 +227,7 @@ And here's what the same excerpt looks like when typeset.
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 \subsection Final document.
 
-\acrofalse\pdftexfalse\pdffalse
+\pdffalse\acrohintfalse
 And here's what the same excerpt looks like when typeset.
 (Can you spot the typographical niceties used in the \.{CWEB} code?)
 \let\K=\leftarrow
@@ -247,15 +238,14 @@ And here's what the same excerpt looks like when typeset.
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
-\ifx\pdf+\pdftrue\fi
-\ifx\pdfoutput\undefined \pdftexfalse \else\ifnum\pdfoutput=0 \pdftexfalse
-\else \pdftextrue \pdfoutput=1\fi\fi
-\ifpdf\acrotrue\fi \ifpdftex\acrotrue\fi
+\ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
+\ifpdftex\ifnum\pdfoutput>0 \pdftrue\fi\fi
+\ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
 @x l.1595 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.8)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.9)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

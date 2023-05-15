@@ -4,7 +4,7 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, February 2022.
+# Last updated by Andreas Scherer, August 2022.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
@@ -182,7 +182,7 @@ COMMPATCH = comm-extensions.ch comm-extensions.hch \
 	comm-output.ch comm-output.hch \
 	comm-patch.ch comm-texlive.ch comm-texlive.hch
 CTANGPATCH = ctang-i18n.ch ctang-newpage.ch ctang-output.ch \
-	ctang-patch.ch ctang-texlive.ch
+	ctang-patch.ch ctang-texlive.ch ctang+u.ch
 CWEAVPATCH = cweav-extensions.ch prod-cweave.ch cweav-i18n.ch cweav-newpage.ch \
 	cweav-output.ch cweav-patch.ch cweav-texlive.ch cwtw-texlive.ch
 CTWILLPATCH = cweav-twill.ch prod-twill.ch ctwill-texlive.ch ctwill-man.ch
@@ -400,7 +400,7 @@ $(CCHANGES): common.w comm-patch.ch comm-extensions.ch \
 $(HCHANGES): common.h comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
-$(TCHANGES): ctangle.w ctang-patch.ch \
+$(TCHANGES): ctangle.w ctang-patch.ch ctang+u.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
 	$(TIE) -c $@ $^; $(SUBVER)
 $(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \

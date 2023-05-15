@@ -3,14 +3,14 @@
 
 % These changes apply to both CWEAVE and CTWILL when preparing their
 % incantations for TeX Live. They were factored out of cweav-texlive.ch
-% and ctwill-texlive.ch to avoid redundancy amd discrepancy.
+% and ctwill-texlive.ch to avoid redundancy and discrepancy.
 
 Material in limbo.
 
 @x l.39 and l.190 of CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.8 [\TeX~Live])}
+  \centerline{(Version 4.9 [\TeX~Live])}
 @z
 
 @x l.41
