@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2022.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, May 2023.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.8 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.9 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.8 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.9 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -246,6 +246,6 @@ And here's what the same excerpt looks like when typeset.
 @x l.1595 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.8)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.9)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
