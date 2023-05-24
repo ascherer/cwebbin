@@ -39,3 +39,17 @@ tex_puts(proofing?"proofma":"ctwima");
 @y
 tex_puts(proofing?"ctproofma":"ctwima");
 @z
+
+Section 272.
+
+@x l.905 of CWEAV-TWILL.CH
+must have fewer than 50 characters. If the \TeX\ part starts
+@y
+must have fewer than 80 characters. If the \TeX\ part starts
+@z
+
+@x l.947 of CWEAV-TWILL.CH
+@d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
+@y
+@d max_tex_chars 80 /* limit on the \TeX\ part of a meaning */
+@z
