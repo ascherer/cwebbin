@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+die "$0 input_file\n" unless scalar @ARGV;
+
+my $tex=$ARGV[0];
+
+open(TEX, $tex) or die "Could not open input file $tex.";
+
+my %mini_index;
+my $print_index=0;
+
+foreach my $line (<TEX>) {
+	chomp($line);
+
+	if ('\\mini' eq $line) { # start of mini-index
+		$print_index=1;
+		%mini_index=(); # reset mini-index
+	} elsif ('}\\FI' eq $line) { # end of mini-index
+		foreach my $key (sort keys %mini_index) {
+			print "$mini_index{$key}\n";
+		}
+		$print_index=0;
+	} elsif ($print_index) { # mini-index entry
+		my ($location,$key) = split / /, $line;
+		$key=~s/\\//g; # strip TeX escape
+		$key=~m/\w*\{(\w+)\}/; # extract plain key
+		$mini_index{$1}=$line;
+		next; # print later
+	}
+
+	print "$line\n";
+}
+
+close(TEX);
+
+exit 0;
