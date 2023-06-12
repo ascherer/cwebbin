@@ -1,16 +1,29 @@
 #!/usr/bin/perl
+# This small Perl script 'proofsort' sorts the mini-indexes for each
+# section in the TeX fiie created by 'ctwill +P', i.e., prior to
+# formatting with the 'proofmac.tex' macros.
+#
+# Example from MMIX:
+# $ tie -c mmotype-twill.ch mmotype.{w,ch} mmotype-mini.ch
+# $ ctwill +P -x mmotype mmotype-twill
+# $ ./proofsort mmotype.tex > mmotype-sorted.tex
+# $ mv mmotype-sorted.tex mmotype.tex
+# $ tex mmotype
+#
+# Public domain.  Originally written by Andreas Scherer, 2023.
 
 use strict;
 use warnings;
 
+# We expect a TeX file as the single command-line parameter.
 die "$0 input_file\n" unless scalar @ARGV;
 
 my $tex=$ARGV[0];
 
 open(TEX, $tex) or die "Could not open input file $tex.";
 
-my %mini_index;
-my $print_index=0;
+my %mini_index; # storage for index entries of a section
+my $print_index=0; # do we collect and print a mini-index?
 
 foreach my $line (<TEX>) {
 	chomp($line);
@@ -24,10 +37,10 @@ foreach my $line (<TEX>) {
 		}
 		$print_index=0;
 	} elsif ($print_index) { # mini-index entry
-		my ($location,$key) = split / /, $line;
-		$key=~s/\\//g; # strip TeX escape
+		my ($location,$key) = split / /, $line; # 2nd column is the key
+		$key=~s/\\//g; # strip TeX escape(s)
 		$key=~m/\w*\{(\w+)\}/; # extract plain key
-		$mini_index{$1}=$line;
+		$mini_index{$1}=$line; # store index entry
 		next; # print later
 	}
 
