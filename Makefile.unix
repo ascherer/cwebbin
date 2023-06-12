@@ -434,6 +434,7 @@ install: all
 	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctwill $(DESTDIR)$(BINDIR)/$(DESTPREF)twill
 	$(INSTALL) refsort $(DESTDIR)$(BINDIR)/refsort
+	$(INSTALL) proofsort $(DESTDIR)$(BINDIR)/proofsort
 	$(INSTALL) twinx $(DESTDIR)$(BINDIR)/twinx
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)

@@ -127,6 +127,7 @@ ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch
 
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
+%{__mv} proofsort ctproofsort
 %{__sed_i} -e "s/\(proofmac\)/ct\1/" texinputs/dctproofmac.tex
 %{__sed_i} -e "s/\(twinxmac\)/ct\1/" twinx.w
 
@@ -146,7 +147,7 @@ done
 
 %{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
-	*.bux *-mini.ch twinx-startup.tex \
+	*.bux *-mini.ch twinx-startup.tex ctproofsort \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 
