@@ -56,11 +56,12 @@ respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 * `0002-Purge-redundant-TeX-macro.patch`
 * `0003-Adapt-to-CWEB-4.5.patch`
 * `0004-Add-silent-datecontentspage-macro.patch`
+* `0005-Update-CTWILL-macros-for-CWEB-4.9.patch`
 
 to *SOURCES* also, and place `cwebbin.spec` in the *SPECS* directory of your
 build arena.
 
-the four patch files upgrade the *ctwill* macros for modern cweb. originally,
+the five patch files upgrade the *ctwill* macros for modern cweb. originally,
 they come from branch
 [update-macros-for-cweb-4](https://github.com/ascherer/ctwill/tree/update-macros-for-cweb-4)
 and can be recreated by `git format-patch master` in the archived
