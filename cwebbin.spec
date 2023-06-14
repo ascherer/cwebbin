@@ -43,10 +43,12 @@ Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb
 # Add CWEBbin stuff on top
 Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
+# Patch macros from CTWILL 3.61
 Patch1: 0001-Support-extended-syntax-for-numeric-literals.patch
 Patch2: 0002-Purge-redundant-TeX-macro.patch
 Patch3: 0003-Adapt-to-CWEB-4.5.patch
 Patch4: 0004-Add-silent-datecontentspage-macro.patch
+Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
 
 %global __sed_i %{__sed} -i
 

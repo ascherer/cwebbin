@@ -1,0 +1,95 @@
+From d689ff76e5d64f543ab5e7951e0bb57ce44bc127 Mon Sep 17 00:00:00 2001
+From: Andreas Scherer <andreas_github@freenet.de>
+Date: Wed, 14 Jun 2023 10:00:33 +0200
+Subject: [PATCH 5/5] Update CTWILL macros for CWEB 4.9.
+
+---
+ ctwimac.tex  |  8 +++++---
+ proofmac.tex | 10 +++++-----
+ twinxmac.tex |  2 +-
+ 3 files changed, 11 insertions(+), 9 deletions(-)
+
+diff --git a/ctwimac.tex b/ctwimac.tex
+index 014168b..bcd9a20 100644
+--- a/ctwimac.tex
++++ b/ctwimac.tex
+@@ -1,9 +1,9 @@
+ % standard macros for CWEB listings (in addition to plain.tex)
+-% Version 4.5 --- October 2021
++% Version 4.9 --- June 2023
+ % modified for pages produced by CTWILL
+ % further modified for page size of the MMIXware book
+ \ifx\renewenvironment\undefined\else\endinput\fi % LaTeX will use other macros
+-\xdef\fmtversion{\fmtversion+CTWILL4.5+LNCS}
++\xdef\fmtversion{\fmtversion+CTWILL4.9+LNCS}
+ 
+ \let\:=\. % preserve a way to get the dot accent
+  % (all other accents will still work as usual)
+@@ -31,6 +31,8 @@
+ \def\Cee{\CEE/} % for backward compatibility
+ \def\Cpp{\CPLUSPLUS/} % for backward compatibility
+ \def\9#1{}
++ % with this definition of \9 you can say @:sort key}{TeX code@>
++ % to alphabetize an index entry by the sort key but format with the TeX code
+ \font\eightrm=cmr8
+ \font\sixrm=cmr6
+ \font\ninei=cmmi9
+@@ -251,7 +253,7 @@
+ \let\G=\ge % greater than or equal sign
+ % \H is long Hungarian umlaut accent
+ \let\I=\ne % unequal sign
+-\def\J{\.{@\&}} % TANGLE's join operation
++\def\J{\.{@\&}} % CTANGLE's join operation
+ \let\K== % assignment operator
+ %\let\K=\leftarrow % "honest" alternative to standard assignment operator
+ % \L is Polish letter suppressed-L
+diff --git a/proofmac.tex b/proofmac.tex
+index c0b4fa6..1111e79 100644
+--- a/proofmac.tex
++++ b/proofmac.tex
+@@ -1,8 +1,8 @@
+ % standard macros for CWEB listings (in addition to plain.tex)
+-% Version 4.5 --- October 2021
++% Version 4.9 --- June 2023
+ % Modified for proofs in CTWILL
+-\ifx\documentstyle\undefined\else\endinput\fi % LaTeX will use other macros
+-\xdef\fmtversion{\fmtversion+CWEB4.5+PROOFS}
++\ifx\renewenvironment\undefined\else\endinput\fi % LaTeX will use other macros
++\xdef\fmtversion{\fmtversion+CTWILL4.9+PROOFS}
+ 
+ \let\:=\. % preserve a way to get the dot accent
+  % (all other accents will still work as usual)
+@@ -128,7 +128,7 @@
+ \let\SHC\C % "// short comments" treated like "/* ordinary comments */"
+ %\def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
+ %\def\SHC#1{\5\5\quad$\diamond\,${\cmntfont#1}}
+-\def\D{\defin{\#define}} % macro definition
++\def\D{\defin{{\rm\#}define}} % macro definition
+ \let\E=\equiv % equivalence sign
+ \def\ET{ and~} % conjunction between two section numbers
+ \def\ETs{, and~} % conjunction between the last two of several section numbers
+@@ -136,7 +136,7 @@
+ \let\G=\ge % greater than or equal sign
+ % \H is long Hungarian umlaut accent
+ \let\I=\ne % unequal sign
+-\def\J{\.{@\&}} % TANGLE's join operation
++\def\J{\.{@\&}} % CTANGLE's join operation
+ \let\K== % assignment operator
+ %\let\K=\leftarrow % "honest" alternative to standard assignment operator
+ % \L is Polish letter suppressed-L
+diff --git a/twinxmac.tex b/twinxmac.tex
+index 30d4449..e2329fa 100644
+--- a/twinxmac.tex
++++ b/twinxmac.tex
+@@ -213,7 +213,7 @@
+ \let\G=\ge % greater than or equal sign
+ % \H is long Hungarian umlaut accent
+ \let\I=\ne % unequal sign
+-\def\J{\.{@\&}} % TANGLE's join operation
++\def\J{\.{@\&}} % CTANGLE's join operation
+ \let\K== % can be changed to left arrow, if desired
+ % \L is Polish letter suppressed-L; we have no shorthand for \le
+ % \O is Scandinavian letter O-with-slash
+-- 
+2.40.1
+

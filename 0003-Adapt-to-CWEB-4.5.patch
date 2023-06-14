@@ -1,7 +1,7 @@
 From 3e8c31f1e457bb6e9c589a3ae7574a753033d8b6 Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Wed, 7 Jul 2021 13:57:00 +0200
-Subject: [PATCH 3/4] Adapt to CWEB 4.5.
+Subject: [PATCH 3/5] Adapt to CWEB 4.5.
 
 ---
  ctwimac.tex  | 40 ++++++++++++++++++++--------------------
@@ -266,5 +266,5 @@ index 89e3b68..30d4449 100644
  \def\normaloutput#1{\shipout\vbox{
        \vbox to 3pc{\ifodd\pageno\rightheadline\else\leftheadline\fi\vfill}
 -- 
-2.35.1
+2.40.1
 
