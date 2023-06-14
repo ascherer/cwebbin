@@ -129,6 +129,7 @@ ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch
 
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
+%{__mv} texinputs/pdfproofmac.tex texinputs/pdfctproofmac.tex
 %{__sed_i} -e "s/\(proofmac\)/ct\1/" texinputs/dctproofmac.tex
 %{__sed_i} -e "s/\(twinxmac\)/ct\1/" twinx.w
 
