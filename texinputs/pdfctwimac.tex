@@ -1,5 +1,5 @@
 % standard macros for CWEB listings (in addition to plain.tex)
-% Version 4.9 --- June 2022
+% Version 4.9 --- June 2023
 % modified for pages produced by CTWILL
 % further modified for page size of the MMIXware book
 % modified for PDF output with 'tex "\let\pdf+', 'pdftex', and 'xetex'
@@ -17,6 +17,10 @@
   \def\PDFlinkcolor{\pdfliteral{\pdflinkcolor\space rg \pdflinkcolor\space RG}}
 \fi
 \let\ifacro=\ifpdf
+\ifhint\message{These macros are not suitable for HiTeX.}
+  \message{Please use 'ctwill +P [+lpdf]' instead.}
+  \end
+\fi
 
 \let\:=\. % preserve a way to get the dot accent
  % (all other accents will still work as usual)
@@ -44,6 +48,8 @@
 \def\Cee{\CEE/} % for backward compatibility
 \def\Cpp{\CPLUSPLUS/} % for backward compatibility
 \def\9#1{}
+ % with this definition of \9 you can say @:sort key}{TeX code@>
+ % to alphabetize an index entry by the sort key but format with the TeX code
 \font\eightrm=cmr8
 \font\sixrm=cmr6
 \font\ninei=cmmi9
