@@ -121,7 +121,7 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 	-e WCHANGES=cweav-w2c.ch cweave.cxx \
 	-e LCHANGES=ctwill-w2c.ch ctwill.cxx \
 	-e DCHANGES=cwebman-w2c.ch cwebbin.tex
-ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch
+ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch ctwill-hint.ch
 %endif
 
 %install
@@ -149,7 +149,7 @@ done
 
 %{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
-	*.bux *-mini.ch twinx-startup.tex proofsort \
+	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex proofsort \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 

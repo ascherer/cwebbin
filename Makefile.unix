@@ -193,7 +193,7 @@ PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
 	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
-	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch
+	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch ctwill-hint.ch
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
