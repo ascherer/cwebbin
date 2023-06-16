@@ -14,7 +14,7 @@ die "$progname input_file\n" unless scalar @ARGV;
 
 Getopt::Long::GetOptions(
   'help|?'  => \&help_handler,
-  'version' => sub { print version() }
+  'version' => sub { print version(); exit 0; }
 ); # Getopt::Long::Getoptions()
 ## help_handler()
 sub help_handler {
