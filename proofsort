@@ -1,22 +1,33 @@
 #!/usr/bin/env perl
-# This small Perl script 'proofsort' sorts the mini-indexes for each
-# section in the TeX file created by 'ctwill +P', i.e., prior to
-# formatting with the 'proofmac.tex' macros.
-#
-# Example from MMIX:
-# $ tie -c mmotype-twill.ch mmotype.{w,ch} mmotype-mini.ch
-# $ ctwill +P -x mmotype mmotype-twill (run this two times)
-# $ ./proofsort mmotype.tex > mmotype-sorted.tex
-# $ mv mmotype-sorted.tex mmotype.tex
-# $ tex mmotype
-#
 # Public domain.  Originally written by Andreas Scherer, 2023.
 
 use strict;
 use warnings;
 
+use File::Basename;
+use Getopt::Long qw(:config no_ignore_case bundling);
+use Pod::Usage;
+
 # We expect a TeX file as the single command-line parameter.
-die "$0 input_file\n" unless scalar @ARGV;
+my $progname = basename $0;
+die "$progname input_file\n" unless scalar @ARGV;
+
+Getopt::Long::GetOptions(
+  'help|?'  => \&help_handler,
+  'version' => sub { print version() }
+); # Getopt::Long::Getoptions()
+## help_handler()
+sub help_handler {
+  open(my $pipe, '|-', $ENV{PAGER} || 'less -e') or exit 1;
+  pod2usage(-message => version(), -output => $pipe,
+    -verbose => 99, -sections => "COPYRIGHT|SHORT DESCRIPTION|EXAMPLE");
+  close $pipe;
+  exit 0;
+}
+## version()
+sub version {
+  return "This is $progname (2023).\n";
+}
 
 my $tex = $ARGV[0];
 
@@ -50,3 +61,55 @@ foreach my $line (<TEX>)
 close(TEX);
 
 exit 0;
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+proofsort — Sort mini-indexes alphabetically
+
+=head1 COPYRIGHT
+
+Public domain.  Originally written by Andreas Scherer, 2023.
+
+=head1 SHORT DESCRIPTION
+
+This small Perl script 'proofsort' sorts the mini-indexes for each
+section in the TeX file created by 'ctwill +P', i.e., prior to
+formatting with the 'proofmac.tex' macros.
+
+=over
+
+=item Run CTWILL twice on your CWEB program, creating 'texfile'.tex
+
+=item Invoke "proofsort 'texfile'.tex > 'texfile'-sorted.tex"
+
+=item Invoke "mv 'texfile'-sorted.tex 'texfile'.tex"
+
+=item Run TeX on 'texfile'.tex
+
+=back
+
+See also "man ctwill" for more information on how to use the CTWILL system.
+
+=head1 EXAMPLE
+
+Example from MMIX (https://github.com/ascherer/mmix, 'local' branch):
+
+=over
+
+=item $ tie -c mmotype-twill.ch mmotype.{w,ch} mmotype-mini.ch
+
+=item $ ctwill +P -x mmotype mmotype-twill (run this two times)
+
+=item $ proofsort mmotype.tex > mmotype-sorted.tex
+
+=item $ mv mmotype-sorted.tex mmotype.tex
+
+=item $ tex mmotype
+
+=back
+
+=cut

@@ -149,6 +149,10 @@ done
 	-e "s/ctwill-\(twinx-startup\)/\1/g" \
 	man/ctwill.man
 
+%{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
+	-e "s/\(proofsort\)/ctwill-\1/g" \
+	ctwill-proofsort
+
 %{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
 	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex ctwill-proofsort \
