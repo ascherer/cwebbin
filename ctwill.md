@@ -1,14 +1,15 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% June 5, 2022
+% June 16, 2023
 
 # NAME
 
-ctwill, refsort, twinx - translate CWEB to TeX with mini-indexes
+ctwill, proofsort, refsort, twinx - translate CWEB to TeX with mini-indexes
 
 # SYNOPSIS
 
 **ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]] \
+**proofsort** _texfile_.tex > _texfile_-sorted.tex \
 **refsort** < _indexfile_.ref > _indexfile_.sref \
 **twinx** _outfile_.tex [_outfile_.tex ...] > index.tex
 
@@ -75,14 +76,23 @@ a section number (followed by space), and a TeX\ part.
 
 A special _proofmode_ is provided so that you can check **ctwill**'s
 conclusions about cross-references. Run **ctwill** with the flag **+P**, and
-TeX will produce a specially formatted document (_without_ mini-indexes) in
-which you can check that your specifications are correct.
+TeX will produce a specially formatted document with mini-indexes for each
+section, so that you can check that your specifications are correct.
+
+This _proofmode_ format is used in conjunction with **pdfproofmac.tex** that
+creates active hyperlinks in PDF and HINT output. You can use **proofsort** to
+get the index entries in alphabetical order; just invoke
+
+* **proofsort** _texfile_.tex > _texfile_-sorted.tex
+* **mv** _texfile_-sorted.tex _texfile_.tex
+
+after invoking **ctwill** (twice), but before invoking TeX (once).
 
 More details how to use **ctwill** can be found in the first sections of its
 source code, respectively the change file **cweav-twill.ch** applicable to the
 **cweave.w** source.  A complete example with all bells and whistles is
 described in **Mini-Indexes for Literate Programs**, pages 225–245 of Knuth's
-**Digital Typography**.
+**Digital Typography** (_CSLI_, 1999).
 
 # DIFFERENCES TO ORIGINAL CTWILL
 
@@ -98,7 +108,7 @@ differences worth noting:
 * Option **+lX** is accompanied by example wrapper files for **ctwimac.tex**
   and **proofmac.tex** with translated captions for German (**+ld**).
 * Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
-  production of PDF output with active hyperlinks (**+lpdf**).
+  production of PDF and HINT output with active hyperlinks (**+lpdf**).
 * **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
   option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
@@ -177,8 +187,8 @@ Use the **kpsewhich** utility to find their locations.
 In both cases you can request some prefix _X_ with the **+lX** option,
 e.g., **+ld** will **\\input dctwimac.tex** and **+Pld** will
 **\\input dproofmac.tex**.  A special application is the use of option
-**+lpdf** that will **\\input pdfctwimac.tex** for production of PDF output
-with active hyperlinks.
+**+lpdf** that will **\\input pdfctwimac.tex** or **\\input pdfproofmac.tex**
+for production of PDF and HINT output with active hyperlinks.
 
 * _webfile_**.bux**:
   Reference definitions to resolve from other modules.
@@ -200,9 +210,9 @@ Other **aux**iliary files with references are created automatically by
   and the source code listings of **common.w**, **ctangle.w**, and
   **cweave.w**).
 * Digital Typography:
-  by D.\ E.\ Knuth.
+  by D.\ E.\ Knuth (_CSLI_, 1999).
 * Literate Programming:
-  by D.\ E.\ Knuth.
+  by D.\ E.\ Knuth (_CSLI_, 1992).
 * Weaving a Program:
   by Wayne Sewell.
 

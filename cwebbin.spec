@@ -143,6 +143,7 @@ do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" \
 done
 
 %{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
+	-e "s/\(proofsort\)/ctwill-\1/g" \
 	-e "s/\(refsort\)/ctwill-\1/g" \
 	-e "s/\(twinx\)/ctwill-\1/g" \
 	-e "s/ctwill-\(twinx-startup\)/\1/g" \
