@@ -155,7 +155,7 @@ done
 	-e "s/This is \$progname (2023)./\$progname \$Revision\$ \$Date\$/" \
 	ctwill-proofsort
 
-%{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
+%{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man tests \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
 	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex ctwill-proofsort \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
