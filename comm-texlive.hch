@@ -41,6 +41,13 @@ Section 6.
 @d max_file_name_length 1024
 @z
 
+@x
+extern int line[]; /* number of current line in the stacked files */
+@y
+extern char *found_filename; /* filename found by |kpse_find_file| */
+extern int line[]; /* number of current line in the stacked files */
+@z
+
 Section 15.
 
 @x l.227
