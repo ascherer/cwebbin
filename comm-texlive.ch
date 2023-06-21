@@ -62,6 +62,7 @@ Section 25.
 @x l.197 - no alt_web_file_name needed.
 static char alt_web_file_name[max_file_name_length]; /* alternate name to try */
 @y
+char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
 Section 36.
@@ -291,15 +292,6 @@ _("! Usage: ctwill [options] "@|
 @ @<Print usage error message and quit@>=
 cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 @.Usage:@>
-@z
-
-Section 83.
-
-@x l.1278
-FILE *active_file; /* currently active file for \.{CWEAVE} output */
-@y
-FILE *active_file; /* currently active file for \.{CWEAVE} output */
-char *found_filename; /* filename found by |kpse_find_file| */
 @z
 
 Changes to former addenda.
