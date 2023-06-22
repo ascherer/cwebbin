@@ -1,16 +1,16 @@
-From d689ff76e5d64f543ab5e7951e0bb57ce44bc127 Mon Sep 17 00:00:00 2001
+From 6b42e6c76f705f1adc9ef62ddc63318df9676d42 Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Wed, 14 Jun 2023 10:00:33 +0200
 Subject: [PATCH 5/5] Update CTWILL macros for CWEB 4.9.
 
 ---
- ctwimac.tex  |  8 +++++---
- proofmac.tex | 10 +++++-----
+ ctwimac.tex  | 10 ++++++----
+ proofmac.tex | 12 ++++++------
  twinxmac.tex |  2 +-
- 3 files changed, 11 insertions(+), 9 deletions(-)
+ 3 files changed, 13 insertions(+), 11 deletions(-)
 
 diff --git a/ctwimac.tex b/ctwimac.tex
-index 014168b..bcd9a20 100644
+index 014168b..d65f5bf 100644
 --- a/ctwimac.tex
 +++ b/ctwimac.tex
 @@ -1,9 +1,9 @@
@@ -43,8 +43,17 @@ index 014168b..bcd9a20 100644
  \let\K== % assignment operator
  %\let\K=\leftarrow % "honest" alternative to standard assignment operator
  % \L is Polish letter suppressed-L
+@@ -459,7 +461,7 @@
+   \def\Us{\note{Used in sections}} % crossref for uses of a section
+   \def\I{\par\hangindent 2em}\let\*=*
+   \readsections}
+-\def\readsections{\input \jobname.sscn}
++\def\readsections{\input \jobname.scn}
+ \def\datethis{} \def\datecontentspage{}
+ 
+ % To produce only a subset of pages, put the page numbers on separate
 diff --git a/proofmac.tex b/proofmac.tex
-index c0b4fa6..1111e79 100644
+index c0b4fa6..8cfe398 100644
 --- a/proofmac.tex
 +++ b/proofmac.tex
 @@ -1,8 +1,8 @@
@@ -59,6 +68,15 @@ index c0b4fa6..1111e79 100644
  
  \let\:=\. % preserve a way to get the dot accent
   % (all other accents will still work as usual)
+@@ -115,7 +115,7 @@
+   \sfcode`;=1500 \pretolerance 200 \hyphenpenalty 50 \exhyphenpenalty 50
+   \noindent{\let\*=\lapstar\bf\secstar.\quad}}
+ \let\startsection=\stsec
+-\def\defin#1{\global\advance\ind by 2 \1\&{#1 } } % begin `define' or `format'
++\def\defin#1{\global\advance\ind by 2 \1\&{#1 }} % begin `define' or `format'
+ \def\A{\note{See also section}} % xref for doubly defined section name
+ \def\As{\note{See also sections}} % xref for multiply defined section name
+ \def\B{\rightskip=0pt plus 100pt minus 10pt % go into C mode
 @@ -128,7 +128,7 @@
  \let\SHC\C % "// short comments" treated like "/* ordinary comments */"
  %\def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
@@ -78,7 +96,7 @@ index c0b4fa6..1111e79 100644
  %\let\K=\leftarrow % "honest" alternative to standard assignment operator
  % \L is Polish letter suppressed-L
 diff --git a/twinxmac.tex b/twinxmac.tex
-index 30d4449..e2329fa 100644
+index 6d9ac2f..6865478 100644
 --- a/twinxmac.tex
 +++ b/twinxmac.tex
 @@ -213,7 +213,7 @@
@@ -91,5 +109,5 @@ index 30d4449..e2329fa 100644
  % \L is Polish letter suppressed-L; we have no shorthand for \le
  % \O is Scandinavian letter O-with-slash
 -- 
-2.40.1
+2.41.0
 

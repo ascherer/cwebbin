@@ -1,4 +1,4 @@
-From 29dbd33008c665abe8235cca32f73721771a5e6a Mon Sep 17 00:00:00 2001
+From e1d2ad3d3bde4a6d5611b4627a9feb43118a87fa Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Thu, 10 Feb 2022 09:24:39 +0100
 Subject: [PATCH 4/5] Add silent \datecontentspage macro.
@@ -21,5 +21,5 @@ index df24900..014168b 100644
  % To produce only a subset of pages, put the page numbers on separate
  % lines in a file called pages.tex
 -- 
-2.40.1
+2.41.0
 
