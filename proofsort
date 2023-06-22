@@ -10,9 +10,15 @@ use Pod::Usage;
 
 # We expect a TeX file as the single command-line parameter.
 my $progname = basename $0;
-my $usage = "$progname input_file\ntry --help if you need it.\n";
+my $usage = "Usage: $progname input_file\n";
+if (@ARGV > 1) {
+  my $first = shift @ARGV;
+  $usage .= "extra file argument(s): @ARGV\n";
+  unshift @ARGV, $first;
+}
+$usage .= "try --help if you need it.\n";
 
-die $usage unless scalar @ARGV;
+die $usage unless scalar @ARGV == 1;
 
 Getopt::Long::GetOptions(
   'help|?'  => \&help_handler,
