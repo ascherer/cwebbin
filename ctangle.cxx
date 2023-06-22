@@ -205,7 +205,6 @@ extern FILE*change_file;
 extern char file_name[][max_file_name_length];
 
 extern char change_file_name[];
-extern char check_file_name[];
 extern int line[];
 extern int change_line;
 extern int change_depth;
@@ -214,7 +213,7 @@ extern boolean changing;
 extern boolean web_file_open;
 
 /*:7*//*9:*/
-#line 147 "comm-foo.h"
+#line 146 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -222,7 +221,7 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:9*//*10:*/
-#line 161 "comm-foo.h"
+#line 160 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -247,12 +246,12 @@ extern hash_pointer hash_end;
 extern hash_pointer h;
 
 /*:10*//*12:*/
-#line 205 "comm-foo.h"
+#line 204 "comm-foo.h"
 
 extern int history;
 
 /*:12*//*14:*/
-#line 222 "comm-foo.h"
+#line 221 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -260,6 +259,7 @@ extern char C_file_name[];
 extern char tex_file_name[];
 extern char idx_file_name[];
 extern char scn_file_name[];
+extern char check_file_name[];
 extern boolean flags[];
 extern const char*use_language;
 
@@ -379,14 +379,14 @@ static eight_bits next_control;
 #line 71 "ctangle.w"
 
 /*8:*/
-#line 141 "comm-foo.h"
+#line 140 "comm-foo.h"
 
 extern boolean get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:8*//*11:*/
-#line 184 "comm-foo.h"
+#line 183 "comm-foo.h"
 
 extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
@@ -399,7 +399,7 @@ extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
 /*:11*//*13:*/
-#line 208 "comm-foo.h"
+#line 207 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
