@@ -32,10 +32,10 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 
 Section 83.
 
-@x l.1277
-FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
+@x l.1274
+FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
-FILE *scn_file; /* where list of sections from \.{CWEAVE} goes */
+FILE *active_file; /* currently active file for \.{CWEAVE} output */
 FILE *check_file; /* temporary output file */
 @z
 

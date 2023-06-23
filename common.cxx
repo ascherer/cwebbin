@@ -375,11 +375,11 @@ boolean flags[128];
 FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
-#line 457 "comm-foo.ch"
 FILE*scn_file;
-FILE*check_file;
-#line 1274 "common.w"
+#line 457 "comm-foo.ch"
 FILE*active_file;
+FILE*check_file;
+#line 1275 "common.w"
 
 #line 474 "comm-foo.ch"
 /*:83*//*86:*/
