@@ -398,6 +398,19 @@ Section 54.
 @r @ @<Get a hex...@>={
 @z
 
+Section 57.
+
+@x
+      else {
+@y
+      else
+@z
+
+@x
+      }
+@y
+@z
+
 Section 64.
 
 @x
