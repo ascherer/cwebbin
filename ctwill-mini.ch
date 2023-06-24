@@ -390,20 +390,12 @@ Section 53.
 @-t@>
 @z
 
-Section 55.
+Section 54.
 
 @x
-@ @<Get a bin...@>={
+@ @<Get a hex...@>={
 @y
-@r @ @<Get a bin...@>={
-@z
-
-Section 58.
-
-@x
-@ @<Get a wide...@>={
-@y
-@r @ @<Get a wide...@>={
+@r @ @<Get a hex...@>={
 @z
 
 Section 64.
