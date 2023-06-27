@@ -1,3 +1,5 @@
+Section 1.
+
 @x
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @y
