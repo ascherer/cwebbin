@@ -370,7 +370,7 @@ char check_file_name[max_file_name_length];
 boolean flags[128];
 
 /*:73*//*83:*/
-#line 1269 "common.w"
+#line 1267 "common.w"
 
 FILE*C_file;
 FILE*tex_file;
@@ -379,7 +379,7 @@ FILE*scn_file;
 #line 457 "comm-foo.ch"
 FILE*active_file;
 FILE*check_file;
-#line 1275 "common.w"
+#line 1273 "common.w"
 
 #line 474 "comm-foo.ch"
 /*:83*//*86:*/
@@ -568,7 +568,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 else if((tex_file= fopen(tex_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
 }
-#line 1287 "common.w"
+#line 1285 "common.w"
 
 #line 492 "comm-foo.ch"
 /*:84*/
@@ -1389,7 +1389,7 @@ change_file_name[max_file_name_length-2]= '\0';
 #line 1168 "common.w"
  while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
-#line 1247 "common.w"
+#line 1245 "common.w"
 
 #line 410 "comm-foo.ch"
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
@@ -1397,7 +1397,7 @@ if(*dot_pos=='l'){
 use_language= ++dot_pos;
 break;
 }else flags[(eight_bits)*dot_pos]= flag_change;
-#line 1250 "common.w"
+#line 1248 "common.w"
 
 #line 430 "comm-foo.ch"
 /*:80*/
@@ -1421,7 +1421,7 @@ if(s-*argv> max_file_name_length-5)
 /*82:*/
 #line 451 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1264 "common.w"
+#line 1262 "common.w"
 
 
 /*:82*/
@@ -1453,7 +1453,7 @@ if(s-*argv> max_file_name_length-4)
 /*82:*/
 #line 451 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1264 "common.w"
+#line 1262 "common.w"
 
 
 /*:82*/
@@ -1477,7 +1477,7 @@ if(s-*argv> max_file_name_length-5)
 /*82:*/
 #line 451 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1264 "common.w"
+#line 1262 "common.w"
 
 
 /*:82*/
@@ -1485,17 +1485,15 @@ fatal(_("! Filename too long\n"),*argv);
 
 if(dot_pos==NULL){
 sprintf(tex_file_name,"%s.tex",*argv);
-sprintf(idx_file_name,"%s.idx",*argv);
-sprintf(scn_file_name,"%s.scn",*argv);
 sprintf(C_file_name,"%s.c",*argv);
 }else{
 strcpy(tex_file_name,*argv);
 strcpy(C_file_name,*argv);
-if(make_xrefs){
 *dot_pos= '\0';
+}
+if(make_xrefs){
 sprintf(idx_file_name,"%s.idx",*argv);
 sprintf(scn_file_name,"%s.scn",*argv);
-}
 }
 found_out= true;
 }
@@ -1521,7 +1519,7 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1262 "common.w"
+#line 1260 "common.w"
 
 #line 451 "comm-foo.ch"
 /*:81*/
@@ -1547,7 +1545,7 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1262 "common.w"
+#line 1260 "common.w"
 
 #line 451 "comm-foo.ch"
 /*:81*/
