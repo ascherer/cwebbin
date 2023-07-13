@@ -27,7 +27,6 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     cur_name=*an_output_file;
     cur_repl=(text_pointer)cur_name->equiv;
     cur_byte=cur_repl->tok_start;
-    cur_end=(cur_repl+1)->tok_start;
     while (stack_ptr > stack) get_output();
     flush_buffer();
 }
@@ -53,7 +52,6 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
   cur_name=*an_output_file;
   cur_repl=(text_pointer)cur_name->equiv;
   cur_byte=cur_repl->tok_start;
-  cur_end=(cur_repl+1)->tok_start;
   while (stack_ptr > stack) get_output();
   flush_buffer();
   if (check_for_change) {
