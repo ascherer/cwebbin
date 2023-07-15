@@ -60,6 +60,13 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @-banner@>
 @$banner {CTWILL}1 =\.{"This\ is\ CTWILL"}@>
+
+@$ctangle {CTWILL}3 \&{enum} \&{cweb}@>
+@$ctwill {CTWILL}3 \&{enum} \&{cweb}@>
+@$cweave {CTWILL}3 \&{enum} \&{cweb}@>
+
+@$inner {CTWILL}223 \&{enum} \&{mode}@>
+@$outer {CTWILL}223 \&{enum} \&{mode}@>
 @z
 
 Section 2.
