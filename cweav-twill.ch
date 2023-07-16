@@ -706,7 +706,7 @@ out('.');
 @ No need to tell about changed sections.
 @z
 
-@x l.4772
+@x l.4771
 @ @<Output the name...@>=
 switch (cur_name->ilk) {@+char *j;@+@t}\6{\4@>
 @y
@@ -717,26 +717,19 @@ rest of the job.
 switch (cur_name->ilk) {
 @z
 
-@x l.4774
+@x l.4773
   case normal: case func_template:
 @y
   case normal:
 @z
 
-@x l.4776
-    else {
+@x l.4775
+    else {@+boolean all_caps=true;@+@t}\6{@>
 @y
-    else {@+char *j;@+@t}\6{@>
+    else {@+boolean all_caps=true;@+char *j;@+@t}\6{@>
 @z
 
-@x l.4786
-  case wildcard: out_str("\\9");@+ goto not_an_identifier;
-@y
-  case roman: out_str("  ");@+ goto not_an_identifier;
-  case wildcard: out_str("\\9");@+ goto not_an_identifier;
-@z
-
-@x l.4790
+@x l.4788
   case roman: not_an_identifier: out_name(cur_name,false); goto name_done;
   case custom:
     out_str("$\\");
@@ -745,12 +738,13 @@ switch (cur_name->ilk) {
     out('$');
     goto name_done;
 @y
+  case roman: out_str("  ");
 not_an_identifier: out_name(cur_name,false); goto name_done;
   case custom: out_str("\\$"); break;
 @.\\\$@>
 @z
 
-@x l.4800
+@x l.4798
 out_name(cur_name,true);
 @y
 out_name(cur_name,proofing);
@@ -1322,11 +1316,10 @@ out_mini(
 switch (cur_name->ilk) {@+char *j;@+@t}\6{\4@>
   case normal: case func_template:
     if (is_tiny(cur_name)) out_str("\\|");
-    else {
+    else {@+boolean all_caps=true;@+@t}\6{@>
       for (j=cur_name->byte_start;j<(cur_name+1)->byte_start;j++)
-        if (xislower(*j)) goto lowcase;
-      goto allcaps;
-lowcase: out_str("\\\\");
+        if (xislower(*j)) all_caps=false;
+      out_str(all_caps ? "\\." : "\\\\");
     }
   break;
 @.\\|@>
@@ -1334,7 +1327,7 @@ lowcase: out_str("\\\\");
 @.\\\\@>
   case wildcard: out_str("\\9"); break;
 @.\\9@>
-  case typewriter: allcaps: out_str("\\.");
+  case typewriter: out_str("\\."); break;
 @.\\.@>
   case roman: break;
   case custom:

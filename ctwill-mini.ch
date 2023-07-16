@@ -1947,7 +1947,7 @@ Section 279.
 @x
   cur_name=sort_ptr->head;
 @y
-  @+cur_name=sort_ptr->head;@/
+  cur_name=sort_ptr->head;@/
 @z
 
 Section 285.
