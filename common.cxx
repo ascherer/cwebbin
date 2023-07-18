@@ -588,10 +588,10 @@ if(feof(fp))return false;
 limit= k= buffer;
 while(k<=buffer_end&&(c= getc(fp))!=EOF&&c!='\n')
 if((*(k++)= c)!=' ')limit= k;
-if(k> buffer_end)
-if((c= getc(fp))!=EOF&&c!='\n'){
+if(k> buffer_end){
+while((c= getc(fp))!=EOF&&c!='\n');
 #line 54 "comm-foo.ch"
-ungetc(c,fp);loc= buffer;err_print(_("! Input line too long"));
+loc= buffer;err_print(_("! Input line too long"));
 #line 169 "common.w"
 
 }

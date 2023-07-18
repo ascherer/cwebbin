@@ -21,9 +21,9 @@ Section 20.
 Section 23.
 
 @x l.168
-      ungetc(c,fp); loc=buffer; err_print("! Input line too long");
+    loc=buffer; err_print("! Input line too long");
 @y
-      ungetc(c,fp); loc=buffer; err_print(_("! Input line too long"));
+    loc=buffer; err_print(_("! Input line too long"));
 @z
 
 Section 29.
