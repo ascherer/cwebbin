@@ -12,9 +12,9 @@ applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 68.
+Section 69.
 
-@x l.1073
+@x l.1070
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
@@ -23,7 +23,7 @@ Section 68.
 
 Section 73.
 
-@x l.1135
+@x l.1132
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
@@ -32,7 +32,7 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 
 Section 83.
 
-@x l.1274
+@x l.1272
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
@@ -41,7 +41,7 @@ FILE *check_file; /* temporary output file */
 
 Section 84.
 
-@x l.1280
+@x l.1274
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -71,7 +71,7 @@ else {
 
 New material after section 85.
 
-@x l.1292
+@x l.1286
 @** Index.
 @y
 @* Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}

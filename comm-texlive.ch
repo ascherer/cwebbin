@@ -9,14 +9,14 @@
 
 Material in limbo.
 
-@x l.25 and l.185 of COMM-PATCH.CH
+@x l.25 and l.193 of COMM-PATCH.CH
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
 \def\title{Common code for CTANGLE and CWEAVE (4.9 [\TeX~Live])}
 @z
 
-@x l.30 and l.191 of COMM-PATCH.CH
+@x l.30 and l.199 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
   \centerline{(Version 4.9 [\TeX~Live])}
@@ -34,7 +34,7 @@ Material in limbo.
 }}\datecontentspage
 @z
 
-@x l.72 and l.207 of COMM-PATCH.CH
+@x l.72 and l.215 of COMM-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
@@ -67,44 +67,7 @@ char *found_filename; /* filename found by |kpse_find_file| */
 
 Section 36.
 
-@x l.375 and l.78 of COMM-I18N.CH
-if ((web_file=fopen(web_file_name,"r"))==NULL) {
-  strcpy(web_file_name,alt_web_file_name);
-  if ((web_file=fopen(web_file_name,"r"))==NULL)
-       fatal(_("! Cannot open input file "), web_file_name);
-}
-@y
-if ((found_filename=kpse_find_cweb(web_file_name))==NULL @|
-    || (web_file=fopen(found_filename,"r"))==NULL)
-  fatal(_("! Cannot open input file "), web_file_name);
-else if (strlen(found_filename) < max_file_name_length) {
-  /* Copy name for \#\&{line} directives. */
-  if (strcmp(web_file_name, found_filename))
-    strcpy(web_file_name, found_filename +
-      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
-  free(found_filename);
-} else fatal(_("! Filename too long\n"), found_filename);
-@z
-
-@x l.383 and l.84 of COMM-I18N.CH
-if ((change_file=fopen(change_file_name,"r"))==NULL)
-       fatal(_("! Cannot open change file "), change_file_name);
-@y
-if ((found_filename=kpse_find_cweb(change_file_name))==NULL @|
-    || (change_file=fopen(found_filename,"r"))==NULL)
-  fatal(_("! Cannot open change file "), change_file_name);
-else if (strlen(found_filename) < max_file_name_length) {
-  /* Copy name for \#\&{line} directives. */
-  if (strcmp(change_file_name, found_filename))
-    strcpy(change_file_name, found_filename +
-      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
-  free(found_filename);
-} else fatal(_("! Filename too long\n"), found_filename);
-@z
-
-Section 39.
-
-@x l.434 and l.56 of COMM-EXTENSIONS.CH
+@x l.393 and l.56 of COMM-EXTENSIONS.CH
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -127,7 +90,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-@x l.449
+@x l.408
   char temp_file_name[max_file_name_length];
   char *cur_file_name_end=cur_file_name+max_file_name_length-1;
   char *kk, *k=cur_file_name;
@@ -137,7 +100,9 @@ The remainder of the \.{@@i} line after the file name is ignored.
   char *k=cur_file_name;
 @z
 
-@x l.463
+Replaced by Kpathsea `kpse_find_file'.
+
+@x l.422
   if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
 @y
   if ((found_filename=kpse_find_cweb(cur_file_name))!=NULL @|
@@ -151,9 +116,7 @@ The remainder of the \.{@@i} line after the file name is ignored.
     } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-Replaced by Kpathsea `kpse_find_file'.
-
-@x l.467 and l.95 of COMM-EXTENSIONS.CH
+@x l.426 and l.95 of COMM-EXTENSIONS.CH
   if(false==set_path(include_path,getenv("CWEBINPUTS"))) {
     include_depth--; goto restart; /* internal error */
   }
@@ -178,9 +141,46 @@ Replaced by Kpathsea `kpse_find_file'.
 @y
 @z
 
+Section 41.
+
+@x l.543 and l.128 of COMM-I18N.CH
+if ((web_file=fopen(web_file_name,"r"))==NULL) {
+  strcpy(web_file_name,alt_web_file_name);
+  if ((web_file=fopen(web_file_name,"r"))==NULL)
+       fatal(_("! Cannot open input file "), web_file_name);
+}
+@y
+if ((found_filename=kpse_find_cweb(web_file_name))==NULL @|
+    || (web_file=fopen(found_filename,"r"))==NULL)
+  fatal(_("! Cannot open input file "), web_file_name);
+else if (strlen(found_filename) < max_file_name_length) {
+  /* Copy name for \#\&{line} directives. */
+  if (strcmp(web_file_name, found_filename))
+    strcpy(web_file_name, found_filename +
+      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
+  free(found_filename);
+} else fatal(_("! Filename too long\n"), found_filename);
+@z
+
+@x l.542 and l.134 of COMM-I18N.CH
+if ((change_file=fopen(change_file_name,"r"))==NULL)
+       fatal(_("! Cannot open change file "), change_file_name);
+@y
+if ((found_filename=kpse_find_cweb(change_file_name))==NULL @|
+    || (change_file=fopen(found_filename,"r"))==NULL)
+  fatal(_("! Cannot open change file "), change_file_name);
+else if (strlen(found_filename) < max_file_name_length) {
+  /* Copy name for \#\&{line} directives. */
+  if (strcmp(change_file_name, found_filename))
+    strcpy(change_file_name, found_filename +
+      ((strncmp(found_filename,"./",2)==0) ? 2 : 0));
+  free(found_filename);
+} else fatal(_("! Filename too long\n"), found_filename);
+@z
+
 Section 46.
 
-@x l.622
+@x l.619
 @d hash_size 353 /* should be prime */
 @y
 @d hash_size 8501 /* should be prime */
@@ -188,7 +188,7 @@ Section 46.
 
 Section 73.
 
-@x l.1123
+@x l.1120
 or flags to be turned on (beginning with |"+"|).
 @y
 or flags to be turned on (beginning with |"+"|).
@@ -198,7 +198,7 @@ see section |@<Handle flag arg...@>| for details.
 
 Section 74.  CWEB in TeX Live runs quietly by default.
 
-@x l.1143 and l.37 of COMM-OUTPUT.CH
+@x l.1140
 show_banner=show_happiness=show_progress=make_xrefs=true;
 @y
 make_xrefs=true;
@@ -206,7 +206,7 @@ make_xrefs=true;
 
 Section 75.
 
-@x l.1148
+@x l.1144
 file.  It may have an extension, or it may omit the extension to get |".w"| or
 |".web"| added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @y
@@ -216,7 +216,7 @@ added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 
 Section 77.
 
-@x l.1192
+@x l.1188
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
 |alt_web_file_name| by adding |"web"| after the dot.
@@ -225,14 +225,14 @@ otherwise we add |".w"|. If this file can't be opened, we prepare an
 otherwise we add |".w"|.
 @z
 
-@x l.1209 - no alt_web_file_name
+@x l.1205 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y
 @z
 
 Section 80.
 
-@x l.1252 and l.201 of COMM-EXTENSIONS.CH
+@x l.1246 and l.199 of COMM-EXTENSIONS.CH
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   if(*dot_pos=='l') {
      use_language=++dot_pos;
@@ -271,7 +271,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1255 and l.223 of COMM-EXTENSIONS.CH and l.272 of COMM-I18N.CH
+@x l.1249 and l.221 of COMM-EXTENSIONS.CH and l.272 of COMM-I18N.CH
 @ @<Print usage error message and quit@>=
 switch (program) {
 case ctangle: fatal(
@@ -296,7 +296,7 @@ cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 
 Changes to former addenda.
 
-@x l.271 of COMM-EXTENSIONS.CH and l.326 of COMM-I18N.CH
+@x l.269 of COMM-EXTENSIONS.CH and l.314 of COMM-I18N.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -333,7 +333,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.305 of COMM-EXTENSIONS.CH
+@x l.303 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -364,7 +364,7 @@ string texmf_locale;@/
 
 Material++
 
-@x l.334 of COMM-I18N.CH
+@x l.346 of COMM-I18N.CH
 @* Internationalization.  If a translation catalog for your personal
 \.{LANGUAGE} is installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
 will talk to you in your favorite language.  Catalog \.{cweb} contains all
@@ -417,7 +417,7 @@ There are several ways to set |TEXMFLOCALEDIR|:
     or \.{TEXMFLOCALEDIR.cweb=\$TEXMFMAIN/locale}.\par}
 @z
 
-@x l.356 of COMM-I18N.CH
+@x l.368 of COMM-I18N.CH
 bindtextdomain("cweb", "/usr/share/locale/");
 @y
 texmf_locale = kpse_var_expand ("${TEXMFLOCALEDIR}");
@@ -431,7 +431,7 @@ bindtextdomain("cweb",
 free(texmf_locale);
 @z
 
-@x l.1292
+@x l.1286
 @** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from

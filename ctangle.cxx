@@ -1,8 +1,8 @@
 /*1:*/
 #line 66 "ctangle.w"
 
-/*4:*/
-#line 51 "comm-foo.h"
+/*5:*/
+#line 56 "comm-foo.h"
 
 #include <ctype.h>  
 #include <stdbool.h>  
@@ -15,17 +15,17 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
-#line 63 "comm-foo.h"
+#line 68 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#line 67 "comm-foo.h"
+#line 72 "comm-foo.h"
 #define gettext(a) a
 #endif
-#line 69 "comm-foo.h"
+#line 74 "comm-foo.h"
 
-/*:4*/
+/*:5*/
 #line 67 "ctangle.w"
 
 #define banner _("This is CTANGLE (Version 4.9 [CWEBbin 2023])")  \
@@ -184,24 +184,24 @@ ctangle,cweave,ctwill
 extern cweb program;
 extern int phase;
 
-/*:3*//*5:*/
-#line 91 "comm-foo.h"
+/*:3*//*6:*/
+#line 96 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
 extern char*id_first;
 extern char*id_loc;
 
-/*:5*//*6:*/
-#line 109 "comm-foo.h"
+/*:6*//*7:*/
+#line 114 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
 extern char*loc;
 extern char*limit;
 
-/*:6*//*7:*/
-#line 126 "comm-foo.h"
+/*:7*//*8:*/
+#line 131 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -216,16 +216,16 @@ extern boolean input_has_ended;
 extern boolean changing;
 extern boolean web_file_open;
 
-/*:7*//*9:*/
-#line 146 "comm-foo.h"
+/*:8*//*10:*/
+#line 151 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
 extern boolean change_pending;
 extern boolean print_where;
 
-/*:9*//*10:*/
-#line 160 "comm-foo.h"
+/*:10*//*11:*/
+#line 165 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -249,13 +249,13 @@ extern name_pointer hash[];
 extern hash_pointer hash_end;
 extern hash_pointer h;
 
-/*:10*//*12:*/
-#line 204 "comm-foo.h"
+/*:11*//*13:*/
+#line 211 "comm-foo.h"
 
 extern int history;
 
-/*:12*//*14:*/
-#line 221 "comm-foo.h"
+/*:13*//*15:*/
+#line 228 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -267,8 +267,8 @@ extern char check_file_name[];
 extern boolean flags[];
 extern const char*use_language;
 
-/*:14*//*15:*/
-#line 237 "comm-foo.h"
+/*:15*//*16:*/
+#line 244 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -277,7 +277,7 @@ extern FILE*scn_file;
 extern FILE*active_file;
 extern FILE*check_file;
 
-/*:15*/
+/*:16*/
 #line 69 "ctangle.w"
 
 /*19:*/
@@ -379,41 +379,43 @@ static eight_bits next_control;
 /*:82*/
 #line 71 "ctangle.w"
 
-/*8:*/
-#line 140 "comm-foo.h"
+/*4:*/
+#line 44 "comm-foo.h"
+
+extern void common_init(void);
+extern void print_stats(void);
+
+/*:4*//*9:*/
+#line 145 "comm-foo.h"
 
 extern boolean get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
-/*:8*//*11:*/
-#line 183 "comm-foo.h"
+/*:9*//*12:*/
+#line 188 "comm-foo.h"
 
-extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
 extern name_pointer section_lookup(char*,char*,boolean);
-extern void init_node(name_pointer);
-extern void init_p(name_pointer,eight_bits);
 extern void print_prefix_name(name_pointer);
 extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
-/*:11*//*13:*/
-#line 207 "comm-foo.h"
+extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
+
+extern void init_node(name_pointer);
+extern void init_p(name_pointer,eight_bits);
+
+/*:12*//*14:*/
+#line 214 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
 extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
-/*:13*//*16:*/
-#line 246 "comm-foo.h"
-
-extern void common_init(void);
-extern void print_stats(void);
-
-/*:16*//*30:*/
+/*:14*//*30:*/
 #line 246 "ctangle.w"
 static void store_two_bytes(sixteen_bits);
 

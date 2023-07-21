@@ -18,6 +18,16 @@ typedef bool boolean;
 
 Section 3.
 
+@x l.45
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
+@y
+extern void cb_show_banner(void);
+@#
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
+@z
+
+Section 4.
+
 @x
 internationalization.
 @y
@@ -33,7 +43,7 @@ For backward compatibility with pre-{\mc ANSI} compilers, we replace the
 #include <kpathsea/simpletypes.h> /* |@!boolean|, |@!true| and |@!false| */
 @z
 
-Section 6.
+Section 7.
 
 @x
 @d max_file_name_length 60
@@ -46,15 +56,6 @@ extern int line[]; /* number of current line in the stacked files */
 @y
 extern char *found_filename; /* filename found by |kpse_find_file| */
 extern int line[]; /* number of current line in the stacked files */
-@z
-
-Section 15.
-
-@x l.227
-extern void print_stats(void);
-@y
-extern void print_stats(void);@/
-extern void cb_show_banner(void);
 @z
 
 Section 16.

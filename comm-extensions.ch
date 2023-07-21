@@ -39,9 +39,9 @@ boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 39.
+Section 36.
 
-@x l.434
+@x l.393
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
@@ -66,7 +66,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @^system dependencies@> @.CWEBINPUTS@>
 @z
 
-@x l.467
+@x l.426
   if ((kk=getenv("CWEBINPUTS"))!=NULL) {
 @.CWEBINPUTS@>
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -117,7 +117,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 68.
 
-@x l.1062
+@x l.1039
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -139,7 +139,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1074
+@x l.1071
   if (history > harmless_message) return EXIT_FAILURE;
   else return EXIT_SUCCESS;
 @y
@@ -153,7 +153,7 @@ can be made sensitive to these conditions.
 
 Section 75.
 
-@x l.1155
+@x l.1151
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -162,9 +162,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 75.
-
-@x l.1171
+@x l.1167
   strcpy(change_file_name,"/dev/null");
 @y
   strcpy(change_file_name,"/dev/null");
@@ -178,7 +176,7 @@ Section 75.
 @^system dependencies@>
 @z
 
-@x l.1176
+@x l.1172
       while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
@@ -194,7 +192,7 @@ Section 75.
 
 Section 80.
 
-@x l.1252
+@x l.1246
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   flags[(eight_bits)*dot_pos]=flag_change;
 @y
@@ -207,7 +205,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1255
+@x l.1249
 @ @<Print usage error message and quit@>=
 {
 if (program==ctangle)
@@ -259,7 +257,7 @@ character following `l', but there would have been collisions between
 
 Section 85.
 
-@x l.1292
+@x l.1286
 @** Index.
 @y
 @* Language setting.  This global variable is set by the argument of the

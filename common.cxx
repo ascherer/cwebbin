@@ -1,8 +1,8 @@
 /*1:*/
 #line 62 "common.w"
 
-/*3:*/
-#line 51 "comm-foo.h"
+/*4:*/
+#line 56 "comm-foo.h"
 
 #include <ctype.h>  
 #include <stdbool.h>  
@@ -15,17 +15,17 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
-#line 63 "comm-foo.h"
+#line 68 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#line 67 "comm-foo.h"
+#line 72 "comm-foo.h"
 #define gettext(a) a
 #endif
-#line 69 "comm-foo.h"
+#line 74 "comm-foo.h"
 
-/*:3*//*93:*/
+/*:4*//*93:*/
 #line 617 "comm-foo.ch"
 
 #if HAVE_GETTEXT
@@ -173,24 +173,24 @@ ctangle,cweave,ctwill
 extern cweb program;
 extern int phase;
 
-/*:2*//*4:*/
-#line 91 "comm-foo.h"
+/*:2*//*5:*/
+#line 96 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
 extern char*id_first;
 extern char*id_loc;
 
-/*:4*//*5:*/
-#line 109 "comm-foo.h"
+/*:5*//*6:*/
+#line 114 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
 extern char*loc;
 extern char*limit;
 
-/*:5*//*6:*/
-#line 126 "comm-foo.h"
+/*:6*//*7:*/
+#line 131 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -205,16 +205,16 @@ extern boolean input_has_ended;
 extern boolean changing;
 extern boolean web_file_open;
 
-/*:6*//*8:*/
-#line 146 "comm-foo.h"
+/*:7*//*9:*/
+#line 151 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
 extern boolean change_pending;
 extern boolean print_where;
 
-/*:8*//*9:*/
-#line 160 "comm-foo.h"
+/*:9*//*10:*/
+#line 165 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -238,13 +238,13 @@ extern name_pointer hash[];
 extern hash_pointer hash_end;
 extern hash_pointer h;
 
-/*:9*//*11:*/
-#line 204 "comm-foo.h"
+/*:10*//*12:*/
+#line 211 "comm-foo.h"
 
 extern int history;
 
-/*:11*//*13:*/
-#line 221 "comm-foo.h"
+/*:12*//*14:*/
+#line 228 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -256,8 +256,8 @@ extern char check_file_name[];
 extern boolean flags[];
 extern const char*use_language;
 
-/*:13*//*14:*/
-#line 237 "comm-foo.h"
+/*:14*//*15:*/
+#line 244 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -266,7 +266,7 @@ extern FILE*scn_file;
 extern FILE*active_file;
 extern FILE*check_file;
 
-/*:14*/
+/*:15*/
 #line 65 "common.w"
 
 /*18:*/
@@ -320,8 +320,8 @@ boolean web_file_open= false;
 static char change_buffer[buf_size];
 static char*change_limit;
 
-/*:26*//*37:*/
-#line 393 "common.w"
+/*:26*//*42:*/
+#line 545 "common.w"
 
 sixteen_bits section_count;
 boolean changed_section[max_sections];
@@ -329,7 +329,7 @@ boolean change_pending;
 
 boolean print_where= false;
 
-/*:37*//*43:*/
+/*:42*//*43:*/
 #line 590 "common.w"
 
 char byte_mem[max_bytes];
@@ -402,41 +402,43 @@ char*p,*path_prefix,*next_path_prefix;
 /*:89*/
 #line 66 "common.w"
 
-/*7:*/
-#line 140 "comm-foo.h"
+/*3:*/
+#line 44 "comm-foo.h"
+
+extern void common_init(void);
+extern void print_stats(void);
+
+/*:3*//*8:*/
+#line 145 "comm-foo.h"
 
 extern boolean get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
-/*:7*//*10:*/
-#line 183 "comm-foo.h"
+/*:8*//*11:*/
+#line 188 "comm-foo.h"
 
-extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
 extern name_pointer section_lookup(char*,char*,boolean);
-extern void init_node(name_pointer);
-extern void init_p(name_pointer,eight_bits);
 extern void print_prefix_name(name_pointer);
 extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
-/*:10*//*12:*/
-#line 207 "comm-foo.h"
+extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
+
+extern void init_node(name_pointer);
+extern void init_p(name_pointer,eight_bits);
+
+/*:11*//*13:*/
+#line 214 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
 extern void fatal(const char*,const char*);
 extern void overflow(const char*);
 
-/*:12*//*15:*/
-#line 246 "comm-foo.h"
-
-extern void common_init(void);
-extern void print_stats(void);
-
-/*:15*//*24:*/
+/*:13*//*24:*/
 #line 176 "common.w"
 static boolean input_ln(FILE*);
 
@@ -733,54 +735,20 @@ if(lines_dont_match)n++;
 }
 
 /*:32*//*35:*/
-#line 356 "common.w"
-
-void
-reset_input(void)
-{
-limit= buffer;loc= buffer+1;buffer[0]= ' ';
-/*36:*/
-#line 371 "common.w"
-
-if((web_file= fopen(web_file_name,"r"))==NULL){
-strcpy(web_file_name,alt_web_file_name);
-if((web_file= fopen(web_file_name,"r"))==NULL)
-#line 96 "comm-foo.ch"
-fatal(_("! Cannot open input file "),web_file_name);
-#line 376 "common.w"
-}
-
-
-web_file_open= true;
-if((change_file= fopen(change_file_name,"r"))==NULL)
-#line 102 "comm-foo.ch"
-fatal(_("! Cannot open change file "),change_file_name);
-#line 382 "common.w"
-
-/*:36*/
-#line 361 "common.w"
-
-include_depth= cur_line= change_line= 0;
-change_depth= include_depth;
-changing= true;prime_the_change_buffer();changing= !changing;
-limit= buffer;loc= buffer+1;buffer[0]= ' ';input_has_ended= false;
-}
-
-/*:35*//*38:*/
-#line 400 "common.w"
+#line 362 "common.w"
 
 boolean get_line(void)
 {
 restart:
 if(changing&&include_depth==change_depth)
-/*41:*/
-#line 508 "common.w"
+/*38:*/
+#line 470 "common.w"
 {
 change_line++;
 if(!input_ln(change_file)){
-#line 206 "comm-foo.ch"
+#line 194 "comm-foo.ch"
 err_print(_("! Change file ended without @z"));
-#line 512 "common.w"
+#line 474 "common.w"
 
 buffer[0]= '@';buffer[1]= 'z';limit= buffer+2;
 }
@@ -796,9 +764,9 @@ if(buffer[0]=='@'){
 if(xisupper(buffer[1]))buffer[1]= tolower((int)buffer[1]);
 if(buffer[1]=='x'||buffer[1]=='y'){
 loc= buffer+2;
-#line 212 "comm-foo.ch"
+#line 200 "comm-foo.ch"
 err_print(_("! Where is the matching @z?"));
-#line 528 "common.w"
+#line 490 "common.w"
 
 }
 else if(buffer[1]=='z'){
@@ -808,12 +776,12 @@ prime_the_change_buffer();changing= !changing;print_where= true;
 }
 }
 
-/*:41*/
-#line 405 "common.w"
+/*:38*/
+#line 367 "common.w"
 
 if(!changing||include_depth> change_depth){
-/*40:*/
-#line 491 "common.w"
+/*37:*/
+#line 453 "common.w"
 {
 cur_line++;
 while(!input_ln(cur_file)){
@@ -831,8 +799,8 @@ if(buffer[0]==change_buffer[0])
 if(change_limit> change_buffer)check_change();
 }
 
-/*:40*/
-#line 407 "common.w"
+/*:37*/
+#line 369 "common.w"
 
 if(changing&&include_depth==change_depth)goto restart;
 }
@@ -842,22 +810,22 @@ if(buffer[0]=='@'&&(buffer[1]=='i'||buffer[1]=='I')){
 loc= buffer+2;*limit= '"';
 while(*loc==' '||*loc=='\t')loc++;
 if(loc>=limit){
-#line 108 "comm-foo.ch"
+#line 96 "comm-foo.ch"
 err_print(_("! Include file name not given"));
-#line 417 "common.w"
+#line 379 "common.w"
 
 goto restart;
 }
 if(include_depth>=max_include_depth-1){
-#line 114 "comm-foo.ch"
+#line 102 "comm-foo.ch"
 err_print(_("! Too many nested includes"));
-#line 422 "common.w"
+#line 384 "common.w"
 
 goto restart;
 }
 include_depth++;
-/*39:*/
-#line 445 "common.w"
+/*36:*/
+#line 407 "common.w"
 {
 char temp_file_name[max_file_name_length];
 char*cur_file_name_end= cur_file_name+max_file_name_length-1;
@@ -877,7 +845,7 @@ if((cur_file= fopen(cur_file_name,"r"))!=NULL){
 cur_line= 0;print_where= true;
 goto restart;
 }
-#line 174 "comm-foo.ch"
+#line 162 "comm-foo.ch"
 if(false==set_path(include_path,getenv("CWEBINPUTS"))){
 include_depth--;goto restart;
 }
@@ -899,21 +867,21 @@ if((next_path_prefix= strchr(path_prefix,PATH_SEPARATOR))!=NULL)
 path_prefix= next_path_prefix+1;
 else break;
 }
-#line 200 "comm-foo.ch"
+#line 188 "comm-foo.ch"
 include_depth--;err_print(_("! Cannot open include file"));goto restart;
-#line 489 "common.w"
+#line 451 "common.w"
 }
 
-/*:39*/
-#line 426 "common.w"
+/*:36*/
+#line 388 "common.w"
 
 }
 return true;
 }
 
-#line 129 "comm-foo.ch"
-/*:38*//*42:*/
-#line 540 "common.w"
+#line 117 "comm-foo.ch"
+/*:35*//*39:*/
+#line 502 "common.w"
 
 void
 check_complete(void){
@@ -921,14 +889,48 @@ if(change_limit!=change_buffer){
 strncpy(buffer,change_buffer,(size_t)(change_limit-change_buffer+1));
 limit= buffer+(ptrdiff_t)(change_limit-change_buffer);
 changing= true;change_depth= include_depth;loc= buffer;
-#line 218 "comm-foo.ch"
+#line 206 "comm-foo.ch"
 err_print(_("! Change file entry did not match"));
-#line 548 "common.w"
+#line 510 "common.w"
 
 }
 }
 
-/*:42*//*48:*/
+/*:39*//*40:*/
+#line 518 "common.w"
+
+void
+reset_input(void)
+{
+limit= buffer;loc= buffer+1;buffer[0]= ' ';
+/*41:*/
+#line 533 "common.w"
+
+if((web_file= fopen(web_file_name,"r"))==NULL){
+strcpy(web_file_name,alt_web_file_name);
+if((web_file= fopen(web_file_name,"r"))==NULL)
+#line 212 "comm-foo.ch"
+fatal(_("! Cannot open input file "),web_file_name);
+#line 538 "common.w"
+}
+
+
+web_file_open= true;
+if((change_file= fopen(change_file_name,"r"))==NULL)
+#line 218 "comm-foo.ch"
+fatal(_("! Cannot open change file "),change_file_name);
+#line 544 "common.w"
+
+/*:41*/
+#line 523 "common.w"
+
+include_depth= cur_line= change_line= 0;
+change_depth= include_depth;
+changing= true;prime_the_change_buffer();changing= !changing;
+limit= buffer;loc= buffer+1;buffer[0]= ' ';input_has_ended= false;
+}
+
+/*:40*//*48:*/
 #line 633 "common.w"
 
 name_pointer
