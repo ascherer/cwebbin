@@ -87,7 +87,7 @@ double quotes.
 The actual file lookup is done with the help of the \Kpathsea/ library;
 see section~\X93:File lookup with \Kpathsea/\X~for details. % FIXME
 The remainder of the \.{@@i} line after the file name is ignored.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 @z
 
 @x l.408
@@ -304,7 +304,7 @@ personal needs.  If this variable is empty, some decent defaults are used
 internally.  The following procedure takes care that these internal entries
 are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/

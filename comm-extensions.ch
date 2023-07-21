@@ -68,7 +68,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 @x l.426
   if ((kk=getenv("CWEBINPUTS"))!=NULL) {
-@.CWEBINPUTS@>
+@qCWEBINPUTS@>
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
     strcpy(temp_file_name,kk);
   }
@@ -273,7 +273,7 @@ personal needs.  If this variable is empty, some decent defaults are used
 internally.  The following procedure takes care that these internal entries
 are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/
