@@ -2,7 +2,7 @@
 #line 66 "ctangle.w"
 
 /*5:*/
-#line 56 "comm-foo.h"
+#line 55 "comm-foo.h"
 
 #include <ctype.h>  
 #include <stdbool.h>  
@@ -15,15 +15,15 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
-#line 68 "comm-foo.h"
+#line 67 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#line 72 "comm-foo.h"
+#line 71 "comm-foo.h"
 #define gettext(a) a
 #endif
-#line 74 "comm-foo.h"
+#line 73 "comm-foo.h"
 
 /*:5*/
 #line 67 "ctangle.w"
@@ -173,7 +173,7 @@ app_repl(a%0400)  \
 #line 68 "ctangle.w"
 
 /*3:*/
-#line 33 "comm-foo.h"
+#line 32 "comm-foo.h"
 
 typedef bool boolean;
 typedef uint8_t eight_bits;
@@ -185,7 +185,7 @@ extern cweb program;
 extern int phase;
 
 /*:3*//*6:*/
-#line 96 "comm-foo.h"
+#line 95 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
@@ -193,7 +193,7 @@ extern char*id_first;
 extern char*id_loc;
 
 /*:6*//*7:*/
-#line 114 "comm-foo.h"
+#line 113 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -201,7 +201,7 @@ extern char*loc;
 extern char*limit;
 
 /*:7*//*8:*/
-#line 131 "comm-foo.h"
+#line 130 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -217,7 +217,7 @@ extern boolean changing;
 extern boolean web_file_open;
 
 /*:8*//*10:*/
-#line 151 "comm-foo.h"
+#line 150 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -225,7 +225,7 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:10*//*11:*/
-#line 165 "comm-foo.h"
+#line 164 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -250,12 +250,12 @@ extern hash_pointer hash_end;
 extern hash_pointer h;
 
 /*:11*//*13:*/
-#line 211 "comm-foo.h"
+#line 210 "comm-foo.h"
 
 extern int history;
 
 /*:13*//*15:*/
-#line 228 "comm-foo.h"
+#line 227 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -268,7 +268,7 @@ extern boolean flags[];
 extern const char*use_language;
 
 /*:15*//*16:*/
-#line 244 "comm-foo.h"
+#line 243 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -380,20 +380,20 @@ static eight_bits next_control;
 #line 71 "ctangle.w"
 
 /*4:*/
-#line 44 "comm-foo.h"
+#line 43 "comm-foo.h"
 
 extern void common_init(void);
 extern void print_stats(void);
 
 /*:4*//*9:*/
-#line 145 "comm-foo.h"
+#line 144 "comm-foo.h"
 
 extern boolean get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:9*//*12:*/
-#line 188 "comm-foo.h"
+#line 187 "comm-foo.h"
 
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
@@ -408,7 +408,7 @@ extern void init_node(name_pointer);
 extern void init_p(name_pointer,eight_bits);
 
 /*:12*//*14:*/
-#line 214 "comm-foo.h"
+#line 213 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
