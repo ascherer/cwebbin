@@ -115,6 +115,14 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   }
 @z
 
+Section 51.
+
+@x
+  if (program==cweave) {
+@y
+  if (program!=ctangle) {
+@z
+
 Section 68.
 
 @x l.1039
