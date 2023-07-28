@@ -46,7 +46,7 @@ Section 20.
   @<Initialize pointers@>@;
 @y
   @<Initialize pointers@>@;
-  @<Set up |PROGNAME| feature and initialize the search path mechanism@>@;
+  @<Set up \.{PROGNAME} feature and initialize the search path mechanism@>@;
 @z
 
 Section 23.
@@ -470,7 +470,7 @@ in the environment) its value will be used as the search path for filenames.
 This allows different flavors of \.{CWEB} to have different search paths.
 @.CWEBINPUTS@>
 
-@<Set up |PROGNAME| feature and initialize the search path mechanism@>=
+@<Set up \.{PROGNAME} feature and initialize the search path mechanism@>=
 kpse_set_program_name(argv[0], "cweb");
 
 @ When the files you expect are not found, the thing to do is to enable

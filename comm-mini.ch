@@ -1,9 +1,9 @@
 Limbo.
 
 @x
-\def\title{Common code for CTANGLE and CWEAVE (Version 4.9 [CWEBbin 2023])}
+\def\title{Common code for CTANGLE and CWEAVE (4.9 [\TeX~Live])}
 @y
-\def\title{COMMON (Version 4.9 [CWEBbin 2023])}
+\def\title{COMMON (4.9 [\TeX~Live])}
 \def\contentspagenumber{0}
 @z
 
@@ -83,6 +83,7 @@ current line is nonempty.
 current line is nonempty.
 @-b@>
 @z
+
 Section 33.
 
 @x
@@ -91,6 +92,14 @@ Section 33.
 @ @<Predecl...@>=@+static void check_change(void);
 @-check_change@>
 @$check_change {COMMON}32 \&{static} \&{void} (\,)@>
+@z
+
+Section 36.
+
+@x
+@ When an \.{@@i} line is found in the |cur_file|, we must temporarily
+@y
+@r @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 @z
 
 Section 48.
@@ -160,11 +169,25 @@ add_section_name( /* install a new node in the tree */
 Section 59.
 
 @x
+@ The |section_lookup| procedure is supposed to find a
+@y
+@r @ The |section_lookup| procedure is supposed to find a
+@z
+
+@x
 section_lookup( /* find or install section name in tree */
 @y
 section_lookup( /* find or install section name in tree */
 @-section_lookup@>
 @$section_lookup {COMMON}59 \&{name\_pointer} (\,)@>
+@z
+
+Section 62.
+
+@x
+@ Although error messages are given in anomalous cases, we do return the
+@y
+@r @ Although error messages are given in anomalous cases, we do return the
 @z
 
 Section 64.
@@ -218,26 +241,9 @@ Section 77.
 Section 87.
 
 @x
-for include files along the path |CWEBINPUTS|.  By setting the environment
+|bindtextdomain| argument string need a few extra variables.
 @y
-for include files along the path |CWEBINPUTS|.  By setting the environment
-@-CWEBINPUTS@>
-@z
-
-Section 88.
-
-@x
-@ @c
-@y
-@ @-CWEBINPUTS@>@c
-@z
-
-Section 89.
-
-@x
-needs a few extra variables.
-@y
-needs a few extra variables.
+|bindtextdomain| argument string need a few extra variables.
 @-SEPARATORS@>
 @z
 
@@ -247,19 +253,31 @@ Section 91.
 @.cweb.mo@>
 @y
 @.cweb.mo@>
-@-A@>
-@-B@>
+@-HAVE_GETTEXT@>
+@-TEXMFLOCALEDIR@>
+@-a@>
+@-b@>
 @z
 
 Section 93.
 
 @x
-#if HAVE_GETTEXT
+@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
 @y
-#if HAVE_GETTEXT
-@-HAVE_GETTEXT@>
-@-a@>
-@-b@>
+@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
+@-name@>
+@z
+
+Section 96.
+
+@x
+#include "help.h" /* |@!CTANGLEHELP|, |@!CWEAVEHELP|, |@!CTWILLHELP| */
+@y
+#include "help.h" /* |@!CTANGLEHELP|, |@!CWEAVEHELP|, |@!CTWILLHELP| */
+@$CTANGLEHELP "help.h" \zip@>
+@$CTWILLHELP "help.h" \zip@>
+@$CWEAVEHELP "help.h" \zip@>
+@-CWEB@>
 @z
 
 @x
