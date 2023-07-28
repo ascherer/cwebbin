@@ -46,7 +46,7 @@ Section 36.
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
 double quotes.
-If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
+If the environment variable |CWEBINPUTS| is set, or if the compiler flag
 of the same name was defined at compile time,
 \.{CWEB} will look for include files in the directory thus named, if
 it cannot find them in the current directory.
@@ -59,16 +59,15 @@ stop reading it and start reading from the named include file.  The
 double quotes.
 The remainder of the \.{@@i} line after the file name is ignored.
 \.{CWEB} will look for include files in standard directories specified in the
-environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
+environment variable |CWEBINPUTS|. Multiple search paths can be specified by
 delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
 the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 @z
 
 @x l.426
   if ((kk=getenv("CWEBINPUTS"))!=NULL) {
-@qCWEBINPUTS@>
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
     strcpy(temp_file_name,kk);
   }

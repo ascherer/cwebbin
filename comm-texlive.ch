@@ -74,11 +74,11 @@ stop reading it and start reading from the named include file.  The
 double quotes.
 The remainder of the \.{@@i} line after the file name is ignored.
 \.{CWEB} will look for include files in standard directories specified in the
-environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
+environment variable |CWEBINPUTS|. Multiple search paths can be specified by
 delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
 the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 @y
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
