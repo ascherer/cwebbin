@@ -234,7 +234,7 @@ struct name_info*link;
 union{
 struct name_info*Rlink;
 
-char Ilk;
+eight_bits Ilk;
 }dummy;
 void*equiv_or_xref;
 }name_info;
