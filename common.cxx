@@ -93,8 +93,8 @@
 #define harmless_message 1
 #define error_message 2
 #define fatal_message 3
-#define mark_harmless if(history==spotless) history= harmless_message
-#define mark_error history= error_message
+#define mark_harmless() if(history==spotless) history= harmless_message
+#define mark_error() history= error_message
 #define confusion(s) fatal(_("! This can't happen: ") ,s)  \
  \
 
@@ -105,8 +105,8 @@
 #define make_xrefs flags['x']
 #define check_for_change flags['c'] \
 
-#define update_terminal fflush(stdout) 
-#define new_line putchar('\n') 
+#define update_terminal() fflush(stdout) 
+#define new_line() putchar('\n') 
 #define term_write(a,b) fflush(stdout) ,fwrite(a,sizeof(char) ,b,stdout)  \
 
 #define buf_size 200
@@ -1282,7 +1282,7 @@ if(l> buffer){
 for(k= buffer;k<l;k++)
 if(*k=='\t')putchar(' ');
 else putchar(*k);
-new_line;
+new_line();
 for(k= buffer;k<l;k++)putchar(' ');
 }
 for(k= l;k<limit;k++)putchar(*k);
@@ -1293,14 +1293,14 @@ putchar(' ');
 /*:67*/
 #line 1019 "common.w"
 
-update_terminal;mark_error;
+update_terminal();mark_error();
 }
 
 /*:66*//*68:*/
 #line 1065 "common.w"
 
 int wrap_up(void){
-if(show_progress)new_line;
+if(show_progress)new_line();
 if(show_stats)
 print_stats();
 #line 325 "comm-foo.ch"

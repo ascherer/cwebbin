@@ -137,18 +137,18 @@ Section 82.
 
 @x l.1313
       fputs("\n! Never defined: <",stdout);
-      print_section_name(p); putchar('>'); mark_harmless;
+      print_section_name(p); putchar('>'); mark_harmless();
 @y
       fputs(_("\n! Never defined: <"),stdout);
-      print_section_name(p); putchar('>'); mark_harmless;
+      print_section_name(p); putchar('>'); mark_harmless();
 @z
 
 @x l.1319
       fputs("\n! Never used: <",stdout);
-      print_section_name(p); putchar('>'); mark_harmless;
+      print_section_name(p); putchar('>'); mark_harmless();
 @y
       fputs(_("\n! Never used: <"),stdout);
-      print_section_name(p); putchar('>'); mark_harmless;
+      print_section_name(p); putchar('>'); mark_harmless();
 @z
 
 Section 94.
@@ -242,9 +242,9 @@ Section 192.
 Section 193.
 
 @x l.3356
-  printf("\nTracing after l. %d:\n",cur_line); mark_harmless;
+  printf("\nTracing after l. %d:\n",cur_line); mark_harmless();
 @y
-  printf(_("\nTracing after l. %d:\n"),cur_line); mark_harmless;
+  printf(_("\nTracing after l. %d:\n"),cur_line); mark_harmless();
 @z
 
 Section 198.

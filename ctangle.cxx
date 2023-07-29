@@ -82,8 +82,8 @@
 #define harmless_message 1
 #define error_message 2
 #define fatal_message 3
-#define mark_harmless if(history==spotless) history= harmless_message
-#define mark_error history= error_message
+#define mark_harmless() if(history==spotless) history= harmless_message
+#define mark_error() history= error_message
 #define confusion(s) fatal(_("! This can't happen: ") ,s)  \
  \
 
@@ -94,8 +94,8 @@
 #define make_xrefs flags['x']
 #define check_for_change flags['c'] \
 
-#define update_terminal fflush(stdout) 
-#define new_line putchar('\n') 
+#define update_terminal() fflush(stdout) 
+#define new_line() putchar('\n') 
 #define term_write(a,b) fflush(stdout) ,fwrite(a,sizeof(char) ,b,stdout)  \
 
 #define buf_size 200
@@ -675,7 +675,7 @@ C_putc('\n');
 if(cur_line%100==0&&show_progress){
 putchar('.');
 if(cur_line%500==0)printf("%d",cur_line);
-update_terminal;
+update_terminal();
 }
 cur_line++;
 }
@@ -708,7 +708,7 @@ output_defs();
 
 if(text_info->text_link==macro&&cur_out_file==end_output_files){
 #line 52 "ctang-foo.ch"
-fputs(_("\n! No program text was specified."),stdout);mark_harmless;
+fputs(_("\n! No program text was specified."),stdout);mark_harmless();
 #line 519 "ctangle.w"
 
 }
@@ -718,7 +718,7 @@ if(show_progress){
 #line 58 "ctang-foo.ch"
 printf(_("\nWriting the output file (%s):"),C_file_name);
 #line 525 "ctangle.w"
-update_terminal;
+update_terminal();
 }
 }
 else{
@@ -728,7 +728,7 @@ fputs(_("\nWriting the output files:"),stdout);
 #line 531 "ctangle.w"
 
 printf(" (%s)",C_file_name);
-update_terminal;
+update_terminal();
 }
 if(text_info->text_link==macro)goto writeloop;
 }
@@ -815,7 +815,7 @@ if((C_file= fopen(output_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),output_file_name);
 
 }
-if(show_progress){printf("\n(%s)",output_file_name);update_terminal;}
+if(show_progress){printf("\n(%s)",output_file_name);update_terminal();}
 cur_line= 1;
 stack_ptr= stack+1;
 cur_name= *an_output_file;
@@ -994,7 +994,7 @@ strcpy(check_file_name,"");
 #line 539 "ctangle.w"
 
 if(show_happiness){
-if(show_progress)new_line;
+if(show_progress)new_line();
 #line 70 "ctang-foo.ch"
 fputs(_("Done."),stdout);
 #line 543 "ctangle.w"
@@ -1433,7 +1433,7 @@ fputs(_("\n! Section name too long: "),stdout);
 #line 1123 "ctangle.w"
 
 term_write(section_text+1,25);
-printf("...");mark_harmless;
+printf("...");mark_harmless();
 }
 if(*k==' '&&k> section_text)k--;
 
@@ -1791,7 +1791,7 @@ text_pointer q;
 sixteen_bits a;
 section_count++;no_where= true;
 if(*(loc-1)=='*'&&show_progress){
-printf("*%d",(int)section_count);update_terminal;
+printf("*%d",(int)section_count);update_terminal();
 }
 next_control= ignore;
 while(true){

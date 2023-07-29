@@ -52,9 +52,9 @@ Section 47.
 Section 48.
 
 @x l.524
-    fputs("\n! No program text was specified.",stdout); mark_harmless;
+    fputs("\n! No program text was specified.",stdout); mark_harmless();
 @y
-    fputs(_("\n! No program text was specified."),stdout); mark_harmless;
+    fputs(_("\n! No program text was specified."),stdout); mark_harmless();
 @z
 
 @x l.530

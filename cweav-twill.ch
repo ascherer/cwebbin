@@ -395,9 +395,9 @@ null_scrap.trans=&tok_start[0];
 @z
 
 @x l.2253
-  update_terminal;
+  update_terminal();
 @y
-  puts("|"); update_terminal;
+  puts("|"); update_terminal();
 @z
 
 @x l.2558
