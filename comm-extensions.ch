@@ -117,9 +117,9 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 Section 51.
 
 @x
-  if (program==cweave) {
+  if (program==cweave) p->ilk=t, init_node(p);
 @y
-  if (program!=ctangle) {
+  if (program!=ctangle) p->ilk=t, init_node(p);
 @z
 
 Section 68.
