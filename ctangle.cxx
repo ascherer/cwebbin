@@ -506,9 +506,9 @@ cur_out_file= end_output_files= output_files+max_files;
 /*:46*//*58:*/
 #line 696 "ctangle.w"
 
-{
-int i;
-for(i= 0;i<0200;i++)sprintf(translit[i],"X%02X",(unsigned int)(0200+i));
+{int i;
+for(i= 0;i<0200;i++)
+snprintf(translit[i],translit_length,"X%02X",(unsigned int)(0200+i));
 }
 
 #line 133 "ctang-foo.ch"
