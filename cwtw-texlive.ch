@@ -41,17 +41,17 @@ Sections 3--18.
 @i comm-w2c.h
 @z
 
-Section 19.
+Section 22.
 
-@x l.119
-@d max_refs 30000 /* number of cross-references; must be less than 65536 */
+@x l.211
+@ @d max_refs 30000 /* number of cross-references; must be less than 65536 */
 @y
-@d max_refs 65535 /* number of cross-references; must be less than 65536 */
+@ @d max_refs 30000 /* number of cross-references; must be less than 65536 */
 @z
 
-Section 30.
+Section 29.
 
-@x
+@x l.331
 @d max_toks 30000 /* number of symbols in \CEE/ texts being parsed;
   must be less than 65536 */
 @d max_texts 8000 /* number of phrases in \CEE/ texts being parsed;
@@ -65,7 +65,7 @@ Section 30.
 
 Appendix.
 
-@x l.4896
+@x l.4873
 @** Index.
 @y
 @* Print ``version'' information.

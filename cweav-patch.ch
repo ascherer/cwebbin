@@ -222,9 +222,9 @@ Sections 3--18.
 @i comm-foo.h
 @z
 
-Sections 116--117.
+Sections 114--115.
 
-@x l.2237
+@x l.2211
 @d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
 
 @c
@@ -244,21 +244,21 @@ static void
 print_text( /* prints a token list for debugging; not used in |main| */
 @z
 
-@x l.2262
+@x l.2239
 }
 @y
 }
 #endif
 @z
 
-@x l.2264
+@x l.2241
 @ @<Predecl...@>=@+static void print_text(text_pointer p);
 @y
 @z
 
 Addendum.
 
-@x l.4896
+@x l.4873
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
