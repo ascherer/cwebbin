@@ -222,40 +222,6 @@ Sections 3--18.
 @i comm-foo.h
 @z
 
-Sections 114--115.
-
-@x l.2211
-@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
-
-@c
-static void
-print_text( /* prints a token list for debugging; not used in |main| */
-@y
-@d inner_tok_flag (5*id_flag) /* signifies a token list in `\pb' */
-
-@<Predecl...@>=
-#if 0
-static void print_text(text_pointer p);
-#endif
-
-@ @c
-#if 0
-static void
-print_text( /* prints a token list for debugging; not used in |main| */
-@z
-
-@x l.2239
-}
-@y
-}
-#endif
-@z
-
-@x l.2241
-@ @<Predecl...@>=@+static void print_text(text_pointer p);
-@y
-@z
-
 Addendum.
 
 @x l.4873
