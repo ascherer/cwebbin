@@ -347,7 +347,7 @@ Section 236.
       default: err_print(_("! Improper macro definition")); break;
 @z
 
-Section 231.
+Section 237.
 
 @x l.4373
   if (scrap_ptr!=scrap_info+2) err_print("! Improper format definition");
