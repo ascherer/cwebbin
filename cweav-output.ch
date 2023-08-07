@@ -11,7 +11,7 @@ applied as well.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 246.
+Section 247.
 
 @x l.4515
 if (no_xref) {

@@ -6,7 +6,7 @@ See CWEBMAN-EXTENSIONS.CH for details about these new features.
 
 For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
-Section 88.
+Section 89.
 
 @x l.1395
 @ In particular, the |finish_line| procedure is called near the very
@@ -37,7 +37,7 @@ tex_puts("cwebma");
 *out_ptr='c';
 @z
 
-Section 110.
+Section 111.
 
 @x
 @i prod.w
@@ -45,7 +45,7 @@ Section 110.
 @i prod-cweave.w
 @z
 
-Section 127.
+Section 128.
 
 @x l.2641
 @<Cases for |exp|@>=
@@ -61,7 +61,7 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
 }
 @z
 
-Section 137.
+Section 138.
 
 @x l.2745
 @ @<Cases for |decl_head|@>=
@@ -105,7 +105,7 @@ else if (cat1==int_like || cat1==lbrace || cat1==decl) {
 else if (cat1==semi) squash(pp,2,decl,-1,39);
 @z
 
-Section 138.
+Section 139.
 
 @x l.2767
 @ @<Cases for |decl|@>=
@@ -126,7 +126,7 @@ else if (cat1==stmt || cat1==function) {
 }
 @z
 
-Section 142.
+Section 143.
 
 @x l.2824
 @ @<Cases for |fn_decl|@>=
@@ -151,7 +151,7 @@ else if (cat1==stmt) {
 }
 @z
 
-Section 152.
+Section 153.
 
 @x l.2924
   big_app1_insert(pp,dindent); reduce(pp,2,fn_decl,0,73);
@@ -160,7 +160,7 @@ Section 152.
   big_app1(pp+1); reduce(pp,2,fn_decl,0,73);
 @z
 
-Section 155.
+Section 156.
 
 @x
   big_app1_insert(pp, (cat1==decl || cat1==function) ? big_force :

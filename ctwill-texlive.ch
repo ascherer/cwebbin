@@ -25,7 +25,7 @@ Section 1.
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
-Section 80.
+Section 81.
 
 @x l.1414 and l.628 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
@@ -41,7 +41,7 @@ tex_puts(proofing?"proofma":"ctwima");
 tex_puts(proofing?"ctproofma":"ctwima");
 @z
 
-Section 272.
+Section 273.
 
 @x l.905 of CWEAV-TWILL.CH
 must have fewer than 50 characters. If the \TeX\ part starts
@@ -55,7 +55,7 @@ must have fewer than 80 characters. If the \TeX\ part starts
 @d max_tex_chars 80 /* limit on the \TeX\ part of a meaning */
 @z
 
-Section 292.
+Section 293.
 
 @x l.1236 of CWEAV-TWILL.CH
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
@@ -77,7 +77,7 @@ if ( (found_filename = kpse_find_cweb(cur_file_name)) @|
 }
 @z
 
-Section 308.
+Section 309.
 
 @x l.1296
 { char s[60];

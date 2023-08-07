@@ -17,7 +17,7 @@ Section 1.
 @d banner _("This is CWEAVE (@VERSION@)")
 @z
 
-Section 24.
+Section 25.
 
 @x l.240
 @d append_xref(c) if (xref_ptr==xmem_end) overflow("cross-reference");
@@ -25,7 +25,7 @@ Section 24.
 @d append_xref(c) if (xref_ptr==xmem_end) overflow(_("cross-reference"));
 @z
 
-Section 56.
+Section 57.
 
 @x l.885
         err_print("! String didn't end"); loc=limit; break;
@@ -45,7 +45,7 @@ Section 56.
     fputs(_("\n! String too long: "),stdout);
 @z
 
-Section 58.
+Section 59.
 
 @x l.927
   case translit_code: err_print("! Use @@l in limbo only"); continue;
@@ -53,7 +53,7 @@ Section 58.
   case translit_code: err_print(_("! Use @@l in limbo only")); continue;
 @z
 
-Section 61.
+Section 62.
 
 @x l.965
     err_print("! Input ended in section name");
@@ -67,7 +67,7 @@ Section 61.
   fputs(_("\n! Section name too long: "),stdout);
 @z
 
-Section 62.
+Section 63.
 
 @x l.992
     err_print("! Section name didn't end"); break;
@@ -81,7 +81,7 @@ Section 62.
     err_print(_("! Control codes are forbidden in section name")); break;
 @z
 
-Section 63.
+Section 64.
 
 @x l.1013
     err_print("! Control text didn't end"); loc=limit;
@@ -95,7 +95,7 @@ Section 63.
       err_print(_("! Control codes are forbidden in control text"));
 @z
 
-Section 65.
+Section 66.
 
 @x l.1033
 if (loc>=limit) err_print("! Verbatim string didn't end");
@@ -103,7 +103,7 @@ if (loc>=limit) err_print("! Verbatim string didn't end");
 if (loc>=limit) err_print(_("! Verbatim string didn't end"));
 @z
 
-Section 69.
+Section 70.
 
 @x l.1070
   if (++section_count==max_sections) overflow("section number");
@@ -111,7 +111,7 @@ Section 69.
   if (++section_count==max_sections) overflow(_("section number"));
 @z
 
-Section 73.
+Section 74.
 
 @x l.1159
     case translit_code: err_print("! Use @@l in limbo only"); continue;
@@ -119,7 +119,7 @@ Section 73.
     case translit_code: err_print(_("! Use @@l in limbo only")); continue;
 @z
 
-Section 78.
+Section 79.
 
 @x l.1246
   err_print("! Missing left identifier of @@s");
@@ -133,7 +133,7 @@ Section 78.
     err_print(_("! Missing right identifier of @@s"));
 @z
 
-Section 81.
+Section 82.
 
 @x l.1299
       fputs("\n! Never defined: <",stdout);
@@ -151,7 +151,7 @@ Section 81.
       print_section_name(p); putchar('>'); mark_harmless();
 @z
 
-Section 93.
+Section 94.
 
 @x l.1460
   printf("\n! Line had to be broken (output l. %d):\n",out_line);
@@ -159,7 +159,7 @@ Section 93.
   printf(_("\n! Line had to be broken (output l. %d):\n"),out_line);
 @z
 
-Section 98.
+Section 99.
 
 @x l.1541
         default: err_print("! Double @@ should be used in limbo");
@@ -167,7 +167,7 @@ Section 98.
         default: err_print(_("! Double @@ should be used in limbo"));
 @z
 
-Section 100.
+Section 101.
 
 @x l.1583
 @d app_tok(c) {if (tok_ptr+2>tok_mem_end) overflow("token"); *(tok_ptr++)=c;}
@@ -193,7 +193,7 @@ Section 100.
       else {err_print(_("! Extra } in comment"));
 @z
 
-Section 101.
+Section 102.
 
 @x l.1628
   if (bal>1) err_print("! Missing } in comment");
@@ -201,7 +201,7 @@ Section 101.
   if (bal>1) err_print(_("! Missing } in comment"));
 @z
 
-Section 102.
+Section 103.
 
 @x l.1636
     err_print("! Illegal use of @@ in comment");
@@ -209,7 +209,7 @@ Section 102.
     err_print(_("! Illegal use of @@ in comment"));
 @z
 
-Section 183.
+Section 184.
 
 @x l.3251
     overflow("token");
@@ -231,7 +231,7 @@ Section 190.
   if (tok_ptr+6>tok_mem_end) overflow(_("token"));
 @z
 
-Section 190.
+Section 191.
 
 @x l.3346
   printf("\nIrreducible scrap sequence in section %d:",(int)section_count);
@@ -239,7 +239,7 @@ Section 190.
   printf(_("\nIrreducible scrap sequence in section %d:"),(int)section_count);
 @z
 
-Section 191.
+Section 192.
 
 @x l.3356
   printf("\nTracing after l. %d:\n",cur_line); mark_harmless();
@@ -247,7 +247,7 @@ Section 191.
   printf(_("\nTracing after l. %d:\n"),cur_line); mark_harmless();
 @z
 
-Section 196.
+Section 197.
 
 @x l.3488
   overflow("scrap/token/text");
@@ -255,7 +255,7 @@ Section 196.
   overflow(_("scrap/token/text"));
 @z
 
-Section 198.
+Section 199.
 
 @x l.3573
       else err_print("! Double @@ should be used in strings");
@@ -263,7 +263,7 @@ Section 198.
       else err_print(_("! Double @@ should be used in strings"));
 @z
 
-Section 202.
+Section 203.
 
 @x l.3656
   if (next_control!='|') err_print("! Missing '|' after C text");
@@ -271,7 +271,7 @@ Section 202.
   if (next_control!='|') err_print(_("! Missing '|' after C text"));
 @z
 
-Section 210.
+Section 211.
 
 @x l.3797
   if (stack_ptr==stack_end) overflow("stack");
@@ -279,7 +279,7 @@ Section 210.
   if (stack_ptr==stack_end) overflow(_("stack"));
 @z
 
-Section 223.
+Section 224.
 
 @x l.4120
   fputs("\n! Illegal control code in section name: <",stdout);
@@ -287,7 +287,7 @@ Section 223.
   fputs(_("\n! Illegal control code in section name: <"),stdout);
 @z
 
-Section 224.
+Section 225.
 
 @x l.4135
     fputs("\n! C text in section name didn't end: <",stdout);
@@ -301,7 +301,7 @@ Section 224.
       if (j>buffer+long_buf_size-3) overflow(_("buffer"));
 @z
 
-Section 225.
+Section 226.
 
 @x l.4155
   if (j>buffer+long_buf_size-4) overflow("buffer");
@@ -309,7 +309,7 @@ Section 225.
   if (j>buffer+long_buf_size-4) overflow(_("buffer"));
 @z
 
-Section 226.
+Section 227.
 
 @x l.4170
 if (show_progress) fputs("\nWriting the output file...",stdout);
@@ -317,7 +317,7 @@ if (show_progress) fputs("\nWriting the output file...",stdout);
 if (show_progress) fputs(_("\nWriting the output file..."),stdout);
 @z
 
-Section 231.
+Section 232.
 
 @x l.4255
         err_print("! TeX string should be in C text only"); break;
@@ -331,7 +331,7 @@ Section 231.
         err_print(_("! You can't do that in TeX text")); break;
 @z
 
-Section 235.
+Section 236.
 
 @x l.4333
     err_print("! Improper macro definition");
@@ -347,7 +347,7 @@ Section 235.
       default: err_print(_("! Improper macro definition")); break;
 @z
 
-Section 236.
+Section 231.
 
 @x l.4373
   if (scrap_ptr!=scrap_info+2) err_print("! Improper format definition");
@@ -355,7 +355,7 @@ Section 236.
   if (scrap_ptr!=scrap_info+2) err_print(_("! Improper format definition"));
 @z
 
-Section 239.
+Section 240.
 
 @x l.4408
   err_print("! You need an = sign after the section name");
@@ -363,7 +363,7 @@ Section 239.
   err_print(_("! You need an = sign after the section name"));
 @z
 
-Section 240.
+Section 241.
 
 @x l.4430
   err_print("! You can't do that in C text");
@@ -371,7 +371,7 @@ Section 240.
   err_print(_("! You can't do that in C text"));
 @z
 
-Section 246.
+Section 247.
 
 @x l.4522
   phase=3; if (show_progress) fputs("\nWriting the index...",stdout);
@@ -397,7 +397,7 @@ Section 246.
   fputs(_("Done."),stdout);
 @z
 
-Section 257.
+Section 258.
 
 @x l.4713
     if (sort_ptr>=scrap_info_end) overflow("sorting");
@@ -405,7 +405,7 @@ Section 257.
     if (sort_ptr>=scrap_info_end) overflow(_("sorting"));
 @z
 
-Section 269.
+Section 270.
 
 @x l.4851
   puts("\nMemory usage statistics:");
