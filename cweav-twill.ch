@@ -577,7 +577,12 @@ static boolean temp_switch; /* has `\.{@@\%}' occurred recently? */
   top_usage=usage_sentinel;
 @z
 
-@x l.4222
+@x l.4232
+If the section has changed, we put \.{\\*} just after the section number.
+@y
+@z
+
+@x l.4235
 if (*(loc-1)!='*') out_str("\\M");
 @y
 if (*(loc-1)!='*') {
@@ -589,7 +594,7 @@ if (*(loc-1)!='*') {
 }
 @z
 
-@x l.4237
+@x l.4250
 @.\\N@>
 @y
 @.\\N@>
@@ -599,7 +604,7 @@ if (*(loc-1)!='*') {
   }
 @z
 
-@x l.4242
+@x l.4255
 out('{'); out_section(section_count); out('}');
 @y
 out('{'); out_section(section_count); out('}');
