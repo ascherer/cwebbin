@@ -57,16 +57,12 @@ Section 48.
     fputs(_("\n! No program text was specified."),stdout); mark_harmless();
 @z
 
-@x l.530
-        printf("\nWriting the output file (%s):",C_file_name);
+@x l.524
+        "\nWriting the output file (%s):" : @|
+        "\nWriting the output files: (%s)",C_file_name);
 @y
-        printf(_("\nWriting the output file (%s):"),C_file_name);
-@z
-
-@x l.534
-        fputs("\nWriting the output files:",stdout);
-@y
-        fputs(_("\nWriting the output files:"),stdout);
+       _("\nWriting the output file (%s):") : @|
+       _("\nWriting the output files: (%s)"),C_file_name);
 @z
 
 @x l.546
