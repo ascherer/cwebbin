@@ -321,7 +321,7 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 #ifndef SEPARATORS
-#define SEPARATORS "://"
+#define SEPARATORS "://"@^system dependencies@>
 #endif
 char separators[]=SEPARATORS;
 

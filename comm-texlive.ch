@@ -495,7 +495,7 @@ Debugging output is always written to |stderr|, and begins with the string
 
 Modules for dealing with help messages and version info.
 
-@<Include files@>=
+@<Include files@>=@^system dependencies@>
 #define CWEB
 #include "help.h" /* |@!CTANGLEHELP|, |@!CWEAVEHELP|, |@!CTWILLHELP| */
 

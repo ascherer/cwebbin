@@ -85,7 +85,7 @@ do {
 } while(comparison && !feof(tex_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
-get around a bug in some implementations of |rename|.
+get around a bug in some implementations of |rename|.@^system dependencies@>
 
 @<Take appropriate action...@>=
 if(comparison)

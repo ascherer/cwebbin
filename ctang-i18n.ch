@@ -287,7 +287,7 @@ Section 103.
 
 @x l.1542
   puts("\nMemory usage statistics:");
-  printf("%td names (out of %ld)\n",
+  printf("%td names (out of %ld)\n",@^system dependencies@>
           (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
   printf("%td replacement texts (out of %ld)\n",
           (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
@@ -296,7 +296,7 @@ Section 103.
   printf("%td tokens (out of %ld)\n",
 @y
   puts(_("\nMemory usage statistics:"));
-  printf(_("%td names (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),@^system dependencies@>
           (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
   printf(_("%td replacement texts (out of %ld)\n"),
           (ptrdiff_t)(text_ptr-text_info),(long)max_texts);
