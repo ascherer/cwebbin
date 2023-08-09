@@ -77,28 +77,6 @@ if ( (found_filename = kpse_find_cweb(cur_file_name)) @|
 }
 @z
 
-Section 296.
-
-@x l.1296
-{ char s[60];
-@y
-{ char s[90];
-@z
-
-@x l.1300
-    snprintf(s,60,"\\[%d",m->sec_no);
-@y
-    snprintf(s,90,"\\[%d",m->sec_no);
-@z
-
-@x l.1303
-      snprintf(s,60,"\\]%.*s%d",(int)length(n),n->byte_start,m->sec_no);
-    else snprintf(s,60,"\\]%.*s",(int)length(n),n->byte_start);
-@y
-      snprintf(s,90,"\\]%.*s%d",(int)length(n),n->byte_start,m->sec_no);
-    else snprintf(s,90,"\\]%.*s",(int)length(n),n->byte_start);
-@z
-
 @x l.1292
 @** Index.
 @y

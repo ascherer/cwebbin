@@ -1299,15 +1299,15 @@ placed on the list, unless they are reserved and their current
 @ @c static void
 out_mini(
   meaning_struct *m)
-{ char s[60];
+{ char s[max_tex_chars+10];
   name_pointer cur_name=m->id;
   if (m->prog_no==0) { /* reference within current program */
     if (m->sec_no==section_count) return; /* defined in current section */
-    snprintf(s,60,"\\[%d",m->sec_no);
+    snprintf(s,max_tex_chars+10,"\\[%d",m->sec_no);
   } else { name_pointer n=title_code[m->prog_no];
     if (*(n->byte_start)=='{')
-      snprintf(s,60,"\\]%.*s%d",(int)length(n),n->byte_start,m->sec_no);
-    else snprintf(s,60,"\\]%.*s",(int)length(n),n->byte_start);
+      snprintf(s,max_tex_chars+10,"\\]%.*s%d",(int)length(n),n->byte_start,m->sec_no);
+    else snprintf(s,max_tex_chars+10,"\\]%.*s",(int)length(n),n->byte_start);
   }
   out_str(s); out(' ');
   @<Mini-output the name at |cur_name|@>@;
