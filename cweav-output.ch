@@ -13,30 +13,10 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 247.
 
-@x l.4515
-if (no_xref) {
-  finish_line();
-  out_str("\\end");
-@.\\end@>
-  finish_line();
-}
-@y
-if (no_xref) {
-  finish_line();
-  out_str("\\end");
-@.\\end@>
-}
-@z
-
 @x l.4549
-@.\\end@>
-  finish_line();
-  fclose(active_file);
-}
+fclose(active_file);
 @y
-@.\\end@>
-}
-finish_line(); fclose(active_file); active_file=tex_file=NULL;
+fclose(active_file); active_file=tex_file=NULL;
 if (check_for_change) @<Update the result when it has changed@>@;
 @z
 

@@ -374,9 +374,9 @@ Section 241.
 Section 247.
 
 @x l.4522
-  phase=3; if (show_progress) fputs("\nWriting the index...",stdout);
+  if (show_progress) fputs("\nWriting the index...",stdout);
 @y
-  phase=3; if (show_progress) fputs(_("\nWriting the index..."),stdout);
+  if (show_progress) fputs(_("\nWriting the index..."),stdout);
 @z
 
 @x l.4526
