@@ -16,16 +16,6 @@ typedef bool boolean;
 @<Common code...@>=@^system dependencies@>
 @z
 
-Section 3.
-
-@x l.45
-extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
-@y
-extern void cb_show_banner(void);
-@#
-extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
-@z
-
 Section 4.
 
 @x
@@ -56,6 +46,16 @@ extern int line[]; /* number of current line in the stacked files */
 @y
 extern char *found_filename; /* filename found by |kpse_find_file| */
 extern int line[]; /* number of current line in the stacked files */
+@z
+
+Section 13.
+
+@x
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
+@y
+extern void cb_show_banner(void);
+@#
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
 @z
 
 Section 16.

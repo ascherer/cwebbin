@@ -2,7 +2,7 @@
 #line 62 "common.w"
 
 /*4:*/
-#line 55 "comm-foo.h"
+#line 54 "comm-foo.h"
 
 #include <ctype.h>  
 #include <stdbool.h>  
@@ -15,15 +15,15 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
-#line 67 "comm-foo.h"
+#line 66 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#line 71 "comm-foo.h"
+#line 70 "comm-foo.h"
 #define gettext(a) a
 #endif
-#line 73 "comm-foo.h"
+#line 72 "comm-foo.h"
 
 /*:4*//*93:*/
 #line 622 "comm-foo.ch"
@@ -175,7 +175,7 @@ extern cweb program;
 extern int phase;
 
 /*:2*//*5:*/
-#line 95 "comm-foo.h"
+#line 94 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
@@ -183,7 +183,7 @@ extern char*id_first;
 extern char*id_loc;
 
 /*:5*//*6:*/
-#line 113 "comm-foo.h"
+#line 112 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -191,7 +191,7 @@ extern char*loc;
 extern char*limit;
 
 /*:6*//*7:*/
-#line 130 "comm-foo.h"
+#line 129 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -207,7 +207,7 @@ extern boolean changing;
 extern boolean web_file_open;
 
 /*:7*//*9:*/
-#line 150 "comm-foo.h"
+#line 149 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern boolean changed_section[];
@@ -215,7 +215,7 @@ extern boolean change_pending;
 extern boolean print_where;
 
 /*:9*//*10:*/
-#line 165 "comm-foo.h"
+#line 164 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -240,12 +240,12 @@ extern hash_pointer hash_end;
 extern hash_pointer h;
 
 /*:10*//*12:*/
-#line 210 "comm-foo.h"
+#line 209 "comm-foo.h"
 
 extern int history;
 
 /*:12*//*14:*/
-#line 227 "comm-foo.h"
+#line 228 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -258,7 +258,7 @@ extern boolean flags[];
 extern const char*use_language;
 
 /*:14*//*15:*/
-#line 243 "comm-foo.h"
+#line 244 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -407,17 +407,16 @@ char*p,*path_prefix,*next_path_prefix;
 #line 43 "comm-foo.h"
 
 extern void common_init(void);
-extern void print_stats(void);
 
 /*:3*//*8:*/
-#line 144 "comm-foo.h"
+#line 143 "comm-foo.h"
 
 extern boolean get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:8*//*11:*/
-#line 188 "comm-foo.h"
+#line 187 "comm-foo.h"
 
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
@@ -431,12 +430,14 @@ extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
 extern void init_node(name_pointer);
 
 /*:11*//*13:*/
-#line 213 "comm-foo.h"
+#line 212 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
 extern void fatal(const char*,const char*);
 extern void overflow(const char*);
+
+extern void print_stats(void);
 
 /*:13*//*24:*/
 #line 176 "common.w"
