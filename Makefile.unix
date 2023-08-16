@@ -356,7 +356,7 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) cweave.w ctwill-doc.ch ctwill; $(MAKE) ctwill.pdf
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
-	$(TIE) -m $@ $^; $(SUBVER)
+	$(TIE) -m $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
 
@@ -365,16 +365,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # change files listed above are actually used here, so you won't see
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
@@ -396,23 +396,23 @@ common.tex: common.w $(CCHANGES)
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(HCHANGES): common.h comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang+u.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cwtw-texlive.ch cweav-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(LCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch \
 	cweav-twill.ch # cwtw-texlive.ch ctwill-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(DCHANGES): cwebman.tex cwebman-patch.ch \
 	cwebman-extensions.ch # cwebman-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # for bootstrapping
