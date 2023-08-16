@@ -128,6 +128,7 @@ Replaced by Kpathsea `kpse_find_file'.
     if(path_prefix && *path_prefix && *path_prefix!=PATH_SEPARATOR && @|
       *--p!=DEVICE_SEPARATOR && *p!=DIR_SEPARATOR) {
       *kk++ = DIR_SEPARATOR; l++;
+@^system dependencies@>
     }
     if(k+l+2>=cur_file_name_end) too_long(); /* emergency break */
     strcpy(kk,cur_file_name);

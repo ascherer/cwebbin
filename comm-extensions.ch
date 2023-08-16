@@ -85,6 +85,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     for (; k>=cur_file_name; k--) *(k+l+1)=*k;
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
+@^system dependencies@>
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
       cur_line=0; print_where=true;
       goto restart; /* success */
@@ -102,6 +103,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     if(path_prefix && *path_prefix && *path_prefix!=PATH_SEPARATOR && @|
       *--p!=DEVICE_SEPARATOR && *p!=DIR_SEPARATOR) {
       *kk++ = DIR_SEPARATOR; l++;
+@^system dependencies@>
     }
     if(k+l+2>=cur_file_name_end) too_long(); /* emergency break */
     strcpy(kk,cur_file_name);
