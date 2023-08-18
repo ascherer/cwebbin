@@ -118,7 +118,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 51.
 
-@x
+@x l.680
   if (program==cweave) p->ilk=t, init_node(p);
 @y
   if (program!=ctangle) p->ilk=t, init_node(p);
@@ -126,7 +126,7 @@ Section 51.
 
 Section 68.
 
-@x l.1039
+@x l.1058
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -148,7 +148,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1071
+@x l.1070
   if (history > harmless_message) return EXIT_FAILURE;
   else return EXIT_SUCCESS;
 @y
@@ -162,7 +162,7 @@ can be made sensitive to these conditions.
 
 Section 75.
 
-@x l.1151
+@x l.1150
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -171,7 +171,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-@x l.1167
+@x l.1166
   strcpy(change_file_name,"/dev/null");
 @y
   strcpy(change_file_name,"/dev/null");
@@ -186,12 +186,10 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @z
 
 @x l.1172
-      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
         else s++;
 @y
-      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,name_pos=++s;
@@ -201,7 +199,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 80.
 
-@x l.1246
+@x l.1245
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   flags[(eight_bits)*dot_pos]=flag_change;
 @y
@@ -214,7 +212,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1249
+@x l.1248
 @ @<Print usage error message and quit@>=
 {
 if (program==ctangle)
@@ -266,7 +264,7 @@ character following `l', but there would have been collisions between
 
 Section 85.
 
-@x l.1286
+@x l.1285
 @** Index.
 @y
 @* Language setting.  This global variable is set by the argument of the

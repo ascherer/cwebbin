@@ -136,7 +136,7 @@ Section 41.
 
 Section 51.
 
-@x l.677
+@x l.676
   if (byte_ptr+l>byte_mem_end) overflow("byte memory");
   if (name_ptr>=name_dir_end) overflow("name");
 @y
@@ -146,7 +146,7 @@ Section 51.
 
 Section 57.
 
-@x l.810
+@x l.809
   if (s+name_len>byte_mem_end) overflow("byte memory");
   if (name_ptr+1>=name_dir_end) overflow("name");
 @y
@@ -156,13 +156,13 @@ Section 57.
 
 Section 58.
 
-@x l.837
+@x l.836
   if (name_ptr>=name_dir_end) overflow("name");
 @y
   if (name_ptr>=name_dir_end) overflow(_("name"));
 @z
 
-@x l.842
+@x l.841
   if (s+name_len>byte_mem_end) overflow("byte memory");
 @y
   if (s+name_len>byte_mem_end) overflow(_("byte memory"));
@@ -170,13 +170,13 @@ Section 58.
 
 Section 60.
 
-@x l.887
+@x l.886
       fputs("\n! Ambiguous prefix: matches <",stdout);
 @y
       fputs(_("\n! Ambiguous prefix: matches <"),stdout);
 @z
 
-@x l.890
+@x l.889
       fputs(">\n and <",stdout);
 @y
       fputs(_(">\n and <"),stdout);
@@ -184,25 +184,25 @@ Section 60.
 
 Section 62.
 
-@x l.916
+@x l.915
       fputs("\n! New name is a prefix of <",stdout);
 @y
       fputs(_("\n! New name is a prefix of <"),stdout);
 @z
 
-@x l.928
+@x l.927
       fputs("\n! New name extends <",stdout);
 @y
       fputs(_("\n! New name extends <"),stdout);
 @z
 
-@x l.934
+@x l.933
     fputs("\n! Section name incompatible with <",stdout);
 @y
     fputs(_("\n! Section name incompatible with <"),stdout);
 @z
 
-@x l.937
+@x l.936
     fputs(">,\n which abbreviates <",stdout);
 @y
     fputs(_(">,\n which abbreviates <"),stdout);
@@ -210,7 +210,7 @@ Section 62.
 
 Section 67.
 
-@x l.1035
+@x l.1034
   printf(". (l. %d of change file)\n", change_line);
 else if (include_depth==0) printf(". (l. %d)\n", cur_line);
   else printf(". (l. %d of include file %s)\n", cur_line, cur_file_name);
@@ -244,7 +244,7 @@ case fatal_message: default:
 
 Section 71.
 
-@x l.1108
+@x l.1107
   printf("\n! Sorry, %s capacity exceeded",t); fatal("","");
 @y
   printf(_("\n! Sorry, %s capacity exceeded"),t); fatal("","");
@@ -252,7 +252,7 @@ Section 71.
 
 Section 81.
 
-@x l.1251 and l.222 of COMM-EXTENSIONS.CH
+@x l.1250 and l.218 of COMM-EXTENSIONS.CH
 switch (program) {
 case ctangle: fatal(
 "! Usage: ctangle [options] "@|
@@ -288,7 +288,7 @@ _("! Usage: ctwill [options] "@|
 
 Section 82.
 
-@x l.1261
+@x l.1260
 @ @<Complain about arg...@>= fatal("! Filename too long\n", *argv);
 @y
 @ @<Complain about arg...@>= fatal(_("! Filename too long\n"), *argv);
@@ -296,19 +296,19 @@ Section 82.
 
 Section 84.
 
-@x l.1278 and l.62 of COMM-OUTPUT.CH
+@x l.1277 and l.62 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", C_file_name);
 @y
     fatal(_("! Cannot open output file "), C_file_name);
 @z
 
-@x l.1283 and l.68 of COMM-OUTPUT.CH
+@x l.1282 and l.68 of COMM-OUTPUT.CH
     fatal("! Cannot open output file ", tex_file_name);
 @y
     fatal(_("! Cannot open output file "), tex_file_name);
 @z
 
-@x l.292 of COMM-EXTENSIONS.CH
+@x l.299 of COMM-EXTENSIONS.CH
       err_print("! Include path too long"); return(false);
 @y
       err_print(_("! Include path too long")); return(false);
@@ -340,7 +340,7 @@ More new material.
     fatal(_("! Cannot open output file "), check_file_name);
 @z
 
-@x l.1292
+@x l.1285
 @** Index.
 @y
 @* Internationalization.  If a translation catalog for your personal

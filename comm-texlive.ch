@@ -144,7 +144,7 @@ Replaced by Kpathsea `kpse_find_file'.
 
 Section 41.
 
-@x l.543 and l.128 of COMM-I18N.CH
+@x l.534
 if ((web_file=fopen(web_file_name,"r"))==NULL) {
   strcpy(web_file_name,alt_web_file_name);
   if ((web_file=fopen(web_file_name,"r"))==NULL)
@@ -163,7 +163,7 @@ else if (strlen(found_filename) < max_file_name_length) {
 } else fatal(_("! Filename too long\n"), found_filename);
 @z
 
-@x l.542 and l.134 of COMM-I18N.CH
+@x l.542
 if ((change_file=fopen(change_file_name,"r"))==NULL)
        fatal(_("! Cannot open change file "), change_file_name);
 @y
@@ -189,7 +189,7 @@ Section 46.
 
 Section 73.
 
-@x l.1120
+@x l.1119
 or flags to be turned on (beginning with |"+"|).
 @y
 or flags to be turned on (beginning with |"+"|).
@@ -199,7 +199,7 @@ see section |@<Handle flag arg...@>| for details.
 
 Section 74.  CWEB in TeX Live runs quietly by default.
 
-@x l.1140
+@x l.1139
 show_banner=show_happiness=show_progress=make_xrefs=true;
 @y
 make_xrefs=true;
@@ -207,7 +207,7 @@ make_xrefs=true;
 
 Section 75.
 
-@x l.1144
+@x l.1143
 file.  It may have an extension, or it may omit the extension to get |".w"| or
 |".web"| added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 @y
@@ -217,7 +217,7 @@ added.  The \TEX/ output file name is formed by replacing the \.{CWEB}
 
 Section 77.
 
-@x l.1188
+@x l.1187
 @ We use all of |*argv| for the |web_file_name| if there is a |'.'| in it,
 otherwise we add |".w"|. If this file can't be opened, we prepare an
 |alt_web_file_name| by adding |"web"| after the dot.
@@ -226,14 +226,14 @@ otherwise we add |".w"|. If this file can't be opened, we prepare an
 otherwise we add |".w"|.
 @z
 
-@x l.1205 - no alt_web_file_name
+@x l.1204 - no alt_web_file_name
   sprintf(alt_web_file_name,"%s.web",*argv);
 @y
 @z
 
 Section 80.
 
-@x l.1246 and l.199 of COMM-EXTENSIONS.CH
+@x l.1245 and l.206 of COMM-EXTENSIONS.CH
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   if(*dot_pos=='l') {
      use_language=++dot_pos;
@@ -272,7 +272,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1249 and l.221 of COMM-EXTENSIONS.CH and l.272 of COMM-I18N.CH
+@x l.1248 and l.228 of COMM-EXTENSIONS.CH
 @ @<Print usage error message and quit@>=
 switch (program) {
 case ctangle: fatal(
@@ -297,7 +297,7 @@ cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 
 Changes to former addenda.
 
-@x l.269 of COMM-EXTENSIONS.CH and l.314 of COMM-I18N.CH
+@x l.276 of COMM-EXTENSIONS.CH
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
@@ -334,7 +334,7 @@ static boolean set_path(char *include_path,char *environment)
 @y
 @z
 
-@x l.303 of COMM-EXTENSIONS.CH
+@x l.310 of COMM-EXTENSIONS.CH
 @ The path search algorithm defined in section |@<Try to open...@>|
 needs a few extra variables.
 
@@ -432,7 +432,7 @@ bindtextdomain("cweb",
 free(texmf_locale);
 @z
 
-@x l.1286
+@x l.1285
 @** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from

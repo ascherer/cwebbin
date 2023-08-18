@@ -7,7 +7,7 @@
 
 Material in limbo.
 
-@x l.39 and l.190 of CWEAV-PATCH.CH
+@x l.39 and CWEAV-PATCH.CH
   \centerline{(@VERSION@)}
 @y
   \centerline{(Version 4.9 [\TeX~Live])}
@@ -35,7 +35,7 @@ Section 2.
 
 Sections 3--18.
 
-@x l.112 and l.214 of CWEAV-PATCH.CH
+@x l.112 and CWEAV-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
@@ -43,7 +43,7 @@ Sections 3--18.
 
 Section 23.
 
-@x l.211
+@x l.217
 @ @d max_refs 30000 /* number of cross-references; must be less than 65536 */
 @y
 @ @d max_refs 65535 /* number of cross-references; must be less than 65536 */
@@ -51,7 +51,7 @@ Section 23.
 
 Section 30.
 
-@x l.331
+@x l.337
 @d max_toks 30000 /* number of symbols in \CEE/ texts being parsed;
   must be less than 65536 */
 @d max_texts 8000 /* number of phrases in \CEE/ texts being parsed;
@@ -65,7 +65,7 @@ Section 30.
 
 Appendix.
 
-@x l.4873
+@x l.4892
 @** Index.
 @y
 @* Print ``version'' information.

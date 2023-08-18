@@ -9,7 +9,7 @@
 
 Material in limbo.
 
-@x l.21 of CWEAV-TWILL.CH
+@x l.40 of CWEAV-TWILL.CH
 \def\title{CTWILL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
@@ -18,7 +18,7 @@ Material in limbo.
 
 Section 1.
 
-@x l.61 of CWEAV-TWILL.CH
+@x l.69 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (@VERSION@)")
 @y
 @d banner "This is CTWILL, Version 4.9"
@@ -27,7 +27,7 @@ Section 1.
 
 Section 89.
 
-@x l.1414 and l.628 of CWEAV-TWILL.CH
+@x l.1395 and l.323 of CWEAV-TWILL.CH
 saying \.{+P} on the command line, it's `\.{\\input proofmac}' (resp.\
 \.{\\input Xproofmac} with option \.{+lX}), a set of macros used when
 @y
@@ -35,7 +35,7 @@ saying \.{+P} on the command line, it's `\.{\\input ctproofmac}' (resp.\
 \.{\\input Xctproofmac} with option \.{+lX}), a set of macros used when
 @z
 
-@x l.638 of CWEAV-TWILL.CH
+@x l.333 of CWEAV-TWILL.CH
 tex_puts(proofing?"proofma":"ctwima");
 @y
 tex_puts(proofing?"ctproofma":"ctwima");
@@ -43,13 +43,13 @@ tex_puts(proofing?"ctproofma":"ctwima");
 
 Section 272.
 
-@x l.905 of CWEAV-TWILL.CH
+@x l.907 of CWEAV-TWILL.CH
 must have fewer than 50 characters. If the \TeX\ part starts
 @y
 must have fewer than 80 characters. If the \TeX\ part starts
 @z
 
-@x l.947 of CWEAV-TWILL.CH
+@x l.949 of CWEAV-TWILL.CH
 @d max_tex_chars 50 /* limit on the \TeX\ part of a meaning */
 @y
 @d max_tex_chars 80 /* limit on the \TeX\ part of a meaning */
@@ -57,7 +57,7 @@ must have fewer than 80 characters. If the \TeX\ part starts
 
 Section 292.
 
-@x l.1236 of CWEAV-TWILL.CH
+@x l.1238 of CWEAV-TWILL.CH
 if ((cur_file=fopen(cur_file_name,"r"))) { cur_line=0; include_depth++; }
 @y
 if ( (found_filename = kpse_find_cweb(cur_file_name)) @|
@@ -77,7 +77,7 @@ if ( (found_filename = kpse_find_cweb(cur_file_name)) @|
 }
 @z
 
-@x l.1292
+@x l.4892
 @** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from

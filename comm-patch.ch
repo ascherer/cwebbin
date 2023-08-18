@@ -217,7 +217,7 @@ Section 2.
 
 Section 85.
 
-@x l.1286
+@x l.1285
 @* Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

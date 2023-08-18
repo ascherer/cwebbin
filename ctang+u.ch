@@ -6,7 +6,7 @@ representing a multi-byte character.
 
 Section 59.
 
-@x l.712
+@x l.696
 @ @<Case of an identifier@>=@t\1\quad@>
 @y
 @ Nowadays, most computer files are encoded in some form of ``Unicode''. A very
@@ -38,7 +38,7 @@ quarter) with its two-byte encoding \.{c2 bc}.
 @<Case of an identifier@>=@t\1\quad@>
 @z
 
-@x l.717
+@x l.701
     if ((eight_bits)(*j)<0200) C_putc(*j);
 @^high-bit character handling@>
     else C_printf("%s",translit[(eight_bits)(*j)-0200]);
