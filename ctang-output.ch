@@ -12,7 +12,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 50.
 
-@x l.557
+@x l.547
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
@@ -21,13 +21,12 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     if ((C_file=fopen(output_file_name,"wb"))==NULL)
       fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
-    if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }
+    if (show_progress) { printf("\n(%s)",output_file_name); update_terminal(); }
     cur_line=1;
     stack_ptr=stack+1;
     cur_name=*an_output_file;
     cur_repl=(text_pointer)cur_name->equiv;
     cur_byte=cur_repl->tok_start;
-    cur_end=(cur_repl+1)->tok_start;
     while (stack_ptr > stack) get_output();
     flush_buffer();
 }
@@ -47,13 +46,12 @@ for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
       fatal("! Cannot open output file ",output_file_name);
 @.Cannot open output file@>
   }
-  if (show_progress) { printf("\n(%s)",output_file_name); update_terminal; }
+  if (show_progress) { printf("\n(%s)",output_file_name); update_terminal(); }
   cur_line=1;
   stack_ptr=stack+1;
   cur_name=*an_output_file;
   cur_repl=(text_pointer)cur_name->equiv;
   cur_byte=cur_repl->tok_start;
-  cur_end=(cur_repl+1)->tok_start;
   while (stack_ptr > stack) get_output();
   flush_buffer();
   if (check_for_change) {
@@ -67,7 +65,7 @@ if (check_for_change)
 
 Additional material.
 
-@x l.1553
+@x l.1547
 @** Index.
 @y
 @* Output file update. Most \CEE/ projects are controlled by a \.{Makefile}
@@ -118,7 +116,7 @@ do {
 } while(comparison && !feof(C_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
-get around a bug in some implementations of |rename|.
+get around a bug in some implementations of |rename|.@^system dependencies@>
 
 @<Create the primary output...@>=
 if(comparison)

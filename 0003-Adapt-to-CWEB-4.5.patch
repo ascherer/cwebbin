@@ -1,7 +1,7 @@
-From 3e8c31f1e457bb6e9c589a3ae7574a753033d8b6 Mon Sep 17 00:00:00 2001
+From eb98776596c3d9504243de133819946540fa609a Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Wed, 7 Jul 2021 13:57:00 +0200
-Subject: [PATCH 3/4] Adapt to CWEB 4.5.
+Subject: [PATCH 3/5] Adapt to CWEB 4.5.
 
 ---
  ctwimac.tex  | 40 ++++++++++++++++++++--------------------
@@ -190,7 +190,7 @@ index ccfd36b..c0b4fa6 100644
  \def\onmaybe{\let\ifon=\maybe} \let\maybe=\iftrue
  \newif\ifon \newif\iftitle \newif\ifpagesaved
 diff --git a/twinxmac.tex b/twinxmac.tex
-index 89e3b68..30d4449 100644
+index 89e3b68..6d9ac2f 100644
 --- a/twinxmac.tex
 +++ b/twinxmac.tex
 @@ -8,6 +8,8 @@
@@ -240,7 +240,7 @@ index 89e3b68..30d4449 100644
 +    \def\$##1{\egroup_{\rm##1}\bgroup}% suffix to constant
      \def\_{\cdot 10^{\aftergroup}}% power of ten (via dirty trick)
 -    \let\~=\oct \let\^=\hex #1}$}}
-+    \let\~=\oct \let\^=\hex \let\\=\bin {#1}$}}%$%
++    \let\~=\oct \let\^=\hex \let\\=\bin #1}$}}%$%
  \def\U{\note{This code is used in section}} % xref for use of a section
  \def\Us{\note{This code is used in sections}} % xref for uses of a section
  \let\V=\lor % logical or
@@ -266,5 +266,5 @@ index 89e3b68..30d4449 100644
  \def\normaloutput#1{\shipout\vbox{
        \vbox to 3pc{\ifodd\pageno\rightheadline\else\leftheadline\fi\vfill}
 -- 
-2.35.1
+2.41.0
 

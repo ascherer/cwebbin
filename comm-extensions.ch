@@ -39,14 +39,14 @@ boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
 
-Section 39.
+Section 36.
 
-@x l.434
+@x l.393
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
 double quotes.
-If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
+If the environment variable |CWEBINPUTS| is set, or if the compiler flag
 of the same name was defined at compile time,
 \.{CWEB} will look for include files in the directory thus named, if
 it cannot find them in the current directory.
@@ -59,16 +59,15 @@ stop reading it and start reading from the named include file.  The
 double quotes.
 The remainder of the \.{@@i} line after the file name is ignored.
 \.{CWEB} will look for include files in standard directories specified in the
-environment variable \.{CWEBINPUTS}. Multiple search paths can be specified by
+environment variable |CWEBINPUTS|. Multiple search paths can be specified by
 delimiting them with \.{PATH\_SEPARATOR}s.  The given file is searched for in
 the current directory first.  You also may include device names; these must
 have a \.{DEVICE\_SEPARATOR} as their rightmost character.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 @z
 
-@x l.467
+@x l.426
   if ((kk=getenv("CWEBINPUTS"))!=NULL) {
-@.CWEBINPUTS@>
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
     strcpy(temp_file_name,kk);
   }
@@ -86,6 +85,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     for (; k>=cur_file_name; k--) *(k+l+1)=*k;
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
+@^system dependencies@>
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
       cur_line=0; print_where=true;
       goto restart; /* success */
@@ -103,6 +103,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     if(path_prefix && *path_prefix && *path_prefix!=PATH_SEPARATOR && @|
       *--p!=DEVICE_SEPARATOR && *p!=DIR_SEPARATOR) {
       *kk++ = DIR_SEPARATOR; l++;
+@^system dependencies@>
     }
     if(k+l+2>=cur_file_name_end) too_long(); /* emergency break */
     strcpy(kk,cur_file_name);
@@ -115,9 +116,17 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   }
 @z
 
+Section 51.
+
+@x l.680
+  if (program==cweave) p->ilk=t, init_node(p);
+@y
+  if (program!=ctangle) p->ilk=t, init_node(p);
+@z
+
 Section 68.
 
-@x l.1062
+@x l.1058
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -139,7 +148,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1074
+@x l.1070
   if (history > harmless_message) return EXIT_FAILURE;
   else return EXIT_SUCCESS;
 @y
@@ -153,7 +162,7 @@ can be made sensitive to these conditions.
 
 Section 75.
 
-@x l.1155
+@x l.1150
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -162,9 +171,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-Section 75.
-
-@x l.1171
+@x l.1166
   strcpy(change_file_name,"/dev/null");
 @y
   strcpy(change_file_name,"/dev/null");
@@ -178,13 +185,11 @@ Section 75.
 @^system dependencies@>
 @z
 
-@x l.1176
-      while (*s)
+@x l.1172
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
         else s++;
 @y
-      while (*s)
         if (*s=='.') dot_pos=s++;
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,name_pos=++s;
@@ -194,7 +199,7 @@ Section 75.
 
 Section 80.
 
-@x l.1252
+@x l.1245
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   flags[(eight_bits)*dot_pos]=flag_change;
 @y
@@ -207,7 +212,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1255
+@x l.1248
 @ @<Print usage error message and quit@>=
 {
 if (program==ctangle)
@@ -259,7 +264,7 @@ character following `l', but there would have been collisions between
 
 Section 85.
 
-@x l.1292
+@x l.1285
 @** Index.
 @y
 @* Language setting.  This global variable is set by the argument of the
@@ -275,7 +280,7 @@ personal needs.  If this variable is empty, some decent defaults are used
 internally.  The following procedure takes care that these internal entries
 are appended to any setting of the environmnt variable, so you don't have
 to repeat the defaults.
-@^system dependencies@> @.CWEBINPUTS@>
+@^system dependencies@>
 
 @<Predecl...@>=
 static boolean set_path(char *,char *);@/
@@ -316,7 +321,7 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 #ifndef SEPARATORS
-#define SEPARATORS "://"
+#define SEPARATORS "://"@^system dependencies@>
 #endif
 char separators[]=SEPARATORS;
 

@@ -13,36 +13,16 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 247.
 
-@x l.4520
-if (no_xref) {
-  finish_line();
-  out_str("\\end");
-@.\\end@>
-  finish_line();
-}
+@x l.4569
+fclose(active_file);
 @y
-if (no_xref) {
-  finish_line();
-  out_str("\\end");
-@.\\end@>
-}
-@z
-
-@x l.4554
-@.\\end@>
-  finish_line();
-  fclose(active_file);
-}
-@y
-@.\\end@>
-}
-finish_line(); fclose(active_file); active_file=tex_file=NULL;
+fclose(active_file); active_file=tex_file=NULL;
 if (check_for_change) @<Update the result when it has changed@>@;
 @z
 
 Additional material.
 
-@x l.4879
+@x l.4892
 @** Index.
 @y
 @* Output file update. Most \CEE/ projects are controlled by a \.{Makefile}
@@ -85,7 +65,7 @@ do {
 } while(comparison && !feof(tex_file) && !feof(check_file));
 
 @ Note the superfluous call to |remove| before |rename|.  We're using it to
-get around a bug in some implementations of |rename|.
+get around a bug in some implementations of |rename|.@^system dependencies@>
 
 @<Take appropriate action...@>=
 if(comparison)

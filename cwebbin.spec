@@ -33,7 +33,7 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.9
+Version: 4.10
 Release: 2023
 
 # Start with CTWILL; only very few things are actually used
@@ -43,10 +43,12 @@ Source1: https://github.com/ascherer/cweb/releases/download/cweb-%{version}/cweb
 # Add CWEBbin stuff on top
 Source2: https://github.com/ascherer/cwebbin/releases/download/cwebbin-%{release}/cwebbin-%{release}.tar.gz
 
+# Patch macros from CTWILL 3.61
 Patch1: 0001-Support-extended-syntax-for-numeric-literals.patch
 Patch2: 0002-Purge-redundant-TeX-macro.patch
 Patch3: 0003-Adapt-to-CWEB-4.5.patch
 Patch4: 0004-Add-silent-datecontentspage-macro.patch
+Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
 
 %global __sed_i %{__sed} -i
 
@@ -120,6 +122,7 @@ for m in ctwill cweb; do %{__pandoc} $m.md --output $m.1; done
 	-e LCHANGES=ctwill-w2c.ch ctwill.cxx \
 	-e DCHANGES=cwebman-w2c.ch cwebbin.tex
 ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch
+ctie -m ctwill-hint.w cweave.w ctwill-w2c.ch ctwill-hint.ch
 %endif
 
 %install
@@ -127,6 +130,8 @@ ctie -m ctwill.w cweave.w ctwill-w2c.ch ctwill-mini.ch
 
 for m in proof twinx; do %{__mv} ${m}mac.tex ct${m}mac.tex; done
 %{__mv} texinputs/dproofmac.tex texinputs/dctproofmac.tex
+%{__mv} texinputs/pdfproofmac.tex texinputs/pdfctproofmac.tex
+%{__mv} proofsort ctwill-proofsort
 %{__sed_i} -e "s/\(proofmac\)/ct\1/" texinputs/dctproofmac.tex
 %{__sed_i} -e "s/\(twinxmac\)/ct\1/" twinx.w
 
@@ -139,14 +144,21 @@ do %{__sed} -e "/Web2c/ s/\\\\\[at\]/@/g" \
 done
 
 %{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
+	-e "s/\(proofsort\)/ctwill-\1/g" \
 	-e "s/\(refsort\)/ctwill-\1/g" \
 	-e "s/\(twinx\)/ctwill-\1/g" \
 	-e "s/ctwill-\(twinx-startup\)/\1/g" \
 	man/ctwill.man
 
-%{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man \
+%{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
+	-e "s/\(proofsort\)/ctwill-\1/g" \
+	-e "s/\(\# Public\)/\# \$Id\$\n\1/" \
+	-e "s/\"This is \$progname (2023)./\$progname.' \$Revision\$ \$Date\$'.\"/" \
+	ctwill-proofsort
+
+%{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man tests \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
-	*.bux *-mini.ch twinx-startup.tex \
+	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex ctwill-proofsort \
 	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 
@@ -186,6 +198,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sat Aug 19 2023 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.10
+
 * Mon May 15 2023 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.9
 

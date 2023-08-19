@@ -4,12 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, August 2022.
+# Last updated by Andreas Scherer, August 2023.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2022 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2022-2023 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -193,7 +193,7 @@ PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
 	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
-	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch
+	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch ctwill-hint.ch
 
 EXAMPLES = examples/cct.w examples/commonwords.w examples/extex-ansi.ch \
 	examples/Makefile.sas examples/matrix.w examples/primes.ch \
@@ -356,7 +356,7 @@ fullmanual: usermanual $(SOURCES) \
 	$(CWEAVE) cweave.w ctwill-doc.ch ctwill; $(MAKE) ctwill.pdf
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
-	$(TIE) -m $@ $^; $(SUBVER)
+	$(TIE) -m $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
 		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
 
@@ -365,16 +365,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # change files listed above are actually used here, so you won't see
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
 
 # for making the documentation we will have to include the change files
@@ -396,23 +396,23 @@ common.tex: common.w $(CCHANGES)
 # the resulting sources to Amiga (or MS/DOS).
 $(CCHANGES): common.w comm-patch.ch comm-extensions.ch \
 	comm-output.ch comm-i18n.ch # comm-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(HCHANGES): common.h comm-extensions.hch \
 	comm-output.hch comm-i18n.hch # comm-texlive.hch
 	$(TIE) -m $@ $^
 $(TCHANGES): ctangle.w ctang-patch.ch ctang+u.ch \
 	ctang-output.ch ctang-i18n.ch # ctang-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(WCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch # cwtw-texlive.ch cweav-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(LCHANGES): cweave.w cweav-patch.ch cweav-extensions.ch \
 	cweav-output.ch cweav-i18n.ch \
 	cweav-twill.ch # cwtw-texlive.ch ctwill-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 $(DCHANGES): cwebman.tex cwebman-patch.ch \
 	cwebman-extensions.ch # cwebman-texlive.ch
-	$(TIE) -c $@ $^; $(SUBVER)
+	$(TIE) -c $@ $^ && $(SUBVER)
 
 # be sure to leave ctangle.$(EXTENSION) and common.$(EXTENSION)
 # for bootstrapping
@@ -434,6 +434,7 @@ install: all
 	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctwill $(DESTDIR)$(BINDIR)/$(DESTPREF)twill
 	$(INSTALL) refsort $(DESTDIR)$(BINDIR)/refsort
+	$(INSTALL) proofsort $(DESTDIR)$(BINDIR)/proofsort
 	$(INSTALL) twinx $(DESTDIR)$(BINDIR)/twinx
 
 	$(INSTALL) -m 644 cweb.1 $(DESTDIR)$(MANDIR)/cweb.$(MANEXT)

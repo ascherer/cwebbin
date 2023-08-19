@@ -168,17 +168,18 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 	05 June 2022		AS	tuneup for CWEB 4.8 [2022].
 
 2023	15 May 2023		AS	tuneup for CWEB 4.9 [2023].
+	19 August 2023		AS	tuneup for CWEB 4.10 [2023].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.30
-\def\title{CTANGLE (Version 4.9)}
+\def\title{CTANGLE (Version 4.10)}
 @y
 \def\title{CTANGLE (@VERSION@)}
 @z
 
 @x l.34
-  \centerline{(Version 4.9)}
+  \centerline{(Version 4.10)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -194,7 +195,7 @@ z
 Section 1.
 
 @x l.64
-@d banner "This is CTANGLE (Version 4.9)"
+@d banner "This is CTANGLE (Version 4.10)"
 @y
 @d banner "This is CTANGLE (@VERSION@)"
 @z
@@ -209,7 +210,7 @@ Section 3.
 
 Addendum.
 
-@x l.1553
+@x l.1547
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

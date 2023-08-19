@@ -1,14 +1,31 @@
+Formatting changes for CTWILL by Andreas Scherer
+This file is in the Public Domain.
+
+This extensive set of changes is my best attempt to format CTWILL with
+itself in DVI or PDF format, i.e., with the '[pdf]ctwimac.tex' macros. This
+produces output with 'mini-indexes' on each spread of pages.
+
+Apply these additional changes in the following two-step procedure:
+First create 'ctwill-w2c.ch' that mogrifies CWEAVE into CTWILL:
+$ tie -c ctwill-w2c.ch \
+> cweave.w cweav-{patch,extensions,output,i18n,twill}.ch \
+> cwtw-texlive.ch ctwill-texlive.ch
+Then create 'ctwill.w' that gets processed with TeX (plain, pdfTeX, XeTeX):
+$ ctie -m ctwill.w \
+> cweave.w ctwill-w2c.ch ctwill-mini.ch
+
 Section 1.
 
 @x
 @** Introduction.
 @y
-\ifacro \ifx\undefined\pdfpagewidth\else
+\ifx\undefined\pdfpagewidth
+\else
   \pdfpagewidth=\pagewd \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageht \advance\pdfpageheight by 5cm
   \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
   \else \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
-\fi\fi
+\fi
 
 @** Introduction.
 @z
@@ -43,6 +60,13 @@ faithful overall rendering of {\itt CTWILL}'s code, though. \hfill
 The ``banner line'' defined here should be changed whenever \.{CTWILL} is
 @-banner@>
 @$banner {CTWILL}1 =\.{"This\ is\ CTWILL"}@>
+
+@$ctangle {CTWILL}3 \&{enum} \&{cweb}@>
+@$ctwill {CTWILL}3 \&{enum} \&{cweb}@>
+@$cweave {CTWILL}3 \&{enum} \&{cweb}@>
+
+@$inner {CTWILL}223 \&{enum} \&{mode}@>
+@$outer {CTWILL}223 \&{enum} \&{mode}@>
 @z
 
 Section 2.
@@ -52,11 +76,17 @@ Section 2.
 @y
 @r @ \.{CWEAVE} has a fairly straightforward outline.  It operates in
 @%
-@$show_banner {CTWILL}14 =\\{flags}[\.{'b'}]@>
-@$show_progress {CTWILL}14 =\\{flags}[\.{'p'}]@>
+@$show_banner {CTWILL}15 =\\{flags}[\.{'b'}]@>
+@$show_progress {CTWILL}15 =\\{flags}[\.{'p'}]@>
 @z
 
-Section 4.
+Section 5.
+
+@x
+For backward compatibility with pre-{\mc ANSI} compilers, we replace the
+@y
+And we replace the
+@z
 
 @x
 @d _(s) gettext(s)
@@ -67,25 +97,25 @@ Section 4.
 @-HAVE_GETTEXT@>
 @z
 
-Section 5.
-
-@x
-@d compress(c) if (loc++<=limit) return c
-@y
-@d compress(c) if (loc++<=limit) return c
-@-c@>
-@z
-
 Section 6.
 
 @x
-@ Code related to input routines:
+@d compress(c) if (loc++<=limit) return c
 @y
-@ Code related to input routines:
+@d compress(c) if (loc++<=limit) return c
 @-c@>
 @z
 
 Section 7.
+
+@x
+@ Code related to input routines:
+@y
+@ Code related to input routines:
+@-c@>
+@z
+
+Section 8.
 
 @x
 @d cur_line line[include_depth] /* number of current line in current file */
@@ -94,12 +124,12 @@ Section 7.
 @-cur_file@>
 @-cur_file_name@>
 @-cur_line@>
-@$cur_file {CTWILL}7 =\\{file}[\\{include\_depth}]@>
-@$cur_file_name {CTWILL}7 =\hfil\break\\{file\_name}[\\{include\_depth}]@>
-@$cur_line {CTWILL}7 =\\{line}[\\{include\_depth}]@>
+@$cur_file {CTWILL}8 =\\{file}[\\{include\_depth}]@>
+@$cur_file_name {CTWILL}8 =\hfil\break\\{file\_name}[\\{include\_depth}]@>
+@$cur_line {CTWILL}8 =\\{line}[\\{include\_depth}]@>
 @z
 
-Section 10.
+Section 11.
 
 @x
 @ Code related to identifier and section name storage:
@@ -109,12 +139,14 @@ Section 10.
 @-llink@>
 @-rlink@>
 @-root@>
-@$llink {CTWILL}10 =\\{link}@>
-@$rlink {CTWILL}10 =\\{dummy}.\\{Rlink}@>
-@$root {CTWILL}10 =\\{name\_dir}$\MG$\\{rlink}@>
+@-ilk@>
+@$llink {CTWILL}11 =\\{link}@>
+@$rlink {CTWILL}11 =\\{dummy}.\\{Rlink}@>
+@$root {CTWILL}11 =\\{name\_dir}$\MG$\\{rlink}@>
+@$ilk {CTWILL}11 =\\{dummy}.\\{Ilk}@>
 @z
 
-Section 12.
+Section 13.
 
 @x
 @ Code related to error handling:
@@ -123,7 +155,7 @@ Section 12.
 @-s@>
 @z
 
-Section 14.
+Section 15.
 
 @x
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
@@ -135,15 +167,15 @@ extern const char *use_language; /* prefix to \.{ctwimac.tex} in \TEX/ output */
 @-show_stats@>
 @-make_xrefs@>
 @-check_for_change@>
-@$show_banner {CTWILL}14 =\\{flags}[\.{'b'}]@>
-@$show_progress {CTWILL}14 =\\{flags}[\.{'p'}]@>
-@$show_happiness {CTWILL}14 =\\{flags}[\.{'h'}]@>
-@$show_stats {CTWILL}14 =\\{flags}[\.{'s'}]@>
-@$make_xrefs {CTWILL}14 =\\{flags}[\.{'x'}]@>
-@$check_for_change {CTWILL}14 =\\{flags}[\.{'c'}]@>
+@$show_banner {CTWILL}15 =\\{flags}[\.{'b'}]@>
+@$show_progress {CTWILL}15 =\\{flags}[\.{'p'}]@>
+@$show_happiness {CTWILL}15 =\\{flags}[\.{'h'}]@>
+@$show_stats {CTWILL}15 =\\{flags}[\.{'s'}]@>
+@$make_xrefs {CTWILL}15 =\\{flags}[\.{'x'}]@>
+@$check_for_change {CTWILL}15 =\\{flags}[\.{'c'}]@>
 @z
 
-Section 15.
+Section 16.
 
 @x
 @ Code related to output:
@@ -154,19 +186,17 @@ Section 15.
 @-c@>
 @-update_terminal@>
 @-new_line@>
-@$update_terminal {CTWILL}15 =\\{fflush}(\\{stdout})@>
-@$new_line {CTWILL}15 =\\{putchar}(\.{'\\n'})@>
-@z
-
-Section 16.
-
-@x
-@ The procedure that gets everything rolling:
-@y
-@r @ The procedure that gets everything rolling:
+@$update_terminal {CTWILL}16 =\\{fflush}(\\{stdout})@>
+@$new_line {CTWILL}16 =\\{putchar}(\.{'\\n'})@>
 @z
 
 Section 17.
+
+@x
+@ The following parameters are sufficient to handle \TEX/ (converted to
+@y
+@r @ The following parameters are sufficient to handle \TEX/ (converted to
+@z
 
 @x
 @d long_buf_size (buf_size+longest_name) /* for \.{CWEAVE} */
@@ -183,8 +213,6 @@ Section 20.
 @y
 @* Data structures exclusive to {\tt CWEAVE}.
 @-a@>
-@-ilk@>
-@$ilk {CTWILL}20 =\\{dummy}.\\{Ilk}@>
 @z
 
 Section 21.
@@ -256,7 +284,7 @@ Section 42.
 
 CTWILL hickups on comment and produces unmatched '$' in mini-index.
 
-@x l.646
+@x
 skip_TeX(void) /* skip past pure \TEX/ code */
 @y
 skip_TeX(void)
@@ -389,28 +417,33 @@ Section 53.
 @-t@>
 @z
 
-Section 55.
+Section 54.
 
 @x
-@ @<Get a bin...@>={
+@ @<Get a hex...@>={
 @y
-@r @ @<Get a bin...@>={
+@r @ @<Get a hex...@>={
 @z
 
-Section 58.
+Section 57.
 
 @x
-@ @<Get a wide...@>={
+      else {
 @y
-@r @ @<Get a wide...@>={
+      else
 @z
 
-Section 63.
+@x
+      }
+@y
+@z
+
+Section 64.
 
 @x
-@ @<If end of name...@>=
+@ This function skips over a restricted context at relatively high speed.
 @y
-@r @ @<If end of name...@>=
+@r @ This function skips over a restricted context at relatively high speed.
 @z
 
 Section 65.
@@ -652,13 +685,13 @@ The raw input is converted into scraps according to the following table,
 \yskip\halign{\quad#\hfil&\quad#\hfil&\quad\hfil#\hfil\cr
 @z
 
-@x l.2137
+@x
 \.{\\hbox\{}\thinspace stuff\/\thinspace\.\} to the following scrap.
 @y
 \.{\\hbox\{}\thinspace stuff\/\thinspace\.\} to the following scrap.
 
 \smallskip
-*The \.{\\,} (thin space) is omitted in ``inner \TeX\ mode.''
+*The \.{\\,} (thin space) is omitted in ``|inner| \TeX\ mode.''
 @z
 
 Sections 117--125.
@@ -973,14 +1006,12 @@ the category codes |pp->cat,@,@,(pp+1)->cat|$,\,\,\ldots\,$
 the category codes |pp->cat|, |(pp+1)->cat|, $\,\ldots\,$
 @z
 
-Section 127.
-
 @x
-@ @d trans trans_plus.Trans /* translation texts of scraps */
+@d trans trans_plus.Trans /* translation texts of scraps */
 @y
-@ @d trans trans_plus.Trans /* translation texts of scraps */
+@d trans trans_plus.Trans /* translation texts of scraps */
 @-trans@>
-@$trans {CTWILL}127 =\\{trans\_plus}.\\{Trans}@>
+@$trans {CTWILL}126 =\\{trans\_plus}.\\{Trans}@>
 @z
 
 Section 128.
@@ -999,6 +1030,7 @@ Section 129.
 @ Token lists in |@!tok_mem| are composed of the following kinds of
 @y
 @ Token lists in |@!tok_mem| are composed of the following kinds of
+@-DEBUG@>
 @-p@>
 @-res_flag@>
 @-section_flag@>
@@ -1008,6 +1040,15 @@ Section 129.
 @$section_flag {CTWILL}129 =$\T{3}*\\{id\_flag}$@>
 @$tok_flag {CTWILL}129 =$\T{3}*\\{id\_flag}$@>
 @$inner_tok_flag {CTWILL}129 =$\T{4}*\\{id\_flag}$@>
+@z
+
+Section 130.
+
+@x
+@c
+@y
+@c
+@-DEBUG@>
 @z
 
 Section 132.
@@ -1257,6 +1298,14 @@ scrap_pointer p)
     return; /* this happens, for example, in \&{case} \\{found}: */
 @z
 
+Section 141.
+
+@x
+  while (q != xmem) {
+@y
+  while (q != xmem) { @+
+@z
+
 Section 143.
 
 @x
@@ -1317,7 +1366,7 @@ if (cat1==if_like || cat1==else_like || cat1==define_like) @/
 
 Section 178.
 
-@x l.3017
+@x
       app(opt); app('9'); reduce(pp,4,langle,0,153);
     }
     else reduce(pp,4,cast,-1,154);
@@ -1329,7 +1378,7 @@ Section 178.
 
 Section 179.
 
-@x l.3028
+@x
   big_app1_insert(pp,' '); reduce(pp,2,struct_like,0,155);
 }
 else reduce(pp,0,raw_int,0,91);
@@ -1556,12 +1605,18 @@ Section 224.
 @-cur_end@>
 @-cur_tok@>
 @-cur_mode@>
-@$cur_end {CTWILL}224 =\\{cur\_state}.\\{end\_field}]@>
-@$cur_tok {CTWILL}224 =\\{cur\_state}.\\{tok\_field}]@>
-@$cur_mode {CTWILL}224 =\\{cur\_state}.\\{mode\_field}]@>
+@$cur_end {CTWILL}224 =\\{cur\_state}.\\{end\_field}@>
+@$cur_tok {CTWILL}224 =\\{cur\_state}.\\{tok\_field}@>
+@$cur_mode {CTWILL}224 =\\{cur\_state}.\\{mode\_field}@>
 @z
 
 Section 227.
+
+@x
+@ To insert token-list |p| into the output, the |push_level| subroutine
+@y
+@r @ To insert token-list |p| into the output, the |push_level| subroutine
+@z
 
 @x
 push_level( /* suspends the current level */
@@ -1577,11 +1632,10 @@ Section 228.
 
 @x
 force when the current level was begun. This subroutine will never be
-called when |stack_ptr==1|.
+called when |stack_ptr==1|. It is so simple, we declare it as a macro:
 @y
-force when the current level was begun.
-
-This subroutine will never be called when |stack_ptr==1|.
+force when the current level was begun.  It is so simple, we declare it as a
+macro.  This subroutine will never be called when |stack_ptr==1|.
 @z
 
 Section 233--234.
@@ -1820,6 +1874,14 @@ Section 261.
 @-footnote@>
 @z
 
+Section 264.
+
+@x
+@** Phase three processing.
+@y
+@r @** Phase three processing.
+@z
+
 Section 265.
 
 @x
@@ -1898,16 +1960,26 @@ Section 278.
   next_name=sort_ptr->head;
 @y
 @ @<Split the list...@>= {@+
-  int c;
+  int c; @+
   next_name=sort_ptr->head;@/
 @z
 
 Section 279.
 
 @x
+@ @<Output index...@>= {
   cur_name=sort_ptr->head;
 @y
-  @+cur_name=sort_ptr->head;@/
+@ @<Output index...@>= { @+
+  cur_name=sort_ptr->head;@/
+@z
+
+Section 281.
+
+@x
+  else {out_str("\\["); out_section(cur_val-def_flag); out(']');}
+@y
+  else {@+out_str("\\["); out_section(cur_val-def_flag); out(']');@+}
 @z
 
 Section 285.
@@ -1924,7 +1996,7 @@ Section 287.
 @x
   puts(_("\nMemory usage statistics:"));
 @.Memory usage statistics:@>
-  printf(_("%td names (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),@^system dependencies@>
             (ptrdiff_t)(name_ptr-name_dir),(long)max_names);
   printf(_("%td cross-references (out of %ld)\n"),
             (ptrdiff_t)(xref_ptr-xmem),(long)max_refs);
@@ -1950,7 +2022,7 @@ Section 287.
 @y
   puts(_("\nMemory usage statistics:"));@/
 @.Memory usage statistics:@>
-  printf(_("%td names (out of %ld)\n"),
+  printf(_("%td names (out of %ld)\n"),@^system dependencies@>
             (ptrdiff_t)(name_ptr-name_dir),@/
             @t\5\5\5\5@>(long)max_names);@/
   printf(_("%td cross-references (out of %ld)\n"),
@@ -2119,16 +2191,6 @@ Section 315.
 @-out_mini@>
 @z
 
-Section 316.
-
-@x
-@ Compare this code with section |@<Output the name...@>|.
-
-@<Mini-output...@>=
-@y
-@ @<Mini-output...@>=
-@z
-
 Section 318.
 
 @x
@@ -2159,6 +2221,15 @@ Section 322.
 @z
 
 Section 328.
+
+@x l.102 of CTWILL-TEXLIVE.CH
+@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
+@y
+@d kpse_find_cweb(name) kpse_find_file(name,kpse_cweb_format,true)
+@-name@>
+@z
+
+Section 330.
 
 @x
 @** Index.

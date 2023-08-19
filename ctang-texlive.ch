@@ -9,16 +9,16 @@
 
 Material in limbo.
 
-@x l.30 and l.169 of CTANG-PATCH.CH
+@x l.30 and CTANG-PATCH.CH
 \def\title{CTANGLE (@VERSION@)}
 @y
-\def\title{CTANGLE (Version 4.9 [\TeX~Live])}
+\def\title{CTANGLE (Version 4.10 [\TeX~Live])}
 @z
 
-@x l.34 and l.175 of CTANG-PATCH.CH
+@x l.34 and CTANG-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.9 [\TeX~Live])}
+  \centerline{(Version 4.10 [\TeX~Live])}
 @z
 
 @x l.36
@@ -35,10 +35,10 @@ Material in limbo.
 
 Section 1.
 
-@x l.64 and l.188 of CTANG-PATCH.CH and l.17 of CTANG-I18N.CH
+@x l.64 and CTANG-PATCH.CH and CTANG-I18N.CH
 @d banner _("This is CTANGLE (@VERSION@)")
 @y
-@d banner "This is CTANGLE, Version 4.9"
+@d banner "This is CTANGLE, Version 4.10"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 
@@ -52,7 +52,7 @@ Section 2.
 
 Sections 2--18.
 
-@x l.101 and l.199 of CTANG-PATCH.CH
+@x l.101 and CTANG-PATCH.CH
 @i comm-foo.h
 @y
 @i comm-w2c.h
@@ -70,7 +70,7 @@ Section 20.
 
 Appendix.
 
-@x l.1553
+@x l.1547
 @** Index.
 @y
 @* Print ``version'' information.

@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, COMM-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for COMMON.W, Version 4.9.
+It is a changefile for COMMON.W, Version 4.10.
 
 Technically, COMM-FOO.CH is constructed from a multitude of separate change
 files by applying Klaus Guntermann's TIE processor.  Any comments (like this
@@ -34,7 +34,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile COMMON.W.
 
-Copyright (C) 1993-1995,1998,2000,2005,2018-2022 Andreas Scherer
+Copyright (C) 1993-1995,1998,2000,2005,2018-2023 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -184,17 +184,18 @@ p21	29 October 2005	AS	ANSI C++ patches to patch level [p21].
 	05 June 2022		AS	Tuneup for CWEB 4.8 [2022].
 
 2023	15 May 2023		AS	Tuneup for CWEB 4.9 [2023].
+	19 August 2023		AS	Tuneup for CWEB 4.10 [2023].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.25
-\def\title{Common code for CTANGLE and CWEAVE (Version 4.9)}
+\def\title{Common code for CTANGLE and CWEAVE (Version 4.10)}
 @y
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @z
 
 @x l.30
-  \centerline{(Version 4.9)}
+  \centerline{(Version 4.10)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -217,8 +218,8 @@ Section 2.
 
 Section 85.
 
-@x l.1292
-@** Index.
+@x l.1285
+@* Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
 improved features that have been created by numerous contributors over the

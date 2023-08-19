@@ -8,27 +8,25 @@ previous results are not destroyed.
 
 For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
-Section 6.
+Section 14.
 
-@x l.115
-extern char change_file_name[]; /* name of change file */
-@y
-extern char change_file_name[]; /* name of change file */
-extern char check_file_name[]; /* name of |check_file| */
-@z
-
-Section 13.
-
-@x l.201
+@x l.209
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
 @d make_xrefs flags['x'] /* should cross references be output? */
 @d check_for_change flags['c'] /* check temporary output for changes */
 @z
 
-Section 14.
+@x l.217
+extern char scn_file_name[]; /* name of |scn_file| */
+@y
+extern char scn_file_name[]; /* name of |scn_file| */
+extern char check_file_name[]; /* name of |check_file| */
+@z
 
-@x l.222
+Section 15.
+
+@x l.230
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */

@@ -9,21 +9,21 @@
 Section 2.
 
 @x
-@<Common code...@>=
+@<Common code...@>=@^system dependencies@>
 typedef bool boolean;
 @y
 @s boolean bool
-@<Common code...@>=
+@<Common code...@>=@^system dependencies@>
 @z
 
-Section 3.
+Section 4.
 
 @x
 internationalization.
 @y
 internationalization.
 For backward compatibility with pre-{\mc ANSI} compilers, we replace the
-``standard'' header file `\.{stdbool.h}' with the
+``standard'' header file `\.{stdbool.h}' with the@^system dependencies@>
 {\mc KPATHSEA\spacefactor1000} interface `\.{simpletypes.h}'.
 @z
 
@@ -33,7 +33,7 @@ For backward compatibility with pre-{\mc ANSI} compilers, we replace the
 #include <kpathsea/simpletypes.h> /* |@!boolean|, |@!true| and |@!false| */
 @z
 
-Section 6.
+Section 7.
 
 @x
 @d max_file_name_length 60
@@ -41,13 +41,21 @@ Section 6.
 @d max_file_name_length 1024
 @z
 
-Section 15.
-
-@x l.227
-extern void print_stats(void);
+@x
+extern int line[]; /* number of current line in the stacked files */
 @y
-extern void print_stats(void);@/
-extern void cb_show_banner(void);
+extern char *found_filename; /* filename found by |kpse_find_file| */
+extern int line[]; /* number of current line in the stacked files */
+@z
+
+Section 13.
+
+@x
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
+@y
+extern void cb_show_banner(void); /* copy |banner| back to \.{common.w} */
+@#
+extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
 @z
 
 Section 16.
