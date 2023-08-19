@@ -13,7 +13,7 @@ Material in limbo.
 \def\title{CTWILL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{CTWILL (Version 4.9 [\TeX~Live])}
+\def\title{CTWILL (Version 4.10 [\TeX~Live])}
 @z
 
 Section 1.
@@ -21,7 +21,7 @@ Section 1.
 @x l.69 of CWEAV-TWILL.CH
 @d banner _("This is CTWILL (@VERSION@)")
 @y
-@d banner "This is CTWILL, Version 4.9"
+@d banner "This is CTWILL, Version 4.10"
   /* will be extended by the \TeX~Live |versionstring| */
 @z
 

@@ -4,7 +4,7 @@
 [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
 and donald e. knuth's [ctwill program](http://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
-drop](https://github.com/ascherer/cweb/releases/download/cweb-4.9/cweb-4.9.tar.gz)
+drop](https://github.com/ascherer/cweb/releases/download/cweb-4.10/cweb-4.10.tar.gz)
 and [the secondary *ctwill* source
 drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
@@ -23,11 +23,11 @@ a set of change files to introduce advanced features. see the extensive
 
 ## manual compilation
 
-extract `ctwill.tar.gz` and add the contents of `cweb-4.9.tar.gz` (overwriting
+extract `ctwill.tar.gz` and add the contents of `cweb-4.10.tar.gz` (overwriting
 outdated source files `Makefile`, `common.h`, `common.w`, and `prod.w`) and
 `cwebbin-2023.tar.gz` for the full set of source files.
 replace `@@VERSION@@` in line 129 of the `Makefile.unix` with something like
-`Version 4.9 [CWEBbin 2023]`.
+`Version 4.10 [CWEBbin 2023]`.
 `touch *.cxx`.
 unix/linux users should work with [`make -f Makefile.unix`](Makefile.unix)
 exclusively (targets `boot`, `cautiously`, and `all`).
@@ -47,7 +47,7 @@ clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-4.9.tar.gz cweb-4.9
+git archive -o cweb-4.10.tar.gz cweb-4.10
 git archive -o cwebbin-2023.tar.gz cwebbin-2023
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
@@ -96,5 +96,5 @@ macros, and cweb include files.
 updated versions of **cweb** are added to the texlive source tree with
 ```
 cd /path/to/texlive-source/texk/web2c/cwebdir
-pax -rzf /path/to/cweb-4.9.tar.gz
+pax -rzf /path/to/cweb-4.10.tar.gz
 ```
