@@ -181,10 +181,10 @@ As an example of a real program written in \.{CWEB}, \Appendix A
 @z
 ------------------------------------------------------------------------------
 @x l.1190
-Appendix B is the file that sets \TEX/ up to accept
+Appendix B displays the files that set \TEX/ up to accept
 the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 @y
-\Appendix B is the file that sets \TEX/ up to accept
+\Appendix B displays the files that set \TEX/ up to accept
 the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 @z
 ------------------------------------------------------------------------------
