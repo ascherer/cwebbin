@@ -168,19 +168,19 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 and l.68 of CWEBMAN-EXTENSIONS.CH.
+@x l.1181 and l.68 of CWEBMAN-EXTENSIONS.CH.
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
 \cwebfootnote{\TeX~Live comes with an up-to-date
 @z
 ------------------------------------------------------------------------------
-@x l.1180
+@x l.1185
 As an example of a real program written in \.{CWEB}, Appendix~A
 @y
 As an example of a real program written in \.{CWEB}, \Appendix A
 @z
 ------------------------------------------------------------------------------
-@x l.1185
+@x l.1190
 Appendix B is the file that sets \TEX/ up to accept
 the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 @y
@@ -188,7 +188,7 @@ the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 @z
 ------------------------------------------------------------------------------
-@x l.1197
+@x l.1202
 \section Appendix A: Excerpts from a \.{CWEB} Program.
 @y
 \def\subsections{4}
@@ -196,28 +196,28 @@ the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 \subsection CWEB file format.
 @z
 ------------------------------------------------------------------------------
-@x l.1201
+@x l.1206
 generated sections 27--31 of the file \.{common.w}, which contains
 @y
 generated sections 27--31 of the file
 \pdfURL{\.{common.w}}{common.pdf}, which contains
 @z
 ------------------------------------------------------------------------------
-@x l.1272
+@x l.1277
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------
-@x l.1339
+@x l.1345
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 \subsection Translation by CWEAVE.
 @z
 ------------------------------------------------------------------------------
-@x l.1419
+@x l.1434
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 
 And here's what the same excerpt looks like when typeset.
@@ -234,7 +234,7 @@ And here's what the same excerpt looks like when typeset.
 \def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 @z
 ------------------------------------------------------------------------------
-@x l.1501
+@x l.1516
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
@@ -243,7 +243,7 @@ And here's what the same excerpt looks like when typeset.
 \ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1595 and l.86 of CWEBMAN-PATCH.CH
+@x l.1618 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(Version 4.10)\}{ }\\vfill\}}\cr}$$
