@@ -88,12 +88,18 @@ exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1710
+@x l.1734
 if you have a duplex printer. Appendices D, E, and F of the complete
+version of this manual are printed using a commented-out option that
+substitutes `$\gets$' for `$=$' in the program listings. Looking at those
 @y
 if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{E}{ctangle.pdf}, and \pdfURL{F}{cweave.pdf}\cwebfootnote{And
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
+version of this manual are printed using a commented-out option that
+substitutes `$\gets$' for `$=$' in the program listings.\cwebfootnote{They
+also make use of the alternative format for \CEE/ comments.}
+Looking at those
 @z
 ------------------------------------------------------------------------------
 @x l.1762
