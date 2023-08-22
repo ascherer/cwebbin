@@ -671,11 +671,14 @@ flush_buffer(out_ptr,false,false);
 out_str("\\fi"); finish_line();
 @.\\fi@>
 @y
-finish_line(); out_str("\\mini"); finish_line();
+finish_line();
+if (temp_meaning_ptr>temp_meaning_stack || top_usage!=usage_sentinel) {
+  out_str("\\mini"); finish_line();
 @.\\mini@>
-@<Output information about usage of id's defined in other sections@>@;
-out_str("}\\FI"); finish_line();
+  @<Output information about usage of id's defined in other sections@>@;
+  out_str("}\\FI"); finish_line();
 @.\\FI@>
+}
 @z
 
 @x l.4536
