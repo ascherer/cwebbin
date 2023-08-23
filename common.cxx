@@ -371,7 +371,7 @@ char check_file_name[max_file_name_length];
 boolean flags[128];
 
 /*:73*//*83:*/
-#line 1266 "common.w"
+#line 1268 "common.w"
 
 FILE*C_file;
 FILE*tex_file;
@@ -380,7 +380,7 @@ FILE*scn_file;
 #line 462 "comm-foo.ch"
 FILE*active_file;
 FILE*check_file;
-#line 1272 "common.w"
+#line 1274 "common.w"
 
 #line 479 "comm-foo.ch"
 /*:83*//*86:*/
@@ -571,7 +571,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 else if((tex_file= fopen(tex_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
 }
-#line 1284 "common.w"
+#line 1286 "common.w"
 
 #line 497 "comm-foo.ch"
 /*:84*/
@@ -1395,7 +1395,7 @@ change_file_name[max_file_name_length-2]= '\0';
 #line 1167 "common.w"
  while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
-#line 1244 "common.w"
+#line 1246 "common.w"
 
 #line 415 "comm-foo.ch"
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
@@ -1403,7 +1403,7 @@ if(*dot_pos=='l'){
 use_language= ++dot_pos;
 break;
 }else flags[(eight_bits)*dot_pos]= flag_change;
-#line 1247 "common.w"
+#line 1249 "common.w"
 
 #line 435 "comm-foo.ch"
 /*:80*/
@@ -1427,7 +1427,7 @@ if(s-*argv> max_file_name_length-5)
 /*82:*/
 #line 456 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1261 "common.w"
+#line 1263 "common.w"
 
 
 /*:82*/
@@ -1441,8 +1441,10 @@ strcpy(web_file_name,*argv);
 }
 sprintf(alt_web_file_name,"%s.web",*argv);
 sprintf(tex_file_name,"%s.tex",name_pos);
+if(make_xrefs){
 sprintf(idx_file_name,"%s.idx",name_pos);
 sprintf(scn_file_name,"%s.scn",name_pos);
+}
 sprintf(C_file_name,"%s.c",name_pos);
 found_web= true;
 }
@@ -1451,7 +1453,7 @@ found_web= true;
 #line 1176 "common.w"
 
 else if(!found_change)/*78:*/
-#line 1212 "common.w"
+#line 1214 "common.w"
 
 {
 if(strcmp(*argv,"-")!=0){
@@ -1459,11 +1461,11 @@ if(s-*argv> max_file_name_length-4)
 /*82:*/
 #line 456 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1261 "common.w"
+#line 1263 "common.w"
 
 
 /*:82*/
-#line 1216 "common.w"
+#line 1218 "common.w"
 
 if(dot_pos==NULL)
 sprintf(change_file_name,"%s.ch",*argv);
@@ -1476,18 +1478,18 @@ found_change= true;
 #line 1177 "common.w"
 
 else if(!found_out)/*79:*/
-#line 1224 "common.w"
+#line 1226 "common.w"
 
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
 #line 456 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
-#line 1261 "common.w"
+#line 1263 "common.w"
 
 
 /*:82*/
-#line 1227 "common.w"
+#line 1229 "common.w"
 
 if(dot_pos==NULL){
 sprintf(tex_file_name,"%s.tex",*argv);
@@ -1525,7 +1527,7 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1259 "common.w"
+#line 1261 "common.w"
 
 #line 456 "comm-foo.ch"
 /*:81*/
@@ -1551,7 +1553,7 @@ _("! Usage: ctwill [options] "
 "webfile[.w] [{changefile[.ch]|-} [outfile[.tex]]]\n")
 ,"");
 }
-#line 1259 "common.w"
+#line 1261 "common.w"
 
 #line 456 "comm-foo.ch"
 /*:81*/
