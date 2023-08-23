@@ -62,7 +62,7 @@ to suppress the extra space globally.}
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
-@x l.1176 Add Appendix G, the CTWILL source code.
+@x l.1181 Add Appendix G, the CTWILL source code.
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
 the program sources at
@@ -72,7 +72,7 @@ the program sources at
 \.{ctwill} executable -- and its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
-@x l.1191
+@x l.1196
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
@@ -88,15 +88,21 @@ exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1710
+@x l.1733
 if you have a duplex printer. Appendices D, E, and F of the complete
+version of this manual are printed using a commented-out option that
+substitutes `$\gets$' for `$=$' in the program listings. Looking at those
 @y
 if you have a duplex printer. Appendices \pdfURL{D}{common.pdf},
 \pdfURL{E}{ctangle.pdf}, and \pdfURL{F}{cweave.pdf}\cwebfootnote{And
 \pdfURL{Appendix~G}{ctwill.pdf}.} of the complete
+version of this manual are printed using a commented-out option that
+substitutes `$\gets$' for `$=$' in the program listings.\cwebfootnote{They
+also make use of the alternative format for \CEE/ comments.}
+Looking at those
 @z
 ------------------------------------------------------------------------------
-@x l.1762
+@x l.1785
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject
