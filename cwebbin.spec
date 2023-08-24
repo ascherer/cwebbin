@@ -16,7 +16,8 @@ Packager: Andreas Scherer <https://ascherer.github.io>
 %if "%{_vendor}" == "debbuild"
 Group: tex
 Distribution: Kubuntu 22.04 (x86_64)
-Requires: texlive, gettext
+Requires: texlive
+Recommends: gettext
 BuildRequires: pandoc
 %if %{with texlive}
 BuildRequires: pax
