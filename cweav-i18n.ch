@@ -40,9 +40,9 @@ Section 57.
 @z
 
 @x l.914
-    fputs("\n! String too long: ",stdout);
+    printf("%s","\n! String too long: ");
 @y
-    fputs(_("\n! String too long: "),stdout);
+    printf("%s",_("\n! String too long: "));
 @z
 
 Section 59.
@@ -62,9 +62,9 @@ Section 62.
 @z
 
 @x l.984
-  fputs("\n! Section name too long: ",stdout);
+  printf("%s","\n! Section name too long: ");
 @y
-  fputs(_("\n! Section name too long: "),stdout);
+  printf("%s",_("\n! Section name too long: "));
 @z
 
 Section 63.
@@ -136,18 +136,18 @@ Section 79.
 Section 82.
 
 @x l.1305
-      fputs("\n! Never defined: <",stdout);
+      printf("%s","\n! Never defined: <");
       print_section_name(p); putchar('>'); mark_harmless();
 @y
-      fputs(_("\n! Never defined: <"),stdout);
+      printf("%s",_("\n! Never defined: <"));
       print_section_name(p); putchar('>'); mark_harmless();
 @z
 
 @x l.1311
-      fputs("\n! Never used: <",stdout);
+      printf("%s","\n! Never used: <");
       print_section_name(p); putchar('>'); mark_harmless();
 @y
-      fputs(_("\n! Never used: <"),stdout);
+      printf("%s",_("\n! Never used: <"));
       print_section_name(p); putchar('>'); mark_harmless();
 @z
 
@@ -282,17 +282,17 @@ Section 211.
 Section 224.
 
 @x l.4133
-  fputs("\n! Illegal control code in section name: <",stdout);
+  printf("%s","\n! Illegal control code in section name: <");
 @y
-  fputs(_("\n! Illegal control code in section name: <"),stdout);
+  printf("%s",_("\n! Illegal control code in section name: <"));
 @z
 
 Section 225.
 
 @x l.4148
-    fputs("\n! C text in section name didn't end: <",stdout);
+    printf("%s","\n! C text in section name didn't end: <");
 @y
-    fputs(_("\n! C text in section name didn't end: <"),stdout);
+    printf("%s",_("\n! C text in section name didn't end: <"));
 @z
 
 @x l.4160
@@ -312,9 +312,9 @@ Section 226.
 Section 227.
 
 @x l.4183
-if (show_progress) fputs("\nWriting the output file...",stdout);
+if (show_progress) printf("%s","\nWriting the output file...");
 @y
-if (show_progress) fputs(_("\nWriting the output file..."),stdout);
+if (show_progress) printf("%s",_("\nWriting the output file..."));
 @z
 
 Section 232.
@@ -374,9 +374,9 @@ Section 241.
 Section 247.
 
 @x l.4534
-  if (show_progress) fputs("\nWriting the index...",stdout);
+  if (show_progress) printf("%s","\nWriting the index...");
 @y
-  if (show_progress) fputs(_("\nWriting the index..."),stdout);
+  if (show_progress) printf("%s",_("\nWriting the index..."));
 @z
 
 @x l.4545
@@ -392,9 +392,9 @@ Section 247.
 @z
 
 @x l.4572
-  fputs("Done.",stdout);
+  printf("%s","Done.");
 @y
-  fputs(_("Done."),stdout);
+  printf("%s",_("Done."));
 @z
 
 Section 258.
