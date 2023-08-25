@@ -647,7 +647,7 @@ a-= 024000;
 if((a+name_dir)->equiv!=(void*)text_info)push_level(a+name_dir);
 else if(a!=0){
 #line 40 "ctang-foo.ch"
-fputs(_("\n! Not present: <"),stdout);
+printf("%s",_("\n! Not present: <"));
 #line 405 "ctangle.w"
 print_section_name(a+name_dir);err_print(">");
 
@@ -709,7 +709,7 @@ output_defs();
 
 if(text_info->text_link==macro&&cur_out_file==end_output_files){
 #line 52 "ctang-foo.ch"
-fputs(_("\n! No program text was specified."),stdout);mark_harmless();
+printf("%s",_("\n! No program text was specified."));mark_harmless();
 #line 519 "ctangle.w"
 
 }
@@ -989,7 +989,7 @@ strcpy(check_file_name,"");
 if(show_happiness){
 if(show_progress)new_line();
 #line 66 "ctang-foo.ch"
-fputs(_("Done."),stdout);
+printf("%s",_("Done."));
 #line 537 "ctangle.w"
 }
 }
@@ -1325,7 +1325,7 @@ if(++id_loc<=section_text_end)*id_loc= (char)c;
 }
 if(id_loc>=section_text_end){
 #line 202 "ctang-foo.ch"
-fputs(_("\n! String too long: "),stdout);
+printf("%s",_("\n! String too long: "));
 #line 1022 "ctangle.w"
 
 term_write(section_text+1,25);
@@ -1422,7 +1422,7 @@ c= (eight_bits)' ';if(*(k-1)==' ')k--;
 }
 if(k>=section_text_end){
 #line 238 "ctang-foo.ch"
-fputs(_("\n! Section name too long: "),stdout);
+printf("%s",_("\n! Section name too long: "));
 #line 1117 "ctangle.w"
 
 term_write(section_text+1,25);

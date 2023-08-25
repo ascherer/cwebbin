@@ -1147,12 +1147,12 @@ p= (c==less?p->llink:p->rlink);
 }else{
 if(r!=NULL){
 #line 259 "comm-foo.ch"
-fputs(_("\n! Ambiguous prefix: matches <"),stdout);
+printf("%s",_("\n! Ambiguous prefix: matches <"));
 #line 887 "common.w"
 
 print_prefix_name(p);
 #line 265 "comm-foo.ch"
-fputs(_(">\n and <"),stdout);
+printf("%s",_(">\n and <"));
 #line 890 "common.w"
 print_prefix_name(r);
 err_print(">");
@@ -1186,7 +1186,7 @@ switch(section_name_cmp(&first,name_len,r)){
 case prefix:
 if(!ispref){
 #line 271 "comm-foo.ch"
-fputs(_("\n! New name is a prefix of <"),stdout);
+printf("%s",_("\n! New name is a prefix of <"));
 #line 916 "common.w"
 
 print_section_name(r);
@@ -1200,7 +1200,7 @@ extend_section_name(r,first,last+1,ispref);
 break;
 case bad_extension:
 #line 277 "comm-foo.ch"
-fputs(_("\n! New name extends <"),stdout);
+printf("%s",_("\n! New name extends <"));
 #line 928 "common.w"
 
 print_section_name(r);
@@ -1208,12 +1208,12 @@ err_print(">");
 break;
 default:
 #line 283 "comm-foo.ch"
-fputs(_("\n! Section name incompatible with <"),stdout);
+printf("%s",_("\n! Section name incompatible with <"));
 #line 934 "common.w"
 
 print_prefix_name(r);
 #line 289 "comm-foo.ch"
-fputs(_(">,\n which abbreviates <"),stdout);
+printf("%s",_(">,\n which abbreviates <"));
 #line 937 "common.w"
 print_section_name(r);
 err_print(">");
@@ -1266,7 +1266,7 @@ void
 err_print(
 const char*s)
 {
-*s=='!'?printf("\n%s",s):printf("%s",s);
+printf(*s=='!'?"\n%s":"%s",s);
 if(web_file_open)/*67:*/
 #line 1031 "common.w"
 
@@ -1300,7 +1300,7 @@ update_terminal();mark_error();
 #line 1064 "common.w"
 
 int wrap_up(void){
-if(show_progress)new_line();
+if(show_progress||show_happiness||history!=spotless)new_line();
 if(show_stats)
 print_stats();
 #line 327 "comm-foo.ch"
@@ -1351,7 +1351,7 @@ void
 fatal(
 const char*s,const char*t)
 {
-if(*s)err_print(s);
+if(*s)printf("%s",s);
 err_print(t);
 history= fatal_message;exit(wrap_up());
 }
