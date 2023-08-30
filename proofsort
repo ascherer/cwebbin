@@ -8,13 +8,18 @@ use File::Basename;
 use Getopt::Long qw(:config no_ignore_case bundling);
 use Pod::Usage;
 
-my $progname = basename $0;
+my $progname;
 my $collator;
 
 BEGIN {
+  $progname = basename $0;
   # Unicode::Collate has been around a long time,
   # but it's not part of core Perl.
-  $collator = Unicode::Collate->new() if (eval { require Unicode::Collate; });
+  my $rc = eval {
+    require Unicode::Collate;
+    $collator = Unicode::Collate->new();
+  };
+  die "$progname: the Unicode::Collate module is required\n" unless $rc;
 }
 
 # We expect a TeX file as the single command-line parameter.
