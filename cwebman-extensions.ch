@@ -62,6 +62,14 @@ to suppress the extra space globally.}
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
+@x l.1172 Add HintView homepage.
+from \.{https://hint.userweb.mwn.de/hint/hintview.html}.
+@y
+from
+\pdfURL{\.{https://hint.userweb.mwn.de/hint/hintview.html}}%
+          {https://hint.userweb.mwn.de/hint/hintview.html}.%
+@z
+------------------------------------------------------------------------------
 @x l.1181 Add Appendix G, the CTWILL source code.
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
