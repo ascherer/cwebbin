@@ -68,20 +68,20 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.38
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.10)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.11)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
 @x l.52
-\vskip 18pt\centerline{(Version 4.10 --- August 2023)}
+\vskip 18pt\centerline{(Version 4.11 --- September 2023)}
 @y
-\vskip 18pt\centerline{(Version 4.10 --- August 2023)%
+\vskip 18pt\centerline{(Version 4.11 --- September 2023)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
 @x l.1618
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.10)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z

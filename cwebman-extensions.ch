@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2022.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, September 2023.
 
 This set of changes describes several extensions to the standard behavior of
 the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.

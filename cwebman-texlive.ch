@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2023.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, September 2023.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -20,7 +20,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \ifacro
   \pdfpagewidth=\pagewidth \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageheight \advance\pdfpageheight by 3cm
-  \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
+  \ifpdflua \pdfhorigin=1cm \pdfvorigin=1cm
   \else \advance\pdfpageheight by 1cm \global\pageshift=-1.54cm
     \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
 \fi
@@ -31,10 +31,10 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \outer\def\section #1.{\penalty-500\bigskip
         \centerline{\sectionfont\def\.##1{{\twelvett##1}}
   \ifacro\vbox to 0pt{\kern-2.5ex\relax
-    \ifpdftex\pdfdest num \destcount fitbh\relax
+    \ifpdflua\pdfdest num \destcount fitbh\relax
     \else\special{pdf: dest (\the\destcount) [ @thispage /FitBH @ypos ]}\fi
     \def\.##1{##1}\def\TeX{TeX}%
-    \ifpdftex\pdfoutline goto num \destcount
+    \ifpdflua\pdfoutline goto num \destcount
       \ifnum\subsections>0 count -\subsections\fi {#1}\relax
     \else\special{pdf: outline 0 << /Title (#1)
       /A << /S /GoTo /D (\the\destcount) >> >>}\fi
@@ -49,7 +49,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\appC{17}
 
 \def\Appendix#1{\leavevmode
-  \ifacro\ifpdftex
+  \ifacro\ifpdflua
     \pdfstartlink attr{/Border[0 0 0]} goto num\csname app#1\endcsname\relax
     \Blue\hbox{Appendix}~#1\Black
     \pdfendlink
@@ -63,7 +63,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \newcount\subdestcount \subdestcount=151\relax
 
 \outer\def\subsection #1.{\ifacro
-    \ifpdftex\pdfdest num \subdestcount fitbh\relax
+    \ifpdflua\pdfdest num \subdestcount fitbh\relax
       \pdfoutline goto num \subdestcount {#1}\relax
     \else\special{pdf: dest (\the\subdestcount) [ @thispage /FitBH @ypos ]}%
       \special{pdf: outline 1 << /Title (#1)
@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.10 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.11 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.10 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.11 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -164,7 +164,7 @@ Sometimes things don't work as smoothly, and you get a bunch of
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
-\ifpdftex\ifnum\pdfoutput>0\pdftrue\fi\fi
+\ifpdflua\ifnum\pdfoutput>0\pdftrue\fi\fi
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
@@ -239,13 +239,13 @@ And here's what the same excerpt looks like when typeset.
 @y
 \vfil\eject\titletrue
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
-\ifpdftex\ifnum\pdfoutput>0 \pdftrue\fi\fi
+\ifpdflua\ifnum\pdfoutput>0 \pdftrue\fi\fi
 \ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
 @x l.1618 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.10)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------
