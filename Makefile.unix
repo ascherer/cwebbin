@@ -142,6 +142,7 @@ PDFTEX = dvipdfm
 #PDFTEX = xetex
 #PDFTEX = pdftex
 #PDFTEX = hitex
+#PDFTEX = luatex
 
 ##########  You shouldn't have to change anything after this point #######
 
@@ -251,6 +252,8 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 			TEXINPUTS=.//: pdftex $* ;; \
 		hitex ) TEXINPUTS=.//: hitex $* ; \
 			TEXINPUTS=.//: hitex $* ;; \
+		luatex ) TEXINPUTS=.//: luatex $* ; \
+			TEXINPUTS=.//: luatex $* ;; \
 	esac
 
 .ref.sref: refsort
