@@ -2077,8 +2077,11 @@ with the original ``\&{271.~Index}.''
 
 @q Section 2->272. @>
 @* {\tentex CTWILL} user manual.
+Here is a sort of user manual for \.{CTWILL}---which is exactly like
 @y
 @** Mogrify {\tentex CWEAVE} into {\tentex CTWILL}.
+Here is a sort of user manual for \.{CTWILL}%
+\ifluatex, \else---\fi which is exactly like
 @-s@>
 @z
 
