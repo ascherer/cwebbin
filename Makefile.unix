@@ -217,7 +217,7 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
       $(CTWILLPATCH) $(CWEBMANPATCH) $(PATCH) $(EXAMPLES) $(I18N) \
       $(INCLUDE) $(MACROS) $(VAULT)
 
-.SUFFIXES: .dvi .tex .w .pdf .ref .sref
+.SUFFIXES: .dvi .tex .w .pdf .ref .sref .hnt
 
 .w.tex:
 	$(CWEAVE) $*
@@ -243,6 +243,10 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 	$(MAKE) $*.tex
 	$(MAKE) $*.pdf
 
+.w.hnt:
+	$(MAKE) $*.tex
+	$(MAKE) $*.hnt
+
 .tex.pdf:
 	case "$(PDFTEX)" in \
 		dvipdfm ) TEXINPUTS=.//: tex "\let\pdf+ \input $*"; dvipdfm $* ;; \
@@ -250,10 +254,14 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 			TEXINPUTS=.//: xetex "\let\pdf+ \input $*" ;; \
 		pdftex ) TEXINPUTS=.//: pdftex $* ; \
 			TEXINPUTS=.//: pdftex $* ;; \
-		hitex ) TEXINPUTS=.//: hitex $* ; \
-			TEXINPUTS=.//: hitex $* ;; \
 		luatex ) TEXINPUTS=.//: luatex $* ; \
 			TEXINPUTS=.//: luatex $* ;; \
+	esac
+
+.tex.hnt:
+	case "$(PDFTEX)" in \
+		hitex ) TEXINPUTS=.//: hitex $* ; \
+			TEXINPUTS=.//: hitex $* ;; \
 	esac
 
 .ref.sref: refsort
