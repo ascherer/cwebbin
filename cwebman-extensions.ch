@@ -117,3 +117,15 @@ Looking at those
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @z
 ------------------------------------------------------------------------------
+@x l.1797
+\vfill\end
+@y
+\point 21. With modern \TeX\ engines like `\.{luatex}', `\.{pdftex}', and
+`\.{xetex}' (but \\{not} with classic `\.{tex}') you can say `\.{\\input
+pdfwebtocfront}' as the last command in limbo and run \TeX\ \\{twice} on your
+woven document, in order to shift the table-of-contents to the front of the
+{\mc PDF} output.
+
+\vfill\end
+@z
+------------------------------------------------------------------------------
