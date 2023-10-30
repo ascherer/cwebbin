@@ -167,7 +167,7 @@ done
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
 	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex \
 	ctwill-proofsort twill-refsort \
-	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
+	-L -wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 
 %else
