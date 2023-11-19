@@ -233,7 +233,7 @@ improved features that have been created by numerous contributors over the
 course of a quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
-material should nicely integrate with the original ``\&{271.~Index}.''
+material should nicely integrate with the original ``\&{270.~Index}.''
 
 @** Index.
 @z
