@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% August 19, 2023
+% December 02, 2023
 
 # NAME
 
@@ -9,7 +9,7 @@ ctwill, proofsort, refsort, twinx - translate CWEB to TeX with mini-indexes
 # SYNOPSIS
 
 **ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]] \
-**proofsort** _texfile_.tex > _texfile_-sorted.tex \
+**proofsort** < _texfile_.tex > _texfile_-sorted.tex \
 **refsort** < _indexfile_.ref > _indexfile_.sref \
 **twinx** _outfile_.tex [_outfile_.tex ...] > index.tex
 
@@ -83,7 +83,7 @@ This _proofmode_ format is used in conjunction with **pdfproofmac.tex** that
 creates active hyperlinks in PDF and HINT output. You can use **proofsort** to
 get the index entries in alphabetical order; just invoke
 
-* **proofsort** _texfile_.tex > _texfile_-sorted.tex
+* **proofsort** < _texfile_.tex > _texfile_-sorted.tex
 * **mv** _texfile_-sorted.tex _texfile_.tex
 
 after invoking **ctwill** (twice), but before invoking TeX (once).
@@ -100,7 +100,7 @@ The present incarnation of **ctwill** and its utilities tries hard to be a
 drop-in replacement for the original package.  There are, however, a few
 differences worth noting:
 
-* This version is based on the most recent version of CWEB (4.10).
+* This version is based on the most recent version of CWEB (4.11).
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and

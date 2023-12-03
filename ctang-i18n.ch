@@ -36,9 +36,9 @@ Section 34.
 Section 40.
 
 @x l.404
-    fputs("\n! Not present: <",stdout);
+    printf("%s","\n! Not present: <");
 @y
-    fputs(_("\n! Not present: <"),stdout);
+    printf("%s",_("\n! Not present: <"));
 @z
 
 Section 47.
@@ -52,9 +52,9 @@ Section 47.
 Section 48.
 
 @x l.518
-    fputs("\n! No program text was specified.",stdout); mark_harmless();
+    printf("%s","\n! No program text was specified."); mark_harmless();
 @y
-    fputs(_("\n! No program text was specified."),stdout); mark_harmless();
+    printf("%s",_("\n! No program text was specified.")); mark_harmless();
 @z
 
 @x l.524
@@ -66,9 +66,9 @@ Section 48.
 @z
 
 @x l.536
-      fputs("Done.",stdout);
+      printf("%s","Done.");
 @y
-      fputs(_("Done."),stdout);
+      printf("%s",_("Done."));
 @z
 
 Section 50.
@@ -116,9 +116,9 @@ Section 74.
 @z
 
 @x l.1021
-    fputs("\n! String too long: ",stdout);
+    printf("%s","\n! String too long: ");
 @y
-    fputs(_("\n! String too long: "),stdout);
+    printf("%s",_("\n! String too long: "));
 @z
 
 Section 75.
@@ -158,9 +158,9 @@ Section 79.
 @z
 
 @x l.1116
-  fputs("\n! Section name too long: ",stdout);
+  printf("%s","\n! Section name too long: ");
 @y
-  fputs(_("\n! Section name too long: "),stdout);
+  printf("%s",_("\n! Section name too long: "));
 @z
 
 Section 80.

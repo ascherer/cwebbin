@@ -16,9 +16,11 @@ Packager: Andreas Scherer <https://ascherer.github.io>
 %if "%{_vendor}" == "debbuild"
 Group: tex
 Distribution: Kubuntu 22.04 (x86_64)
-Requires: texlive, pandoc, gettext
+Requires: texlive
+Recommends: gettext
+BuildRequires: pandoc
 %if %{with texlive}
-Requires: pax
+BuildRequires: pax
 %endif
 %if %{with doc}
 BuildRequires: texlive
@@ -33,7 +35,7 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.10
+Version: 4.11
 Release: 2023
 
 # Start with CTWILL; only very few things are actually used
@@ -156,10 +158,16 @@ done
 	-e "s/\"This is \$progname (2023)./\$progname.' \$Revision\$ \$Date\$'.\"/" \
 	ctwill-proofsort
 
+%{__sed_i} -e "s/\(refsort\)/twill-\1/g" \
+	-e "s/\(\# Public\)/\# \$Id\$\n\1/" \
+	-e "s/\"This is \$progname (2023)./\$progname.' \$Revision\$ \$Date\$'.\"/" \
+	twill-refsort
+
 %{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man tests \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
-	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex ctwill-proofsort \
-	-wzf %{getenv:PWD}/cweb-texlive.tar.gz \
+	*.bux *-mini.ch ctwill-hint.ch twinx-startup.tex \
+	ctwill-proofsort twill-refsort \
+	-L -wzf %{getenv:PWD}/cweb-texlive.tar.gz \
 	-s ,^man,texk/web2c/man, -s ,^,texk/web2c/cwebdir/,
 
 %else
@@ -198,6 +206,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Sat Dec 02 2023 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.11
+
 * Sat Aug 19 2023 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.10
 

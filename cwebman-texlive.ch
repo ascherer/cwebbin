@@ -1,4 +1,4 @@
-CHANGES for CWEBMAN.TEX by Andreas Scherer, August 2023.
+CHANGES for CWEBMAN.TEX by Andreas Scherer, September 2023.
 
 This set of changes adapts CWEBMAN.TEX for TeX Live.  It requires that the
 change files CWEBMAN-PATCH.CH and CWEBMAN-EXTENSIONS.CH be applied first.
@@ -20,7 +20,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \ifacro
   \pdfpagewidth=\pagewidth \advance\pdfpagewidth by 2cm
   \pdfpageheight=\pageheight \advance\pdfpageheight by 3cm
-  \ifpdftex \pdfhorigin=1cm \pdfvorigin=1cm
+  \ifpdflua \pdfhorigin=1cm \pdfvorigin=1cm
   \else \advance\pdfpageheight by 1cm \global\pageshift=-1.54cm
     \global\hoffset=-1.54cm \global\voffset=-1.54cm \fi
 \fi
@@ -31,10 +31,10 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \outer\def\section #1.{\penalty-500\bigskip
         \centerline{\sectionfont\def\.##1{{\twelvett##1}}
   \ifacro\vbox to 0pt{\kern-2.5ex\relax
-    \ifpdftex\pdfdest num \destcount fitbh\relax
-    \else\special{pdf: dest (\the\destcount) [ @thispage /FitBH @ypos ]}\fi
+    \ifpdflua\pdfdest num \destcount fith\relax
+    \else\special{pdf: dest (\the\destcount) [ @thispage /FitH @ypos ]}\fi
     \def\.##1{##1}\def\TeX{TeX}%
-    \ifpdftex\pdfoutline goto num \destcount
+    \ifpdflua\pdfoutline goto num \destcount
       \ifnum\subsections>0 count -\subsections\fi {#1}\relax
     \else\special{pdf: outline 0 << /Title (#1)
       /A << /S /GoTo /D (\the\destcount) >> >>}\fi
@@ -49,7 +49,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\appC{17}
 
 \def\Appendix#1{\leavevmode
-  \ifacro\ifpdftex
+  \ifacro\ifpdflua
     \pdfstartlink attr{/Border[0 0 0]} goto num\csname app#1\endcsname\relax
     \Blue\hbox{Appendix}~#1\Black
     \pdfendlink
@@ -63,9 +63,9 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \newcount\subdestcount \subdestcount=151\relax
 
 \outer\def\subsection #1.{\ifacro
-    \ifpdftex\pdfdest num \subdestcount fitbh\relax
+    \ifpdflua\pdfdest num \subdestcount fith\relax
       \pdfoutline goto num \subdestcount {#1}\relax
-    \else\special{pdf: dest (\the\subdestcount) [ @thispage /FitBH @ypos ]}%
+    \else\special{pdf: dest (\the\subdestcount) [ @thispage /FitH @ypos ]}%
       \special{pdf: outline 1 << /Title (#1)
         /A << /S /GoTo /D (\the\subdestcount) >> >>}\fi
     \global\advance\subdestcount by 1\relax
@@ -76,13 +76,13 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}}
-\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.10 [\TeX~Live])}
+\def\runninghead{{\tentt CWEB} USER MANUAL (Version 4.11 [\TeX~Live])}
 @z
 ------------------------------------------------------------------------------
 @x l.80 of CWEBMAN-PATCH.CH
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @y
-\footnote*{This document describes the extended \.{CWEB} (Version 4.10 [\TeX~Live]).}}
+\footnote*{This document describes the extended \.{CWEB} (Version 4.11 [\TeX~Live]).}}
 @z
 ------------------------------------------------------------------------------
 @x l.86
@@ -164,31 +164,31 @@ Sometimes things don't work as smoothly, and you get a bunch of
 @y
 `$\\{main}(\\{argc},\39\\{argv}{}$)'.
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
-\ifpdftex\ifnum\pdfoutput>0\pdftrue\fi\fi
+\ifpdflua\ifnum\pdfoutput>0\pdftrue\fi\fi
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 and l.68 of CWEBMAN-EXTENSIONS.CH.
+@x l.1181 and l.68 of CWEBMAN-EXTENSIONS.CH.
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
 \cwebfootnote{\TeX~Live comes with an up-to-date
 @z
 ------------------------------------------------------------------------------
-@x l.1180
+@x l.1185
 As an example of a real program written in \.{CWEB}, Appendix~A
 @y
 As an example of a real program written in \.{CWEB}, \Appendix A
 @z
 ------------------------------------------------------------------------------
-@x l.1185
-Appendix B is the file that sets \TEX/ up to accept
+@x l.1190
+Appendix B displays the files that set \TEX/ up to accept
 the output of \.{CWEAVE}, and Appendix~C discusses how to use some of those
 @y
-\Appendix B is the file that sets \TEX/ up to accept
+\Appendix B displays the files that set \TEX/ up to accept
 the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 @z
 ------------------------------------------------------------------------------
-@x l.1197
+@x l.1202
 \section Appendix A: Excerpts from a \.{CWEB} Program.
 @y
 \def\subsections{4}
@@ -196,28 +196,28 @@ the output of \.{CWEAVE}, and \Appendix C discusses how to use some of those
 \subsection CWEB file format.
 @z
 ------------------------------------------------------------------------------
-@x l.1201
+@x l.1206
 generated sections 27--31 of the file \.{common.w}, which contains
 @y
 generated sections 27--31 of the file
 \pdfURL{\.{common.w}}{common.pdf}, which contains
 @z
 ------------------------------------------------------------------------------
-@x l.1272
+@x l.1277
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CTANGLE}}
 \subsection Translation by CTANGLE.
 @z
 ------------------------------------------------------------------------------
-@x l.1339
+@x l.1345
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 @y
 \def\runninghead{APPENDIX A --- TRANSLATION BY {\tentt CWEAVE}}
 \subsection Translation by CWEAVE.
 @z
 ------------------------------------------------------------------------------
-@x l.1419
+@x l.1434
 \def\runninghead{APPENDIX A --- FINAL DOCUMENT}
 
 And here's what the same excerpt looks like when typeset.
@@ -234,18 +234,18 @@ And here's what the same excerpt looks like when typeset.
 \def\C#1{\5\5\quad$\triangleright\,${\cmntfont#1}$\,\triangleleft$}
 @z
 ------------------------------------------------------------------------------
-@x l.1501
+@x l.1516
 \vfil\eject\titletrue
 @y
 \vfil\eject\titletrue
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
-\ifpdftex\ifnum\pdfoutput>0 \pdftrue\fi\fi
+\ifpdflua\ifnum\pdfoutput>0 \pdftrue\fi\fi
 \ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1595 and l.86 of CWEBMAN-PATCH.CH
+@x l.1618 and l.86 of CWEBMAN-PATCH.CH
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @y
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.10)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
 @z
 ------------------------------------------------------------------------------

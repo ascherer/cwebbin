@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEBMAN-FOO.CH, is part of CWEBBIN (@VERSION@).  It is a
-changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.10, that
+changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.11, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
@@ -68,20 +68,20 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.38
-\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.10)}
+\def\runninghead{{\tentt CWEB} USER MANUAL (VERSION 4.11)}
 @y
 \def\runninghead{{\tentt CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
 @x l.52
-\vskip 18pt\centerline{(Version 4.10 --- August 2023)}
+\vskip 18pt\centerline{(Version 4.11 --- December 2023)}
 @y
-\vskip 18pt\centerline{(Version 4.10 --- August 2023)%
+\vskip 18pt\centerline{(Version 4.11 --- December 2023)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
-@x l.1600
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.10)\}{ }\\vfill\}}\cr}$$
+@x l.1618
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z

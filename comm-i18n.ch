@@ -171,52 +171,54 @@ Section 58.
 Section 60.
 
 @x l.886
-      fputs("\n! Ambiguous prefix: matches <",stdout);
+      printf("%s","\n! Ambiguous prefix: matches <");
 @y
-      fputs(_("\n! Ambiguous prefix: matches <"),stdout);
+      printf("%s",_("\n! Ambiguous prefix: matches <"));
 @z
 
 @x l.889
-      fputs(">\n and <",stdout);
+      printf("%s",">\n and <");
 @y
-      fputs(_(">\n and <"),stdout);
+      printf("%s",_(">\n and <"));
 @z
 
 Section 62.
 
 @x l.915
-      fputs("\n! New name is a prefix of <",stdout);
+      printf("%s","\n! New name is a prefix of <");
 @y
-      fputs(_("\n! New name is a prefix of <"),stdout);
+      printf("%s",_("\n! New name is a prefix of <"));
 @z
 
 @x l.927
-      fputs("\n! New name extends <",stdout);
+      printf("%s","\n! New name extends <");
 @y
-      fputs(_("\n! New name extends <"),stdout);
+      printf("%s",_("\n! New name extends <"));
 @z
 
 @x l.933
-    fputs("\n! Section name incompatible with <",stdout);
+    printf("%s","\n! Section name incompatible with <");
 @y
-    fputs(_("\n! Section name incompatible with <"),stdout);
+    printf("%s",_("\n! Section name incompatible with <"));
 @z
 
 @x l.936
-    fputs(">,\n which abbreviates <",stdout);
+    printf("%s",">,\n which abbreviates <");
 @y
-    fputs(_(">,\n which abbreviates <"),stdout);
+    printf("%s",_(">,\n which abbreviates <"));
 @z
 
 Section 67.
 
 @x l.1034
   printf(". (l. %d of change file)\n", change_line);
-else if (include_depth==0) printf(". (l. %d)\n", cur_line);
+else if (cur_line>0) {
+  if (include_depth==0) printf(". (l. %d)\n", cur_line);
   else printf(". (l. %d of include file %s)\n", cur_line, cur_file_name);
 @y
   printf(_(". (l. %d of change file)\n"), change_line);
-else if (include_depth==0) printf(_(". (l. %d)\n"), cur_line);
+else if (cur_line>0) {
+  if (include_depth==0) printf(_(". (l. %d)\n"), cur_line);
   else printf(_(". (l. %d of include file %s)\n"), cur_line, cur_file_name);
 @z
 
