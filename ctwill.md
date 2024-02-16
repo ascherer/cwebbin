@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% February 14, 2024
+% February 16, 2024
 
 # NAME
 
@@ -83,7 +83,7 @@ This _proofmode_ format is used in conjunction with **pdfproofmac.tex** that
 creates active hyperlinks in PDF and HINT output. You can use **proofsort** to
 get the index entries in alphabetical order; just invoke
 
-* ( **proofsort** < _texfile_.tex ) 1<> _texfile_.tex
+( **proofsort** < _texfile_.tex ) 1<> _texfile_.tex
 
 after invoking **ctwill** (twice), but before invoking TeX (once).
 
