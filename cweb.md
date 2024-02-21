@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% August 20, 2022
+% February 21, 2024
 
 # NAME
 
@@ -94,7 +94,7 @@ There is one other option applicable to **ctangle** only:
 * **+k**:
   keep separators in numeric literals in the output
 * **+u**:
-  transliterate UTF-8 charcters in C code
+  transliterate UTF-8 characters in C code
 
 There are seven other options applicable to **cweave** only:
 
