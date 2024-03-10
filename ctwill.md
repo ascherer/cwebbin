@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% February 16, 2024
+% March 10, 2024
 
 # NAME
 
@@ -139,6 +139,8 @@ In fact, the options are processed from left to right, so a sequence like
   do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
   do not force a newline after every C/C++\ statement in output
+* **-F**:
+  do not force a compound statement to start on a new line
 * **-i**:
   suppress indentation of parameter declarations
 * **-o**:

@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% February 21, 2024
+% Marxch 10, 2024
 
 # NAME
 
@@ -89,19 +89,21 @@ The first batch of options are common to both **ctangle** and **cweave**:
 * **\-\-version**:
   output version information and exit
 
-There is one other option applicable to **ctangle** only:
+There are two other options applicable to **ctangle** only:
 
 * **+k**:
   keep separators in numeric literals in the output
 * **+u**:
   transliterate UTF-8 characters in C code
 
-There are seven other options applicable to **cweave** only:
+There are eight other options applicable to **cweave** only:
 
 * **-e**:
   do not enclose C/C++\ material in **\\PB{...}**
 * **-f**:
   do not force a newline after every C/C++\ statement in output
+* **-F**:
+  do not force a compound statement to start on a new line
 * **-i**:
   suppress indentation of parameter declarations
 * **-o**:
