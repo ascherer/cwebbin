@@ -1348,16 +1348,16 @@ else if (cat1==attr) {
 @+ else @/ if (cat1==attr) {
 @z
 
-Section 166.
+Section 170.
 
 @x
 @d force_lines flags['f'] /* should each statement be on its own line? */
 @d force_first flags['F'] /* should compound statement start on new line? */
 @y
 @d force_lines flags['f'] /* should each statement be on its own line? */
-@-force_lines@> @$force_lines {CTWILL}166 =\\{flags}[\.{'f'}]@>
+@-force_lines@> @$force_lines {CTWILL}170 =\\{flags}[\.{'f'}]@>
 @d force_first flags['F'] /* should compound statement start on new line? */
-@-force_first@> @$force_first {CTWILL}166 =\\{flags}[\.{'F'}]@>
+@-force_first@> @$force_first {CTWILL}170 =\\{flags}[\.{'F'}]@>
 @z
 
 Section 173.
