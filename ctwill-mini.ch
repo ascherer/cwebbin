@@ -1343,40 +1343,29 @@ Section 164.
 }
 else if (cat1==attr) {
 @y
-  else reduce(pp,0,else_like,0,65);
+  @+else reduce(pp,0,else_like,0,65);
 }
 @+ else @/ if (cat1==attr) {
 @z
 
-Section 170.
+Section 166.
 
 @x
 @d force_lines flags['f'] /* should each statement be on its own line? */
 @d force_first flags['F'] /* should compound statement start on new line? */
-
-@<Set init...@>=
-force_lines=force_first=true;
 @y
 @d force_lines flags['f'] /* should each statement be on its own line? */
-@-force_lines@> @$force_lines {CTWILL}170 =\\{flags}[\.{'f'}]@>
+@-force_lines@> @$force_lines {CTWILL}166 =\\{flags}[\.{'f'}]@>
 @d force_first flags['F'] /* should compound statement start on new line? */
-@-force_first@> @$force_first {CTWILL}170 =\\{flags}[\.{'F'}]@>
-
-@<Set init...@>=@+force_lines=force_first=true;
+@-force_first@> @$force_first {CTWILL}166 =\\{flags}[\.{'F'}]@>
 @z
 
 Section 173.
 
 @x
-if (cat1==if_like || cat1==else_like || cat1==define_like)
-@y
-if (cat1==if_like || cat1==else_like || cat1==define_like) @/
-@z
-
-@x
 } else if (cat1==exp || cat1==function) {
 @y
-} else @/ if (cat1==exp || cat1==function) {
+} @+ else @/ if (cat1==exp || cat1==function) {
 @z
 
 Section 178.
