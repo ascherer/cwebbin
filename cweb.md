@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% Marxch 10, 2024
+% March 10, 2024
 
 # NAME
 
