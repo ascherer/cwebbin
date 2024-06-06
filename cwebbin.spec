@@ -62,6 +62,8 @@ Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
 %global __pandoc %{_bindir}/pandoc \\\
 	--standalone --from markdown+all_symbols_escapable --to man
 
+%global __fcl /opt/github/Extern/texlive-source/texk/web2c/tests/fix-changefile-lines.py
+
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
 and Donald Knuth for Literate Programming in C/C++.
@@ -104,6 +106,15 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 	-e LCHANGES=ctwill-w2c.ch ctwill-w2c.ch \
 	-e DCHANGES=cwebman-w2c.ch cwebman-w2c.ch \
 	prod-cweave.w prod-twill.w
+
+%{__fcl} common.w comm-w2c.ch > comm-lines.ch
+%{__sed_i} -e "/^Old:/,/^$/d" comm-lines.ch ; mv comm-lines.ch comm-w2c.ch
+%{__fcl} ctangle.w ctang-w2c.ch > ctang-lines.ch
+%{__sed_i} -e "/^Old:/,/^$/d" ctang-lines.ch ; mv ctang-lines.ch ctang-w2c.ch
+%{__fcl} cweave.w cweav-w2c.ch > cweav-lines.ch
+%{__sed_i} -e "/^Old:/,/^$/d" cweav-lines.ch ; mv cweav-lines.ch cweav-w2c.ch
+%{__fcl} cweave.w ctwill-w2c.ch > ctwill-lines.ch
+%{__sed_i} -e "/^Old:/,/^$/d" ctwill-lines.ch ; mv ctwill-lines.ch ctwill-w2c.ch
 
 %else
 
