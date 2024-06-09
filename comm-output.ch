@@ -72,7 +72,7 @@ else {
 New material after section 85.
 
 @x l.1285
-@** Index.
+@* Index.
 @y
 @* Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
 that automatically takes care of the temporal dependecies between the different
@@ -123,5 +123,5 @@ if(check_file) fclose(check_file);
 if(strlen(check_file_name)) /* Delete the temporary file in case of a break */
    remove(check_file_name);
 
-@** Index.
+@* Index.
 @z

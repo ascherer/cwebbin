@@ -265,7 +265,7 @@ character following `l', but there would have been collisions between
 Section 85.
 
 @x l.1285
-@** Index.
+@* Index.
 @y
 @* Language setting.  This global variable is set by the argument of the
 `\.{+l}' (or `\.{-l}') command-line option.
@@ -325,5 +325,5 @@ char *p, *path_prefix, *next_path_prefix;
 #endif
 char separators[]=SEPARATORS;
 
-@** Index.
+@* Index.
 @z
