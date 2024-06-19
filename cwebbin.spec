@@ -107,14 +107,14 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 	-e DCHANGES=cwebman-w2c.ch cwebman-w2c.ch \
 	prod-cweave.w prod-twill.w
 
-%{__fcl} common.w comm-w2c.ch > comm-lines.ch
-%{__sed_i} -e "/^Old:/,/^$/d" comm-lines.ch ; mv comm-lines.ch comm-w2c.ch
-%{__fcl} ctangle.w ctang-w2c.ch > ctang-lines.ch
-%{__sed_i} -e "/^Old:/,/^$/d" ctang-lines.ch ; mv ctang-lines.ch ctang-w2c.ch
-%{__fcl} cweave.w cweav-w2c.ch > cweav-lines.ch
-%{__sed_i} -e "/^Old:/,/^$/d" cweav-lines.ch ; mv cweav-lines.ch cweav-w2c.ch
-%{__fcl} cweave.w ctwill-w2c.ch > ctwill-lines.ch
-%{__sed_i} -e "/^Old:/,/^$/d" ctwill-lines.ch ; mv ctwill-lines.ch ctwill-w2c.ch
+%{__fcl} common.w comm-w2c.ch > comm-lines.ch 2>/dev/null
+mv comm-lines.ch comm-w2c.ch
+%{__fcl} ctangle.w ctang-w2c.ch > ctang-lines.ch 2>/dev/null
+mv ctang-lines.ch ctang-w2c.ch
+%{__fcl} cweave.w cweav-w2c.ch > cweav-lines.ch 2>/dev/null
+mv cweav-lines.ch cweav-w2c.ch
+%{__fcl} cweave.w ctwill-w2c.ch > ctwill-lines.ch 2>/dev/null
+mv ctwill-lines.ch ctwill-w2c.ch
 
 %else
 
