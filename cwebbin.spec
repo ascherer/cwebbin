@@ -62,7 +62,7 @@ Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
 %global __pandoc %{_bindir}/pandoc \\\
 	--standalone --from markdown+all_symbols_escapable --to man
 
-%{?with_texlive:%global __fcl %(dirname %(locate /bibtex.web))/tests/fix-changefile-lines.py}
+%{?with_texlive:%global __fcl %(dirname %(locate /bibtex.web))/tests/fix-changefile-lines.py --init}
 
 %description
 The 'CWEBbin' package is an extension of the 'CWEB' package by Silvio Levy
