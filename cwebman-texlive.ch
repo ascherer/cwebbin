@@ -10,6 +10,7 @@ For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 \pdffalse\acrohintfalse
 @y
 \input cwebmac
+\ifhint \input hiplainpage \fi
 @z
 ------------------------------------------------------------------------------
 @x l.32
