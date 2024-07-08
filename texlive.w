@@ -16,4 +16,3 @@
 
 @q Please send comments, suggestions, etc. to tex-k@@tug.org.            @>
 
-@x

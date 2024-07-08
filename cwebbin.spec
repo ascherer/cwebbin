@@ -98,7 +98,7 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 %build
 %if %{with texlive}
 
-%{__make} SUBVER="sed -i -e '1r texlive.w' -e '1d' \$@" \
+%{__make} SUBVER="sed -i -e '1 {r texlive.w' -e 'N;}' \$@" \
 	-e CCHANGES=comm-w2c.ch comm-w2c.ch \
 	-e HCHANGES=comm-w2c.h comm-w2c.h \
 	-e TCHANGES=ctang-w2c.ch ctang-w2c.ch \
