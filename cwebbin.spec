@@ -98,7 +98,7 @@ do %{__sed_i} -e "s/@@VERSION@@/Version %{version} [CWEBbin %{release}]/" $f; do
 %build
 %if %{with texlive}
 
-%{__make} SUBVER="sed -i -e '1 {r texlive.w' -e 'N;}' \$@" \
+%{__make} SUBVER="%{__sed_i} -e '1 {r texlive.w' -e 'N;}' \$@" \
 	-e CCHANGES=comm-w2c.ch comm-w2c.ch \
 	-e HCHANGES=comm-w2c.h comm-w2c.h \
 	-e TCHANGES=ctang-w2c.ch ctang-w2c.ch \
@@ -115,6 +115,9 @@ mv ctang-lines.ch ctang-w2c.ch
 mv cweav-lines.ch cweav-w2c.ch
 %{__fcl} cweave.w ctwill-w2c.ch > ctwill-lines.ch 2>/dev/null
 mv ctwill-lines.ch ctwill-w2c.ch
+%{__fcl} cwebman.tex cwebman-w2c.ch > cwebman-lines.ch 2>/dev/null
+mv cwebman-lines.ch cwebman-w2c.ch
+%{__sed_i} -e "/@x/s/\[0\.[0-9]\] //" cwebman-w2c.ch
 
 %else
 

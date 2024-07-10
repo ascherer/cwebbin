@@ -110,6 +110,14 @@ should be sent to the \TeX-related mailing list
    {mailto:tex-k@tug.org}.
 @z
 ------------------------------------------------------------------------------
+@x l.42
+Readers who are familiar with Knuth's memo ``The \.{WEB} System of Structured
+Documentation'' will be able
+@y
+Readers who are familiar with Knuth's memo ``\pdfURL{The \.{WEB} System of
+Structured Documentation}{../web/webman.pdf}'' will be able
+@z
+------------------------------------------------------------------------------
 @x l.530
 email address in a \.{CWEB} file (e.g., \.{tex-k@@tug.org}).
 @y
