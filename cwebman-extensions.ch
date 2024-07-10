@@ -5,7 +5,7 @@ the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.925
+@x l.922
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -17,7 +17,7 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 variable is not set, some decent default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
-@x l.1038
+@x l.1035
 options are currently implemented:
 
 \yskip
@@ -55,7 +55,7 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 output by \.{CWEAVE}. (On by default.) (\.{CWEAVE} only.)
 @z
 ------------------------------------------------------------------------------
-@x l.1144
+@x l.1145
 the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.
 @y
 the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.%
@@ -63,14 +63,14 @@ the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.%
 to suppress the extra space globally.}
 @z
 ------------------------------------------------------------------------------
-@x l.1146
+@x l.1147
 \section Hypertext and hyperdocumentation.
 @y
 \vfill\eject
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
-@x l.1172 Add HintView homepage.
+@x l.1171 Add HintView homepage.
 from \.{https://hint.userweb.mwn.de/hint/hintview.html}.
 @y
 from
@@ -78,7 +78,7 @@ from
           {https://hint.userweb.mwn.de/hint/hintview.html}.%
 @z
 ------------------------------------------------------------------------------
-@x l.1181 Add Appendix G, the CTWILL source code.
+@x l.1180 Add Appendix G, the CTWILL source code.
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
 the program sources at
@@ -88,7 +88,7 @@ the program sources at
 \.{ctwill} executable -- and its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
-@x l.1196
+@x l.1195
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
 
@@ -104,7 +104,7 @@ exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
 \eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1733
+@x l.1732
 if you have a duplex printer. Appendices D, E, and F of the complete
 version of this manual are printed using a commented-out option that
 substitutes `$\gets$' for `$=$' in the program listings. Looking at those
@@ -118,14 +118,14 @@ also make use of the alternative format for \CEE/ comments.}
 Looking at those
 @z
 ------------------------------------------------------------------------------
-@x l.1785
+@x l.1784
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @z
 ------------------------------------------------------------------------------
-@x l.1797
+@x l.1796
 \vfill\end
 @y
 \point 21. With modern \TeX\ engines like `\.{luatex}', `\.{pdftex}', and
