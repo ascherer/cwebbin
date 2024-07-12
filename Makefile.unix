@@ -368,8 +368,8 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,90 s/CWEBbin/\\\\.{&}/" \
-		-e "91,$$ s/CWEBbin/\\\\\\\\.\\\\{&\\\\}/" $@
+	$(SED_I) -e '1,90 s/CWEBbin/\\.{&}/' \
+		-e '91,$$ s/CWEBbin/\\\\.\\{&\\}/' $@
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
@@ -377,16 +377,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/CWEBbin/\\\\.{&}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/CWEBbin/\\\\.{&}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/CWEBbin/\\\\.{&}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,40 s/CWEBbin/\\\\.{&}/" $@
+	$(SED_I) -e '1,40 s/CWEBbin/\\.{&}/' $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)
