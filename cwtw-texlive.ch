@@ -22,7 +22,7 @@ Material in limbo.
 @x l.54
 }
 @y
-}}\datecontentspage
+}}
 @z
 
 Section 2.
