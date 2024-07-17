@@ -82,8 +82,7 @@ EXTENSION= cxx
 # This list of options works for all UNIX compilers tested.
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
 	-Wall -Wextra -Wimplicit-fallthrough=2 \
-	-Wno-format-overflow -Wno-stringop-truncation
-	# -Wno-char-subscripts # swap the last two lines for LLVM
+	# -Wno-char-subscripts # uncomment for LLVM
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
