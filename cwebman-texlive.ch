@@ -177,7 +177,7 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 and l.87 of CWEBMAN-EXTENSIONS.CH.
+@x l.1176 and l.89 of CWEBMAN-EXTENSIONS.CH.
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
 \cwebfootnote{\TeX~Live comes with an up-to-date
@@ -246,7 +246,7 @@ And here's what the same excerpt looks like when typeset.
 @x l.1511
 \vfil\eject\titletrue
 @y
-\vfil\eject\titletrue
+\vfill\eject\titletrue
 \ifx\pdf+\pdftrue\fi \ifxetex\pdftrue\fi
 \ifpdflua\ifnum\pdfoutput>0 \pdftrue\fi\fi
 \ifacro\acrohinttrue\fi \ifhint\acrohinttrue\fi

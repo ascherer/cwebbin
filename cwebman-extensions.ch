@@ -53,6 +53,8 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @y
 \option x Include indexes and a table of contents in the \TEX/ file
 output by \.{CWEAVE}. (On by default.) (\.{CWEAVE} only.)
+
+\vfill\eject
 @z
 ------------------------------------------------------------------------------
 @x l.1141
@@ -91,6 +93,8 @@ the program sources at
 @x l.1191
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
+
+\vfil\eject\titletrue
 @y
 appendices \pdfURL{D}{common.pdf}, \pdfURL{E}{ctangle.pdf},
 and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
@@ -98,6 +102,8 @@ and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
 \cwebfootnote{Actually, \pdfURL{Appendix~D}{common.pdf} contains the source
 code for \.{COMMON}, and the additional \pdfURL{Appendix~G}{ctwill.pdf}
 exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
+
+\vfill\eject\titletrue
 @z
 ------------------------------------------------------------------------------
 @x l.1728
