@@ -5,7 +5,7 @@ the CWEB system.  It suggests CWEBMAN-PATCH.CH to be applied first.
 
 For a complete history of the changes made to CWEBMAN.TEX see CWEBMAN-PATCH.CH.
 ------------------------------------------------------------------------------
-@x l.922
+@x l.918
 it cannot find them in the current directory.
 @y
 it cannot find them in the current directory.%
@@ -17,7 +17,7 @@ specified in the environment variable \.{CWEBINPUTS}, concatenated with
 variable is not set, some decent default paths are used instead.}
 @z
 ------------------------------------------------------------------------------
-@x l.1035
+@x l.1031
 options are currently implemented:
 
 \yskip
@@ -47,7 +47,7 @@ argument to switch between different user languages and macro packages.
 \yskip
 @z
 ------------------------------------------------------------------------------
-@x l.1071
+@x l.1067
 \option x Include indexes and a table of contents in the \TEX/ file
 output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 @y
@@ -55,7 +55,7 @@ output by \.{CWEAVE}. (On by default.) (Has no effect on \.{CTANGLE}.)
 output by \.{CWEAVE}. (On by default.) (\.{CWEAVE} only.)
 @z
 ------------------------------------------------------------------------------
-@x l.1145
+@x l.1141
 the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.
 @y
 the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.%
@@ -63,14 +63,14 @@ the `\.{@\#}' will put extra space after `$\langle\,$Other locals$\,\rangle$'.%
 to suppress the extra space globally.}
 @z
 ------------------------------------------------------------------------------
-@x l.1147
+@x l.1143
 \section Hypertext and hyperdocumentation.
 @y
 \vfill\eject
 \section Hypertext and hyperdocumentation.
 @z
 ------------------------------------------------------------------------------
-@x l.1171 Add HintView homepage.
+@x l.1167 Add HintView homepage.
 from \.{https://hint.userweb.mwn.de/hint/hintview.html}.
 @y
 from
@@ -78,7 +78,7 @@ from
           {https://hint.userweb.mwn.de/hint/hintview.html}.%
 @z
 ------------------------------------------------------------------------------
-@x l.1180 Add Appendix G, the CTWILL source code.
+@x l.1176 Add Appendix G, the CTWILL source code.
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
 the program sources at
@@ -88,11 +88,9 @@ the program sources at
 \.{ctwill} executable -- and its associated helpers -- out of the box.}
 @z
 ------------------------------------------------------------------------------
-@x l.1195
+@x l.1191
 appendices D, E, and~F, which exhibit the complete source code for
 \.{CTANGLE} and \.{CWEAVE}.
-
-\vfil\eject\titletrue
 @y
 appendices \pdfURL{D}{common.pdf}, \pdfURL{E}{ctangle.pdf},
 and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
@@ -100,11 +98,9 @@ and~\pdfURL{F}{cweave.pdf}, which exhibit the complete source code for
 \cwebfootnote{Actually, \pdfURL{Appendix~D}{common.pdf} contains the source
 code for \.{COMMON}, and the additional \pdfURL{Appendix~G}{ctwill.pdf}
 exhibits the source code for \.{CTWILL}, which is based on \.{CWEAVE}.}
-
-\eject\titletrue
 @z
 ------------------------------------------------------------------------------
-@x l.1732
+@x l.1728
 if you have a duplex printer. Appendices D, E, and F of the complete
 version of this manual are printed using a commented-out option that
 substitutes `$\gets$' for `$=$' in the program listings. Looking at those
@@ -118,14 +114,14 @@ also make use of the alternative format for \CEE/ comments.}
 Looking at those
 @z
 ------------------------------------------------------------------------------
-@x l.1784
+@x l.1780
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @y
 \vfill\eject
 \point 20. Furthermore, group titles can be converted to an arbitrary
 @z
 ------------------------------------------------------------------------------
-@x l.1796
+@x l.1792
 \vfill\end
 @y
 \point 21. With modern \TeX\ engines like `\.{luatex}', `\.{pdftex}', and
