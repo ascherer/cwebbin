@@ -67,20 +67,20 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
   \advance\footnotecount by 1\relax}
 @z
 ------------------------------------------------------------------------------
-@x l.35
+@x l.34
 \def\runninghead{{\ninett CWEB} USER MANUAL (VERSION 4.11)}
 @y
 \def\runninghead{{\ninett CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
-@x l.49
+@x l.48
 \vskip 18pt\centerline{(Version 4.11 --- December 2023)}
 @y
 \vskip 18pt\centerline{(Version 4.11 --- December 2023)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
-@x l.1614
+@x l.1613
   \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
