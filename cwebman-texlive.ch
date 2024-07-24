@@ -177,9 +177,19 @@ Sometimes things don't work as smoothly, and you get a bunch of
 \ifpdf\acrohinttrue\fi \ifhint\acrohinttrue\fi
 @z
 ------------------------------------------------------------------------------
-@x l.1176 and l.89 of CWEBMAN-EXTENSIONS.CH.
+@x l.79 of CWEBMAN-EXTENSIONS.CH.
+\pdfURL{the project homepage}{https://hint.userweb.mwn.de/hint/hintview.html}.%
+@y
+\pdfURL{\.{https://hint.userweb.mwn.de/hint/hintview.html}}%
+          {https://hint.userweb.mwn.de/hint/hintview.html}.%
+@z
+------------------------------------------------------------------------------
+@x l.1176 and l.86 of CWEBMAN-EXTENSIONS.CH.
+\pdfURL{the Stanford repository}{http://ftp.cs.stanford.edu/pub/ctwill}.%
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 @y
+\pdfURL{\.{http://ftp.cs.stanford.edu/pub/ctwill}}%
+          {http://ftp.cs.stanford.edu/pub/ctwill}.%
 \cwebfootnote{\TeX~Live comes with an up-to-date
 @z
 ------------------------------------------------------------------------------

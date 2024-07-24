@@ -76,16 +76,14 @@ to suppress the extra space globally.}
 from \.{https://hint.userweb.mwn.de/hint/hintview.html}.
 @y
 from
-\pdfURL{\.{https://hint.userweb.mwn.de/hint/hintview.html}}%
-          {https://hint.userweb.mwn.de/hint/hintview.html}.%
+\pdfURL{the project homepage}{https://hint.userweb.mwn.de/hint/hintview.html}.%
 @z
 ------------------------------------------------------------------------------
 @x l.1176 Add Appendix G, the CTWILL source code.
 the program sources at \.{ftp://ftp.cs.stanford.edu/pub/ctwill}.
 @y
 the program sources at
-\pdfURL{\.{http://ftp.cs.stanford.edu/pub/ctwill}}%
-          {http://ftp.cs.stanford.edu/pub/ctwill}.%
+\pdfURL{the Stanford repository}{http://ftp.cs.stanford.edu/pub/ctwill}.%
 \cwebfootnote{This extended version of \.{CWEB} comes with an up-to-date
 \.{ctwill} executable -- and its associated helpers -- out of the box.}
 @z
