@@ -545,7 +545,7 @@
     \pdfoutline goto name {NOS} count -\the\countNOS {\outsecname}
   \else \special{pdf: outline -1 << /Title (\outsecname)
       /Dest [ @thispage /FitH @ypos ] >>}\fi
-  \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
+  \def\X##1:##2\X{\firstsecno##1.%
     {\makeoutlinetoks##2\outlinedone}%
     \ifpdflua \pdfoutline goto num \the\toksA \expandafter{\the\toksE}
     \else \special{pdf: outline 0 << /Title (\the\toksE)
