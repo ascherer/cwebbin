@@ -229,5 +229,5 @@ course of a quarter century.
 Care has been taken to keep the original section numbering intact, so this new
 material should nicely integrate with the original ``\&{85.~Index}.''
 
-@* Index.
+@** Index.
 @z

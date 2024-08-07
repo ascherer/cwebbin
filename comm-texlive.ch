@@ -433,7 +433,7 @@ free(texmf_locale);
 @z
 
 @x l.1285
-@* Index.
+@** Index.
 @y
 @* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from
 the original \.{CWEB} package use the compile-time default directory or the
@@ -564,5 +564,5 @@ void cb_show_banner (void)
 @.cweb.mo@>
 }
 
-@* Index.
+@** Index.
 @z
