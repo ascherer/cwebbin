@@ -298,7 +298,7 @@ cb_usage(program==ctangle ? "ctangle" : program==cweave ? "cweave" : "ctwill");
 Changes to former addenda.
 
 @x l.276 of COMM-EXTENSIONS.CH
-@* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
+@*1 Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
 personal needs.  If this variable is empty, some decent defaults are used
@@ -349,7 +349,7 @@ char include_path[max_path_length+2];@/
 char *p, *path_prefix, *next_path_prefix;
 
 @y
-@* User communication.  The |scan_args| and |cb_show_banner| routines and the
+@*1 User communication.  The |scan_args| and |cb_show_banner| routines and the
 |bindtextdomain| argument string need a few extra variables.
 
 @d max_banner 50
@@ -366,7 +366,7 @@ string texmf_locale;@/
 Material++
 
 @x l.346 of COMM-I18N.CH
-@* Internationalization.  If a translation catalog for your personal
+@*1 Internationalization.  If a translation catalog for your personal
 \.{LANGUAGE} is installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
 will talk to you in your favorite language.  Catalog \.{cweb} contains all
 strings from ``plain \.{CWEB}.''
@@ -377,7 +377,7 @@ system by checking out the sources and translating the strings in file
 \.{cweb.pot}, and submitting the resulting \.{*.po} file(s) to the maintainer
 at \.{https://github.com/ascherer/cwebbin}.
 @y
-@* Internationalization.  If translation catalogs for your personal
+@*1 Internationalization.  If translation catalogs for your personal
 \.{LANGUAGE} are installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
 will talk to you in your favorite language.  Catalog \.{cweb} contains all
 strings from ``plain \.{CWEB},'' catalog \.{cweb-tl} contains a few extra
@@ -433,9 +433,9 @@ free(texmf_locale);
 @z
 
 @x l.1285
-@** Index.
+@* Index.
 @y
-@* File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from
+@*1 File lookup with \Kpathsea/.  The \.{CTANGLE} and \.{CWEAVE} programs from
 the original \.{CWEB} package use the compile-time default directory or the
 value of the environment variable \.{CWEBINPUTS} as an alternative place to be
 searched for files, if they could not be found in the current directory.
@@ -492,7 +492,7 @@ numbers.
 Debugging output is always written to |stderr|, and begins with the string
 `\.{kdebug:}'.
 
-@* System dependent changes. The most volatile stuff comes at the very end.
+@*1 System dependent changes. The most volatile stuff comes at the very end.
 
 Modules for dealing with help messages and version info.
 
@@ -564,5 +564,5 @@ void cb_show_banner (void)
 @.cweb.mo@>
 }
 
-@** Index.
+@* Index.
 @z

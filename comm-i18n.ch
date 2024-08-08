@@ -343,9 +343,9 @@ More new material.
 @z
 
 @x l.1285
-@** Index.
+@* Index.
 @y
-@* Internationalization.  If a translation catalog for your personal
+@*1 Internationalization.  If a translation catalog for your personal
 \.{LANGUAGE} is installed at the appropriate place, \.{CTANGLE} and \.{CWEAVE}
 will talk to you in your favorite language.  Catalog \.{cweb} contains all
 strings from ``plain \.{CWEB}.''
@@ -371,5 +371,5 @@ bindtextdomain("cweb", "/usr/share/locale/");
 textdomain("cweb"); /* the majority of |"strings"| come from ``plain \.{CWEB}'' */
 @.cweb.mo@>
 
-@** Index.
+@* Index.
 @z

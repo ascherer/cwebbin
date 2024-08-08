@@ -72,9 +72,9 @@ else {
 New material after section 85.
 
 @x l.1286
-@** Index.
+@* Index.
 @y
-@* Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
+@*1 Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
 that automatically takes care of the temporal dependencies between the different
 source modules. It may be convenient that \.{CWEB} doesn't create new output
 for all existing files, when there are only changes to some of them. Thus the
@@ -123,5 +123,5 @@ if(check_file) fclose(check_file);
 if(strlen(check_file_name)) /* Delete the temporary file in case of a break */
    remove(check_file_name);
 
-@** Index.
+@* Index.
 @z

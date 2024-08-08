@@ -222,12 +222,12 @@ Section 85.
 @x l.1286
 @* Index.
 @y
-@** Extensions to {\tentex CWEB}.  The following sections introduce new or
+@* Extensions to {\tentex CWEB}.  The following sections introduce new or
 improved features that have been created by numerous contributors over the
 course of a quarter century.
 
 Care has been taken to keep the original section numbering intact, so this new
 material should nicely integrate with the original ``\&{85.~Index}.''
 
-@** Index.
+@* Index.
 @z
