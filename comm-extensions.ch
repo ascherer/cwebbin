@@ -267,13 +267,13 @@ Section 85.
 @x l.1286
 @* Index.
 @y
-@* Language setting.  This global variable is set by the argument of the
+@*1 Language setting.  This global variable is set by the argument of the
 `\.{+l}' (or `\.{-l}') command-line option.
 
 @<Global var...@>=
 const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 
-@* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
+@*1 Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
 personal needs.  If this variable is empty, some decent defaults are used
