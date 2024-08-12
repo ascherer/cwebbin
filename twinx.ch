@@ -42,10 +42,12 @@ int main(
     if((f=fopen(*++argv,"r"))==NULL)
 @z
 
-@x l.28
+@x l.27
+      strncpy(*argv+strlen(*argv)-3,"idx",3);
       f=fopen(*argv,"r");
       if (!f)
 @y
+      memcpy(*argv+strlen(*argv)-3,"idx",3);
       if((f=fopen(*argv,"r"))==NULL)
 @z
 
@@ -157,6 +159,8 @@ Section 12.
   } while(fgets(buf,buf_size,f));
 @z
 
+Section 14.
+
 @x l.289 C++17 removed 'register' storage class.
 while (1) {@+register node *p,*q,*r,*s,*t;
 @y
@@ -237,6 +241,8 @@ void collapse(
 @y
 {@+node *x;
 @z
+
+Section 21.
 
 @x l.403 C++17 removed 'register' storage class.
 {@+register node *x;

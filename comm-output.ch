@@ -12,9 +12,9 @@ applied as well.
 
 For a complete history of the changes made to COMMON.W see COMM-PATCH.CH.
 
-Section 69.
+Section 68.
 
-@x l.1069
+@x l.1068
   @<Print the job |history|@>@;
 @y
   @<Print the job |history|@>@;
@@ -23,7 +23,7 @@ Section 69.
 
 Section 73.
 
-@x l.1131
+@x l.1130
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
 @y
 char scn_file_name[max_file_name_length]; /* name of |scn_file| */
@@ -32,7 +32,7 @@ char check_file_name[max_file_name_length]; /* name of |check_file| */
 
 Section 83.
 
-@x l.1271
+@x l.1272
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 FILE *active_file; /* currently active file for \.{CWEAVE} output */
@@ -41,7 +41,7 @@ FILE *check_file; /* temporary output file */
 
 Section 84.
 
-@x l.1273
+@x l.1274
 @ @<Scan arguments and open output files@>=
 scan_args();
 if (program==ctangle) {
@@ -71,11 +71,11 @@ else {
 
 New material after section 85.
 
-@x l.1285
-@** Index.
+@x l.1286
+@* Index.
 @y
-@* Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
-that automatically takes care of the temporal dependecies between the different
+@*1 Temporary file output. Most \CEE/ projects are controlled by a \.{Makefile}
+that automatically takes care of the temporal dependencies between the different
 source modules. It may be convenient that \.{CWEB} doesn't create new output
 for all existing files, when there are only changes to some of them. Thus the
 \.{make} process will only recompile those modules where necessary. You can
@@ -123,5 +123,5 @@ if(check_file) fclose(check_file);
 if(strlen(check_file_name)) /* Delete the temporary file in case of a break */
    remove(check_file_name);
 
-@** Index.
+@* Index.
 @z

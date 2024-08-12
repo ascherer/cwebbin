@@ -12,7 +12,7 @@ For a complete history of the changes made to CTANGLE.W see CTANG-PATCH.CH.
 
 Section 50.
 
-@x l.547
+@x l.556
 @<Write all the named output files@>=
 for (an_output_file=end_output_files; an_output_file>cur_out_file;) {
     an_output_file--;
@@ -57,11 +57,11 @@ if (check_for_change)
 
 Additional material.
 
-@x l.1547
+@x l.1551
 @** Index.
 @y
 @* Output file update. Most \CEE/ projects are controlled by a \.{Makefile}
-that automatically takes care of the temporal dependecies between the different
+that automatically takes care of the temporal dependencies between the different
 source modules. It may be convenient that \.{CWEB} doesn't create new output
 for all existing files, when there are only changes to some of them. Thus the
 \.{make} process will only recompile those modules where necessary. You can

@@ -8,7 +8,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 89.
 
-@x l.1400
+@x l.1397
 @ In particular, the |finish_line| procedure is called near the very
 beginning of phase two. We initialize the output variables in a slightly
 tricky way so that the first line of the output file will be
@@ -37,9 +37,9 @@ tex_puts("cwebma");
 *out_ptr='c';
 @z
 
-Section 111.
+Section 110.
 
-@x l.2132
+@x l.2129
 @i prod.w
 @y
 @i prod-cweave.w
@@ -47,7 +47,7 @@ Section 111.
 
 Section 128.
 
-@x l.2654
+@x l.2651
 @<Cases for |exp|@>=
 if (cat1==lbrace || cat1==int_like || cat1==decl) {
   make_underlined(pp); big_app(dindent); big_app1(pp);
@@ -63,7 +63,7 @@ if(cat1==lbrace || cat1==int_like || cat1==decl) {
 
 Section 138.
 
-@x l.2758
+@x l.2755
 @ @<Cases for |decl_head|@>=
 if (cat1==comma) {
   big_app2(pp); app(opt); app('9'); reduce(pp,2,decl_head,-1,33);
@@ -107,7 +107,7 @@ else if (cat1==semi) squash(pp,2,decl,-1,39);
 
 Section 139.
 
-@x l.2780
+@x l.2777
 @ @<Cases for |decl|@>=
 if (cat1==decl) {
   big_app1_insert(pp,force); reduce(pp,2,decl,-1,40);
@@ -128,7 +128,7 @@ else if (cat1==stmt || cat1==function) {
 
 Section 143.
 
-@x l.2837
+@x l.2834
 @ @<Cases for |fn_decl|@>=
 if (cat1==decl) {
   big_app1_insert(pp,force); reduce(pp,2,fn_decl,0,51);
@@ -153,7 +153,7 @@ else if (cat1==stmt) {
 
 Section 153.
 
-@x l.2937
+@x l.2938
   big_app1_insert(pp,dindent); reduce(pp,2,fn_decl,0,73);
 @y
   big_app1(pp); if (indent_param_decl) big_app(dindent);
@@ -162,7 +162,7 @@ Section 153.
 
 Section 156.
 
-@x l.2960
+@x l.2964
   big_app1_insert(pp, (cat1==decl || cat1==function) ? big_force :
      force_lines ? force : break_space); reduce(pp,2,cat1,-1,76);
 @y
@@ -173,7 +173,7 @@ Section 156.
 
 Addendum.
 
-@x l.4892
+@x l.4884
 @** Index.
 @y
 @* Formatting alternatives.

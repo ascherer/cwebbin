@@ -661,7 +661,6 @@ flush_buffer(out_ptr,false,false);
 @ @<Start a format...@>= {
   doing_format=true;
 @y
-
 @ @<Start a format...@>= {
   doing_format=true;
   is_macro=false;

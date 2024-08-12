@@ -4,12 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, August 2023.
+# Last updated by Andreas Scherer, August 2024.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2022-2023 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2022-2024 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -82,8 +82,7 @@ EXTENSION= cxx
 # This list of options works for all UNIX compilers tested.
 OPT = -DCWEBINPUTS=\"$(CWEBINPUTS)\" -DHAVE_GETTEXT=1 \
 	-Wall -Wextra -Wimplicit-fallthrough=2 \
-	-Wno-format-overflow -Wno-stringop-truncation
-	# -Wno-char-subscripts # swap the last two lines for LLVM
+	# -Wno-char-subscripts # uncomment for LLVM
 
 # We keep debugging info around, for fun, but most users don't need it
 CFLAGS = -g $(OPT)
@@ -368,8 +367,8 @@ fullmanual: usermanual $(SOURCES) \
 
 cwebbin.tex: cwebman.tex $(DCHANGES)
 	$(TIE) -m $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,90 s/\(CWEBbin\)/\\\\.{\1}/" \
-		-e "91,$$ s/\(CWEBbin\)/\\\\\\\\.\\\\{\1\\\\}/" $@
+	$(SED_I) -e '1,90 s/CWEBbin/{\\ninett &}/' \
+		-e '91,$$ s/CWEBbin/\\{\\\\ninett &\\}/' $@
 
 # the documentation change files are created automatically by the TIE
 # processor from a set of separate change files.  note that not all
@@ -377,16 +376,16 @@ cwebbin.tex: cwebman.tex $(DCHANGES)
 # any system-dependent parts not available under UNIX.
 comm-doc.ch: common.w $(CCHANGES) comm-man.ch comm-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 ctang-doc.ch: ctangle.w $(TCHANGES) ctang-man.ch ctang-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 cweav-doc.ch: cweave.w $(WCHANGES) cweav-man.ch cweav-newpage.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,20 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e '1,20 s/CWEBbin/\\.{&}/' $@
 ctwill-doc.ch: cweave.w $(LCHANGES) ctwill-man.ch
 	$(TIE) -c $@ $^ && $(SUBVER)
-	$(SED_I) -e "1,40 s/\(CWEBbin\)/\\\\.{\1}/" $@
+	$(SED_I) -e '1,40 s/CWEBbin/\\.{&}/' $@
 
 # for making the documentation we will have to include the change files
 ctangle.tex: ctangle.w $(TCHANGES) $(HCHANGES)

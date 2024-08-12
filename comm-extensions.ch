@@ -118,7 +118,7 @@ have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 
 Section 51.
 
-@x l.680
+@x l.677
   if (program==cweave) p->ilk=t, init_node(p);
 @y
   if (program!=ctangle) p->ilk=t, init_node(p);
@@ -126,7 +126,7 @@ Section 51.
 
 Section 68.
 
-@x l.1058
+@x l.1057
 Some implementations may wish to pass the |history| value to the
 operating system so that it can be used to govern whether or not other
 programs are started. Here, for instance, we pass the operating system
@@ -148,7 +148,7 @@ can be made sensitive to these conditions.
 @d RETURN_FAIL  20 /* Complete or severe failure */
 @z
 
-@x l.1070
+@x l.1069
   if (history > harmless_message) return EXIT_FAILURE;
   else return EXIT_SUCCESS;
 @y
@@ -162,7 +162,7 @@ can be made sensitive to these conditions.
 
 Section 75.
 
-@x l.1150
+@x l.1149
 An omitted change file argument means that |"/dev/null"| should be used,
 when no changes are desired.
 @y
@@ -171,7 +171,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 |_DEV_NULL| (Amiga)---should be used, when no changes are desired.
 @z
 
-@x l.1166
+@x l.1165
   strcpy(change_file_name,"/dev/null");
 @y
   strcpy(change_file_name,"/dev/null");
@@ -185,7 +185,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 @^system dependencies@>
 @z
 
-@x l.1172
+@x l.1171
         if (*s=='.') dot_pos=s++;
         else if (*s=='/') dot_pos=NULL,name_pos=++s;
         else s++;
@@ -199,7 +199,7 @@ systems the contents of the compile-time variable |DEV_NULL| (\TeX~Live) or
 
 Section 80.
 
-@x l.1245
+@x l.1246
 for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
   flags[(eight_bits)*dot_pos]=flag_change;
 @y
@@ -212,7 +212,7 @@ for(dot_pos=*argv+1;*dot_pos>'\0';dot_pos++)
 
 Section 81.
 
-@x l.1248
+@x l.1249
 @ @<Print usage error message and quit@>=
 {
 if (program==ctangle)
@@ -264,16 +264,16 @@ character following `l', but there would have been collisions between
 
 Section 85.
 
-@x l.1285
-@** Index.
+@x l.1286
+@* Index.
 @y
-@* Language setting.  This global variable is set by the argument of the
+@*1 Language setting.  This global variable is set by the argument of the
 `\.{+l}' (or `\.{-l}') command-line option.
 
 @<Global var...@>=
 const char *use_language=""; /* prefix of \.{cwebmac.tex} in \TEX/ output */
 
-@* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
+@*1 Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
 for include files along the path |CWEBINPUTS|.  By setting the environment
 variable of the same name to a different search path you can suit your
 personal needs.  If this variable is empty, some decent defaults are used
@@ -325,5 +325,5 @@ char *p, *path_prefix, *next_path_prefix;
 #endif
 char separators[]=SEPARATORS;
 
-@** Index.
+@* Index.
 @z

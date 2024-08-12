@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEAV-FOO.CH, is part of CWEBBIN (@VERSION@).
-It is a changefile for CWEAVE.W, Version 4.11.
+It is a changefile for CWEAVE.W, Version 4.12.
 
 Technically, CWEAV-FOO.CH is constructed from a multitude of separate
 change files by applying Klaus Guntermann's TIE processor.  Any comments
@@ -36,7 +36,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEAVE.W.
 
-Copyright (C) 1993-1995,2000,2005,2021-2023 Andreas Scherer
+Copyright (C) 1993-1995,2000,2005,2021-2024 Andreas Scherer
 Copyright (C) 1991,1993 Carsten Steger
 Copyright (C) 1991-1993 Hans-Hermann Bode
 
@@ -185,17 +185,19 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 2023	15 May 2023		AS	tuneup for CWEB 4.9 [2023].
 	19 August 2023		AS	tuneup for CWEB 4.10 [2023].
 	02 December 2023	AS	tuneup for CWEB 4.11 [2023].
+
+2024	12 August 2024		AS	tuneup for CWEB 4.12 [2024].
 ------------------------------------------------------------------------------
 Material in limbo.
 
 @x l.35
-\def\title{CWEAVE (Version 4.11)}
+\def\title{CWEAVE (Version 4.12)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
 @x l.39
-  \centerline{(Version 4.11)}
+  \centerline{(Version 4.12)}
 @y
   \centerline{(@VERSION@)}
 @z
@@ -211,7 +213,7 @@ z
 Section 1.
 
 @x l.70
-@d banner "This is CWEAVE (Version 4.11)"
+@d banner "This is CWEAVE (Version 4.12)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
 @z
@@ -226,7 +228,7 @@ Sections 3--18.
 
 Addendum.
 
-@x l.4892
+@x l.4884
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or
