@@ -1,6 +1,6 @@
 								-*-Web-*-
 This file, CWEBMAN-FOO.CH, is part of CWEBBIN (@VERSION@).  It is a
-changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.11, that
+changefile written by Andreas Scherer for CWEBMAN.TEX, Version 4.12, that
 provides changes appropriate for extensions by Carsten Steger, Andreas
 Scherer (deutsch), Giuseppe Ghibò (italiano), and Denis Roegel (français).
 
@@ -14,7 +14,7 @@ This program is distributed WITHOUT ANY WARRANTY, express or implied.
 The following copyright notice extends to this changefile only, not to
 the masterfile CWEBMAN.TEX.
 
-Copyright (C) 1993-1995,1998-2000,2005,2011,2018-2023 Andreas Scherer
+Copyright (C) 1993-1995,1998-2000,2005,2011,2018-2024 Andreas Scherer
 
 Permission is granted to make and distribute verbatim copies of this
 document provided that the copyright notice and this permission notice
@@ -68,20 +68,20 @@ a22	18 Aug 2011	AS	Updated for CWEB 3.64ad.
 @z
 ------------------------------------------------------------------------------
 @x l.34
-\def\runninghead{{\ninett CWEB} USER MANUAL (VERSION 4.11)}
+\def\runninghead{{\ninett CWEB} USER MANUAL (VERSION 4.12)}
 @y
 \def\runninghead{{\ninett CWEB} USER MANUAL (@VERSION@)}
 @z
 ------------------------------------------------------------------------------
 @x l.48
-\vskip 18pt\centerline{(Version 4.11 --- December 2023)}
+\vskip 18pt\centerline{(Version 4.12 --- August 2024)}
 @y
-\vskip 18pt\centerline{(Version 4.11 --- December 2023)%
+\vskip 18pt\centerline{(Version 4.12 --- August 2024)%
 \footnote*{This document describes the extended \.{CWEB} (@VERSION@).}}
 @z
 ------------------------------------------------------------------------------
 @x l.1613
-  \.{ { }\\vskip 15pt \\centerline\{(Version 4.11)\}{ }\\vfill\}}\cr}$$
+  \.{ { }\\vskip 15pt \\centerline\{(Version 4.12)\}{ }\\vfill\}}\cr}$$
 @y
   \.{ { }\\vskip 15pt \\centerline\{(@VERSION@)\}{ }\\vfill\}}\cr}$$
 @z
