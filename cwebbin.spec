@@ -51,6 +51,7 @@ Patch2: 0002-Purge-redundant-TeX-macro.patch
 Patch3: 0003-Adapt-to-CWEB-4.5.patch
 Patch4: 0004-Add-silent-datecontentspage-macro.patch
 Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
+Patch6: 0006-Rename-page-dimensions-to-match-cwebmac.patch
 
 %global __sed_i %{__sed} -i
 
