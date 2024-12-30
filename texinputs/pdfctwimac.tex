@@ -536,8 +536,11 @@
     \immediate\write\cont{\catcode `\noexpand\@=12\relax} % \makeatother
     \immediate\closeout\cont % the contents information has been fully gathered
   \fi}
-\def\fin{\ifacro \message{Section names:}
-  \def\U##1.{} \def\Us##1.{} \def\Q##1.{} \def\Qs##1.{} \let\I=\relax \let\*=*
+\def\fin{\output={\normaloutput\page\lheader\rheader}
+  \let\topsecno=\nullsec
+  \ifacro \message{Section names:} \let\Xpdf\X
+  \def\U##1.{} \def\Us##1.{} \def\Q##1.{} \def\Qs##1.{}
+  \def\I{\par\hangindent 2em}\let\*=*
   \newrefs={} \output={\shipout\box255}
   \def\outsecname{Names of the sections}
   \ifpdflua \makebookmarks \countsections
@@ -545,7 +548,7 @@
     \pdfoutline goto name {NOS} count -\the\countNOS {\outsecname}
   \else \special{pdf: outline -1 << /Title (\outsecname)
       /Dest [ @thispage /FitH @ypos ] >>}\fi
-  \def\X##1:##2\X{\firstsecno##1.%
+  \def\X##1:##2\X{\Xpdf##1:##2\X \firstsecno##1.%
     {\makeoutlinetoks##2\outlinedone}%
     \ifpdflua \pdfoutline goto num \the\toksA \expandafter{\the\toksE}
     \else \special{pdf: outline 0 << /Title (\the\toksE)
