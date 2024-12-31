@@ -508,8 +508,8 @@
 \def\normaloutput#1#2#3{\shipout\vbox{\vbox to\fullpageheight{%
   \iftitle\global\titlefalse
   \else\hbox to\pagewidth{\vbox to10pt{}%
-    \ifodd\pageno\vbox to3pc{#3}\else\vbox to3pc{#2}\fi}\fi
-  \vfill#1}} % parameter #1 is the page itself
+    \ifodd\pageno\vbox to3pc{#3\vfill}\else\vbox to3pc{#2\vfill}\fi}\fi
+  #1\vfill}} % parameter #1 is the page itself
   \global\advance\pageno by1}
 %\def\topofcontents{\centerline{\titlefont\title}\vskip.7in
   %\vfill} % this material will start the table of contents page
@@ -519,7 +519,7 @@
 \def\contentspagenumber{0} % default page number for table of contents
 %\newdimen\pageshift \pageshift=\hoffset
    %% shift righthand pages wrt lefthand ones (changed in version 3.70)
-%\def\setpage{\hsize\pagewidth\vsize\pageheight} % use after changing page size
+\def\setpage{\hsize\pagewidth\vsize\pageheight} % use after changing page size
 \def\contentsfile{\jobname.toc} % file that gets table of contents info
 \def\readcontents{\input \contentsfile}
 \def\readsections{\input \jobname.scn}
@@ -537,10 +537,11 @@
   \fi}
 \def\fin{\ifacro \message{Section names:} \let\Xpdf\X
   \def\U##1.{} \def\Us##1.{} \def\Q##1.{} \def\Qs##1.{}
-  \def\I{\par\noindent}\let\*=*
-  \gdef\rlhead{NAMES OF THE SECTIONS} % running left headline
-  \global\let\rrhead=\rlhead % running right headline
-  \newrefs={} \output={\normaloutput\page\rightheadline\leftheadline}
+  \def\I{\par\hangindent 2em\noindent}\let\*=*
+  \def\rlhead{NAMES OF THE SECTIONS} % running left headline
+  \let\rrhead=\rlhead % running right headline
+  \output={\normaloutput\page\rightheadline\leftheadline}
+  \setpage
   \def\outsecname{Names of the sections}
   \ifpdflua \makebookmarks \countsections
     \pdfdest name {NOS} fith
