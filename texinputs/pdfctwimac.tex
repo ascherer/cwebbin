@@ -536,7 +536,11 @@
     \immediate\closeout\cont % the contents information has been fully gathered
   \fi}
 \def\fin{\ifacro \message{Section names:} \let\Xpdf\X
-  \def\U##1.{} \def\Us##1.{} \def\Q##1.{} \def\Qs##1.{}
+  \def\note##1##2.{\quad{\eightrm##1~\pdfnote##2.}}
+  \def\Q{\note{Cited in section}} % crossref for mention of a section
+  \def\Qs{\note{Cited in sections}} % crossref for mentions of a section
+  \def\U{\note{Used in section}} % crossref for use of a section
+  \def\Us{\note{Used in sections}} % crossref for uses of a section
   \def\I{\par\hangindent 2em\noindent}\let\*=*
   \def\rlhead{NAMES OF THE SECTIONS} % running left headline
   \let\rrhead=\rlhead % running right headline
