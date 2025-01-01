@@ -1,7 +1,7 @@
-From e1d2ad3d3bde4a6d5611b4627a9feb43118a87fa Mon Sep 17 00:00:00 2001
+From abcfe710f5d5ce3b6801e391ac57105046cb446e Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Thu, 10 Feb 2022 09:24:39 +0100
-Subject: [PATCH 4/5] Add silent \datecontentspage macro.
+Subject: [PATCH 4/6] Add silent \datecontentspage macro.
 
 ---
  ctwimac.tex | 2 +-
@@ -21,5 +21,5 @@ index df24900..014168b 100644
  % To produce only a subset of pages, put the page numbers on separate
  % lines in a file called pages.tex
 -- 
-2.41.0
+2.47.1
 

@@ -1,7 +1,7 @@
-From 6b42e6c76f705f1adc9ef62ddc63318df9676d42 Mon Sep 17 00:00:00 2001
+From 9352f2538be0025a86ecee2f3fac4222d756483a Mon Sep 17 00:00:00 2001
 From: Andreas Scherer <andreas_github@freenet.de>
 Date: Wed, 14 Jun 2023 10:00:33 +0200
-Subject: [PATCH 5/5] Update CTWILL macros for CWEB 4.9.
+Subject: [PATCH 5/6] Update CTWILL macros for CWEB 4.9.
 
 ---
  ctwimac.tex  | 10 ++++++----
@@ -109,5 +109,5 @@ index 6d9ac2f..6865478 100644
  % \L is Polish letter suppressed-L; we have no shorthand for \le
  % \O is Scandinavian letter O-with-slash
 -- 
-2.41.0
+2.47.1
 

@@ -563,7 +563,7 @@ section_count=0; format_visible=true; right_start_switch=false; copy_limbo();
 @x l.4214
 static boolean group_found=false; /* has a starred section occurred? */
 
-@ @<Translate the current section@>= {
+@ @<Translate the \9{c}current section@>= {
   section_count++;
 @y
 static boolean group_found=false; /* has a starred section occurred? */
@@ -571,7 +571,7 @@ static boolean right_start_switch; /* has `\.{@@r}' occurred recently? */
 static boolean temp_switch; /* has `\.{@@\%}' occurred recently? */
 
 @ @d usage_sentinel (struct perm_meaning *)1
-@<Translate the current section@>= {
+@<Translate the \9{c}current section@>= {
   section_count++;
   temp_switch=false; temp_meaning_ptr=temp_meaning_stack;
   top_usage=usage_sentinel;
@@ -639,9 +639,9 @@ flush_buffer(out_ptr,false,false);
 @z
 
 @x l.4340
-@<Start a macro...@>= {
+@<Start \9{a}a macro...@>= {
 @y
-@<Start a macro...@>= {
+@<Start \9{a}a macro...@>= {
   is_macro=true;
 @z
 
@@ -658,10 +658,10 @@ flush_buffer(out_ptr,false,false);
 @z
 
 @x l.4369
-@ @<Start a format...@>= {
+@ @<Start \9{a}a format...@>= {
   doing_format=true;
 @y
-@ @<Start a format...@>= {
+@ @<Start \9{a}a format...@>= {
   doing_format=true;
   is_macro=false;
 @z

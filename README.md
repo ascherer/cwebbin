@@ -4,7 +4,7 @@
 [cweb system](http://www-cs-faculty.stanford.edu/~uno/cweb.html)
 and donald e. knuth's [ctwill program](http://ftp.cs.stanford.edu/pub/ctwill).
 it requires the contents of [the original *cweb* source
-drop](https://github.com/ascherer/cweb/releases/download/cweb-4.12/cweb-4.12.tar.gz)
+drop](https://github.com/ascherer/cweb/releases/download/cweb-4.12.1/cweb-4.12.1.tar.gz)
 and [the secondary *ctwill* source
 drop](http://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz), to which it applies
 a set of change files to introduce advanced features. see the extensive
@@ -23,11 +23,11 @@ a set of change files to introduce advanced features. see the extensive
 
 ## manual compilation
 
-extract `ctwill.tar.gz` and add the contents of `cweb-4.12.tar.gz` (overwriting
+extract `ctwill.tar.gz` and add the contents of `cweb-4.12.1.tar.gz` (overwriting
 outdated source files `Makefile`, `common.h`, `common.w`, and `prod.w`) and
-`cwebbin-2024.tar.gz` for the full set of source files.
+`cwebbin-2025.tar.gz` for the full set of source files.
 replace `@@VERSION@@` in line 129 of the `Makefile.unix` with something like
-`Version 4.12 [CWEBbin 2024]`.
+`Version 4.12.1 [CWEBbin 2025]`.
 `touch *.cxx`.
 unix/linux users should work with [`make -f Makefile.unix`](Makefile.unix)
 exclusively (targets `boot`, `cautiously`, and `all`).
@@ -47,8 +47,8 @@ clone
 [cweb](https://github.com/ascherer/cweb) and
 [cwebbin](https://github.com/ascherer/cwebbin), create the source drops with
 ```
-git archive -o cweb-4.12.tar.gz cweb-4.12
-git archive -o cwebbin-2024.tar.gz cwebbin-2024
+git archive -o cweb-4.12.1.tar.gz cweb-4.12.1
+git archive -o cwebbin-2025.tar.gz cwebbin-2025
 ```
 respectively, put these two tarballs and the original `ctwill.tar.gz` in the
 *SOURCES* directory, add the patch files
@@ -96,5 +96,5 @@ macros, and cweb include files.
 updated versions of **cweb** are added to the texlive source tree with
 ```
 cd /path/to/texlive-source/texk/web2c/cwebdir
-pax -rzf /path/to/cweb-4.12.tar.gz
+pax -rzf /path/to/cweb-4.12.1.tar.gz
 ```

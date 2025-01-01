@@ -35,8 +35,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
-Version: 4.12
-Release: 2024
+Version: 4.12.1
+Release: 2025
 
 # Start with CTWILL; only very few things are actually used
 Source0: ftp://ftp.cs.stanford.edu/pub/ctwill/ctwill.tar.gz
@@ -51,6 +51,7 @@ Patch2: 0002-Purge-redundant-TeX-macro.patch
 Patch3: 0003-Adapt-to-CWEB-4.5.patch
 Patch4: 0004-Add-silent-datecontentspage-macro.patch
 Patch5: 0005-Update-CTWILL-macros-for-CWEB-4.9.patch
+Patch6: 0006-Rename-page-dimensions-to-match-cwebmac.patch
 
 %global __sed_i %{__sed} -i
 
@@ -221,6 +222,9 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 %{__texhash}
 
 %changelog
+* Wed Jan 01 2025 Andreas Scherer <https://ascherer.github.io>
+- Tuneup for CWEB 4.12.1
+
 * Mon Aug 12 2024 Andreas Scherer <https://ascherer.github.io>
 - Tuneup for CWEB 4.12
 
