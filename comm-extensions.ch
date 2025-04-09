@@ -34,7 +34,7 @@ Section 18.  Add CTWILL.
 @z
 
 @x l.80
-boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
+bool program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 @z
@@ -283,10 +283,10 @@ to repeat the defaults.
 @^system dependencies@>
 
 @<Predecl...@>=
-static boolean set_path(char *,char *);@/
+static bool set_path(char *,char *);@/
 
 @ @c
-static boolean set_path(char *include_path,char *environment)
+static bool set_path(char *include_path,char *environment)
 {
 @#
 #ifdef CWEBINPUTS

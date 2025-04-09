@@ -16,7 +16,7 @@ Section 2.  Add CTWILL.
 @z
 
 @x l.39
-extern boolean program; /* \.{CWEAVE} or \.{CTANGLE}? */
+extern bool program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
   @!ctangle, @!cweave, @!ctwill
@@ -27,8 +27,8 @@ extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 Section 14.
 
 @x l.218
-extern boolean flags[]; /* an option for each 7-bit code */
+extern bool flags[]; /* an option for each 7-bit code */
 @y
-extern boolean flags[]; /* an option for each 7-bit code */
+extern bool flags[]; /* an option for each 7-bit code */
 extern const char *use_language; /* prefix to \.{cwebmac.tex} in \TEX/ output */
 @z

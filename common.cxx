@@ -2,7 +2,7 @@
 #line 62 "common.w"
 
 /*4:*/
-#line 54 "comm-foo.h"
+#line 53 "comm-foo.h"
 
 #include <ctype.h>  
 #include <stdbool.h>  
@@ -15,15 +15,15 @@
 #ifndef HAVE_GETTEXT
 #define HAVE_GETTEXT 0
 #endif
-#line 66 "comm-foo.h"
+#line 65 "comm-foo.h"
 
 #if HAVE_GETTEXT
 #include <libintl.h> 
 #else
-#line 70 "comm-foo.h"
+#line 69 "comm-foo.h"
 #define gettext(a) a
 #endif
-#line 72 "comm-foo.h"
+#line 71 "comm-foo.h"
 
 /*:4*//*93:*/
 #line 624 "comm-foo.ch"
@@ -137,7 +137,6 @@ err_print(_("! Include file name too long") ) ;goto restart;}
 /*2:*/
 #line 32 "comm-foo.h"
 
-typedef bool boolean;
 typedef uint8_t eight_bits;
 typedef uint16_t sixteen_bits;
 typedef enum{
@@ -147,7 +146,7 @@ extern cweb program;
 extern int phase;
 
 /*:2*//*5:*/
-#line 94 "comm-foo.h"
+#line 93 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
@@ -155,7 +154,7 @@ extern char*id_first;
 extern char*id_loc;
 
 /*:5*//*6:*/
-#line 112 "comm-foo.h"
+#line 111 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -163,7 +162,7 @@ extern char*loc;
 extern char*limit;
 
 /*:6*//*7:*/
-#line 129 "comm-foo.h"
+#line 128 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -174,20 +173,20 @@ extern char change_file_name[];
 extern int line[];
 extern int change_line;
 extern int change_depth;
-extern boolean input_has_ended;
-extern boolean changing;
-extern boolean web_file_open;
+extern bool input_has_ended;
+extern bool changing;
+extern bool web_file_open;
 
 /*:7*//*9:*/
-#line 149 "comm-foo.h"
+#line 148 "comm-foo.h"
 
 extern sixteen_bits section_count;
-extern boolean changed_section[];
-extern boolean change_pending;
-extern boolean print_where;
+extern bool changed_section[];
+extern bool change_pending;
+extern bool print_where;
 
 /*:9*//*10:*/
-#line 164 "comm-foo.h"
+#line 163 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -212,12 +211,12 @@ extern hash_pointer hash_end;
 extern hash_pointer hash_ptr;
 
 /*:10*//*12:*/
-#line 209 "comm-foo.h"
+#line 208 "comm-foo.h"
 
 extern int history;
 
 /*:12*//*14:*/
-#line 228 "comm-foo.h"
+#line 227 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -226,11 +225,11 @@ extern char tex_file_name[];
 extern char idx_file_name[];
 extern char scn_file_name[];
 extern char check_file_name[];
-extern boolean flags[];
+extern bool flags[];
 extern const char*use_language;
 
 /*:14*//*15:*/
-#line 244 "comm-foo.h"
+#line 243 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -283,9 +282,9 @@ static char alt_web_file_name[max_file_name_length];
 int line[max_include_depth];
 int change_line;
 int change_depth;
-boolean input_has_ended;
-boolean changing;
-boolean web_file_open= false;
+bool input_has_ended;
+bool changing;
+bool web_file_open= false;
 
 /*:25*//*26:*/
 #line 216 "common.w"
@@ -297,10 +296,10 @@ static char*change_limit;
 #line 545 "common.w"
 
 sixteen_bits section_count;
-boolean changed_section[max_sections];
-boolean change_pending;
+bool changed_section[max_sections];
+bool change_pending;
 
-boolean print_where= false;
+bool print_where= false;
 
 /*:42*//*43:*/
 #line 590 "common.w"
@@ -340,7 +339,7 @@ char idx_file_name[max_file_name_length];
 char scn_file_name[max_file_name_length];
 char check_file_name[max_file_name_length];
 #line 1131 "common.w"
-boolean flags[128];
+bool flags[128];
 
 /*:73*//*83:*/
 #line 1267 "common.w"
@@ -376,33 +375,33 @@ char*p,*path_prefix,*next_path_prefix;
 #line 66 "common.w"
 
 /*3:*/
-#line 43 "comm-foo.h"
+#line 42 "comm-foo.h"
 
 extern void common_init(void);
 
 /*:3*//*8:*/
-#line 143 "comm-foo.h"
+#line 142 "comm-foo.h"
 
-extern boolean get_line(void);
+extern bool get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:8*//*11:*/
-#line 187 "comm-foo.h"
+#line 186 "comm-foo.h"
 
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
-extern name_pointer section_lookup(char*,char*,boolean);
+extern name_pointer section_lookup(char*,char*,bool);
 extern void print_prefix_name(name_pointer);
 extern void print_section_name(name_pointer);
 extern void sprint_section_name(char*,name_pointer);
 
-extern boolean names_match(name_pointer,const char*,size_t,eight_bits);
+extern bool names_match(name_pointer,const char*,size_t,eight_bits);
 
 extern void init_node(name_pointer);
 
 /*:11*//*13:*/
-#line 212 "comm-foo.h"
+#line 211 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
@@ -413,7 +412,7 @@ extern void print_stats(void);
 
 /*:13*//*24:*/
 #line 176 "common.w"
-static boolean input_ln(FILE*);
+static bool input_ln(FILE*);
 
 /*:24*//*28:*/
 #line 237 "common.w"
@@ -427,8 +426,8 @@ static void check_change(void);
 #line 760 "common.w"
 
 static int web_strcmp(char*,size_t,char*,size_t);
-static name_pointer add_section_name(name_pointer,int,char*,char*,boolean);
-static void extend_section_name(name_pointer,char*,char*,boolean);
+static name_pointer add_section_name(name_pointer,int,char*,char*,bool);
+static void extend_section_name(name_pointer,char*,char*,bool);
 
 /*:55*//*64:*/
 #line 987 "common.w"
@@ -441,7 +440,7 @@ static void scan_args(void);
 /*:76*//*87:*/
 #line 521 "comm-foo.ch"
 
-static boolean set_path(char*,char*);
+static bool set_path(char*,char*);
 
 /*:87*/
 #line 67 "common.w"
@@ -549,7 +548,7 @@ fatal(_("! Cannot open output file "),tex_file_name);
 /*:20*//*23:*/
 #line 156 "common.w"
 
-static boolean input_ln(
+static bool input_ln(
 FILE*fp)
 {
 int c= EOF;
@@ -705,7 +704,7 @@ if(lines_dont_match)n++;
 /*:32*//*35:*/
 #line 362 "common.w"
 
-boolean get_line(void)
+bool get_line(void)
 {
 restart:
 if(changing&&include_depth==change_depth)
@@ -1036,7 +1035,7 @@ name_pointer par,
 int c,
 char*first,
 char*last,
-boolean ispref)
+bool ispref)
 {
 name_pointer p= name_ptr;
 char*s= first_chunk(p);
@@ -1067,7 +1066,7 @@ extend_section_name(
 name_pointer p,
 char*first,
 char*last,
-boolean ispref)
+bool ispref)
 {
 char*s;
 name_pointer q= p+1;
@@ -1093,7 +1092,7 @@ if(ispref)*(byte_ptr-1)= ' ';
 name_pointer
 section_lookup(
 char*first,char*last,
-boolean ispref)
+bool ispref)
 {
 int c= less;
 name_pointer p= root;
@@ -1204,7 +1203,7 @@ char*first= *pfirst;
 name_pointer q= r+1;
 char*ss,*s= first_chunk(r);
 int c= less;
-boolean ispref;
+bool ispref;
 while(true){
 ss= (r+1)->byte_start-1;
 if(*ss==' '&&ss>=r->byte_start)ispref= true,q= q->link;
@@ -1346,7 +1345,7 @@ scan_args(void)
 char*dot_pos;
 char*name_pos;
 char*s;
-boolean found_web= false,found_change= false,found_out= false;
+bool found_web= false,found_change= false,found_out= false;
 
 
 #line 390 "comm-foo.ch"
@@ -1533,7 +1532,7 @@ _("! Usage: ctwill [options] "
 /*:75*//*88:*/
 #line 524 "comm-foo.ch"
 
-static boolean set_path(char*include_path,char*environment)
+static bool set_path(char*include_path,char*environment)
 {
 
 #ifdef CWEBINPUTS
