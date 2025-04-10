@@ -8,13 +8,13 @@
 
 Section 7.
 
-@x
+@x l.105
 @d max_file_name_length 60
 @y
 @d max_file_name_length 1024
 @z
 
-@x
+@x l.119
 extern int line[]; /* number of current line in the stacked files */
 @y
 extern char *found_filename; /* filename found by |kpse_find_file| */
@@ -23,7 +23,7 @@ extern int line[]; /* number of current line in the stacked files */
 
 Section 13.
 
-@x
+@x l.201
 extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
 @y
 extern void cb_show_banner(void); /* copy |banner| back to \.{common.w} */
@@ -33,7 +33,7 @@ extern void print_stats(void); /* defined in \.{ctangle.w} and \.{cweave.w} */
 
 Section 16.
 
-@x
+@x l.234
 @d buf_size 200 /* maximum length of input line, plus one */
 @d longest_name 10000 /* file names, section names, and section texts
    shouldn't be longer than this */

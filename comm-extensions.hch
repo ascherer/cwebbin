@@ -15,7 +15,7 @@ Section 2.  Add CTWILL.
 @y
 @z
 
-@x l.39
+@x l.38
 extern bool program; /* \.{CWEAVE} or \.{CTANGLE}? */
 @y
 typedef enum {
@@ -26,7 +26,7 @@ extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 
 Section 14.
 
-@x l.218
+@x l.217
 extern bool flags[]; /* an option for each 7-bit code */
 @y
 extern bool flags[]; /* an option for each 7-bit code */

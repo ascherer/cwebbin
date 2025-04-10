@@ -191,13 +191,13 @@ p21	29 October 2005	AS	ANSI C++ patches for patch level [p21].
 ------------------------------------------------------------------------------
 Material in limbo.
 
-@x l.35
+@x l.34
 \def\title{CWEAVE (Version 4.12.1)}
 @y
 \def\title{CWEAVE (@VERSION@)}
 @z
 
-@x l.39
+@x l.38
   \centerline{(Version 4.12.1)}
 @y
   \centerline{(@VERSION@)}
@@ -213,7 +213,7 @@ z
 
 Section 1.
 
-@x l.70
+@x l.69
 @d banner "This is CWEAVE (Version 4.12.1)"
 @y
 @d banner "This is CWEAVE (@VERSION@)"
@@ -221,7 +221,7 @@ Section 1.
 
 Sections 3--18.
 
-@x l.112
+@x l.111
 @i common.h
 @y
 @i comm-foo.h
@@ -229,7 +229,7 @@ Sections 3--18.
 
 Addendum.
 
-@x l.4884
+@x l.4886
 @** Index.
 @y
 @** Extensions to {\tentex CWEB}.  The following sections introduce new or

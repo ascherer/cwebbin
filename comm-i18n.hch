@@ -8,7 +8,7 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 4.
 
-@x l.46
+@x l.45
 @ Interface to the standard \CEE/ library:
 
 @<Include files@>=
@@ -50,7 +50,7 @@ internationalization.
 
 Section 12.
 
-@x l.190
+@x l.189
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
 @d confusion(s) fatal(_("! This can't happen: "),s)
