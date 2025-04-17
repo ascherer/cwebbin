@@ -39,9 +39,8 @@ quarter) with its two-byte encoding \.{c2 bc}.
 @z
 
 @x l.708
-    if ((eight_bits)(*j)<0200) C_putc(*j);
+    if (ishigh(*j)) C_printf("%s",translit[(eight_bits)(*j)-0200]);
 @^high-bit character handling@>
-    else C_printf("%s",translit[(eight_bits)(*j)-0200]);
 @y
     if (ishigh(*j)) {
 @^high-bit character handling@>
@@ -52,5 +51,4 @@ quarter) with its two-byte encoding \.{c2 bc}.
       }
       C_printf("%s",translit[(eight_bits)(*j)-0200]);
     }
-    else C_putc(*j);
 @z
