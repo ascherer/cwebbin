@@ -50,7 +50,7 @@ internationalization.
 
 Section 12.
 
-@x l.189
+@x l.204
 @d confusion(s) fatal("! This can't happen: ",s)
 @y
 @d confusion(s) fatal(_("! This can't happen: "),s)

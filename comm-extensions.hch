@@ -26,7 +26,7 @@ extern cweb program; /* \.{CTANGLE} or \.{CWEAVE} or \.{CTWILL}? */
 
 Section 14.
 
-@x l.217
+@x l.232
 extern bool flags[]; /* an option for each 7-bit code */
 @y
 extern bool flags[]; /* an option for each 7-bit code */

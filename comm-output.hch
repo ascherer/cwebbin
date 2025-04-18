@@ -10,14 +10,14 @@ For a complete history of the changes made to COMMON.H see COMM-PATCH.CH.
 
 Section 14.
 
-@x l.208
+@x l.223
 @d make_xrefs flags['x'] /* should cross references be output? */
 @y
 @d make_xrefs flags['x'] /* should cross references be output? */
 @d check_for_change flags['c'] /* check temporary output for changes */
 @z
 
-@x l.216
+@x l.231
 extern char scn_file_name[]; /* name of |scn_file| */
 @y
 extern char scn_file_name[]; /* name of |scn_file| */
@@ -26,7 +26,7 @@ extern char check_file_name[]; /* name of |check_file| */
 
 Section 15.
 
-@x l.229
+@x l.244
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */
 @y
 extern FILE *active_file; /* currently active file for \.{CWEAVE} output */
