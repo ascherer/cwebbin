@@ -26,17 +26,17 @@
 #line 71 "comm-foo.h"
 
 /*:4*//*93:*/
-#line 624 "comm-foo.ch"
+#line 590 "comm-foo.ch"
 
 #if HAVE_GETTEXT
 #include <locale.h>  
 #else
-#line 628 "comm-foo.ch"
+#line 594 "comm-foo.ch"
 #define setlocale(a,b) ""
 #define bindtextdomain(a,b) ""
 #define textdomain(a) ""
 #endif
-#line 632 "comm-foo.ch"
+#line 598 "comm-foo.ch"
 
 /*:93*/
 #line 63 "common.w"
@@ -122,10 +122,6 @@ err_print(_("! Include file name too long") ) ;goto restart;}
 #define prefix 3
 #define extension 4
 #define bad_extension 5
-#define RETURN_OK 0
-#define RETURN_WARN 5
-#define RETURN_ERROR 10
-#define RETURN_FAIL 20
 #define flag_change (**argv!='-')
 #define max_path_length (BUFSIZ-2)
 #define PATH_SEPARATOR separators[0]
@@ -146,7 +142,7 @@ extern cweb program;
 extern int phase;
 
 /*:2*//*5:*/
-#line 93 "comm-foo.h"
+#line 108 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
@@ -154,7 +150,7 @@ extern char*id_first;
 extern char*id_loc;
 
 /*:5*//*6:*/
-#line 111 "comm-foo.h"
+#line 126 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -162,7 +158,7 @@ extern char*loc;
 extern char*limit;
 
 /*:6*//*7:*/
-#line 128 "comm-foo.h"
+#line 143 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -178,7 +174,7 @@ extern bool changing;
 extern bool web_file_open;
 
 /*:7*//*9:*/
-#line 148 "comm-foo.h"
+#line 163 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern bool changed_section[];
@@ -186,7 +182,7 @@ extern bool change_pending;
 extern bool print_where;
 
 /*:9*//*10:*/
-#line 163 "comm-foo.h"
+#line 178 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -211,12 +207,12 @@ extern hash_pointer hash_end;
 extern hash_pointer hash_ptr;
 
 /*:10*//*12:*/
-#line 208 "comm-foo.h"
+#line 223 "comm-foo.h"
 
 extern int history;
 
 /*:12*//*14:*/
-#line 227 "comm-foo.h"
+#line 242 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -229,7 +225,7 @@ extern bool flags[];
 extern const char*use_language;
 
 /*:14*//*15:*/
-#line 243 "comm-foo.h"
+#line 258 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -335,7 +331,7 @@ char**argv;
 char C_file_name[max_file_name_length];
 char tex_file_name[max_file_name_length];
 char idx_file_name[max_file_name_length];
-#line 374 "comm-foo.ch"
+#line 340 "comm-foo.ch"
 char scn_file_name[max_file_name_length];
 char check_file_name[max_file_name_length];
 #line 1131 "common.w"
@@ -348,19 +344,19 @@ FILE*C_file;
 FILE*tex_file;
 FILE*idx_file;
 FILE*scn_file;
-#line 464 "comm-foo.ch"
+#line 430 "comm-foo.ch"
 FILE*active_file;
 FILE*check_file;
 #line 1273 "common.w"
 
-#line 481 "comm-foo.ch"
+#line 447 "comm-foo.ch"
 /*:83*//*86:*/
-#line 509 "comm-foo.ch"
+#line 475 "comm-foo.ch"
 
 const char*use_language= "";
 
 /*:86*//*89:*/
-#line 555 "comm-foo.ch"
+#line 521 "comm-foo.ch"
 
 char include_path[max_path_length+2];
 char*p,*path_prefix,*next_path_prefix;
@@ -368,7 +364,7 @@ char*p,*path_prefix,*next_path_prefix;
 #ifndef SEPARATORS
 #define SEPARATORS "://"
 #endif
-#line 562 "comm-foo.ch"
+#line 528 "comm-foo.ch"
  char separators[]= SEPARATORS;
 
 /*:89*/
@@ -380,14 +376,14 @@ char*p,*path_prefix,*next_path_prefix;
 extern void common_init(void);
 
 /*:3*//*8:*/
-#line 142 "comm-foo.h"
+#line 157 "comm-foo.h"
 
 extern bool get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:8*//*11:*/
-#line 186 "comm-foo.h"
+#line 201 "comm-foo.h"
 
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
@@ -401,7 +397,7 @@ extern bool names_match(name_pointer,const char*,size_t,eight_bits);
 extern void init_node(name_pointer);
 
 /*:11*//*13:*/
-#line 211 "comm-foo.h"
+#line 226 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
@@ -438,7 +434,7 @@ static int section_name_cmp(char**,size_t,name_pointer);
 static void scan_args(void);
 
 /*:76*//*87:*/
-#line 521 "comm-foo.ch"
+#line 487 "comm-foo.ch"
 
 static bool set_path(char*,char*);
 
@@ -465,7 +461,7 @@ root= NULL;
 
 #line 47 "comm-foo.ch"
 /*94:*/
-#line 633 "comm-foo.ch"
+#line 599 "comm-foo.ch"
 
 setlocale(LC_MESSAGES,setlocale(LC_CTYPE,""));
 bindtextdomain("cweb","/usr/share/locale/");
@@ -485,12 +481,12 @@ show_banner= show_happiness= show_progress= make_xrefs= true;
 
 #line 101 "common.w"
 /*84:*/
-#line 481 "comm-foo.ch"
+#line 447 "comm-foo.ch"
 
 scan_args();
 if(program==ctangle){
 if(check_for_change)/*90:*/
-#line 573 "comm-foo.ch"
+#line 539 "comm-foo.ch"
 {
 if((C_file= fopen(C_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),C_file_name);
@@ -507,7 +503,7 @@ fatal(_("! Cannot open output file "),check_file_name);
 }
 
 /*:90*/
-#line 484 "comm-foo.ch"
+#line 450 "comm-foo.ch"
 
 else if((C_file= fopen(C_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),C_file_name);
@@ -515,7 +511,7 @@ fatal(_("! Cannot open output file "),C_file_name);
 }
 else{
 if(check_for_change)/*91:*/
-#line 588 "comm-foo.ch"
+#line 554 "comm-foo.ch"
 {
 if((tex_file= fopen(tex_file_name,"a"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
@@ -532,14 +528,14 @@ fatal(_("! Cannot open output file "),check_file_name);
 }
 
 /*:91*/
-#line 490 "comm-foo.ch"
+#line 456 "comm-foo.ch"
 
 else if((tex_file= fopen(tex_file_name,"wb"))==NULL)
 fatal(_("! Cannot open output file "),tex_file_name);
 }
 #line 1285 "common.w"
 
-#line 499 "comm-foo.ch"
+#line 465 "comm-foo.ch"
 /*:84*/
 #line 101 "common.w"
 
@@ -1271,12 +1267,12 @@ int wrap_up(void){
 if(show_progress||show_happiness||history!=spotless)new_line();
 if(show_stats)
 print_stats();
-#line 329 "comm-foo.ch"
+#line 307 "comm-foo.ch"
 /*69:*/
 #line 1073 "common.w"
 
 switch(history){
-#line 355 "comm-foo.ch"
+#line 321 "comm-foo.ch"
 case spotless:
 if(show_happiness)puts(_("(No errors were found.)"));break;
 case harmless_message:
@@ -1289,10 +1285,10 @@ puts(_("(That was a fatal error, my friend.)"));
 }
 
 /*:69*/
-#line 329 "comm-foo.ch"
+#line 307 "comm-foo.ch"
 
 /*92:*/
-#line 606 "comm-foo.ch"
+#line 572 "comm-foo.ch"
 
 if(C_file)fclose(C_file);
 if(tex_file)fclose(tex_file);
@@ -1301,16 +1297,11 @@ if(strlen(check_file_name))
 remove(check_file_name);
 
 /*:92*/
-#line 330 "comm-foo.ch"
+#line 308 "comm-foo.ch"
 
-#line 337 "comm-foo.ch"
-switch(history){
-case spotless:return RETURN_OK;
-case harmless_message:return RETURN_WARN;
-case error_message:return RETURN_ERROR;
-case fatal_message:default:return RETURN_FAIL;
-}
-#line 1071 "common.w"
+#line 1069 "common.w"
+if(history> harmless_message)return EXIT_FAILURE;
+else return EXIT_SUCCESS;
 }
 
 /*:68*//*70:*/
@@ -1330,7 +1321,7 @@ void
 overflow(
 const char*t)
 {
-#line 368 "comm-foo.ch"
+#line 334 "comm-foo.ch"
 printf(_("\n! Sorry, %s capacity exceeded"),t);fatal("","");
 #line 1107 "common.w"
 }
@@ -1348,24 +1339,24 @@ char*s;
 bool found_web= false,found_change= false,found_out= false;
 
 
-#line 390 "comm-foo.ch"
+#line 356 "comm-foo.ch"
 strcpy(change_file_name,"/dev/null");
 #if defined DEV_NULL
 strncpy(change_file_name,DEV_NULL,max_file_name_length-2);
 change_file_name[max_file_name_length-2]= '\0';
 #elif defined _DEV_NULL
-#line 395 "comm-foo.ch"
+#line 361 "comm-foo.ch"
  strncpy(change_file_name,_DEV_NULL,max_file_name_length-2);
 change_file_name[max_file_name_length-2]= '\0';
 #endif
-#line 398 "comm-foo.ch"
+#line 364 "comm-foo.ch"
 
 #line 1166 "common.w"
  while(--argc> 0){
 if((**(++argv)=='-'||**argv=='+')&&*(*argv+1))/*80:*/
 #line 1245 "common.w"
 
-#line 417 "comm-foo.ch"
+#line 383 "comm-foo.ch"
 for(dot_pos= *argv+1;*dot_pos> '\0';dot_pos++)
 if(*dot_pos=='l'){
 use_language= ++dot_pos;
@@ -1373,14 +1364,14 @@ break;
 }else flags[(eight_bits)*dot_pos]= flag_change;
 #line 1248 "common.w"
 
-#line 437 "comm-foo.ch"
+#line 403 "comm-foo.ch"
 /*:80*/
 #line 1167 "common.w"
 
 else{
 s= name_pos= *argv;dot_pos= NULL;
 while(*s)
-#line 406 "comm-foo.ch"
+#line 372 "comm-foo.ch"
 if(*s=='.')dot_pos= s++;
 else if(*s==DIR_SEPARATOR||*s==DEVICE_SEPARATOR||*s=='/')
 dot_pos= NULL,name_pos= ++s;
@@ -1393,7 +1384,7 @@ if(!found_web)/*77:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 458 "comm-foo.ch"
+#line 424 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
 #line 1262 "common.w"
 
@@ -1427,7 +1418,7 @@ else if(!found_change)/*78:*/
 if(strcmp(*argv,"-")!=0){
 if(s-*argv> max_file_name_length-4)
 /*82:*/
-#line 458 "comm-foo.ch"
+#line 424 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
 #line 1262 "common.w"
 
@@ -1451,7 +1442,7 @@ else if(!found_out)/*79:*/
 {
 if(s-*argv> max_file_name_length-5)
 /*82:*/
-#line 458 "comm-foo.ch"
+#line 424 "comm-foo.ch"
 fatal(_("! Filename too long\n"),*argv);
 #line 1262 "common.w"
 
@@ -1478,7 +1469,7 @@ found_out= true;
 #line 1177 "common.w"
 
 else/*81:*/
-#line 437 "comm-foo.ch"
+#line 403 "comm-foo.ch"
 
 switch(program){
 case ctangle:fatal(
@@ -1497,14 +1488,14 @@ _("! Usage: ctwill [options] "
 }
 #line 1260 "common.w"
 
-#line 458 "comm-foo.ch"
+#line 424 "comm-foo.ch"
 /*:81*/
 #line 1178 "common.w"
 
 }
 }
 if(!found_web)/*81:*/
-#line 437 "comm-foo.ch"
+#line 403 "comm-foo.ch"
 
 switch(program){
 case ctangle:fatal(
@@ -1523,14 +1514,14 @@ _("! Usage: ctwill [options] "
 }
 #line 1260 "common.w"
 
-#line 458 "comm-foo.ch"
+#line 424 "comm-foo.ch"
 /*:81*/
 #line 1181 "common.w"
 
 }
 
 /*:75*//*88:*/
-#line 524 "comm-foo.ch"
+#line 490 "comm-foo.ch"
 
 static bool set_path(char*include_path,char*environment)
 {
@@ -1539,7 +1530,7 @@ static bool set_path(char*include_path,char*environment)
 strncpy(include_path,CWEBINPUTS,max_path_length);
 include_path[max_path_length]= '\0';
 #endif
-#line 532 "comm-foo.ch"
+#line 498 "comm-foo.ch"
 
 if(environment){
 if(strlen(environment)+strlen(include_path)>=max_path_length){

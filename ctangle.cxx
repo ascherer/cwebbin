@@ -150,7 +150,7 @@ extern cweb program;
 extern int phase;
 
 /*:3*//*6:*/
-#line 93 "comm-foo.h"
+#line 108 "comm-foo.h"
 
 extern char section_text[];
 extern char*section_text_end;
@@ -158,7 +158,7 @@ extern char*id_first;
 extern char*id_loc;
 
 /*:6*//*7:*/
-#line 111 "comm-foo.h"
+#line 126 "comm-foo.h"
 
 extern char buffer[];
 extern char*buffer_end;
@@ -166,7 +166,7 @@ extern char*loc;
 extern char*limit;
 
 /*:7*//*8:*/
-#line 128 "comm-foo.h"
+#line 143 "comm-foo.h"
 
 extern int include_depth;
 extern FILE*file[];
@@ -182,7 +182,7 @@ extern bool changing;
 extern bool web_file_open;
 
 /*:8*//*10:*/
-#line 148 "comm-foo.h"
+#line 163 "comm-foo.h"
 
 extern sixteen_bits section_count;
 extern bool changed_section[];
@@ -190,7 +190,7 @@ extern bool change_pending;
 extern bool print_where;
 
 /*:10*//*11:*/
-#line 163 "comm-foo.h"
+#line 178 "comm-foo.h"
 
 typedef struct name_info{
 char*byte_start;
@@ -215,12 +215,12 @@ extern hash_pointer hash_end;
 extern hash_pointer hash_ptr;
 
 /*:11*//*13:*/
-#line 208 "comm-foo.h"
+#line 223 "comm-foo.h"
 
 extern int history;
 
 /*:13*//*15:*/
-#line 227 "comm-foo.h"
+#line 242 "comm-foo.h"
 
 extern int argc;
 extern char**argv;
@@ -233,7 +233,7 @@ extern bool flags[];
 extern const char*use_language;
 
 /*:15*//*16:*/
-#line 243 "comm-foo.h"
+#line 258 "comm-foo.h"
 
 extern FILE*C_file;
 extern FILE*tex_file;
@@ -350,14 +350,14 @@ static eight_bits next_control;
 extern void common_init(void);
 
 /*:4*//*9:*/
-#line 142 "comm-foo.h"
+#line 157 "comm-foo.h"
 
 extern bool get_line(void);
 extern void check_complete(void);
 extern void reset_input(void);
 
 /*:9*//*12:*/
-#line 186 "comm-foo.h"
+#line 201 "comm-foo.h"
 
 extern name_pointer id_lookup(const char*,const char*,eight_bits);
 
@@ -371,7 +371,7 @@ extern bool names_match(name_pointer,const char*,size_t,eight_bits);
 extern void init_node(name_pointer);
 
 /*:12*//*14:*/
-#line 211 "comm-foo.h"
+#line 226 "comm-foo.h"
 
 extern int wrap_up(void);
 extern void err_print(const char*);
