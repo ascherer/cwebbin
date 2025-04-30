@@ -1,4 +1,4 @@
-Changes for COMMON.W by Andreas Scherer, July 2021.
+Changes for COMMON.W by Andreas Scherer, April 2025.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  Several new command line options are provided here, as
@@ -122,42 +122,6 @@ Section 51.
   if (program==cweave) p->ilk=t, init_node(p);
 @y
   if (program!=ctangle) p->ilk=t, init_node(p);
-@z
-
-Section 68.
-
-@x l.1057
-Some implementations may wish to pass the |history| value to the
-operating system so that it can be used to govern whether or not other
-programs are started. Here, for instance, we pass the operating system
-a status of |EXIT_SUCCESS| if and only if only harmless messages were printed.
-@^system dependencies@>
-@y
-On multi-tasking systems like the {\mc AMIGA} it is very convenient to
-know a little bit more about the reasons why a program failed.  The four
-levels of return indicated by the |history| value are very suitable for
-this purpose.  Here, for instance, we pass the operating system a status
-of~0 if and only if the run was a complete success.  Any warning or error
-message will result in a higher return value, so that {\mc AREXX} scripts
-can be made sensitive to these conditions.
-@^system dependencies@>
-
-@d RETURN_OK     0 /* No problems, success */
-@d RETURN_WARN   5 /* A warning only */
-@d RETURN_ERROR 10 /* Something wrong */
-@d RETURN_FAIL  20 /* Complete or severe failure */
-@z
-
-@x l.1069
-  if (history > harmless_message) return EXIT_FAILURE;
-  else return EXIT_SUCCESS;
-@y
-  switch(history) {
-  case spotless: return RETURN_OK;
-  case harmless_message: return RETURN_WARN;
-  case error_message: return RETURN_ERROR;
-  case fatal_message: default: return RETURN_FAIL;
-  }
 @z
 
 Section 75.
