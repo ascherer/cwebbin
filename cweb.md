@@ -1,6 +1,6 @@
 % CWEB(1) Web2c @VERSION@ | General Commands Manual
 %
-% March 10, 2024
+% April 30, 2025.
 
 # NAME
 
@@ -53,8 +53,6 @@ resulting output.  There are, however, a few differences worth noting:
 * Option **+lX** is accompanied by several wrapper files for **cwebmac.tex**
   with translated captions for German (**+ld**), French (**+lf**), and
   Italian (**+li**).
-* CWEB in TeX\ Live operates silently by default (as of 2019); use the
-  **\-\-verbose** option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
   several, colon-separated, paths; see [ENVIRONMENT](#environment) below.
 * If properly configured, the main programs **ctangle** and **cweave** are
@@ -77,9 +75,9 @@ The first batch of options are common to both **ctangle** and **cweave**:
 * **+p**:
   print progress report messages
 * **+q**/**-q**:
-  shortcut for **-bhp**; also **\-\-quiet** (default)
+  shortcut for **-bhp**; also **\-\-quiet**
 * **+v**/**-v**:
-  shortcut for **+bhp**; also **\-\-verbose**
+  shortcut for **+bhp**; also **\-\-verbose** (default)
 * **+c**:
   check temporary output for changes
 * **+s**:

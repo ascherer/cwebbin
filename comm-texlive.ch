@@ -197,14 +197,6 @@ or flags to be turned on (beginning with |"+"|).
 see section |@<Handle flag arg...@>| for details.
 @z
 
-Section 74.  CWEB in TeX Live runs quietly by default.
-
-@x l.1139
-show_banner=show_happiness=show_progress=make_xrefs=true;
-@y
-make_xrefs=true;
-@z
-
 Section 75.
 
 @x l.1143
