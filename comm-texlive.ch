@@ -13,13 +13,13 @@ Material in limbo.
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{Common code for CTANGLE and CWEAVE (4.12.1 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.12.2 [\TeX~Live])}
 @z
 
 @x l.30 and l.199 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.12.1 [\TeX~Live])}
+  \centerline{(Version 4.12.2 [\TeX~Live])}
 @z
 
 @x l.32

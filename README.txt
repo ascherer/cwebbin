@@ -1,12 +1,12 @@
 							-*-Text-*-
 %%% LEGALESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This file is part of CWEBbin (Version 4.12.1 [2025]).
+% This file is part of CWEBbin (Version 4.12.2 [2025]).
 % (Set TAB to 8 spaces to get the spacing right.)
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated January 1, 2025 by Andreas Scherer.
+% This README file was last updated July 27, 2025 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
