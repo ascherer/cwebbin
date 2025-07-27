@@ -10,6 +10,12 @@ Limbo.
 
 Section 1.
 
+@x l.11
+is a modulus |m|, which causes every $m$th solution to be printed.
+@y
+is a modulus~$m$, which causes every $m$th solution to be printed.
+@z
+
 @x l.15
 @d deg u.I
 @y
@@ -23,7 +29,7 @@ Section 1.
 @x l.21
 main(int argc,char *argv[])
 @y
-@#@;@q Fix a bug in CWEB/CTWILL 4.3 @>
+@#
 int main(int argc,char *argv[])
 @z
 
@@ -55,7 +61,7 @@ Section 2.
 
 Section 3.
 
-@x
+@x l.58
 @ Vertices that have already appeared in the path are ``taken,'' and
 @y
 @ Vertices that have already appeared in the path are ``taken,'' and

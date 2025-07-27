@@ -13,7 +13,7 @@ For a complete history of the changes made to CWEAVE.W see CWEAV-PATCH.CH.
 
 Section 247.
 
-@x l.4570
+@x l.4572
 fclose(active_file);
 @y
 fclose(active_file); active_file=tex_file=NULL;
@@ -22,7 +22,7 @@ if (check_for_change) @<Update the result when it has changed@>@;
 
 Additional material.
 
-@x l.4884
+@x l.4886
 @** Index.
 @y
 @* Output file update. Most \CEE/ projects are controlled by a \.{Makefile}
@@ -36,7 +36,7 @@ Preston Briggs, to whom credit is due.
 
 @<Update the result...@>= {
 if((tex_file=fopen(tex_file_name,"r"))!=NULL) {
-  boolean comparison=false;
+  bool comparison=false;
 
   if((check_file=fopen(check_file_name,"r"))==NULL)
     fatal("! Cannot open output file ",check_file_name);

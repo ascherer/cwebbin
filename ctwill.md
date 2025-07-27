@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% January 1, 2025.
+% July 27, 2025.
 
 # NAME
 
@@ -99,7 +99,7 @@ The present incarnation of **ctwill** and its utilities tries hard to be a
 drop-in replacement for the original package.  There are, however, a few
 differences worth noting:
 
-* This version is based on the most recent version of CWEB (4.12.1).
+* This version is based on the most recent version of CWEB (4.12.2).
 * In TeX\ Live the utility programs are prefixed with **ctwill-** and
   the macro files with **ct** for technical reasons.
 * Options **\-\-help**, **\-\-quiet**, **\-\-verbose**, **\-\-version**, and
@@ -108,8 +108,6 @@ differences worth noting:
   and **proofmac.tex** with translated captions for German (**+ld**).
 * Option **+lX** is also accompanied by an extended **pdfctwimac.tex** for
   production of PDF and HINT output with active hyperlinks (**+lpdf**).
-* **ctwill** in TeX\ Live operates silently by default; use the **\-\-verbose**
-  option to get the original behavior.
 * File lookup with the environment variable CWEBINPUTS is extended to permit
   several, colon-separated, paths; see [ENVIRONMENT](#environment) below.
 * If properly configured, the main program **ctwill** is localized with the
@@ -130,9 +128,9 @@ In fact, the options are processed from left to right, so a sequence like
 * **+p**:
   print progress report messages
 * **+q**/**-q**:
-  shortcut for **-bhp**; also **\-\-quiet** (default)
+  shortcut for **-bhp**; also **\-\-quiet**
 * **+v**/**-v**:
-  shortcut for **+bhp**; also **\-\-verbose**
+  shortcut for **+bhp**; also **\-\-verbose** (default)
 * **+c**:
   check temporary output for changes
 * **-e**:

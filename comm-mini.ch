@@ -1,9 +1,9 @@
 Limbo.
 
 @x
-\def\title{Common code for CTANGLE and CWEAVE (4.12.1 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.12.2 [\TeX~Live])}
 @y
-\def\title{COMMON (4.12.1 [\TeX~Live])}
+\def\title{COMMON (4.12.2 [\TeX~Live])}
 \def\contentspagenumber{0}
 @z
 
@@ -58,11 +58,11 @@ Section 15.
 Section 24.
 
 @x
-@ @<Predecl...@>=@+static boolean input_ln(FILE *);
+@ @<Predecl...@>=@+static bool input_ln(FILE *);
 @y
-@ @<Predecl...@>=@+static boolean input_ln(FILE *);
+@ @<Predecl...@>=@+static bool input_ln(FILE *);
 @-input_ln@>
-@$input_ln {COMMON}23 \&{static} \&{boolean} (\,)@>
+@$input_ln {COMMON}23 \&{static} \&{bool} (\,)@>
 @z
 
 ẞection 28.

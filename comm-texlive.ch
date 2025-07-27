@@ -13,13 +13,13 @@ Material in limbo.
 \def\title{Common code for CTANGLE and CWEAVE (@VERSION@)}
 @y
 \def\Kpathsea/{{\mc KPATHSEA\spacefactor1000}} \ifacro\sanitizecommand\Kpathsea{KPATHSEA}\fi
-\def\title{Common code for CTANGLE and CWEAVE (4.12.1 [\TeX~Live])}
+\def\title{Common code for CTANGLE and CWEAVE (4.12.2 [\TeX~Live])}
 @z
 
 @x l.30 and l.199 of COMM-PATCH.CH
   \centerline{(@VERSION@)}
 @y
-  \centerline{(Version 4.12.1 [\TeX~Live])}
+  \centerline{(Version 4.12.2 [\TeX~Live])}
 @z
 
 @x l.32
@@ -197,14 +197,6 @@ or flags to be turned on (beginning with |"+"|).
 see section |@<Handle flag arg...@>| for details.
 @z
 
-Section 74.  CWEB in TeX Live runs quietly by default.
-
-@x l.1139
-show_banner=show_happiness=show_progress=make_xrefs=true;
-@y
-make_xrefs=true;
-@z
-
 Section 75.
 
 @x l.1143
@@ -308,10 +300,10 @@ to repeat the defaults.
 @^system dependencies@>
 
 @<Predecl...@>=
-static boolean set_path(char *,char *);@/
+static bool set_path(char *,char *);@/
 
 @ @c
-static boolean set_path(char *include_path,char *environment)
+static bool set_path(char *include_path,char *environment)
 {
 @#
 #ifdef CWEBINPUTS
