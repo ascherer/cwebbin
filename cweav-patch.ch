@@ -11,7 +11,7 @@ Authors and Contributors:
 (JFA) Jorge Fernandez Arnaiz
   (arnaiz@@redvax1.dgsca.unam.mx).
 
-(BOB) (bob@microprograms.com).
+(BOB) (bob@@microprograms.com).
 
 (H2B) Hans-Hermann Bode, Universität Osnabrück,
   (hhbode@@dosuni1.rz.uni-osnabrueck.de or HHBODE@@DOSUNI1.BITNET).
