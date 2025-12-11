@@ -1541,7 +1541,7 @@ return c;
 static void
 scan_repl(
 eight_bits t)
-{
+{bool first_bracket= true;
 sixteen_bits a;
 if(t==section_name)/*85:*/
 #line 1218 "ctangle.w"
@@ -1741,7 +1741,7 @@ case new_section:goto done;
 #line 1197 "ctangle.w"
 
 case')':app_repl(a);
-if(t==macro)app_repl(' ');
+if(t==macro&&first_bracket){app_repl(' ');first_bracket= false;}
 break;
 default:app_repl(a);
 }
