@@ -1,26 +1,22 @@
-Changes for WMERGE.W by Andreas Scherer, October 19, 2018.
+Changes for WMERGE.W by Andreas Scherer, January 23, 2026.
 
 This set of changes introduces several extensions to the standard behaviour
 of the CWEB system.  An extended path search mechanism for lookup of
 `@i'include files is provided here, as well as some enlargements and
 generalisations.
 
-This change file requires WMERG-PATCH.CH, WMERG-ANSI.CH to be applied.
-
-For a complete history of the changes made to WMERGE.W see WMERG-PATCH.CH.
-
-@x l.129
+@x l.127
 @d max_file_name_length 60
 @y
 @d max_file_name_length 255
 @z
 
-@x l.355
+@x l.353
 @ When an \.{@@i} line is found in the |cur_file|, we must temporarily
 stop reading it and start reading from the named include file.  The
 \.{@@i} line should give a complete file name with or without
 double quotes.
-If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag 
+If the environment variable \.{CWEBINPUTS} is set, or if the compiler flag
 of the same name was defined at compile time,
 \.{CWEB} will look for include files in the directory thus named, if
 it cannot find them in the current directory.
@@ -39,7 +35,7 @@ searched for in the current directory first.  You also may include device
 names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
 @z
 
-@x l.388
+@x l.386
   kk=getenv("CWEBINPUTS");
   if (kk!=NULL) {
     if ((l=strlen(kk))>max_file_name_length-2) too_long();
@@ -50,7 +46,7 @@ names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     if ((l=strlen(CWEBINPUTS))>max_file_name_length-2) too_long();
     strcpy(temp_file_name,CWEBINPUTS);
 #else
-    l=0; 
+    l=0;
 #endif /* |CWEBINPUTS| */
   }
   if (l>0) {
@@ -60,7 +56,7 @@ names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
     strcpy(cur_file_name,temp_file_name);
     cur_file_name[l]='/'; /* \UNIX/ pathname separator */
     if ((cur_file=fopen(cur_file_name,"r"))!=NULL) {
-      cur_line=0; 
+      cur_line=0;
       goto restart; /* success */
     }
   }
@@ -88,53 +84,19 @@ names; these must have a \.{DEVICE\_SEPARATOR} as their rightmost character.
   }
 @z
 
-@x l.549
-@ Some implementations may wish to pass the |history| value to the
-operating system so that it can be used to govern whether or not other
-programs are started. Here, for instance, we pass the operating system
-a status of 0 if and only if only harmless messages were printed.
-@^system dependencies@>
-@y
-@ On multi-tasking systems like the Amiga it is very convenient to know
-a little bit more about the reasons why a program failed.  The four levels
-of return indicated by the |history| value are very suitable for this
-purpose.  Here, for instance, we pass the operating system a status of~0
-if and only if the run was a complete success.  Any warning or error
-message will result in a higher return value, so ARexx scripts can be
-made sensitive to these conditions.
-@^system dependencies@>
-
-@d RETURN_OK     0 /* No problems, success */
-@d RETURN_WARN   5 /* A warning only */
-@d RETURN_ERROR 10 /* Something wrong */
-@d RETURN_FAIL  20 /* Complete or severe failure */
-@z
-
-@x l.558
-  if (history > harmless_message) return(1);
-  else return(0);
-@y
-  switch(history) {
-  case harmless_message: return(RETURN_WARN); break;
-  case error_message: return(RETURN_ERROR); break;
-  case fatal_message: return(RETURN_FAIL); break;
-  default: return(RETURN_OK);
-  }
-@z
-
-@x l.578
+@x l.576
 the names of those files. Most of the 128 flags are undefined but available
 @y
 the names of those files. Most of the 256 flags are undefined but available
 @z
 
-@x l.588
-boolean flags[128]; /* an option for each 7-bit code */
+@x l.586
+bool flags[128]; /* an option for each 7-bit code */
 @y
-boolean flags[256]; /* an option for each 8-bit code */
+bool flags[256]; /* an option for each 8-bit code */
 @z
 
-@x l.602
+@x l.600
 An omitted change file argument means that |'/dev/null'| should be used,
 when no changes are desired.
 @y
@@ -143,14 +105,14 @@ systems the contents of the compile-time variable |_DEV_NULL|---should
 be used, when no changes are desired.
 @z
 
-@x l.628
+@x l.625
         else if (*s=='/') dot_pos=NULL,++s;
 @y
         else if (*s==DIR_SEPARATOR || *s==DEVICE_SEPARATOR || *s=='/')
           dot_pos=NULL,++s;
 @z
 
-@x l.638
+@x l.635
   if (!found_change) strcpy(change_file_name,"/dev/null");
 @y
 #ifdef _DEV_NULL
@@ -160,14 +122,7 @@ be used, when no changes are desired.
 #endif
 @z
 
-@x l.191 of wmerg-ansi.ch
-@<Predecl...@>=
-@y
-@<Predecl...@>=
-static boolean set_path(char *,char *);@/
-@z
-
-@x l.717
+@x l.714
 @* Index.
 @y
 @* Path searching.  By default, \.{CTANGLE} and \.{CWEAVE} are looking
