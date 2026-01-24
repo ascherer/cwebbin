@@ -6,7 +6,7 @@
 % The CWEB programs by Silvio Levy are based on programs by D. E. Knuth.
 % They are distributed WITHOUT ANY WARRANTY, express or implied.
 
-% This README file was last updated July 27, 2025 by Andreas Scherer.
+% This README file was last updated January 24, 2026 by Andreas Scherer.
 
 % The following copyright notices extend to the respective parts of the
 % changed or added source code introduced in this patch only, not to the
@@ -16,7 +16,7 @@
 % Copyright (C) 1991-1993 Hans-Hermann Bode
 % Copyright (C) 1992 Klaus Guntermann
 % Copyright (C) 1991,1993 Carsten Steger
-% Copyright (C) 1993-2000,2005,2011,2018–2025 Andreas Scherer
+% Copyright (C) 1993-2000,2005,2011,2018–2026 Andreas Scherer
 
 % Permission is granted to make and distribute verbatim copies of this
 % document provided that the copyright notice and this permission notice
@@ -85,6 +85,8 @@ GENERAL CONTRIBUTION:
 ├── 0002-Purge-redundant-TeX-macro.patch			for CTWILL
 ├── 0003-Adapt-to-CWEB-4.5.patch				for CTWILL
 ├── 0004-Add-silent-datecontentspage-macro.patch		for CTWILL
+├── 0005-Update-CTWILL-macros-for-CWEB-4.9.patch		for CTWILL
+├── 0006-Rename-page-dimensions-to-match-cwebmac.patch		for CTWILL
 ├── comm-extensions.ch			change file for common.w
 ├── comm-extensions.hch			change file for common.h
 ├── comm-i18n.ch			change file for common.w
@@ -105,10 +107,12 @@ GENERAL CONTRIBUTION:
 ├── ctang-output.ch			change file for ctangle.w
 ├── ctang-patch.ch			change file for ctangle.w
 ├── ctang-texlive.ch			change file for ctangle.w
+├── ctang+u.ch				change file for ctangle.w
 ├── ctwill.bux				auxiliary file for CTWILL
+├── ctwill-hint.ch			format CTWILL with HiTeX
 ├── ctwill-man.ch			auxiliary file for CTWILL
 ├── ctwill.md				manpage for CTWILL in markdown
-├── ctwill-mini.ch			auxiliary file for CTWILL
+├── ctwill-mini.ch			format CTWILL with pdfTeX
 ├── ctwill-texlive.ch			change file for cweave.w/ctwill.w
 ├── cweave.1				clone of cweb.1
 ├── cweav-extensions.ch			change file for cweave.w
@@ -120,69 +124,83 @@ GENERAL CONTRIBUTION:
 ├── cweav-twill.ch			change file for cweave.w
 ├── cwebbin.spec			extended build recipe for debbuild
 ├── cwebinputs
-│   ├── amiga_types.w			keywords by Commodore and SAS
-│   ├── c++1xlib.w			Keywords for modern C++ standards
-│   ├── cweb_ecma94.w			Transliteration table for Latin-1
-│   ├── cweb_hp8.w			Transliteration table for HP Roman 8
-│   ├── cweb_mac8.w			Transliteration table for Mac 8-bit
-│   ├── cweb_pc850.w0.w			Transliteration table for Codepage 850
+│   ├── amiga_types.w		keywords by Commodore and SAS
+│   ├── c++1xlib.w		Keywords for modern C++ standards
+│   ├── cweb_ecma94.w		Transliteration table for Latin-1
+│   ├── cweb_hp8.w		Transliteration table for HP Roman 8
+│   ├── cweb_mac8.w		Transliteration table for Mac 8-bit
+│   ├── cweb_pc850.w0.w		Transliteration table for Codepage 850
 ├── cwebman-extensions.ch		change file for cwebman.tex
 ├── cwebman-patch.ch			change file for cwebman.tex
 ├── cwebman-texlive.ch			change file for cwebman.tex
 ├── cweb.md				base file for CWEB manpage cweb.1
 ├── examples
-│   ├── cct.w				program to translate between character tables
-│   ├── commonwords.w			program to count word frequencies in text files
-│   ├── extex-ansi.ch			change file for extex.w
-│   ├── Makefile.sas			[AMIGA] makefile for SAS/C compiler 6.0 and up
-│   ├── matrix.w			C++ program to invert complex 4x4 matrices
-│   ├── primes.ch			changes for the first 1000000 prime numbers
-│   ├── primes.w		     	program to print the first 1000 prime numbers
-│   ├── README.p11			extended description for the added examples
-│   ├── sample.w		     	program to produce random numbers
-│   ├── treeprint-ansi.ch		change file for treeprint.w
-│   ├── wc-ansi.ch			change file for wc.w
-│   ├── wmerg-ansi.ch			change file for wmerge.w
-│   ├── wmerg-borlandc.ch		[BCC] change file for wmerge.w
-│   ├── wmerge.dsp			[MSVC] Developer Studio Project for WMERGE
-│   ├── wmerg-extensions.ch		change file for wmerge.w
-│   ├── wmerg-memory.ch			[AMIGA,BCC] change file for wmerge.w
-│   ├── wmerg-output.ch			change file for wmerge.w
-│   ├── wmerg-patch.ch			change file for wmerge.w
-│   └── wordtest-ansi.ch		change file for wordtest.w
+│   ├── cct.w			program to translate between character tables
+│   ├── commonwords.w		program to count word frequencies in text files
+│   ├── Makefile.sas		[AMIGA] makefile for SAS/C compiler 6.0 and up
+│   ├── matrix.w		C++ program to invert complex 4x4 matrices
+│   ├── primes.ch		changes for the first 1000000 prime numbers
+│   ├── primes.w		program to print the first 1000 prime numbers
+│   ├── README.p11		extended description for the added examples
+│   ├── sample.w		program to produce random numbers
+│   ├── wc-ansi.ch		change file for wc.w
+│   ├── wmerge.dsp		[MSVC] Developer Studio Project for WMERGE
+│   ├── wmerg-extensions.ch	change file for wmerge.w
+│   └── wordtest-ansi.ch	change file for wordtest.w
 ├── LICENSE				MIT license
-├── Makefile.unix			makefile for cc, c89, gcc, ... on several machines
+├── Makefile.unix			makefile for gcc on several machines
 ├── po
-│   ├── cweb.pot			Portable Object Template for i18n
-│   ├── cweb-tl.pot			Portable Object Template for i18n
+│   ├── cweb.pot		Portable Object Template for i18n
+│   ├── cweb-tl.pot		Portable Object Template for i18n
 │   ├── de
-│   │   ├── cweb.po			Portable Object for German t10n
-│   │   ├── cweb-tl.po			Portable Object for German t10n
-│   │   └── web2c-help.po		Portable Object for German t10n
+│   │   ├── cweb.po		Portable Object for German t10n
+│   │   ├── cweb-tl.po		Portable Object for German t10n
+│   │   └── web2c-help.po	Portable Object for German t10n
 │   ├── it
-│   │   └── cweb.po			Portable Object for Italian t10n
-│   └── web2c-help.pot			Portable Object Template for i18n
+│   │   └── cweb.po		Portable Object for Italian t10n
+│   └── web2c-help.pot		Portable Object Template for i18n
+├── prod-cweave.ch			change file for prod.w/CWEAVE
 ├── prod-twill.ch			change file for prod.w/CTWILL
+├── proofsort				utility for CTWILL +P
 ├── README.md				Github project description
 ├── README.txt				the current file
 ├── refsort.1				manpage link to ctwill.1
 ├── refsort.ch				Patch for refsort.w
 ├── system.bux				auxiliary file for CTWILL
+├── tests			test suite for CTWILL; used in TeX Live build
+│   ├── gb_graph.hux
+│   ├── gb_save.hux
+│   ├── gb_types.w
+│   ├── ham.aux
+│   ├── ham.bux
+│   ├── ham.ch
+│   ├── ham.idx
+│   ├── ham.ref
+│   ├── ham.scn
+│   ├── ham-sorted.tex
+│   ├── ham.sref
+│   ├── ham.tex
+│   ├── ham.w
+│   ├── index.tex
+│   └── system.bux
 ├── texinputs
-│   ├── cweb_ecma94.sty			Umlauts and special characters for Latin-1
-│   ├── cweb_hp8.sty			Umlauts and special characters for HP Roman 8
-│   ├── cweb_mac8.sty			Umlauts and special characters for Macintosh
-│   ├── cweb_pc850.sty			Umlauts and special characters for IBM 850
-│   ├── dctwimac.tex			German captions in addition to ctwimac.tex
-│   ├── dcwebmac.tex			German captions in addition to cwebmac.tex
-│   ├── dcwebstrings.tex		Common German captions
-│   ├── dproofmac.tex			German captions in addition to proofmac.tex
-│   ├── fcwebmac.tex			French captions in addition to cwebmac.tex
-│   ├── icwebmac.tex			Italian captions in addition to cwebmac.tex
-│   ├── pdfctwimac.tex			PDF macros for CTWILL
-│   ├── pdfwebtocfront.tex		place TOC page at front of PDF output
-│   └── Xcwebmac.tex			beautifications for cwebmac.tex
+│   ├── cweb_ecma94.sty		Umlauts and special characters for Latin-1
+│   ├── cweb_hp8.sty		Umlauts and special characters for HP Roman 8
+│   ├── cweb_mac8.sty		Umlauts and special characters for Macintosh
+│   ├── cweb_pc850.sty		Umlauts and special characters for IBM 850
+│   ├── dctwimac.tex		German captions in addition to ctwimac.tex
+│   ├── dcwebmac.tex		German captions in addition to cwebmac.tex
+│   ├── dcwebstrings.tex	Common German captions
+│   ├── dproofmac.tex		German captions in addition to proofmac.tex
+│   ├── fcwebmac.tex		French captions in addition to cwebmac.tex
+│   ├── icwebmac.tex		Italian captions in addition to cwebmac.tex
+│   ├── pdfctwimac.tex		PDF macros for CTWILL
+│   ├── pdfproofmac.tex		PDF macros for CTWILL +P
+│   ├── pdfwebtocfront.tex	place TOC page at front of PDF output
+│   ├── twimac-web.tex -> /opt/github/web/twimac.tex	TWILL macros for TL
+│   └── Xcwebmac.tex		beautifications for cwebmac.tex
 ├── texlive.w				introduction to *-w2c.ch change files
+├── twill-refsort -> /opt/github/web/refsort	utility for TWILL in TeX Live
 ├── twinx.1				manpage link to ctwill.1
 ├── twinx.ch				Patch for twinx.w
 ├── twinx-startup.tex			preamble starter for twinxmac.tex
@@ -402,3 +420,4 @@ and co-workers on whose initial ideas and contributions this package is based.
 Happy CWEBbin'!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# vim: set noexpandtab softtabstop=8 tabstop=8:
