@@ -159,7 +159,7 @@ We shall represent |S| by an array of $2M$ integers.
 @^Differences between \PASCAL/ and \CEE/@>
 
 @ @<Initialize set |S| to empty@>=
-   if(hash = (int *)calloc(2*M,sizeof(int))) {
+   if((hash = (int *)calloc(2*M,sizeof(int)))) {
       H_max = 2*M-1; @+ alpha = 2*M/N;
       for(H=0; H<=H_max; H++)
          hash[H] = 0;

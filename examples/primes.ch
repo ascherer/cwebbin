@@ -204,7 +204,7 @@ approach is included right before the index of this source.
 absolutely sure this will crash some compilers.  So, what!
 
 @<Print table |p|@>=
-   if(fp=fopen("primes.out","wb")) {
+   if((fp=fopen("primes.out","wb"))) {
       fwrite(p,sizeof(long),MM,fp);
       fclose(fp);
       }

@@ -61,14 +61,11 @@ have never seen \.{CWEB} before.  Here is an outline of the program to be
 constructed:
 @^Differences between \PASCAL/ and \CEE/@>
 
-@d FALSE 0
-@d TRUE 1
-
 @c
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-typedef unsigned char boolean; /* for logical switches */
 @<Type declarations@>@/
 @<Global variables@>@/
 @<Procedures for initialization@>@/
@@ -188,8 +185,10 @@ alphabet, then |lettercode[c]==k|; but if $c$ is a nonletter,
 |lettercode[c]==0|.  We assume that $0\leq c\leq255$ whenever $c$ is of
 type |char|, i.e., we are dealing with |unsigned char|.
 
+@f uchar char
+
 @<Global variables@>=
-unsigned char lettercode[256]; /* the input conversion table */
+uchar lettercode[256]; /* the input conversion table */
 
 @ The array |lettercode| is filled with $0$ for all non-letters, and with
 the number of the letter in the alphabet.  We won't distinguish between
@@ -235,13 +234,13 @@ will be printed at the end of the run.
 @d max_word_length 60 /* words shouldn't be longer than this */
 
 @<Global variables@>=
-unsigned char buffer[max_word_length]; /* the current word */
+uchar buffer[max_word_length]; /* the current word */
 unsigned int word_length; /* the number of active letters currently in |buffer|;
    $0\ldots$|max_word_length| */
-boolean word_truncated; /* was some word longer than |max_word_length|?*/
+bool word_truncated; /* was some word longer than |max_word_length|?*/
 
 @ @<Set initial values@>=
-   word_truncated=FALSE;
+   word_truncated=false;
 
 @ We're ready now for the main input routine, which puts the next word into
 the buffer.  If no more words remain, |word_length| is set to zero;
@@ -265,15 +264,15 @@ void get_word(void)
 word.
 
 @<Read a word into |buffer|@>=
-   do @+ {
+   do {
       if(word_length==max_word_length)
-         word_truncated=TRUE;
+         word_truncated=true;
       else {
          incr(word_length);
          buffer[word_length-1]=lettercode[c];
          }
       c=fgetc(stdin);
-      } @+ while(lettercode[c]!=0);
+      } while(lettercode[c]!=0);
 
 @* Dictionary lookup.  Given a word in the buffer, we will want to look for
 it in a dynamic dictionary of all words that have appeared so far.  We
@@ -304,7 +303,8 @@ by a |pointer|, which is an index into four large arrays called |link|,
 @d trie_size 32767 /* the largest pointer value */
 
 @<Type declarations@>=
-typedef unsigned int pointer; /* $0\ldots$|trie_size| */
+typedef unsigned short pointer; /* $0\ldots$|trie_size| */
+typedef unsigned char uchar;
 
 @ One-letter words are represented by the pointers $1$ through $26$.  The
 representation of longer words is defined recursively: If $p$ represents
@@ -352,8 +352,8 @@ Unused positions $p$ have |ch[p]==empty_slot|.  In this case |link[p]|,
 @d move_to_last_suffix(A) while(link[A]!=0) A=sibling[link[A]]
 
 @<Global variables@>=
-unsigned int link[trie_size+1],sibling[trie_size+1]; /* $0\ldots$|trie_size| */
-unsigned char ch[trie_size+1]; /* |empty_slot|$\ldots$|header| */
+pointer link[trie_size+1],sibling[trie_size+1]; /* $0\ldots$|trie_size| */
+uchar ch[trie_size+1]; /* |empty_slot|$\ldots$|header| */
 
 @ @<Set initial values@>=
    for(i=27; i<=trie_size; ++i)
@@ -375,13 +375,13 @@ is returned.
 @d abort_find return(0)
 
 @<Procedures for data manipulation@>=
-unsigned int find_buffer(void) /* returns values from $0$ to |trie_size| */
+pointer find_buffer(void) /* returns values from $0$ to |trie_size| */
    {
    unsigned int i; /* index into |buffer| with values from
       $1$ to |max_word_length| */
    unsigned int p; /* the current word position */
    unsigned int q; /* the next word position */
-   unsigned char c; /* current letter code */
+   uchar c; /* current letter code */
    @<Other local variables of |find_buffer|@>@;@#
 
    i=1; @+ p=buffer[0];
@@ -448,23 +448,25 @@ dictionary.
       last_h = h + tolerance - trie_size + 52;
 
 @ @<Compute the next trial header location |h|, or |abort_find|@>=
+{
    if(h == last_h)
       abort_find;
    if(h == trie_size - 26)
       h = 27;
    else
       incr(h);
+}
 
 @ @<Other local variables of |find_buffer|@>=
    pointer h; /* trial header location */
-   int last_h; /* the final one to try */
+   pointer last_h; /* the final one to try */
 
 @ @<Insert the firstborn child of |p| and move to it, or |abort_find|@>=
    {
    @<Get set for computing header locations@>@;
-   do @+ {
+   do
       @<Compute the next trial header location |h|, or |abort_find|@>@;
-      } @+ while((ch[h] != empty_slot) || (ch[h+c] != empty_slot));
+      while((ch[h] != empty_slot) || (ch[h+c] != empty_slot));
    link[p] = h; @+ link[h] = p; @+p = h + c;
    ch[h] = header; @+ ch[p] = c;
    sibling[h] = p; @+ sibling[p] = h; @+ count[p] = link[p] = 0;
@@ -490,7 +492,7 @@ that need to be moved are generally small.
    {
    @<Find a suitable place |h| to move, or |abort_find|@>@;
    q = h+c; @+ r = link[p]; @+ delta = h-r;
-   do @+ {
+   do {
       sibling[r+delta] = sibling[r] + delta;
       ch[r+delta] = ch[r];
       ch[r] = empty_slot;
@@ -499,18 +501,18 @@ that need to be moved are generally small.
       if(link[r] != 0)
          link[link[r]] = r + delta;
       r = sibling[r];
-      } @+ while(ch[r] != empty_slot);
+      } while(ch[r] != empty_slot);
    }
 
 @ @<Other local variables of |find_buffer|@>=
    pointer r; /* family member to be moved */
    int delta; /* amount of motion */
-   boolean slot_found; /* have we found a new homestead? */
+   bool slot_found; /* have we found a new homestead? */
 
 @ @<Find a suitable place |h| to move, or |abort_find|@>=
-   slot_found = FALSE;
+   slot_found = false;
    @<Get set for computing header locations@>@;
-   do @+ {
+   do {
       @<Compute the next trial header location |h|, or |abort_find|@>@;
       if(ch[h+c] == empty_slot) {
          r = link[p];
@@ -518,9 +520,9 @@ that need to be moved are generally small.
          while((ch[r+delta]==empty_slot) && (sibling[r]!=link[p]))
             r = sibling[r];
          if(ch[r+delta] == empty_slot)
-            slot_found = TRUE;
+            slot_found = true;
          }
-      } @+ while(!slot_found);
+      } while(!slot_found);
 
 @* The frequency counts.  It is, of course, a simple matter to combine
 dictionary lookup with the |get_word| routine, so that all the word
@@ -531,17 +533,17 @@ frequencies are counted.  We may have to drop a few words in extreme cases
 
 @<Global variables@>=
    int count[trie_size+1];
-   boolean word_missed; /* did the dictionary get too full? */
+   bool word_missed; /* did the dictionary get too full? */
    pointer p; /* location of the current word */
 
 @ @<Set initial values@>=
-   word_missed = FALSE;
+   word_missed = false;
 
 @ @<Input the text, maintaining a dictionary with frequency counts@>=
    get_word();
    while(word_length) {
       if((p = find_buffer()) == 0)
-         word_missed = TRUE;
+         word_missed = true;
       else if(count[p] < max_count)
          incr(count[p]);
       get_word();
@@ -565,11 +567,11 @@ void print_word(pointer p)
    unsigned int i; /* index into |buffer|; $1\ldots{}$|max_word_length| */
 
    word_length = 0; @+ q = p; @+ fputc(' ',stdout);
-   do @+ {
+   do {
       incr(word_length);
       buffer[word_length-1] = ch[q];
       move_to_prefix(q);
-      } @+ while(q != 0);
+      } while(q != 0);
    for(i=word_length; i>=1; --i)
       fputc(buffer[i-1]-1+'a',stdout);
    if(count[p] < max_count)
@@ -611,7 +613,7 @@ void trie_sort(void)
    for(k=1; k<=large_count; ++k)
       sorted[k-1] = 0;
    p = sibling[0]; @+ move_to_last_suffix(p);
-   do @+ {
+   do {
       f = count[p]; @+ q = sibling[p];
       if(f)
          @<Link |p| into the list |sorted[f-1]|@>@;
@@ -620,7 +622,7 @@ void trie_sort(void)
          }
       else
          p = link[q]; /* move to prefix */
-      } @+ while(p);
+      } while(p);
    }
 
 @ Here we use the fact that |count[0]==0|.
@@ -663,14 +665,14 @@ void print_common(int k)
    pointer p; /* current or next word */
 
    f = large_count; @+ p = sorted[f-1];
-   do @+ {
+   do {
       while(p == 0) {
          if(f==1)
             return;
          decr(f); @+ p = sorted[f-1];
          }
       print_word(p); @+ decr(k); @+ p = sibling[p];
-      } @+ while(k>0);
+      } while(k>0);
    }
 
 @* The endgame.  We have recorded |total_words| different words.
