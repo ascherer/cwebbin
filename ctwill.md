@@ -1,6 +1,6 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% July 27, 2025.
+% February 3, 2026.
 
 # NAME
 
@@ -208,10 +208,17 @@ Other **aux**iliary files with references are created automatically by
   by Donald E.\ Knuth and Silvio Levy (hardcopy version of **cwebman.tex**
   and the source code listings of **common.w**, **ctangle.w**, and
   **cweave.w**).
+
+* CTWILL program source, section 287:
+
+  https://mirror.ctan.org/info/knuth-pdf/cweb/ctwill.pdf
+
 * Digital Typography:
   by D.\ E.\ Knuth (_CSLI_, 1999).
+
 * Literate Programming:
   by D.\ E.\ Knuth (_CSLI_, 1992).
+
 * Weaving a Program:
   by Wayne Sewell.
 
