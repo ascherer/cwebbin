@@ -143,14 +143,6 @@ for it.
 (This is true for any other input or change file lookup.)}
 @z
 ------------------------------------------------------------------------------
-@x l.1025
-except for error messages.
-@y
-except for error messages.%
-\cwebfootnote{\.{CWEB} in \TeX~Live runs `\.{--quiet}ly', i.\,e.,
-options `\.{b}', `\.{h}', and `\.{p}' are `off' by default.}
-@z
-------------------------------------------------------------------------------
 @x l.1031 and l.33 of CWEBMAN-EXTENSIONS.CH
 \option i Indent parameters in function declarations.  (On by default;
 @y
