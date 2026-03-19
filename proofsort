@@ -38,7 +38,7 @@ sub help_handler {
 }
 ## version()
 sub version {
-  return "This is $progname (2023).\n";
+  return "This is $progname (2025).\n";
 }
 
 # Read input from the console and look for blocks like
@@ -54,6 +54,8 @@ sub version {
 # is used in the storage.
 my %mini_index; # storage for index entries of a section
 my $print_index = 0; # do we collect and print a mini-index?
+my $lines_processed = 0;
+
 foreach my $line (<STDIN>)
 {
 	if ("\\mini\n" eq $line) { # start of mini-index
@@ -80,7 +82,10 @@ foreach my $line (<STDIN>)
 	}
 
 	print $line;
+	$lines_processed++;
 }
+
+die $usage unless $lines_processed;
 
 exit 0;
 
