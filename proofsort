@@ -38,7 +38,7 @@ sub help_handler {
 }
 ## version()
 sub version {
-  return "This is $progname (2025).\n";
+  return "This is $progname (2026).\n";
 }
 
 # Read input from the console and look for blocks like
