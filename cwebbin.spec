@@ -170,14 +170,9 @@ done
 
 %{__sed_i} -e "s/\(proofmac\)/ct\1/g" \
 	-e "s/\(proofsort\)/ctwill-\1/g" \
-	-e "s/\(\# Public\)/\# \$Id\$\n\1/" \
-	-e "s/\"This is \$progname (2023)./\$progname.' \$Revision\$ \$Date\$'.\"/" \
 	ctwill-proofsort
 
-%{__sed_i} -e "s/\(refsort\)/twill-\1/g" \
-	-e "s/\(\# Public\)/\# \$Id\$\n\1/" \
-	-e "s/\"This is \$progname (2023)./\$progname.' \$Revision\$ \$Date\$'.\"/" \
-	twill-refsort
+%{__sed_i} -e "s/\(refsort\)/twill-\1/g" twill-refsort
 
 %{__pax} *-w2c.ch comm-w2c.h prod-*.w ct*mac.tex po man tests \
 	cwebinputs texinputs refsort.w refsort.ch twinx.w twinx.ch \
