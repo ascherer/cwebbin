@@ -133,6 +133,18 @@ Looking at those
 pdfwebtocfront}' as the last command in the limbo section and run \TeX\
 \\{twice} on your woven \.{CWEB} document, in order to shift the
 table-of-contents to the front of the {\mc PDF} output.
+
+\point 22. If you want to make identifiers with underscores like \\{common\_init}
+or \&{size\_t} searchable in {\mc PDF} and {\mc HINT} documents, you can overwrite
+the definitions for italic and bold in the preamble of your \.{CWEB} source:
+$$\lpile{\.{\\def\\\\\#1\{\\leavevmode\\hbox\{\\it \% 5.24995-3.67998=1.56997\}}\cr
+\.{{ }{ }\\ifacrohint\\def\\\_\{\\kern-.785pt\\hbox\{\\tt\\char`\\\_\}\\kern-.785pt\}\\fi}\cr
+\.{{ }{ }\#1\\/\\kern.05em\}\} \% italic type for identifiers}\cr
+\.{\\def\\\&\#1\{\\leavevmode\\hbox\{\\bf \% 4.82994-3.67998=1.14996\}}\cr
+\.{{ }{ }\\ifacrohint\\def\\\_\{\\kern-.575pt\\hbox\{\\tt\\char`\\\_\}\\kern-.575pt\}\\else}\cr
+\.{{ }{ }\\def\\\_\{\\kern.04em\\vbox\{\\hrule width.3em height .6pt\}\\kern.08em\}\\fi}\cr
+\.{{ }{ }\#1\\/\\kern.05em\}\} \% boldface type for reserved words}\cr}$$
+
 \bye
 @z
 ------------------------------------------------------------------------------
