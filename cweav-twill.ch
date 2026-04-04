@@ -750,7 +750,7 @@ out_name(cur_name,true);
 out_name(cur_name,proofing);
 @z
 
-@x l.4876
+@x l.4877
   printf(_("%td bytes (out of %ld)\n"),
             (ptrdiff_t)(byte_ptr-byte_mem),(long)max_bytes);
 @y

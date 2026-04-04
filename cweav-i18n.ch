@@ -329,7 +329,7 @@ Section 232.
 @y
         err_print(_("! Verbatim string should be in C text only"));
 @z
-@x l.4274
+@x l.4275
         err_print("! You can't do that in TeX text"); break;
 @y
         err_print(_("! You can't do that in TeX text")); break;
@@ -337,13 +337,13 @@ Section 232.
 
 Section 236.
 
-@x l.4346
+@x l.4347
     err_print("! Improper macro definition");
 @y
     err_print(_("! Improper macro definition"));
 @z
 
-@x l.4360
+@x l.4361
         } @=/* otherwise fall through */@>@;
       default: err_print("! Improper macro definition"); break;
 @y
@@ -353,7 +353,7 @@ Section 236.
 
 Section 237.
 
-@x l.4386
+@x l.4387
   if (scrap_ptr!=scrap_info+2) err_print("! Improper format definition");
 @y
   if (scrap_ptr!=scrap_info+2) err_print(_("! Improper format definition"));
@@ -361,7 +361,7 @@ Section 237.
 
 Section 240.
 
-@x l.4421
+@x l.4422
   err_print("! You need an = sign after the section name");
 @y
   err_print(_("! You need an = sign after the section name"));
@@ -369,7 +369,7 @@ Section 240.
 
 Section 241.
 
-@x l.4443
+@x l.4444
   err_print("! You can't do that in C text");
 @y
   err_print(_("! You can't do that in C text"));
@@ -377,25 +377,25 @@ Section 241.
 
 Section 247.
 
-@x l.4534
+@x l.4535
   if (show_progress) printf("%s","\nWriting the index...");
 @y
   if (show_progress) printf("%s",_("\nWriting the index..."));
 @z
 
-@x l.4545
+@x l.4546
     fatal("! Cannot open index file ",idx_file_name);
 @y
     fatal(_("! Cannot open index file "),idx_file_name);
 @z
 
-@x l.4557
+@x l.4558
     fatal("! Cannot open section file ",scn_file_name);
 @y
     fatal(_("! Cannot open section file "),scn_file_name);
 @z
 
-@x l.4572
+@x l.4573
   printf("%s","Done.");
 @y
   printf("%s",_("Done."));
@@ -403,7 +403,7 @@ Section 247.
 
 Section 258.
 
-@x l.4730
+@x l.4731
     if (sort_ptr>=scrap_info_end) overflow("sorting");
 @y
     if (sort_ptr>=scrap_info_end) overflow(_("sorting"));
@@ -411,7 +411,7 @@ Section 258.
 
 Section 270.
 
-@x l.4870
+@x l.4871
   puts("\nMemory usage statistics:");
 @.Memory usage statistics:@>
   printf("%td names (out of %ld)\n",@^system dependencies@>
