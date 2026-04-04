@@ -325,9 +325,9 @@ Section 232.
         err_print(_("! TeX string should be in C text only"));
 @z
 @x l.4271
-        err_print("! Verbatim string should be in C text only"); break;
+        err_print("! Verbatim string should be in C text only");
 @y
-        err_print(_("! Verbatim string should be in C text only")); break;
+        err_print(_("! Verbatim string should be in C text only"));
 @z
 @x l.4274
         err_print("! You can't do that in TeX text"); break;
