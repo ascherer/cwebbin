@@ -190,6 +190,10 @@ CWEBMANPATCH = cwebman-patch.ch cwebman-extensions.ch cwebman-texlive.ch
 PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	0001-Support-extended-syntax-for-numeric-literals.patch \
 	0002-Purge-redundant-TeX-macro.patch \
+	0003-Adapt-to-CWEB-4.5.patch \
+	0004-Add-silent-datecontentspage-macro.patch \
+	0005-Update-CTWILL-macros-for-CWEB-4.9.patch \
+	0006-Rename-page-dimensions-to-match-cwebmac.patch \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
 	refsort.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
