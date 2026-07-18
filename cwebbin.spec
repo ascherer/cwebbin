@@ -168,7 +168,7 @@ done
 	-e "s/\(proofsort\)/ctwill-\1/g" \
 	ctwill-proofsort
 
-%{__sed_i} -e "s/\(refsort2\)/ctwill-\1/g" \
+%{__sed_i} -e "s/\(refsort\)/ctwill-\1/g" \
 	ctwill-refsort2
 
 %{__sed_i} -e "s/\(refsort\)/twill-\1/g" twill-refsort
