@@ -1,16 +1,17 @@
 % CTWILL(1) Web2c @VERSION@ | General Commands Manual
 %
-% February 3, 2026.
+% July 18, 2026.
 
 # NAME
 
-ctwill, proofsort, refsort, twinx - translate CWEB to TeX with mini-indexes
+ctwill, proofsort, refsort, refsort2, twinx - translate CWEB to TeX with mini-indexes
 
 # SYNOPSIS
 
 **ctwill** [_options_] _webfile_[.w] [{_changefile_[.ch]|-} [_outfile_[.tex]]] \
 ( **proofsort** < _texfile_.tex ) 1<> _texfile_.tex \
 **refsort** < _indexfile_.ref > _indexfile_.sref \
+( **refsort2** < _indexfile_.sref ) 1<> _indexfile_.sref \
 **twinx** _outfile_.tex [_outfile_.tex ...] > index.tex
 
 # DESCRIPTION
@@ -48,6 +49,10 @@ After **tex foo** you will have output that looks like final pages except that
 the entries of mini-indexes won't be alphabetized.  The first run produces a
 weird file called **foo.ref**.  Say **refsort < foo.ref > foo.sref** and then
 another **tex foo** will produce alphabetized output.
+
+In the rare case that your code uses multiple variants of the same identifier
+in a single section, you should clean up the **foo.sref** file for possible
+sorting errors with **( refsort2 < foo.sref ) 1<> foo.sref**.
 
 The **twinx** program compiles a master index for a set of related programs
 that have been processed by **ctwill** (_not_ by **cweave**, mind you!).

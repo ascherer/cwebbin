@@ -4,12 +4,12 @@
 # Copyright (C) 1987,1990,1993,2000 Silvio Levy and Donald E. Knuth
 #
 # Modified for GCC under Linux by Andreas Scherer, June 8, 1996.
-# Last updated by Andreas Scherer, August 2024.
+# Last updated by Andreas Scherer, July 2026.
 
 # The following copyright notice extends to the changes in this Makefile
 # only, not to any part of the original CWEB distribution.
 #
-# Copyright (C) 1994, 1996, 2000, 2005, 2022-2024 Andreas Scherer
+# Copyright (C) 1994, 1996, 2000, 2005, 2022-2024, 2026 Andreas Scherer
 
 # Permission is granted to make and distribute verbatim copies of this
 # document provided that the copyright notice and this permission notice
@@ -195,7 +195,7 @@ PATCH = common.$(EXTENSION) ctangle.$(EXTENSION) README.txt Makefile.unix \
 	0005-Update-CTWILL-macros-for-CWEB-4.9.patch \
 	0006-Rename-page-dimensions-to-match-cwebmac.patch \
 	cwebbin.spec examples/wmerge.dsp ctangle.1 cweave.1 ctwill.md \
-	refsort.1 twinx.1 refsort.ch twinx.ch \
+	refsort.1 refsort2.1 twinx.1 refsort.ch twinx.ch \
 	LICENSE README.md texlive.w system.bux \
 	common.bux comm-mini.ch ctwill.bux ctwill-mini.ch ctwill-hint.ch
 
@@ -268,7 +268,7 @@ ALL = $(ORIGINAL) $(CTWILLSRC) $(COMMPATCH) $(CTANGPATCH) $(CWEAVPATCH) \
 	esac
 
 .ref.sref: refsort
-	./refsort < $*.ref > $*.sref
+	./refsort < $*.ref | ./refsort2 > $*.sref
 
 # The complete set of files contains the two programs `ctangle' and `cweave',
 # the mogrified twin 'ctwill' and its utility programs 'refsort' and 'twinx',
@@ -448,6 +448,7 @@ install: all
 	$(INSTALL) cweave $(DESTDIR)$(BINDIR)/$(DESTPREF)weave
 	$(INSTALL) ctwill $(DESTDIR)$(BINDIR)/$(DESTPREF)twill
 	$(INSTALL) refsort $(DESTDIR)$(BINDIR)/refsort
+	$(INSTALL) refsort2 $(DESTDIR)$(BINDIR)/refsort2
 	$(INSTALL) proofsort $(DESTDIR)$(BINDIR)/proofsort
 	$(INSTALL) twinx $(DESTDIR)$(BINDIR)/twinx
 
@@ -456,6 +457,7 @@ install: all
 	$(INSTALL) -m 644 cweave.1 $(DESTDIR)$(MANDIR)/cweave.$(MANEXT)
 	$(INSTALL) -m 644 ctwill.1 $(DESTDIR)$(MANDIR)/ctwill.$(MANEXT)
 	$(INSTALL) -m 644 refsort.1 $(DESTDIR)$(MANDIR)/refsort.$(MANEXT)
+	$(INSTALL) -m 644 refsort2.1 $(DESTDIR)$(MANDIR)/refsort2.$(MANEXT)
 	$(INSTALL) -m 644 twinx.1 $(DESTDIR)$(MANDIR)/twinx.$(MANEXT)
 
 	$(INSTALL) -m 644 cwebmac.tex $(MACROS)/* $(DESTDIR)$(MACROSDIR)
