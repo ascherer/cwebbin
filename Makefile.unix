@@ -30,7 +30,7 @@ TEXMFDIR= /usr/local/share/texlive/texmf-local
 MACROSDIR= $(TEXMFDIR)/tex/plain/cweb
 
 # directory for CWEB inputs in @i files
-CWEBINPUTS= /usr/lib/cweb
+CWEBINPUTS= /usr/share/cweb
 
 # extension for manual pages ("l" distinguishes local from system stuff)
 #MANEXT= l
@@ -465,7 +465,8 @@ install: all
 	$(INSTALL) -m 644 proofmac.tex $(DESTDIR)$(MACROSDIR)
 	$(INSTALL) -m 644 twinxmac.tex $(DESTDIR)$(MACROSDIR)
 	$(INSTALL) -m 644 cweb.el $(DESTDIR)$(EMACSDIR)
-	$(INSTALL) -m 644 c++lib.w $(INCLUDE)/* $(DESTDIR)$(CWEBINPUTS)
+	$(INSTALL) -m 644 c++lib.w iso_types.w $(INCLUDE)/c++1xlib.w \
+		$(DESTDIR)$(CWEBINPUTS)
 
 floppy: $(ORIGINAL)
 	bar cvhf /dev/rfd0 $(ORIGINAL)

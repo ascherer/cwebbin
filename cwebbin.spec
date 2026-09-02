@@ -58,7 +58,7 @@ Patch6: 0006-Rename-page-dimensions-to-match-cwebmac.patch
 %global __make %{__make} -f Makefile.unix \\\
 	-e PDFTEX=pdftex \\\
 	-e TEXMFDIR=%{__texlive_local} \\\
-	%{!?with_texlive:-e CWEBINPUTS=%{_libdir}/cweb}
+	%{!?with_texlive:-e CWEBINPUTS=%{_datadir}/cweb}
 
 %global __pandoc %{_bindir}/pandoc \\\
 	--standalone --from markdown+all_symbols_escapable --to man
@@ -200,10 +200,24 @@ do %{__sed_i} -e "s/Web2c .*\[at\]/CWEBbin %{version}/" $m.1; done
 
 %files
 %if ! %{with texlive}
-%{_bindir}/*
+%{_bindir}/ctangle
+%{_bindir}/cweave
+%{_bindir}/ctwill
+%{_bindir}/refsort
+%{_bindir}/refsort2
+%{_bindir}/proofsort
+%{_bindir}/twinx
 %{_datadir}/emacs/site-lisp/cweb.el
-%{_libdir}/cweb/*
-%{_mandir}/man1/*
+%{_datadir}/cweb/c++lib.w
+%{_datadir}/cweb/c++1xlib.w
+%{_datadir}/cweb/iso_types.w
+%{_mandir}/man1/cweb.1
+%{_mandir}/man1/ctangle.1
+%{_mandir}/man1/cweave.1
+%{_mandir}/man1/ctwill.1
+%{_mandir}/man1/refsort.1
+%{_mandir}/man1/refsort2.1
+%{_mandir}/man1/twinx.1
 %{_datadir}/locale/de/LC_MESSAGES/cweb.mo
 %{_datadir}/locale/it/LC_MESSAGES/cweb.mo
 %{__texlive_local}/tex/plain/cweb/*
